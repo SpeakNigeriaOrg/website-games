@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak Nigeria - Syllable Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <main id="app-wrapper">
+        <header style="text-align: center; margin-bottom: 20px;">
+            <h1>Speak Nigeria</h1>
+            
+            <div id="theme-controls">
+                <label for="theme-selector" style="font-weight: bold;">Choose a Theme: </label>
+                <select id="theme-selector"></select>
+            </div>
+        </header>
+
+        <section id="game-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            
+            <div id="prompt-container" class="prompt-container" onclick="playFullWordAudio()">
+                <img id="prompt-image" src="" alt="Listen and build" />
+                
+                <div class="audio-overlay">
+                    <svg fill="#ffffff" viewBox="0 0 24 24" width="48px" height="48px">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div id="queue-slots" class="slots-container" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; min-height: 60px;"></div>
+            
+            <div id="feedback-message" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; min-height: 30px;">
+                </div>
+
+            <div id="syllable-bank" class="bank-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;"></div>
+            
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

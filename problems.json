@@ -1,0 +1,50 @@
+[
+  {
+    "levelId": "Level 1: Introductions",
+    "syllablePool": [
+      { "text": "To", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/to.mp3" },
+      { "text": "la", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/la.mp3" },
+      { "text": "ni", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ni.mp3" },
+      { "text": "Bo", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bo.mp3" },
+      { "text": "ji", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ji.mp3" }
+    ],
+    "words": [
+      {
+        "targetWord": "Tolani",
+        "targetSyllables": ["To", "la", "ni"],
+        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/tolani.mp3",
+        "imageUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/tolani-pic.jpg"
+      },
+      {
+        "targetWord": "Bolaji",
+        "targetSyllables": ["Bo", "la", "ji"],
+        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bolaji.mp3",
+        "imageUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bolaji-pic.jpg"
+      }
+    ]
+  },
+  {
+    "levelId": "Level 2: Common Nouns",
+    "syllablePool": [
+      { "text": "ba", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ba.mp3" },
+      { "text": "ta", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ta.mp3" },
+      { "text": "da", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/da.mp3" },
+      { "text": "ra", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ra.mp3" },
+      { "text": "pa", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/pa.mp3" }
+    ],
+    "words": [
+      {
+        "targetWord": "baba",
+        "targetSyllables": ["ba", "ba"],
+        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/baba.mp3",
+        "imageUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/baba-pic.jpg"
+      },
+      {
+        "targetWord": "bata",
+        "targetSyllables": ["ba", "ta"],
+        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bata.mp3",
+        "imageUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bata-pic.jpg"
+      }
+    ]
+  }
+]

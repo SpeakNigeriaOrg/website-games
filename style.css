@@ -1,0 +1,43 @@
+/* ==========================================
+   IMAGE PROMPT AREA
+   ========================================== */
+.prompt-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease;
+}
+
+.prompt-container:active {
+    transform: scale(0.95);
+}
+
+#prompt-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.audio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Darkens the image slightly so the white icon pops */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.prompt-container:hover .audio-overlay {
+    opacity: 1;
+}
