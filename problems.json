@@ -2,23 +2,23 @@
   {
     "levelId": "Level 1: Introductions",
     "syllablePool": [
-      { "text": "To", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/to.mp3" },
-      { "text": "la", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/la.mp3" },
-      { "text": "ni", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ni.mp3" },
-      { "text": "Bo", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bo.mp3" },
-      { "text": "ji", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ji.mp3" }
+      { "text": "To", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/to.m4a" },
+      { "text": "la", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/la.m4a" },
+      { "text": "ni", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ni.m4a" },
+      { "text": "Bo", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bo.m4a" },
+      { "text": "ji", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ji.m4a" }
     ],
     "words": [
       {
         "targetWord": "Tolani",
         "targetSyllables": ["To", "la", "ni"],
-        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/tolani.mp3",
+        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/tolani.m4a",
         "imageUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/tolani-pic.jpg"
       },
       {
         "targetWord": "Bolaji",
         "targetSyllables": ["Bo", "la", "ji"],
-        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bolaji.mp3",
+        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bolaji.m4a",
         "imageUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bolaji-pic.jpg"
       }
     ]
@@ -26,23 +26,23 @@
   {
     "levelId": "Level 2: Common Nouns",
     "syllablePool": [
-      { "text": "ba", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ba.mp3" },
-      { "text": "ta", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ta.mp3" },
-      { "text": "da", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/da.mp3" },
-      { "text": "ra", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ra.mp3" },
-      { "text": "pa", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/pa.mp3" }
+      { "text": "ba", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ba.m4a" },
+      { "text": "ta", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ta.m4a" },
+      { "text": "da", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/da.m4a" },
+      { "text": "ra", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/ra.m4a" },
+      { "text": "pa", "audioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/pa.m4a" }
     ],
     "words": [
       {
         "targetWord": "baba",
         "targetSyllables": ["ba", "ba"],
-        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/baba.mp3",
+        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/baba.m4a",
         "imageUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/baba-pic.jpg"
       },
       {
         "targetWord": "bata",
         "targetSyllables": ["ba", "ta"],
-        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bata.mp3",
+        "fullAudioUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bata.m4a",
         "imageUrl": "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/bata-pic.jpg"
       }
     ]
