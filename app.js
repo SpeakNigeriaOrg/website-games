@@ -3,7 +3,7 @@ const BASE_URL = "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/";
 
 // These can eventually be tied to a UI dropdown menu
 let CURRENT_SPEAKER = "speaker1"; 
-let CURRENT_IMAGE_STYLE = "pixar_3d"; 
+let CURRENT_IMAGE_STYLE = "cartoon"; 
 // ----------------------------
 
 let gameData = [];
@@ -60,12 +60,18 @@ async function loadGame() {
                                         
                     wordData.syllables.forEach(syllable => {
                         if (!sessionSyllablePool.some(s => s.text === syllable)) {
-                            const syllableAudioFile = dictionarySyllables[CURRENT_SPEAKER]?.[syllable];
                             
-                            if (syllableAudioFile) {
+                            // 1. CHANGE THIS: Fetch the object, not the string
+                            const syllableInfo = dictionarySyllables[CURRENT_SPEAKER]?.[syllable];
+                            
+                            // 2. CHANGE THIS: Check if the object exists
+                            if (syllableInfo && syllableInfo.audio) {
                                 sessionSyllablePool.push({
                                     text: syllable,
-                                    audioUrl: BASE_URL + syllableAudioFile
+                                    // 3. CHANGE THIS: Use the .audio property
+                                    audioUrl: BASE_URL + syllableInfo.audio,
+                                    // 4. ADD THIS: Capture the tone so renderBank() can sort it
+                                    tone: syllableInfo.tone 
                                 });
                             } else {
                                 console.warn(`[Missing Asset] Syllable "${syllable}" missing for ${CURRENT_SPEAKER}`);
