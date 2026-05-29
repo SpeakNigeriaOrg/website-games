@@ -215,8 +215,9 @@ function handleSyllableClick(buttonData) {
         currentPlayingAudio.currentTime = 0; 
     }
 
-    if (buttonData.audioUrl) {
-        currentPlayingAudio = new Audio(buttonData.audioUrl);
+    // Fix: access 'audio' instead of 'audioUrl'
+    if (buttonData.audio) {
+        currentPlayingAudio = new Audio(BASE_URL + buttonData.audio);
         currentPlayingAudio.play().catch(() => {});
     }
 
