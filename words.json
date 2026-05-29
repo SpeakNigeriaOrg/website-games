@@ -1,0 +1,50 @@
+{
+  "ejika_shoulder": {
+    "displayText": "Ejika",
+    "syllables": ["E", "ji", "ka"]
+  },
+  "eti_ear": {
+    "displayText": "Etí",
+    "syllables": ["E", "tí"]
+  },
+  "imu_nose": {
+    "displayText": "Imú",
+    "syllables": ["I", "mú"]
+  },
+  "oju_eye": {
+    "displayText": "Ojú",
+    "syllables": ["O", "jú"]
+  },
+  "ori_head": {
+    "displayText": "Orí",
+    "syllables": ["O", "rí"]
+  },
+  "awo_plate": {
+    "displayText": "Àwo",
+    "syllables": ["À", "wo"]
+  },
+  "ikun_stomach": {
+    "displayText": "Ìkun",
+    "syllables": ["Ì", "kun"]
+  },
+  "ikoko_pot": {
+    "displayText": "Ìkòkò",
+    "syllables": ["Ì", "kò", "kò"]
+  },
+  "enu_mouth": {
+    "displayText": "Ẹnu",
+    "syllables": ["Ẹ", "nu"]
+  },
+  "ese_leg": {
+    "displayText": "Ẹsẹ",
+    "syllables": ["Ẹ", "sẹ"]
+  },
+  "orun_neck": {
+    "displayText": "Ọrùn",
+    "syllables": ["Ọ", "rùn"]
+  },
+  "owo_hand": {
+    "displayText": "Ọwọ",
+    "syllables": ["Ọ", "wọ"]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "speaker1": {
+    "wo": {
+      "audio": "syllables/speaker1/wo.m4a",
+      "tone": "mid"
+    },
+    "sẹ": {
+      "audio": "syllables/speaker1/se_sub.m4a",
+      "tone": "mid"
+    },
+    "tí": {
+      "audio": "syllables/speaker1/ti_high.m4a",
+      "tone": "high"
+    },
+    "E": {
+      "audio": "syllables/speaker1/e.m4a",
+      "tone": "mid"
+    },
+    "O": {
+      "audio": "syllables/speaker1/o.m4a",
+      "tone": "mid"
+    },
+    "I": {
+      "audio": "syllables/speaker1/i.m4a",
+      "tone": "mid"
+    },
+    "Ẹ": {
+      "audio": "syllables/speaker1/e_sub.m4a",
+      "tone": "mid"
+    },
+    "ka": {
+      "audio": "syllables/speaker1/ka.m4a",
+      "tone": "mid"
+    },
+    "kun": {
+      "audio": "syllables/speaker1/kun.m4a",
+      "tone": "mid"
+    },
+    "Ọ": {
+      "audio": "syllables/speaker1/o_sub.m4a",
+      "tone": "mid"
+    },
+    "rùn": {
+      "audio": "syllables/speaker1/run_low.m4a",
+      "tone": "low"
+    },
+    "nu": {
+      "audio": "syllables/speaker1/nu.m4a",
+      "tone": "mid"
+    },
+    "rí": {
+      "audio": "syllables/speaker1/ri_high.m4a",
+      "tone": "high"
+    },
+    "À": {
+      "audio": "syllables/speaker1/a_low.m4a",
+      "tone": "low"
+    },
+    "ji": {
+      "audio": "syllables/speaker1/ji.m4a",
+      "tone": "mid"
+    },
+    "Ì": {
+      "audio": "syllables/speaker1/i_low.m4a",
+      "tone": "low"
+    },
+    "jú": {
+      "audio": "syllables/speaker1/ju_high.m4a",
+      "tone": "high"
+    },
+    "mú": {
+      "audio": "syllables/speaker1/mu_high.m4a",
+      "tone": "high"
+    },
+    "kò": {
+      "audio": "syllables/speaker1/ko_low.m4a",
+      "tone": "low"
+    },
+    "wọ": {
+      "audio": "syllables/speaker1/wo_sub.m4a",
+      "tone": "mid"
+    }
+  },
+  "speaker2": {
+    "wo": {
+      "audio": "syllables/speaker2/wo.m4a",
+      "tone": "mid"
+    },
+    "sẹ": {
+      "audio": "syllables/speaker2/se_sub.m4a",
+      "tone": "mid"
+    },
+    "tí": {
+      "audio": "syllables/speaker2/ti_high.m4a",
+      "tone": "high"
+    },
+    "E": {
+      "audio": "syllables/speaker2/e.m4a",
+      "tone": "mid"
+    },
+    "O": {
+      "audio": "syllables/speaker2/o.m4a",
+      "tone": "mid"
+    },
+    "I": {
+      "audio": "syllables/speaker2/i.m4a",
+      "tone": "mid"
+    },
+    "Ẹ": {
+      "audio": "syllables/speaker2/e_sub.m4a",
+      "tone": "mid"
+    },
+    "ka": {
+      "audio": "syllables/speaker2/ka.m4a",
+      "tone": "mid"
+    },
+    "kun": {
+      "audio": "syllables/speaker2/kun.m4a",
+      "tone": "mid"
+    },
+    "Ọ": {
+      "audio": "syllables/speaker2/o_sub.m4a",
+      "tone": "mid"
+    },
+    "rùn": {
+      "audio": "syllables/speaker2/run_low.m4a",
+      "tone": "low"
+    },
+    "nu": {
+      "audio": "syllables/speaker2/nu.m4a",
+      "tone": "mid"
+    },
+    "rí": {
+      "audio": "syllables/speaker2/ri_high.m4a",
+      "tone": "high"
+    },
+    "À": {
+      "audio": "syllables/speaker2/a_low.m4a",
+      "tone": "low"
+    },
+    "ji": {
+      "audio": "syllables/speaker2/ji.m4a",
+      "tone": "mid"
+    },
+    "Ì": {
+      "audio": "syllables/speaker2/i_low.m4a",
+      "tone": "low"
+    },
+    "jú": {
+      "audio": "syllables/speaker2/ju_high.m4a",
+      "tone": "high"
+    },
+    "mú": {
+      "audio": "syllables/speaker2/mu_high.m4a",
+      "tone": "high"
+    },
+    "kò": {
+      "audio": "syllables/speaker2/ko_low.m4a",
+      "tone": "low"
+    },
+    "wọ": {
+      "audio": "syllables/speaker2/wo_sub.m4a",
+      "tone": "mid"
+    }
+  }
+}

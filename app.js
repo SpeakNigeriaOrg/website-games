@@ -1,3 +1,11 @@
+// --- GLOBAL CONFIGURATION ---
+const BASE_URL = "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/";
+
+// These can eventually be tied to a UI dropdown menu
+let CURRENT_SPEAKER = "speaker1"; 
+let CURRENT_IMAGE_STYLE = "pixar_3d"; 
+// ----------------------------
+
 let gameData = [];
 let currentLevelIndex = 0;
 let currentWordIndex = 0;
@@ -7,17 +15,79 @@ let currentWord = null;
 let queue = [];
 let maxSlots = 0;
 let isTransitioning = false; 
+let currentPlayingAudio = null; 
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 async function loadGame() {
     try {
-        const response = await fetch('problems.json');
-        gameData = await response.json();
+        const [wordsResponse, syllablesResponse, sessionsResponse] = await Promise.all([
+            fetch('words.json'),
+            fetch('syllables.json'),
+            fetch('sessions.json')
+        ]);
+        
+        const dictionaryWords = await wordsResponse.json();
+        const dictionarySyllables = await syllablesResponse.json();
+        const sessions = await sessionsResponse.json();
+        
+        gameData = sessions.map(session => {
+            let sessionWords = [];
+            let sessionSyllablePool = [];
+            
+            session.words.forEach(wordId => {
+                const wordData = dictionaryWords[wordId];
+                
+                if (wordData) {
+                    
+                    // Construct standard paths using Convention Over Configuration
+                    const dynamicAudioUrl = `${BASE_URL}words/${CURRENT_SPEAKER}/${wordId}.wav`;
+                    const dynamicImageUrl = `${BASE_URL}images/${CURRENT_IMAGE_STYLE}/${wordId}.jpg`;
+
+                    sessionWords.push({
+                        id: wordId,
+                        targetWord: wordData.displayText, 
+                        targetSyllables: wordData.syllables,
+                        fullAudioUrl: dynamicAudioUrl, 
+                        imageUrl: dynamicImageUrl
+                    });
+                                        
+                    wordData.syllables.forEach(syllable => {
+                        if (!sessionSyllablePool.some(s => s.text === syllable)) {
+                            const syllableAudioFile = dictionarySyllables[CURRENT_SPEAKER]?.[syllable];
+                            
+                            if (syllableAudioFile) {
+                                sessionSyllablePool.push({
+                                    text: syllable,
+                                    audioUrl: BASE_URL + syllableAudioFile
+                                });
+                            } else {
+                                console.warn(`[Missing Asset] Syllable "${syllable}" missing for ${CURRENT_SPEAKER}`);
+                            }
+                        }
+                    });
+                }
+            });
+            
+            return {
+                levelId: session.levelId,
+                syllablePool: shuffleArray(sessionSyllablePool),
+                words: shuffleArray(sessionWords)
+            };
+        });
         
         initializeThemeSelector(); 
         loadLevel(0);              
+        
     } catch (error) {
         document.getElementById('feedback-message').innerText = "Error loading game data.";
-        console.error("Failed to load problems.json:", error);
+        console.error("Failed to load game data:", error);
     }
 }
 
@@ -33,8 +103,7 @@ function initializeThemeSelector() {
     });
 
     selector.addEventListener('change', (event) => {
-        const selectedIndex = parseInt(event.target.value);
-        loadLevel(selectedIndex); 
+        loadLevel(parseInt(event.target.value)); 
     });
 }
 
@@ -46,12 +115,10 @@ function loadLevel(levelIndex) {
     
     currentLevelIndex = levelIndex;
     currentLevel = gameData[currentLevelIndex];
-    currentWordIndex = 0; 
-    
     document.getElementById('theme-selector').value = currentLevelIndex;
 
     renderBank(); 
-    loadWord(currentWordIndex);
+    loadWord(0);
 }
 
 function loadWord(wordIndex) {
@@ -61,35 +128,30 @@ function loadWord(wordIndex) {
     maxSlots = currentWord.targetSyllables.length;
     queue = []; 
     
-    // NEW: Swap the image
-    document.getElementById('prompt-image').src = currentWord.imageUrl;
+    // Set image with a basic 404 fallback to keep UI clean during testing
+    const imgElement = document.getElementById('prompt-image');
+    imgElement.onerror = function() {
+        this.onerror = null; 
+        this.src = 'images/placeholder.jpg'; 
+    };
+    imgElement.src = currentWord.imageUrl;
     
-    // Clear out any old text feedback
     document.getElementById('feedback-message').innerText = ""; 
-    
     renderQueue();
     isTransitioning = false; 
 
-    // NEW: Autoplay the full word audio
     playFullWordAudio();
 }
 
-// NEW: Handles playing the full word prompt
 function playFullWordAudio() {
     if (currentWord && currentWord.fullAudioUrl) {
         const promptAudio = new Audio(currentWord.fullAudioUrl);
-        
-        // Note: Browsers sometimes block autoplay on the very first page load 
-        // until the user interacts with the screen. We catch the error silently so it doesn't break.
-        promptAudio.play().catch(error => {
-            console.log("Autoplay blocked. User needs to tap the image to play the sound.");
-        });
+        promptAudio.play().catch(error => console.log("Audio play blocked or missing."));
     }
 }
 
 function moveToNextWord() {
     const nextWordIndex = currentWordIndex + 1;
-    
     if (nextWordIndex < currentLevel.words.length) {
         loadWord(nextWordIndex); 
     } else {
@@ -99,14 +161,23 @@ function moveToNextWord() {
 }
 
 function renderBank() {
-    const bankDiv = document.getElementById('syllable-bank');
-    bankDiv.innerHTML = ''; 
+    const rows = {
+        high: document.querySelector('#high-tones .bank-row'),
+        mid: document.querySelector('#mid-tones .bank-row'),
+        low: document.querySelector('#low-tones .bank-row')
+    };
     
+    Object.values(rows).forEach(row => row.innerHTML = '');
+
     currentLevel.syllablePool.forEach(buttonData => {
         const btn = document.createElement('button');
         btn.innerText = buttonData.text;
         btn.onclick = () => handleSyllableClick(buttonData);
-        bankDiv.appendChild(btn);
+        
+        // Data-driven: The tone is already defined in the data
+        const tone = buttonData.tone || 'mid'; 
+        btn.className = `btn-${tone}`;
+        rows[tone].appendChild(btn);
     });
 }
 
@@ -125,14 +196,18 @@ function renderQueue() {
 function handleSyllableClick(buttonData) {
     if (isTransitioning) return; 
 
-    const audio = new Audio(buttonData.audioUrl);
-    audio.play();
+    if (currentPlayingAudio) {
+        currentPlayingAudio.pause();
+        currentPlayingAudio.currentTime = 0; 
+    }
+
+    if (buttonData.audioUrl) {
+        currentPlayingAudio = new Audio(buttonData.audioUrl);
+        currentPlayingAudio.play().catch(() => {});
+    }
 
     queue.push(buttonData.text);
-
-    if (queue.length > maxSlots) {
-        queue.shift(); 
-    }
+    if (queue.length > maxSlots) queue.shift(); 
 
     renderQueue();
     checkWinCondition();
@@ -145,35 +220,17 @@ function checkWinCondition() {
     if (isMatch) {
         isTransitioning = true; 
         document.getElementById('feedback-message').innerText = "Correct! Great job!";
-        
         playWinningSequence(); 
     }
 }
 
 function playWinningSequence() {
-    let currentIndex = 0;
-
-    function playNextSyllable() {
-        if (currentIndex >= currentWord.targetSyllables.length) {
-            setTimeout(moveToNextWord, 1000); 
-            return;
-        }
-
-        const syllableText = currentWord.targetSyllables[currentIndex];
-        const buttonData = currentLevel.syllablePool.find(b => b.text === syllableText);
+    setTimeout(() => {
+        const fullWordAudio = new Audio(currentWord.fullAudioUrl);
         
-        if (buttonData) {
-            const audio = new Audio(buttonData.audioUrl);
-            audio.onended = playNextSyllable; 
-            audio.play().catch(e => playNextSyllable());
-        } else {
-            playNextSyllable(); 
-        }
-        
-        currentIndex++;
-    }
-
-    playNextSyllable();
+        fullWordAudio.onended = () => setTimeout(moveToNextWord, 1000);
+        fullWordAudio.play().catch(() => setTimeout(moveToNextWord, 1000));
+    }, 400); 
 }
 
 loadGame();

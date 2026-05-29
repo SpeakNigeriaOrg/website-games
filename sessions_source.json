@@ -1,0 +1,24 @@
+[
+  {
+    "levelId": "Level 1: Body Parts (Ẹ̀yà Ara)",
+    "words": [
+      "ori_head",
+      "oju_eye",
+      "imu_nose",
+      "eti_ear",
+      "enu_mouth",
+      "orun_neck",
+      "ejika_shoulder",
+      "owo_hand",
+      "ikun_stomach",
+      "ese_leg"
+    ]
+  },
+  {
+    "levelId": "Level 2: Household Items",
+    "words": [
+      "awo_plate",
+      "ikoko_pot"
+    ]
+  }
+]

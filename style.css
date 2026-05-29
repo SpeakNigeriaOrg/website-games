@@ -41,3 +41,48 @@
 .prompt-container:hover .audio-overlay {
     opacity: 1;
 }
+
+/* ==========================================
+   TONAL SYLLABLE MATRIX
+   ========================================== */
+.syllable-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Space between tone rows */
+    margin-top: 20px;
+}
+
+.tone-group {
+    text-align: left;
+}
+
+.tone-group h3 {
+    margin: 0 0 10px 5px;
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bank-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+}
+
+/* Tone-specific visual cues */
+.btn-high { background-color: #ffeef0; border: 2px solid #ffccd1; color: #d32f2f; }
+.btn-mid  { background-color: #f5f5f5; border: 2px solid #e0e0e0; color: #333; }
+.btn-low  { background-color: #e3f2fd; border: 2px solid #bbdefb; color: #1565c0; }
+
+.bank-row button {
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.bank-row button:active {
+    transform: scale(0.92);
+}
