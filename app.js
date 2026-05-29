@@ -25,6 +25,14 @@ function shuffleArray(array) {
     return array;
 }
 
+function startGame() {
+    // 1. Hide the overlay
+    document.getElementById('start-overlay').style.display = 'none';
+    
+    // 2. Now it is safe to load and play the first word
+    loadWord(0); 
+}
+
 async function loadGame() {
     try {
         const [wordsResponse, syllablesResponse, sessionsResponse] = await Promise.all([
