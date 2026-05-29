@@ -34,7 +34,7 @@ def generate_syllable_info(syllable, speaker):
     
     # Return both the path AND the tone label
     return {
-        "audio": f"syllables/{speaker}/{safe_name}{suffix}.m4a",
+        "audio": f"syllables/{speaker}/{safe_name}{suffix}.wav",
         "tone": tone
     }
 
