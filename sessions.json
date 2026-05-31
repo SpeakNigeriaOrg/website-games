@@ -120,7 +120,9 @@
   },
   {
     "levelId": "Level 8: Time & Months (Àkókò àti Oṣù)",
-    "validSpeakers": [],
+    "validSpeakers": [
+      "speaker2"
+    ],
     "validStyles": [
       "cartoon"
     ],

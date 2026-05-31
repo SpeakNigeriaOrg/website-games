@@ -20,6 +20,7 @@ def generate_sessions():
     generated_sessions = []
 
     for level in sessions_source:
+        print(f"\nEvaluating: {level['levelId']}")
         valid_speakers = []
         valid_styles = []
 
@@ -27,19 +28,28 @@ def generate_sessions():
         for speaker in ALL_SPEAKERS:
             is_speaker_valid = True
             for word_id in level["words"]:
-                # Pointing to data/words/
+                # Check for the full word audio
                 expected_audio = os.path.join(MEDIA_DIR, "words", speaker, f"{word_id}.wav")
                 if not os.path.exists(expected_audio):
+                    print(f"  -> [SPEAKER REJECTED] {speaker}: Missing word audio '{expected_audio}'")
                     is_speaker_valid = False
                     break 
                 
-                # Syllables are just a lookup, no disk check needed here
+                # Check for the required syllables
                 word_data = dictionary_words.get(word_id)
-                for syllable in word_data["syllables"]:
-                    if syllable not in dictionary_syllables[speaker]:
-                        is_speaker_valid = False
-                        break
-            if is_speaker_valid: valid_speakers.append(speaker)
+                if word_data:
+                    for syllable in word_data["syllables"]:
+                        if syllable not in dictionary_syllables.get(speaker, {}):
+                            print(f"  -> [SPEAKER REJECTED] {speaker}: Missing syllable '{syllable}' (needed for '{word_id}')")
+                            is_speaker_valid = False
+                            break
+                
+                # If a syllable failed, break out of the word loop entirely
+                if not is_speaker_valid:
+                    break
+
+            if is_speaker_valid: 
+                valid_speakers.append(speaker)
 
         # --- VALIDATE IMAGE STYLES ---
         for style in ALL_STYLES:
@@ -48,9 +58,12 @@ def generate_sessions():
                 # Pointing to data/images/
                 expected_image = os.path.join(MEDIA_DIR, "images", style, f"{word_id}.png")
                 if not os.path.exists(expected_image):
+                    print(f"  -> [STYLE REJECTED] {style}: Missing image '{expected_image}'")
                     is_style_valid = False
                     break
-            if is_style_valid: valid_styles.append(style)
+            
+            if is_style_valid: 
+                valid_styles.append(style)
 
         generated_sessions.append({
             "levelId": level["levelId"],
@@ -62,7 +75,7 @@ def generate_sessions():
     with open('sessions.json', 'w', encoding='utf-8') as f:
         json.dump(generated_sessions, f, indent=2, ensure_ascii=False)
         
-    print("Success! sessions.json generated.")
+    print("\nSuccess! sessions.json generated.")
 
 if __name__ == "__main__":
     generate_sessions()
