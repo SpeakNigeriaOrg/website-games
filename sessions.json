@@ -109,7 +109,9 @@
     "validSpeakers": [
       "speaker2"
     ],
-    "validStyles": [],
+    "validStyles": [
+      "cartoon"
+    ],
     "words": [
       "pele_sorry",
       "e_joo_please",
