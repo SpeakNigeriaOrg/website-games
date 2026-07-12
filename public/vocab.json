@@ -1,126 +1,13 @@
 {
-  "ejika_shoulder": {
-    "displayText": "ejika",
+  "adiye_chicken": {
+    "displayText": "adìyẹ",
     "syllables": [
-      "e",
-      "ji",
-      "ka"
+      "a",
+      "dì",
+      "yẹ"
     ],
-    "definition": "shoulder",
-    "components": [
-      "ejika_shoulder"
-    ]
-  },
-  "eti_ear": {
-    "displayText": "etí",
-    "syllables": [
-      "e",
-      "tí"
-    ],
-    "definition": "ear",
-    "components": [
-      "eti_ear"
-    ]
-  },
-  "imu_nose": {
-    "displayText": "imú",
-    "syllables": [
-      "i",
-      "mú"
-    ],
-    "definition": "nose",
-    "components": [
-      "imu_nose"
-    ]
-  },
-  "oju_eye": {
-    "displayText": "ojú",
-    "syllables": [
-      "o",
-      "jú"
-    ],
-    "definition": "eye",
-    "components": [
-      "oju_eye"
-    ]
-  },
-  "ori_head": {
-    "displayText": "orí",
-    "syllables": [
-      "o",
-      "rí"
-    ],
-    "definition": "head",
-    "components": [
-      "ori_head"
-    ]
-  },
-  "awo_plate": {
-    "displayText": "àwo",
-    "syllables": [
-      "à",
-      "wo"
-    ],
-    "definition": "dish, plate",
-    "components": [
-      "awo_plate"
-    ]
-  },
-  "ikun_stomach": {
-    "displayText": "ikùn",
-    "syllables": [
-      "i",
-      "kùn"
-    ],
-    "definition": "abdomen, belly",
-    "components": [
-      "ikun_stomach"
-    ]
-  },
-  "ikoko_pot": {
-    "displayText": "ìkòkò",
-    "syllables": [
-      "ì",
-      "kò",
-      "kò"
-    ],
-    "definition": "pot, multipurpose pot traditionally made of clay.",
-    "components": [
-      "ikoko_pot"
-    ]
-  },
-  "enu_mouth": {
-    "displayText": "ẹnu",
-    "syllables": [
-      "ẹ",
-      "nu"
-    ],
-    "definition": "mouth",
-    "components": [
-      "enu_mouth"
-    ]
-  },
-  "orun_neck": {
-    "displayText": "ọrùn",
-    "syllables": [
-      "ọ",
-      "rùn"
-    ],
-    "definition": "neck",
-    "components": [
-      "orun_neck"
-    ]
-  },
-  "owo_hand": {
-    "displayText": "ọwọ",
-    "syllables": [
-      "ọ",
-      "wọ"
-    ],
-    "definition": "hand",
-    "components": [
-      "owo_hand"
-    ]
+    "definition": "chicken",
+    "imageStyles": []
   },
   "agemo_july": {
     "displayText": "Agẹmọ",
@@ -130,9 +17,19 @@
       "mọ"
     ],
     "definition": "July, the second month of the traditional Yoruba calendar, the Kọ́jọ́dá; the Agẹmọ festival is held during this month",
-    "components": [
-      "agemo_july"
+    "imageStyles": [
+      "cartoon"
     ]
+  },
+  "agunfon_giraffe": {
+    "displayText": "àgùnfon",
+    "syllables": [
+      "à",
+      "gùn",
+      "fọn"
+    ],
+    "definition": "giraffe (traditionally, giraffes did not live in the range of Yorubaland)",
+    "imageStyles": []
   },
   "aja_dog": {
     "displayText": "ajá",
@@ -141,8 +38,8 @@
       "já"
     ],
     "definition": "dog",
-    "components": [
-      "aja_dog"
+    "imageStyles": [
+      "cartoon"
     ]
   },
   "alangba_lizard": {
@@ -154,469 +51,8 @@
       "gbá"
     ],
     "definition": "lizard",
-    "components": [
-      "alangba_lizard"
-    ]
-  },
-  "baluwe_bathroom": {
-    "displayText": "balùwẹ̀",
-    "syllables": [
-      "ba",
-      "lù",
-      "wẹ̀"
-    ],
-    "definition": "bathroom",
-    "components": [
-      "baluwe_bathroom"
-    ]
-  },
-  "beelu_november": {
-    "displayText": "Beélú",
-    "syllables": [
-      "be",
-      "é",
-      "lú"
-    ],
-    "components": [
-      "beelu_november"
-    ]
-  },
-  "dide_stand": {
-    "displayText": "dìde",
-    "syllables": [
-      "dì",
-      "de"
-    ],
-    "definition": "to stand, get up, rise",
-    "components": [
-      "dide_stand"
-    ]
-  },
-  "ewe_leaf": {
-    "displayText": "ewé",
-    "syllables": [
-      "e",
-      "wé"
-    ],
-    "definition": "leaf, foliage",
-    "components": [
-      "ewe_leaf"
-    ]
-  },
-  "ibusun_bed": {
-    "displayText": "ibùsùn",
-    "syllables": [
-      "i",
-      "bù",
-      "sùn"
-    ],
-    "definition": "bed",
-    "components": [
-      "ibusun_bed"
-    ]
-  },
-  "idodo_navel": {
-    "displayText": "idodo",
-    "syllables": [
-      "i",
-      "do",
-      "do"
-    ],
-    "definition": "navel, belly button",
-    "components": [
-      "idodo_navel"
-    ]
-  },
-  "igbe_april": {
-    "displayText": "Igbe",
-    "syllables": [
-      "i",
-      "gbe"
-    ],
-    "definition": "April, the eleventh month in the Yoruba calendar, the Kọ́jọ́dá",
-    "components": [
-      "igbe_april"
-    ]
-  },
-  "igbo_forest": {
-    "displayText": "igbó",
-    "syllables": [
-      "i",
-      "gbó"
-    ],
-    "definition": "forest, bush, grove",
-    "components": [
-      "igbo_forest"
-    ]
-  },
-  "irin_iron": {
-    "displayText": "irin",
-    "syllables": [
-      "i",
-      "rin"
-    ],
-    "definition": "metal (in particular) iron",
-    "components": [
-      "irin_iron"
-    ]
-  },
-  "itan_thigh": {
-    "displayText": "itan",
-    "syllables": [
-      "i",
-      "tan"
-    ],
-    "definition": "thigh",
-    "components": [
-      "itan_thigh"
-    ]
-  },
-  "jeun_eat": {
-    "displayText": "jẹun",
-    "syllables": [
-      "jẹ",
-      "un"
-    ],
-    "definition": "to eat food",
-    "components": [
-      "jeun_eat"
-    ]
-  },
-  "lo_go": {
-    "displayText": "lọ",
-    "syllables": [
-      "lọ"
-    ],
-    "definition": "to go",
-    "components": [
-      "lo_go"
-    ]
-  },
-  "okudu_june": {
-    "displayText": "Okúdù",
-    "syllables": [
-      "o",
-      "kú",
-      "dù"
-    ],
-    "definition": "June, the first month of the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "components": [
-      "okudu_june"
-    ]
-  },
-  "pele_sorry": {
-    "displayText": "pẹ̀lẹ́",
-    "syllables": [
-      "pẹ̀",
-      "lẹ́"
-    ],
-    "definition": "sorry (used to apologize or express condolence)",
-    "components": [
-      "pele_sorry"
-    ]
-  },
-  "pepeye_duck": {
-    "displayText": "pẹ́pẹ́yẹ",
-    "syllables": [
-      "pẹ́",
-      "pẹ́",
-      "yẹ"
-    ],
-    "definition": "duck",
-    "components": [
-      "pepeye_duck"
-    ]
-  },
-  "ra_crawl": {
-    "displayText": "rá",
-    "syllables": [
-      "rá"
-    ],
-    "definition": "to crawl",
-    "components": [
-      "ra_crawl"
-    ]
-  },
-  "sare_run": {
-    "displayText": "sáré",
-    "syllables": [
-      "sá",
-      "ré"
-    ],
-    "definition": "to run",
-    "components": [
-      "sare_run"
-    ]
-  },
-  "wa_come": {
-    "displayText": "wá",
-    "syllables": [
-      "wá"
-    ],
-    "definition": "come",
-    "components": [
-      "wa_come"
-    ]
-  },
-  "aya_chest": {
-    "displayText": "àyà",
-    "syllables": [
-      "à",
-      "yà"
-    ],
-    "definition": "chest",
-    "components": [
-      "aya_chest"
-    ]
-  },
-  "ebibi_may": {
-    "displayText": "Èbìbí",
-    "syllables": [
-      "è",
-      "bì",
-      "bí"
-    ],
-    "definition": "May, the twelfth and final month in the Yoruba calendar, the Kọ́jọ́dá, during which the Ẹ̀bìbì festival is usually celebrated in.",
-    "components": [
-      "ebibi_may"
-    ]
-  },
-  "erele_february": {
-    "displayText": "Èrèlé",
-    "syllables": [
-      "è",
-      "rè",
-      "lé"
-    ],
-    "definition": "February, the ninth month in the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "components": [
-      "erele_february"
-    ]
-  },
-  "ete_lip": {
-    "displayText": "ètè",
-    "syllables": [
-      "è",
-      "tè"
-    ],
-    "definition": "lip",
-    "components": [
-      "ete_lip"
-    ]
-  },
-  "ewa_beans": {
-    "displayText": "èwà",
-    "syllables": [
-      "è",
-      "wà"
-    ],
-    "definition": "A general name for beans, peas, and legumes, often specifically referring to the black-eyed pea",
-    "components": [
-      "ewa_beans"
-    ]
-  },
-  "ilekun_door": {
-    "displayText": "ìlẹ̀kùn",
-    "syllables": [
-      "ì",
-      "lẹ̀",
-      "kùn"
-    ],
-    "definition": "door",
-    "components": [
-      "ilekun_door"
-    ]
-  },
-  "irin_walk": {
-    "displayText": "ìrìn",
-    "syllables": [
-      "ì",
-      "rìn"
-    ],
-    "definition": "walk; stroll",
-    "components": [
-      "irin_walk"
-    ]
-  },
-  "ogun_august": {
-    "displayText": "Ògún",
-    "syllables": [
-      "ò",
-      "gún"
-    ],
-    "definition": "August, the third month of the traditional Yoruba calendar, the Kọ́jọ́dá; named in honor of Ògún. Many Ògún festivals are held during this month.",
-    "components": [
-      "ogun_august"
-    ]
-  },
-  "seere_january": {
-    "displayText": "Ṣẹẹrẹ",
-    "syllables": [
-      "ṣẹ",
-      "ẹ",
-      "rẹ"
-    ],
-    "components": [
-      "seere_january"
-    ]
-  },
-  "e_joo_please": {
-    "displayText": "ẹ jọ̀ọ́",
-    "syllables": [
-      "ẹ",
-      "jọ̀",
-      "ọ́"
-    ],
-    "components": [
-      "e_joo_please"
-    ],
-    "type": "phrase"
-  },
-  "erena_march": {
-    "displayText": "Ẹrénà",
-    "syllables": [
-      "ẹ",
-      "ré",
-      "nà"
-    ],
-    "definition": "March, the tenth month in the Yoruba calendar, the Kọ́jọ́dá",
-    "components": [
-      "erena_march"
-    ]
-  },
-  "ewa_beauty": {
-    "displayText": "ẹwà",
-    "syllables": [
-      "ẹ",
-      "wà"
-    ],
-    "definition": "beauty, attraction",
-    "components": [
-      "ewa_beauty"
-    ]
-  },
-  "eye_bird": {
-    "displayText": "ẹyẹ",
-    "syllables": [
-      "ẹ",
-      "yẹ"
-    ],
-    "definition": "bird",
-    "components": [
-      "eye_bird"
-    ]
-  },
-  "ejo_snake": {
-    "displayText": "ejò",
-    "syllables": [
-      "e",
-      "jò"
-    ],
-    "definition": "snake",
-    "components": [
-      "ejo_snake"
-    ]
-  },
-  "eyin_back": {
-    "displayText": "ẹ̀yìn",
-    "syllables": [
-      "ẹ̀",
-      "yìn"
-    ],
-    "definition": "back",
-    "components": [
-      "eyin_back"
-    ]
-  },
-  "esin_horse": {
-    "displayText": "ẹṣin",
-    "syllables": [
-      "ẹ",
-      "ṣin"
-    ],
-    "definition": "horse",
-    "components": [
-      "esin_horse"
-    ]
-  },
-  "eekanna_nail": {
-    "displayText": "èékánná",
-    "syllables": [
-      "è",
-      "é",
-      "kán",
-      "ná"
-    ],
-    "definition": "nail (may refer to nails of either the toe or finger), claw",
-    "components": [
-      "eekanna_nail"
-    ]
-  },
-  "ojo_day": {
-    "displayText": "ọjọ́",
-    "syllables": [
-      "ọ",
-      "jọ́"
-    ],
-    "definition": "day",
-    "components": [
-      "ojo_day"
-    ]
-  },
-  "owewe_september": {
-    "displayText": "Ọwẹ́wẹ",
-    "syllables": [
-      "ọ",
-      "wẹ́",
-      "wẹ"
-    ],
-    "definition": "September, the third month of the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "components": [
-      "owewe_september"
-    ]
-  },
-  "ope_december": {
-    "displayText": "Ọ̀pẹ",
-    "syllables": [
-      "ọ̀",
-      "pẹ"
-    ],
-    "definition": "December, the seventh month of the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "components": [
-      "ope_december"
-    ]
-  },
-  "owawa_october": {
-    "displayText": "Ọ̀wàwà",
-    "syllables": [
-      "ọ̀",
-      "wà",
-      "wà"
-    ],
-    "components": [
-      "owawa_october"
-    ]
-  },
-  "ile_home": {
-    "displayText": "ilé",
-    "syllables": [
-      "i",
-      "lé"
-    ],
-    "definition": "home, house, abode",
-    "components": [
-      "ile_home"
-    ]
-  },
-  "oba_king": {
-    "displayText": "ọba",
-    "syllables": [
-      "ọ",
-      "ba"
-    ],
-    "definition": "king, queen, monarch",
-    "components": [
-      "oba_king"
+    "imageStyles": [
+      "cartoon"
     ]
   },
   "alubosa_onion": {
@@ -628,237 +64,63 @@
       "sà"
     ],
     "definition": "onion",
-    "components": [
-      "alubosa_onion"
-    ]
+    "imageStyles": []
   },
-  "jokoo_sit": {
-    "displayText": "jókòó",
-    "syllables": [
-      "jó",
-      "kò",
-      "ó"
-    ],
-    "definition": "to sit (down)",
-    "components": [
-      "jokoo_sit"
-    ]
-  },
-  "ose_soap": {
-    "displayText": "ọṣẹ",
-    "syllables": [
-      "ọ",
-      "ṣẹ"
-    ],
-    "definition": "soap",
-    "components": [
-      "ose_soap"
-    ]
-  },
-  "digi_mirror": {
-    "displayText": "dígí",
-    "syllables": [
-      "dí",
-      "gí"
-    ],
-    "definition": "mirror, glass",
-    "components": [
-      "digi_mirror"
-    ]
-  },
-  "ogede_banana": {
-    "displayText": "ọ̀gẹ̀dè",
-    "syllables": [
-      "ọ̀",
-      "gẹ̀",
-      "dè"
-    ],
-    "definition": "banana, plantain",
-    "components": [
-      "ogede_banana"
-    ]
-  },
-  "moto_automobile": {
-    "displayText": "mọ́tò",
-    "syllables": [
-      "mọ́",
-      "tò"
-    ],
-    "definition": "car",
-    "components": [
-      "moto_automobile"
-    ]
-  },
-  "ookan_one": {
-    "displayText": "oókan",
-    "syllables": [
-      "o",
-      "ó",
-      "kan"
-    ],
-    "definition": "one (used when counting)",
-    "components": [
-      "ookan_one"
-    ]
-  },
-  "kalamu_pen": {
-    "displayText": "kálàmú",
-    "syllables": [
-      "ká",
-      "là",
-      "mú"
-    ],
-    "definition": "pen (writing tool)",
-    "components": [
-      "kalamu_pen"
-    ]
-  },
-  "kasu_cashew": {
-    "displayText": "kaṣú",
-    "syllables": [
-      "ka",
-      "ṣú"
-    ],
-    "components": [
-      "kasu_cashew"
-    ]
-  },
-  "irawo_star": {
-    "displayText": "ìràwọ̀",
-    "syllables": [
-      "ì",
-      "rà",
-      "wọ̀"
-    ],
-    "definition": "star, celestial object, celestial body",
-    "components": [
-      "irawo_star"
-    ]
-  },
-  "redio_radio": {
-    "displayText": "rédíò",
-    "syllables": [
-      "ré",
-      "dí",
-      "ò"
-    ],
-    "components": [
-      "redio_radio"
-    ]
-  },
-  "ibepe_papaya": {
-    "displayText": "ìbẹ́pẹ",
-    "syllables": [
-      "ì",
-      "bẹ́",
-      "pẹ"
-    ],
-    "definition": "papaya",
-    "components": [
-      "ibepe_papaya"
-    ]
-  },
-  "agunfon_giraffe": {
-    "displayText": "àgùnfon",
-    "syllables": [
-      "à",
-      "gùn",
-      "fọn"
-    ],
-    "definition": "giraffe (traditionally, giraffes did not live in the range of Yorubaland)",
-    "components": [
-      "agunfon_giraffe"
-    ]
-  },
-  "olongbo_cat": {
-    "displayText": "olóńgbò",
-    "syllables": [
-      "o",
-      "ló",
-      "ń",
-      "gbò"
-    ],
-    "definition": "cat",
-    "components": [
-      "olongbo_cat"
-    ]
-  },
-  "okuta_stone": {
-    "displayText": "òkúta",
-    "syllables": [
-      "ò",
-      "kú",
-      "ta"
-    ],
-    "definition": "rock, stone",
-    "components": [
-      "okuta_stone"
-    ]
-  },
-  "ogbon_wisdom": {
-    "displayText": "ọgbọ́n",
-    "syllables": [
-      "ọ",
-      "gbọ́n"
-    ],
-    "definition": "wisdom; sense",
-    "components": [
-      "ogbon_wisdom"
-    ]
-  },
-  "osan_orange": {
-    "displayText": "ọsàn",
-    "syllables": [
-      "ọ",
-      "sàn"
-    ],
-    "definition": "orange (fruit)",
-    "components": [
-      "osan_orange"
-    ]
-  },
-  "guafa_guava": {
-    "displayText": "gúáfà",
-    "syllables": [
-      "gú",
-      "á",
-      "fà"
-    ],
-    "components": [
-      "guafa_guava"
-    ]
-  },
-  "ifoyin_toothbrush": {
-    "displayText": "ìfọyín",
-    "syllables": [
-      "ì",
-      "fọ",
-      "yín"
-    ],
-    "components": [
-      "ifoyin_toothbrush"
-    ]
-  },
-  "pako_timber": {
-    "displayText": "pákó",
-    "syllables": [
-      "pá",
-      "kó"
-    ],
-    "definition": "wood, plank, wooden board",
-    "components": [
-      "pako_timber"
-    ]
-  },
-  "adiye_chicken": {
-    "displayText": "adìyẹ",
+  "aso_cloth": {
+    "displayText": "aṣọ",
     "syllables": [
       "a",
-      "dì",
-      "yẹ"
+      "ṣọ"
     ],
-    "components": [
-      "adiye_chicken"
+    "definition": "any cloth, fabric, textile",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "awo_plate": {
+    "displayText": "àwo",
+    "syllables": [
+      "à",
+      "wo"
+    ],
+    "definition": "dish, plate",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "aya_chest": {
+    "displayText": "àyà",
+    "syllables": [
+      "à",
+      "yà"
+    ],
+    "definition": "chest",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "baluwe_bathroom": {
+    "displayText": "balùwẹ̀",
+    "syllables": [
+      "ba",
+      "lù",
+      "wẹ̀"
+    ],
+    "definition": "bathroom",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "beelu_november": {
+    "displayText": "Beélú",
+    "syllables": [
+      "be",
+      "é",
+      "lú"
+    ],
+    "definition": "November, the sixth month of the traditional Yoruba calendar, the Kọ́jọ́dá",
+    "imageStyles": [
+      "cartoon"
     ]
   },
   "buredi_bread": {
@@ -869,19 +131,143 @@
       "dì"
     ],
     "definition": "bread",
-    "components": [
-      "buredi_bread"
+    "imageStyles": []
+  },
+  "dide_stand": {
+    "displayText": "dìde",
+    "syllables": [
+      "dì",
+      "de"
+    ],
+    "definition": "to stand, get up, rise",
+    "imageStyles": [
+      "cartoon"
     ]
   },
-  "ogun_twenty": {
-    "displayText": "ogún",
+  "digi_mirror": {
+    "displayText": "dígí",
     "syllables": [
-      "o",
-      "gún"
+      "dí",
+      "gí"
     ],
-    "definition": "twenty",
-    "components": [
-      "ogun_twenty"
+    "definition": "mirror, glass",
+    "imageStyles": []
+  },
+  "ebibi_may": {
+    "displayText": "Èbìbí",
+    "syllables": [
+      "è",
+      "bì",
+      "bí"
+    ],
+    "definition": "May, the twelfth and final month in the Yoruba calendar, the Kọ́jọ́dá, during which the Ẹ̀bìbì festival is usually celebrated in.",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "eekanna_nail": {
+    "displayText": "èékánná",
+    "syllables": [
+      "è",
+      "é",
+      "kán",
+      "ná"
+    ],
+    "definition": "nail (may refer to nails of either the toe or finger), claw",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ejika_shoulder": {
+    "displayText": "ejika",
+    "syllables": [
+      "e",
+      "ji",
+      "ka"
+    ],
+    "definition": "shoulder",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "e_joo_please": {
+    "displayText": "ẹ jọ̀ọ́",
+    "syllables": [
+      "ẹ",
+      "jọ̀",
+      "ọ́"
+    ],
+    "definition": "Please",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ejo_snake": {
+    "displayText": "ejò",
+    "syllables": [
+      "e",
+      "jò"
+    ],
+    "definition": "snake",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "enu_mouth": {
+    "displayText": "ẹnu",
+    "syllables": [
+      "ẹ",
+      "nu"
+    ],
+    "definition": "mouth",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "erele_february": {
+    "displayText": "Èrèlé",
+    "syllables": [
+      "è",
+      "rè",
+      "lé"
+    ],
+    "definition": "February, the ninth month in the traditional Yoruba calendar, the Kọ́jọ́dá",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "erena_march": {
+    "displayText": "Ẹrénà",
+    "syllables": [
+      "ẹ",
+      "ré",
+      "nà"
+    ],
+    "definition": "March, the tenth month in the Yoruba calendar, the Kọ́jọ́dá",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ese_leg": {
+    "displayText": "ẹsẹ̀",
+    "syllables": [
+      "ẹ",
+      "sẹ̀"
+    ],
+    "definition": "foot, leg",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "esin_horse": {
+    "displayText": "ẹṣin",
+    "syllables": [
+      "ẹ",
+      "ṣin"
+    ],
+    "definition": "horse",
+    "imageStyles": [
+      "cartoon"
     ]
   },
   "esinsin_fly": {
@@ -892,21 +278,353 @@
       "ṣin"
     ],
     "definition": "housefly, fly (insect)",
-    "components": [
-      "esinsin_fly"
+    "imageStyles": []
+  },
+  "ete_lip": {
+    "displayText": "ètè",
+    "syllables": [
+      "è",
+      "tè"
+    ],
+    "definition": "lip",
+    "imageStyles": [
+      "cartoon"
     ]
   },
-  "oduduwa_oduduwa": {
-    "displayText": "odùduwà",
+  "eti_ear": {
+    "displayText": "etí",
     "syllables": [
-      "o",
-      "dù",
-      "du",
+      "e",
+      "tí"
+    ],
+    "definition": "ear",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ewa_beans": {
+    "displayText": "èwà",
+    "syllables": [
+      "è",
       "wà"
     ],
-    "definition": "The legendary ruler (Ọọ̀ni) of Ifẹ̀, he waged a war with Ọbàtálá and gained control of Ifẹ̀, where he became Ọọ̀ni. Because of this and his many descendants who founded modern Yoruba settlements, he is regarded as the father of the Yorùbá people",
-    "components": [
-      "oduduwa_oduduwa"
+    "definition": "A general name for beans, peas, and legumes, often specifically referring to the black-eyed pea",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ewa_beauty": {
+    "displayText": "ẹwà",
+    "syllables": [
+      "ẹ",
+      "wà"
+    ],
+    "definition": "beauty, attraction",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ewe_leaf": {
+    "displayText": "ewé",
+    "syllables": [
+      "e",
+      "wé"
+    ],
+    "definition": "leaf, foliage",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "eye_bird": {
+    "displayText": "ẹyẹ",
+    "syllables": [
+      "ẹ",
+      "yẹ"
+    ],
+    "definition": "bird",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "eyin_back": {
+    "displayText": "ẹ̀yìn",
+    "syllables": [
+      "ẹ̀",
+      "yìn"
+    ],
+    "definition": "back",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "fo_break": {
+    "displayText": "fọ́",
+    "syllables": [
+      "fọ́"
+    ],
+    "definition": null,
+    "imageStyles": []
+  },
+  "goomu_gum": {
+    "displayText": "gọ́ọ̀mù",
+    "syllables": [
+      "gọ́",
+      "ọ̀",
+      "mù"
+    ],
+    "definition": null,
+    "imageStyles": []
+  },
+  "guafa_guava": {
+    "displayText": "gúáfà",
+    "syllables": [
+      "gú",
+      "á",
+      "fà"
+    ],
+    "definition": null,
+    "imageStyles": []
+  },
+  "ibepe_papaya": {
+    "displayText": "ìbẹ́pẹ",
+    "syllables": [
+      "ì",
+      "bẹ́",
+      "pẹ"
+    ],
+    "definition": "papaya",
+    "imageStyles": []
+  },
+  "ibusun_bed": {
+    "displayText": "ibùsùn",
+    "syllables": [
+      "i",
+      "bù",
+      "sùn"
+    ],
+    "definition": "bed",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "idodo_navel": {
+    "displayText": "idodo",
+    "syllables": [
+      "i",
+      "do",
+      "do"
+    ],
+    "definition": "navel, belly button",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ifoyin_toothbrush": {
+    "displayText": "ìfọyín",
+    "syllables": [
+      "ì",
+      "fọ",
+      "yín"
+    ],
+    "definition": null,
+    "imageStyles": []
+  },
+  "igbe_april": {
+    "displayText": "Igbe",
+    "syllables": [
+      "i",
+      "gbe"
+    ],
+    "definition": "April, the eleventh month in the Yoruba calendar, the Kọ́jọ́dá",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "igbo_forest": {
+    "displayText": "igbó",
+    "syllables": [
+      "i",
+      "gbó"
+    ],
+    "definition": "forest, bush, grove",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ikoko_pot": {
+    "displayText": "ìkòkò",
+    "syllables": [
+      "ì",
+      "kò",
+      "kò"
+    ],
+    "definition": "pot, multipurpose pot traditionally made of clay.",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ikun_stomach": {
+    "displayText": "ikùn",
+    "syllables": [
+      "i",
+      "kùn"
+    ],
+    "definition": "abdomen, belly",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ile_home": {
+    "displayText": "ilé",
+    "syllables": [
+      "i",
+      "lé"
+    ],
+    "definition": "home, house, abode",
+    "imageStyles": []
+  },
+  "ilekun_door": {
+    "displayText": "ìlẹ̀kùn",
+    "syllables": [
+      "ì",
+      "lẹ̀",
+      "kùn"
+    ],
+    "definition": "door",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "imu_nose": {
+    "displayText": "imú",
+    "syllables": [
+      "i",
+      "mú"
+    ],
+    "definition": "nose",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ina_fire": {
+    "displayText": "iná",
+    "syllables": [
+      "i",
+      "ná"
+    ],
+    "definition": "fire, light",
+    "imageStyles": []
+  },
+  "inu_inside": {
+    "displayText": "inú",
+    "syllables": [
+      "i",
+      "nú"
+    ],
+    "definition": null,
+    "imageStyles": []
+  },
+  "inura_towel": {
+    "displayText": "ìnura",
+    "syllables": [
+      "ì",
+      "nu",
+      "ra"
+    ],
+    "definition": null,
+    "imageStyles": []
+  },
+  "irawo_star": {
+    "displayText": "ìràwọ̀",
+    "syllables": [
+      "ì",
+      "rà",
+      "wọ̀"
+    ],
+    "definition": "star, celestial object, celestial body",
+    "imageStyles": []
+  },
+  "irin_iron": {
+    "displayText": "irin",
+    "syllables": [
+      "i",
+      "rin"
+    ],
+    "definition": "metal (in particular) iron",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "irin_walk": {
+    "displayText": "ìrìn",
+    "syllables": [
+      "ì",
+      "rìn"
+    ],
+    "definition": "walk; stroll",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "itan_thigh": {
+    "displayText": "itan",
+    "syllables": [
+      "i",
+      "tan"
+    ],
+    "definition": "thigh",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "jeun_eat": {
+    "displayText": "jẹun",
+    "syllables": [
+      "jẹ",
+      "un"
+    ],
+    "definition": "to eat food",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "jokoo_sit": {
+    "displayText": "jókòó",
+    "syllables": [
+      "jó",
+      "kò",
+      "ó"
+    ],
+    "definition": "to sit (down)",
+    "imageStyles": []
+  },
+  "kalamu_pen": {
+    "displayText": "kálàmú",
+    "syllables": [
+      "ká",
+      "là",
+      "mú"
+    ],
+    "definition": "pen (writing tool)",
+    "imageStyles": []
+  },
+  "kasu_cashew": {
+    "displayText": "kaṣú",
+    "syllables": [
+      "ka",
+      "ṣú"
+    ],
+    "definition": null,
+    "imageStyles": []
+  },
+  "lo_go": {
+    "displayText": "lọ",
+    "syllables": [
+      "lọ"
+    ],
+    "definition": "to go",
+    "imageStyles": [
+      "cartoon"
     ]
   },
   "maluu_cow": {
@@ -917,19 +635,210 @@
       "ù"
     ],
     "definition": "cow, ox, cattle; (in particular) zebu cow",
-    "components": [
-      "maluu_cow"
+    "imageStyles": []
+  },
+  "moto_automobile": {
+    "displayText": "mọ́tò",
+    "syllables": [
+      "mọ́",
+      "tò"
+    ],
+    "definition": "car",
+    "imageStyles": []
+  },
+  "oba_king": {
+    "displayText": "ọba",
+    "syllables": [
+      "ọ",
+      "ba"
+    ],
+    "definition": "king, queen, monarch",
+    "imageStyles": []
+  },
+  "obe_knife": {
+    "displayText": "ọ̀bẹ",
+    "syllables": [
+      "ọ̀",
+      "bẹ"
+    ],
+    "definition": "knife, blade",
+    "imageStyles": []
+  },
+  "oduduwa_oduduwa": {
+    "displayText": "odùduwà",
+    "syllables": [
+      "o",
+      "dù",
+      "du",
+      "wà"
+    ],
+    "definition": "The legendary ruler (Ọọ̀ni) of Ifẹ̀, he waged a war with Ọbàtálá and gained control of Ifẹ̀, where he became Ọọ̀ni. Because of this and his many descendants who founded modern Yoruba settlements, he is regarded as the father of the Yorùbá people",
+    "imageStyles": []
+  },
+  "ogbon_wisdom": {
+    "displayText": "ọgbọ́n",
+    "syllables": [
+      "ọ",
+      "gbọ́n"
+    ],
+    "definition": "wisdom; sense",
+    "imageStyles": []
+  },
+  "ogede_banana": {
+    "displayText": "ọ̀gẹ̀dè",
+    "syllables": [
+      "ọ̀",
+      "gẹ̀",
+      "dè"
+    ],
+    "definition": "banana, plantain",
+    "imageStyles": []
+  },
+  "ogun_august": {
+    "displayText": "Ògún",
+    "syllables": [
+      "ò",
+      "gún"
+    ],
+    "definition": "August, the third month of the traditional Yoruba calendar, the Kọ́jọ́dá; named in honor of Ògún. Many Ògún festivals are held during this month.",
+    "imageStyles": [
+      "cartoon"
     ]
   },
-  "sibi_spoon": {
-    "displayText": "ṣíbí",
+  "ogun_twenty": {
+    "displayText": "ogún",
     "syllables": [
-      "ṣí",
-      "bí"
+      "o",
+      "gún"
     ],
-    "definition": "spoon",
-    "components": [
-      "sibi_spoon"
+    "definition": "twenty",
+    "imageStyles": []
+  },
+  "oja_market": {
+    "displayText": "ọjà",
+    "syllables": [
+      "ọ",
+      "jà"
+    ],
+    "definition": "market",
+    "imageStyles": []
+  },
+  "ojo_day": {
+    "displayText": "ọjọ́",
+    "syllables": [
+      "ọ",
+      "jọ́"
+    ],
+    "definition": "day",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "oju_eye": {
+    "displayText": "ojú",
+    "syllables": [
+      "o",
+      "jú"
+    ],
+    "definition": "eye",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "okudu_june": {
+    "displayText": "Okúdù",
+    "syllables": [
+      "o",
+      "kú",
+      "dù"
+    ],
+    "definition": "June, the first month of the traditional Yoruba calendar, the Kọ́jọ́dá",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "okuta_stone": {
+    "displayText": "òkúta",
+    "syllables": [
+      "ò",
+      "kú",
+      "ta"
+    ],
+    "definition": "rock, stone",
+    "imageStyles": []
+  },
+  "olongbo_cat": {
+    "displayText": "olóńgbò",
+    "syllables": [
+      "o",
+      "ló",
+      "ń",
+      "gbò"
+    ],
+    "definition": "cat",
+    "imageStyles": []
+  },
+  "ookan_one": {
+    "displayText": "oókan",
+    "syllables": [
+      "o",
+      "ó",
+      "kan"
+    ],
+    "definition": "one (used when counting)",
+    "imageStyles": []
+  },
+  "ope_december": {
+    "displayText": "Ọ̀pẹ",
+    "syllables": [
+      "ọ̀",
+      "pẹ"
+    ],
+    "definition": "December, the seventh month of the traditional Yoruba calendar, the Kọ́jọ́dá",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ori_head": {
+    "displayText": "orí",
+    "syllables": [
+      "o",
+      "rí"
+    ],
+    "definition": "head",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "orun_neck": {
+    "displayText": "ọrùn",
+    "syllables": [
+      "ọ",
+      "rùn"
+    ],
+    "definition": "neck",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "osan_orange": {
+    "displayText": "ọsàn",
+    "syllables": [
+      "ọ",
+      "sàn"
+    ],
+    "definition": "orange (fruit)",
+    "imageStyles": []
+  },
+  "ose_soap": {
+    "displayText": "ọṣẹ",
+    "syllables": [
+      "ọ",
+      "ṣẹ"
+    ],
+    "definition": "soap",
+    "imageStyles": [
+      "cartoon"
     ]
   },
   "osupa_moon": {
@@ -940,104 +849,135 @@
       "pá"
     ],
     "definition": "moon",
-    "components": [
-      "osupa_moon"
-    ]
+    "imageStyles": []
   },
-  "goomu_gum": {
-    "displayText": "gọ́ọ̀mù",
+  "owawa_october": {
+    "displayText": "Ọ̀wàwà",
     "syllables": [
-      "gọ́",
       "ọ̀",
-      "mù"
+      "wà",
+      "wà"
     ],
-    "components": [
-      "goomu_gum"
+    "definition": null,
+    "imageStyles": [
+      "cartoon"
     ]
   },
-  "inura_towel": {
-    "displayText": "ìnura",
-    "syllables": [
-      "ì",
-      "nu",
-      "ra"
-    ],
-    "components": [
-      "inura_towel"
-    ]
-  },
-  "ina_fire": {
-    "displayText": "iná",
-    "syllables": [
-      "i",
-      "ná"
-    ],
-    "definition": "fire, light",
-    "components": [
-      "ina_fire"
-    ]
-  },
-  "oja_market": {
-    "displayText": "ọjà",
+  "owewe_september": {
+    "displayText": "Ọwẹ́wẹ",
     "syllables": [
       "ọ",
-      "jà"
+      "wẹ́",
+      "wẹ"
     ],
-    "definition": "market",
-    "components": [
-      "oja_market"
+    "definition": "September, the third month of the traditional Yoruba calendar, the Kọ́jọ́dá",
+    "imageStyles": [
+      "cartoon"
     ]
   },
-  "obe_knife": {
-    "displayText": "ọ̀bẹ",
+  "owo_hand": {
+    "displayText": "ọwọ",
     "syllables": [
-      "ọ̀",
-      "bẹ"
+      "ọ",
+      "wọ"
     ],
-    "definition": "knife, blade",
-    "components": [
-      "obe_knife"
+    "definition": "hand",
+    "imageStyles": [
+      "cartoon"
     ]
   },
-  "ese_leg": {
-    "displayText": "ẹsẹ̀",
+  "pako_timber": {
+    "displayText": "pákó",
     "syllables": [
+      "pá",
+      "kó"
+    ],
+    "definition": "wood, plank, wooden board",
+    "imageStyles": []
+  },
+  "pele_sorry": {
+    "displayText": "pẹ̀lẹ́",
+    "syllables": [
+      "pẹ̀",
+      "lẹ́"
+    ],
+    "definition": "sorry (used to apologize or express condolence)",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "pepeye_duck": {
+    "displayText": "pẹ́pẹ́yẹ",
+    "syllables": [
+      "pẹ́",
+      "pẹ́",
+      "yẹ"
+    ],
+    "definition": "duck",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "ra_crawl": {
+    "displayText": "rá",
+    "syllables": [
+      "rá"
+    ],
+    "definition": "to crawl",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "redio_radio": {
+    "displayText": "rédíò",
+    "syllables": [
+      "ré",
+      "dí",
+      "ò"
+    ],
+    "definition": null,
+    "imageStyles": []
+  },
+  "sare_run": {
+    "displayText": "sáré",
+    "syllables": [
+      "sá",
+      "ré"
+    ],
+    "definition": "to run",
+    "imageStyles": [
+      "cartoon"
+    ]
+  },
+  "seere_january": {
+    "displayText": "Ṣẹẹrẹ",
+    "syllables": [
+      "ṣẹ",
       "ẹ",
-      "sẹ̀"
+      "rẹ"
     ],
-    "definition": "foot, leg",
-    "components": [
-      "ese_leg"
+    "definition": null,
+    "imageStyles": [
+      "cartoon"
     ]
   },
-  "aso_cloth": {
-    "displayText": "aṣọ",
+  "sibi_spoon": {
+    "displayText": "ṣíbí",
     "syllables": [
-      "a",
-      "ṣọ"
+      "ṣí",
+      "bí"
     ],
-    "definition": "any cloth, fabric, textile",
-    "components": [
-      "aso_cloth"
-    ]
+    "definition": "spoon",
+    "imageStyles": []
   },
-  "fo_break": {
-    "displayText": "fọ́",
+  "wa_come": {
+    "displayText": "wá",
     "syllables": [
-      "fọ́"
+      "wá"
     ],
-    "components": [
-      "fo_break"
-    ]
-  },
-  "inu_inside": {
-    "displayText": "inú",
-    "syllables": [
-      "i",
-      "nú"
-    ],
-    "components": [
-      "inu_inside"
+    "definition": "come",
+    "imageStyles": [
+      "cartoon"
     ]
   }
 }

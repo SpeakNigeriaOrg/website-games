@@ -5,7 +5,7 @@
 // with this page (small, and their validSpeakers/validStyles are
 // meaningful only if generated against the bucket's real, just-verified
 // state - see that script's header).
-const BASE_URL = "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/";
+const BASE_URL = "https://gamemedia.speaknigeria.org/";
 
 // These can eventually be tied to a UI dropdown menu
 let CURRENT_SPEAKER = "speaker1"; 

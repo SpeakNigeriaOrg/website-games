@@ -1,40 +1,48 @@
 [
   {
-    "levelId": "Level 1: Animals (Ẹranko)",
-    "validSpeakers": [],
-    "validStyles": [
-      "cartoon"
-    ],
-    "words": [
-      "aja_dog",
-      "alangba_lizard",
-      "pepeye_duck",
-      "eye_bird",
-      "ejo_snake",
-      "esin_horse"
-    ]
-  },
-  {
-    "levelId": "Level 2: The Home & Objects (Nǹkan Ilé)",
+    "levelId": "Level 1: Animals (Ẹranko) — speaker2",
+    "category": "themed",
     "validSpeakers": [
       "speaker2"
     ],
-    "validStyles": [
-      "cartoon"
-    ],
     "words": [
-      "baluwe_bathroom",
-      "ibusun_bed",
-      "ilekun_door",
-      "aso_cloth",
-      "ose_soap"
+      "aja_dog",
+      "eye_bird",
+      "ejo_snake",
+      "esin_horse",
+      "pepeye_duck"
     ]
   },
   {
-    "levelId": "Level 3: Body Parts (Ẹ̀yà Ara)",
-    "validSpeakers": [],
-    "validStyles": [
-      "cartoon"
+    "levelId": "Level 2: The Home & Objects (Nǹkan Ilé) — speaker2",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "aso_cloth",
+      "baluwe_bathroom",
+      "ibusun_bed",
+      "ilekun_door"
+    ]
+  },
+  {
+    "levelId": "Level 2: The Home & Objects (Nǹkan Ilé) — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "aso_cloth",
+      "ose_soap",
+      "ibusun_bed"
+    ]
+  },
+  {
+    "levelId": "Level 3: Body Parts (Ẹ̀yà Ara) — speaker1",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker1"
     ],
     "words": [
       "ori_head",
@@ -43,54 +51,47 @@
       "eti_ear",
       "enu_mouth",
       "orun_neck",
-      "ejika_shoulder",
       "owo_hand",
       "ikun_stomach",
-      "ese_leg"
+      "ejika_shoulder"
     ]
   },
   {
-    "levelId": "Level 4: Body Parts 2 (Ẹ̀yà Ara)",
+    "levelId": "Level 4: Body Parts 2 (Ẹ̀yà Ara) — speaker2",
+    "category": "themed",
     "validSpeakers": [
       "speaker2"
     ],
-    "validStyles": [
-      "cartoon"
-    ],
     "words": [
-      "idodo_navel",
       "itan_thigh",
       "aya_chest",
       "ete_lip",
       "eyin_back",
+      "idodo_navel",
       "eekanna_nail"
     ]
   },
   {
-    "levelId": "Level 5: Action Words (Ọ̀rọ̀ Ìṣe)",
+    "levelId": "Level 5: Action Words (Ọ̀rọ̀ Ìṣe) — speaker2",
+    "category": "themed",
     "validSpeakers": [
       "speaker2"
     ],
-    "validStyles": [
-      "cartoon"
-    ],
     "words": [
-      "dide_stand",
-      "jeun_eat",
       "lo_go",
       "ra_crawl",
-      "sare_run",
       "wa_come",
+      "dide_stand",
+      "jeun_eat",
+      "sare_run",
       "irin_walk"
     ]
   },
   {
-    "levelId": "Level 6: Nature & Environment (Àyíká)",
+    "levelId": "Level 6: Nature & Environment (Àyíká) — speaker2",
+    "category": "themed",
     "validSpeakers": [
       "speaker2"
-    ],
-    "validStyles": [
-      "cartoon"
     ],
     "words": [
       "ewe_leaf",
@@ -101,41 +102,431 @@
     ]
   },
   {
-    "levelId": "Level 7: Everyday Life & Food (Ìgbésí Ayé)",
-    "validSpeakers": [],
-    "validStyles": [
-      "cartoon"
+    "levelId": "Level 7: Everyday Life & Food (Ìgbésí Ayé) — speaker2",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker2"
     ],
     "words": [
       "pele_sorry",
-      "e_joo_please",
       "jeun_eat",
       "ewa_beans",
       "ewa_beauty"
     ]
   },
   {
-    "levelId": "Level 8: Time & Months (Àkókò àti Oṣù)",
+    "levelId": "Level 8: Time & Months (Àkókò àti Oṣù) — speaker2",
+    "category": "themed",
     "validSpeakers": [
       "speaker2"
     ],
-    "validStyles": [
-      "cartoon"
-    ],
     "words": [
       "ojo_day",
+      "igbe_april",
+      "ogun_august",
+      "ope_december",
       "seere_january",
       "erele_february",
-      "erena_march",
-      "igbe_april",
       "ebibi_may",
       "okudu_june",
       "agemo_july",
-      "ogun_august",
       "owewe_september",
       "owawa_october",
+      "beelu_november"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 1 — speaker1",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker1"
+    ],
+    "words": [
+      "awo_plate",
+      "enu_mouth",
+      "eti_ear",
+      "ikun_stomach",
+      "imu_nose",
+      "oju_eye",
+      "ori_head",
+      "orun_neck",
+      "owo_hand",
+      "ejika_shoulder"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 1 — speaker2",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "lo_go",
+      "ra_crawl",
+      "wa_come",
+      "aja_dog",
+      "aso_cloth",
+      "aya_chest",
+      "dide_stand",
+      "ejo_snake",
+      "ewe_leaf",
+      "agemo_july"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 2 — speaker2",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "esin_horse",
+      "ewa_beauty",
+      "ewa_beans",
+      "ete_lip",
+      "eye_bird",
+      "ope_december",
+      "eyin_back",
+      "owawa_october",
+      "ebibi_may",
+      "erele_february"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 3 — speaker2",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "igbe_april",
+      "igbo_forest",
+      "irin_iron",
+      "itan_thigh",
+      "irin_walk",
+      "jeun_eat",
+      "ogun_august",
+      "ibusun_bed",
+      "idodo_navel",
+      "ilekun_door"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 4 — speaker2",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "ojo_day",
+      "oju_eye",
+      "pele_sorry",
+      "sare_run",
+      "okudu_june",
+      "owewe_september",
+      "baluwe_bathroom",
       "beelu_november",
-      "ope_december"
+      "pepeye_duck",
+      "eekanna_nail"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 1 — speaker3",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "aso_cloth",
+      "digi_mirror",
+      "ese_leg",
+      "ile_home",
+      "ina_fire",
+      "kasu_cashew",
+      "moto_automobile",
+      "adiye_chicken",
+      "buredi_bread",
+      "ibusun_bed"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 2 — speaker3",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "oba_king",
+      "ose_soap",
+      "obe_knife",
+      "ogbon_wisdom",
+      "oja_market",
+      "osan_orange",
+      "ogun_twenty",
+      "goomu_gum",
+      "ogede_banana",
+      "ookan_one"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 3 — speaker3",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "pako_timber",
+      "sibi_spoon",
+      "osupa_moon",
+      "okuta_stone",
+      "redio_radio",
+      "agunfon_giraffe",
+      "esinsin_fly",
+      "guafa_guava",
+      "ibepe_papaya",
+      "alubosa_onion"
+    ]
+  },
+  {
+    "levelId": "Syllable Practice 4 — speaker3",
+    "category": "syllable_reinforcement",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "ifoyin_toothbrush",
+      "ikoko_pot",
+      "inura_towel",
+      "irawo_star",
+      "jokoo_sit",
+      "kalamu_pen",
+      "maluu_cow",
+      "oduduwa_oduduwa",
+      "olongbo_cat"
+    ]
+  },
+  {
+    "levelId": "Tone Pattern (mid-high) — speaker1",
+    "category": "tone_pattern",
+    "validSpeakers": [
+      "speaker1"
+    ],
+    "words": [
+      "eti_ear",
+      "imu_nose",
+      "oju_eye",
+      "ori_head"
+    ]
+  },
+  {
+    "levelId": "Tone Pattern (mid-high) — speaker2",
+    "category": "tone_pattern",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "aja_dog",
+      "ewe_leaf",
+      "igbo_forest",
+      "ojo_day",
+      "oju_eye"
+    ]
+  },
+  {
+    "levelId": "Tone Pattern (mid-mid) — speaker2",
+    "category": "tone_pattern",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "aso_cloth",
+      "esin_horse",
+      "eye_bird",
+      "igbe_april",
+      "irin_iron",
+      "itan_thigh",
+      "jeun_eat"
+    ]
+  },
+  {
+    "levelId": "Tone Pattern (low-low) — speaker2",
+    "category": "tone_pattern",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "aya_chest",
+      "ete_lip",
+      "ewa_beans",
+      "eyin_back",
+      "irin_walk"
+    ]
+  },
+  {
+    "levelId": "Tone Pattern (mid-high) — speaker3",
+    "category": "tone_pattern",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "ile_home",
+      "ina_fire",
+      "kasu_cashew",
+      "ogbon_wisdom",
+      "ogun_twenty"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 1 — speaker1",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker1"
+    ],
+    "words": [
+      "ikun_stomach",
+      "ejika_shoulder",
+      "oju_eye",
+      "owo_hand",
+      "ori_head",
+      "awo_plate",
+      "enu_mouth",
+      "orun_neck"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 2 — speaker1",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker1"
+    ],
+    "words": [
+      "oju_eye",
+      "ikun_stomach",
+      "imu_nose",
+      "enu_mouth",
+      "eti_ear",
+      "ejika_shoulder",
+      "ikoko_pot",
+      "awo_plate"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 3 — speaker1",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker1"
+    ],
+    "words": [
+      "imu_nose",
+      "ikun_stomach",
+      "ejika_shoulder",
+      "oju_eye",
+      "enu_mouth",
+      "ikoko_pot",
+      "orun_neck",
+      "awo_plate"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 1 — speaker2",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "jeun_eat",
+      "aja_dog",
+      "oju_eye",
+      "dide_stand",
+      "ejo_snake",
+      "ilekun_door",
+      "pepeye_duck",
+      "owawa_october"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 2 — speaker2",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "agemo_july",
+      "owawa_october",
+      "ejo_snake",
+      "ete_lip",
+      "ope_december",
+      "aso_cloth",
+      "okudu_june",
+      "ewa_beauty"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 3 — speaker2",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "pele_sorry",
+      "ete_lip",
+      "okudu_june",
+      "igbe_april",
+      "ojo_day",
+      "ibusun_bed",
+      "aja_dog",
+      "sare_run"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 1 — speaker3",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "kalamu_pen",
+      "adiye_chicken",
+      "ose_soap",
+      "osan_orange",
+      "buredi_bread",
+      "ese_leg",
+      "esinsin_fly",
+      "agunfon_giraffe"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 2 — speaker3",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "ogede_banana",
+      "ogun_twenty",
+      "esinsin_fly",
+      "pako_timber",
+      "irawo_star",
+      "ogbon_wisdom",
+      "ibusun_bed",
+      "redio_radio"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 3 — speaker3",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "ina_fire",
+      "olongbo_cat",
+      "jokoo_sit",
+      "oja_market",
+      "ifoyin_toothbrush",
+      "okuta_stone",
+      "ile_home",
+      "adiye_chicken"
     ]
   }
 ]
