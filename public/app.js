@@ -198,9 +198,14 @@ function loadWord(wordIndex) {
     };
     imgElement.src = currentWord.imageUrl;
     
-    document.getElementById('feedback-message').innerText = ""; 
+    const feedbackEl = document.getElementById('feedback-message');
+    feedbackEl.innerText = "";
+    feedbackEl.classList.remove('correct', 'skipping');
+    document.getElementById('queue-slots').classList.remove('correct');
+    document.getElementById('correct-badge').classList.remove('show');
+
     renderQueue();
-    isTransitioning = false; 
+    isTransitioning = false;
 
     // CHANGE: Removed playFullWordAudio() from here so it doesn't auto-play
 }
@@ -294,23 +299,63 @@ function skipWord() {
     
     const feedbackEl = document.getElementById('feedback-message');
     feedbackEl.innerText = "Skipping word...";
-    feedbackEl.style.color = "#c62828"; // Make the text red to indicate a skip
-    
+    feedbackEl.classList.add('skipping');
+
     // Wait a brief moment so they can read the message, then move on
     setTimeout(() => {
-        feedbackEl.style.color = ""; // Reset text color back to default
-        moveToNextWord();
+        moveToNextWord(); // loadWord() clears the 'skipping' class on the next word
     }, 800);
 }
 
 function checkWinCondition() {
-    const isMatch = queue.length === maxSlots && 
+    const isMatch = queue.length === maxSlots &&
                     queue.every((val, index) => val === currentWord.targetSyllables[index]);
-    
+
     if (isMatch) {
-        isTransitioning = true; 
-        document.getElementById('feedback-message').innerText = "Correct! Great job!";
-        playWinningSequence(); 
+        isTransitioning = true;
+
+        // Stop the last syllable's click sound immediately - it used to
+        // keep playing right into the full-word repeat in
+        // playWinningSequence below, making the two audibly overlap.
+        if (currentPlayingAudio) {
+            currentPlayingAudio.pause();
+            currentPlayingAudio.currentTime = 0;
+        }
+
+        const feedbackEl = document.getElementById('feedback-message');
+        feedbackEl.innerText = "Correct! Great job!";
+        feedbackEl.classList.add('correct');
+        document.getElementById('queue-slots').classList.add('correct');
+        document.getElementById('correct-badge').classList.add('show');
+
+        playDing();
+        playWinningSequence();
+    }
+}
+
+// Simple two-note ascending chime synthesized with the Web Audio API -
+// no external sound asset needed. Plays immediately on a correct answer,
+// distinct from (and well before) the full-word audio repeat.
+let dingAudioCtx = null;
+function playDing() {
+    try {
+        dingAudioCtx = dingAudioCtx || new (window.AudioContext || window.webkitAudioContext)();
+        const now = dingAudioCtx.currentTime;
+        [660, 880].forEach((freq, i) => {
+            const osc = dingAudioCtx.createOscillator();
+            const gain = dingAudioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = freq;
+            const start = now + i * 0.12;
+            gain.gain.setValueAtTime(0, start);
+            gain.gain.linearRampToValueAtTime(0.25, start + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.001, start + 0.3);
+            osc.connect(gain).connect(dingAudioCtx.destination);
+            osc.start(start);
+            osc.stop(start + 0.32);
+        });
+    } catch (err) {
+        console.warn('Could not play the correct-answer chime:', err);
     }
 }
 

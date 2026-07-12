@@ -1,15 +1,107 @@
 /* ==========================================
+   BASE / LAYOUT
+   Brand tokens come from tokens.css (vendored copy of
+   yorubadict/public/_tokens.css). Layout is deliberately compact:
+   the top bar is a single slim row, not a hero block, so the
+   actual game gets almost the whole viewport.
+   ========================================== */
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+}
+
+#app-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 12px 24px;
+}
+
+#top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 4px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+#brand-mark {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--step--1);
+    color: var(--brand-indigo);
+    opacity: 0.75;
+    letter-spacing: 0.02em;
+}
+
+#theme-selector {
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    background: var(--surface);
+    color: var(--text-primary);
+}
+
+#game-container {
+    text-align: center;
+}
+
+/* ==========================================
+   START OVERLAY
+   ========================================== */
+#start-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(251, 246, 236, 0.85); /* --background-primary, translucent */
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#start-overlay button {
+    padding: 20px 40px;
+    font-size: var(--step-1);
+    font-family: var(--font-display);
+    font-weight: 600;
+    background-color: var(--brand-indigo);
+    color: var(--text-tertiary);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#start-overlay button:hover {
+    background-color: var(--brand-indigo-deep);
+    transform: scale(1.05);
+}
+
+/* ==========================================
    IMAGE PROMPT AREA
    ========================================== */
 .prompt-container {
     position: relative;
     width: 200px;
     height: 200px;
-    margin: 0 auto 10px auto;
-    border-radius: 16px;
+    margin: 0 auto;
+    border-radius: var(--radius);
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow);
     transition: transform 0.1s ease;
 }
 
@@ -30,11 +122,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Darkens the image slightly so the white icon pops */
+    background: rgba(21, 26, 61, 0.3); /* --brand-indigo-deep, translucent */
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.8;
+    opacity: 0.75;
     transition: opacity 0.2s ease;
 }
 
@@ -42,95 +134,170 @@
     opacity: 1;
 }
 
-#start-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Semi-transparent grey/white background */
-    background: rgba(255, 255, 255, 0.7); 
-    /* Blur effect for that "pro" look */
-    backdrop-filter: blur(5px);
+/* Correct-answer checkmark badge - hidden by default, shown briefly via
+   JS toggling .show (see app.js's playWinningSequence). */
+.correct-badge {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 246, 236, 0.55);
+    opacity: 0;
+    transform: scale(0.6);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.correct-badge.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==========================================
+   QUEUE SLOTS
+   ========================================== */
+.slots-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-#start-overlay button {
-    padding: 20px 40px;
-    font-size: 1.5rem;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
-}
-
-#start-overlay button:hover {
-    transform: scale(1.05);
-}
-
-.slots-container {
-    display: flex; 
-    justify-content: center; 
-    gap: 10px; 
-    margin-bottom: 10px; /* Reduced to pull things closer */
-    min-height: 50px;    /* Reduced to shrink the empty space */
+    gap: 8px;
+    margin: 10px 0;
+    min-height: 46px;
 }
 
 .slot {
     width: 40px;
     height: 40px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--border-subtle);
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     font-weight: bold;
+    color: var(--text-primary);
+    transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+/* Applied to every filled slot the instant a win is detected, for a
+   clear, immediate visual "yes, that's right" independent of the
+   text feedback message. */
+.slots-container.correct .slot {
+    border-color: var(--accent-courses);
+    border-style: solid;
+    background: rgba(47, 122, 77, 0.12); /* --accent-courses, translucent */
+    transform: scale(1.08);
+}
+
+/* ==========================================
+   ACTION ROW / FEEDBACK
+   ========================================== */
+#action-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+#action-row button {
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--step--1);
+    font-family: var(--font-body);
+    border: 1px solid var(--border-subtle);
+    background: var(--surface);
+    color: var(--text-secondary);
+    transition: background-color 0.15s;
+}
+
+#hint-btn:hover { background: var(--background-secondary); }
+
+#skip-btn {
+    border-color: rgba(198, 56, 90, 0.35); /* --accent-games */
+    color: var(--accent-games);
+}
+#skip-btn:hover { background: rgba(198, 56, 90, 0.08); }
+
+#feedback-message {
+    font-size: var(--step-0);
+    font-weight: 700;
+    min-height: 24px;
+    margin-bottom: 6px;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+#feedback-message.skipping {
+    color: var(--accent-games);
+}
+
+#feedback-message.correct {
+    color: var(--accent-courses);
 }
 
 /* ==========================================
    TONAL SYLLABLE MATRIX
+   Each tone gets its own bordered panel with a colored accent bar and
+   an explicit label + pitch glyph, rather than relying on button
+   color alone to convey the high/mid/low split.
    ========================================== */
 .syllable-matrix {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Space between tone rows */
-    margin-top: 20px;
+    gap: 10px;
+    margin-top: 12px;
 }
 
 .tone-group {
     text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-left-width: 5px;
+    border-radius: 10px;
+    padding: 8px 10px 10px;
 }
 
-.tone-group h3 {
-    margin: 0 0 10px 5px;
-    font-size: 0.9rem;
-    color: #666;
+.tone-group-high { border-left-color: var(--accent-games); }
+.tone-group-mid  { border-left-color: var(--text-secondary); }
+.tone-group-low  { border-left-color: var(--accent-videos); }
+
+.tone-label {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 0 0 6px 2px;
+    font-size: var(--step--1);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
 }
 
+.tone-glyph {
+    font-family: var(--font-mono);
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.tone-group-high .tone-label { color: var(--accent-games); }
+.tone-group-low  .tone-label { color: var(--accent-videos); }
+
+/* Pills sit close together (small gap) rather than the wide-spaced
+   grid before, and are larger/chunkier for easier tapping. */
 .bank-row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(66px, 1fr));
+    gap: 5px;
 }
 
-/* Tone-specific visual cues */
-.btn-high { background-color: #ffeef0; border: 2px solid #ffccd1; color: #d32f2f; }
-.btn-mid  { background-color: #f5f5f5; border: 2px solid #e0e0e0; color: #333; }
-.btn-low  { background-color: #e3f2fd; border: 2px solid #bbdefb; color: #1565c0; }
-
 .bank-row button {
-    padding: 12px;
-    border-radius: 12px;
-    font-weight: bold;
+    padding: 14px 10px;
+    border-radius: 10px;
+    font-size: var(--step-0);
+    font-family: var(--font-yoruba);
+    font-weight: 700;
     cursor: pointer;
     transition: transform 0.1s;
 }
@@ -138,3 +305,9 @@
 .bank-row button:active {
     transform: scale(0.92);
 }
+
+/* Tone-specific button fills, harmonized with the brand accent
+   palette (same three accents as the panel border/label above). */
+.btn-high { background-color: rgba(198, 56, 90, 0.10); border: 2px solid rgba(198, 56, 90, 0.35); color: var(--accent-games); }
+.btn-mid  { background-color: var(--background-secondary); border: 2px solid var(--border-subtle); color: var(--text-primary); }
+.btn-low  { background-color: rgba(46, 111, 158, 0.10); border: 2px solid rgba(46, 111, 158, 0.35); color: var(--accent-videos); }
