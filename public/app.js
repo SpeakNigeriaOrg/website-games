@@ -1,4 +1,10 @@
 // --- GLOBAL CONFIGURATION ---
+// Audio/image bytes live in R2, not this deploy - publishToR2.mjs is the
+// real (credential-driven, laptop-independent) automation of that upload
+// step. Only vocab.json/syllables.json/sessions.json ship same-origin
+// with this page (small, and their validSpeakers/validStyles are
+// meaningful only if generated against the bucket's real, just-verified
+// state - see that script's header).
 const BASE_URL = "https://pub-5da9d55f185e47e790045ceb1be1facd.r2.dev/";
 
 // These can eventually be tied to a UI dropdown menu
@@ -45,22 +51,58 @@ async function loadGame() {
         const dictionarySyllables = await syllablesResponse.json();
         const sessions = await sessionsResponse.json();
         
-        gameData = sessions.map(session => {
+        // A level with no validSpeakers has no guaranteed-complete audio for
+        // ANY speaker - previously this fell through to a hardcoded default
+        // speaker and played anyway, with missing syllables silently dropped
+        // from the tappable bank (console.warn only, no visible error). Skip
+        // it outright instead: the exporter (exportGameContent.mjs) only
+        // ever emits levels it has already verified are fully covered for
+        // at least one speaker, so an empty validSpeakers here would mean
+        // hand-edited/stale session data, not a normal case to paper over.
+        const playableSessions = sessions.filter(session => session.validSpeakers && session.validSpeakers.length > 0);
+        const skippedCount = sessions.length - playableSessions.length;
+        if (skippedCount > 0) {
+            console.warn(`[Unplayable Level] Skipped ${skippedCount} level(s) with no validSpeakers.`);
+        }
+
+        gameData = playableSessions.map(session => {
             let sessionWords = [];
             let sessionSyllablePool = [];
 
-            // Automatically determine the correct speaker for this specific level
-            let levelSpeaker = CURRENT_SPEAKER; 
-            if (session.validSpeakers && session.validSpeakers.length > 0) {
-                levelSpeaker = session.validSpeakers[0]; 
-            }
-            
+            // Prefer the player's chosen speaker (CURRENT_SPEAKER - settable
+            // via a future voice-picker UI) if this level actually supports
+            // it; otherwise fall back to whichever speaker it does support.
+            // Never falls through to an unsupported/hardcoded speaker now -
+            // playableSessions above already guarantees validSpeakers is
+            // non-empty and every listed speaker is fully covered.
+            let levelSpeaker = session.validSpeakers.includes(CURRENT_SPEAKER)
+                ? CURRENT_SPEAKER
+                : session.validSpeakers[0];
+
             session.words.forEach(wordId => {
                 const wordData = dictionaryWords[wordId];
                 
                 if (wordData) {
                     const dynamicAudioUrl = `${BASE_URL}words/${levelSpeaker}/${wordId}.wav`;
-                    const dynamicImageUrl = `${BASE_URL}images/${CURRENT_IMAGE_STYLE}/${wordId}.png`;
+                    // Not every word has art in every style yet (vocab.json's
+                    // imageStyles lists which ones actually exist for this
+                    // word - exportGameContent.mjs, decision 7). Prefer the
+                    // player's chosen style if covered; otherwise fall back
+                    // to whichever style IS covered rather than requesting a
+                    // path guaranteed to 404. If no style has art at all,
+                    // request the placeholder directly rather than relying
+                    // solely on onerror for the always-missing case.
+                    const imageStyles = wordData.imageStyles || [];
+                    const chosenStyle = imageStyles.includes(CURRENT_IMAGE_STYLE)
+                        ? CURRENT_IMAGE_STYLE
+                        : imageStyles[0];
+                    // placeholder.png ships same-origin with this page (it's
+                    // not in the bucket - see index.html's asset layout), so
+                    // it's deliberately NOT prefixed with BASE_URL even
+                    // though real word images are.
+                    const dynamicImageUrl = chosenStyle
+                        ? `${BASE_URL}images/${chosenStyle}/${wordId}.png`
+                        : `images/placeholder.png`;
 
                     // ADDITION: Pre-calculate the tones for this word to use in the hint
                     const targetTones = wordData.syllables.map(syllable => {
