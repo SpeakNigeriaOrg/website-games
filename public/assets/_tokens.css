@@ -1,0 +1,50 @@
+/* =========================================================
+   Speak Nigeria — unified design tokens
+   Vendored copy of website/assets/_tokens.css - this repo (the
+   games landing page + the syllable game itself) deploys separately
+   from `website`, so there's no build step to import it directly.
+   Keep this in sync by hand if the source file changes (same
+   pattern as public/syllables/tokens.css, vendored from yorubadict).
+   ========================================================= */
+
+:root {
+  /* ===== PRIMARY BRAND ===== */
+  --brand-indigo:       #21295C;  /* adire dye base — use everywhere */
+  --brand-indigo-deep:  #151a3d;  /* hover / dark-section shade      */
+  --brand-accent:       #E9A82C;  /* saffron — primary accent / joy  */
+  --brand-accent-hover: #F0B544;  /* lightened saffron — btn hover   */
+  --brand-accent-deep:  #9A6A08;  /* darkened saffron — accessible on light bg */
+
+  /* ===== SEMANTIC COLORS ===== */
+  --background-primary:   #FBF6EC;  /* warm paper — page ground       */
+  --background-secondary: #F3ECDC;  /* slightly deeper — cards/panels */
+  --surface:               #FFFDF8;  /* raised cards/panels on paper   */
+  --text-primary:   #241F1C;  /* body text          */
+  --text-secondary: #55504A;  /* meta, hints         */
+  --text-tertiary:  #EFE7D6;  /* light text over indigo */
+  --border-subtle:  #E2D9C6;  /* hairline rules */
+
+  /* ===== OFFERING ACCENTS (structure = information) ===== */
+  --accent-courses: #2F7A4D;  /* palm green   */
+  --accent-games:   #C6385A;  /* hibiscus red */
+  --accent-videos:  #2E6F9E;  /* sky blue     */
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-yoruba:  'Noto Serif', 'Charis SIL', Georgia, serif; /* robust diacritic support */
+
+  /* ===== SPACING / TYPE SCALE ===== */
+  --step--1: clamp(0.83rem, 0.79rem + 0.2vw, 0.94rem);
+  --step-0:  clamp(1rem, 0.95rem + 0.25vw, 1.14rem);
+  --step-1:  clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.5rem, 1.3rem + 1vw, 2.1rem);
+  --step-3:  clamp(2rem, 1.6rem + 2vw, 3.1rem);
+  --step-4:  clamp(2.6rem, 1.9rem + 3.4vw, 4.6rem);
+
+  /* ===== LAYOUT ===== */
+  --wrap: 1180px;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(21, 26, 61, 0.06), 0 12px 30px rgba(21, 26, 61, 0.08);
+}

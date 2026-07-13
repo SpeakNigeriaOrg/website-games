@@ -1,140 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speak Nigeria - Syllable Game</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="tokens.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>Speak Nigeria Games — free language-learning games</title>
+  <meta name="description" content="Free games that help children learn Nigerian languages, starting with Yoruba. Built in the open, and growing with the help of volunteers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600&family=Noto+Serif:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-    <div id="start-overlay">
-        <div id="playlist-menu">
-            <h2>Choose a playlist</h2>
-            <!-- Populated/enabled by app.js once sessions.json loads and
-                 real per-category level counts are known (see
-                 initializePlaylistMenu) - category values match
-                 sessions.json's own `category` field exactly. -->
-            <button class="playlist-btn" data-category="themed" onclick="selectPlaylist('themed')" disabled>Themed Levels</button>
-            <button class="playlist-btn" data-category="syllable_reinforcement" onclick="selectPlaylist('syllable_reinforcement')" disabled>Syllable Practice</button>
-            <button class="playlist-btn" data-category="tone_pattern" onclick="selectPlaylist('tone_pattern')" disabled>Tone Patterns</button>
-            <button class="playlist-btn" data-category="endless_practice" onclick="selectPlaylist('endless_practice')" disabled>Random</button>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Header is a manually-synced copy of website/index.html's own header
+       (that repo copy-pastes it identically across all its pages too, with
+       no shared partial/build step - see this project's own notes on why
+       that's an accepted, low-frequency-change tradeoff). Every link EXCEPT
+       Games must be an absolute https://speaknigeria.org/... URL, since
+       this page is served from a different origin (games.speaknigeria.org). -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="https://speaknigeria.org/">
+        <span class="brand-mark"><svg class="brand-flower" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Speak Nigeria">
+        <g fill="#E9A82C">
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z"/>
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z" transform="rotate(72 32 33)"/>
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z" transform="rotate(144 32 33)"/>
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z" transform="rotate(216 32 33)"/>
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z" transform="rotate(288 32 33)"/>
+        </g>
+        <circle cx="32" cy="33" r="6.5" fill="#C6385A"/>
+        <circle cx="32" cy="33" r="2.6" fill="#E9A82C"/>
+      </svg></span>
+        <span class="brand-name">Speak Nigeria</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="https://speaknigeria.org/">Home</a></li>
+          <li><a href="https://speaknigeria.org/about.html">About</a></li>
+          <li><a href="https://speaknigeria.org/languages.html">Languages</a></li>
+          <li><a href="https://speaknigeria.org/courses.html">Courses</a></li>
+          <li><a href="/" aria-current="page">Games</a></li>
+          <li><a href="https://speaknigeria.org/resources.html">Resources</a></li>
+          <li><a href="https://yorubadict.com" target="_blank" rel="noopener">Yoruba Dictionary</a></li>
+          <li><a href="https://speaknigeria.org/get-involved.html">Get Involved</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="https://speaknigeria.org/get-involved.html">Get involved</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    </div>
+    <div class="wrap mobile-menu">
+      <a href="https://speaknigeria.org/">Home</a>
+      <a href="https://speaknigeria.org/about.html">About</a>
+      <a href="https://speaknigeria.org/languages.html">Languages</a>
+      <a href="https://speaknigeria.org/courses.html">Courses</a>
+      <a href="/" aria-current="page">Games</a>
+      <a href="https://speaknigeria.org/resources.html">Resources</a>
+      <a href="https://yorubadict.com" target="_blank" rel="noopener">Yoruba Dictionary</a>
+      <a href="https://speaknigeria.org/get-involved.html">Get Involved</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <p class="eyebrow" style="color:var(--accent-games);">Free &amp; open-source</p>
+      <h1>Learn Nigerian languages through play.</h1>
+      <p class="intro" style="margin-top:1rem;">Real native-speaker audio, real words, built as free games anyone can pick up - starting with Yoruba, and growing language by language as volunteers help extend it.</p>
+    </div>
+
+    <!-- GAMES GRID - one real card today; more get added here as they ship -->
+    <section class="section" style="padding-top:0;">
+      <div class="wrap">
+        <p class="eyebrow">Available now</p>
+        <div class="cards">
+          <article class="card accent-games">
+            <span class="tag games">Syllable Builder</span>
+            <h3>Build the word, syllable by syllable</h3>
+            <p>Listen to a word spoken by a real Yoruba speaker, then tap its syllables in order - sorted by tone, with a hint if you need it. Free to play, no sign-up.</p>
+            <a class="card-link" href="/syllables/">Play Syllable Builder →</a>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTEER CTA -->
+    <section class="section">
+      <div class="wrap">
+        <div class="highlight">
+          <span class="tag games" style="display:inline-block; margin-bottom:0.8rem;">Help us grow</span>
+          <h3>We need volunteers to bring these games to more languages.</h3>
+          <p>Syllable Builder is built to grow past Yoruba - to Igbo, Hausa, Bini, Ijaw, Efik, and beyond. That takes speakers to record words, translators to adapt content, and curators to review it. If you speak a Nigerian language, you can help extend this game (and the ones after it) to reach more children.</p>
+          <p style="margin-top:1.4rem;">
+            <a class="btn btn-primary" href="https://speaknigeria.org/get-involved.html">Get involved</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer adire">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="https://speaknigeria.org/"><span class="brand-mark"><svg class="brand-flower" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Speak Nigeria">
+        <g fill="#E9A82C">
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z"/>
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z" transform="rotate(72 32 33)"/>
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z" transform="rotate(144 32 33)"/>
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z" transform="rotate(216 32 33)"/>
+          <path d="M32 5 C 39 16, 39 27, 32 33 C 25 27, 25 16, 32 5 Z" transform="rotate(288 32 33)"/>
+        </g>
+        <circle cx="32" cy="33" r="6.5" fill="#C6385A"/>
+        <circle cx="32" cy="33" r="2.6" fill="#E9A82C"/>
+      </svg></span><span class="brand-name">Speak Nigeria</span></a>
+          <p>A 501(c)(3) nonprofit (EIN: 99-2964468) helping children connect with Nigerian heritage languages.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="https://speaknigeria.org/about.html">About</a>
+          <a href="https://speaknigeria.org/languages.html">Languages</a>
+          <a href="https://speaknigeria.org/courses.html">Courses</a>
+          <a href="/">Games</a>
+          <a href="https://speaknigeria.org/resources.html">Resources</a>
+          <a href="https://yorubadict.com" target="_blank" rel="noopener">Yoruba Dictionary</a>
+          <a href="https://speaknigeria.org/get-involved.html">Get Involved</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://www.youtube.com/@speaknigeria" target="_blank" rel="noopener" data-youtube>YouTube channel</a>
+          <a href="mailto:hello@speaknigeria.org">hello@speaknigeria.org</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Speak Nigeria. A 501(c)(3) nonprofit organization (EIN: 99-2964468).</span>
+        <span>games.speaknigeria.org</span>
+      </div>
     </div>
-
-    <div id="app-wrapper">
-        <!-- Slim brand bar, not a hero block: a small wordmark plus the
-             theme control, kept to a single compact row so the game
-             itself gets almost the entire viewport. -->
-        <header id="top-bar">
-            <span id="brand-mark">
-                <img src="favicon.svg" alt="" width="18" height="18">
-                Speak Nigeria
-            </span>
-            <div id="top-bar-controls">
-                <button id="playlist-btn-change" class="icon-btn icon-btn-small" onclick="showPlaylistMenu()" aria-label="Change playlist" title="Change playlist">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 6h16M4 12h10M4 18h16"/>
-                    </svg>
-                </button>
-                <select id="theme-selector" aria-label="Choose a level" title=""></select>
-                <button id="fullscreen-btn" class="icon-btn icon-btn-small" onclick="toggleFullscreen()" aria-label="Toggle fullscreen" title="Toggle fullscreen">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>
-                    </svg>
-                </button>
-            </div>
-        </header>
-
-        <main id="game-container">
-
-            <!-- Back/forward navigation flanks the image (symmetric pair),
-                 not a separate text-button row. -->
-            <div id="stage-row">
-                <button id="prev-btn" class="icon-btn" onclick="prevWord()" aria-label="Previous word" title="Previous word">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M18 5l-8 7 8 7V5z"/>
-                        <rect x="5.5" y="5" width="2.5" height="14" rx="1"/>
-                    </svg>
-                </button>
-
-                <div id="prompt-container" class="prompt-container" onclick="playFullWordAudio()">
-                    <img id="prompt-image" src="" alt="Listen and build" />
-
-                    <div class="audio-overlay">
-                        <svg fill="#ffffff" viewBox="0 0 24 24" width="40px" height="40px">
-                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-                        </svg>
-                    </div>
-
-                    <div id="correct-badge" class="correct-badge" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="56px" height="56px">
-                            <circle cx="12" cy="12" r="11" fill="var(--accent-courses)"/>
-                            <path d="M6.5 12.5l3.5 3.5 7.5-8" stroke="white" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-
-                </div>
-
-                <button id="skip-btn" class="icon-btn" onclick="skipWord()" aria-label="Skip word" title="Skip word">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M6 5l8 7-8 7V5z"/>
-                        <rect x="16" y="5" width="2.5" height="14" rx="1"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Transient feedback (correct/skip/error/level-complete
-                 messages) as a floating overlay (fixed-positioned, see
-                 style.css), not a permanently-reserved text line. -->
-            <div id="toast" role="status" aria-live="polite"></div>
-
-            <!-- Hint toggle sits beside the answer slots, but the slots
-                 (not the row as a whole) are what's centered on the page -
-                 the 3-column grid below keeps the hint ancillary rather
-                 than shifting the slots off-center. -->
-            <div id="answer-row">
-                <button id="hint-btn" class="icon-btn icon-btn-small" onclick="toggleToneHint()" aria-label="Toggle tone hint" title="Show tone hint">
-                    <svg viewBox="0 0 24 24" width="16" height="16">
-                        <path d="M12 2a7 7 0 0 0-4 12.7c.6.4 1 1.1 1 1.8v.5h6v-.5c0-.7.4-1.4 1-1.8A7 7 0 0 0 12 2z" fill="currentColor"/>
-                        <rect x="9" y="18.5" width="6" height="1.6" rx="0.8" fill="currentColor"/>
-                        <rect x="9.7" y="20.6" width="4.6" height="1.4" rx="0.7" fill="currentColor"/>
-                    </svg>
-                </button>
-
-                <!-- Tone-hint dots for each slot are always in the DOM (see
-                     style.css) but only visible while #hint-btn is toggled
-                     on (queue-slots.show-hint). -->
-                <div id="queue-slots" class="slots-container"></div>
-
-                <!-- Empty spacer, same grid column width as hint-btn's
-                     column, so the middle (slots) column is truly centered
-                     in the row rather than centered-minus-the-hint-button's-width. -->
-                <div aria-hidden="true"></div>
-            </div>
-
-            <div id="syllable-matrix" class="syllable-matrix">
-
-                <div class="tone-group tone-group-high" id="high-tones">
-                    <span class="tone-badge" title="High tone">&#8599;</span>
-                    <div class="bank-row"></div>
-                </div>
-                <div class="tone-group tone-group-mid" id="mid-tones">
-                    <span class="tone-badge" title="Mid tone">&#8594;</span>
-                    <div class="bank-row"></div>
-                </div>
-                <div class="tone-group tone-group-low" id="low-tones">
-                    <span class="tone-badge" title="Low tone">&#8600;</span>
-                    <div class="bank-row"></div>
-                </div>
-            </div>
-
-        </main>
-    </div>
-
-    <script src="app.js"></script>
+  </footer>
 </body>
 </html>
