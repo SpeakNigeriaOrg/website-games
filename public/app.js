@@ -37,6 +37,26 @@ function showToast(text, variant = 'info', duration = 1400) {
     }
 }
 
+// Optional browser fullscreen - must be called directly from a user
+// gesture (this button's click), browsers won't allow it otherwise.
+// Note: iOS Safari on iPhone does not support the Fullscreen API for
+// arbitrary page content at all (a longstanding Apple platform
+// limitation, only <video> supports it there) - this will silently
+// no-op on that specific browser, nothing to fix on our end for it.
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen?.().catch((err) => {
+            console.warn('Fullscreen request failed or unsupported:', err);
+        });
+    } else {
+        document.exitFullscreen?.();
+    }
+}
+
+document.addEventListener('fullscreenchange', () => {
+    document.getElementById('fullscreen-btn')?.classList.toggle('active', !!document.fullscreenElement);
+});
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

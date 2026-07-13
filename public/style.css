@@ -13,6 +13,11 @@ html, body {
     background: var(--background-primary);
     color: var(--text-primary);
     font-family: var(--font-body);
+    /* Prevents the elastic "rubber-band" overscroll some mobile
+       browsers allow past the actual end of a short page - the most
+       common cause of being able to scroll into blank space below
+       real content. */
+    overscroll-behavior-y: none;
 }
 
 #app-wrapper {
@@ -45,6 +50,12 @@ html, body {
 
 #brand-mark img {
     display: block;
+}
+
+#top-bar-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 #theme-selector {
@@ -132,8 +143,10 @@ html, body {
     height: 30px;
 }
 
-/* Shown while the tone hint is toggled on (see app.js toggleToneHint) */
-#hint-btn.active {
+/* Shown while toggled on: tone hint (see app.js toggleToneHint) or
+   active fullscreen (see toggleFullscreen). */
+#hint-btn.active,
+#fullscreen-btn.active {
     background: var(--brand-accent);
     border-color: var(--brand-accent-deep);
     color: var(--brand-indigo-deep);

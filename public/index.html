@@ -24,7 +24,14 @@
                 <img src="favicon.svg" alt="" width="18" height="18">
                 Speak Nigeria
             </span>
-            <select id="theme-selector" aria-label="Choose a level"></select>
+            <div id="top-bar-controls">
+                <select id="theme-selector" aria-label="Choose a level"></select>
+                <button id="fullscreen-btn" class="icon-btn icon-btn-small" onclick="toggleFullscreen()" aria-label="Toggle fullscreen" title="Toggle fullscreen">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>
+                    </svg>
+                </button>
+            </div>
         </header>
 
         <main id="game-container">
