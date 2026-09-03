@@ -567,7 +567,14 @@ html, body {
     transform: scale(0.94);
 }
 
-.tone-btn-label { line-height: 1; }
+/* --font-yoruba, not --font-display: these labels carry real tone marks
+   (Dò / Re / Mí), and that stack is the one chosen for diacritic coverage.
+   It also means the mark on the button is drawn in the same typeface as the
+   mark that appears on the syllable cards. */
+.tone-btn-label {
+    font-family: var(--font-yoruba);
+    line-height: 1;
+}
 
 /* Inherits the button's own tone color via currentColor (the polyline is
    stroked with currentColor - see renderTonePitchLines). */

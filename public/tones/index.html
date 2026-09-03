@@ -14,7 +14,7 @@
          version whenever the file meaningfully changes. Each game keeps its
          own counter, so this one starts at 1. -->
     <link rel="stylesheet" href="tokens.css?v=1">
-    <link rel="stylesheet" href="style.css?v=1">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
     <!-- The first tap in here is mandatory (see app.js's backdrop guard), which
@@ -134,12 +134,26 @@
                  until then, so revealing this is the payoff. -->
             <div id="word-reveal" aria-live="polite"></div>
 
+            <!-- Low to high, left to right - the direction pitch runs on a
+                 stave, and the direction the three pitch lines now climb
+                 across the row. Labelled Do/Re/Mi rather than Low/Mid/High:
+                 solfege names a pitch you sing rather than a category you
+                 memorise, and the class names stay high/mid/low so app.js and
+                 the colour mapping are untouched. The labels carry Yoruba tone
+                 marks themselves - Do grave, Re bare, Mi acute - so the button
+                 demonstrates the very diacritic it stands for, which is the
+                 mark the player is being asked to hear. They use --font-yoruba
+                 (see style.css) for the same reason the cards do: that stack is
+                 picked for diacritic coverage. The arrow badges and the
+                 measured pitch lines are what carry the actual meaning, so
+                 nothing is lost by dropping the English words - and the tone
+                 name is kept in aria-label and title for screen readers. -->
             <div id="tone-bank" class="tone-bank">
 
-                <div class="tone-group tone-group-high">
-                    <span class="tone-badge" title="High tone">&#8599;</span>
-                    <button class="tone-btn btn-high" onclick="handleTonePick('high')" aria-label="High tone">
-                        <span class="tone-btn-label">High</span>
+                <div class="tone-group tone-group-low">
+                    <span class="tone-badge" title="Low tone">&#8600;</span>
+                    <button class="tone-btn btn-low" onclick="handleTonePick('low')" aria-label="Dò, low tone">
+                        <span class="tone-btn-label">Dò</span>
                         <!-- Pitch line drawn from TONE_MODEL's measured glide
                              (see app.js's renderTonePitchLines) - the tone's
                              real shape, not a decorative squiggle. -->
@@ -148,20 +162,19 @@
                 </div>
                 <div class="tone-group tone-group-mid">
                     <span class="tone-badge" title="Mid tone">&#8594;</span>
-                    <button class="tone-btn btn-mid" onclick="handleTonePick('mid')" aria-label="Mid tone">
-                        <span class="tone-btn-label">Mid</span>
+                    <button class="tone-btn btn-mid" onclick="handleTonePick('mid')" aria-label="Re, mid tone">
+                        <span class="tone-btn-label">Re</span>
                         <svg class="tone-line" viewBox="0 0 60 24" width="60" height="24" aria-hidden="true" preserveAspectRatio="none"></svg>
                     </button>
                 </div>
-                <div class="tone-group tone-group-low">
-                    <span class="tone-badge" title="Low tone">&#8600;</span>
-                    <button class="tone-btn btn-low" onclick="handleTonePick('low')" aria-label="Low tone">
-                        <span class="tone-btn-label">Low</span>
+                <div class="tone-group tone-group-high">
+                    <span class="tone-badge" title="High tone">&#8599;</span>
+                    <button class="tone-btn btn-high" onclick="handleTonePick('high')" aria-label="Mí, high tone">
+                        <span class="tone-btn-label">Mí</span>
                         <svg class="tone-line" viewBox="0 0 60 24" width="60" height="24" aria-hidden="true" preserveAspectRatio="none"></svg>
                     </button>
                 </div>
             </div>
-
         </main>
     </div>
 
