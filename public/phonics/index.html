@@ -19,12 +19,14 @@
     <div id="start-overlay">
         <div id="playlist-menu">
             <h2>Choose a playlist</h2>
-            <!-- Populated/enabled by app.js once sessions.json loads and
-                 real per-category level counts are known (see
-                 initializePlaylistMenu) - category values match
-                 sessions.json's own `category` field exactly. -->
+            <!-- Enabled by app.js once the data loads and real per-category
+                 level counts are known (see initializePlaylistMenu). Themed
+                 and Random come from sessions.json's own `category` field;
+                 Tone Patterns is built by buildTonePatternLevels, replacing
+                 sessions.json's own tone_pattern levels. sessions.json's
+                 fourth category, syllable_reinforcement, is deliberately not
+                 offered - see OFFERED_CATEGORIES in app.js for why. -->
             <button class="playlist-btn" data-category="themed" onclick="selectPlaylist('themed')" disabled>Themed Levels</button>
-            <button class="playlist-btn" data-category="syllable_reinforcement" onclick="selectPlaylist('syllable_reinforcement')" disabled>Syllable Practice</button>
             <button class="playlist-btn" data-category="tone_pattern" onclick="selectPlaylist('tone_pattern')" disabled>Tone Patterns</button>
             <button class="playlist-btn" data-category="endless_practice" onclick="selectPlaylist('endless_practice')" disabled>Random</button>
         </div>
@@ -140,6 +142,6 @@
         </main>
     </div>
 
-    <script src="app.js?v=2"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>
