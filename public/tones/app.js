@@ -15,6 +15,37 @@ const DATA_DIR = "../phonics/";
 // range) and speaker3 (male range) have 73 and 78 tokens.
 const ALLOWED_SPEAKERS = ["speaker2", "speaker3"];
 
+// Which playlists this game offers. `syllable_reinforcement` is deliberately
+// absent even though sessions.json still defines it: those levels exist to
+// drill the PHONICS game's tappable syllable bank - they pack the most words
+// per level (9.8 vs 8.0 for random, 6.1 for themed) and reuse syllables most
+// heavily (1.26 syllable tokens per distinct syllable, against 1.14-1.15
+// everywhere else), so the player keeps re-tapping the same syllables. This
+// game has no syllable bank; it has three tone buttons that are identical on
+// every level. With that mechanism gone the category had no rationale left -
+// 48 of its 75 words already appear in themed levels and 48 in random, only
+// 6 were unique to it, and it carried MORE tonal variety than Random itself.
+// It was a longer Random pile under a different name.
+//
+// Seven words appeared ONLY in that category. Two of them (gúáfà, ọba) land
+// in a generated tone-pattern set; the other five have tone sequences too
+// rare to form one (àlùbọ́sà LLHL, olóńgbò MHHL and gọ́ọ̀mù HLL are the only
+// words with those shapes at all). absorbLeftoverWords puts those into the
+// Random playlist so dropping the category costs no vocabulary.
+const OFFERED_CATEGORIES = ["tone_pattern", "themed", "endless_practice"];
+
+// Smallest tone-pattern set worth offering as its own level. Upstream's own
+// tone_pattern levels used exact-sequence grouping with an effective floor of
+// 5, which yielded 3 levels; dropping to 3 and including speaker3 (upstream's
+// were speaker1/speaker2 only) takes it to 7 without changing the rule. The
+// binding constraint is vocabulary, not this number - see
+// buildTonePatternLevels.
+const MIN_PATTERN_WORDS = 3;
+
+// For level names: "mid-high", "high-high-low". Matches the naming upstream
+// already used for its own tone_pattern levels.
+const TONE_SEQUENCE_LABEL = (tones) => tones.join("-");
+
 let CURRENT_IMAGE_STYLE = "cartoon";
 // ----------------------------
 
@@ -346,9 +377,10 @@ function initializePlaylistMenu() {
     });
 }
 
-// sessions.json tags every level with a real `category` field - this filters
-// to just that category and starts play, rather than mixing all four
-// playlists together in one dropdown.
+// Every level carries a `category` - straight from sessions.json for themed
+// and random levels, set by buildTonePatternLevels for the generated ones -
+// and this filters to just that category and starts play, rather than mixing
+// the playlists together in one dropdown.
 function selectPlaylist(category) {
     activeLevels = gameData.filter((level) => level.category === category);
     if (activeLevels.length === 0) return; // shouldn't happen - button would be disabled
@@ -390,7 +422,7 @@ async function loadGame() {
         // stale data, and playing it anyway would mean silently missing audio.
         // On top of that this game only supports speaker2 and speaker3 (see
         // ALLOWED_SPEAKERS), so levels recorded solely by speaker1 are skipped
-        // - 24 of the 30 levels survive, and every playlist stays non-empty.
+        // - 24 of the 30 levels survive the speaker gate.
         const playableSessions = sessions.filter(session =>
             session.validSpeakers &&
             session.validSpeakers.some(speaker => ALLOWED_SPEAKERS.includes(speaker))
@@ -400,47 +432,22 @@ async function loadGame() {
             console.info(`[Skipped] ${skippedCount} level(s) with no audio from a supported speaker.`);
         }
 
-        gameData = playableSessions.map(session => {
-            const sessionWords = [];
+        // Every playable (word, speaker) pair, deduped, gathered from ALL
+        // sessions - including categories this game doesn't offer, since audio
+        // validity is per-speaker and has nothing to do with which playlist a
+        // word happens to sit in. This is what the generated tone-pattern
+        // levels draw from.
+        const wordPool = new Map();
+
+        const sessionLevels = playableSessions.map(session => {
             const levelSpeaker = session.validSpeakers.find(speaker => ALLOWED_SPEAKERS.includes(speaker));
+            const sessionWords = [];
 
             session.words.forEach(wordId => {
-                const wordData = dictionaryWords[wordId];
-
-                // sessions.json hard-gates every word on having a real image
-                // (same as audio coverage) - a placeholder graphic standing in
-                // for missing art is fabricated content, not an acceptable
-                // degrade. This check is defense-in-depth only: it should never
-                // trigger against correctly-generated content, but if it ever
-                // does, skip the word entirely rather than show a placeholder.
-                const imageStyles = wordData?.imageStyles || [];
-                if (wordData && imageStyles.length === 0) {
-                    console.error(`[Missing Image] "${wordId}" has no labeled image - excluding from this level.`);
-                }
-
-                if (wordData && imageStyles.length > 0) {
-                    const chosenStyle = imageStyles.includes(CURRENT_IMAGE_STYLE)
-                        ? CURRENT_IMAGE_STYLE
-                        : imageStyles[0];
-
-                    // Everything text-shaped is normalized to NFC here. vocab.json
-                    // is not uniformly normalized - 5 of its 225 syllables are
-                    // stored as a precomposed accented vowel plus a trailing
-                    // combining dot below ("bọ́" as b + U+00F3 + U+0323), which
-                    // renders identically but is a different string from the NFC
-                    // form. Normalizing once at load keeps every comparison and
-                    // lookup downstream working on one form.
-                    sessionWords.push({
-                        id: wordId,
-                        targetWord: wordData.displayText.normalize("NFC"),                     // "adìyẹ" - revealed on success
-                        markedSyllables: wordData.syllables.map(s => s.normalize("NFC")),     // ["a","dì","yẹ"] - for the real syllable audio
-                        bareSyllables: wordData.syllables.map(stripTone),                     // ["a","di","yẹ"] - what the cards show
-                        targetTones: wordData.syllables.map(toneOf),                          // ["mid","low","mid"] - the answer
-                        speaker: levelSpeaker,
-                        fullAudioUrl: `${BASE_URL}words/${levelSpeaker}/${wordId}.wav`,
-                        imageUrl: `${BASE_URL}images/${chosenStyle}/${wordId}.png`
-                    });
-                }
+                const word = buildWord(wordId, dictionaryWords[wordId], levelSpeaker);
+                if (!word) return;
+                sessionWords.push(word);
+                wordPool.set(`${levelSpeaker}|${wordId}`, word);
             });
 
             return {
@@ -451,6 +458,18 @@ async function loadGame() {
             };
         });
 
+        // sessions.json's own tone_pattern levels are replaced wholesale by
+        // the generated ones - same grouping rule, lower threshold, both
+        // speakers (the generated set is a strict superset of the three
+        // upstream levels, which it reproduces exactly).
+        gameData = [
+            ...buildTonePatternLevels(wordPool),
+            ...sessionLevels.filter(level =>
+                level.category !== 'tone_pattern' && OFFERED_CATEGORIES.includes(level.category))
+        ];
+
+        absorbLeftoverWords(gameData, wordPool);
+
         initializePlaylistMenu();
 
     } catch (error) {
@@ -459,8 +478,134 @@ async function loadGame() {
     }
 }
 
+// One playable word for one speaker, or null if it can't be played.
+//
+// sessions.json hard-gates every word on having a real image (same as audio
+// coverage) - a placeholder graphic standing in for missing art is fabricated
+// content, not an acceptable degrade. The image check here is defense-in-depth
+// only: it should never trigger against correctly-generated content, but if it
+// ever does, skip the word entirely rather than show a placeholder.
+//
+// Everything text-shaped is normalized to NFC. vocab.json is not uniformly
+// normalized - 5 of its 225 syllables store a precomposed accented vowel plus
+// a trailing combining dot below ("bọ́" as b + U+00F3 + U+0323), which renders
+// identically but is a different string from the NFC form. Normalizing once
+// here keeps every comparison and lookup downstream working on one form.
+function buildWord(wordId, wordData, speaker) {
+    const imageStyles = wordData?.imageStyles || [];
+    if (wordData && imageStyles.length === 0) {
+        console.error(`[Missing Image] "${wordId}" has no labeled image - excluding it.`);
+    }
+    if (!wordData || imageStyles.length === 0) return null;
+
+    const chosenStyle = imageStyles.includes(CURRENT_IMAGE_STYLE)
+        ? CURRENT_IMAGE_STYLE
+        : imageStyles[0];
+
+    return {
+        id: wordId,
+        targetWord: wordData.displayText.normalize("NFC"),                 // "adìyẹ" - revealed on success
+        markedSyllables: wordData.syllables.map(s => s.normalize("NFC")),  // ["a","dì","yẹ"] - for the real syllable audio
+        bareSyllables: wordData.syllables.map(stripTone),                  // ["a","di","yẹ"] - what the cards show
+        targetTones: wordData.syllables.map(toneOf),                       // ["mid","low","mid"] - the answer
+        speaker,
+        fullAudioUrl: `${BASE_URL}words/${speaker}/${wordId}.wav`,
+        imageUrl: `${BASE_URL}images/${chosenStyle}/${wordId}.png`
+    };
+}
+
+// Builds the Tone Patterns playlist by grouping every playable word by its
+// EXACT tone sequence, per speaker.
+//
+// Exact is the point. Grouping by, say, the first two tones would yield more
+// and larger levels (12 instead of 7), but it would file "Okúdù" (mid-high-low)
+// under a level called "mid-high", and a level whose name doesn't describe its
+// answers is worse than no level. Exact grouping means once you've heard two
+// words in a set you genuinely know the shape of the rest.
+//
+// Grouping is per-speaker because word audio is per-speaker (words/<speaker>/
+// <id>.wav) - a level plays one voice, so a pattern with two words from each
+// speaker is two thin sets, not one good one. That, plus the fact that exact
+// patterns fragment by syllable count, is why only 7 sets clear
+// MIN_PATTERN_WORDS out of 36 (pattern, speaker) groups. The ceiling here is
+// vocabulary: 67 playable word/speaker pairs. More sets need more words with
+// images and speaker2/speaker3 audio, not a looser rule.
+//
+// Ordered easiest first: fewest distinct tones (a word that is all one tone
+// asks the player to hear no contrast at all), then fewest syllables, then
+// alphabetically for stability.
+function buildTonePatternLevels(wordPool) {
+    const groups = new Map();
+
+    wordPool.forEach((word) => {
+        const key = `${word.speaker}|${word.targetTones.join("-")}`;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(word);
+    });
+
+    const levels = [];
+    groups.forEach((words) => {
+        if (words.length < MIN_PATTERN_WORDS) return;
+        const tones = words[0].targetTones;
+        levels.push({
+            levelId: `Tone Pattern (${TONE_SEQUENCE_LABEL(tones)}) — ${words[0].speaker}`,
+            category: 'tone_pattern',
+            speaker: words[0].speaker,
+            distinctTones: new Set(tones).size,
+            length: tones.length,
+            words: shuffleArray(words.slice())
+        });
+    });
+
+    levels.sort((a, b) =>
+        a.distinctTones - b.distinctTones ||
+        a.length - b.length ||
+        a.levelId.localeCompare(b.levelId));
+
+    console.info(`[Tone Patterns] ${levels.length} generated set(s): ` +
+        levels.map(l => `${l.levelId} (${l.words.length})`).join(', '));
+
+    return levels;
+}
+
+// Any playable word that no offered level happens to contain gets added to
+// the Random playlist, so the words that were only reachable through the
+// dropped syllable_reinforcement category aren't silently lost with it.
+// Random is the honest home for them: unlike Themed or Tone Patterns it makes
+// no claim about what its levels have in common.
+//
+// Preference is to append to an existing Random level for the same speaker -
+// a level has one voice, and a one-word level would be a silly thing to put in
+// a menu. Only if a speaker has no Random level at all does this create one.
+function absorbLeftoverWords(levels, wordPool) {
+    const covered = new Set(levels.flatMap(level => level.words.map(word => `${word.speaker}|${word.id}`)));
+    const leftovers = [];
+    wordPool.forEach((word, key) => { if (!covered.has(key)) leftovers.push(word); });
+    if (leftovers.length === 0) return;
+
+    leftovers.forEach((word) => {
+        const host = levels.filter(level => level.category === 'endless_practice' && level.speaker === word.speaker).pop();
+        if (host) {
+            host.words.push(word);
+        } else {
+            levels.push({
+                levelId: `Random Mix — ${word.speaker}`,
+                category: 'endless_practice',
+                speaker: word.speaker,
+                words: [word]
+            });
+        }
+    });
+
+    // Re-shuffle any level that grew, so the added words aren't always last.
+    levels.forEach((level) => { if (level.category === 'endless_practice') shuffleArray(level.words); });
+
+    console.info(`[Leftovers] ${leftovers.length} word(s) added to Random: ` +
+        leftovers.map(w => `${w.targetWord} (${w.speaker})`).join(', '));
+}
+
 // Rebuilt each time selectPlaylist() runs, so it only ever lists levels
-// from the currently-chosen playlist, not all four mixed together.
+// from the currently-chosen playlist, not every playlist mixed together.
 function initializeThemeSelector() {
     const selector = document.getElementById('theme-selector');
     selector.innerHTML = '';
@@ -544,6 +689,15 @@ function toggleToneHint() {
     if (showingHint) playToneMelody(currentWord.targetTones, currentWord.speaker);
 }
 
+// Interrupting our own playback is normal here - every tap stops whatever
+// was playing before it - and the interrupted play() promise rejects with
+// AbortError. That's the mechanism working, not a failure, so it's swallowed
+// silently; anything else still gets reported.
+function reportAudioFailure(context, error) {
+    if (error && error.name === 'AbortError') return;
+    console.warn(`Audio playback blocked or file missing (${context}):`, error);
+}
+
 function playFullWordAudio() {
     if (currentWord && currentWord.fullAudioUrl) {
         if (currentPlayingAudio) {
@@ -551,7 +705,7 @@ function playFullWordAudio() {
             currentPlayingAudio.currentTime = 0;
         }
         currentPlayingAudio = new Audio(currentWord.fullAudioUrl);
-        currentPlayingAudio.play().catch(() => console.log("Audio play blocked or missing."));
+        currentPlayingAudio.play().catch((err) => reportAudioFailure(currentWord.fullAudioUrl, err));
     }
 }
 
@@ -637,9 +791,7 @@ function playRecordedSyllable(index) {
         currentPlayingAudio.currentTime = 0;
     }
     currentPlayingAudio = new Audio(BASE_URL + info.audio);
-    currentPlayingAudio.play().catch((err) => {
-        console.error("Audio playback blocked or file missing:", err);
-    });
+    currentPlayingAudio.play().catch((err) => reportAudioFailure(info.audio, err));
 }
 
 // --- PICKING ------------------------------------------------------------
