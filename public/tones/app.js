@@ -1,0 +1,775 @@
+// --- GLOBAL CONFIGURATION ---
+// Audio/image bytes live in R2, not this deploy (same arrangement as the
+// phonics game - publishToR2.mjs in the dictionary repo is what uploads
+// them). Only the three JSON files ship same-origin, and this game reads
+// the phonics game's copies of them rather than keeping its own: they're
+// vendored by sync_dictionary_data.py, and one copy for both games means
+// no drift and no change to that script. `../phonics/vocab.json` resolves
+// to /phonics/vocab.json from /tones/ - the relative path is deliberate.
+const BASE_URL = "https://gamemedia.speaknigeria.org/";
+const DATA_DIR = "../phonics/";
+
+// speaker1 is excluded on purpose. The tone study behind TONE_MODEL below
+// rests on only 19 tokens for that speaker - 4 of them for high tone - which
+// the analysis itself flags as too thin to anchor anything. speaker2 (female
+// range) and speaker3 (male range) have 73 and 78 tokens.
+const ALLOWED_SPEAKERS = ["speaker2", "speaker3"];
+
+let CURRENT_IMAGE_STYLE = "cartoon";
+// ----------------------------
+
+// --- TONE MODEL ---------------------------------------------------------
+// Data-driven, from the acoustic study in the sibling repo
+// yoruba_student_dict_platform/analysis - specifically
+// build/legacy-tone-report/tone-distributions.json, 170 Praat
+// autocorrelation observations over isolated careful-syllable clips.
+//
+//   hz     = that speaker's median F0 for that tone (medianHz)
+//   centre = the equal-weight H/M/L geometric centre used to normalise
+//            (Hz = centre * 2^(st/12)); see analysis/src/tone_lab/tone_report.py
+//   glide  = the measured median contour (medianContourShapeSemitones),
+//            in semitones relative to that tone's own median, sampled at
+//            evenly-spaced points across the syllable
+//
+// For HIGH the first two contour points are dropped: the report is explicit
+// that the early dip is consonant onset undershoot, not part of the tone
+// target. The remaining points are re-centred on their own median so the
+// perceived pitch still lands on the measured median.
+//
+// There is deliberately NO downdrift/declination term. The corpus these
+// numbers come from discarded each clip's source word and position
+// ("source word/position unavailable"; every row is flagged
+// provenance_ambiguous_origin), so there is no measured basis for making
+// a tone's pitch depend on where it sits in the word. Every card of a
+// given tone uses the same target. Please don't "fix" this without data.
+const TONE_MODEL = {
+    speaker2: {
+        centreHz: 229.529,
+        high: { hz: 252.5, glide: [-0.51, -0.10, -0.11,  0.00,  0.11,  0.34,  0.37] },              // +0.88 st rise
+        mid:  { hz: 232.3, glide: [ 0.55, -0.13,  0.07,  0.06,  0.00, -0.06, -0.05,  0.03, -0.07] }, // level
+        low:  { hz: 209.3, glide: [ 1.17,  0.28,  0.53,  0.63,  0.00, -0.58, -0.60, -0.24, -0.42] }  // -1.59 st fall
+    },
+    speaker3: {
+        centreHz: 125.012,
+        high: { hz: 138.8, glide: [-1.30, -0.42, -0.03,  0.10,  0.00,  0.14,  0.19] },              // +1.49 st rise
+        mid:  { hz: 123.8, glide: [ 0.20,  0.18,  0.13,  0.11,  0.00, -0.06, -0.17, -0.03, -0.16] }, // level
+        low:  { hz: 113.2, glide: [ 1.90,  0.81,  0.50,  0.48,  0.00, -0.24, -0.21, -0.36, -0.89] }  // -2.79 st fall
+    }
+};
+
+// Measured median syllable duration, and it is tone-independent (speaker2
+// 0.428-0.450 s, speaker3 0.394-0.443 s across the three tones) - so tone
+// is never encoded as length here, only as pitch.
+const TONE_DURATION = 0.43;
+
+// 1.0 plays the contours exactly as measured. These came from isolated
+// CAREFUL syllables; the one paired natural-speech study in that repo
+// (39 words, 104 syllable pairs) found tone height essentially unchanged in
+// connected speech but contour movement strongly damped - high's rise fell
+// from +1.97 st to +0.19 st. Since this game plays each tone as an isolated
+// note, careful-speech shapes are the right register. Raise this to
+// exaggerate the glides for beginners without re-deriving anything.
+const TONE_SPREAD = 1.0;
+
+const TONES = ["high", "mid", "low"];
+const TONE_GLYPH = { high: "↗", mid: "→", low: "↘" };
+
+// --- TONE DERIVATION ----------------------------------------------------
+// vocab.json stores tone-marked syllables ("a", "dì", "yẹ") but no tone
+// field, so tone is read off the combining marks. This mirrors the canonical
+// implementation at yoruba_student_dict_platform/shared/src/tone.ts.
+//
+// The phonics game instead looks tone up in syllables.json with a "mid"
+// fallback for anything missing. That fallback is fine there (tone is only
+// a colour hint) but here it would silently produce WRONG ANSWERS, so this
+// game never uses it. Verified against the shipped data: the derivation
+// agrees with all 168 syllables.json tone labels, and applyTone(stripTone(s))
+// round-trips all 225 syllables in vocab.json.
+const ACUTE = "́";   // high
+const GRAVE = "̀";   // low
+const MACRON = "̄";  // explicit mid, only ever on a syllabic nasal
+const VOWELS = "aeiou";
+
+function toneOf(syllable) {
+    const decomposed = syllable.normalize("NFD");
+    if (decomposed.includes(ACUTE)) return "high";
+    if (decomposed.includes(GRAVE)) return "low";
+    return "mid";
+}
+
+// Removes tone marks only. The dot below ẹ/ọ/ṣ (U+0323) is segmental, not
+// tonal, and must survive - "yẹ" strips to "yẹ", never "ye".
+function stripTone(syllable) {
+    const decomposed = syllable.normalize("NFD");
+    let out = "";
+    for (const ch of decomposed) {
+        if (ch === ACUTE || ch === GRAVE || ch === MACRON) continue;
+        out += ch;
+    }
+    return out.normalize("NFC");
+}
+
+// Puts the mark back on the tone bearer: the last vowel if the syllable has
+// one, otherwise the syllabic nasal ("ń", "ǹ"). Mid is unmarked on a vowel
+// but takes a macron on a nasal - the current vocab has no such syllable,
+// but the upstream corpus does, so the rule is implemented rather than
+// assumed away.
+function applyTone(bare, tone) {
+    const decomposed = bare.normalize("NFD");
+    let bearer = -1;
+    let bearerIsNasal = false;
+
+    for (let i = 0; i < decomposed.length; i++) {
+        if (VOWELS.includes(decomposed[i].toLowerCase())) bearer = i;
+    }
+    if (bearer === -1) {
+        for (let i = 0; i < decomposed.length; i++) {
+            if ("mn".includes(decomposed[i].toLowerCase())) { bearer = i; bearerIsNasal = true; break; }
+        }
+    }
+    if (bearer === -1) return bare;
+
+    const mark = tone === "high" ? ACUTE
+               : tone === "low"  ? GRAVE
+               : (bearerIsNasal ? MACRON : "");
+    if (!mark) return decomposed.normalize("NFC");
+
+    // Insert after the bearer AND after any combining marks already on it,
+    // so "gbọn" + high becomes "gbọ́n" and not a mis-ordered sequence.
+    let at = bearer + 1;
+    while (at < decomposed.length && isCombining(decomposed[at])) at++;
+    return (decomposed.slice(0, at) + mark + decomposed.slice(at)).normalize("NFC");
+}
+
+// syllables.json is keyed by tone-marked syllable, and like vocab.json it
+// isn't uniformly NFC-normalized. Re-keying it on NFC means the lookup can't
+// miss just because two files spelled the same syllable with a different
+// combining-mark order.
+function indexSyllablesByNfc(raw) {
+    const indexed = {};
+    Object.keys(raw).forEach((speaker) => {
+        indexed[speaker] = {};
+        Object.keys(raw[speaker]).forEach((syllable) => {
+            indexed[speaker][syllable.normalize("NFC")] = raw[speaker][syllable];
+        });
+    });
+    return indexed;
+}
+
+function isCombining(ch) {
+    const code = ch.codePointAt(0);
+    return (code >= 0x0300 && code <= 0x036f) || (code >= 0x1ab0 && code <= 0x1aff);
+}
+// ------------------------------------------------------------------------
+
+let gameData = [];     // every level, every category, unfiltered
+let activeLevels = []; // the currently-chosen playlist's levels (see selectPlaylist)
+let currentLevelIndex = 0;
+let currentWordIndex = 0;
+
+let currentLevel = null;
+let currentWord = null;
+let picks = [];        // one entry per syllable card: a tone name, or null
+let activeCard = 0;    // which card the next tone pick lands on
+let maxSlots = 0;
+let isSolved = false;
+let isTransitioning = false;
+let currentPlayingAudio = null;
+
+// Only read after a word is solved, to play the real recorded syllable for
+// the correctly tone-marked syllable. Keyed { speaker: { NFC syllable: info } }
+// - see indexSyllablesByNfc. Verified: every syllable of every word in every
+// surviving level has audio for that level's speaker.
+let syllableIndex = {};
+
+// Transient overlay message (see #toast in style.css) - replaces a
+// permanently-reserved text line with something that only takes up
+// space while it's actually showing something.
+let toastTimeout = null;
+function showToast(text, variant = 'info', duration = 1400) {
+    const el = document.getElementById('toast');
+    clearTimeout(toastTimeout);
+    el.textContent = text;
+    el.className = 'show ' + variant;
+    if (duration) {
+        toastTimeout = setTimeout(() => el.classList.remove('show'), duration);
+    }
+}
+
+// Optional browser fullscreen - must be called directly from a user
+// gesture (this button's click), browsers won't allow it otherwise.
+// Note: iOS Safari on iPhone does not support the Fullscreen API for
+// arbitrary page content at all (a longstanding Apple platform
+// limitation, only <video> supports it there) - this will silently
+// no-op on that specific browser, nothing to fix on our end for it.
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen?.().catch((err) => {
+            console.warn('Fullscreen request failed or unsupported:', err);
+        });
+    } else {
+        document.exitFullscreen?.();
+    }
+}
+
+document.addEventListener('fullscreenchange', () => {
+    document.getElementById('fullscreen-btn')?.classList.toggle('active', !!document.fullscreenElement);
+});
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// --- AUDIO --------------------------------------------------------------
+// One lazily-created AudioContext for everything synthesized: the three
+// Yoruba tones and the two feedback sounds. resume() on every use because
+// iOS suspends the context aggressively.
+let audioCtx = null;
+function getAudioCtx() {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    audioCtx.resume?.();
+    return audioCtx;
+}
+
+// Short sine notes with a soft attack and exponential decay - lifted from
+// the story game's playChime, which is the phonics correct-answer chime
+// generalized. Used ONLY for feedback sounds, never for the tones: keeping
+// the timbres apart is what makes "you got it right" unmistakably not a
+// Yoruba tone.
+function playChime(freqs, { gain = 0.25, noteGap = 0.12, decay = 0.3 } = {}) {
+    try {
+        const ctx = getAudioCtx();
+        const now = ctx.currentTime;
+        freqs.forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gainNode = ctx.createGain();
+            osc.type = "sine";
+            osc.frequency.value = freq;
+            const start = now + i * noteGap;
+            gainNode.gain.setValueAtTime(0, start);
+            gainNode.gain.linearRampToValueAtTime(gain, start + 0.02);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, start + decay);
+            osc.connect(gainNode).connect(ctx.destination);
+            osc.start(start);
+            osc.stop(start + decay + 0.02);
+        });
+    } catch (err) {
+        console.warn("Could not play chime:", err);
+    }
+}
+
+// Deliberately unlike the tones on all three of register, timbre and
+// envelope: a bright bell arpeggio two-plus octaves above every synthesized
+// tone (which top out at 252 Hz), pure sine, long decay.
+const playSuccess = () => playChime([784, 1047, 1319], { gain: 0.22, noteGap: 0.11, decay: 0.6 });
+
+// The wrong-answer sound does overlap the tones in register, so what keeps
+// it distinct is the short percussive envelope and the descending pair.
+// Kept quiet on purpose - there's no score and no penalty here, it just
+// tells you to listen again.
+const playWrong = () => playChime([196, 147], { gain: 0.14, noteGap: 0.09, decay: 0.18 });
+
+// A Yoruba tone, synthesized in the pitch range of the speaker whose
+// recording the player just heard.
+//
+// The timbre is additive - fundamental plus harmonics at 1/n amplitude,
+// which is roughly how a real voice is built. That matters practically:
+// speaker3's low tone is 113 Hz, and phone speakers roll off hard below
+// ~300 Hz, so a pure sine there would be nearly inaudible. Its harmonics
+// at 226/339/452/565 Hz are not, and the ear reconstructs the pitch from
+// them (the missing-fundamental effect).
+const HARMONICS = 6;
+function playTone(tone, speaker, whenOffset = 0) {
+    const model = TONE_MODEL[speaker]?.[tone];
+    if (!model) return;
+    try {
+        const ctx = getAudioCtx();
+        const start = ctx.currentTime + whenOffset;
+
+        // The measured contour, as an absolute Hz curve for the fundamental.
+        const curve = new Float32Array(model.glide.length);
+        for (let i = 0; i < model.glide.length; i++) {
+            curve[i] = model.hz * Math.pow(2, (model.glide[i] * TONE_SPREAD) / 12);
+        }
+
+        // 1/n amplitudes, normalized so the stack peaks at PEAK_GAIN however
+        // many harmonics we use.
+        const PEAK_GAIN = 0.22;
+        let weightSum = 0;
+        for (let n = 1; n <= HARMONICS; n++) weightSum += 1 / n;
+
+        for (let n = 1; n <= HARMONICS; n++) {
+            const osc = ctx.createOscillator();
+            const gainNode = ctx.createGain();
+            osc.type = "sine";
+
+            // Every harmonic follows the same contour, scaled by its multiple,
+            // so the whole stack glides together as one voice.
+            const harmonicCurve = new Float32Array(curve.length);
+            for (let i = 0; i < curve.length; i++) harmonicCurve[i] = curve[i] * n;
+            osc.frequency.setValueCurveAtTime(harmonicCurve, start, TONE_DURATION);
+
+            const peak = (PEAK_GAIN * (1 / n)) / weightSum;
+            gainNode.gain.setValueAtTime(0.0001, start);
+            gainNode.gain.linearRampToValueAtTime(peak, start + 0.025);
+            gainNode.gain.setValueAtTime(peak, start + TONE_DURATION - 0.06);
+            gainNode.gain.linearRampToValueAtTime(0.0001, start + TONE_DURATION);
+
+            osc.connect(gainNode).connect(ctx.destination);
+            osc.start(start);
+            osc.stop(start + TONE_DURATION + 0.02);
+        }
+    } catch (err) {
+        console.warn("Could not play tone:", err);
+    }
+}
+
+// The word's correct tones played in order - the tone game's equivalent of
+// hearing the syllables, and the most useful teaching affordance here.
+function playToneMelody(tones, speaker) {
+    tones.forEach((tone, i) => playTone(tone, speaker, i * (TONE_DURATION - 0.14)));
+}
+// ------------------------------------------------------------------------
+
+// Enables each playlist button once we know which categories actually
+// have levels for the current data - avoids offering a playlist that
+// would open into an empty game.
+function initializePlaylistMenu() {
+    const counts = {};
+    gameData.forEach((level) => { counts[level.category] = (counts[level.category] || 0) + 1; });
+    document.querySelectorAll('.playlist-btn').forEach((btn) => {
+        btn.disabled = !counts[btn.dataset.category];
+    });
+}
+
+// sessions.json tags every level with a real `category` field - this filters
+// to just that category and starts play, rather than mixing all four
+// playlists together in one dropdown.
+function selectPlaylist(category) {
+    activeLevels = gameData.filter((level) => level.category === category);
+    if (activeLevels.length === 0) return; // shouldn't happen - button would be disabled
+    document.getElementById('start-overlay').style.display = 'none';
+    initializeThemeSelector();
+    loadLevel(0);
+}
+
+function showPlaylistMenu() {
+    document.getElementById('start-overlay').style.display = 'flex';
+}
+
+// Clicking the translucent backdrop itself (not a button inside the
+// menu) dismisses it WITHOUT changing the playlist - but only once a
+// game is already loaded, so the very first, mandatory choice can't be
+// skipped by an accidental backdrop tap. That first tap is also what
+// unlocks audio, which is what lets loadWord() autoplay the word.
+document.getElementById('start-overlay').addEventListener('click', (event) => {
+    if (event.target.id === 'start-overlay' && currentLevel) {
+        document.getElementById('start-overlay').style.display = 'none';
+    }
+});
+
+async function loadGame() {
+    try {
+        const [wordsResponse, syllablesResponse, sessionsResponse] = await Promise.all([
+            fetch(DATA_DIR + 'vocab.json'),
+            fetch(DATA_DIR + 'syllables.json'),
+            fetch(DATA_DIR + 'sessions.json')
+        ]);
+
+        const dictionaryWords = await wordsResponse.json();
+        syllableIndex = indexSyllablesByNfc(await syllablesResponse.json());
+        const sessions = await sessionsResponse.json();
+
+        // Two gates here. A level with no validSpeakers has no
+        // guaranteed-complete audio for any speaker - the exporter only ever
+        // emits levels it has verified, so an empty list means hand-edited or
+        // stale data, and playing it anyway would mean silently missing audio.
+        // On top of that this game only supports speaker2 and speaker3 (see
+        // ALLOWED_SPEAKERS), so levels recorded solely by speaker1 are skipped
+        // - 24 of the 30 levels survive, and every playlist stays non-empty.
+        const playableSessions = sessions.filter(session =>
+            session.validSpeakers &&
+            session.validSpeakers.some(speaker => ALLOWED_SPEAKERS.includes(speaker))
+        );
+        const skippedCount = sessions.length - playableSessions.length;
+        if (skippedCount > 0) {
+            console.info(`[Skipped] ${skippedCount} level(s) with no audio from a supported speaker.`);
+        }
+
+        gameData = playableSessions.map(session => {
+            const sessionWords = [];
+            const levelSpeaker = session.validSpeakers.find(speaker => ALLOWED_SPEAKERS.includes(speaker));
+
+            session.words.forEach(wordId => {
+                const wordData = dictionaryWords[wordId];
+
+                // sessions.json hard-gates every word on having a real image
+                // (same as audio coverage) - a placeholder graphic standing in
+                // for missing art is fabricated content, not an acceptable
+                // degrade. This check is defense-in-depth only: it should never
+                // trigger against correctly-generated content, but if it ever
+                // does, skip the word entirely rather than show a placeholder.
+                const imageStyles = wordData?.imageStyles || [];
+                if (wordData && imageStyles.length === 0) {
+                    console.error(`[Missing Image] "${wordId}" has no labeled image - excluding from this level.`);
+                }
+
+                if (wordData && imageStyles.length > 0) {
+                    const chosenStyle = imageStyles.includes(CURRENT_IMAGE_STYLE)
+                        ? CURRENT_IMAGE_STYLE
+                        : imageStyles[0];
+
+                    // Everything text-shaped is normalized to NFC here. vocab.json
+                    // is not uniformly normalized - 5 of its 225 syllables are
+                    // stored as a precomposed accented vowel plus a trailing
+                    // combining dot below ("bọ́" as b + U+00F3 + U+0323), which
+                    // renders identically but is a different string from the NFC
+                    // form. Normalizing once at load keeps every comparison and
+                    // lookup downstream working on one form.
+                    sessionWords.push({
+                        id: wordId,
+                        targetWord: wordData.displayText.normalize("NFC"),                     // "adìyẹ" - revealed on success
+                        markedSyllables: wordData.syllables.map(s => s.normalize("NFC")),     // ["a","dì","yẹ"] - for the real syllable audio
+                        bareSyllables: wordData.syllables.map(stripTone),                     // ["a","di","yẹ"] - what the cards show
+                        targetTones: wordData.syllables.map(toneOf),                          // ["mid","low","mid"] - the answer
+                        speaker: levelSpeaker,
+                        fullAudioUrl: `${BASE_URL}words/${levelSpeaker}/${wordId}.wav`,
+                        imageUrl: `${BASE_URL}images/${chosenStyle}/${wordId}.png`
+                    });
+                }
+            });
+
+            return {
+                levelId: session.levelId,
+                category: session.category,
+                speaker: levelSpeaker,
+                words: shuffleArray(sessionWords)
+            };
+        });
+
+        initializePlaylistMenu();
+
+    } catch (error) {
+        showToast("Error loading game data.", 'error', 0); // 0 = stays until reload, this isn't transient
+        console.error("Failed to load game data:", error);
+    }
+}
+
+// Rebuilt each time selectPlaylist() runs, so it only ever lists levels
+// from the currently-chosen playlist, not all four mixed together.
+function initializeThemeSelector() {
+    const selector = document.getElementById('theme-selector');
+    selector.innerHTML = '';
+    selector.onchange = null;
+
+    activeLevels.forEach((level, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.innerText = level.levelId;
+        selector.appendChild(option);
+    });
+
+    selector.onchange = (event) => {
+        loadLevel(parseInt(event.target.value));
+    };
+}
+
+function loadLevel(levelIndex) {
+    if (levelIndex >= activeLevels.length) {
+        showToast("You've completed this playlist!", 'info', 0);
+        return;
+    }
+
+    currentLevelIndex = levelIndex;
+    currentLevel = activeLevels[currentLevelIndex];
+    document.getElementById('theme-selector').value = currentLevelIndex;
+    document.getElementById('theme-selector').title = currentLevel.levelId;
+
+    // The pitch lines on the tone buttons are drawn from the current
+    // speaker's own measured contours, so they change with the level.
+    renderTonePitchLines(currentLevel.speaker);
+    loadWord(0);
+}
+
+function loadWord(wordIndex) {
+    currentWordIndex = wordIndex;
+    currentWord = currentLevel.words[currentWordIndex];
+
+    maxSlots = currentWord.bareSyllables.length;
+    picks = new Array(maxSlots).fill(null);
+    activeCard = 0;
+    isSolved = false;
+
+    const imgElement = document.getElementById('prompt-image');
+    imgElement.onerror = function () {
+        this.onerror = null;
+        this.src = 'images/placeholder.png';
+    };
+    imgElement.src = currentWord.imageUrl;
+
+    clearTimeout(toastTimeout);
+    document.getElementById('toast').classList.remove('show');
+    document.getElementById('syllable-cards').classList.remove('correct', 'show-hint');
+    document.getElementById('correct-badge').classList.remove('show');
+    document.getElementById('word-reveal').classList.remove('show');
+    document.getElementById('word-reveal').textContent = '';
+    showingHint = false;
+    document.getElementById('hint-btn').classList.remove('active');
+
+    renderCards();
+    isTransitioning = false;
+
+    // Unlike the phonics game, the word plays by itself: picking the tones IS
+    // the task here, so making the player tap to hear it first would just be
+    // a step in the way. Legal because the mandatory playlist-menu tap has
+    // already unlocked audio. Touching the AudioContext here too so the
+    // first synthesized tone isn't swallowed on iOS.
+    getAudioCtx();
+    playFullWordAudio();
+}
+
+// Toggle the per-card tone-hint dots (see style.css's .card::before) on or
+// off, and play the correct tone melody once so the hint is heard as well as
+// seen - which is the whole point in a listening game.
+let showingHint = false;
+function toggleToneHint() {
+    if (!currentWord || isTransitioning) return;
+    showingHint = !showingHint;
+    document.getElementById('syllable-cards').classList.toggle('show-hint', showingHint);
+    document.getElementById('hint-btn').classList.toggle('active', showingHint);
+    if (showingHint) playToneMelody(currentWord.targetTones, currentWord.speaker);
+}
+
+function playFullWordAudio() {
+    if (currentWord && currentWord.fullAudioUrl) {
+        if (currentPlayingAudio) {
+            currentPlayingAudio.pause();
+            currentPlayingAudio.currentTime = 0;
+        }
+        currentPlayingAudio = new Audio(currentWord.fullAudioUrl);
+        currentPlayingAudio.play().catch(() => console.log("Audio play blocked or missing."));
+    }
+}
+
+function moveToNextWord() {
+    const nextWordIndex = currentWordIndex + 1;
+    if (nextWordIndex < currentLevel.words.length) {
+        loadWord(nextWordIndex);
+    } else {
+        showToast("Level Complete! Loading next set...", 'info', 1500);
+        setTimeout(() => loadLevel(currentLevelIndex + 1), 1500);
+    }
+}
+
+// Mirrors moveToNextWord() - stays within the current level (no
+// wraparound into the previous theme), floors at the first word.
+function prevWord() {
+    if (isTransitioning) return;
+    const prevWordIndex = currentWordIndex - 1;
+    if (prevWordIndex >= 0) {
+        loadWord(prevWordIndex);
+    }
+}
+
+function skipWord() {
+    if (isTransitioning) return; // Prevent spam-clicking
+    isTransitioning = true;
+    showToast("Skipping word...", 'skipping', 800);
+    setTimeout(moveToNextWord, 800);
+}
+
+// --- CARDS --------------------------------------------------------------
+// One card per syllable, showing that syllable with its tone mark stripped
+// off - the mark IS the answer, so leaving it on would give the game away.
+// A card with a tone picked re-renders its text WITH that mark applied, so
+// the player watches the word's real spelling assemble itself as they go.
+function renderCards() {
+    const container = document.getElementById('syllable-cards');
+    container.innerHTML = '';
+
+    currentWord.bareSyllables.forEach((bare, i) => {
+        const pick = picks[i];
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'card tone-' + (currentWord.targetTones[i] || 'mid');
+        if (pick) card.classList.add('filled', 'picked-' + pick);
+        if (i === activeCard && !isSolved) card.classList.add('active');
+        card.onclick = () => handleCardClick(i);
+
+        const text = document.createElement('span');
+        text.className = 'card-text';
+        text.textContent = pick ? applyTone(bare, pick) : bare;
+
+        const glyph = document.createElement('span');
+        glyph.className = 'card-glyph';
+        glyph.textContent = pick ? TONE_GLYPH[pick] : '';
+
+        card.append(glyph, text);
+        card.setAttribute('aria-label', pick ? `${bare}, ${pick} tone` : `${bare}, no tone yet`);
+        container.appendChild(card);
+    });
+}
+
+// The cards stay tappable throughout, and what a tap does depends on where
+// the word is: pick a card to aim at, replay a tone you already chose, or -
+// once the word is solved - hear a real person say that exact syllable.
+function handleCardClick(index) {
+    if (isSolved) {
+        playRecordedSyllable(index);
+        return;
+    }
+    if (isTransitioning) return;
+
+    activeCard = index;
+    if (picks[index]) playTone(picks[index], currentWord.speaker);
+    renderCards();
+}
+
+function playRecordedSyllable(index) {
+    const info = syllableIndex[currentWord.speaker]?.[currentWord.markedSyllables[index]];
+    if (!info || !info.audio) return;
+    if (currentPlayingAudio) {
+        currentPlayingAudio.pause();
+        currentPlayingAudio.currentTime = 0;
+    }
+    currentPlayingAudio = new Audio(BASE_URL + info.audio);
+    currentPlayingAudio.play().catch((err) => {
+        console.error("Audio playback blocked or file missing:", err);
+    });
+}
+
+// --- PICKING ------------------------------------------------------------
+function handleTonePick(tone) {
+    // The tone buttons always make a sound, even while the game is locked
+    // (mid-transition, or after a win) - they double as an ear-training
+    // reference, and a button that silently does nothing feels broken.
+    playTone(tone, currentLevel?.speaker || ALLOWED_SPEAKERS[0]);
+    if (isTransitioning || isSolved || !currentWord) return;
+
+    picks[activeCard] = tone;
+    activeCard = nextEmptyCard(activeCard);
+    renderCards();
+
+    if (picks.every(Boolean)) checkAnswer();
+}
+
+// Next card still waiting for a tone, searching forward and wrapping - so
+// going back to fix one card returns you to wherever the real gap is.
+function nextEmptyCard(from) {
+    for (let step = 1; step <= maxSlots; step++) {
+        const i = (from + step) % maxSlots;
+        if (!picks[i]) return i;
+    }
+    return from;
+}
+
+function checkAnswer() {
+    const isMatch = picks.every((pick, i) => pick === currentWord.targetTones[i]);
+
+    if (isMatch) {
+        isSolved = true;
+        isTransitioning = true;
+
+        // Stop the word audio if it's still going, so it doesn't run into
+        // the success chime and the full-word repeat below.
+        if (currentPlayingAudio) {
+            currentPlayingAudio.pause();
+            currentPlayingAudio.currentTime = 0;
+        }
+
+        showToast("Correct! Great job!", 'correct', 2000);
+        document.getElementById('syllable-cards').classList.add('correct');
+        document.getElementById('correct-badge').classList.add('show');
+
+        // The payoff for a game played on stripped syllables: the properly
+        // tone-marked spelling of the word they just heard.
+        const reveal = document.getElementById('word-reveal');
+        reveal.textContent = currentWord.targetWord;
+        reveal.classList.add('show');
+
+        renderCards();
+        playSuccess();
+        playWinningSequence();
+        return;
+    }
+
+    // No score, no lives, no penalty - the same no-punishment spirit as the
+    // phonics game. Show which cards were wrong, clear everything, replay
+    // the word, let them go again.
+    isTransitioning = true;
+    playWrong();
+
+    const cards = document.querySelectorAll('#syllable-cards .card');
+    picks.forEach((pick, i) => {
+        if (pick !== currentWord.targetTones[i]) cards[i]?.classList.add('wrong');
+    });
+
+    setTimeout(() => {
+        picks = new Array(maxSlots).fill(null);
+        activeCard = 0;
+        renderCards();
+        isTransitioning = false;
+        playFullWordAudio();
+    }, 900);
+}
+
+function playWinningSequence() {
+    setTimeout(() => {
+        const fullWordAudio = new Audio(currentWord.fullAudioUrl);
+        let hasMovedOn = false; // Flag to prevent double-firing
+
+        const triggerNext = () => {
+            if (!hasMovedOn) {
+                hasMovedOn = true;
+                setTimeout(moveToNextWord, 1200);
+            }
+        };
+
+        fullWordAudio.onended = triggerNext;
+        fullWordAudio.play().catch(triggerNext);
+
+        // FAILSAFE: if the OS freezes the audio (e.g. an incoming call),
+        // onended never fires - force the game to move on anyway.
+        setTimeout(triggerNext, 3500);
+
+    }, 700);
+}
+
+// --- TONE BUTTON PITCH LINES --------------------------------------------
+// Draws each tone's real measured contour on its button, all three on a
+// shared vertical scale so the lines show tone HEIGHT as well as shape:
+// high sits near the top, low near the bottom, mid level in between.
+function renderTonePitchLines(speaker) {
+    const model = TONE_MODEL[speaker];
+    if (!model) return;
+
+    // Absolute semitones from this speaker's centre, so the three tones are
+    // comparable to each other rather than each self-centred.
+    const series = {};
+    let min = Infinity;
+    let max = -Infinity;
+    TONES.forEach((tone) => {
+        const base = 12 * Math.log2(model[tone].hz / model.centreHz);
+        const points = model[tone].glide.map((st) => base + st * TONE_SPREAD);
+        series[tone] = points;
+        points.forEach((v) => { min = Math.min(min, v); max = Math.max(max, v); });
+    });
+
+    const span = (max - min) || 1;
+    TONES.forEach((tone) => {
+        const svg = document.querySelector(`.tone-group-${tone} .tone-line`);
+        if (!svg) return;
+        const points = series[tone].map((v, i) => {
+            const x = 3 + (i / (series[tone].length - 1)) * 54;
+            const y = 21 - ((v - min) / span) * 18;
+            return `${x.toFixed(1)},${y.toFixed(1)}`;
+        }).join(' ');
+        svg.innerHTML = `<polyline points="${points}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />`;
+    });
+}
+
+loadGame();
