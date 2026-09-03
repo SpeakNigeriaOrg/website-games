@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Segmenter — authoring tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/author.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <h1>Story Segmenter</h1>
+
+    <section>
+      <label for="story-select">Story (folder in dev/story-media/)</label>
+      <select id="story-select"><option value="">— choose —</option></select>
+    </section>
+
+    <section id="story-fields" hidden>
+      <label>Title (Yoruba)
+        <input id="story-title" class="yoruba" placeholder="Ìtàn mi">
+      </label>
+      <label>Title (English)
+        <input id="story-title-en" placeholder="My story">
+      </label>
+    </section>
+
+    <section id="scene-section" hidden>
+      <h2>Scenes</h2>
+      <ul id="scene-list"></ul>
+      <label for="add-scene-select" class="visually-hidden">Add scene from image</label>
+      <select id="add-scene-select"><option value="">+ add scene from image…</option></select>
+    </section>
+
+    <section id="scene-editor" hidden>
+      <h2>Scene <span id="scene-label"></span></h2>
+      <label>Instruction (Yoruba) — what to tap
+        <textarea id="scene-instruction" class="yoruba" rows="2"></textarea>
+      </label>
+      <label>After-description (Yoruba) — what happens next
+        <textarea id="scene-after" class="yoruba" rows="2"></textarea>
+      </label>
+
+      <h2>Segments</h2>
+      <ul id="segment-list"></ul>
+
+      <div id="pending-box" hidden>
+        <p id="pending-status"></p>
+        <label>Label (for authors, not shown in game)
+          <input id="pending-label" placeholder="red dog left">
+        </label>
+        <label class="row"><input type="checkbox" id="pending-target" checked> tap target</label>
+        <div class="row">
+          <button id="accept-btn" class="primary">Accept segment</button>
+          <button id="reset-btn">Reset points</button>
+        </div>
+      </div>
+
+      <button id="delete-scene-btn" class="danger">Delete this scene</button>
+    </section>
+
+    <section id="save-section" hidden>
+      <button id="save-btn" class="primary">Save story</button>
+      <p id="save-status"></p>
+    </section>
+  </aside>
+
+  <main id="workspace">
+    <div id="toolbar" hidden>
+      <label class="row"><input type="checkbox" id="preview-toggle"> Preview taps (hides overlays, tests hit areas)</label>
+      <span id="hint">Click an object to segment it · shift-click = “not this” refinement point</span>
+    </div>
+    <div id="stage-wrap">
+      <p id="empty-msg">Pick a story on the left. Each subfolder of <code>dev/story-media/</code> is a story; drop your scene images there first.</p>
+      <div id="stage" hidden>
+        <img id="scene-img" alt="scene">
+        <svg id="overlay" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/author.js"></script>
+</body>
+</html>

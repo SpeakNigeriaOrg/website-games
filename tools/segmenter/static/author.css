@@ -1,0 +1,111 @@
+/* Utilitarian styles for the local authoring tool - deliberately plain,
+   this never ships to the public site. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #222;
+  background: #f2f0eb;
+}
+.yoruba { font-family: 'Noto Serif', Georgia, serif; }
+.visually-hidden { position: absolute; left: -9999px; }
+
+#sidebar {
+  width: 320px;
+  flex: 0 0 320px;
+  overflow-y: auto;
+  padding: 16px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+}
+#sidebar h1 { font-size: 18px; margin: 0 0 12px; }
+#sidebar h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: #777; margin: 18px 0 6px; }
+#sidebar section { margin-bottom: 14px; }
+#sidebar label { display: block; margin: 8px 0 4px; color: #444; }
+#sidebar input[type="text"], #sidebar input:not([type]), #sidebar textarea, #sidebar select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+}
+#sidebar textarea.yoruba, #sidebar input.yoruba { font-size: 16px; }
+.row { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+
+button {
+  padding: 7px 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #f7f7f7;
+  cursor: pointer;
+  font-size: 14px;
+}
+button:hover { background: #eee; }
+button.primary { background: #1a7a4a; border-color: #1a7a4a; color: #fff; }
+button.primary:hover { background: #156239; }
+button.danger { background: #fff; border-color: #c0392b; color: #c0392b; margin-top: 12px; }
+
+ul#scene-list, ul#segment-list { list-style: none; margin: 0 0 8px; padding: 0; }
+#scene-list li, #segment-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background: #fafafa;
+  cursor: pointer;
+}
+#scene-list li.active { border-color: #1a7a4a; background: #eaf5ef; }
+#scene-list li .thumb { width: 44px; height: 30px; object-fit: cover; border-radius: 3px; }
+#segment-list li .swatch { width: 12px; height: 12px; border-radius: 3px; flex: 0 0 12px; }
+#segment-list li .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#segment-list li .warn { color: #b26a00; font-size: 12px; }
+#segment-list li button { padding: 2px 7px; font-size: 12px; }
+.grow { flex: 1; }
+
+#pending-box { border: 1px dashed #1a7a4a; border-radius: 8px; padding: 10px; background: #f4faf7; }
+#pending-status { margin: 0 0 6px; font-size: 13px; color: #1a7a4a; }
+#save-status { font-size: 13px; color: #555; min-height: 1.2em; }
+
+#workspace { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+#toolbar {
+  padding: 10px 16px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+#toolbar .row { margin: 0; }
+#hint { color: #888; font-size: 13px; }
+#stage-wrap { flex: 1; overflow: auto; padding: 20px; }
+#empty-msg { color: #777; max-width: 40em; }
+
+#stage { position: relative; max-width: 1100px; margin: 0 auto; }
+#scene-img { display: block; width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+#overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+#stage.busy { cursor: progress; }
+#stage.busy #overlay { pointer-events: none; }
+
+/* Overlay polygon states */
+#overlay polygon { stroke-width: 2px; vector-effect: non-scaling-stroke; }
+#overlay .seg-target   { fill: rgba(26, 122, 74, 0.30);  stroke: #1a7a4a; }
+#overlay .seg-decoy    { fill: rgba(120, 120, 120, 0.30); stroke: #777; }
+#overlay .seg-pending  { fill: rgba(230, 126, 34, 0.35);  stroke: #e67e22; }
+#overlay .seg-hover    { fill-opacity: 0.6; }
+#overlay circle.pt-pos { fill: #1a7a4a; stroke: #fff; stroke-width: 1.5px; }
+#overlay circle.pt-neg { fill: #c0392b; stroke: #fff; stroke-width: 1.5px; }
+
+/* Preview mode: transparent hit areas, flash on tap (mirrors game hit-testing) */
+#stage.preview #overlay polygon { fill: transparent; stroke: none; cursor: pointer; }
+#stage.preview #overlay circle { display: none; }
+#overlay polygon.flash-hit  { animation: flashHit 0.5s ease-out; }
+#overlay polygon.flash-miss { animation: flashMiss 0.5s ease-out; }
+@keyframes flashHit  { 0% { fill: rgba(26, 122, 74, 0.55); }  100% { fill: transparent; } }
+@keyframes flashMiss { 0% { fill: rgba(192, 57, 43, 0.45); }  100% { fill: transparent; } }

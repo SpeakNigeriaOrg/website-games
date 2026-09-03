@@ -1,0 +1,11 @@
+{
+  "stories": [
+    {
+      "id": "test-story",
+      "title": "Àwọn Ajá",
+      "titleEnglish": "The Dogs",
+      "cover": "test-story/scene01.png",
+      "sceneCount": 2
+    }
+  ]
+}

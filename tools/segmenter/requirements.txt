@@ -1,0 +1,6 @@
+# Authoring-tool dependencies. Install into the local venv:
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+# ultralytics pulls in torch, opencv-python, numpy, and pillow; it
+# auto-downloads the sam2.1_b.pt checkpoint (~155 MB) on first use.
+ultralytics
+flask
