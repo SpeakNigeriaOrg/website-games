@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tone synthesis comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Plus+Jakarta+Sans:wght@400;600;700&family=Noto+Serif:wght@400;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#241F1C;--soft:#55504A;--paper:#FBF6EC;--card:#FFFDF8;--line:#E2D9C6;
+      --indigo:#21295C;--old:#9A6A08;--new:#2F7A4D;}
+*{box-sizing:border-box}
+body{margin:0;padding:28px 16px 60px;background:var(--paper);color:var(--ink);
+     font-family:'Plus Jakarta Sans',system-ui,sans-serif;}
+.wrap{max-width:820px;margin:0 auto}
+h1{font-family:Fraunces,Georgia,serif;color:var(--indigo);margin:0 0 6px;font-size:1.8rem}
+p.sub{color:var(--soft);margin:0 0 28px;line-height:1.55}
+h2{font-family:Fraunces,Georgia,serif;color:var(--indigo);font-size:1.15rem;
+   margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2 span{font-weight:400;color:var(--soft);font-size:.85rem}
+.row{display:grid;gap:8px;align-items:center;background:var(--card);
+     border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.head{display:grid;gap:8px;padding:0 12px 6px;font-size:.72rem;color:var(--soft);
+      text-transform:uppercase;letter-spacing:.06em}
+.label{font-family:'Noto Serif',Georgia,serif;font-weight:700;font-size:1.05rem}
+.label small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;
+             font-size:.75rem;color:var(--soft);margin-top:2px}
+button{font-family:inherit;font-weight:700;font-size:.85rem;padding:10px 6px;border-radius:8px;
+       cursor:pointer;border:2px solid;background:var(--card);transition:transform .08s}
+button:active{transform:scale(.96)}
+button.ref{color:var(--old);border-color:rgba(154,106,8,.4)}
+button.ref:hover{background:rgba(154,106,8,.08)}
+button.cand{color:var(--new);border-color:rgba(47,122,77,.4)}
+button.cand:hover{background:rgba(47,122,77,.08)}
+button.playing{background:var(--indigo);color:#EFE7D6;border-color:var(--indigo)}
+.note{margin-top:34px;padding:16px 18px;background:var(--card);border:1px solid var(--line);
+      border-left:4px solid var(--indigo);border-radius:8px;color:var(--soft);
+      font-size:.9rem;line-height:1.6}
+.note b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.85rem}
+td,th{text-align:left;padding:5px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--soft);font-weight:600}
+td.num{font-family:'IBM Plex Mono',monospace}
+kbd{font-family:'IBM Plex Mono',monospace;font-size:.85em;background:var(--paper);
+    border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Tone synthesis comparison</h1>
+<p class="sub">Every column plays the same pitches and the same measured contours — only the timbre
+differs. Rendered from the game's own <kbd>buildToneGraph</kbd>, so what you hear is what the game
+plays. <b>original</b> is the frozen six-sine version kept as a reference point.
+Best judged on a phone speaker, not headphones.</p>
+
+<div id="sets"></div>
+
+<div class="note">
+<b>How to read the numbers.</b> <i>Brightness</i> is the spectral centroid — where the energy sits on
+average. <i>Crest</i> is peak divided by average level; it tracked the harshness in listening tests,
+but it is a proxy, not a perceptual measure. The ear decides; these only say which direction a
+change moves in.
+<table id="stats"></table>
+<p style="margin-bottom:0"><b>What no variant changes:</b> the pitches and the contours. Four of the
+six glides fall and the low-to-high span is 325–353 cents, between a minor and a major third. That
+is what was measured from the speakers' recordings, and it is why these sound plaintive whatever the
+timbre. Widening it would teach something untrue — the honest lever for more drama is
+<kbd>TONE_SPREAD</kbd>, which exaggerates the glides without moving the pitches apart.</p>
+</div>
+</div>
+
+<script>
+const VARIANTS = __VARIANTS__;
+const STATS = __STATS__;
+const SETS = [
+  { speaker: 'speaker2', title: 'Speaker 2', note: 'female range — low 209 Hz, mid 232 Hz, high 253 Hz' },
+  { speaker: 'speaker3', title: 'Speaker 3', note: 'male range — low 113 Hz, mid 124 Hz, high 139 Hz' },
+];
+const ROWS = [
+  { key: 'melody', label: 'Dò Re Mí', sub: 'all three in sequence' },
+  { key: 'low',    label: 'Dò',       sub: 'low tone' },
+  { key: 'mid',    label: 'Re',       sub: 'mid tone' },
+  { key: 'high',   label: 'Mí',       sub: 'high tone' },
+];
+const cols = `110px repeat(${VARIANTS.length}, 1fr)`;
+let current = null;
+function play(btn, src) {
+  if (current) { current.audio.pause(); current.btn.classList.remove('playing'); }
+  const audio = new Audio(src);
+  btn.classList.add('playing');
+  current = { audio, btn };
+  audio.onended = () => btn.classList.remove('playing');
+  audio.play().catch((e) => console.warn(e));
+}
+const host = document.getElementById('sets');
+SETS.forEach((set) => {
+  const h = document.createElement('h2');
+  h.innerHTML = `${set.title} <span>— ${set.note}</span>`;
+  host.appendChild(h);
+  const head = document.createElement('div');
+  head.className = 'head';
+  head.style.gridTemplateColumns = cols;
+  head.innerHTML = '<div></div>' + VARIANTS.map((v) => `<div>${v}</div>`).join('');
+  host.appendChild(head);
+  ROWS.forEach((row) => {
+    const el = document.createElement('div');
+    el.className = 'row';
+    el.style.gridTemplateColumns = cols;
+    el.innerHTML = `<div class="label">${row.label}<small>${row.sub}</small></div>`;
+    VARIANTS.forEach((v) => {
+      const b = document.createElement('button');
+      b.className = v === 'original' ? 'ref' : 'cand';
+      b.textContent = '▶ ' + v;
+      b.onclick = () => play(b, `${set.speaker}-${row.key}-${v}.wav`);
+      el.appendChild(b);
+    });
+    host.appendChild(el);
+  });
+});
+const t = document.getElementById('stats');
+t.innerHTML = '<tr><th>variant</th><th>brightness</th><th>95% below</th><th>crest</th><th>level</th></tr>'
+  + VARIANTS.map((v) => {
+      const s = STATS[v]; if (!s) return '';
+      return `<tr><td>${v}</td><td class="num">${s.centroid.toFixed(0)} Hz</td>`
+           + `<td class="num">${s.f95.toFixed(0)} Hz</td>`
+           + `<td class="num">${s.crest.toFixed(2)}</td>`
+           + `<td class="num">${s.rms.toFixed(4)}</td></tr>`;
+    }).join('');
+</script>
+</body>
+</html>

@@ -307,53 +307,154 @@ const playWrong = () => playChime([196, 147], { gain: 0.14, noteGap: 0.09, decay
 // A Yoruba tone, synthesized in the pitch range of the speaker whose
 // recording the player just heard.
 //
-// The timbre is additive - fundamental plus harmonics at 1/n amplitude,
-// which is roughly how a real voice is built. That matters practically:
-// speaker3's low tone is 113 Hz, and phone speakers roll off hard below
-// ~300 Hz, so a pure sine there would be nearly inaudible. Its harmonics
-// at 226/339/452/565 Hz are not, and the ear reconstructs the pitch from
-// them (the missing-fundamental effect).
-const HARMONICS = 6;
-function playTone(tone, speaker, whenOffset = 0) {
+// Three earlier attempts are recorded here because each one's fix caused the
+// next one's problem, and the reasoning is not obvious from the result.
+//
+// v1: six sine harmonics at 1/n. Pitch-accurate but every tone sounded
+// mournful whatever its pitch - six harmonics is a hard ceiling at six times
+// the fundamental, about 1.5 kHz for speaker2 and only 833 Hz for speaker3,
+// where a real vowel carries energy past 4 kHz. Muffled reads as sad.
+//
+// v2: a sawtooth through two sharp formant filters. Fixed the dullness, and
+// was harsh and angry. Measured, it doubled brightness but nearly doubled
+// crest factor (peak over RMS) too, 2.6 -> 4.2.
+//
+// v3: additive again with a steeper rolloff. Measured *darker* than v1. The
+// brightness had been coming from the shallow rolloff all along, so softening
+// that threw away the only thing v2 got right.
+//
+// v4, here. A parameter sweep showed brightness and crest were locked together
+// - every setting brighter than v1 was harsher than v1 - which pointed at the
+// real culprit: PHASE. Harmonics that all start at zero sum to a spike, and a
+// spike is what a sawtooth is. Same spectrum, spread out in time, is far less
+// edgy. So instead of stacking oscillators this builds one PeriodicWave, whose
+// real/imag pairs set each harmonic's amplitude AND phase, using Schroeder
+// phase (-pi*n^2/N), the classic crest-minimising choice. Measured: identical
+// brightness at 435 Hz, crest 6.78 -> 3.59.
+//
+// It is also much cheaper - one oscillator per tone rather than twelve.
+//
+// Still deliberately untouched: the pitches and contours. Four of the six
+// glides fall and the low-to-high span is 325-353 cents, between a minor and a
+// major third. That is what was measured from the recordings, and it is why
+// these sound plaintive - a fact about Yoruba tone, not a synthesis artifact.
+//
+// These are the "soft" settings, chosen by ear from a four-way listening
+// comparison (current / soft / warm / clear) - see tools/tone-compare, which
+// regenerates that comparison if this is ever revisited. Soft measured 306 Hz
+// brightness against the old version's 301, so it is not brighter on paper;
+// what it fixes is the hard spectral cliff at the 6th harmonic, which is what
+// made the old one sound like a voice behind a door. Warm (363 Hz) and clear
+// (439 Hz) were both brighter and both judged too edgy.
+const TONE_VOICE = {
+    harmonics: 12,
+    rolloff: 1.45,       // amplitude proportional to 1/n^rolloff; 1.0 is a sawtooth
+    formantHz: 600,      // one broad, shallow vowel-ish resonance
+    formantQ: 1.0,       // broad on purpose - v2 used Q 6-8 and it rang
+    formantGain: 3,      // dB
+    lowpassHz: 1800,     // two poles of this, see below
+    peakGain: 0.15       // set so overall level matches the version this replaced
+};
+const VIBRATO_HZ = 5.2;         // a voice is never perfectly still; dead-steady reads as lifeless
+const VIBRATO_DEPTH_ST = 0.09;  // a tenth of a semitone - felt, not heard as wobble
+const VIBRATO_ONSET = 0.18;     // real vibrato arrives after onset, it is not there at the start
+
+// PeriodicWave is immutable and tied to its context, so build each distinct
+// voice once and keep it. Cached on the context itself, which keeps offline
+// rendering in the tests independent of the live one.
+function toneWave(ctx, voice) {
+    const key = `${voice.harmonics}|${voice.rolloff}`;
+    ctx.__toneWaves = ctx.__toneWaves || {};
+    if (ctx.__toneWaves[key]) return ctx.__toneWaves[key];
+
+    const real = new Float32Array(voice.harmonics + 1);
+    const imag = new Float32Array(voice.harmonics + 1);
+    for (let n = 1; n <= voice.harmonics; n++) {
+        const amplitude = 1 / Math.pow(n, voice.rolloff);
+        const phase = -Math.PI * n * n / voice.harmonics; // Schroeder
+        real[n] = amplitude * Math.cos(phase);
+        imag[n] = amplitude * Math.sin(phase);
+    }
+    ctx.__toneWaves[key] = ctx.createPeriodicWave(real, imag);
+    return ctx.__toneWaves[key];
+}
+
+// Builds the node graph for one tone on any context and returns its output.
+// Split out from playTone so the tests can render it offline and measure it:
+// brightness and harshness are the whole point of this code and neither can be
+// judged by eye. `voice` is overridable so candidates can be rendered and
+// compared side by side without editing this file.
+function buildToneGraph(ctx, tone, speaker, start, voice = TONE_VOICE) {
     const model = TONE_MODEL[speaker]?.[tone];
-    if (!model) return;
+    if (!model) return null;
+
+    // The measured contour, as an absolute Hz curve.
+    const curve = new Float32Array(model.glide.length);
+    for (let i = 0; i < model.glide.length; i++) {
+        curve[i] = model.hz * Math.pow(2, (model.glide[i] * TONE_SPREAD) / 12);
+    }
+
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(toneWave(ctx, voice));
+    osc.frequency.setValueCurveAtTime(curve, start, TONE_DURATION);
+
+    // Vibrato adds to the frequency param on top of the glide automation (an
+    // AudioParam sums its automation with any connected node output), so the
+    // measured contour is untouched - this only puts life on top of it.
+    const lfo = ctx.createOscillator();
+    lfo.type = "sine";
+    lfo.frequency.value = VIBRATO_HZ;
+    const depth = ctx.createGain();
+    depth.gain.setValueAtTime(0, start);
+    depth.gain.linearRampToValueAtTime(model.hz * (Math.pow(2, VIBRATO_DEPTH_ST / 12) - 1), start + VIBRATO_ONSET);
+    lfo.connect(depth).connect(osc.frequency);
+
+    const formant = ctx.createBiquadFilter();
+    formant.type = "peaking";
+    formant.frequency.value = voice.formantHz;
+    formant.Q.value = voice.formantQ;
+    formant.gain.value = voice.formantGain;
+    osc.connect(formant);
+
+    // Two poles rather than one. A single biquad rolls off at 12 dB/octave,
+    // which leaves audible energy well into 3-5 kHz - the band the ear is most
+    // sensitive to and where "harsh" lives. Cascading two gets 24 dB/octave, so
+    // the low harmonics that carry brightness survive and the ones that bite
+    // do not.
+    const lowpassA = ctx.createBiquadFilter();
+    lowpassA.type = "lowpass";
+    lowpassA.frequency.value = voice.lowpassHz;
+    lowpassA.Q.value = 0.54;
+    const lowpassB = ctx.createBiquadFilter();
+    lowpassB.type = "lowpass";
+    lowpassB.frequency.value = voice.lowpassHz;
+    lowpassB.Q.value = 1.31;
+    formant.connect(lowpassA); lowpassA.connect(lowpassB);
+
+    // Curved rather than straight: a linear fade to silence sounds like someone
+    // pulling a fader, an exponential one sounds like a note ending. The slight
+    // droop across the sustain is there for the same reason as the vibrato - a
+    // perfectly flat level is the sound of a machine.
+    const env = ctx.createGain();
+    env.gain.setValueAtTime(0.0001, start);
+    env.gain.exponentialRampToValueAtTime(voice.peakGain, start + 0.025);
+    env.gain.exponentialRampToValueAtTime(voice.peakGain * 0.82, start + TONE_DURATION - 0.07);
+    env.gain.exponentialRampToValueAtTime(0.0001, start + TONE_DURATION);
+    lowpassB.connect(env);
+
+    osc.start(start);
+    osc.stop(start + TONE_DURATION + 0.02);
+    lfo.start(start);
+    lfo.stop(start + TONE_DURATION + 0.02);
+
+    return env;
+}
+
+function playTone(tone, speaker, whenOffset = 0) {
     try {
         const ctx = getAudioCtx();
-        const start = ctx.currentTime + whenOffset;
-
-        // The measured contour, as an absolute Hz curve for the fundamental.
-        const curve = new Float32Array(model.glide.length);
-        for (let i = 0; i < model.glide.length; i++) {
-            curve[i] = model.hz * Math.pow(2, (model.glide[i] * TONE_SPREAD) / 12);
-        }
-
-        // 1/n amplitudes, normalized so the stack peaks at PEAK_GAIN however
-        // many harmonics we use.
-        const PEAK_GAIN = 0.22;
-        let weightSum = 0;
-        for (let n = 1; n <= HARMONICS; n++) weightSum += 1 / n;
-
-        for (let n = 1; n <= HARMONICS; n++) {
-            const osc = ctx.createOscillator();
-            const gainNode = ctx.createGain();
-            osc.type = "sine";
-
-            // Every harmonic follows the same contour, scaled by its multiple,
-            // so the whole stack glides together as one voice.
-            const harmonicCurve = new Float32Array(curve.length);
-            for (let i = 0; i < curve.length; i++) harmonicCurve[i] = curve[i] * n;
-            osc.frequency.setValueCurveAtTime(harmonicCurve, start, TONE_DURATION);
-
-            const peak = (PEAK_GAIN * (1 / n)) / weightSum;
-            gainNode.gain.setValueAtTime(0.0001, start);
-            gainNode.gain.linearRampToValueAtTime(peak, start + 0.025);
-            gainNode.gain.setValueAtTime(peak, start + TONE_DURATION - 0.06);
-            gainNode.gain.linearRampToValueAtTime(0.0001, start + TONE_DURATION);
-
-            osc.connect(gainNode).connect(ctx.destination);
-            osc.start(start);
-            osc.stop(start + TONE_DURATION + 0.02);
-        }
+        const out = buildToneGraph(ctx, tone, speaker, ctx.currentTime + whenOffset);
+        if (out) out.connect(ctx.destination);
     } catch (err) {
         console.warn("Could not play tone:", err);
     }

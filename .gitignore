@@ -18,3 +18,6 @@ tools/segmenter/.venv/
 # is where they're worked on locally. The small test-story fixtures ARE
 # tracked, so a fresh clone can run the story game without any setup.
 dev/story-media/story-1/
+
+# tone-compare renders ~4 MB of WAVs plus a page; regenerate with render.mjs
+tools/tone-compare/build/
