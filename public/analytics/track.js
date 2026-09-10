@@ -99,8 +99,8 @@
     // Fires only when the search had results - see CONVERSION_WHEN below.
     search_settled: 'N_yXCJq40fEcELyJtqpE',
     sense_chosen: 'Zo2ZCMyi0fEcELyJtqpE',
-    game_opened: 'v-PSCJ240fEcELyJtqpE'
-    // share_link_created: '',   // "Share link created"
+    game_opened: 'v-PSCJ240fEcELyJtqpE',
+    share_link_created: 'D-Y1CKa40fEcELyJtqpE'
     // outbound_form_click: ''   // "Outbound form clicked"
   };
 
