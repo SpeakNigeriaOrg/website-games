@@ -29,15 +29,23 @@ const GAME_URL = process.env.TONE_GAME_URL || 'http://localhost:8000/tones/';
 const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const PORT = 9933;
 
-// Candidate voices. `original` is the frozen six-sine version; the rest are
-// passed straight to the game's buildToneGraph as its `voice` argument, so they
-// use whatever the current synthesis is. Add a row here to audition an idea.
+// Voices rendered through the GAME's own buildToneGraph. `current` passes no
+// override, so it is exactly what ships - if the game's synthesis changes, this
+// row changes with it and cannot go stale. Add a row to audition a variation on
+// whatever the current design is; the object is passed as the `voice` argument.
 const VOICES = {
-  soft:  { harmonics: 12, rolloff: 1.45, formantHz: 600, formantQ: 1.0, formantGain: 3, lowpassHz: 1800, peakGain: 0.15 },
-  warm:  { harmonics: 16, rolloff: 1.20, formantHz: 640, formantQ: 1.1, formantGain: 4, lowpassHz: 2400, peakGain: 0.20 },
-  clear: { harmonics: 20, rolloff: 1.00, formantHz: 700, formantQ: 1.2, formantGain: 5, lowpassHz: 3000, peakGain: 0.20 },
+  current: null,
+  softer: { modes: [{ mult: 1, gain: 1, decay: 0.62 }, { mult: 3.932, gain: 0.22, decay: 0.14 }, { mult: 9.538, gain: 0.05, decay: 0.05 }],
+            attack: 0.003, gain: 0.42, mallet: { length: 0.006, gain: 0.025, hz: 2600, q: 0.7 } },
+  woodier: { modes: [{ mult: 1, gain: 1, decay: 0.42 }, { mult: 3.932, gain: 0.42, decay: 0.2 }, { mult: 9.538, gain: 0.14, decay: 0.09 }],
+            attack: 0.002, gain: 0.42, mallet: { length: 0.01, gain: 0.06, hz: 3600, q: 0.7 } },
 };
-const VARIANTS = ['original', ...Object.keys(VOICES)];
+
+// Instrument-style voices live in instruments.js and are injected into the
+// page; they need whole node graphs of their own rather than a `voice` preset,
+// because what distinguishes them is time evolution, not spectrum.
+const INSTRUMENTS = ['hum', 'piano', 'pluck', 'bell', 'flute', 'bowed'];
+const VARIANTS = ['original', ...Object.keys(VOICES), ...INSTRUMENTS];
 const SPEAKERS = ['speaker2', 'speaker3'];
 const CLIPS = ['melody', 'low', 'mid', 'high'];
 
@@ -123,28 +131,44 @@ window.toWav = function (pcm, sr) {
 };
 
 window.renderClip = async function (variant, speaker, what) {
+  const inst = (window.INSTRUMENTS || {})[variant];
+  const voiceDur = inst ? inst.duration : TONE_DURATION;
   const seq = what === 'melody' ? ['low', 'mid', 'high'] : [what];
   const gap = TONE_DURATION - 0.14;               // same spacing the hint melody uses
-  const dur = what === 'melody' ? gap * 2 + TONE_DURATION + 0.3 : TONE_DURATION + 0.3;
+  const dur = (what === 'melody' ? gap * 2 : 0) + voiceDur + 0.3;
   const ctx = new OfflineAudioContext(1, Math.ceil(SR * dur), SR);
   const bus = ctx.createGain(); bus.connect(ctx.destination);
   seq.forEach((t, i) => {
     const at = what === 'melody' ? i * gap : 0;
-    const node = variant === 'original'
-      ? renderOriginal(ctx, t, speaker, at)
-      : buildToneGraph(ctx, t, speaker, at, VOICES[variant]);
+    const node = inst ? inst.build(ctx, t, speaker, at)
+      : variant === 'original' ? renderOriginal(ctx, t, speaker, at)
+      : VOICES[variant] ? buildToneGraph(ctx, t, speaker, at, VOICES[variant])
+      : buildToneGraph(ctx, t, speaker, at);
     node.connect(bus);
   });
   const pcm = (await ctx.startRendering()).getChannelData(0);
+
+  // Normalise every clip to the same average level before writing it. Without
+  // this the loudest option wins the listening test regardless of timbre, and
+  // these envelopes differ enormously - a marimba puts its energy in 50 ms, a
+  // bowed note spreads it over 550.
+  let rawSq = 0;
+  for (let i = 0; i < pcm.length; i++) rawSq += pcm[i] * pcm[i];
+  const rawRms = Math.sqrt(rawSq / pcm.length) || 1e-9;
+  const gain = Math.min(6, 0.055 / rawRms);
+  for (let i = 0; i < pcm.length; i++) pcm[i] *= gain;
 
   let sq = 0, peak = 0;
   for (let i = 0; i < pcm.length; i++) { sq += pcm[i] * pcm[i]; peak = Math.max(peak, Math.abs(pcm[i])); }
   const rms = Math.sqrt(sq / pcm.length);
 
-  // Spectral centroid: a single number for "brightness". Coarse log-spaced DFT
-  // over one window at the clip's midpoint - enough to compare variants, not
-  // meant as analysis.
-  const N = 8192, mid = Math.floor(pcm.length / 2) - N / 2, bins = [];
+  // Spectral centroid: a single number for "brightness". Measured shortly AFTER
+  // ONSET, not at the clip's midpoint. That matters once decaying voices are in
+  // the comparison: the midpoint of a 0.95 s piano note is 400 ms after the
+  // hammer, by which time every high partial has gone, and the number would say
+  // "very dark" about a sound whose attack is bright. 60 ms in catches the part
+  // of the sound the ear actually uses to identify it.
+  const N = 8192, mid = Math.min(Math.max(0, pcm.length - N - 1), Math.floor(SR * 0.06)), bins = [];
   for (let k = 0; k < 140; k++) bins.push(80 * Math.pow(8000 / 80, k / 139));
   const mag = bins.map((f) => {
     const w = 2 * Math.PI * f / SR; let re = 0, im = 0;
@@ -159,8 +183,9 @@ window.renderClip = async function (variant, speaker, what) {
   for (let i = 0; i < bins.length; i++) { run += mag[i]; if (run >= 0.95 * tot) { f95 = bins[i]; break; } }
 
   return {
-    wav: toWav(pcm, SR), rms, peak, crest: peak / rms,
+    wav: toWav(pcm, SR), rms, peak, crest: peak / rms, levelGain: gain,
     centroid: bins.reduce((a, f, i) => a + f * mag[i], 0) / tot, f95,
+    note: inst ? inst.note : null,
   };
 };
 true`;
@@ -177,10 +202,16 @@ try {
   }
   if (!ready) throw new Error(`${GAME_URL} did not load the game. Is the dev server running?`);
 
+  await evaluate(fs.readFileSync(path.join(HERE, 'instruments.js'), 'utf8') + '\ntrue');
   await evaluate(PAGE_HELPERS);
+  // Wipe stale output: variants come and go from the lists above, and a leftover
+  // WAV from a previous run is worse than a missing one - it plays, and it is
+  // not what the page says it is.
+  fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(OUT, { recursive: true });
 
   const stats = {};
+  const notes = {};
   for (const speaker of SPEAKERS) {
     for (const clip of CLIPS) {
       for (const variant of VARIANTS) {
@@ -189,6 +220,7 @@ try {
         // Melodies are excluded from the stats: three tones overlap in one, so
         // the peak (and therefore crest) is inflated for every variant equally
         // and the comparison stops meaning anything.
+        if (r.note) notes[variant] = r.note;
         if (clip !== 'melody') (stats[variant] ||= []).push(r);
       }
     }
@@ -197,6 +229,7 @@ try {
   fs.writeFileSync(path.join(OUT, 'index.html'),
     fs.readFileSync(path.join(HERE, 'page.html'), 'utf8')
       .replace('__VARIANTS__', JSON.stringify(VARIANTS))
+      .replace('__NOTES__', JSON.stringify(notes))
       .replace('__STATS__', JSON.stringify(Object.fromEntries(
         Object.entries(stats).map(([k, a]) => [k, {
           centroid: a.reduce((s, r) => s + r.centroid, 0) / a.length,
@@ -206,11 +239,14 @@ try {
         }])))));
 
   console.log('single tones only (melodies excluded - overlap inflates peak)\n');
-  console.log('variant    brightness   95% below    crest    RMS');
+  console.log('variant    brightness   95% below    crest    level-matched by');
   for (const v of VARIANTS) {
     const a = stats[v]; const m = (k) => a.reduce((s, r) => s + r[k], 0) / a.length;
-    console.log(`${v.padEnd(10)} ${m('centroid').toFixed(0).padStart(6)} Hz  ${m('f95').toFixed(0).padStart(7)} Hz   ${m('crest').toFixed(2)}    ${m('rms').toFixed(4)}`);
+    console.log(`${v.padEnd(10)} ${m('centroid').toFixed(0).padStart(6)} Hz  ${m('f95').toFixed(0).padStart(7)} Hz   ${m('crest').toFixed(2)}    x${m('levelGain').toFixed(2)}`);
   }
+  console.log('\nAll clips are level-matched, so these compare timbre and not loudness.');
+  console.log('Crest is NOT comparable across envelope types: a struck sound is meant to peak');
+  console.log('hard and decay, so 9-14 there is normal, not harsh. Compare it within a family.');
   console.log(`\n${VARIANTS.length * SPEAKERS.length * CLIPS.length} clips written to ${OUT}`);
   console.log('open: python3 -m http.server 8010 --directory tools/tone-compare/build');
 } finally {

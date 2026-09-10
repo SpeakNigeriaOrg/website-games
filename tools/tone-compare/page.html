@@ -17,9 +17,9 @@ p.sub{color:var(--soft);margin:0 0 28px;line-height:1.55}
 h2{font-family:Fraunces,Georgia,serif;color:var(--indigo);font-size:1.15rem;
    margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 h2 span{font-weight:400;color:var(--soft);font-size:.85rem}
-.row{display:grid;gap:8px;align-items:center;background:var(--card);
+.row{display:grid;grid-template-columns:150px repeat(4,1fr);gap:8px;align-items:center;background:var(--card);
      border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
-.head{display:grid;gap:8px;padding:0 12px 6px;font-size:.72rem;color:var(--soft);
+.head{display:grid;grid-template-columns:150px repeat(4,1fr);gap:8px;padding:0 12px 6px;font-size:.72rem;color:var(--soft);
       text-transform:uppercase;letter-spacing:.06em}
 .label{font-family:'Noto Serif',Georgia,serif;font-weight:700;font-size:1.05rem}
 .label small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;
@@ -42,46 +42,64 @@ th{color:var(--soft);font-weight:600}
 td.num{font-family:'IBM Plex Mono',monospace}
 kbd{font-family:'IBM Plex Mono',monospace;font-size:.85em;background:var(--paper);
     border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+.vnote{margin:-4px 0 12px 12px;font-size:.78rem;color:var(--soft);line-height:1.45;max-width:62ch}
+.label{font-family:'Plus Jakarta Sans',sans-serif !important;font-weight:700;font-size:.95rem}
+button{font-size:1rem;padding:11px 6px}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>Tone synthesis comparison</h1>
-<p class="sub">Every column plays the same pitches and the same measured contours — only the timbre
-differs. Rendered from the game's own <kbd>buildToneGraph</kbd>, so what you hear is what the game
-plays. <b>original</b> is the frozen six-sine version kept as a reference point.
-Best judged on a phone speaker, not headphones.</p>
+<h1>Tone timbre comparison</h1>
+<p class="sub">Every clip plays the <b>same measured pitches and the same measured contours</b> —
+only the timbre differs, and all clips are level-matched so loudness cannot decide it.
+<b>original</b> is the first six-sine version and <b>soft</b> is what is live now; both are
+static spectra with a level ramp. Everything below them is an <i>event that evolves</i> —
+a real attack, and high partials dying faster than low ones — which is the actual difference
+between a synthesiser and an instrument. Best judged on a phone speaker.</p>
 
 <div id="sets"></div>
 
 <div class="note">
-<b>How to read the numbers.</b> <i>Brightness</i> is the spectral centroid — where the energy sits on
-average. <i>Crest</i> is peak divided by average level; it tracked the harshness in listening tests,
-but it is a proxy, not a perceptual measure. The ear decides; these only say which direction a
-change moves in.
-<table id="stats"></table>
-<p style="margin-bottom:0"><b>What no variant changes:</b> the pitches and the contours. Four of the
-six glides fall and the low-to-high span is 325–353 cents, between a minor and a major third. That
-is what was measured from the speakers' recordings, and it is why these sound plaintive whatever the
-timbre. Widening it would teach something untrue — the honest lever for more drama is
-<kbd>TONE_SPREAD</kbd>, which exaggerates the glides without moving the pitches apart.</p>
-</div>
+<b>Why the earlier attempts failed.</b> Every one of them shaped a <i>steady state</i> — how the
+harmonics are balanced — and then put a level ramp on it. That is what an organ or a test tone is.
+An instrument is an event: a fast, slightly noisy onset, then a spectrum that changes as high
+partials die away faster than low ones. No amount of re-balancing a static spectrum produces that.
+<p><b>What measuring the speakers' own recordings showed.</b> Their real voices are dark too.
+Averaged over every syllable clip they recorded, speaker3's energy from 1–2 kHz sits 37 dB below
+his peak and speaker2's 25 dB below hers; almost everything is in the bottom two octaves. So the
+original tone was not far off their actual spectral balance, and chasing brightness was chasing
+the wrong thing. What a real voice has is <b>jitter, shimmer and a soft onset</b> — not treble.
+The <b>hum</b> voice is built from that: each speaker's own measured resonances
+(speaker2 at 345/560/818/2799 Hz, speaker3 at 297/1047/1234 Hz), plus a random walk on both
+pitch and level.</p>
+<p><b>Do not read the numbers across families.</b> Brightness is measured 60 ms after onset, which
+is fair to both kinds of sound. Crest factor is not shown per row on purpose: a struck sound is
+supposed to peak hard and decay, so the 9–14 the piano and pluck measure is normal rather than
+harsh, and the same number that flagged real harshness in the sawtooth means nothing here.</p>
+<p><b>A real tension to listen for.</b> Struck sounds put nearly all their energy in the first
+50 ms, which makes the pitch <i>contour</i> much harder to hear — and the contour is what the game
+teaches. Sustained voices (hum, flute, bowed) keep it fully audible. Piano and marimba may sound
+nicer in isolation and teach less.</p>
+<p style="margin-bottom:0"><b>Also worth noting:</b> the hint melody plays tones 290 ms apart, so
+anything with a long tail (bell at 1.2 s, piano at 0.95 s) will overlap into a chord rather than a
+sequence. Judge the <b>Dò Re Mí</b> column for that, not the single tones.</p>
+</div></div>
 </div>
 
 <script>
 const VARIANTS = __VARIANTS__;
 const STATS = __STATS__;
+const NOTES = __NOTES__;
 const SETS = [
-  { speaker: 'speaker2', title: 'Speaker 2', note: 'female range — low 209 Hz, mid 232 Hz, high 253 Hz' },
-  { speaker: 'speaker3', title: 'Speaker 3', note: 'male range — low 113 Hz, mid 124 Hz, high 139 Hz' },
+  { speaker: 'speaker2', title: 'Speaker 2', note: 'female range — Dò 209 Hz, Re 232 Hz, Mí 253 Hz' },
+  { speaker: 'speaker3', title: 'Speaker 3', note: 'male range — Dò 113 Hz, Re 124 Hz, Mí 139 Hz' },
 ];
-const ROWS = [
-  { key: 'melody', label: 'Dò Re Mí', sub: 'all three in sequence' },
-  { key: 'low',    label: 'Dò',       sub: 'low tone' },
-  { key: 'mid',    label: 'Re',       sub: 'mid tone' },
-  { key: 'high',   label: 'Mí',       sub: 'high tone' },
+const CLIPS = [
+  { key: 'melody', label: 'Dò Re Mí' },
+  { key: 'low',    label: 'Dò' },
+  { key: 'mid',    label: 'Re' },
+  { key: 'high',   label: 'Mí' },
 ];
-const cols = `110px repeat(${VARIANTS.length}, 1fr)`;
 let current = null;
 function play(btn, src) {
   if (current) { current.audio.pause(); current.btn.classList.remove('playing'); }
@@ -98,33 +116,31 @@ SETS.forEach((set) => {
   host.appendChild(h);
   const head = document.createElement('div');
   head.className = 'head';
-  head.style.gridTemplateColumns = cols;
-  head.innerHTML = '<div></div>' + VARIANTS.map((v) => `<div>${v}</div>`).join('');
+  head.innerHTML = '<div></div>' + CLIPS.map((c) => `<div>${c.label}</div>`).join('');
   host.appendChild(head);
-  ROWS.forEach((row) => {
+  VARIANTS.forEach((v) => {
     const el = document.createElement('div');
     el.className = 'row';
-    el.style.gridTemplateColumns = cols;
-    el.innerHTML = `<div class="label">${row.label}<small>${row.sub}</small></div>`;
-    VARIANTS.forEach((v) => {
+    const s = STATS[v];
+    const meta = s ? `${s.centroid.toFixed(0)} Hz at onset` : '';
+    el.innerHTML = `<div class="label">${v}<small>${meta}</small></div>`;
+    CLIPS.forEach((c) => {
       const b = document.createElement('button');
-      b.className = v === 'original' ? 'ref' : 'cand';
-      b.textContent = '▶ ' + v;
-      b.onclick = () => play(b, `${set.speaker}-${row.key}-${v}.wav`);
+      b.className = (v === 'original' || v === 'soft') ? 'ref' : 'cand';
+      b.textContent = '▶';
+      b.title = `${v} — ${c.label}`;
+      b.onclick = () => play(b, `${set.speaker}-${c.key}-${v}.wav`);
       el.appendChild(b);
     });
     host.appendChild(el);
+    if (NOTES[v]) {
+      const n = document.createElement('div');
+      n.className = 'vnote';
+      n.textContent = NOTES[v];
+      host.appendChild(n);
+    }
   });
 });
-const t = document.getElementById('stats');
-t.innerHTML = '<tr><th>variant</th><th>brightness</th><th>95% below</th><th>crest</th><th>level</th></tr>'
-  + VARIANTS.map((v) => {
-      const s = STATS[v]; if (!s) return '';
-      return `<tr><td>${v}</td><td class="num">${s.centroid.toFixed(0)} Hz</td>`
-           + `<td class="num">${s.f95.toFixed(0)} Hz</td>`
-           + `<td class="num">${s.crest.toFixed(2)}</td>`
-           + `<td class="num">${s.rms.toFixed(4)}</td></tr>`;
-    }).join('');
-</script>
+</script></script>
 </body>
 </html>
