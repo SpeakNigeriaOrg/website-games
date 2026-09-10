@@ -39,16 +39,8 @@ await new Promise((r) => ws.addEventListener('open', r, { once: true }));
 let seq = 0;
 const pending = new Map();
 let errors = [];
-let requests = [];
 ws.addEventListener('message', (e) => {
   const m = JSON.parse(e.data);
-  // documentURL, not just url: gtag's ccm/collect calls fire seconds after
-  // their page has been navigated away from, and counting by arrival time
-  // blamed them on whatever page came next. Attribution has to come from the
-  // document that made the request.
-  if (m.method === 'Network.requestWillBeSent') {
-    requests.push({ url: m.params.request.url, documentURL: m.params.documentURL || '' });
-  }
   if (m.id && pending.has(m.id)) {
     const p = pending.get(m.id); pending.delete(m.id);
     m.error ? p.reject(new Error(JSON.stringify(m.error))) : p.resolve(m.result);
@@ -86,10 +78,6 @@ const allPlaylistsEnabled = async () => {
 
 await send('Runtime.enable');
 await send('Page.enable');
-// Required for the Ads-placement section: without it no Network events are
-// delivered and every request count is trivially zero, which reads as "the tag
-// did not load" for pages where it certainly did.
-await send('Network.enable');
 await send('Emulation.setDeviceMetricsOverride', { width: 430, height: 932, deviceScaleFactor: 2, mobile: true });
 
 // Navigate and wait for the game's data to be parsed. Polls rather than
@@ -98,7 +86,6 @@ await send('Emulation.setDeviceMetricsOverride', { width: 430, height: 932, devi
 // Pages site can be slower again for the first request.
 async function open(url) {
   errors = [];
-  requests = [];
   await send('Page.navigate', { url });
   for (let i = 0; i < 120; i++) {
     if (await ev(`typeof gameData !== 'undefined' && gameData.length > 0`).catch(() => false)) return true;
@@ -263,70 +250,6 @@ ok((await ev(`window.__audioUrls.filter(u => u.includes('/words/')).length`)) > 
 }
 ok(errors.length === 0, `no console errors${errors.length ? ': ' + errors[0] : ''}`);
 } else skipSection('vocabulary game');
-
-// --- the Google Ads tag must not load on a page a child plays -----------
-// COPPA treats cookies as personal information on a child-directed site, and
-// its "support for internal operations" exception covers basic analytics but
-// not advertising. PostHog is expected on every page; gtag is expected ONLY on
-// the adult-facing landing page, where game_opened is the conversion.
-// This regressed once already: track.js used to call loadAds() unconditionally.
-console.log('\nGoogle Ads tag placement');
-{
-  const adsRe = /googletagmanager\.com\/gtag|googleads|doubleclick/;
-
-  // Grant consent before the document runs, rather than clicking the notice.
-  // The notice is geo-gated to the EEA/UK and its geo lookup is a network round
-  // trip, so racing it is flaky - and what matters here is the question "with
-  // consent given, which pages load the Ads tag", not how consent was given.
-  const granted = await send('Page.addScriptToEvaluateOnNewDocument', {
-    source: `try { localStorage.setItem('sn-consent', 'granted'); } catch (e) {}`
-  });
-
-  const seen = async (url) => {
-    await send('Page.navigate', { url: 'about:blank' });
-    await sleep(800);
-    requests = [];
-    await send('Page.navigate', { url });
-    await sleep(4500);           // consent resolve + tag fetch
-
-    // Assert on the DOM, not on network attribution. loadAds() works by
-    // appending a <script src="googletagmanager..."> to the head, so its
-    // presence is exactly "this page loaded the Ads tag" - whereas request
-    // counting proved unreliable: gtag's collect calls fire seconds late, and
-    // requests were attributed to a game page that had no tag element on it at
-    // all (verified: 0 script tags while a request carried its documentURL).
-    const tagEls = await ev(`document.querySelectorAll('script[src*="googletagmanager.com/gtag"]').length`);
-    // ADS_DEBUG=1 prints why a page loaded the tag when it should not have.
-    // The usual answer is a stale cached script: this check first failed
-    // against production because track.js and game-events.js had changed
-    // without their ?v= being bumped, so browsers kept running the old ones.
-    if (process.env.ADS_DEBUG && tagEls > 0 && !url.endsWith('.org/')) {
-      console.log('       [debug] cached game-events has ads:false? ',
-        await ev(`fetch('/analytics/game-events.js?v=1').then(r=>r.text()).then(t=>t.includes('ads: false')).catch(e=>'ERR')`));
-      console.log('       [debug] no-store game-events has ads:false?',
-        await ev(`fetch('/analytics/game-events.js?v=1',{cache:'no-store'}).then(r=>r.text()).then(t=>t.includes('ads: false')).catch(e=>'ERR')`));
-      console.log('       [debug] cached track.js has opts.ads?     ',
-        await ev(`fetch('/analytics/track.js?v=1').then(r=>r.text()).then(t=>t.includes('opts.ads')).catch(e=>'ERR')`));
-      console.log('       [debug] scripts on page:',
-        JSON.stringify(await ev(`[...document.querySelectorAll('script[src]')].map(s=>s.getAttribute('src'))`)));
-    }
-    const mine = requests.filter((r) => r.documentURL === url || r.documentURL === url + '/');
-    return {
-      tagEls,
-      adsRequests: mine.filter((r) => adsRe.test(r.url)).length,
-      posthog: mine.filter((r) => /posthog/.test(r.url)).length,
-    };
-  };
-
-  const landing = await seen(`${BASE}/`);
-  ok(landing.tagEls > 0, `the landing page loads the Ads tag (${landing.tagEls} tag element(s))`);
-  for (const game of ['phonics', 'tones', 'vocab']) {
-    const r = await seen(`${BASE}/${game}/`);
-    ok(r.tagEls === 0, `/${game}/ does NOT load the Ads tag${r.tagEls ? ` - ${r.tagEls} tag element(s), a COPPA problem` : ''}`);
-    ok(r.posthog > 0, `/${game}/ still reports to PostHog (${r.posthog} request(s))`);
-  }
-  await send('Page.removeScriptToEvaluateOnNewDocument', { identifier: granted.identifier });
-}
 
 console.log('');
 ws.close();

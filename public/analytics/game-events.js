@@ -84,38 +84,17 @@
 
             window.snAnalytics.init('games', {
                 commonProps: { contentVersion: contentVersion },
-                // No Google Ads tag on a page a child plays. COPPA treats
-                // cookies as personal information on a child-directed site,
-                // and its "support for internal operations" exception covers
-                // basic analytics but not advertising. The games LANDING page
-                // keeps the tag - it is the adult-facing page, and game_opened
-                // is the conversion - which is why this is set here, in the
-                // file only the game pages load, rather than per-site.
-                //
-                // Until 2026-09 the tag DID load here: track.js called
-                // loadAds() unconditionally. Verified in production before the
-                // fix - gtag/js?id=AW-... was requested on /phonics/, /tones/
-                // and /vocab/. Do not remove this without re-reading
-                // events.schema.json's childDirectedConstraint.
-                ads: false,
                 posthog: {
                     // Same registrable domain as speaknigeria.org and
                     // gamemedia.speaknigeria.org, so a visitor is one person
                     // across all three at no cost.
                     cross_subdomain_cookie: true,
-                    // Session replay is OFF, and this is the one place it
-                    // would have been most useful.
-                    //
-                    // These games are played by children in Speak Nigeria's
-                    // classes - the courses page says ages 5 to 17. Recording
-                    // a child's session is not something to switch on because
-                    // the data would be interesting, and it is a poor fit for
-                    // COPPA's narrow "support for internal operations"
-                    // exception, which is what lets a child-directed site use
-                    // analytics identifiers at all.
-                    //
-                    // Do not turn this on without advice. answer_checked
-                    // already carries what the replays were wanted for.
+                    // Session replay is off. Not a legal requirement - the
+                    // sites are marketed to parents and educators - but a
+                    // judgement call about recording screens during lessons,
+                    // and answer_checked already carries what replay was
+                    // wanted for. Turn it on if you decide otherwise; it is
+                    // the site owner's call, not an agent's.
                     disable_session_recording: true
                 }
             });

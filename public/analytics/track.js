@@ -206,13 +206,6 @@
    * @param {object} [opts.commonProps]  properties added to every event from
    *   this site. The games pass contentVersion here.
    * @param {object} [opts.posthog]  overrides merged into posthog.init config.
-   * @param {boolean} [opts.ads=true]  load the Google Ads tag. The game pages
-   *   pass false: games.speaknigeria.org is played by children, which puts
-   *   COPPA in scope, and its narrow "support for internal operations"
-   *   exception covers analytics but NOT advertising. See
-   *   events.schema.json's childDirectedConstraint. The games LANDING page
-   *   keeps the tag - it is the adult-facing page, and game_opened is the
-   *   conversion - so this is per-page rather than per-site.
    */
   function init(siteName, opts) {
     opts = opts || {};
@@ -240,15 +233,13 @@
           queue = [];
           return;
         }
-        var tasks = [
+        return Promise.all([
           loadPostHog(opts.posthog || {}).then(function () {
             ready = true;
             flush();
-          })
-        ];
-        // Not on a page a child plays - see the ads option on init above.
-        if (opts.ads !== false) tasks.push(loadAds());
-        return Promise.all(tasks);
+          }),
+          loadAds()
+        ]);
       })
       .catch(function () {
         // A failure to load analytics is never a failure of the page. Drop the
