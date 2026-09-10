@@ -97,10 +97,10 @@
     building_block_followed: 'nhWLCM-i0fEcELyJtqpE',
     level_complete: 'jDNDCKO40fEcELyJtqpE',
     // Fires only when the search had results - see CONVERSION_WHEN below.
-    search_settled: 'N_yXCJq40fEcELyJtqpE'
+    search_settled: 'N_yXCJq40fEcELyJtqpE',
+    sense_chosen: 'Zo2ZCMyi0fEcELyJtqpE'
     // share_link_created: '',   // "Share link created"
     // game_opened:        '',   // "Game opened"
-    // sense_chosen:       '',   // "Sense chosen"
     // outbound_form_click: ''   // "Outbound form clicked"
   };
 
