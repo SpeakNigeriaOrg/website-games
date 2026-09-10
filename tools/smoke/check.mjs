@@ -42,7 +42,13 @@ let errors = [];
 let requests = [];
 ws.addEventListener('message', (e) => {
   const m = JSON.parse(e.data);
-  if (m.method === 'Network.requestWillBeSent') requests.push(m.params.request.url);
+  // documentURL, not just url: gtag's ccm/collect calls fire seconds after
+  // their page has been navigated away from, and counting by arrival time
+  // blamed them on whatever page came next. Attribution has to come from the
+  // document that made the request.
+  if (m.method === 'Network.requestWillBeSent') {
+    requests.push({ url: m.params.request.url, documentURL: m.params.documentURL || '' });
+  }
   if (m.id && pending.has(m.id)) {
     const p = pending.get(m.id); pending.delete(m.id);
     m.error ? p.reject(new Error(JSON.stringify(m.error))) : p.resolve(m.result);
@@ -277,19 +283,46 @@ console.log('\nGoogle Ads tag placement');
   });
 
   const seen = async (url) => {
+    await send('Page.navigate', { url: 'about:blank' });
+    await sleep(800);
     requests = [];
     await send('Page.navigate', { url });
     await sleep(4500);           // consent resolve + tag fetch
+
+    // Assert on the DOM, not on network attribution. loadAds() works by
+    // appending a <script src="googletagmanager..."> to the head, so its
+    // presence is exactly "this page loaded the Ads tag" - whereas request
+    // counting proved unreliable: gtag's collect calls fire seconds late, and
+    // requests were attributed to a game page that had no tag element on it at
+    // all (verified: 0 script tags while a request carried its documentURL).
+    const tagEls = await ev(`document.querySelectorAll('script[src*="googletagmanager.com/gtag"]').length`);
+    // ADS_DEBUG=1 prints why a page loaded the tag when it should not have.
+    // The usual answer is a stale cached script: this check first failed
+    // against production because track.js and game-events.js had changed
+    // without their ?v= being bumped, so browsers kept running the old ones.
+    if (process.env.ADS_DEBUG && tagEls > 0 && !url.endsWith('.org/')) {
+      console.log('       [debug] cached game-events has ads:false? ',
+        await ev(`fetch('/analytics/game-events.js?v=1').then(r=>r.text()).then(t=>t.includes('ads: false')).catch(e=>'ERR')`));
+      console.log('       [debug] no-store game-events has ads:false?',
+        await ev(`fetch('/analytics/game-events.js?v=1',{cache:'no-store'}).then(r=>r.text()).then(t=>t.includes('ads: false')).catch(e=>'ERR')`));
+      console.log('       [debug] cached track.js has opts.ads?     ',
+        await ev(`fetch('/analytics/track.js?v=1').then(r=>r.text()).then(t=>t.includes('opts.ads')).catch(e=>'ERR')`));
+      console.log('       [debug] scripts on page:',
+        JSON.stringify(await ev(`[...document.querySelectorAll('script[src]')].map(s=>s.getAttribute('src'))`)));
+    }
+    const mine = requests.filter((r) => r.documentURL === url || r.documentURL === url + '/');
     return {
-      ads: requests.filter((r) => adsRe.test(r)).length,
-      posthog: requests.filter((r) => /posthog/.test(r)).length,
+      tagEls,
+      adsRequests: mine.filter((r) => adsRe.test(r.url)).length,
+      posthog: mine.filter((r) => /posthog/.test(r.url)).length,
     };
   };
+
   const landing = await seen(`${BASE}/`);
-  ok(landing.ads > 0, `the landing page loads the Ads tag (${landing.ads} request(s))`);
+  ok(landing.tagEls > 0, `the landing page loads the Ads tag (${landing.tagEls} tag element(s))`);
   for (const game of ['phonics', 'tones', 'vocab']) {
     const r = await seen(`${BASE}/${game}/`);
-    ok(r.ads === 0, `/${game}/ does NOT load the Ads tag${r.ads ? ` - ${r.ads} request(s), a COPPA problem` : ''}`);
+    ok(r.tagEls === 0, `/${game}/ does NOT load the Ads tag${r.tagEls ? ` - ${r.tagEls} tag element(s), a COPPA problem` : ''}`);
     ok(r.posthog > 0, `/${game}/ still reports to PostHog (${r.posthog} request(s))`);
   }
   await send('Page.removeScriptToEvaluateOnNewDocument', { identifier: granted.identifier });
