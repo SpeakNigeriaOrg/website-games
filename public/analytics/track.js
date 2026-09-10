@@ -94,8 +94,8 @@
   // An event absent from here reports nothing rather than guessing, which is
   // the state of the six still waiting for their labels.
   var CONVERSION_LABELS = {
-    building_block_followed: 'nhWLCM-i0fEcELyJtqpE'
-    // level_complete:     '',   // "Level complete"
+    building_block_followed: 'nhWLCM-i0fEcELyJtqpE',
+    level_complete: 'jDNDCKO40fEcELyJtqpE'
     // share_link_created: '',   // "Share link created"
     // game_opened:        '',   // "Game opened"
     // sense_chosen:       '',   // "Sense chosen"
