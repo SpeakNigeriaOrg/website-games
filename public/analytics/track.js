@@ -100,8 +100,8 @@
     search_settled: 'N_yXCJq40fEcELyJtqpE',
     sense_chosen: 'Zo2ZCMyi0fEcELyJtqpE',
     game_opened: 'v-PSCJ240fEcELyJtqpE',
-    share_link_created: 'D-Y1CKa40fEcELyJtqpE'
-    // outbound_form_click: ''   // "Outbound form clicked"
+    share_link_created: 'D-Y1CKa40fEcELyJtqpE',
+    outbound_form_click: 'yjufCKC40fEcELyJtqpE'
   };
 
   // Events that convert only sometimes. A search that found nothing is not a
