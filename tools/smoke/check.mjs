@@ -66,24 +66,48 @@ const ev = async (expression) => {
 const failures = [];
 const ok = (cond, msg) => cond ? console.log('  ok  ' + msg) : failures.push(msg);
 
+// Every playlist button is enabled AND there is at least one. Without the count
+// this passed on a page that had not loaded at all: querySelectorAll returns an
+// empty list and [].every() is true, which read as success. That is how a
+// broken production check reported "ok all playlists enabled" for a page whose
+// script had not run.
+const allPlaylistsEnabled = async () => {
+  const state = await ev(`[...document.querySelectorAll('.playlist-btn')].map(b => b.disabled)`);
+  return Array.isArray(state) && state.length > 0 && state.every((d) => d === false);
+};
+
 await send('Runtime.enable');
 await send('Page.enable');
 await send('Emulation.setDeviceMetricsOverride', { width: 430, height: 932, deviceScaleFactor: 2, mobile: true });
 
+// Navigate and wait for the game's data to be parsed. Polls rather than
+// sleeping a fixed time: a cold server plus two or three JSON fetches is
+// easily slower than any constant worth hardcoding, and a freshly deployed
+// Pages site can be slower again for the first request.
 async function open(url) {
   errors = [];
   await send('Page.navigate', { url });
-  for (let i = 0; i < 80; i++) {
+  for (let i = 0; i < 120; i++) {
     if (await ev(`typeof gameData !== 'undefined' && gameData.length > 0`).catch(() => false)) return true;
     await sleep(250);
   }
   return false;
 }
 
+// A page that never loaded cannot be checked further, and pressing on just
+// throws on the next evaluate and aborts the whole run - losing the results
+// for every other game. Report it and skip the section.
+function skipSection(name) {
+  failures.push(`${name}: never loaded its data, remaining checks skipped`);
+  console.log(`  FAIL ${name} never loaded - skipping the rest of this section`);
+}
+
 // --- tone game ----------------------------------------------------------
 console.log(`\n${BASE}/tones/`);
-ok(await open(`${BASE}/tones/`), 'loads and fetches its data');
-ok(await ev(`[...document.querySelectorAll('.playlist-btn')].every(b => !b.disabled)`), 'all playlists enabled');
+const tonesUp = await open(`${BASE}/tones/`);
+ok(tonesUp, 'loads and fetches its data');
+if (tonesUp) {
+ok(await allPlaylistsEnabled(), 'all playlists enabled');
 ok(await ev(`gameData.filter(l => l.category === 'tone_pattern').length`) > 0, 'tone-pattern sets generated');
 await ev(`document.querySelector('.playlist-btn').click()`);
 await sleep(500);
@@ -140,11 +164,14 @@ const solved = await ev(`
   })()`);
 ok(solved, 'a correct answer is accepted');
 ok(errors.length === 0, `no console errors${errors.length ? ': ' + errors[0] : ''}`);
+} else skipSection('tone game');
 
 // --- phonics game -------------------------------------------------------
 console.log(`\n${BASE}/phonics/`);
-ok(await open(`${BASE}/phonics/`), 'loads and fetches its data');
-ok(await ev(`[...document.querySelectorAll('.playlist-btn')].every(b => !b.disabled)`), 'all playlists enabled');
+const phonicsUp = await open(`${BASE}/phonics/`);
+ok(phonicsUp, 'loads and fetches its data');
+if (phonicsUp) {
+ok(await allPlaylistsEnabled(), 'all playlists enabled');
 ok(await ev(`gameData.filter(l => l.category === 'tone_pattern').length`) >= 8, 'tone-pattern sets generated');
 ok(!(await ev(`gameData.some(l => l.category === 'syllable_reinforcement')`)), 'Syllable Practice not offered');
 await ev(`selectPlaylist('tone_pattern')`);
@@ -157,11 +184,14 @@ ok(await ev(`
     l.syllablePool.some(p => p.text.normalize('NFC') === sy.normalize('NFC')))))`),
    'every word is solvable - all its syllables have buttons');
 ok(errors.length === 0, `no console errors${errors.length ? ': ' + errors[0] : ''}`);
+} else skipSection('phonics game');
 
 // --- vocabulary game ----------------------------------------------------
 console.log(`\n${BASE}/vocab/`);
-ok(await open(`${BASE}/vocab/`), 'loads and fetches its data');
-ok(await ev(`[...document.querySelectorAll('.playlist-btn')].every(b => !b.disabled)`), 'all playlists enabled');
+const vocabUp = await open(`${BASE}/vocab/`);
+ok(vocabUp, 'loads and fetches its data');
+if (vocabUp) {
+ok(await allPlaylistsEnabled(), 'all playlists enabled');
 ok(await ev(`gameData.every(l => ['themed','endless_practice'].includes(l.category))`), 'only vocab-relevant categories');
 ok(await ev(`englishOf('e_joo_please')`) === 'please', 'the English gloss splits on the last underscore');
 ok(await ev(`gameData.every(l => l.words.length >= 2)`), 'every level can offer a choice');
@@ -193,6 +223,7 @@ ok(await ev(`
     if (!b) return false; b.click(); return isSolved; })()`),
    'a correct pick is accepted');
 ok(errors.length === 0, `no console errors${errors.length ? ': ' + errors[0] : ''}`);
+} else skipSection('vocabulary game');
 
 console.log('');
 ws.close();
