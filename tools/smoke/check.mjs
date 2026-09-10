@@ -158,6 +158,42 @@ ok(await ev(`
    'every word is solvable - all its syllables have buttons');
 ok(errors.length === 0, `no console errors${errors.length ? ': ' + errors[0] : ''}`);
 
+// --- vocabulary game ----------------------------------------------------
+console.log(`\n${BASE}/vocab/`);
+ok(await open(`${BASE}/vocab/`), 'loads and fetches its data');
+ok(await ev(`[...document.querySelectorAll('.playlist-btn')].every(b => !b.disabled)`), 'all playlists enabled');
+ok(await ev(`gameData.every(l => ['themed','endless_practice'].includes(l.category))`), 'only vocab-relevant categories');
+ok(await ev(`englishOf('e_joo_please')`) === 'please', 'the English gloss splits on the last underscore');
+ok(await ev(`gameData.every(l => l.words.length >= 2)`), 'every level can offer a choice');
+{
+  // The defining requirement: silent on load. This is a reading game, and
+  // hearing the word first would turn it into the listening game the other
+  // two already are.
+  const before = errors.length;
+  await ev(`window.__audioUrls = []; const _A = window.Audio;
+            window.Audio = function (src) { window.__audioUrls.push(src); return new _A(src); };`);
+  await ev(`document.querySelector('.playlist-btn').click()`);
+  await sleep(700);
+  ok((await ev(`window.__audioUrls.length`)) === 0, 'no audio plays on load');
+  ok(errors.length === before, 'no errors while starting a round');
+}
+ok(await ev(`document.querySelectorAll('.choice').length`) >= 2, 'choices render');
+ok(await ev(`document.querySelectorAll('.choice').length <= 4`), 'never more than four choices');
+ok(await ev(`[...document.querySelectorAll('.choice')].filter(b => b.textContent === currentWord.displayText).length`) === 1,
+   'exactly one choice is correct');
+ok(await ev(`new Set([...document.querySelectorAll('.choice')].map(b => b.textContent)).size === document.querySelectorAll('.choice').length`),
+   'no duplicate choices');
+ok(await ev(`
+  (() => { const b = [...document.querySelectorAll('.choice')].find(x => x.textContent !== currentWord.displayText);
+    if (!b) return false; b.click();
+    return document.querySelectorAll('.choice.ruled-out').length === 1 && !isSolved; })()`),
+   'a wrong pick is ruled out and the round stays open');
+ok(await ev(`
+  (() => { const b = [...document.querySelectorAll('.choice')].find(x => x.textContent === currentWord.displayText);
+    if (!b) return false; b.click(); return isSolved; })()`),
+   'a correct pick is accepted');
+ok(errors.length === 0, `no console errors${errors.length ? ': ' + errors[0] : ''}`);
+
 console.log('');
 ws.close();
 chrome.kill();

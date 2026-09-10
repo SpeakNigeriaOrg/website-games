@@ -1,0 +1,433 @@
+/* ==========================================
+   BASE / LAYOUT
+   Brand tokens come from tokens.css (vendored copy of
+   yorubadict/public/_tokens.css). Layout is deliberately compact:
+   the top bar is a single slim row, not a hero block, so the
+   actual game gets almost the whole viewport.
+
+   This is the vocabulary game. It shares the phonics and tone games'
+   shell almost exactly - same top bar, overlay, stage row, prompt
+   image, toast - and differs only at the bottom: an English gloss
+   revealed by the hint button, and a grid of WORD CHOICES instead of
+   syllable cards or a tone bank.
+   ========================================== */
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    /* Do NOT set overscroll-behavior-y here. It was used to stop elastic
+       "rubber-band" scroll past the end of the page, but empirically
+       (tested with a real headless Chromium instance against the live
+       site) setting ANY non-default value of it on html/body - none,
+       contain, even just re-asserting a value - completely breaks real
+       wheel/touch scrolling on levels whose content overflows the
+       viewport, while leaving programmatic scrollTo() working, which is
+       what made it so easy to miss. A page that occasionally bounces
+       slightly past its own end is far better than a page that cannot
+       scroll its overflowing content at all.
+       overflow-x is belt-and-suspenders against any single element (see
+       #theme-selector below - the actual known culprit) forcing
+       horizontal page overflow, which is what causes mobile browsers
+       to render an unwanted zoomed-out-then-in initial view. */
+    overflow-x: hidden;
+}
+
+#app-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 12px 24px;
+}
+
+#top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 4px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+#brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--step--1);
+    color: var(--brand-indigo);
+    text-decoration: none;
+    opacity: 0.75;
+    letter-spacing: 0.02em;
+    transition: opacity 0.15s;
+}
+
+/* A link back to the games landing page - full opacity on hover/focus is
+   the only affordance signaling that, since it's deliberately
+   understated (this is a slim utility bar, not a nav). */
+#brand-mark:hover,
+#brand-mark:focus-visible {
+    opacity: 1;
+}
+
+#brand-mark img {
+    display: block;
+}
+
+#top-bar-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#theme-selector {
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    background: var(--surface);
+    color: var(--text-primary);
+    /* A native <select> sizes itself to its longest option's full text
+       by default - level names can be long ("Level 3: Body Parts
+       (Ẹ̀yà Ara) — speaker3"), which was forcing horizontal page
+       overflow on narrow phones (and, with it, an unwanted initial
+       zoomed view, and the fullscreen button pushed off-screen).
+       Capping the width and truncating instead fixes both. */
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#game-container {
+    text-align: center;
+}
+
+/* ==========================================
+   START OVERLAY
+   The first tap in here is mandatory, and it's also what unlocks audio
+   playback - which is what lets the game autoplay each word.
+   ========================================== */
+#start-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(251, 246, 236, 0.85); /* --background-primary, translucent */
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#playlist-menu {
+    text-align: center;
+    padding: 24px;
+}
+
+#playlist-menu h2 {
+    font-family: var(--font-display);
+    color: var(--brand-indigo);
+    margin: 0 0 16px;
+}
+
+.playlist-btn {
+    display: block;
+    width: 240px;
+    margin: 0 auto 12px;
+    padding: 16px 24px;
+    font-size: var(--step-0);
+    font-family: var(--font-display);
+    font-weight: 600;
+    background-color: var(--brand-indigo);
+    color: var(--text-tertiary);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.playlist-btn:hover {
+    background-color: var(--brand-indigo-deep);
+    transform: scale(1.05);
+}
+
+/* Disabled until app.js confirms this category actually has levels for
+   the current data (see initializePlaylistMenu) - avoids offering a
+   playlist that would just show an empty game. */
+.playlist-btn:disabled {
+    background-color: var(--border-subtle);
+    color: var(--text-secondary);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* ==========================================
+   STAGE ROW - prev/next navigation flanks the image as a symmetric
+   pair, instead of a separate text-button row below it.
+   ========================================== */
+#stage-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.icon-btn {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-subtle);
+    background: var(--surface);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.icon-btn:hover { background: var(--background-secondary); }
+
+/* Smaller variant for the hint toggle sitting beside the gloss (see
+   #answer-row) - doesn't need to match the nav buttons' size. */
+.icon-btn-small {
+    width: 30px;
+    height: 30px;
+}
+
+/* Shown while toggled on: tone hint (see app.js toggleToneHint) or
+   active fullscreen (see toggleFullscreen). */
+#hint-btn.active,
+#fullscreen-btn.active {
+    background: var(--brand-accent);
+    border-color: var(--brand-accent-deep);
+    color: var(--brand-indigo-deep);
+}
+
+#skip-btn {
+    border-color: rgba(198, 56, 90, 0.35); /* --accent-games */
+    color: var(--accent-games);
+}
+#skip-btn:hover { background: rgba(198, 56, 90, 0.08); }
+
+/* ==========================================
+   ANSWER ROW - the hint toggle sits beside the English gloss, but the
+   gloss (not the row as a whole) must be what is centered on the page.
+   Classic 1fr/auto/1fr grid centering: the middle column sizes to its
+   content and is centered independent of the side columns, so the
+   hint button (in the first column) reads as ancillary rather than
+   shifting the "true" center.
+   ========================================== */
+#answer-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0 4px;
+}
+
+#hint-btn {
+    grid-column: 1;
+    justify-self: end; /* hugs the right edge of its column, i.e. just left of the gloss */
+}
+
+/* ==========================================
+   IMAGE PROMPT AREA
+   ========================================== */
+.prompt-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.1s ease;
+}
+
+.prompt-container:active {
+    transform: scale(0.95);
+}
+
+#prompt-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.audio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(21, 26, 61, 0.3); /* --brand-indigo-deep, translucent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.prompt-container:hover .audio-overlay {
+    opacity: 1;
+}
+
+/* Correct-answer checkmark badge - hidden by default, shown briefly via
+   JS toggling .show (see app.js's checkAnswer). */
+.correct-badge {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 246, 236, 0.55);
+    opacity: 0;
+    transform: scale(0.6);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.correct-badge.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==========================================
+   TOAST - transient feedback (correct/skip/error/level-complete),
+   floating over the page rather than reserving a permanent line.
+   Hidden (opacity 0, no pointer events) until app.js's showToast()
+   adds .show; auto-hidden again after its duration.
+   ========================================== */
+#toast {
+    position: fixed;
+    top: 64px;
+    left: 50%;
+    transform: translate(-50%, -6px);
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: var(--step--1);
+    font-weight: 700;
+    color: var(--text-secondary);
+    opacity: 0;
+    pointer-events: none;
+    max-width: 90vw;
+    text-align: center;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 500;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+#toast.correct  { color: var(--accent-courses); border-color: rgba(47, 122, 77, 0.35); }
+#toast.skipping { color: var(--accent-games); border-color: rgba(198, 56, 90, 0.35); }
+#toast.error    { color: var(--accent-games); border-color: rgba(198, 56, 90, 0.35); }
+#toast.info     { color: var(--brand-indigo); border-color: var(--border-subtle); }
+
+/* ==========================================
+   HINT LINE
+   The English meaning, revealed by the hint button. Reserves its line
+   whether or not it is showing, so toggling it does not shift the
+   choices below.
+   ========================================== */
+#hint-text {
+    grid-column: 2;
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    font-weight: 600;
+    color: var(--brand-indigo);
+    min-height: 1.6em;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-3px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#hint-text.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   WORD CHOICES
+   Two columns on a phone: Yoruba words with full diacritics are long
+   enough that four in a row would either wrap badly or shrink the type
+   below what a child can read. auto-fit lets it become one column if
+   the words are very long, and the min-height keeps a wrapped word from
+   making its button a different size from its neighbours.
+   ========================================== */
+.choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.choice {
+    min-height: 62px;
+    padding: 14px 12px;
+    border-radius: 12px;
+    border: 2px solid var(--border-subtle);
+    background: var(--surface);
+    color: var(--text-primary);
+    font-family: var(--font-yoruba);
+    font-size: var(--step-1);
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.1s, background-color 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.choice:hover:not(:disabled) {
+    background: var(--background-secondary);
+    border-color: var(--brand-indigo);
+}
+
+.choice:active:not(:disabled) {
+    transform: scale(0.96);
+}
+
+/* A wrong pick stays on screen, struck through. Ruling an option out is
+   progress, and clearing the whole round for one wrong tap is not. Saffron
+   rather than red: nothing here is a failure, there is no score. */
+.choice.ruled-out {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    color: var(--text-secondary);
+    background: var(--background-secondary);
+    border-color: var(--border-subtle);
+    box-shadow: none;
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.choice.correct {
+    border-color: var(--accent-courses);
+    background: rgba(47, 122, 77, 0.14);
+    color: var(--accent-courses);
+    transform: scale(1.03);
+}
+
+.choice:disabled:not(.ruled-out):not(.correct) {
+    opacity: 0.5;
+    cursor: default;
+}

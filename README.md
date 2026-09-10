@@ -18,6 +18,12 @@ public/            - everything deployed (wrangler pages_build_output_dir -> "pu
                      contours come from the acoustic tone study in the
                      yoruba_student_dict_platform repo (analysis/build/
                      legacy-tone-report); see TONE_MODEL in tones/app.js.
+  vocab/           - vocabulary game: see the card image, pick the right Yoruba
+                     word from a few choices. Deliberately silent at the start -
+                     the other two games are listening games, this one is a
+                     reading game - and it plays the word once you get it right.
+                     The hint is the English gloss taken from the word id.
+                     Reads the same ../phonics/*.json as the tone game.
 dev/               - local-only development area, never deployed
   story/           - tap-the-story game (in trial; promoted to public/story/
                      when ready - see tools/segmenter/README.md)

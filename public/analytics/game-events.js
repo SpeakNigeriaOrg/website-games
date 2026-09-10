@@ -1,7 +1,7 @@
 // Game analytics: the events, and the state needed to describe them.
 //
-// Both games get the same treatment, so the counting lives here rather than
-// twice in two app.js files that would drift. The call sites stay one-liners.
+// All three games get the same treatment, so the counting lives here rather
+// than in three app.js files that would drift. The call sites stay one-liners.
 //
 // Event and property names come from analytics/events.schema.json, which is
 // the contract shared with the other two repos. A property spelled levelId
@@ -12,7 +12,7 @@
 (function () {
     'use strict';
 
-    var game = null;          // 'phonics' | 'tones'
+    var game = null;          // 'phonics' | 'tones' | 'vocab'
     var contentVersion = null;
 
     // Per-word state. attemptNumber and the timer belong here rather than in
@@ -53,10 +53,10 @@
         return hash.toString(16);
     }
 
-    // The two games name their syllable array differently - phonics builds a
-    // word from targetSyllables, tones shows bareSyllables with the tones
-    // stripped off - so the count is read through here rather than assuming
-    // either shape.
+    // The games name their syllable array differently - phonics builds a word
+    // from targetSyllables, tones shows bareSyllables with the tones stripped
+    // off, and vocab carries targetSyllables purely so this count is
+    // truthful - so it is read through here rather than assuming either shape.
     function syllableCount(word) {
         var list = word.targetSyllables || word.bareSyllables || [];
         return list.length;
@@ -165,7 +165,8 @@
         },
 
         // extras carries the per-game detail: expectedTones/chosenTones/
-        // wrongIndexes for tones, expectedSyllables/submittedQueue for phonics.
+        // wrongIndexes for tones, expectedSyllables/submittedQueue for
+        // phonics, chosenWord/choiceCount for vocab.
         answer: function (word, level, correct, extras) {
             attemptNumber++;
             if (!correct) levelWrongCount++;
