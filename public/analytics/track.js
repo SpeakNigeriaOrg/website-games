@@ -95,11 +95,12 @@
   // the state of the six still waiting for their labels.
   var CONVERSION_LABELS = {
     building_block_followed: 'nhWLCM-i0fEcELyJtqpE',
-    level_complete: 'jDNDCKO40fEcELyJtqpE'
+    level_complete: 'jDNDCKO40fEcELyJtqpE',
+    // Fires only when the search had results - see CONVERSION_WHEN below.
+    search_settled: 'N_yXCJq40fEcELyJtqpE'
     // share_link_created: '',   // "Share link created"
     // game_opened:        '',   // "Game opened"
     // sense_chosen:       '',   // "Sense chosen"
-    // search_settled:     '',   // "Search found" - see CONVERSION_WHEN
     // outbound_form_click: ''   // "Outbound form clicked"
   };
 
