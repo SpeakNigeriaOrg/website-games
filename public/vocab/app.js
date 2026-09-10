@@ -141,8 +141,15 @@ function reportAudioFailure(context, error) {
     console.warn(`Audio playback blocked or file missing (${context}):`, error);
 }
 
+// Only after the word has been got right. Tapping the picture used to play the
+// word at any time, carried over from the two listening games without thinking
+// - but here the task is "which of these words is this picture", and hearing it
+// pronounced hands the answer to anyone who knows it by ear. It is not a hint,
+// it is the solution. So the picture is inert until the round is won, and the
+// speaker icon on it is hidden until then rather than advertising audio that
+// will not play.
 function playWordAudio(fromUser = true) {
-    if (!currentWord) return;
+    if (!currentWord || !isSolved) return;
     if (fromUser) snGame.audio(currentWord, 'full');
     if (currentPlayingAudio) {
         currentPlayingAudio.pause();
@@ -339,6 +346,8 @@ function loadWord(wordIndex) {
     imgElement.onerror = function () { this.onerror = null; this.src = 'images/placeholder.png'; };
     imgElement.src = currentWord.imageUrl;
     imgElement.alt = 'Which word is this?';
+    // .solved is what makes the picture tappable and shows its speaker icon.
+    document.getElementById('prompt-container').classList.remove('solved');
 
     clearTimeout(toastTimeout);
     document.getElementById('toast').classList.remove('show');
@@ -438,6 +447,7 @@ function handleChoice(choice) {
         choiceCount: choices.length
     });
     document.getElementById('correct-badge').classList.add('show');
+    document.getElementById('prompt-container').classList.add('solved');
     showToast("Correct! Great job!", 'correct', 2000);
     renderChoices();
     playSuccess();

@@ -39,8 +39,10 @@ await new Promise((r) => ws.addEventListener('open', r, { once: true }));
 let seq = 0;
 const pending = new Map();
 let errors = [];
+let requests = [];
 ws.addEventListener('message', (e) => {
   const m = JSON.parse(e.data);
+  if (m.method === 'Network.requestWillBeSent') requests.push(m.params.request.url);
   if (m.id && pending.has(m.id)) {
     const p = pending.get(m.id); pending.delete(m.id);
     m.error ? p.reject(new Error(JSON.stringify(m.error))) : p.resolve(m.result);
@@ -78,6 +80,10 @@ const allPlaylistsEnabled = async () => {
 
 await send('Runtime.enable');
 await send('Page.enable');
+// Required for the Ads-placement section: without it no Network events are
+// delivered and every request count is trivially zero, which reads as "the tag
+// did not load" for pages where it certainly did.
+await send('Network.enable');
 await send('Emulation.setDeviceMetricsOverride', { width: 430, height: 932, deviceScaleFactor: 2, mobile: true });
 
 // Navigate and wait for the game's data to be parsed. Polls rather than
@@ -86,6 +92,7 @@ await send('Emulation.setDeviceMetricsOverride', { width: 430, height: 932, devi
 // Pages site can be slower again for the first request.
 async function open(url) {
   errors = [];
+  requests = [];
   await send('Page.navigate', { url });
   for (let i = 0; i < 120; i++) {
     if (await ev(`typeof gameData !== 'undefined' && gameData.length > 0`).catch(() => false)) return true;
@@ -200,6 +207,9 @@ ok(await ev(`gameData.every(l => l.words.length >= 2)`), 'every level can offer 
   // hearing the word first would turn it into the listening game the other
   // two already are.
   const before = errors.length;
+  // Spy on Audio construction rather than on network requests: media fetched
+  // once is served from cache, so a network-based check gives a false negative
+  // the second time the same word plays.
   await ev(`window.__audioUrls = []; const _A = window.Audio;
             window.Audio = function (src) { window.__audioUrls.push(src); return new _A(src); };`);
   await ev(`document.querySelector('.playlist-btn').click()`);
@@ -218,12 +228,72 @@ ok(await ev(`
     if (!b) return false; b.click();
     return document.querySelectorAll('.choice.ruled-out').length === 1 && !isSolved; })()`),
    'a wrong pick is ruled out and the round stays open');
+// The picture must be silent until the word is got right. Hearing it earlier
+// is not a hint, it is the answer - anyone who knows the word by ear is done.
+{
+  await ev(`window.__audioUrls = []`);
+  await ev(`playWordAudio()`);
+  await ev(`document.getElementById('prompt-container').click()`);
+  await sleep(300);
+  ok((await ev(`window.__audioUrls.length`)) === 0, 'tapping the picture plays nothing before the answer');
+  ok(!(await ev(`document.getElementById('prompt-container').classList.contains('solved')`)),
+     'the picture is not marked tappable before the answer');
+}
 ok(await ev(`
   (() => { const b = [...document.querySelectorAll('.choice')].find(x => x.textContent === currentWord.displayText);
     if (!b) return false; b.click(); return isSolved; })()`),
    'a correct pick is accepted');
+await sleep(900);
+ok(await ev(`document.getElementById('prompt-container').classList.contains('solved')`),
+   'the picture becomes tappable once solved');
+ok((await ev(`window.__audioUrls.filter(u => u.includes('/words/')).length`)) > 0,
+   'the word is spoken once the answer is right');
+{
+  await ev(`window.__audioUrls = []`);
+  await ev(`document.getElementById('prompt-container').click()`);
+  await sleep(300);
+  ok((await ev(`window.__audioUrls.filter(u => u.includes('/words/')).length`)) > 0,
+     'and replays when the picture is tapped after solving');
+}
 ok(errors.length === 0, `no console errors${errors.length ? ': ' + errors[0] : ''}`);
 } else skipSection('vocabulary game');
+
+// --- the Google Ads tag must not load on a page a child plays -----------
+// COPPA treats cookies as personal information on a child-directed site, and
+// its "support for internal operations" exception covers basic analytics but
+// not advertising. PostHog is expected on every page; gtag is expected ONLY on
+// the adult-facing landing page, where game_opened is the conversion.
+// This regressed once already: track.js used to call loadAds() unconditionally.
+console.log('\nGoogle Ads tag placement');
+{
+  const adsRe = /googletagmanager\.com\/gtag|googleads|doubleclick/;
+
+  // Grant consent before the document runs, rather than clicking the notice.
+  // The notice is geo-gated to the EEA/UK and its geo lookup is a network round
+  // trip, so racing it is flaky - and what matters here is the question "with
+  // consent given, which pages load the Ads tag", not how consent was given.
+  const granted = await send('Page.addScriptToEvaluateOnNewDocument', {
+    source: `try { localStorage.setItem('sn-consent', 'granted'); } catch (e) {}`
+  });
+
+  const seen = async (url) => {
+    requests = [];
+    await send('Page.navigate', { url });
+    await sleep(4500);           // consent resolve + tag fetch
+    return {
+      ads: requests.filter((r) => adsRe.test(r)).length,
+      posthog: requests.filter((r) => /posthog/.test(r)).length,
+    };
+  };
+  const landing = await seen(`${BASE}/`);
+  ok(landing.ads > 0, `the landing page loads the Ads tag (${landing.ads} request(s))`);
+  for (const game of ['phonics', 'tones', 'vocab']) {
+    const r = await seen(`${BASE}/${game}/`);
+    ok(r.ads === 0, `/${game}/ does NOT load the Ads tag${r.ads ? ` - ${r.ads} request(s), a COPPA problem` : ''}`);
+    ok(r.posthog > 0, `/${game}/ still reports to PostHog (${r.posthog} request(s))`);
+  }
+  await send('Page.removeScriptToEvaluateOnNewDocument', { identifier: granted.identifier });
+}
 
 console.log('');
 ws.close();

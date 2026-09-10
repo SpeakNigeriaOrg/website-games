@@ -3,10 +3,14 @@
 // Written once here and copied verbatim into ~/Dev/website and
 // ~/Dev/website-games by copy-to-siblings.mjs. Edit this file, never a copy.
 //
-// Covers every page that is not one of the two games: the games landing page at
+// Covers every page that is not one of the games: the games landing page at
 // games.speaknigeria.org, and all six pages of speaknigeria.org. Those pages
 // need exactly the same two things, so they get the same file rather than two
 // implementations that drift.
+//
+// The game-link regex below must list every game. A game missing from it
+// silently reports no game_opened, which is the only Google Ads conversion the
+// games property has - so it fails quietly and costs attribution.
 //
 // Load order: consent.js, track.js, then this.
 (function () {
@@ -89,7 +93,7 @@
                 }
 
                 if (opts.trackGameLinks && url.origin === location.origin) {
-                    var game = /^\/(phonics|tones)\//.exec(url.pathname);
+                    var game = /^\/(phonics|tones|vocab)\//.exec(url.pathname);
                     if (game) {
                         window.snTrack('game_opened', { game: game[1] });
                         return;

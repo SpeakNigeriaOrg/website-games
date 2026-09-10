@@ -245,18 +245,26 @@ html, body {
 /* ==========================================
    IMAGE PROMPT AREA
    ========================================== */
+/* Not tappable until the word has been got right - see playWordAudio in
+   app.js for why hearing it early would just be the answer. The cursor and the
+   speaker icon are both gated on .solved so the picture does not look like a
+   control before it is one. */
 .prompt-container {
     position: relative;
     width: 200px;
     height: 200px;
     border-radius: var(--radius);
     overflow: hidden;
-    cursor: pointer;
+    cursor: default;
     box-shadow: var(--shadow);
     transition: transform 0.1s ease;
 }
 
-.prompt-container:active {
+.prompt-container.solved {
+    cursor: pointer;
+}
+
+.prompt-container.solved:active {
     transform: scale(0.95);
 }
 
@@ -267,6 +275,10 @@ html, body {
     display: block;
 }
 
+/* Hidden until solved. The other two games darken the picture from the start,
+   because there tapping it is the whole point; here it would promise audio
+   that deliberately will not play, and dim the picture the player is being
+   asked to read. */
 .audio-overlay {
     position: absolute;
     top: 0;
@@ -277,11 +289,16 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.75;
+    opacity: 0;
+    pointer-events: none;
     transition: opacity 0.2s ease;
 }
 
-.prompt-container:hover .audio-overlay {
+.prompt-container.solved .audio-overlay {
+    opacity: 0.6;
+}
+
+.prompt-container.solved:hover .audio-overlay {
     opacity: 1;
 }
 

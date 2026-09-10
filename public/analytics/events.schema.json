@@ -27,7 +27,8 @@
   },
   "designNote": {
     "structureOverIdentity": "Prefer properties that describe WHAT HAPPENED over properties that name WHICH ITEM it happened to. syllableCount, expectedTones, wrongIndexes and speaker all survive a complete vocabulary replacement, because they describe the shape of the task rather than its content. word and levelId do not. The highest-value output in the plan - the tone confusion matrix - is built entirely from expectedTones against chosenTones, so it accumulates across any number of vocab swaps without a break.",
-    "levelIdIsALabel": "levelId is a human-readable display string like 'Level 1: Animals (Ẹranko) — speaker2'. It embeds the level number, the theme and the speaker, so reorganising levels can reuse a levelId for different words. That is worse than a rename: a rename ends one series and starts another, while a reuse merges two series that should not be compared. Treat levelId as a label for reading reports, never as the key an analysis depends on. Group by category, syllableCount, speaker and contentVersion instead."
+    "levelIdIsALabel": "levelId is a human-readable display string like 'Level 1: Animals (Ẹranko) — speaker2'. It embeds the level number, the theme and the speaker, so reorganising levels can reuse a levelId for different words. That is worse than a rename: a rename ends one series and starts another, while a reuse merges two series that should not be compared. Treat levelId as a label for reading reports, never as the key an analysis depends on. Group by category, syllableCount, speaker and contentVersion instead.",
+    "adsOffOnGamePages": "The constraint below says the Google Ads tag must not load on the game pages, but until 2026-09 it did: track.js init() called loadAds() unconditionally, and game-events.js calls init(). Verified in production - gtag/js?id=AW-... was requested on /phonics/, /tones/ and /vocab/. The fix is init's `ads` option, which game-events.js sets to false while page-events.js leaves true, so the tag loads on the landing page and the marketing site and nowhere a child plays. Do not remove that flag without re-reading childDirectedConstraint."
   },
   "enums": {
     "searchMode": [
@@ -37,7 +38,8 @@
     ],
     "game": [
       "phonics",
-      "tones"
+      "tones",
+      "vocab"
     ],
     "tone": [
       "high",
@@ -74,7 +76,8 @@
     ],
     "hintKind": [
       "tone-dots",
-      "tone-melody"
+      "tone-melody",
+      "english-gloss"
     ],
     "levelCategory": [
       "themed",
@@ -384,7 +387,7 @@
         "games"
       ],
       "hook": "page-events.js delegated click, games landing page only",
-      "note": "Clicking from the games landing page into a game. The gap between this and game_start is people who opened a game and never picked a playlist - the drop-off an ad pays for and does not get.",
+      "note": "Clicking from the games landing page into a game. The gap between this and game_start is people who opened a game and never picked a playlist - the drop-off an ad pays for and does not get. Requires the game's path prefix in page-events.js: a game missing from that regex silently reports no conversion.",
       "properties": {
         "game": {
           "type": "string",
@@ -449,7 +452,7 @@
       "sites": [
         "games"
       ],
-      "hook": "tones: checkAnswer (tones:915), both branches already exist. phonics: checkWinCondition (phonics:564) is a bare if with NO else - the wrong-answer path must be added.",
+      "hook": "tones: checkAnswer (tones:915), both branches already exist. phonics: checkWinCondition (phonics:564) is a bare if with NO else - the wrong-answer path must be added. vocab: handleChoice, both branches.",
       "note": "The highest-value event in the plan. expectedTones against chosenTones gives a confusion matrix of Yoruba tone perception. Do NOT introduce scoring - see the comment above playWrong in tones/app.js.",
       "properties": {
         "game": {
@@ -514,6 +517,16 @@
           "items": "string",
           "required": false,
           "note": "phonics only"
+        },
+        "chosenWord": {
+          "type": "string",
+          "required": false,
+          "note": "vocab only - the word actually picked, so a wrong pick names the confusion"
+        },
+        "choiceCount": {
+          "type": "integer",
+          "required": false,
+          "note": "vocab only - how many words were offered, since a level too small to fill four changes the odds"
         }
       }
     },
@@ -521,7 +534,7 @@
       "sites": [
         "games"
       ],
-      "hook": "toggleToneHint (phonics:453, tones:777)",
+      "hook": "toggleToneHint (phonics, tones), toggleHint (vocab)",
       "properties": {
         "game": {
           "type": "string",

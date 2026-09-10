@@ -12,7 +12,7 @@
          won't let _headers override (verified empirically). Bump on change.
          Each game keeps its own counter, so this one starts at 1. -->
     <link rel="stylesheet" href="tokens.css?v=1">
-    <link rel="stylesheet" href="style.css?v=1">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
     <!-- The first tap in here is mandatory (see app.js's backdrop guard), which
@@ -77,7 +77,7 @@
                 <div id="prompt-container" class="prompt-container" onclick="playWordAudio()">
                     <img id="prompt-image" src="" alt="Which word is this?" />
 
-                    <div class="audio-overlay">
+                    <div class="audio-overlay" aria-hidden="true">
                         <svg fill="#ffffff" viewBox="0 0 24 24" width="40px" height="40px">
                             <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
                         </svg>
@@ -142,6 +142,6 @@
     <script src="/analytics/track.js?v=1"></script>
     <script src="/analytics/game-events.js?v=1"></script>
     <script src="/analytics/share.js?v=1"></script>
-    <script src="app.js?v=1"></script>
+    <script src="app.js?v=2"></script>
 </body>
 </html>
