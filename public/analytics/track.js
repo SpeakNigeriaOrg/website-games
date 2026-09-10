@@ -100,7 +100,24 @@
       // either way rather than rejecting.
       script.onload = function () {
         window.gtag('js', new Date());
-        window.gtag('config', ADS_ID);
+        // Cross-domain measurement across all three sites.
+        //
+        // The attribution cookie the Ads tag sets cannot cross a registrable
+        // domain, and yorubadict.com is one while speaknigeria.org and
+        // games.speaknigeria.org are another. Without this, someone who clicks
+        // an ad onto the dictionary and then follows one of its nine links to
+        // the games arrives there as an unattributed visitor, and a conversion
+        // they complete is credited to nobody.
+        //
+        // Naming the domains here makes gtag decorate links between them with
+        // the click id, so the journey survives the hop. It is the same problem
+        // ANALYTICS.md notes for PostHog, where cross_subdomain_cookie covers
+        // the speaknigeria.org pair and the dictionary needs help.
+        window.gtag('config', ADS_ID, {
+          linker: {
+            domains: ['yorubadict.com', 'speaknigeria.org', 'games.speaknigeria.org']
+          }
+        });
         adsReady = true;
         resolve();
       };
