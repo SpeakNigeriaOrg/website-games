@@ -56,6 +56,7 @@
   function flush() {
     for (var i = 0; i < queue.length; i++) {
       window.posthog.capture(queue[i].name, queue[i].props);
+      conversion(queue[i].name, queue[i].props);
     }
     queue = [];
   }
@@ -74,6 +75,10 @@
 
     if (ready) {
       window.posthog.capture(name, payload);
+      // PostHog records what happened; this tells Ads it happened. Both, or
+      // neither - a conversion Ads knows about but PostHog does not is a number
+      // with nothing behind it to explain.
+      conversion(name, payload);
       return;
     }
     if (queue.length < QUEUE_LIMIT) queue.push({ name: name, props: payload });
@@ -82,13 +87,26 @@
   // Conversion labels, filled in as each conversion action is created in the
   // Google Ads console. Each is the part after the slash in a send_to value.
   // An event with no label here fires nothing rather than guessing.
+  // Keyed by EVENT name, valued with the label of the Google Ads conversion
+  // action it should report. Fill one in and that event starts converting; no
+  // call site changes, because track() checks this map on every event.
+  //
+  // An event absent from here reports nothing rather than guessing, which is
+  // the state of the six still waiting for their labels.
   var CONVERSION_LABELS = {
-    // level_complete:          '',
-    // share_link_created:      '',
-    // game_opened:             '',
-    // sense_chosen:            '',
-    // building_block_followed: '',
-    // search_found:            ''
+    building_block_followed: 'nhWLCM-i0fEcELyJtqpE'
+    // level_complete:     '',   // "Level complete"
+    // share_link_created: '',   // "Share link created"
+    // game_opened:        '',   // "Game opened"
+    // sense_chosen:       '',   // "Sense chosen"
+    // search_settled:     '',   // "Search found" - see CONVERSION_WHEN
+    // outbound_form_click: ''   // "Outbound form clicked"
+  };
+
+  // Events that convert only sometimes. A search that found nothing is not a
+  // success, so search_settled reports a conversion only when it had results.
+  var CONVERSION_WHEN = {
+    search_settled: function (props) { return props.resultCount > 0; }
   };
 
   function loadAds() {
@@ -133,9 +151,11 @@
    * Silent when the event has no label yet, which is the state of every one of
    * them until its conversion action exists in the console.
    */
-  function conversion(name) {
+  function conversion(name, props) {
     var label = CONVERSION_LABELS[name];
     if (!label || !adsReady || refused) return;
+    var when = CONVERSION_WHEN[name];
+    if (when && !when(props || {})) return;
     window.gtag('event', 'conversion', { send_to: ADS_ID + '/' + label });
   }
 

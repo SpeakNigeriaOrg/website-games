@@ -108,13 +108,26 @@ function initializePlaylistMenu() {
 // publishToR2.mjs) - this filters to just that category and starts
 // play, rather than mixing all four playlists together in one
 // dropdown as before.
+// Set when a shared link named a level that still exists (see share.js).
+// Consumed once, by the first loadLevel after the playlist opens.
+let requestedShare = null;
+
+function startLevelIndex() {
+    if (!requestedShare) return 0;
+    const wanted = requestedShare.level.levelId;
+    requestedShare = null;
+    const at = activeLevels.findIndex((level) => level.levelId === wanted);
+    return at === -1 ? 0 : at;
+}
+
 function selectPlaylist(category) {
     activeLevels = gameData.filter((level) => level.category === category);
     if (activeLevels.length === 0) return; // shouldn't happen - button would be disabled
     document.getElementById('start-overlay').style.display = 'none';
     snGame.playlistSelected(category, activeLevels.length);
     initializeThemeSelector();
-    loadLevel(0);
+    // A shared link names a level; open that one rather than the first.
+    loadLevel(startLevelIndex());
 }
 
 function showPlaylistMenu() {
@@ -206,7 +219,16 @@ async function loadGame() {
         addCoverageLevels(gameData, wordPool, dictionarySyllables);
 
         snGame.start('phonics', gameData);
+
+        // A link to a particular level opens straight into it, skipping the
+        // playlist menu - that is the whole point of sending someone one.
+        requestedShare = snShare.requested('phonics', gameData);
+        snShare.init('phonics', function () { return currentLevel; });
         initializePlaylistMenu();
+        if (requestedShare) {
+            selectPlaylist(requestedShare.category);
+            return;
+        }
 
     } catch (error) {
         showToast("Error loading game data.", 'error', 0); // 0 = stays until reload, this isn't transient

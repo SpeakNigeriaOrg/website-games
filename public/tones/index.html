@@ -53,6 +53,12 @@
                     </svg>
                 </button>
                 <select id="theme-selector" aria-label="Choose a level" title=""></select>
+                <button id="share-btn" class="icon-btn icon-btn-small" aria-label="Share this level" title="Share this level">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                        <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/>
+                    </svg>
+                </button>
                 <button id="fullscreen-btn" class="icon-btn icon-btn-small" onclick="toggleFullscreen()" aria-label="Toggle fullscreen" title="Toggle fullscreen">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>
@@ -186,6 +192,7 @@
     <script src="/analytics/consent.js?v=1"></script>
     <script src="/analytics/track.js?v=1"></script>
     <script src="/analytics/game-events.js?v=1"></script>
+    <script src="/analytics/share.js?v=1"></script>
     <script src="app.js?v=4"></script>
 </body>
 </html>
