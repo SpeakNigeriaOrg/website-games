@@ -45,6 +45,8 @@ kbd{font-family:'IBM Plex Mono',monospace;font-size:.85em;background:var(--paper
 .vnote{margin:-4px 0 12px 12px;font-size:.78rem;color:var(--soft);line-height:1.45;max-width:62ch}
 .label{font-family:'Plus Jakarta Sans',sans-serif !important;font-weight:700;font-size:.95rem}
 button{font-size:1rem;padding:11px 6px}
+button.real{color:var(--indigo);border-color:var(--indigo);font-weight:700}
+button.real:hover{background:rgba(33,41,92,.07)}
 </style>
 </head>
 <body>
@@ -90,6 +92,7 @@ sequence. Judge the <b>Dò Re Mí</b> column for that, not the single tones.</p>
 const VARIANTS = __VARIANTS__;
 const STATS = __STATS__;
 const NOTES = __NOTES__;
+const REAL_HUM = __REALHUM__;
 const SETS = [
   { speaker: 'speaker2', title: 'Speaker 2', note: 'female range — Dò 209 Hz, Re 232 Hz, Mí 253 Hz' },
   { speaker: 'speaker3', title: 'Speaker 3', note: 'male range — Dò 113 Hz, Re 124 Hz, Mí 139 Hz' },
@@ -118,6 +121,27 @@ SETS.forEach((set) => {
   head.className = 'head';
   head.innerHTML = '<div></div>' + CLIPS.map((c) => `<div>${c.label}</div>`).join('');
   host.appendChild(head);
+  // The real recording, when the corpus was available. One clip, at the
+  // speaker's own pitch - not one per tone, because it is a recording and not a
+  // synthesiser.
+  if (REAL_HUM.includes(set.speaker)) {
+    const el = document.createElement('div');
+    el.className = 'row';
+    el.innerHTML = '<div class="label">real hum<small>the actual recording</small></div>';
+    const b = document.createElement('button');
+    b.className = 'real';
+    b.textContent = '▶ the speaker actually humming';
+    b.style.gridColumn = 'span 4';
+    b.onclick = () => play(b, `${set.speaker}-real-hum.wav`);
+    el.appendChild(b);
+    host.appendChild(el);
+    const n = document.createElement('div');
+    n.className = 'vnote';
+    n.textContent = set.speaker === 'speaker3'
+      ? 'Cut from n_high.wav, an isolated syllabic nasal - this is the speaker humming, untouched apart from trimming and level.'
+      : 'Cut from the nasal tail of un.wav - the murmur at the end of the syllable, untouched apart from trimming and level.';
+    host.appendChild(n);
+  }
   VARIANTS.forEach((v) => {
     const el = document.createElement('div');
     el.className = 'row';

@@ -262,8 +262,10 @@ function shuffleArray(array) {
 // iOS suspends the context aggressively.
 let audioCtx = null;
 function getAudioCtx() {
+    const isNew = !audioCtx;
     audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
     audioCtx.resume?.();
+    if (isNew) decodeVoiceSources(audioCtx);
     return audioCtx;
 }
 
@@ -334,6 +336,101 @@ const playWrong = () => playChime([196, 147], { gain: 0.14, noteGap: 0.09, decay
 // physically nonsense - a real bar cannot bend after it is hit - and it reads
 // as a slight slide. That is accepted: the contour is the thing the game
 // teaches, and losing it to physical realism would be the wrong trade.
+// The tone buttons play the SPEAKER'S OWN VOICE humming, pitch-shifted to each
+// tone with the measured contour applied to the playback rate. Not synthesis.
+//
+// Five synthetic versions failed before this, and the reason they failed is the
+// reason this works. Each one built a static average spectrum and measured
+// itself against that same average - a circular test that scored a 0.7 dB match
+// while sounding nothing like a person. A voice is a train of glottal pulses in
+// which every cycle differs; averaging frames of one throws away precisely what
+// makes it a voice. One whole round even went into MINIMISING crest factor,
+// when voiced speech is peaky by nature - the real recording measures 4.7 where
+// the best synthetic attempt managed 3.1.
+//
+// speaker3-hum.wav is trimmed from n_high.wav, an isolated syllabic nasal: the
+// speaker humming, untouched. speaker2 recorded no isolated nasal, so hers is
+// the murmur inside un.wav. naturalHz is the measured F0 of each one's
+// steadiest stretch, which is what the pitch shift is computed against - all
+// six shifts land within about three semitones, close enough that the formants
+// moving with the pitch reads as natural rather than as a chipmunk.
+//
+// These are vendored here rather than read from R2 because the bucket sends no
+// Access-Control-Allow-Origin: plain `new Audio(url)` playback needs no CORS,
+// but reading samples for Web Audio does. 56 KB for both.
+const VOICE_SOURCES = {
+    speaker2: { file: "audio/speaker2-hum.wav", naturalHz: 230.2 },
+    speaker3: { file: "audio/speaker3-hum.wav", naturalHz: 135.5 }
+};
+
+// Fetched as bytes at load (no AudioContext needed), decoded on first use -
+// iOS will not run a context until a user gesture, and the playlist tap is it.
+let voiceBytes = {};
+let voiceBuffers = {};
+
+async function loadVoiceSources() {
+    await Promise.all(Object.entries(VOICE_SOURCES).map(async ([speaker, spec]) => {
+        try {
+            const res = await fetch(spec.file);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            voiceBytes[speaker] = await res.arrayBuffer();
+        } catch (err) {
+            console.warn(`Could not load ${spec.file}; that speaker falls back to the synthesized tone.`, err);
+        }
+    }));
+}
+
+function decodeVoiceSources(ctx) {
+    Object.keys(voiceBytes).forEach((speaker) => {
+        const bytes = voiceBytes[speaker];
+        voiceBytes[speaker] = null;
+        ctx.decodeAudioData(bytes)
+            .then((buffer) => { voiceBuffers[speaker] = buffer; })
+            .catch((err) => console.warn(`Could not decode the ${speaker} hum; falling back.`, err));
+    });
+    voiceBytes = {};
+}
+
+// The speaker's recording, retuned to one tone. Returns null if its audio isn't
+// available, so playTone can fall back rather than go silent.
+function buildVoiceGraph(ctx, tone, speaker, start) {
+    const spec = VOICE_SOURCES[speaker];
+    const buffer = voiceBuffers[speaker];
+    const model = TONE_MODEL[speaker]?.[tone];
+    if (!spec || !buffer || !model) return null;
+
+    const src = ctx.createBufferSource();
+    src.buffer = buffer;
+
+    // Pitch shift and contour in one automation: the ratio of target pitch to
+    // the recording's own pitch, followed along the measured glide.
+    const rates = new Float32Array(model.glide.length);
+    for (let i = 0; i < model.glide.length; i++) {
+        rates[i] = (model.hz * Math.pow(2, (model.glide[i] * TONE_SPREAD) / 12)) / spec.naturalHz;
+    }
+    const meanRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+    const realDuration = buffer.duration / meanRate;
+    src.playbackRate.setValueCurveAtTime(rates, start, realDuration);
+
+    // The recording carries its own attack, so barely any fade in; the window
+    // was cut mid-murmur, so a real fade out.
+    const env = ctx.createGain();
+    env.gain.setValueAtTime(0.0001, start);
+    env.gain.exponentialRampToValueAtTime(VOICE_GAIN, start + 0.012);
+    env.gain.setValueAtTime(VOICE_GAIN, start + realDuration - 0.09);
+    env.gain.exponentialRampToValueAtTime(0.0001, start + realDuration);
+
+    src.connect(env);
+    src.start(start);
+    return env;
+}
+const VOICE_GAIN = 0.55;   // level-matched by ear against the success chime
+
+// Kept as the fallback for when the recordings cannot be loaded or decoded, and
+// as the thing tools/tone-compare renders as `current`. A struck marimba bar:
+// three modes at the measured ratios of a real tuned bar (deliberately
+// inharmonic - that is what reads as wood), each with its own decay, fastest
+// for the highest, plus a short filtered noise click for the mallet.
 const TONE_VOICE = {
     // [frequency multiple, relative level, decay seconds]. Mode 1 carries the
     // pitch; the upper two are what make it wooden and are gone within 200 ms.
@@ -418,7 +515,9 @@ function buildToneGraph(ctx, tone, speaker, start, voice = TONE_VOICE) {
 function playTone(tone, speaker, whenOffset = 0) {
     try {
         const ctx = getAudioCtx();
-        const out = buildToneGraph(ctx, tone, speaker, ctx.currentTime + whenOffset);
+        const start = ctx.currentTime + whenOffset;
+        const out = buildVoiceGraph(ctx, tone, speaker, start)
+                 || buildToneGraph(ctx, tone, speaker, start);
         if (out) out.connect(ctx.destination);
     } catch (err) {
         console.warn("Could not play tone:", err);
@@ -486,6 +585,8 @@ document.getElementById('start-overlay').addEventListener('click', (event) => {
 
 async function loadGame() {
     try {
+        loadVoiceSources();   // not awaited: the tone buttons fall back until it lands
+
         const [wordsResponse, syllablesResponse, sessionsResponse] = await Promise.all([
             fetch(DATA_DIR + 'vocab.json'),
             fetch(DATA_DIR + 'syllables.json'),

@@ -97,11 +97,38 @@ ok(await ev(`
     const out = [];
     for (const sp of ['speaker2','speaker3']) for (const t of ['low','mid','high']) {
       const ctx = new OfflineAudioContext(1, 4410, 44100);
-      const n = buildToneGraph(ctx, t, sp, 0);
-      if (!n) out.push(sp + ' ' + t);
+      if (!buildToneGraph(ctx, t, sp, 0)) out.push(sp + ' ' + t);
     }
     return out.length === 0;
-  })()`), 'every tone builds a node graph for both speakers');
+  })()`), 'every tone builds a fallback graph for both speakers');
+// The tone buttons play the speakers' own recordings; check they load, decode,
+// and actually produce audio rather than silently falling back.
+ok(await ev(`
+  (async () => {
+    const ctx = new OfflineAudioContext(1, 44100, 44100);
+    const got = {};
+    for (const [sp, spec] of Object.entries(VOICE_SOURCES)) {
+      const res = await fetch(spec.file);
+      if (!res.ok) return false;
+      got[sp] = await ctx.decodeAudioData(await res.arrayBuffer());
+    }
+    return Object.keys(got).length === 2 && Object.values(got).every(b => b.duration > 0.2);
+  })()`), 'both hum recordings load and decode');
+ok(await ev(`
+  (async () => {
+    for (const sp of ['speaker2','speaker3']) for (const t of ['low','mid','high']) {
+      const ctx = new OfflineAudioContext(1, Math.ceil(44100 * 0.8), 44100);
+      decodeVoiceSources(ctx);
+      await new Promise(r => setTimeout(r, 120));
+      const n = buildVoiceGraph(ctx, t, sp, 0);
+      if (!n) return false;
+      n.connect(ctx.destination);
+      const pcm = (await ctx.startRendering()).getChannelData(0);
+      let sq = 0; for (let i = 0; i < pcm.length; i++) sq += pcm[i] * pcm[i];
+      if (Math.sqrt(sq / pcm.length) < 0.01) return false;   // not silent
+    }
+    return true;
+  })()`), 'every tone renders real audio from the recording, not silence');
 const solved = await ev(`
   (async () => {
     const wait = (ms) => new Promise(r => setTimeout(r, ms));

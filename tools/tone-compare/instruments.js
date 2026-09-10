@@ -206,118 +206,211 @@
 
 
   // --- HUM ---------------------------------------------------------------
-  // An imitation of the actual speaker humming, and arguably the most apt voice
-  // here: the game teaches speech tone, so the closest model for what the
-  // learner should produce is the speaker's own voice.
+  // An imitation of the actual speaker humming, rebuilt from measurements of
+  // them actually humming. The first attempt at this was genuinely terrible and
+  // it is worth being precise about why, because all three faults were mine and
+  // none were hard to avoid.
   //
-  // The resonance frequencies below are MEASURED from each speaker's own
-  // recordings - the long-term average spectrum of every syllable clip they
-  // recorded (80 files for speaker2, 78 for speaker3), peaks picked from the
-  // smoothed envelope. So the vowel colour here is theirs, not a generic vowel.
+  // 1. WRONG SOUND MEASURED. I took the average spectrum of their spoken
+  //    syllables - open vowels, mouth open - and called it a hum. A hum is a
+  //    nasal murmur: mouth shut, sound out through the nose, a completely
+  //    different filter. I then boosted three vowel formants by +6 dB, so what
+  //    I built was "an open vowel with a notch in it".
+  // 2. THE SOURCE WAS 20 dB TOO BRIGHT. I used 24 harmonics at 1/n. Measured
+  //    against a real murmur, that puts about 20 dB too much energy in the
+  //    upper harmonics before the formant boosts even applied. A real hum is
+  //    dominated by H1 and H2 and is essentially gone by H4.
+  // 3. "JITTER" AND "SHIMMER" WERE AUDIO-RATE NOISE. I applied a random walk to
+  //    a 160-point curve over 550 ms - a new random value every 3.4 ms, which
+  //    is roughly 290 Hz. Random modulation at 290 Hz is not vocal instability,
+  //    it is ring modulation: it adds sidebands around every harmonic. I was
+  //    adding distortion and calling it humanity. Its magnitude was wrong too -
+  //    the random walk settled around 0.7% where a real murmur measures 0.5%.
   //
-  // Measuring that also settled a question worth recording: the real recordings
-  // are DARK. Speaker3's average energy from 1-2 kHz sits 37 dB below his peak,
-  // and speaker2's 25 dB below hers. Almost everything is in the bottom two
-  // octaves. So the original six-harmonic tone was not far off these speakers'
-  // actual spectral balance, and chasing brightness was largely chasing the
-  // wrong thing. What a real voice has that a synthetic one does not is not
-  // treble - it is jitter, shimmer and a soft onset.
+  // The resource I needed and did not look for: recordings of these speakers
+  // producing a nasal. They exist. speaker3/n_high.wav is an ISOLATED SYLLABIC
+  // NASAL - a hum, from the actual speaker - and several syllables are
+  // nasal-final (un, tan, rin, kan) or nasal-initial (na, ma, mu, nu), whose
+  // murmur portions are also real hum. Measuring those needed one more piece of
+  // care: for a nasal-INITIAL syllable the murmur is at the START, so taking
+  // the tail gets the open vowel instead. Getting that wrong the first time is
+  // what produced a "hum" spectrum with more energy in H2 than H1.
   //
-  // Hence: jitter (cycle-to-cycle pitch instability, a random walk of a few
-  // tenths of a percent) and shimmer (the same on amplitude), both baked into
-  // the automation curves. Perfectly steady pitch is the single most synthetic
-  // thing about a synthesised voice, and no amount of filtering hides it.
-  const VOICE_FORMANTS = {
-    // [hz, gain dB relative to the strongest, Q]
-    speaker2: [[345, 0, 1.6], [560, -5.6, 1.9], [818, -9.4, 2.1], [2799, -17.4, 3.0]],
-    speaker3: [[297, 0, 1.5], [1047, -23.9, 2.2], [1234, -25.0, 2.6]],
+  // HARMONICS below are measured amplitudes relative to H1, averaged over ~165
+  // murmur frames per speaker and forced monotone (a nasal murmur has no upper
+  // peaks; any measured are vowel leakage). speaker2 at 240 Hz: -15 dB by H2,
+  // -30 by H3. speaker3 at 125 Hz: -2 by H2, -10 by H3, -25 by H4. Both are
+  // almost pure fundamental, which is exactly what a closed mouth does.
+  //
+  // No formant or notch filters at all now: the measured spectrum IS the
+  // filter, so applying another one on top would be shaping it twice.
+  const HUM_HARMONICS = {
+    speaker2: [1.000, 0.170, 0.032, 0.032, 0.021, 0.015, 0.011, 0.011, 0.011, 0.011, 0.011, 0.011],
+    speaker3: [1.000, 0.809, 0.299, 0.056, 0.056, 0.045, 0.032, 0.017, 0.011, 0.009, 0.006, 0.006],
   };
+  // Measured median frame-to-frame period perturbation on those murmurs.
+  const HUM_JITTER = { speaker2: 0.005, speaker3: 0.006 };
 
-  // The measured 7-9 point contour, resampled fine enough to carry jitter, with
-  // a small random walk added. One curve, so it composes with nothing else.
-  function jitteredCurve(tone, speaker, points, jitter) {
-    const model = TONE_MODEL[speaker][tone];
-    const g = model.glide;
-    const out = new Float32Array(points);
-    let walk = 0;
-    for (let i = 0; i < points; i++) {
-      const x = (i / (points - 1)) * (g.length - 1);
-      const lo = Math.floor(x), hi = Math.min(g.length - 1, lo + 1);
-      const st = g[lo] + (g[hi] - g[lo]) * (x - lo);
-      walk = walk * 0.86 + (Math.random() * 2 - 1) * jitter;
-      out[i] = model.hz * Math.pow(2, st / 12) * (1 + walk);
-    }
-    return out;
-  }
-
-  function shimmerCurve(points, peak, attack, release, duration, depth) {
-    const out = new Float32Array(points);
-    let walk = 0;
-    for (let i = 0; i < points; i++) {
-      const t = (i / (points - 1)) * duration;
-      let shape;
-      if (t < attack) shape = t / attack;
-      else if (t > duration - release) shape = Math.max(0, (duration - t) / release);
-      else shape = 1;
-      walk = walk * 0.9 + (Math.random() * 2 - 1) * depth;
-      out[i] = Math.max(0.0001, peak * shape * (1 + walk));
-    }
-    return out;
+  // Slow, smooth instability - the fix for fault 3. A sum of a few
+  // incommensurate slow sinusoids with random phase gives natural-sounding
+  // drift with NO energy anywhere near the audio band, which is what vocal
+  // instability actually sounds like. Rates are in Hz.
+  function wobble(rates, depth, seed) {
+    const phases = rates.map((_, i) => (seed * 7.13 + i * 2.39) % (2 * Math.PI));
+    return (t) => {
+      let v = 0;
+      for (let i = 0; i < rates.length; i++) v += Math.sin(2 * Math.PI * rates[i] * t + phases[i]);
+      return (v / rates.length) * depth;
+    };
   }
 
   function hum(ctx, tone, speaker, start, opts) {
-    const formants = VOICE_FORMANTS[speaker] || VOICE_FORMANTS.speaker3;
-    const POINTS = 160;
+    const model = TONE_MODEL[speaker][tone];
+    const amps = HUM_HARMONICS[speaker] || HUM_HARMONICS.speaker3;
+    const jitter = HUM_JITTER[speaker] || 0.005;
+    const dur = opts.duration;
+    const POINTS = 140;
+    const seed = Math.random();
 
-    // Glottal-ish source: a full harmonic series at 1/n, Schroeder phase so the
-    // harmonics do not all start aligned and spike. The formant filters below,
-    // not the source, are what give this its colour - that is the source-filter
-    // model a voice actually works by.
-    const real = new Float32Array(opts.harmonics + 1);
-    const imag = new Float32Array(opts.harmonics + 1);
-    for (let n = 1; n <= opts.harmonics; n++) {
-      const a = 1 / Math.pow(n, 1.0);
-      const ph = -Math.PI * n * n / opts.harmonics;
-      real[n] = a * Math.cos(ph);
-      imag[n] = a * Math.sin(ph);
+    // Source: the measured harmonic amplitudes, Schroeder phase so the
+    // harmonics do not all start aligned and spike.
+    const real = new Float32Array(amps.length + 1);
+    const imag = new Float32Array(amps.length + 1);
+    for (let n = 1; n <= amps.length; n++) {
+      const ph = -Math.PI * n * n / amps.length;
+      real[n] = amps[n - 1] * Math.cos(ph);
+      imag[n] = amps[n - 1] * Math.sin(ph);
     }
     const osc = ctx.createOscillator();
     osc.setPeriodicWave(ctx.createPeriodicWave(real, imag));
-    osc.frequency.setValueCurveAtTime(jitteredCurve(tone, speaker, POINTS, opts.jitter), start, opts.duration);
 
-    let node = osc;
-    formants.forEach(([hz, gain, q]) => {
-      const f = ctx.createBiquadFilter();
-      f.type = 'peaking';
-      f.frequency.value = hz;
-      f.Q.value = q;
-      f.gain.value = opts.formantGain + gain * 0.5; // measured shape, gentler than measured depth
-      node.connect(f);
-      node = f;
-    });
+    // Pitch: the measured contour, plus slow drift at the measured jitter
+    // magnitude, plus a gentle vibrato. All of it below 6 Hz.
+    const drift = wobble([1.7, 2.9, 4.3], jitter, seed);
+    const vib = wobble([opts.vibratoHz], Math.pow(2, opts.vibratoSt / 12) - 1, seed + 0.5);
+    const g = model.glide;
+    const pitch = new Float32Array(POINTS);
+    for (let i = 0; i < POINTS; i++) {
+      const t = (i / (POINTS - 1)) * dur;
+      const x = Math.min(1, t / TONE_DURATION) * (g.length - 1);
+      const lo = Math.floor(x), hi = Math.min(g.length - 1, lo + 1);
+      const st = g[lo] + (g[hi] - g[lo]) * (x - lo);
+      // vibrato fades in - it is not present at the very start of a note
+      const vibDepth = Math.min(1, t / 0.22);
+      pitch[i] = model.hz * Math.pow(2, st / 12) * (1 + drift(t) + vib(t) * vibDepth);
+    }
+    osc.frequency.setValueCurveAtTime(pitch, start, dur);
 
-    // Mouth closed: a hum has a nasal anti-resonance where an open vowel has
-    // energy, and very little above about 1.5 kHz.
-    const notch = ctx.createBiquadFilter();
-    notch.type = 'notch';
-    notch.frequency.value = opts.notchHz;
-    notch.Q.value = 1.1;
-    node.connect(notch);
+    // Level: a soft onset - the isolated nasal takes about 100 ms to reach half
+    // level - with slow undulation on top, again well below the audio band.
+    const swell = wobble([2.3, 3.7], opts.shimmer, seed + 1.5);
+    const level = new Float32Array(POINTS);
+    for (let i = 0; i < POINTS; i++) {
+      const t = (i / (POINTS - 1)) * dur;
+      let shape;
+      if (t < opts.attack) shape = Math.pow(t / opts.attack, 1.4);
+      else if (t > dur - opts.release) shape = Math.max(0, (dur - t) / opts.release);
+      else shape = 1;
+      level[i] = Math.max(0.0001, opts.gain * shape * (1 + swell(t)));
+    }
+    const env = ctx.createGain();
+    env.gain.setValueCurveAtTime(level, start, dur);
 
+    // Only a gentle lowpass, well above where the measured spectrum has already
+    // fallen away. Belt and braces, not shaping.
     const lowpass = ctx.createBiquadFilter();
     lowpass.type = 'lowpass';
     lowpass.frequency.value = opts.lowpassHz;
     lowpass.Q.value = 0.6;
-    notch.connect(lowpass);
 
-    const env = ctx.createGain();
-    env.gain.setValueCurveAtTime(
-      shimmerCurve(POINTS, opts.gain, opts.attack, opts.release, opts.duration, opts.shimmer),
-      start, opts.duration);
-    lowpass.connect(env);
-
+    osc.connect(lowpass); lowpass.connect(env);
     osc.start(start);
-    osc.stop(start + opts.duration + 0.02);
+    osc.stop(start + dur + 0.02);
+    return env;
+  }
+
+
+  // --- VOICE: the actual recording, retuned --------------------------------
+  // Not synthesis. This plays the speaker's own recorded nasal murmur, pitch-
+  // shifted to the target tone, with the measured contour applied by automating
+  // the playback rate.
+  //
+  // This is what three failed synthetic hums should have told me to do sooner.
+  // Every attempt built a static average spectrum and then measured itself
+  // against that same average - a circular test that reported a 0.7 dB match
+  // while sounding nothing like a person. A voice is a train of glottal pulses
+  // in which every cycle differs; averaging 165 frames of one is exactly the
+  // operation that throws away what makes it a voice. Worse, one whole round of
+  // work went into MINIMISING crest factor, when voiced speech is peaky by
+  // nature - I engineered out the pulse character on purpose, chasing a number.
+  //
+  // The recordings were in R2 the whole time, already fetchable by the game.
+  // speaker3/n_high.wav is an isolated syllabic nasal - the speaker humming.
+  // speaker2 has no isolated nasal, so this uses the murmur inside un.wav.
+  //
+  // Both source windows include the REAL onset, not a synthetic fade, because
+  // the attack is most of what identifies a sound. Numbers below are measured:
+  // naturalHz is the F0 of the steadiest stretch, and from/to are fractions of
+  // the file bracketing the usable murmur.
+  const HUM_SOURCE = {
+    speaker3: { file: 'syllables/speaker3/n_high.wav', naturalHz: 135.5, from: 0.10, to: 0.78 },
+    speaker2: { file: 'syllables/speaker2/un.wav',     naturalHz: 230.2, from: 0.16, to: 0.86 },
+  };
+
+  // Filled by preloadVoice() before rendering, because the graph builders are
+  // synchronous.
+  window.__humBuffers = window.__humBuffers || {};
+
+  // Source bytes are handed in rather than fetched. The R2 bucket sends no
+  // Access-Control-Allow-Origin, so fetch() + decodeAudioData() is blocked
+  // cross-origin - the game gets away with plain `new Audio(url)` playback,
+  // which needs no CORS, but reading samples does. render.mjs therefore reads
+  // the files in node and passes them in as base64.
+  window.preloadVoice = async function (ctx, sources) {
+    for (const [file, b64] of Object.entries(sources || {})) {
+      if (window.__humBuffers[file]) continue;
+      const raw = atob(b64);
+      const bytes = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+      window.__humBuffers[file] = await ctx.decodeAudioData(bytes.buffer);
+    }
+    return Object.keys(window.__humBuffers);
+  };
+
+  function voice(ctx, tone, speaker, start, opts) {
+    const spec = HUM_SOURCE[speaker];
+    const buffer = spec && window.__humBuffers[spec.file];
+    if (!buffer) return ctx.createGain();          // no source: silent, not broken
+
+    const model = TONE_MODEL[speaker][tone];
+    const offset = spec.from * buffer.duration;
+    const span = (spec.to - spec.from) * buffer.duration;
+
+    const src = ctx.createBufferSource();
+    src.buffer = buffer;
+
+    // Pitch shift AND contour in one automation: playbackRate is the ratio of
+    // target pitch to the recording's own pitch, followed along the measured
+    // glide. Formants shift with it, which for these shifts (all within about
+    // three semitones) reads as natural rather than as a chipmunk.
+    const rates = new Float32Array(model.glide.length);
+    for (let i = 0; i < model.glide.length; i++) {
+      rates[i] = (model.hz * Math.pow(2, model.glide[i] / 12)) / spec.naturalHz;
+    }
+    const meanRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+    const realDur = span / meanRate;
+    src.playbackRate.setValueCurveAtTime(rates, start, realDur);
+
+    // Only a short fade in - the recording's own attack is inside the window -
+    // and a longer one out, where the window cuts mid-murmur.
+    const env = ctx.createGain();
+    env.gain.setValueAtTime(0.0001, start);
+    env.gain.exponentialRampToValueAtTime(opts.gain, start + 0.012);
+    env.gain.setValueAtTime(opts.gain, start + realDur - opts.release);
+    env.gain.exponentialRampToValueAtTime(0.0001, start + realDur);
+
+    src.connect(env);
+    src.start(start, offset, span);
     return env;
   }
 
@@ -364,13 +457,18 @@
         vibratoHz: 5.0, vibratoSt: 0.12, gain: 0.4, breath: 0.03, breathHz: 2.4,
       }),
     },
+    voice: {
+      duration: 0.75,
+      note: "NOT synthesis - the speaker's own recorded nasal murmur, pitch-shifted to each tone with the measured contour applied to the playback rate",
+      build: (ctx, t, s, at) => voice(ctx, t, s, at, { gain: 0.85, release: 0.09 }),
+    },
     hum: {
-      duration: 0.55,
-      note: "the speaker humming: their OWN measured formants, plus jitter and shimmer. Contour fully audible",
+      duration: 0.62,
+      note: "the speaker humming: harmonic levels measured from their own nasal murmurs, soft 90 ms onset, drift and vibrato all below 6 Hz",
       build: (ctx, t, s, at) => hum(ctx, t, s, at, {
-        duration: 0.55, harmonics: 24, attack: 0.055, release: 0.09,
-        jitter: 0.0035, shimmer: 0.05, formantGain: 6, notchHz: 1250,
-        lowpassHz: 1700, gain: 0.34,
+        duration: 0.62, attack: 0.09, release: 0.13,
+        vibratoHz: 4.6, vibratoSt: 0.11, shimmer: 0.045,
+        lowpassHz: 2200, gain: 0.5,
       }),
     },
     bowed: {

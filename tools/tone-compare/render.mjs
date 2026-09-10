@@ -44,12 +44,95 @@ const VOICES = {
 // Instrument-style voices live in instruments.js and are injected into the
 // page; they need whole node graphs of their own rather than a `voice` preset,
 // because what distinguishes them is time evolution, not spectrum.
-const INSTRUMENTS = ['hum', 'piano', 'pluck', 'bell', 'flute', 'bowed'];
+const INSTRUMENTS = ['voice', 'hum', 'piano', 'pluck', 'bell', 'flute', 'bowed'];
 const VARIANTS = ['original', ...Object.keys(VOICES), ...INSTRUMENTS];
+
+// The speakers' own nasal murmurs, pulled straight out of the recording corpus
+// as a reference: the truest imitation of someone humming is them humming.
+// speaker3/n_high.wav is an isolated syllabic nasal - literally a hum. For
+// speaker2 the murmur is the tail of a nasal-final syllable. Absent corpus =
+// skipped, since it lives outside this repo.
+const CORPUS = process.env.CORPUS ||
+  '/Users/breallis/Dev/yoruba-student-dict/content/staged/syllables';
+// Source recordings for the `voice` row. Key = the id instruments.js looks the
+// buffer up by (an R2-relative path, so the same key works in the game);
+// value = the path within CORPUS, which already points at .../syllables.
+const VOICE_SOURCES = {
+  'syllables/speaker3/n_high.wav': 'speaker3/n_high.wav',
+  'syllables/speaker2/un.wav': 'speaker2/un.wav',
+};
+const REAL_HUM = {
+  speaker3: { file: 'speaker3/n_high.wav', where: 'all' },
+  speaker2: { file: 'speaker2/un.wav', where: 'tail' },
+};
 const SPEAKERS = ['speaker2', 'speaker3'];
 const CLIPS = ['melody', 'low', 'mid', 'high'];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// --- real-recording reference -------------------------------------------
+function readWav(file) {
+  const b = fs.readFileSync(file);
+  const sr = b.readUInt32LE(24);
+  let off = 12;
+  while (off < b.length - 8) {                       // walk chunks to find data
+    const id = b.toString('ascii', off, off + 4);
+    const size = b.readUInt32LE(off + 4);
+    if (id === 'data') return { sr, pcm: b.subarray(off + 8, off + 8 + size) };
+    off += 8 + size + (size % 2);
+  }
+  throw new Error(`no data chunk in ${file}`);
+}
+
+function writeWav(file, samples, sr) {
+  const n = samples.length;
+  const b = Buffer.alloc(44 + n * 2);
+  b.write('RIFF', 0); b.writeUInt32LE(36 + n * 2, 4); b.write('WAVE', 8);
+  b.write('fmt ', 12); b.writeUInt32LE(16, 16); b.writeUInt16LE(1, 20);
+  b.writeUInt16LE(1, 22); b.writeUInt32LE(sr, 24); b.writeUInt32LE(sr * 2, 28);
+  b.writeUInt16LE(2, 32); b.writeUInt16LE(16, 34);
+  b.write('data', 36); b.writeUInt32LE(n * 2, 40);
+  for (let i = 0; i < n; i++) b.writeInt16LE(Math.max(-32768, Math.min(32767, Math.round(samples[i]))), 44 + i * 2);
+  fs.writeFileSync(file, b);
+}
+
+// Cuts the murmur portion out of a clip. Where it sits depends on the syllable:
+// for a nasal-FINAL one it is the tail, for a nasal-INITIAL one the head.
+// Getting that backwards is what made the first attempt at this measure an open
+// vowel and call it a hum.
+function extractMurmur(file, where) {
+  const { sr, pcm } = readWav(file);
+  const x = new Float32Array(pcm.length / 2);
+  for (let i = 0; i < x.length; i++) x[i] = pcm.readInt16LE(i * 2) / 32768;
+
+  const step = Math.floor(sr * 0.02);
+  const frames = [];
+  for (let i = 0; i + step < x.length; i += step) {
+    let sq = 0;
+    for (let j = i; j < i + step; j++) sq += x[j] * x[j];
+    frames.push(Math.sqrt(sq / step));
+  }
+  const peak = Math.max(...frames) || 1;
+  const voiced = frames.map((e, i) => (e > 0.15 * peak ? i : -1)).filter((i) => i >= 0);
+  if (voiced.length < 4) return null;
+  const a = voiced[0] * 0.02, b = voiced[voiced.length - 1] * 0.02, span = b - a;
+  const [lo, hi] = where === 'tail' ? [a + 0.6 * span, b]
+                 : where === 'head' ? [a, a + 0.35 * span]
+                 : [a + 0.2 * span, b - 0.05 * span];
+
+  const seg = Array.from(x.subarray(Math.floor(lo * sr), Math.floor(hi * sr)));
+  if (seg.length < sr * 0.05) return null;
+  const max = Math.max(...seg.map(Math.abs)) || 1;
+  const gain = (0.75 * 32767) / max;
+  const fade = Math.floor(sr * 0.02);
+  const out = seg.map((v) => v * gain);
+  for (let i = 0; i < Math.min(fade, out.length); i++) {   // no click on a trimmed edge
+    out[i] *= i / fade;
+    out[out.length - 1 - i] *= i / fade;
+  }
+  return { samples: out, sr };
+}
+
 
 async function connect() {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'tone-compare-'));
@@ -204,6 +287,16 @@ try {
 
   await evaluate(fs.readFileSync(path.join(HERE, 'instruments.js'), 'utf8') + '\ntrue');
   await evaluate(PAGE_HELPERS);
+  // The `voice` row plays real recorded audio. Read it here and hand the bytes
+  // to the page: R2 sends no CORS header, so the page cannot fetch it itself.
+  const sources = {};
+  for (const [key, rel] of Object.entries(VOICE_SOURCES)) {
+    const file = path.join(CORPUS, rel);
+    if (!fs.existsSync(file)) { console.log(`  (no ${rel} - the voice row will be silent)`); continue; }
+    sources[key] = fs.readFileSync(file).toString('base64');
+  }
+  const loaded = await evaluate(`preloadVoice(new OfflineAudioContext(1, 1, 44100), ${JSON.stringify(sources)})`);
+  console.log(`  source audio decoded: ${(loaded || []).length} file(s)`);
   // Wipe stale output: variants come and go from the lists above, and a leftover
   // WAV from a previous run is worse than a missing one - it plays, and it is
   // not what the page says it is.
@@ -226,10 +319,23 @@ try {
     }
   }
 
+  // Reference clips first: the page needs to know which ones exist.
+  const realHum = [];
+  for (const [speaker, spec] of Object.entries(REAL_HUM)) {
+    const file = path.join(CORPUS, spec.file);
+    if (!fs.existsSync(file)) { console.log(`  (no corpus at ${file} - skipping real-hum reference)`); continue; }
+    const got = extractMurmur(file, spec.where);
+    if (!got) { console.log(`  (could not find a murmur in ${spec.file})`); continue; }
+    writeWav(path.join(OUT, `${speaker}-real-hum.wav`), got.samples, got.sr);
+    realHum.push(speaker);
+    console.log(`  reference: ${speaker}-real-hum.wav (${(got.samples.length / got.sr * 1000).toFixed(0)} ms from ${spec.file})`);
+  }
+
   fs.writeFileSync(path.join(OUT, 'index.html'),
     fs.readFileSync(path.join(HERE, 'page.html'), 'utf8')
       .replace('__VARIANTS__', JSON.stringify(VARIANTS))
       .replace('__NOTES__', JSON.stringify(notes))
+      .replace('__REALHUM__', JSON.stringify(realHum))
       .replace('__STATS__', JSON.stringify(Object.fromEntries(
         Object.entries(stats).map(([k, a]) => [k, {
           centroid: a.reduce((s, r) => s + r.centroid, 0) / a.length,
