@@ -7,13 +7,13 @@
    whole file is vendored as-is rather than hand-trimmed. */
 
 /* -----------------------------------------------------------
-   Rotating greeting under the big Yoruba welcome.
-   NOTE FOR TEE: Yoruba, Igbo, and Hausa below are correct.
+   Rotating greeting under the big Yorùbá welcome.
+   NOTE FOR TEE: Yorùbá, Igbo, and Hausa below are correct.
    The last three are placeholders — please confirm the
    correct "welcome/hello" with a native speaker before launch.
    ----------------------------------------------------------- */
 const GREETINGS = [
-  { word: "Ẹ káàb" + "o" + "\u0323" + "\u0300", lang: "Yoruba" },   // Uses an explicit decomposed sequence so the dot-below and grave stay attached to the same letter
+  { word: "Ẹ káàb" + "o" + "\u0323" + "\u0300", lang: "Yorùbá" },   // Uses an explicit decomposed sequence so the dot-below and grave stay attached to the same letter
   { word: "Nnọọ", lang: "Igbo" },   // Uses direct Unicode characters for the dot-below + ogonek-style mark
   { word: "Barka da zuwa", lang: "Hausa" },   // ✓ verified
   { word: "Obọkhian", lang: "Bini" },   // Uses direct Unicode characters for the dot-below mark
