@@ -36,8 +36,15 @@
 
   var VALID_SITES = ['yorubadict', 'games', 'speaknigeria'];
 
-  var queue = [];
-  var ready = false;
+  // Two tags, two independent load timelines, so two queues. They were one,
+  // and that one was flushed when PostHog finished - which silently discarded
+  // every queued conversion whenever gtag/js was the slower of the two. The
+  // queue exists to cover the consent round trip, which is exactly the window
+  // an ad click spends its first seconds in, so what it lost was the events
+  // that mattered most. Do not couple them again.
+  var postHogQueue = [];
+  var adsQueue = [];
+  var postHogReady = false;
   var adsReady = false;
   var refused = false;
   var commonProps = {};
@@ -48,17 +55,22 @@
   // dictionary the tag also waits for the largest paint. A reader can search
   // and open three words inside that window.
   //
-  // The queue is bounded. If consent is refused the events are discarded
-  // rather than held, and if something goes wrong badly enough that the tag
-  // never loads, we would rather lose events than grow an array forever.
+  // Both queues are bounded, by this one limit. If consent is refused the
+  // events are discarded rather than held, and if something goes wrong badly
+  // enough that a tag never loads, we would rather lose events than grow an
+  // array forever.
   var QUEUE_LIMIT = 100;
 
-  function flush() {
-    for (var i = 0; i < queue.length; i++) {
-      window.posthog.capture(queue[i].name, queue[i].props);
-      conversion(queue[i].name, queue[i].props);
+  function flushPostHog() {
+    for (var i = 0; i < postHogQueue.length; i++) {
+      window.posthog.capture(postHogQueue[i].name, postHogQueue[i].props);
     }
-    queue = [];
+    postHogQueue = [];
+  }
+
+  function flushAds() {
+    for (var i = 0; i < adsQueue.length; i++) fire(adsQueue[i]);
+    adsQueue = [];
   }
 
   function track(name, props) {
@@ -73,15 +85,14 @@
       if (Object.prototype.hasOwnProperty.call(props, key)) payload[key] = props[key];
     }
 
-    if (ready) {
-      window.posthog.capture(name, payload);
-      // PostHog records what happened; this tells Ads it happened. Both, or
-      // neither - a conversion Ads knows about but PostHog does not is a number
-      // with nothing behind it to explain.
-      conversion(name, payload);
-      return;
-    }
-    if (queue.length < QUEUE_LIMIT) queue.push({ name: name, props: payload });
+    // PostHog records what happened; this tells Ads that it happened. Both
+    // are attempted on every event, and each holds its own copy back if its
+    // tag is not up yet. Ads is deliberately NOT conditional on PostHog:
+    // whatever stops one must not silently stop the other.
+    if (postHogReady) window.posthog.capture(name, payload);
+    else if (postHogQueue.length < QUEUE_LIMIT) postHogQueue.push({ name: name, props: payload });
+
+    conversion(name, payload);
   }
 
   // Conversion labels, filled in as each conversion action is created in the
@@ -138,6 +149,7 @@
           }
         });
         adsReady = true;
+        flushAds();
         resolve();
       };
       script.onerror = function () { resolve(); };
@@ -153,10 +165,23 @@
    * them until its conversion action exists in the console.
    */
   function conversion(name, props) {
+    if (refused) return;
     var label = CONVERSION_LABELS[name];
-    if (!label || !adsReady || refused) return;
+    if (!label) return;
     var when = CONVERSION_WHEN[name];
     if (when && !when(props || {})) return;
+
+    // The conversion is earned and only the tag is missing, so hold the label
+    // and let flushAds() send it. Dropping it here is dropping a real
+    // conversion for losing a race with a script load nobody can see.
+    if (!adsReady) {
+      if (adsQueue.length < QUEUE_LIMIT) adsQueue.push(label);
+      return;
+    }
+    fire(label);
+  }
+
+  function fire(label) {
     window.gtag('event', 'conversion', { send_to: ADS_ID + '/' + label });
   }
 
@@ -230,23 +255,34 @@
       .then(function (results) {
         if (results[0] !== true) {
           refused = true;
-          queue = [];
+          postHogQueue = [];
+          adsQueue = [];
           return;
         }
+        // Each tag loads, and fails, on its own. loadPostHog() catches here
+        // rather than letting the Promise.all reject, because that rejection
+        // reached the catch below and set refused - which stopped every Google
+        // Ads conversion for the rest of the visit over a PostHog problem.
+        // us-assets.i.posthog.com is on the usual blocker lists, so that was
+        // not a rare path.
         return Promise.all([
-          loadPostHog(opts.posthog || {}).then(function () {
-            ready = true;
-            flush();
-          }),
+          loadPostHog(opts.posthog || {})
+            .then(function () {
+              postHogReady = true;
+              flushPostHog();
+            })
+            .catch(function () { postHogQueue = []; }),
           loadAds()
         ]);
       })
       .catch(function () {
-        // A failure to load analytics is never a failure of the page. Drop the
-        // queue and carry on: nothing above this line is worth showing a
-        // reader an error over.
+        // Only consent can reach this now: snConsent.ready never rejects, and
+        // both loaders handle their own failures. An unresolved consent answer
+        // is not permission, so it is still read as a refusal - the safe
+        // direction, and the reason this catch stays.
         refused = true;
-        queue = [];
+        postHogQueue = [];
+        adsQueue = [];
       });
   }
 
