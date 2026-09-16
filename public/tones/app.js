@@ -815,12 +815,6 @@ function initializeThemeSelector() {
 }
 
 function loadLevel(levelIndex) {
-    // Advancing past the level we were on means that one is finished. Reported
-    // before the bounds check, so completing the LAST level still counts.
-    if (currentLevel && levelIndex === currentLevelIndex + 1) {
-        snGame.levelComplete(currentLevel);
-    }
-
     if (levelIndex >= activeLevels.length) {
         showToast("You've completed this playlist!", 'info', 0);
         return;
@@ -921,6 +915,13 @@ function moveToNextWord() {
     if (nextWordIndex < currentLevel.words.length) {
         loadWord(nextWordIndex);
     } else {
+        // The level is finished here, not in loadLevel(). Inferring it from an
+        // index advance meant the theme dropdown - which calls loadLevel() with
+        // the next index - reported a completed level for one nobody played,
+        // and level_complete is a primary Google Ads conversion. Completing the
+        // LAST level still counts: this runs before the loadLevel() that walks
+        // off the end of the playlist.
+        snGame.levelComplete(currentLevel);
         showToast("Level Complete! Loading next set...", 'info', 1500);
         setTimeout(() => loadLevel(currentLevelIndex + 1), 1500);
     }
