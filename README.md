@@ -7,7 +7,9 @@ HTML/CSS/vanilla JS, no build step. Only `public/` deploys.
 
 ```
 public/            - everything deployed (wrangler pages_build_output_dir -> "public")
-  index.html       - games landing page
+  index.html       - games landing page (its own styles in assets/landing.css;
+                     its pictures in assets/img/, webp copies of dev/games art
+                     and screenshots of the games)
   phonics/         - phonics game: match syllables to build words, hear each
                      word and syllable pronounced, see per-tone visualization
   tones/           - tone game: hear a word, pick the high/mid/low tone of
