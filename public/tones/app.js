@@ -1,18 +1,16 @@
 // --- GLOBAL CONFIGURATION ---
-// Audio/image bytes live in R2, not this deploy (same arrangement as the
-// phonics game - publishToR2.mjs in the dictionary repo is what uploads
-// them). Only the three JSON files ship same-origin, and this game reads
-// the phonics game's copies of them rather than keeping its own: they're
-// vendored by sync_dictionary_data.py, and one copy for both games means
-// no drift and no change to that script. `../phonics/vocab.json` resolves
-// to /phonics/vocab.json from /tones/ - the relative path is deliberate.
-const BASE_URL = "https://gamemedia.speaknigeria.org/";
+// Recordings and pictures are the Yoruba game suite's checked content kit,
+// served same-origin at /content/. The word and level data is the phonics
+// game's copy (generated from that kit by tools/kit_to_practice.mjs, with every
+// audio and image URL spelled out), read rather than duplicated so the games
+// cannot drift. `../phonics/vocab.json` resolves to /phonics/vocab.json from
+// /tones/ - the relative path is deliberate.
 const DATA_DIR = "../phonics/";
 
-// speaker1 is excluded on purpose. The tone study behind TONE_MODEL below
-// rests on only 19 tokens for that speaker - 4 of them for high tone - which
-// the analysis itself flags as too thin to anchor anything. speaker2 (female
-// range) and speaker3 (male range) have 73 and 78 tokens.
+// Speakers keep their old keys, by person: speaker3 = Femi (his account's
+// recordings and his legacy ones), speaker2 = Tolani. The tone study behind
+// TONE_MODEL below measured both (73 and 78 tokens). The old speaker1, whose 19
+// tokens were too thin to anchor anything, has no recordings in the kit.
 const ALLOWED_SPEAKERS = ["speaker2", "speaker3"];
 
 // Which playlists this game offers. `syllable_reinforcement` is deliberately
@@ -45,8 +43,6 @@ const MIN_PATTERN_WORDS = 3;
 // For level names: "mid-high", "high-high-low". Matches the naming upstream
 // already used for its own tone_pattern levels.
 const TONE_SEQUENCE_LABEL = (tones) => tones.join("-");
-
-let CURRENT_IMAGE_STYLE = "cartoon";
 // ----------------------------
 
 // --- TONE MODEL ---------------------------------------------------------
@@ -172,21 +168,6 @@ function applyTone(bare, tone) {
     return (decomposed.slice(0, at) + mark + decomposed.slice(at)).normalize("NFC");
 }
 
-// syllables.json is keyed by tone-marked syllable, and like vocab.json it
-// isn't uniformly NFC-normalized. Re-keying it on NFC means the lookup can't
-// miss just because two files spelled the same syllable with a different
-// combining-mark order.
-function indexSyllablesByNfc(raw) {
-    const indexed = {};
-    Object.keys(raw).forEach((speaker) => {
-        indexed[speaker] = {};
-        Object.keys(raw[speaker]).forEach((syllable) => {
-            indexed[speaker][syllable.normalize("NFC")] = raw[speaker][syllable];
-        });
-    });
-    return indexed;
-}
-
 function isCombining(ch) {
     const code = ch.codePointAt(0);
     return (code >= 0x0300 && code <= 0x036f) || (code >= 0x1ab0 && code <= 0x1aff);
@@ -206,12 +187,6 @@ let maxSlots = 0;
 let isSolved = false;
 let isTransitioning = false;
 let currentPlayingAudio = null;
-
-// Only read after a word is solved, to play the real recorded syllable for
-// the correctly tone-marked syllable. Keyed { speaker: { NFC syllable: info } }
-// - see indexSyllablesByNfc. Verified: every syllable of every word in every
-// surviving level has audio for that level's speaker.
-let syllableIndex = {};
 
 // Transient overlay message (see #toast in style.css) - replaces a
 // permanently-reserved text line with something that only takes up
@@ -587,14 +562,12 @@ async function loadGame() {
     try {
         loadVoiceSources();   // not awaited: the tone buttons fall back until it lands
 
-        const [wordsResponse, syllablesResponse, sessionsResponse] = await Promise.all([
-            fetch(DATA_DIR + 'vocab.json'),
-            fetch(DATA_DIR + 'syllables.json'),
-            fetch(DATA_DIR + 'sessions.json')
+        const [wordsResponse, sessionsResponse] = await Promise.all([
+            fetch(DATA_DIR + 'vocab.json?v=2'),
+            fetch(DATA_DIR + 'sessions.json?v=2')
         ]);
 
         const dictionaryWords = await wordsResponse.json();
-        syllableIndex = indexSyllablesByNfc(await syllablesResponse.json());
         const sessions = await sessionsResponse.json();
 
         // Two gates here. A level with no validSpeakers has no
@@ -671,11 +644,10 @@ async function loadGame() {
 
 // One playable word for one speaker, or null if it can't be played.
 //
-// sessions.json hard-gates every word on having a real image (same as audio
-// coverage) - a placeholder graphic standing in for missing art is fabricated
-// content, not an acceptable degrade. The image check here is defense-in-depth
-// only: it should never trigger against correctly-generated content, but if it
-// ever does, skip the word entirely rather than show a placeholder.
+// A word plays only in its own speaker's levels (each kit word has one
+// recording). The generator only emits words with the kit's picture and
+// recording; the check here is defense-in-depth - a placeholder graphic
+// standing in for missing art is fabricated content, not an acceptable degrade.
 //
 // Everything text-shaped is normalized to NFC. vocab.json is not uniformly
 // normalized - 5 of its 225 syllables store a precomposed accented vowel plus
@@ -683,25 +655,24 @@ async function loadGame() {
 // identically but is a different string from the NFC form. Normalizing once
 // here keeps every comparison and lookup downstream working on one form.
 function buildWord(wordId, wordData, speaker) {
-    const imageStyles = wordData?.imageStyles || [];
-    if (wordData && imageStyles.length === 0) {
-        console.error(`[Missing Image] "${wordId}" has no labeled image - excluding it.`);
+    if (!wordData || wordData.speaker !== speaker) return null;
+    if (!wordData.imageUrl || !wordData.audioUrl) {
+        console.error(`[Missing Media] "${wordId}" has no picture or recording - excluding it.`);
+        return null;
     }
-    if (!wordData || imageStyles.length === 0) return null;
-
-    const chosenStyle = imageStyles.includes(CURRENT_IMAGE_STYLE)
-        ? CURRENT_IMAGE_STYLE
-        : imageStyles[0];
 
     return {
         id: wordId,
         targetWord: wordData.displayText.normalize("NFC"),                 // "adìyẹ" - revealed on success
-        markedSyllables: wordData.syllables.map(s => s.normalize("NFC")),  // ["a","dì","yẹ"] - for the real syllable audio
+        markedSyllables: wordData.syllables.map(s => s.normalize("NFC")),  // ["a","dì","yẹ"]
         bareSyllables: wordData.syllables.map(stripTone),                  // ["a","di","yẹ"] - what the cards show
         targetTones: wordData.syllables.map(toneOf),                       // ["mid","low","mid"] - the answer
         speaker,
-        fullAudioUrl: `${BASE_URL}words/${speaker}/${wordId}.wav`,
-        imageUrl: `${BASE_URL}images/${chosenStyle}/${wordId}.png`
+        // The word's own syllable clips, in order, or null where it has none
+        // (legacy recordings were never cut into syllables).
+        syllableAudio: wordData.syllableAudio || [],
+        fullAudioUrl: wordData.audioUrl,
+        imageUrl: wordData.imageUrl
     };
 }
 
@@ -992,16 +963,19 @@ function handleCardClick(index) {
     renderCards();
 }
 
+// The word's own clip of that syllable, cut from the same speaker's slow take.
+// Words recorded before syllable takes existed have none, and the card stays
+// silent rather than borrowing another recording.
 function playRecordedSyllable(index) {
-    const info = syllableIndex[currentWord.speaker]?.[currentWord.markedSyllables[index]];
-    if (!info || !info.audio) return;
+    const clip = currentWord.syllableAudio[index];
+    if (!clip) return;
     snGame.audio(currentWord, 'syllable', index);
     if (currentPlayingAudio) {
         currentPlayingAudio.pause();
         currentPlayingAudio.currentTime = 0;
     }
-    currentPlayingAudio = new Audio(BASE_URL + info.audio);
-    currentPlayingAudio.play().catch((err) => reportAudioFailure(info.audio, err));
+    currentPlayingAudio = new Audio(clip);
+    currentPlayingAudio.play().catch((err) => reportAudioFailure(clip, err));
 }
 
 // --- PICKING ------------------------------------------------------------

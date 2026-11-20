@@ -239,13 +239,13 @@ ok(await ev(`
 await sleep(900);
 ok(await ev(`document.getElementById('prompt-container').classList.contains('solved')`),
    'the picture becomes tappable once solved');
-ok((await ev(`window.__audioUrls.filter(u => u.includes('/words/')).length`)) > 0,
+ok((await ev(`window.__audioUrls.filter(u => u.includes('/content/audio/')).length`)) > 0,
    'the word is spoken once the answer is right');
 {
   await ev(`window.__audioUrls = []`);
   await ev(`document.getElementById('prompt-container').click()`);
   await sleep(300);
-  ok((await ev(`window.__audioUrls.filter(u => u.includes('/words/')).length`)) > 0,
+  ok((await ev(`window.__audioUrls.filter(u => u.includes('/content/audio/')).length`)) > 0,
      'and replays when the picture is tapped after solving');
 }
 ok(errors.length === 0, `no console errors${errors.length ? ': ' + errors[0] : ''}`);

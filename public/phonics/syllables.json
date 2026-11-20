@@ -1,680 +1,901 @@
 {
-  "speaker1": {
-    "à": {
-      "audio": "syllables/speaker1/a_low.wav",
-      "tone": "low"
-    },
-    "e": {
-      "audio": "syllables/speaker1/e.wav",
-      "tone": "mid"
-    },
-    "ẹ": {
-      "audio": "syllables/speaker1/eh.wav",
-      "tone": "mid"
-    },
-    "i": {
-      "audio": "syllables/speaker1/i.wav",
-      "tone": "mid"
-    },
-    "ì": {
-      "audio": "syllables/speaker1/i_low.wav",
-      "tone": "low"
-    },
-    "ji": {
-      "audio": "syllables/speaker1/ji.wav",
-      "tone": "mid"
-    },
-    "jú": {
-      "audio": "syllables/speaker1/ju_high.wav",
-      "tone": "high"
-    },
-    "ka": {
-      "audio": "syllables/speaker1/ka.wav",
-      "tone": "mid"
-    },
-    "kò": {
-      "audio": "syllables/speaker1/ko_low.wav",
-      "tone": "low"
-    },
-    "kùn": {
-      "audio": "syllables/speaker1/kun_low.wav",
-      "tone": "low"
-    },
-    "mú": {
-      "audio": "syllables/speaker1/mu_high.wav",
-      "tone": "high"
-    },
-    "nu": {
-      "audio": "syllables/speaker1/nu.wav",
-      "tone": "mid"
-    },
-    "o": {
-      "audio": "syllables/speaker1/o.wav",
-      "tone": "mid"
-    },
-    "ọ": {
-      "audio": "syllables/speaker1/oh.wav",
-      "tone": "mid"
-    },
-    "rí": {
-      "audio": "syllables/speaker1/ri_high.wav",
-      "tone": "high"
-    },
-    "rùn": {
-      "audio": "syllables/speaker1/run_low.wav",
-      "tone": "low"
-    },
-    "tí": {
-      "audio": "syllables/speaker1/ti_high.wav",
-      "tone": "high"
-    },
-    "wo": {
-      "audio": "syllables/speaker1/wo.wav",
-      "tone": "mid"
-    },
-    "wọ": {
-      "audio": "syllables/speaker1/woh.wav",
-      "tone": "mid"
-    }
-  },
   "speaker2": {
-    "a": {
-      "audio": "syllables/speaker2/a.wav",
-      "tone": "mid"
-    },
-    "à": {
-      "audio": "syllables/speaker2/a_low.wav",
-      "tone": "low"
-    },
-    "ba": {
-      "audio": "syllables/speaker2/ba.wav",
-      "tone": "mid"
-    },
-    "be": {
-      "audio": "syllables/speaker2/be.wav",
-      "tone": "mid"
-    },
-    "bí": {
-      "audio": "syllables/speaker2/bi_high.wav",
-      "tone": "high"
-    },
-    "bì": {
-      "audio": "syllables/speaker2/bi_low.wav",
-      "tone": "low"
-    },
-    "bù": {
-      "audio": "syllables/speaker2/bu_low.wav",
-      "tone": "low"
-    },
-    "de": {
-      "audio": "syllables/speaker2/de.wav",
-      "tone": "mid"
-    },
-    "dì": {
-      "audio": "syllables/speaker2/di_low.wav",
-      "tone": "low"
-    },
-    "do": {
-      "audio": "syllables/speaker2/do.wav",
-      "tone": "mid"
-    },
-    "dù": {
-      "audio": "syllables/speaker2/du_low.wav",
-      "tone": "low"
-    },
     "e": {
-      "audio": "syllables/speaker2/e.wav",
-      "tone": "mid"
+      "audio": "/content/audio/b2570d61-3b00-4be4-b033-63e3024a2eff.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "é": {
-      "audio": "syllables/speaker2/e_high.wav",
-      "tone": "high"
+    "jì": {
+      "audio": "/content/audio/a823f630-57ec-4e19-8d72-c00a41de9e07.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "è": {
-      "audio": "syllables/speaker2/e_low.wav",
-      "tone": "low"
-    },
-    "ẹ": {
-      "audio": "syllables/speaker2/eh.wav",
-      "tone": "mid"
-    },
-    "ẹ̀": {
-      "audio": "syllables/speaker2/eh_low.wav",
-      "tone": "low"
-    },
-    "gbá": {
-      "audio": "syllables/speaker2/gba_high.wav",
-      "tone": "high"
-    },
-    "gbe": {
-      "audio": "syllables/speaker2/gbe.wav",
-      "tone": "mid"
-    },
-    "gbó": {
-      "audio": "syllables/speaker2/gbo_high.wav",
-      "tone": "high"
-    },
-    "gẹ": {
-      "audio": "syllables/speaker2/geh.wav",
-      "tone": "mid"
-    },
-    "gún": {
-      "audio": "syllables/speaker2/gun_high.wav",
-      "tone": "high"
-    },
-    "i": {
-      "audio": "syllables/speaker2/i.wav",
-      "tone": "mid"
-    },
-    "ì": {
-      "audio": "syllables/speaker2/i_low.wav",
-      "tone": "low"
-    },
-    "já": {
-      "audio": "syllables/speaker2/ja_high.wav",
-      "tone": "high"
-    },
-    "jẹ": {
-      "audio": "syllables/speaker2/jeh.wav",
-      "tone": "mid"
-    },
-    "jò": {
-      "audio": "syllables/speaker2/jo_low.wav",
-      "tone": "low"
-    },
-    "jọ́": {
-      "audio": "syllables/speaker2/joh_high.wav",
-      "tone": "high"
-    },
-    "jú": {
-      "audio": "syllables/speaker2/ju_high.wav",
-      "tone": "high"
-    },
-    "kán": {
-      "audio": "syllables/speaker2/kan_high.wav",
-      "tone": "high"
-    },
-    "kú": {
-      "audio": "syllables/speaker2/ku_high.wav",
-      "tone": "high"
-    },
-    "kùn": {
-      "audio": "syllables/speaker2/kun_low.wav",
-      "tone": "low"
-    },
-    "lé": {
-      "audio": "syllables/speaker2/le_high.wav",
-      "tone": "high"
-    },
-    "lẹ́": {
-      "audio": "syllables/speaker2/leh_high.wav",
-      "tone": "high"
-    },
-    "lẹ̀": {
-      "audio": "syllables/speaker2/leh_low.wav",
-      "tone": "low"
+    "ká": {
+      "audio": "/content/audio/73507f73-05ed-4c20-bd09-1cb536a46257.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "lọ": {
-      "audio": "syllables/speaker2/loh.wav",
-      "tone": "mid"
+      "audio": "/content/audio/1dc95e9b-437d-4844-8090-bce2519901b8.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "lú": {
-      "audio": "syllables/speaker2/lu_high.wav",
-      "tone": "high"
+    "tí": {
+      "audio": "/content/audio/c1983a18-9fd3-493b-b911-cc399667b9ed.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "lù": {
-      "audio": "syllables/speaker2/lu_low.wav",
-      "tone": "low"
-    },
-    "mọ": {
-      "audio": "syllables/speaker2/moh.wav",
-      "tone": "mid"
-    },
-    "ná": {
-      "audio": "syllables/speaker2/na_high.wav",
-      "tone": "high"
-    },
-    "o": {
-      "audio": "syllables/speaker2/o.wav",
-      "tone": "mid"
-    },
-    "ò": {
-      "audio": "syllables/speaker2/o_low.wav",
-      "tone": "low"
-    },
-    "ọ": {
-      "audio": "syllables/speaker2/oh.wav",
-      "tone": "mid"
-    },
-    "ọ́": {
-      "audio": "syllables/speaker2/oh_high.wav",
-      "tone": "high"
-    },
-    "ọ̀": {
-      "audio": "syllables/speaker2/oh_low.wav",
-      "tone": "low"
-    },
-    "pẹ": {
-      "audio": "syllables/speaker2/peh.wav",
-      "tone": "mid"
-    },
-    "pẹ́": {
-      "audio": "syllables/speaker2/peh_high.wav",
-      "tone": "high"
-    },
-    "pẹ̀": {
-      "audio": "syllables/speaker2/peh_low.wav",
-      "tone": "low"
-    },
-    "rá": {
-      "audio": "syllables/speaker2/ra_high.wav",
-      "tone": "high"
-    },
-    "ré": {
-      "audio": "syllables/speaker2/re_high.wav",
-      "tone": "high"
-    },
-    "rè": {
-      "audio": "syllables/speaker2/re_low.wav",
-      "tone": "low"
-    },
-    "rẹ": {
-      "audio": "syllables/speaker2/reh.wav",
-      "tone": "mid"
-    },
-    "rin": {
-      "audio": "syllables/speaker2/rin.wav",
-      "tone": "mid"
-    },
-    "rìn": {
-      "audio": "syllables/speaker2/rin_low.wav",
-      "tone": "low"
-    },
-    "sá": {
-      "audio": "syllables/speaker2/sa_high.wav",
-      "tone": "high"
-    },
-    "ṣẹ": {
-      "audio": "syllables/speaker2/sheh.wav",
-      "tone": "mid"
-    },
-    "ṣin": {
-      "audio": "syllables/speaker2/shin.wav",
-      "tone": "mid"
-    },
-    "ṣọ": {
-      "audio": "syllables/speaker2/shoh.wav",
-      "tone": "mid"
-    },
-    "sùn": {
-      "audio": "syllables/speaker2/sun_low.wav",
-      "tone": "low"
-    },
-    "tan": {
-      "audio": "syllables/speaker2/tan.wav",
-      "tone": "mid"
-    },
-    "tè": {
-      "audio": "syllables/speaker2/te_low.wav",
-      "tone": "low"
-    },
-    "un": {
-      "audio": "syllables/speaker2/un.wav",
-      "tone": "mid"
-    },
-    "wá": {
-      "audio": "syllables/speaker2/wa_high.wav",
-      "tone": "high"
-    },
-    "wà": {
-      "audio": "syllables/speaker2/wa_low.wav",
-      "tone": "low"
-    },
-    "wé": {
-      "audio": "syllables/speaker2/we_high.wav",
-      "tone": "high"
-    },
-    "wẹ": {
-      "audio": "syllables/speaker2/weh.wav",
-      "tone": "mid"
-    },
-    "wẹ́": {
-      "audio": "syllables/speaker2/weh_high.wav",
-      "tone": "high"
-    },
-    "wẹ̀": {
-      "audio": "syllables/speaker2/weh_low.wav",
-      "tone": "low"
-    },
-    "yà": {
-      "audio": "syllables/speaker2/ya_low.wav",
-      "tone": "low"
-    },
-    "yẹ": {
-      "audio": "syllables/speaker2/yeh.wav",
-      "tone": "mid"
-    },
-    "yìn": {
-      "audio": "syllables/speaker2/yin_low.wav",
-      "tone": "low"
+    "è": {
+      "audio": "/content/audio/8c6df7b3-b376-4c41-ba27-aaccabe7f8fe.mp3",
+      "tone": "low",
+      "source": "canonical"
     }
   },
   "speaker3": {
     "a": {
-      "audio": "syllables/speaker3/a.wav",
-      "tone": "mid"
+      "audio": "/content/audio/e9108f37-afca-4945-930e-2c9bd7ec90dd.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "á": {
-      "audio": "syllables/speaker3/a_high.wav",
-      "tone": "high"
+    "bi": {
+      "audio": "/content/audio/281bdc0b-a78d-4da1-9b70-36725dfe7204.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "à": {
-      "audio": "syllables/speaker3/a_low.wav",
-      "tone": "low"
+    "bà": {
+      "audio": "/content/audio/aad7d761-90dd-424e-831e-914b7f0420c3.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "ba": {
-      "audio": "syllables/speaker3/ba.wav",
-      "tone": "mid"
+    "bá": {
+      "audio": "/content/audio/119c3deb-a2b8-466e-9f16-1981faeb556b.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "bẹ́": {
-      "audio": "syllables/speaker3/beh_high.wav",
-      "tone": "high"
+    "bì": {
+      "audio": "/content/audio/c681a62e-7673-4dff-8379-d51e41e4bf9c.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "bẹ": {
-      "audio": "syllables/speaker3/beh.wav",
-      "tone": "mid"
+    "bó": {
+      "audio": "/content/audio/cb2c9548-1d46-4499-986c-49464f367308.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "bí": {
-      "audio": "syllables/speaker3/bi_high.wav",
-      "tone": "high"
+    "bẹ́": {
+      "audio": "/content/audio/b167fdb3-eb9a-4d21-9d6d-cbfcebdeb8d8.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "bọ́": {
-      "audio": "syllables/speaker3/boh_high.wav",
-      "tone": "high"
+    "bọ́": {
+      "audio": "/content/audio/8eef523d-467b-4d2d-b0ba-43b60e0b590c.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "bú": {
-      "audio": "syllables/speaker3/bu_high.wav",
-      "tone": "high"
+    "de": {
+      "audio": "/content/audio/95345f25-9b81-46c0-8e0f-8eb4979574c2.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "bù": {
-      "audio": "syllables/speaker3/bu_low.wav",
-      "tone": "low"
+    "dá": {
+      "audio": "/content/audio/7db8b063-0e2b-4c8e-bf3b-c80b2fe18e3f.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "dè": {
-      "audio": "syllables/speaker3/de_low.wav",
-      "tone": "low"
-    },
-    "dí": {
-      "audio": "syllables/speaker3/di_high.wav",
-      "tone": "high"
+    "dé": {
+      "audio": "/content/audio/65c2f5ac-549b-4c79-a774-0061ef2b12d0.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "dì": {
-      "audio": "syllables/speaker3/di_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/2bc6b69c-c977-4f76-bec2-672519f0fa31.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "du": {
-      "audio": "syllables/speaker3/du.wav",
-      "tone": "mid"
+    "dẹ̀": {
+      "audio": "/content/audio/f1dc11d9-c5a3-48b4-b65d-b80620f65765.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "dù": {
-      "audio": "syllables/speaker3/du_low.wav",
-      "tone": "low"
+    "dọ̀": {
+      "audio": "/content/audio/e8d1bc84-e10f-4822-92de-81ce9761a2fd.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "dọ́": {
+      "audio": "/content/audio/75812bb5-9bf7-4456-a1d8-50fcb92046f5.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "e": {
-      "audio": "syllables/speaker3/e.wav",
-      "tone": "mid"
+      "audio": "/content/audio/01d3333d-5c1a-490d-9c98-715c6afa6de2.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "ẹ": {
-      "audio": "syllables/speaker3/eh.wav",
-      "tone": "mid"
+    "fi": {
+      "audio": "/content/audio/e71ae3b1-4439-418a-9154-57ca86794a84.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "fà": {
-      "audio": "syllables/speaker3/fa_low.wav",
-      "tone": "low"
+    "fu": {
+      "audio": "/content/audio/1d76058d-df5d-430e-a8b0-a35c317334e4.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "fè": {
+      "audio": "/content/audio/819ba54c-63d3-44ff-b080-edc2e2460bfc.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "fì": {
+      "audio": "/content/audio/2f0e16ca-0433-4717-9157-0a24328870b7.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "fú": {
+      "audio": "/content/audio/896a7f11-4b07-4071-903a-a5a386662907.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "fún": {
+      "audio": "/content/audio/278dad61-727d-495f-8f38-2623b2793562.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "fọ": {
-      "audio": "syllables/speaker3/foh.wav",
-      "tone": "mid"
+      "audio": "/content/audio/62b9faa5-e80f-4f12-bece-abf229eb3774.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "fọn": {
-      "audio": "syllables/speaker3/fohn.wav",
-      "tone": "mid"
+    "ga": {
+      "audio": "/content/audio/f7b3d9dc-72a6-4639-8e4d-5ff69e983213.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "gba": {
+      "audio": "/content/audio/ec9bb40b-d10b-4ca9-9db8-3b5506a86498.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "gbà": {
+      "audio": "/content/audio/ab81183b-88a3-4ac7-bf16-1dae9ee54ce3.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "gbá": {
+      "audio": "/content/audio/38715faf-d99d-44e8-a7f1-c943961d5e75.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "gbè": {
+      "audio": "/content/audio/8f07572b-8e01-459a-87d4-5f1ba658fc3c.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "gbò": {
-      "audio": "syllables/speaker3/gbo_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/e1aac690-f020-4747-bbae-2df7b6302d54.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "gbó": {
+      "audio": "/content/audio/36377058-831a-40f5-9f0e-a60095299e73.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "gbẹ́": {
+      "audio": "/content/audio/3d9b4bf0-ff81-43f8-888f-1becdc404019.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "gbọ́n": {
-      "audio": "syllables/speaker3/gbohn_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/b817dd53-b935-4576-916f-2fb8d763b840.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "go": {
+      "audio": "/content/audio/1d5f2894-35f5-49a2-b406-eef6a8227e3b.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "gè": {
+      "audio": "/content/audio/21c9f88b-7886-46b9-96af-9bd1ae28e2bc.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "gé": {
+      "audio": "/content/audio/589dd756-bea2-409d-b4dd-3054932dfee8.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "gì": {
+      "audio": "/content/audio/eb4aa5bd-ddcd-4cd1-a76d-3f33010c265a.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "gù": {
+      "audio": "/content/audio/86929549-105c-45e3-abb3-a55bbf5d86bb.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "gẹ̀": {
-      "audio": "syllables/speaker3/geh_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/3b4f3c99-7cd3-4597-b4df-d61589df8088.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "gí": {
-      "audio": "syllables/speaker3/gi_high.wav",
-      "tone": "high"
+    "ho": {
+      "audio": "/content/audio/6cd25919-3101-4d98-813a-533e312eb257.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "gọ́": {
-      "audio": "syllables/speaker3/goh_high.wav",
-      "tone": "high"
+    "hun": {
+      "audio": "/content/audio/61867e5d-0466-40b5-9fd2-29007f1c7e2d.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "gú": {
-      "audio": "syllables/speaker3/gu_high.wav",
-      "tone": "high"
-    },
-    "gún": {
-      "audio": "syllables/speaker3/gun_high.wav",
-      "tone": "high"
-    },
-    "gùn": {
-      "audio": "syllables/speaker3/gun_low.wav",
-      "tone": "low"
+    "hùn": {
+      "audio": "/content/audio/ae679f69-af1d-43e8-940c-499992050145.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "i": {
-      "audio": "syllables/speaker3/i.wav",
-      "tone": "mid"
+      "audio": "/content/audio/c833c6cd-8148-4137-a013-76fc05c1008b.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "ì": {
-      "audio": "syllables/speaker3/i_low.wav",
-      "tone": "low"
+    "ja": {
+      "audio": "/content/audio/fc7ff272-489b-4f30-b900-d7a2e7f422ff.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
     "jà": {
-      "audio": "syllables/speaker3/ja_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/7a8cfde3-000b-4c1d-b978-497553ff8f69.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "já": {
+      "audio": "/content/audio/48cb5734-f55e-4c2e-96a7-acbf4854f66d.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "jò": {
+      "audio": "/content/audio/0c726930-8cd0-43fb-b70a-a26339d97665.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "jó": {
-      "audio": "syllables/speaker3/jo_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/7d7bd254-c36a-4d2b-be72-1c9537b6ecc7.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "jú": {
+      "audio": "/content/audio/de5ac2b1-9a96-4e10-a396-253406f2f2c3.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "jẹ": {
+      "audio": "/content/audio/d8d4582c-553a-4773-814f-64db22391852.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "jẹ́": {
+      "audio": "/content/audio/1f7e6a98-ae2c-4bc7-87b1-3c5c3a3d73a0.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "ka": {
-      "audio": "syllables/speaker3/ka.wav",
-      "tone": "mid"
+      "audio": "/content/audio/45c0a85e-0e0d-4349-adb3-31db328d07cc.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "ká": {
-      "audio": "syllables/speaker3/ka_high.wav",
-      "tone": "high"
+    "ke": {
+      "audio": "/content/audio/5e952cf0-3fbd-4b2e-bca9-40c4232d73b9.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "kan": {
-      "audio": "syllables/speaker3/kan.wav",
-      "tone": "mid"
+    "kà": {
+      "audio": "/content/audio/3fa4fd14-1398-4236-bcd4-22481cbe6d01.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "kó": {
-      "audio": "syllables/speaker3/ko_high.wav",
-      "tone": "high"
+    "kàn": {
+      "audio": "/content/audio/924aff4e-8768-445e-a97e-74728d45f36e.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "ké": {
+      "audio": "/content/audio/d6f9ade5-e118-4bdb-890e-fe750d0f5c6e.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "kì": {
+      "audio": "/content/audio/35f82c33-c15a-4504-9f6f-9a483c0d82b1.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "kò": {
-      "audio": "syllables/speaker3/ko_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/93a4f15a-222d-46c5-83d3-dc3e693a0ad1.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "kú": {
-      "audio": "syllables/speaker3/ku_high.wav",
-      "tone": "high"
+    "kùn": {
+      "audio": "/content/audio/acf35970-b78e-47bc-8960-ca4e6e97dae6.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "kún": {
+      "audio": "/content/audio/cc8ca916-50d7-457c-818f-c96fda542962.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "kẹ̀": {
+      "audio": "/content/audio/7f26785b-b00f-4eee-b1e3-692f867e65c6.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "kẹ́": {
+      "audio": "/content/audio/71bd0d96-fc67-483a-812c-07752abda53f.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "kọ̀": {
+      "audio": "/content/audio/5db2200e-7452-433b-9e6d-9d57b4c0baed.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "le": {
+      "audio": "/content/audio/23e72d00-bf4b-47ad-9b57-34b6ebbe27f1.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
     "là": {
-      "audio": "syllables/speaker3/la_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/ff78b7ec-395f-4bb4-9379-82a89c1d58f5.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "lé": {
-      "audio": "syllables/speaker3/le_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/ca5d18ff-d2dc-4942-8723-3abbe6a70e4d.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "lì": {
+      "audio": "/content/audio/4a638323-35b2-4489-9165-6c43a7bb2cbe.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "ló": {
-      "audio": "syllables/speaker3/lo_high.wav",
-      "tone": "high"
-    },
-    "lú": {
-      "audio": "syllables/speaker3/lu_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/7d95ee1e-283c-4f78-88e1-e8483f925ed3.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "lù": {
-      "audio": "syllables/speaker3/lu_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/7918dc72-0989-4ab4-9bd3-f9c767a0a241.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "lẹ": {
+      "audio": "/content/audio/48287431-3025-4783-b35e-98851a73d09e.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "lẹ̀": {
+      "audio": "/content/audio/cadba66f-c1b7-4470-acb4-e1c25490b6ad.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "lẹ́": {
+      "audio": "/content/audio/4724b8b3-0751-4740-b5d5-5ab6ee5d2c79.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "mi": {
+      "audio": "/content/audio/e4cd8dde-e377-459e-921f-00d08ab903ca.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "mu": {
+      "audio": "/content/audio/d1908365-25f1-4951-82cc-a1f149ade1c9.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
     "mà": {
-      "audio": "syllables/speaker3/ma_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/6b080545-85d8-47cf-ae7d-f3ef1c95079f.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "mọ́": {
-      "audio": "syllables/speaker3/moh_high.wav",
-      "tone": "high"
+    "má": {
+      "audio": "/content/audio/69eb2419-3a34-4468-98f1-0464d0590bc2.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "mó": {
+      "audio": "/content/audio/6f366cd3-589c-4886-8537-9e7264902467.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "mú": {
-      "audio": "syllables/speaker3/mu_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/f86c36cd-822d-459f-a66f-fbcff50ad72b.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "mù": {
-      "audio": "syllables/speaker3/mu_low.wav",
-      "tone": "low"
+    "mọ": {
+      "audio": "/content/audio/5874e420-b2de-49db-87e0-f8aac3bf44e5.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "ń": {
-      "audio": "syllables/speaker3/n_high.wav",
-      "tone": "high"
+    "mọ̀": {
+      "audio": "/content/audio/f838066f-612d-41f9-aafb-4946e6c9ff6e.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "mọ́": {
+      "audio": "/content/audio/62e2114a-35e6-42ad-824b-bfdead1c7a90.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "n": {
+      "audio": "/content/audio/5cdb461b-4826-4887-9a5b-52181f148cb0.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
     "ná": {
-      "audio": "syllables/speaker3/na_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/98262b5d-eb85-4280-b726-6afccb212684.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "nu": {
-      "audio": "syllables/speaker3/nu.wav",
-      "tone": "mid"
+    "nì": {
+      "audio": "/content/audio/0a20b434-5079-42cf-81ce-eeb8706952b0.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "ní": {
+      "audio": "/content/audio/1856a619-3674-4eec-ab8c-10046075e098.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "nù": {
+      "audio": "/content/audio/24a837a4-f2bd-4317-9f57-64c704823b74.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "nú": {
+      "audio": "/content/audio/2247c7d0-8c0b-4e73-aed9-11d02e0033dd.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "o": {
-      "audio": "syllables/speaker3/o.wav",
-      "tone": "mid"
+      "audio": "/content/audio/b10f3828-b47e-422e-8052-61d8872a3343.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "ó": {
-      "audio": "syllables/speaker3/o_high.wav",
-      "tone": "high"
+    "pa": {
+      "audio": "/content/audio/177d4274-c2b5-4bc2-b454-5478e3adafc5.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "ò": {
-      "audio": "syllables/speaker3/o_low.wav",
-      "tone": "low"
-    },
-    "ọ": {
-      "audio": "syllables/speaker3/oh.wav",
-      "tone": "mid"
-    },
-    "ọ": {
-      "audio": "syllables/speaker3/oh.wav",
-      "tone": "mid"
-    },
-    "ọ̀": {
-      "audio": "syllables/speaker3/oh_low.wav",
-      "tone": "low"
+    "pà": {
+      "audio": "/content/audio/ee979aae-4e80-47bf-ac26-8cfb1cd3af5b.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "pá": {
-      "audio": "syllables/speaker3/pa_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/3e7eebfa-702d-4aee-884d-65656cf27106.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "pó": {
+      "audio": "/content/audio/35376d58-164e-4b75-a12b-58768fa3933e.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "pù": {
+      "audio": "/content/audio/18870575-8df2-434c-bbca-7191085f72ad.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "pẹ": {
-      "audio": "syllables/speaker3/peh.wav",
-      "tone": "mid"
+      "audio": "/content/audio/10a21ed8-be22-4a3d-b21e-9ab5b79bf0a8.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "ra": {
-      "audio": "syllables/speaker3/ra.wav",
-      "tone": "mid"
+    "pẹ̀": {
+      "audio": "/content/audio/5f446412-b64e-42cb-b9bb-5e0304edb905.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "rin": {
+      "audio": "/content/audio/cea4badb-37d7-418f-a864-3e45ae1aa808.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "ro": {
+      "audio": "/content/audio/2e6de696-edf5-4426-8ad8-175f38010bba.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "ru": {
+      "audio": "/content/audio/96ff3f09-ee27-4116-84bc-b59b41eaca60.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "run": {
+      "audio": "/content/audio/dd1c0f85-d02c-48dd-a30a-1284cf104f0d.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
     "rà": {
-      "audio": "syllables/speaker3/ra_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/7c1288e4-0dd1-45a4-8f74-88d56ff2dff1.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "rá": {
+      "audio": "/content/audio/fdf6b261-c831-4c87-9b4e-f90676233f40.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "rán": {
+      "audio": "/content/audio/a80cae2c-6d58-48c6-9021-55495db5b6f1.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "rè": {
+      "audio": "/content/audio/0a185770-fa52-4252-93fe-fba5168c9825.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "ré": {
-      "audio": "syllables/speaker3/re_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/c28a64bb-f19f-4e22-a997-16bc400676b1.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "rìn": {
+      "audio": "/content/audio/ceac9111-1213-4f11-b954-5ecf5acaef0d.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "rò": {
+      "audio": "/content/audio/37d129a4-89bb-4f50-a644-b4776489dc67.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "rù": {
+      "audio": "/content/audio/f42ec87d-4d26-43b8-b5fd-575e86f8d644.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "rún": {
+      "audio": "/content/audio/9841aff9-b1dd-452f-9cd7-06618758947a.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "rẹ": {
+      "audio": "/content/audio/20f2b800-e39c-489f-ac1f-e9bb7e69294e.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
     "rẹ́": {
-      "audio": "syllables/speaker3/reh_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/05a18f82-e2ff-428e-a8c7-d9c32db5bf32.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "sà": {
-      "audio": "syllables/speaker3/sa_low.wav",
-      "tone": "low"
+    "rọ": {
+      "audio": "/content/audio/ea5b334f-faac-4062-992c-ee844119f1ae.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "sàn": {
-      "audio": "syllables/speaker3/san_low.wav",
-      "tone": "low"
+    "rọ̀": {
+      "audio": "/content/audio/01e6d418-a956-4731-9794-5aa3a730d5c7.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "sẹ̀": {
-      "audio": "syllables/speaker3/seh_low.wav",
-      "tone": "low"
+    "sun": {
+      "audio": "/content/audio/da3ffbe8-90c8-44fa-8512-ee9a1a692b0c.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
-    "ṣẹ": {
-      "audio": "syllables/speaker3/sheh.wav",
-      "tone": "mid"
+    "sé": {
+      "audio": "/content/audio/0d5eaea6-c904-4bfa-a756-def9aa678dad.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
-    "ṣí": {
-      "audio": "syllables/speaker3/shi_high.wav",
-      "tone": "high"
+    "sì": {
+      "audio": "/content/audio/9a51ac35-8104-402e-aed6-a4ef9e909447.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "ṣin": {
-      "audio": "syllables/speaker3/shin.wav",
-      "tone": "mid"
-    },
-    "ṣọ": {
-      "audio": "syllables/speaker3/shoh.wav",
-      "tone": "mid"
-    },
-    "ṣú": {
-      "audio": "syllables/speaker3/shu_high.wav",
-      "tone": "high"
-    },
-    "ṣù": {
-      "audio": "syllables/speaker3/shu_low.wav",
-      "tone": "low"
+    "sí": {
+      "audio": "/content/audio/7af61081-8540-4207-8659-fca4f0d967cb.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "sùn": {
-      "audio": "syllables/speaker3/sun_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/79e8738f-1437-4c1f-b8f2-37d538b34ee3.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "sẹ̀": {
+      "audio": "/content/audio/b221f7ec-9a58-4436-be37-798c53a82cfa.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "sọ": {
+      "audio": "/content/audio/8a7b4893-e16e-40e5-961b-7f0eb59d9e4f.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "sọ̀": {
+      "audio": "/content/audio/e1e7a43e-66bf-44f1-b514-defa7a87bed1.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "ta": {
-      "audio": "syllables/speaker3/ta.wav",
-      "tone": "mid"
+      "audio": "/content/audio/aa84eeac-cba7-4ac4-a747-16bd837aa044.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "ti": {
+      "audio": "/content/audio/6a7a276b-331d-4b08-a026-78fbe019dc1a.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "tà": {
+      "audio": "/content/audio/8826fe74-5a6b-44df-b7ef-e34d9769a11f.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "tàn": {
+      "audio": "/content/audio/ddb63b47-bd27-4c89-b8be-2fc438a623d5.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "tá": {
+      "audio": "/content/audio/329d563b-db96-43bc-aaa3-a9814d490d56.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "tè": {
+      "audio": "/content/audio/c5e3a526-9041-49d3-842f-24628b2f3120.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "tí": {
+      "audio": "/content/audio/0ec02394-dfb5-49ce-99ce-9ba08175e03e.mp3",
+      "tone": "high",
+      "source": "canonical"
     },
     "tò": {
-      "audio": "syllables/speaker3/to_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/d9f80a4b-01d7-4627-a81d-ab1e061f8589.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "ù": {
-      "audio": "syllables/speaker3/u_low.wav",
-      "tone": "low"
+    "tó": {
+      "audio": "/content/audio/1d169dfc-f9c9-465c-8691-b5152e86f030.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "tẹ̀": {
+      "audio": "/content/audio/16f94834-f502-416a-9f52-10fbc68f74bc.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "tẹ́": {
+      "audio": "/content/audio/d413613e-80bd-48c5-8e65-4f5b00a682c1.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "tọ̀": {
+      "audio": "/content/audio/8b23efe6-c916-47ca-9f1b-e1c387683743.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "u": {
+      "audio": "/content/audio/ba39a83b-bd76-4e58-bdde-0be904a5a09a.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "un": {
+      "audio": "/content/audio/38fabebd-4837-411d-9c42-ec9d4b7abeda.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "wo": {
+      "audio": "/content/audio/44c3e818-cbc6-4917-bd22-a19fc7df2ab5.mp3",
+      "tone": "mid",
+      "source": "canonical"
     },
     "wà": {
-      "audio": "syllables/speaker3/wa_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/3a5a7897-d90f-4cc8-9eb7-ba420fba1e7b.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "wá": {
+      "audio": "/content/audio/d1da1cdb-ac70-446b-8e07-db91b26fd203.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "wé": {
+      "audio": "/content/audio/7b842e35-0d43-4659-9de0-9dee35131061.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "wò": {
+      "audio": "/content/audio/ff3595a3-ca77-4900-8695-095c67dabd6e.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "wú": {
+      "audio": "/content/audio/2e78da2b-3fa0-4a7e-a51e-291f0ef9952e.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "wẹ̀": {
+      "audio": "/content/audio/4547fde4-c2a9-402a-841d-f184bdf3cf76.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "wọ̀": {
-      "audio": "syllables/speaker3/woh_low.wav",
-      "tone": "low"
+      "audio": "/content/audio/661754e5-dded-4c38-8f9b-2452b24abc80.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
-    "yẹ": {
-      "audio": "syllables/speaker3/yeh.wav",
-      "tone": "mid"
+    "wọ́": {
+      "audio": "/content/audio/1b1c88a1-0617-477b-bcb1-ffa453ed0ee5.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "yin": {
+      "audio": "/content/audio/267959f5-d18e-46ec-b553-8c93a1f2a4d3.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "yà": {
+      "audio": "/content/audio/ac5c2e97-3c9d-4f45-b240-30a7ea9d6950.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "yán": {
+      "audio": "/content/audio/5ca27ceb-8ee6-4284-8e4d-e727ad7f0821.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "yé": {
+      "audio": "/content/audio/72a6d2aa-63a6-4aec-be09-ff3686c8bc2b.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "yì": {
+      "audio": "/content/audio/12d3bf5a-ec72-400c-b60f-0b1fe7ba0bd5.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "yìn": {
+      "audio": "/content/audio/b76391d3-5089-4b57-bc91-adaddf02f80b.mp3",
+      "tone": "low",
+      "source": "canonical"
     },
     "yín": {
-      "audio": "syllables/speaker3/yin_high.wav",
-      "tone": "high"
+      "audio": "/content/audio/5eb45b72-9aaf-4a0b-86d5-13ce7d7524f9.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "yọ́": {
+      "audio": "/content/audio/dffbc1ed-975d-4684-abe1-5ea7f9960b21.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "à": {
+      "audio": "/content/audio/2497dd75-afc9-4890-9671-2a78fc8196f6.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "án": {
+      "audio": "/content/audio/55f7c138-0037-46d2-8733-60ac4602d675.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "è": {
+      "audio": "/content/audio/b9d098d6-e12b-4174-aeb8-27ad6cc0c274.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "ì": {
+      "audio": "/content/audio/86b0da1b-1739-4580-aa51-5e030179f4e2.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "í": {
+      "audio": "/content/audio/568b271a-c0d6-4bd9-88c4-6297f2c586ee.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ín": {
+      "audio": "/content/audio/51f6d562-5140-4e59-95cd-48c562283312.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ò": {
+      "audio": "/content/audio/ebdc1c7f-6a52-4d67-9092-8a82a004aade.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "ó": {
+      "audio": "/content/audio/df7ddf31-de69-4d0a-972b-668643bd3494.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ú": {
+      "audio": "/content/audio/96c38316-036e-48d7-9270-071cb6cc5de7.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ún": {
+      "audio": "/content/audio/85788817-811d-401c-8eeb-1fed5054ddc4.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ń": {
+      "audio": "/content/audio/6778f380-4877-4df5-bc5e-2358bed1c754.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ṣe": {
+      "audio": "/content/audio/51c26613-d700-4398-8bca-99f65a1630ab.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "ṣu": {
+      "audio": "/content/audio/c0781c7a-31b0-4bbe-8e8d-04b357c8b675.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "ṣé": {
+      "audio": "/content/audio/644331ae-4f84-46e1-a2a4-8727f5e9152b.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ṣò": {
+      "audio": "/content/audio/22ff0040-7a2c-4864-91f7-91da7e40c720.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "ṣọ": {
+      "audio": "/content/audio/18452fcc-3746-4999-ba7b-1e39fc819d7d.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "ẹ": {
+      "audio": "/content/audio/70bc9019-1749-4102-840b-ba4d6b1af857.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "ẹ̀": {
+      "audio": "/content/audio/59fc8b02-5963-42bd-8834-03a323485545.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "ẹ́": {
+      "audio": "/content/audio/3e35f1a0-43f4-4574-b04d-9a15a95461bc.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ọ": {
+      "audio": "/content/audio/5538fa27-0bb8-48a6-86ea-2145b06b566d.mp3",
+      "tone": "mid",
+      "source": "canonical"
+    },
+    "ọ̀": {
+      "audio": "/content/audio/f81ef2a8-f80f-493b-a0ce-1912aec8289c.mp3",
+      "tone": "low",
+      "source": "canonical"
+    },
+    "ọ́": {
+      "audio": "/content/audio/f9a159a7-1388-4102-82ae-19a21ee83be0.mp3",
+      "tone": "high",
+      "source": "canonical"
+    },
+    "ụ̀": {
+      "audio": "/content/audio/fac6d2ce-f39b-4113-8b66-7ba245292b5d.mp3",
+      "tone": "low",
+      "source": "canonical"
     }
   }
 }

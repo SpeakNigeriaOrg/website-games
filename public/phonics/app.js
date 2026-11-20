@@ -1,15 +1,13 @@
 // --- GLOBAL CONFIGURATION ---
-// Audio/image bytes live in R2, not this deploy - publishToR2.mjs is the
-// real (credential-driven, laptop-independent) automation of that upload
-// step. Only vocab.json/syllables.json/sessions.json ship same-origin
-// with this page (small, and their validSpeakers/validStyles are
-// meaningful only if generated against the bucket's real, just-verified
-// state - see that script's header).
-const BASE_URL = "https://gamemedia.speaknigeria.org/";
-
-// These can eventually be tied to a UI dropdown menu
-let CURRENT_SPEAKER = "speaker1"; 
-let CURRENT_IMAGE_STYLE = "cartoon"; 
+// Everything this game plays and shows is the Yoruba game suite's checked
+// content kit, served same-origin at /content/ (gated recordings, the kit's own
+// picture per word). vocab.json/syllables.json/sessions.json are generated from
+// that kit by tools/kit_to_practice.mjs and carry every audio and image URL
+// explicitly, so nothing here composes a media path.
+//
+// Speakers keep their old keys, by person: speaker3 = Femi, speaker2 = Tolani.
+// A word has exactly one recording, so one speaker; a level is one voice.
+let CURRENT_SPEAKER = "speaker3";
 
 // Which playlists this game offers. syllable_reinforcement is deliberately
 // absent even though sessions.json still defines it. The category is supposed
@@ -23,6 +21,12 @@ let CURRENT_IMAGE_STYLE = "cartoon";
 // dropping them: addCoverageLevels below moves the five words that only they
 // carried into Random.
 const OFFERED_CATEGORIES = ["themed", "tone_pattern", "endless_practice"];
+
+// Smallest session level worth playing. The levels are shared with the other two
+// games, and a themed level can lose most of its words here (a syllable with no
+// clip has no button). A level left with fewer than this is not offered; its
+// words still reach the player through addCoverageLevels' Random levels.
+const MIN_LEVEL_WORDS = 3;
 
 // Smallest tone-pattern set worth its own level. sessions.json's own
 // tone_pattern levels used exact-sequence grouping with an effective floor of
@@ -147,9 +151,9 @@ document.getElementById('start-overlay').addEventListener('click', (event) => {
 async function loadGame() {
     try {
         const [wordsResponse, syllablesResponse, sessionsResponse] = await Promise.all([
-            fetch('vocab.json'),
-            fetch('syllables.json'),
-            fetch('sessions.json')
+            fetch('vocab.json?v=2'),
+            fetch('syllables.json?v=2'),
+            fetch('sessions.json?v=2')
         ]);
         
         const dictionaryWords = await wordsResponse.json();
@@ -212,7 +216,8 @@ async function loadGame() {
         // levels, which it reproduces.
         gameData = [
             ...sessionLevels.filter(level =>
-                level.category !== 'tone_pattern' && OFFERED_CATEGORIES.includes(level.category)),
+                level.category !== 'tone_pattern' && OFFERED_CATEGORIES.includes(level.category) &&
+                level.words.length >= MIN_LEVEL_WORDS),
             ...buildTonePatternLevels(wordPool, dictionarySyllables)
         ];
 
@@ -256,30 +261,24 @@ function lookupSyllable(syllable, speaker, dictionarySyllables) {
 
 // One playable word for one speaker, or null.
 //
-// A word is only playable if it has a real image AND every one of its
-// syllables has audio for this speaker. That second condition matters: the
-// bank is built from the level's syllables, so a syllable with no audio simply
-// has no button, and the word becomes impossible to complete. The old code
-// pushed the word anyway and console.warn'd about the missing button. Verified
-// against the shipped data: 0 of the words in any session fail this, so
-// applying it strictly changes no existing level - it just makes the generated
-// levels below safe to build.
+// A word is only playable for the speaker who recorded it (each kit word has
+// one recording), with its picture and recording, AND only if every one of its
+// syllables has a clip for this speaker. That last condition matters: the bank
+// is built from the level's syllables, so a syllable with no clip simply has no
+// button, and the word becomes impossible to complete.
 function buildWord(wordId, wordData, speaker, dictionarySyllables) {
-    const imageStyles = wordData?.imageStyles || [];
-    if (!wordData) return null;
+    if (!wordData || wordData.speaker !== speaker) return null;
 
-    if (imageStyles.length === 0) {
-        console.error(`[Missing Image] "${wordId}" has no labeled image - excluding it.`);
+    if (!wordData.imageUrl || !wordData.audioUrl) {
+        console.error(`[Missing Media] "${wordId}" has no picture or recording - excluding it.`);
         return null;
     }
 
+    // Expected, not an error: the kit's canonical syllable clips cover Femi's
+    // account recordings, so his legacy recordings and most of Tolani's words
+    // have syllables with no clip. tools/kit_to_practice.mjs reports which.
     const missing = wordData.syllables.filter(s => !lookupSyllable(s, speaker, dictionarySyllables)?.audio);
-    if (missing.length > 0) {
-        console.error(`[Missing Syllable Audio] "${wordId}" for ${speaker} lacks ${missing.join(', ')} - excluding it (it would be unsolvable: no button).`);
-        return null;
-    }
-
-    const chosenStyle = imageStyles.includes(CURRENT_IMAGE_STYLE) ? CURRENT_IMAGE_STYLE : imageStyles[0];
+    if (missing.length > 0) return null;
 
     return {
         id: wordId,
@@ -287,8 +286,8 @@ function buildWord(wordId, wordData, speaker, dictionarySyllables) {
         targetSyllables: wordData.syllables,
         targetTones: wordData.syllables.map(s => lookupSyllable(s, speaker, dictionarySyllables).tone),
         speaker,
-        fullAudioUrl: `${BASE_URL}words/${speaker}/${wordId}.wav`,
-        imageUrl: `${BASE_URL}images/${chosenStyle}/${wordId}.png`
+        fullAudioUrl: wordData.audioUrl,
+        imageUrl: wordData.imageUrl
     };
 }
 
@@ -574,9 +573,8 @@ function handleSyllableClick(buttonData) {
     }
 
     if (buttonData.audio) {
-        const absoluteUrl = BASE_URL + buttonData.audio;
-        currentPlayingAudio = new Audio(absoluteUrl);
-        currentPlayingAudio.play().catch((err) => reportAudioFailure(absoluteUrl, err));
+        currentPlayingAudio = new Audio(buttonData.audio);
+        currentPlayingAudio.play().catch((err) => reportAudioFailure(buttonData.audio, err));
     }
 
     snGame.audio(currentWord, 'syllable', queue.length);

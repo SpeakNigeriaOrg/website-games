@@ -1,4 +1,44 @@
 {
+  "abila_striped": {
+    "displayText": "abìlà",
+    "syllables": [
+      "a",
+      "bì",
+      "là"
+    ],
+    "definition": "owner of stripes",
+    "hint": "striped",
+    "category": "state",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/3b0294a5-40d3-4f24-b26e-edac8b416741.mp3",
+    "imageUrl": "/content/img/abila_striped.webp",
+    "syllableAudio": [
+      "/content/audio/9819e229-a434-454e-87d5-0ee9baa12d06.mp3",
+      "/content/audio/c681a62e-7673-4dff-8379-d51e41e4bf9c.mp3",
+      "/content/audio/d2d9fe42-3efb-4ca3-8b68-7a52bdaae391.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "abo_plate": {
+    "displayText": "abọ́",
+    "syllables": [
+      "a",
+      "bọ́"
+    ],
+    "definition": "Bowl, plate. Typically a durable, everyday material such as plastic, enamel, metal, or wood.",
+    "hint": "plate",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/aeb155e1-f92f-44c6-8e86-75b22ab9abf3.mp3",
+    "imageUrl": "/content/img/abo_plate.webp",
+    "syllableAudio": [
+      "/content/audio/88a20d4d-483f-46ba-9c51-97506bb19df0.mp3",
+      "/content/audio/acd1bd4b-13c8-4ce6-9946-b88111de9e69.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "adiye_chicken": {
     "displayText": "adìyẹ",
     "syllables": [
@@ -7,31 +47,77 @@
       "yẹ"
     ],
     "definition": "chicken",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "agemo_july": {
-    "displayText": "Agẹmọ",
-    "syllables": [
-      "a",
-      "gẹ",
-      "mọ"
+    "hint": "chicken",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/609f96d7-5b9d-4248-aa1d-7f896aad6ad6.mp3",
+    "imageUrl": "/content/img/adiye_chicken.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": "July, the second month of the traditional Yoruba calendar, the Kọ́jọ́dá; the Agẹmọ festival is held during this month",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
+  },
+  "aga_chair": {
+    "displayText": "àga",
+    "syllables": [
+      "à",
+      "ga"
+    ],
+    "definition": "chair, stool",
+    "hint": "chair",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0b0a4784-72d0-478f-88cf-ab7c12f5dfa2.mp3",
+    "imageUrl": "/content/img/aga_chair.webp",
+    "syllableAudio": [
+      "/content/audio/0de7828f-b31f-4631-92bc-668c7eeb3343.mp3",
+      "/content/audio/f7b3d9dc-72a6-4639-8e4d-5ff69e983213.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "agba_adult": {
+    "displayText": "àgbà",
+    "syllables": [
+      "à",
+      "gbà"
+    ],
+    "definition": "adult, elder",
+    "hint": "adult",
+    "category": "people",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c5dad138-4ff2-4896-91eb-0d48cd4c3270.mp3",
+    "imageUrl": "/content/img/agba_adult.webp",
+    "syllableAudio": [
+      "/content/audio/d36c6c6f-c433-4510-8f0f-80812c8f7e35.mp3",
+      "/content/audio/df0fbece-97f5-48ae-8365-70a84aedc2d7.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "agunfon_giraffe": {
     "displayText": "àgùnfon",
     "syllables": [
       "à",
       "gùn",
-      "fọn"
+      "fon"
     ],
     "definition": "giraffe (traditionally, giraffes did not live in the range of Yorubaland)",
-    "imageStyles": []
+    "hint": "giraffe",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/4ef940fb-ccb8-48ec-975a-a8cdb40f0f2b.mp3",
+    "imageUrl": "/content/img/agunfon_giraffe.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "aja_dog": {
     "displayText": "ajá",
@@ -40,9 +126,44 @@
       "já"
     ],
     "definition": "dog",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "dog",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/5cb4e73e-7d34-459f-b782-c0b3b76a9a86.mp3",
+    "imageUrl": "/content/img/aja_dog.webp",
+    "syllableAudio": [
+      "/content/audio/268f4f8e-704d-490d-a107-2dc7aa99c407.mp3",
+      "/content/audio/479e1ee6-5771-45c8-af99-7ff6538e3091.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "akara_oyinbo_cake": {
+    "displayText": "àkàrà òyìnbó",
+    "syllables": [
+      "à",
+      "kà",
+      "rà",
+      "ò",
+      "yìn",
+      "bó"
+    ],
+    "definition": "cake",
+    "hint": "cake",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/a309b55e-26b7-46ff-b1d2-1af101e44e3f.mp3",
+    "imageUrl": "/content/img/akara_oyinbo_cake.webp",
+    "syllableAudio": [
+      "/content/audio/caf222f8-f014-435d-adc2-596c6e6ba2f6.mp3",
+      "/content/audio/3fa4fd14-1398-4236-bcd4-22481cbe6d01.mp3",
+      "/content/audio/5864f2cf-e2c1-4165-a354-2be16a32eb7a.mp3",
+      "/content/audio/34ae73e2-08e6-4f8f-96af-c8d52a226f1a.mp3",
+      "/content/audio/b76391d3-5089-4b57-bc91-adaddf02f80b.mp3",
+      "/content/audio/cb2c9548-1d46-4499-986c-49464f367308.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "alangba_lizard": {
     "displayText": "aláǹgbá",
@@ -53,22 +174,88 @@
       "gbá"
     ],
     "definition": "lizard",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "lizard",
+    "category": "animal",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/43384ee7-8cc6-46f8-89da-6a8200c7c550.mp3",
+    "imageUrl": "/content/img/alangba_lizard.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "alubosa_onion": {
-    "displayText": "àlùbọ́sà",
+    "displayText": "àlùbọ́sà",
     "syllables": [
       "à",
       "lù",
-      "bọ́",
+      "bọ́",
       "sà"
     ],
     "definition": "onion",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "onion",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/c91d913e-5c45-4b44-bb41-9c639e3bf038.mp3",
+    "imageUrl": "/content/img/alubosa_onion.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "alupupu_motorcycle": {
+    "displayText": "alùpùpù",
+    "syllables": [
+      "a",
+      "lù",
+      "pù",
+      "pù"
+    ],
+    "definition": "motorcycle",
+    "hint": "motorcycle",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/1924f27c-0435-4a77-93fc-545ef038ebd6.mp3",
+    "imageUrl": "/content/img/alupupu_motorcycle.webp",
+    "syllableAudio": [
+      "/content/audio/dd46359f-4234-467c-9e74-bca999abee38.mp3",
+      "/content/audio/f9b0781c-fd85-46dc-a1b8-1a0d9ccedef9.mp3",
+      "/content/audio/18870575-8df2-434c-bbca-7191085f72ad.mp3",
+      "/content/audio/ff918692-62fe-4fe8-af8a-b6ad72da96dc.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "amotekun_cheetah": {
+    "displayText": "àmọ̀tẹ́kùn",
+    "syllables": [
+      "à",
+      "mọ̀",
+      "tẹ́",
+      "kùn"
+    ],
+    "definition": "cheetah",
+    "hint": "cheetah",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/a13bd18b-7529-47ab-8d39-356ea1ffd334.mp3",
+    "imageUrl": "/content/img/amotekun_cheetah.webp",
+    "syllableAudio": [
+      "/content/audio/8099ba91-6ae1-4bf9-a53c-9aef3a99ca3e.mp3",
+      "/content/audio/e47dbe03-90ef-42ad-a135-94922829f943.mp3",
+      "/content/audio/3297e069-d30f-4374-b81a-f6f992c09b66.mp3",
+      "/content/audio/4ae1d54d-f6c7-4cda-b559-a9ad1548c1e8.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "aso_cloth": {
     "displayText": "aṣọ",
@@ -77,20 +264,61 @@
       "ṣọ"
     ],
     "definition": "any cloth, fabric, textile",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "cloth",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/67e9208a-b28d-48ce-b32d-12a406c19082.mp3",
+    "imageUrl": "/content/img/aso_cloth.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
-  "awo_plate": {
-    "displayText": "àwo",
+  "atelewo_palm": {
+    "displayText": "àtẹ́lẹwọ́",
     "syllables": [
       "à",
-      "wo"
+      "tẹ́",
+      "lẹ",
+      "wọ́"
     ],
-    "definition": "dish, plate",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "definition": "palm (of hand)",
+    "hint": "palm",
+    "category": "body",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/14b41cce-0555-4027-af34-60821b3e757c.mp3",
+    "imageUrl": "/content/img/atelewo_palm.webp",
+    "syllableAudio": [
+      "/content/audio/bcc283c8-c045-4146-89be-81b45c557725.mp3",
+      "/content/audio/fd18742d-24cc-4e83-b96f-d91504b26b18.mp3",
+      "/content/audio/48287431-3025-4783-b35e-98851a73d09e.mp3",
+      "/content/audio/7bae96f1-ada0-45e7-99d3-ff9c6149bff0.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "atete_first": {
+    "displayText": "àtètè",
+    "syllables": [
+      "à",
+      "tè",
+      "tè"
+    ],
+    "definition": "the first",
+    "hint": "first",
+    "category": "number",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/bc1686a4-e799-40f7-b09c-4864745d2839.mp3",
+    "imageUrl": "/content/img/atete_first.webp",
+    "syllableAudio": [
+      "/content/audio/b2194117-98b6-44a0-b556-1fbb4d2811bb.mp3",
+      "/content/audio/6cf221cc-676b-4483-8af5-b9f29a25a5ae.mp3",
+      "/content/audio/c5e3a526-9041-49d3-842f-24628b2f3120.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "aya_chest": {
     "displayText": "àyà",
@@ -99,9 +327,36 @@
       "yà"
     ],
     "definition": "chest",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "chest",
+    "category": "body",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/7de1ab59-1aa4-40b0-84ee-77820b0b13ed.mp3",
+    "imageUrl": "/content/img/aya_chest.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "aye_world": {
+    "displayText": "ayé",
+    "syllables": [
+      "a",
+      "yé"
+    ],
+    "definition": "world",
+    "hint": "world",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/a23be11f-c56d-403e-977f-8d8dbb3fa964.mp3",
+    "imageUrl": "/content/img/aye_world.webp",
+    "syllableAudio": [
+      "/content/audio/5559ae77-ced7-4388-81b1-4f2b0600fec6.mp3",
+      "/content/audio/72a6d2aa-63a6-4aec-be09-ff3686c8bc2b.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "baluwe_bathroom": {
     "displayText": "balùwẹ̀",
@@ -111,21 +366,58 @@
       "wẹ̀"
     ],
     "definition": "bathroom",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "beelu_november": {
-    "displayText": "Beélú",
-    "syllables": [
-      "be",
-      "é",
-      "lú"
+    "hint": "bathroom",
+    "category": "placeNature",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/317b946d-6311-4b36-9a0c-871142082b51.mp3",
+    "imageUrl": "/content/img/baluwe_bathroom.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": "November, the sixth month of the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
+  },
+  "bata_shoe": {
+    "displayText": "bàtà",
+    "syllables": [
+      "bà",
+      "tà"
+    ],
+    "definition": "shoe",
+    "hint": "shoe",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/435fb847-a9e9-4896-9198-b9010f5cbf61.mp3",
+    "imageUrl": "/content/img/bata_shoe.webp",
+    "syllableAudio": [
+      "/content/audio/aad7d761-90dd-424e-831e-914b7f0420c3.mp3",
+      "/content/audio/8826fe74-5a6b-44df-b7ef-e34d9769a11f.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "boolu_ball": {
+    "displayText": "bọ́ọ̀lù",
+    "syllables": [
+      "bọ́",
+      "ọ̀",
+      "lù"
+    ],
+    "definition": "ball",
+    "hint": "ball",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/35c91e22-7974-45fb-a656-aac182d4dbb7.mp3",
+    "imageUrl": "/content/img/boolu_ball.webp",
+    "syllableAudio": [
+      "/content/audio/8eef523d-467b-4d2d-b0ba-43b60e0b590c.mp3",
+      "/content/audio/e7d0fa63-3779-49ca-bcf8-271317706884.mp3",
+      "/content/audio/18db1417-5f0d-4c3d-a737-163ffd882572.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "buredi_bread": {
     "displayText": "búrẹ́dì",
@@ -135,9 +427,54 @@
       "dì"
     ],
     "definition": "bread",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "bread",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/d12340d1-3a40-4033-8d99-c1759c7dfab0.mp3",
+    "imageUrl": "/content/img/buredi_bread.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "dana_cook": {
+    "displayText": "dáná",
+    "syllables": [
+      "dá",
+      "ná"
+    ],
+    "definition": "to cook",
+    "hint": "cook",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/743881a6-8d85-4a00-a824-5c68a458400e.mp3",
+    "imageUrl": "/content/img/dana_cook.webp",
+    "syllableAudio": [
+      "/content/audio/3205fcba-88a1-4c94-8f9c-86c32bc3853f.mp3",
+      "/content/audio/7d5f1855-3231-4e5b-a728-bc9f1489b9fb.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "di_bind": {
+    "displayText": "dì",
+    "syllables": [
+      "dì"
+    ],
+    "definition": "to bind, to tie up, to make tight",
+    "hint": "bind",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c81975d2-c20f-4a96-a095-0f4ba4ed72bb.mp3",
+    "imageUrl": "/content/img/di_bind.webp",
+    "syllableAudio": [
+      "/content/audio/b2076c8f-76cc-4d62-b500-5e2fe928f3cf.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "dide_stand": {
     "displayText": "dìde",
@@ -146,9 +483,17 @@
       "de"
     ],
     "definition": "to stand, get up, rise",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "stand",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/959848c7-f114-4fe9-8a83-9baad92ab78d.mp3",
+    "imageUrl": "/content/img/dide_stand.webp",
+    "syllableAudio": [
+      "/content/audio/0acdc854-4fa5-4a64-8fc7-f5422b9197d2.mp3",
+      "/content/audio/0493f818-740e-435b-902d-23146050d6d0.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "digi_mirror": {
     "displayText": "dígí",
@@ -157,21 +502,122 @@
       "gí"
     ],
     "definition": "mirror, glass",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "ebibi_may": {
-    "displayText": "Èbìbí",
-    "syllables": [
-      "è",
-      "bì",
-      "bí"
+    "hint": "mirror",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/c595e4eb-cd16-44c4-ac48-f395fa1cf8ba.mp3",
+    "imageUrl": "/content/img/digi_mirror.webp",
+    "syllableAudio": [
+      null,
+      null
     ],
-    "definition": "May, the twelfth and final month in the Yoruba calendar, the Kọ́jọ́dá, during which the Ẹ̀bìbì festival is usually celebrated in.",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
+  },
+  "dii_mu_hold": {
+    "displayText": "dìí mú",
+    "syllables": [
+      "dì",
+      "í",
+      "mú"
+    ],
+    "definition": "Hold it",
+    "hint": "hold",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0bf2ff4e-ae28-4532-acd1-d57382544526.mp3",
+    "imageUrl": "/content/img/dii_mu_hold.webp",
+    "syllableAudio": [
+      "/content/audio/2bc6b69c-c977-4f76-bec2-672519f0fa31.mp3",
+      "/content/audio/568b271a-c0d6-4bd9-88c4-6297f2c586ee.mp3",
+      "/content/audio/187473f3-2d1c-43d9-a82e-f253d9320334.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "doti_dirty": {
+    "displayText": "dọ̀tí",
+    "syllables": [
+      "dọ̀",
+      "tí"
+    ],
+    "definition": "to be dirty",
+    "hint": "dirty",
+    "category": "state",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/95e9837d-a681-481e-9a17-255348dd7f84.mp3",
+    "imageUrl": "/content/img/doti_dirty.webp",
+    "syllableAudio": [
+      "/content/audio/2ca2f4b0-3524-474d-9dff-0ccc767dcc45.mp3",
+      "/content/audio/33930fc6-fb07-4236-9076-e7c66ea15479.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "e_joo_please": {
+    "displayText": "ẹ jọ̀ọ́",
+    "syllables": [
+      "ẹ",
+      "jọ̀",
+      "ọ́"
+    ],
+    "definition": "Please",
+    "hint": "please",
+    "category": "social",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/edf544b9-6434-4c95-979b-74fb2bc7a9c1.mp3",
+    "imageUrl": "/content/img/e_joo_please.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "ebi_hunger": {
+    "displayText": "ebi",
+    "syllables": [
+      "e",
+      "bi"
+    ],
+    "definition": "hunger",
+    "hint": "hunger",
+    "category": "state",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/aa8ca8a5-1ebd-450b-8c70-b67745336cd1.mp3",
+    "imageUrl": "/content/img/ebi_hunger.webp",
+    "syllableAudio": [
+      "/content/audio/01d3333d-5c1a-490d-9c98-715c6afa6de2.mp3",
+      "/content/audio/121aec23-8deb-4989-ac7c-d524709913a5.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ebi_n_pa_e_you_hungry": {
+    "displayText": "ebi ń pa ẹ́",
+    "syllables": [
+      "e",
+      "bi",
+      "ń",
+      "pa",
+      "ẹ́"
+    ],
+    "definition": "You are hungry",
+    "hint": "you hungry",
+    "category": "social",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/da7259a3-056f-43d7-a0a4-cdfbb6581980.mp3",
+    "imageUrl": "/content/img/ebi_n_pa_e_you_hungry.webp",
+    "syllableAudio": [
+      "/content/audio/efec0c91-13c4-4af6-883b-8ee64ba1361d.mp3",
+      "/content/audio/281bdc0b-a78d-4da1-9b70-36725dfe7204.mp3",
+      "/content/audio/babb6fde-814a-4a65-aa16-bd5d11b577c3.mp3",
+      "/content/audio/15a69d4f-fff8-4ade-80a8-8c8728aa8dfc.mp3",
+      "/content/audio/af5a9066-9ec7-44cb-a61e-1a1cd3d71028.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "eekanna_nail": {
     "displayText": "èékánná",
@@ -182,33 +628,59 @@
       "ná"
     ],
     "definition": "nail (may refer to nails of either the toe or finger), claw",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "nail",
+    "category": "body",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/3fcf1b69-7626-4bc1-9420-c1321b953a83.mp3",
+    "imageUrl": "/content/img/eekanna_nail.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
-  "ejika_shoulder": {
-    "displayText": "ejika",
+  "egbon_older_sibling": {
+    "displayText": "ẹ̀gbọ́n",
+    "syllables": [
+      "ẹ̀",
+      "gbọ́n"
+    ],
+    "definition": "older sibling",
+    "hint": "older sibling",
+    "category": "people",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/b6deb6e3-ba0c-43a5-9e0c-d5294eeb5679.mp3",
+    "imageUrl": "/content/img/egbon_older_sibling.webp",
+    "syllableAudio": [
+      "/content/audio/59fc8b02-5963-42bd-8834-03a323485545.mp3",
+      "/content/audio/b817dd53-b935-4576-916f-2fb8d763b840.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ehoro_rabbit": {
+    "displayText": "ehoro",
     "syllables": [
       "e",
-      "ji",
-      "ka"
+      "ho",
+      "ro"
     ],
-    "definition": "shoulder",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "e_joo_please": {
-    "displayText": "ẹ jọ̀ọ́",
-    "syllables": [
-      "ẹ",
-      "jọ̀",
-      "ọ́"
+    "definition": "rabbit, hare; (in particular) African savanna hare",
+    "hint": "rabbit",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/f54c0bff-7ee9-4e44-b4c1-462d7a85c7e8.mp3",
+    "imageUrl": "/content/img/ehoro_rabbit.webp",
+    "syllableAudio": [
+      "/content/audio/a9a58662-c7e6-47e5-b39c-25f93636f43d.mp3",
+      "/content/audio/6cd25919-3101-4d98-813a-533e312eb257.mp3",
+      "/content/audio/2e6de696-edf5-4426-8ad8-175f38010bba.mp3"
     ],
-    "definition": "Please",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "kit"
   },
   "ejo_snake": {
     "displayText": "ejò",
@@ -217,44 +689,145 @@
       "jò"
     ],
     "definition": "snake",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "snake",
+    "category": "animal",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/20e6d2a4-33d3-4aea-aa90-e717f83c5f74.mp3",
+    "imageUrl": "/content/img/ejo_snake.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
-  "enu_mouth": {
-    "displayText": "ẹnu",
+  "ekun_district": {
+    "displayText": "ẹkùn",
     "syllables": [
       "ẹ",
-      "nu"
+      "kùn"
     ],
-    "definition": "mouth",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "erele_february": {
-    "displayText": "Èrèlé",
-    "syllables": [
-      "è",
-      "rè",
-      "lé"
+    "definition": "boundary; district, region, neighbourhood",
+    "hint": "district",
+    "category": "abstract",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0fc9b94a-4374-4e9f-b7a0-a27983204ffb.mp3",
+    "imageUrl": "/content/img/ekun_district.webp",
+    "syllableAudio": [
+      "/content/audio/bc8f5d1a-2dc7-4990-8141-f0efaccf33f2.mp3",
+      "/content/audio/acf35970-b78e-47bc-8960-ca4e6e97dae6.mp3"
     ],
-    "definition": "February, the ninth month in the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "kit"
   },
-  "erena_march": {
-    "displayText": "Ẹrénà",
+  "ekun_leopard": {
+    "displayText": "ẹkùn",
     "syllables": [
       "ẹ",
-      "ré",
-      "nà"
+      "kùn"
     ],
-    "definition": "March, the tenth month in the Yoruba calendar, the Kọ́jọ́dá",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "definition": "leopard",
+    "hint": "leopard",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/de184c42-796b-4119-949b-ac27b1ddbb0d.mp3",
+    "imageUrl": "/content/img/ekun_leopard.webp",
+    "syllableAudio": [
+      "/content/audio/70bc9019-1749-4102-840b-ba4d6b1af857.mp3",
+      "/content/audio/1969b340-341f-4e4a-99e1-b660863f2038.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "elede_pig": {
+    "displayText": "ẹlẹ́dẹ̀",
+    "syllables": [
+      "ẹ",
+      "lẹ́",
+      "dẹ̀"
+    ],
+    "definition": "pig, swine",
+    "hint": "pig",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/178ba957-006d-43cc-9065-b655c9c05bd7.mp3",
+    "imageUrl": "/content/img/elede_pig.webp",
+    "syllableAudio": [
+      "/content/audio/edc03c29-09da-41c7-baf0-57def9c5852a.mp3",
+      "/content/audio/411b3ecd-9794-4405-887c-a9bc40c178b8.mp3",
+      "/content/audio/58e801f4-e77b-4fae-b91c-187ca6a6fc36.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ere_game": {
+    "displayText": "eré",
+    "syllables": [
+      "e",
+      "ré"
+    ],
+    "definition": "physical play",
+    "hint": "game",
+    "category": "abstract",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0be25cbd-6d5e-4e04-8163-715ca313b5a2.mp3",
+    "imageUrl": "/content/img/ere_game.webp",
+    "syllableAudio": [
+      "/content/audio/ff32149e-7d6a-4ef4-a55e-2bc4f5f8be17.mp3",
+      "/content/audio/3704a7f1-8c23-4e97-bbce-82d0c2bda864.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "erin_elephant": {
+    "displayText": "erin",
+    "syllables": [
+      "e",
+      "rin"
+    ],
+    "definition": "elephant",
+    "hint": "elephant",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c0db8072-8961-4614-b332-b5bf60d8f7c8.mp3",
+    "imageUrl": "/content/img/erin_elephant.webp",
+    "syllableAudio": [
+      "/content/audio/914aec98-4ed6-4bd4-9973-c1daffbc02a3.mp3",
+      "/content/audio/cea4badb-37d7-418f-a864-3e45ae1aa808.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ero_asoromagbesi_radio": {
+    "displayText": "ẹ̀rọ asọ̀rọ̀mágbèsì",
+    "syllables": [
+      "ẹ̀",
+      "rọ",
+      "a",
+      "sọ̀",
+      "rọ̀",
+      "má",
+      "gbè",
+      "sì"
+    ],
+    "definition": "radio (receiver)",
+    "hint": "radio",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/38255156-9ab7-45f3-bc38-98e2d052c70c.mp3",
+    "imageUrl": "/content/img/ero_asoromagbesi_radio.webp",
+    "syllableAudio": [
+      "/content/audio/3036229d-af72-4d1a-ac1a-86448fc4998b.mp3",
+      "/content/audio/0ba2478b-02ca-4193-99ee-0f98ab82244c.mp3",
+      "/content/audio/5806137d-a58b-4f7e-8884-7e81df5efcf7.mp3",
+      "/content/audio/af2a3c4e-f698-465b-bd46-640dece57ba1.mp3",
+      "/content/audio/86c7d2ac-f656-4599-b09e-43e27ee90fec.mp3",
+      "/content/audio/69eb2419-3a34-4468-98f1-0464d0590bc2.mp3",
+      "/content/audio/8f07572b-8e01-459a-87d4-5f1ba658fc3c.mp3",
+      "/content/audio/56057ce7-12e2-45ea-b174-49dc4a2e76aa.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ese_leg": {
     "displayText": "ẹsẹ̀",
@@ -263,9 +836,17 @@
       "sẹ̀"
     ],
     "definition": "foot, leg",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "leg",
+    "category": "body",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/62ca64f9-7c27-4200-9162-a0a7a374a43c.mp3",
+    "imageUrl": "/content/img/ese_leg.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "esin_horse": {
     "displayText": "ẹṣin",
@@ -274,9 +855,17 @@
       "ṣin"
     ],
     "definition": "horse",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "horse",
+    "category": "animal",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/6af944de-2796-46c2-b384-f33b0c203476.mp3",
+    "imageUrl": "/content/img/esin_horse.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "esinsin_fly": {
     "displayText": "eṣinṣin",
@@ -286,9 +875,18 @@
       "ṣin"
     ],
     "definition": "housefly, fly (insect)",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "fly",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/fe12cb6f-af4b-4a8c-b267-4fa95f381881.mp3",
+    "imageUrl": "/content/img/esinsin_fly.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "ete_lip": {
     "displayText": "ètè",
@@ -297,9 +895,17 @@
       "tè"
     ],
     "definition": "lip",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "lip",
+    "category": "body",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/7e7f0678-16b9-4706-9c59-926360198d71.mp3",
+    "imageUrl": "/content/img/ete_lip.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "eti_ear": {
     "displayText": "etí",
@@ -308,9 +914,17 @@
       "tí"
     ],
     "definition": "ear",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "ear",
+    "category": "body",
+    "speaker": "speaker2",
+    "voice": "Tolani",
+    "audioUrl": "/content/audio/426c0970-424e-42db-8bdb-63cc72310ecc.mp3",
+    "imageUrl": "/content/img/eti_ear.webp",
+    "syllableAudio": [
+      "/content/audio/b2570d61-3b00-4be4-b033-63e3024a2eff.mp3",
+      "/content/audio/c1983a18-9fd3-493b-b911-cc399667b9ed.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ewa_beans": {
     "displayText": "èwà",
@@ -319,9 +933,17 @@
       "wà"
     ],
     "definition": "A general name for beans, peas, and legumes, often specifically referring to the black-eyed pea",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "beans",
+    "category": "food",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/72646732-7653-4eda-ae71-2f925f115b47.mp3",
+    "imageUrl": "/content/img/ewa_beans.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "ewa_beauty": {
     "displayText": "ẹwà",
@@ -330,9 +952,17 @@
       "wà"
     ],
     "definition": "beauty, attraction",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "beauty",
+    "category": "state",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/aee3d164-285c-4ea2-8b10-bef0abab8e25.mp3",
+    "imageUrl": "/content/img/ewa_beauty.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "ewe_leaf": {
     "displayText": "ewé",
@@ -341,9 +971,17 @@
       "wé"
     ],
     "definition": "leaf, foliage",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "leaf",
+    "category": "placeNature",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/7f5268ea-0c81-41df-b9de-23e301c22598.mp3",
+    "imageUrl": "/content/img/ewe_leaf.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "eye_bird": {
     "displayText": "ẹyẹ",
@@ -352,9 +990,17 @@
       "yẹ"
     ],
     "definition": "bird",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "bird",
+    "category": "animal",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/d3987d7a-29c3-42c0-97b6-605e9ca00d32.mp3",
+    "imageUrl": "/content/img/eye_bird.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "eyin_back": {
     "displayText": "ẹ̀yìn",
@@ -363,17 +1009,146 @@
       "yìn"
     ],
     "definition": "back",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "back",
+    "category": "body",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/a7a534be-efdf-40aa-baa7-9baf47331909.mp3",
+    "imageUrl": "/content/img/eyin_back.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
-  "fo_break": {
-    "displayText": "fọ́",
+  "eyin_tooth": {
+    "displayText": "eyín",
     "syllables": [
-      "fọ́"
+      "e",
+      "yín"
+    ],
+    "definition": "tooth; teeth",
+    "hint": "tooth",
+    "category": "body",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/a66c183a-f0b5-49ce-b06c-77b0c39deda6.mp3",
+    "imageUrl": "/content/img/eyin_tooth.webp",
+    "syllableAudio": [
+      "/content/audio/4c2bda44-b2b6-47f3-9c4e-af3f40b86b79.mp3",
+      "/content/audio/5eb45b72-9aaf-4a0b-86d5-13ce7d7524f9.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "fi_sile_leave_it": {
+    "displayText": "fi sílẹ̀",
+    "syllables": [
+      "fi",
+      "sí",
+      "lẹ̀"
     ],
     "definition": null,
-    "imageStyles": []
+    "hint": "leave it",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/61997b11-1626-46d5-8bb3-fcc81d3d9cf1.mp3",
+    "imageUrl": "/content/img/fi_sile_leave_it.webp",
+    "syllableAudio": [
+      "/content/audio/d63a3530-77cc-45b8-8290-bedb75be1dbb.mp3",
+      "/content/audio/7af61081-8540-4207-8659-fca4f0d967cb.mp3",
+      "/content/audio/bb9e51a7-580f-45d1-99fd-9b71d7786d83.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "fun_give": {
+    "displayText": "fún",
+    "syllables": [
+      "fún"
+    ],
+    "definition": "give",
+    "hint": "give",
+    "category": "transfer",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/9e296bf1-e50c-450e-9f07-3ba19e9fd485.mp3",
+    "imageUrl": "/content/img/fun_give.webp",
+    "syllableAudio": [
+      "/content/audio/559876cd-97bc-449d-b0f9-78f727b2dece.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "fun_mi_give_me": {
+    "displayText": "fún mi",
+    "syllables": [
+      "fún",
+      "mi"
+    ],
+    "definition": "give me",
+    "hint": "give me",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/9f8f73a8-2500-492d-8733-3d4368b8f9cd.mp3",
+    "imageUrl": "/content/img/fun_mi_give_me.webp",
+    "syllableAudio": [
+      "/content/audio/278dad61-727d-495f-8f38-2623b2793562.mp3",
+      "/content/audio/d5f2fa7e-f923-44bd-8f69-83b10b98bece.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "gba_to_take": {
+    "displayText": "gbà",
+    "syllables": [
+      "gbà"
+    ],
+    "definition": "to take, accept",
+    "hint": "to take",
+    "category": "transfer",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/955289bd-82ac-46a6-bbc3-249b32bf6dfc.mp3",
+    "imageUrl": "/content/img/gba_to_take.webp",
+    "syllableAudio": [
+      "/content/audio/98c0f303-3eb0-4971-8b53-55afc931ad46.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "gbo_to_bark": {
+    "displayText": "gbó",
+    "syllables": [
+      "gbó"
+    ],
+    "definition": "to bark (like a dog)",
+    "hint": "to bark",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/a2a8c077-8dd8-4fc9-9be9-1af82679d51e.mp3",
+    "imageUrl": "/content/img/gbo_to_bark.webp",
+    "syllableAudio": [
+      "/content/audio/36377058-831a-40f5-9f0e-a60095299e73.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "gege_pencil": {
+    "displayText": "gègé",
+    "syllables": [
+      "gè",
+      "gé"
+    ],
+    "definition": "pen, pencil",
+    "hint": "pencil",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/30f702d5-bc7a-4412-9043-8e1b9dddd039.mp3",
+    "imageUrl": "/content/img/gege_pencil.webp",
+    "syllableAudio": [
+      "/content/audio/21c9f88b-7886-46b9-96af-9bd1ae28e2bc.mp3",
+      "/content/audio/5c9d680c-6d93-4009-83e8-8b739f54d724.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "goomu_gum": {
     "displayText": "gọ́ọ̀mù",
@@ -383,33 +1158,39 @@
       "mù"
     ],
     "definition": null,
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "guafa_guava": {
-    "displayText": "gúáfà",
-    "syllables": [
-      "gú",
-      "á",
-      "fà"
+    "hint": "gum",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/15a4b3e9-6ef5-471b-b22d-fea4a4d99dd0.mp3",
+    "imageUrl": "/content/img/goomu_gum.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": null,
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
   },
   "ibepe_papaya": {
-    "displayText": "ìbẹ́pẹ",
+    "displayText": "ìbẹ́pẹ",
     "syllables": [
       "ì",
-      "bẹ́",
+      "bẹ́",
       "pẹ"
     ],
     "definition": "papaya",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "papaya",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/8e3fc666-b9d9-44b9-956b-7c9f6188c025.mp3",
+    "imageUrl": "/content/img/ibepe_papaya.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "ibusun_bed": {
     "displayText": "ibùsùn",
@@ -419,9 +1200,39 @@
       "sùn"
     ],
     "definition": "bed",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "bed",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/02b47a84-2202-4429-8ae0-9e9868c8eca5.mp3",
+    "imageUrl": "/content/img/ibusun_bed.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "idana_cooking": {
+    "displayText": "ìdáná",
+    "syllables": [
+      "ì",
+      "dá",
+      "ná"
+    ],
+    "definition": "cooking, making a faire",
+    "hint": "cooking",
+    "category": "abstract",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/fd5992e1-5ffb-4e6b-8227-6c51467793f5.mp3",
+    "imageUrl": "/content/img/idana_cooking.webp",
+    "syllableAudio": [
+      "/content/audio/d9a2442b-019d-4e6c-bc7a-c5852924c4ac.mp3",
+      "/content/audio/3d1b49af-53f5-4bf2-bd42-0ca8b4e89961.mp3",
+      "/content/audio/5fca8a07-c6ad-475c-8480-59c5c5b5da8d.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "idodo_navel": {
     "displayText": "idodo",
@@ -431,9 +1242,18 @@
       "do"
     ],
     "definition": "navel, belly button",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "navel",
+    "category": "body",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/6b0f5b63-b171-4acc-8138-617581e8b12d.mp3",
+    "imageUrl": "/content/img/idodo_navel.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "ifoyin_toothbrush": {
     "displayText": "ìfọyín",
@@ -443,20 +1263,60 @@
       "yín"
     ],
     "definition": null,
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "igbe_april": {
-    "displayText": "Igbe",
-    "syllables": [
-      "i",
-      "gbe"
+    "hint": "toothbrush",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/34b455cb-7784-478e-9fda-66da095dcd13.mp3",
+    "imageUrl": "/content/img/ifoyin_toothbrush.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": "April, the eleventh month in the Yoruba calendar, the Kọ́jọ́dá",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
+  },
+  "igbalejo_hospitality": {
+    "displayText": "ìgbàlejò",
+    "syllables": [
+      "ì",
+      "gbà",
+      "le",
+      "jò"
+    ],
+    "definition": "hospitality",
+    "hint": "hospitality",
+    "category": "abstract",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/f310a11a-10af-46be-8bac-e4af5b2bb2da.mp3",
+    "imageUrl": "/content/img/igbalejo_hospitality.webp",
+    "syllableAudio": [
+      "/content/audio/d9e455f7-65f3-4953-bf79-2e8bb94d141c.mp3",
+      "/content/audio/ab81183b-88a3-4ac7-bf16-1dae9ee54ce3.mp3",
+      "/content/audio/1d2987af-d186-472a-a9be-153ec931aaba.mp3",
+      "/content/audio/a3b01f24-9cda-4a18-9509-ba5fb26b5572.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "igbe_feces": {
+    "displayText": "ìgbẹ́",
+    "syllables": [
+      "ì",
+      "gbẹ́"
+    ],
+    "definition": "poop",
+    "hint": "feces",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/14ff4522-571e-4600-8095-79d7c55ec5f0.mp3",
+    "imageUrl": "/content/img/igbe_feces.webp",
+    "syllableAudio": [
+      "/content/audio/86b0da1b-1739-4580-aa51-5e030179f4e2.mp3",
+      "/content/audio/3d9b4bf0-ff81-43f8-888f-1becdc404019.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "igbo_forest": {
     "displayText": "igbó",
@@ -465,9 +1325,67 @@
       "gbó"
     ],
     "definition": "forest, bush, grove",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "forest",
+    "category": "placeNature",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/c9873a4a-9d21-4e63-8d35-873e482aeb97.mp3",
+    "imageUrl": "/content/img/igbo_forest.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "ijapa_inu_omi_aquatic_turtle": {
+    "displayText": "ìjàpá inú omi",
+    "syllables": [
+      "ì",
+      "jà",
+      "pá",
+      "i",
+      "nú",
+      "o",
+      "mi"
+    ],
+    "definition": "A turtle that lives in the water, such as a river, lake, or the ocean; an aquatic turtle",
+    "hint": "aquatic turtle",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/ebe6208e-b11d-456f-8bee-4e7bef3019cb.mp3",
+    "imageUrl": "/content/img/ijapa_inu_omi_aquatic_turtle.webp",
+    "syllableAudio": [
+      "/content/audio/9c0f38f6-dbea-4e50-91a3-291024356f96.mp3",
+      "/content/audio/1c517df4-6dfb-4619-9e2b-a49218a7ab68.mp3",
+      "/content/audio/3e7eebfa-702d-4aee-884d-65656cf27106.mp3",
+      "/content/audio/6717a58a-7113-4345-af1f-f54a5ec8d92a.mp3",
+      "/content/audio/2247c7d0-8c0b-4e73-aed9-11d02e0033dd.mp3",
+      "/content/audio/27b5a14b-e387-4790-a2bb-7f78f0dc45e1.mp3",
+      "/content/audio/3d1d8bae-7d2c-44e3-ae8b-526980bc40ed.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ijapa_tortoise": {
+    "displayText": "ìjàpá",
+    "syllables": [
+      "ì",
+      "jà",
+      "pá"
+    ],
+    "definition": "tortoise, turtle, beetle",
+    "hint": "tortoise",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/f3ee58fd-093b-43b8-9614-180bc8b6e4f5.mp3",
+    "imageUrl": "/content/img/ijapa_tortoise.webp",
+    "syllableAudio": [
+      "/content/audio/a0f33b79-5582-4310-88a4-31924cd10422.mp3",
+      "/content/audio/7a8cfde3-000b-4c1d-b978-497553ff8f69.mp3",
+      "/content/audio/55e40fcf-c325-4a8a-829d-22bce34b456f.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ikoko_pot": {
     "displayText": "ìkòkò",
@@ -477,20 +1395,18 @@
       "kò"
     ],
     "definition": "pot, multipurpose pot traditionally made of clay.",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "ikun_stomach": {
-    "displayText": "ikùn",
-    "syllables": [
-      "i",
-      "kùn"
+    "hint": "pot",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/35da4f12-210c-4ba7-b7df-60dfc4d780b8.mp3",
+    "imageUrl": "/content/img/ikoko_pot.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": "abdomen, belly",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
   },
   "ile_home": {
     "displayText": "ilé",
@@ -499,32 +1415,84 @@
       "lé"
     ],
     "definition": "home, house, abode",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "ilekun_door": {
-    "displayText": "ìlẹ̀kùn",
-    "syllables": [
-      "ì",
-      "lẹ̀",
-      "kùn"
+    "hint": "home",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/d921b338-d4e7-44a1-b101-cfd675e4a2d3.mp3",
+    "imageUrl": "/content/img/ile_home.webp",
+    "syllableAudio": [
+      null,
+      null
     ],
-    "definition": "door",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
   },
-  "imu_nose": {
-    "displayText": "imú",
+  "ile_idana_kitchen": {
+    "displayText": "ilé ìdáná",
     "syllables": [
       "i",
-      "mú"
+      "lé",
+      "ì",
+      "dá",
+      "ná"
     ],
-    "definition": "nose",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "definition": "kitchen",
+    "hint": "kitchen",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/99c8cbb7-b841-42d4-b499-40222e0b1321.mp3",
+    "imageUrl": "/content/img/ile_idana_kitchen.webp",
+    "syllableAudio": [
+      "/content/audio/76560a36-cc81-4da4-8d41-0b1e5c294133.mp3",
+      "/content/audio/73a4011e-60a4-4898-9474-6785b2871443.mp3",
+      "/content/audio/75abe60c-f12c-4a3f-960b-8a9fe6694e70.mp3",
+      "/content/audio/7018a82a-cdc2-4d8b-bdbc-774167503835.mp3",
+      "/content/audio/4061da35-2926-4b12-888f-57ce7d09101a.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ile_land": {
+    "displayText": "ilẹ̀",
+    "syllables": [
+      "i",
+      "lẹ̀"
+    ],
+    "definition": "land, earth, soil, ground",
+    "hint": "land",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c1886f86-13c4-47d9-868c-b6d6be0781e7.mp3",
+    "imageUrl": "/content/img/ile_land.webp",
+    "syllableAudio": [
+      "/content/audio/ba8ed8d8-6888-4b87-a824-14f06462f4ba.mp3",
+      "/content/audio/19900d4e-6edb-434a-bb8e-3c6dc811f2fb.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ile-iwe_school": {
+    "displayText": "ilé-ìwé",
+    "syllables": [
+      "i",
+      "lé",
+      "ì",
+      "wé"
+    ],
+    "definition": "school",
+    "hint": "school",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/63e23ec9-70f5-451c-b447-7e3398ba1201.mp3",
+    "imageUrl": "/content/img/ile-iwe_school.webp",
+    "syllableAudio": [
+      "/content/audio/84117b9c-d399-4676-9312-b25d4798f4bf.mp3",
+      "/content/audio/d3631d5a-e2f1-46fa-8f31-5f008431b3ca.mp3",
+      "/content/audio/f22261bf-07ed-4dcf-8a21-eb80cc7841fc.mp3",
+      "/content/audio/7b842e35-0d43-4659-9de0-9dee35131061.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ina_fire": {
     "displayText": "iná",
@@ -533,16 +1501,17 @@
       "ná"
     ],
     "definition": "fire, light",
-    "imageStyles": []
-  },
-  "inu_inside": {
-    "displayText": "inú",
-    "syllables": [
-      "i",
-      "nú"
+    "hint": "fire",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/f9742a3e-233a-4587-8174-2d03342bbd36.mp3",
+    "imageUrl": "/content/img/ina_fire.webp",
+    "syllableAudio": [
+      null,
+      null
     ],
-    "definition": null,
-    "imageStyles": []
+    "syllableSource": "derived from spelling"
   },
   "inura_towel": {
     "displayText": "ìnura",
@@ -552,7 +1521,18 @@
       "ra"
     ],
     "definition": null,
-    "imageStyles": []
+    "hint": "towel",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/5764edf3-8643-4c1c-bb65-855d3f23aa77.mp3",
+    "imageUrl": "/content/img/inura_towel.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "irawo_star": {
     "displayText": "ìràwọ̀",
@@ -562,7 +1542,39 @@
       "wọ̀"
     ],
     "definition": "star, celestial object, celestial body",
-    "imageStyles": []
+    "hint": "star",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/9dc055b1-c659-4c23-afc0-b966ed134427.mp3",
+    "imageUrl": "/content/img/irawo_star.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "iresi_rice": {
+    "displayText": "ìrẹsì",
+    "syllables": [
+      "ì",
+      "rẹ",
+      "sì"
+    ],
+    "definition": "rice",
+    "hint": "rice",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/f1ded58d-e19c-4a07-b1d6-8f57ad3be801.mp3",
+    "imageUrl": "/content/img/iresi_rice.webp",
+    "syllableAudio": [
+      "/content/audio/948f51e7-c773-4e68-a4b6-20268de766d7.mp3",
+      "/content/audio/20f2b800-e39c-489f-ac1f-e9bb7e69294e.mp3",
+      "/content/audio/9a51ac35-8104-402e-aed6-a4ef9e909447.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "irin_iron": {
     "displayText": "irin",
@@ -571,9 +1583,17 @@
       "rin"
     ],
     "definition": "metal (in particular) iron",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "iron",
+    "category": "object",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/a04ab911-3d8e-49ea-9ea9-d58c196c8795.mp3",
+    "imageUrl": "/content/img/irin_iron.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "irin_walk": {
     "displayText": "ìrìn",
@@ -582,9 +1602,76 @@
       "rìn"
     ],
     "definition": "walk; stroll",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "walk",
+    "category": "action",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/fccf3f0b-732b-4fa7-a7d6-6e57d28a2837.mp3",
+    "imageUrl": "/content/img/irin_walk.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "irun_hair": {
+    "displayText": "irun",
+    "syllables": [
+      "i",
+      "run"
+    ],
+    "definition": "hair",
+    "hint": "hair",
+    "category": "body",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/f2d61e02-dea5-4537-87ed-850819e7a7e8.mp3",
+    "imageUrl": "/content/img/irun_hair.webp",
+    "syllableAudio": [
+      "/content/audio/c833c6cd-8148-4137-a013-76fc05c1008b.mp3",
+      "/content/audio/dd1c0f85-d02c-48dd-a30a-1284cf104f0d.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "isere_toy": {
+    "displayText": "ìṣeré",
+    "syllables": [
+      "ì",
+      "ṣe",
+      "ré"
+    ],
+    "definition": "toy",
+    "hint": "toy",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/6e658401-343d-4a70-a3a3-3c757a78cc77.mp3",
+    "imageUrl": "/content/img/isere_toy.webp",
+    "syllableAudio": [
+      "/content/audio/798e989a-bbde-4dbb-ba6f-2b4d3abd60af.mp3",
+      "/content/audio/51c26613-d700-4398-8bca-99f65a1630ab.mp3",
+      "/content/audio/caf673bc-9e73-4b0a-b576-88c74233e508.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "isu_yam": {
+    "displayText": "iṣu",
+    "syllables": [
+      "i",
+      "ṣu"
+    ],
+    "definition": "yam",
+    "hint": "yam",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/fa447583-1d7d-4f9c-a701-b9cee7974952.mp3",
+    "imageUrl": "/content/img/isu_yam.webp",
+    "syllableAudio": [
+      "/content/audio/f64fd2af-0af3-4e2c-ba43-d4fd88657aae.mp3",
+      "/content/audio/c0781c7a-31b0-4bbe-8e8d-04b357c8b675.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "itan_thigh": {
     "displayText": "itan",
@@ -593,9 +1680,34 @@
       "tan"
     ],
     "definition": "thigh",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "thigh",
+    "category": "body",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/c8f89d08-3282-4df8-80b2-fb3e629b0a51.mp3",
+    "imageUrl": "/content/img/itan_thigh.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "ja_to_pluck_off": {
+    "displayText": "já",
+    "syllables": [
+      "já"
+    ],
+    "definition": "to pluck off (usually referring to fruit or leaves)",
+    "hint": "to pluck off",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/cc08cf6f-b7c2-4787-9c30-7475d26581d5.mp3",
+    "imageUrl": "/content/img/ja_to_pluck_off.webp",
+    "syllableAudio": [
+      "/content/audio/48cb5734-f55e-4c2e-96a7-acbf4854f66d.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "jeun_eat": {
     "displayText": "jẹun",
@@ -604,9 +1716,40 @@
       "un"
     ],
     "definition": "to eat food",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "eat",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/16c23405-11e0-40fc-b088-360c9575df7f.mp3",
+    "imageUrl": "/content/img/jeun_eat.webp",
+    "syllableAudio": [
+      "/content/audio/7e1fe97a-032a-48ba-8ac7-be0fb1ba557a.mp3",
+      "/content/audio/38fabebd-4837-411d-9c42-ec9d4b7abeda.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "jokoo_je_sit_still": {
+    "displayText": "jókòó jẹ́",
+    "syllables": [
+      "jó",
+      "kò",
+      "ó",
+      "jẹ́"
+    ],
+    "definition": "Sit still",
+    "hint": "sit still",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c3b6fd0a-c076-411a-af81-75538ad40d6a.mp3",
+    "imageUrl": "/content/img/jokoo_je_sit_still.webp",
+    "syllableAudio": [
+      "/content/audio/fe07aa0d-f375-49ac-b2c0-d9cbee00bdc5.mp3",
+      "/content/audio/93a4f15a-222d-46c5-83d3-dc3e693a0ad1.mp3",
+      "/content/audio/5fe97aec-d068-4f54-9c49-5d71145047a0.mp3",
+      "/content/audio/114c6f7e-5b9f-4a78-af12-16584acb9937.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "jokoo_sit": {
     "displayText": "jókòó",
@@ -616,9 +1759,18 @@
       "ó"
     ],
     "definition": "to sit (down)",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "sit",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/5d60b586-de5c-4550-8e65-6a76e5f135f0.mp3",
+    "imageUrl": "/content/img/jokoo_sit.webp",
+    "syllableAudio": [
+      "/content/audio/7d7bd254-c36a-4d2b-be72-1c9537b6ecc7.mp3",
+      "/content/audio/4723e3a5-dc19-4974-b729-09b4db85b1ba.mp3",
+      "/content/audio/93355790-1fa3-46fc-98c7-2d294e5fcc5c.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "kalamu_pen": {
     "displayText": "kálàmú",
@@ -628,7 +1780,35 @@
       "mú"
     ],
     "definition": "pen (writing tool)",
-    "imageStyles": []
+    "hint": "pen",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/c0b5e088-b077-4a8e-a6b8-a961956ce837.mp3",
+    "imageUrl": "/content/img/kalamu_pen.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "kan_touch": {
+    "displayText": "kàn",
+    "syllables": [
+      "kàn"
+    ],
+    "definition": "to touch",
+    "hint": "touch",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0851ed12-4986-4e81-8a92-bb5f4605137c.mp3",
+    "imageUrl": "/content/img/kan_touch.webp",
+    "syllableAudio": [
+      "/content/audio/924aff4e-8768-445e-a97e-74728d45f36e.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "kasu_cashew": {
     "displayText": "kaṣú",
@@ -637,9 +1817,170 @@
       "ṣú"
     ],
     "definition": null,
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "cashew",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/79f682d0-1e34-4754-b276-37d116939dec.mp3",
+    "imageUrl": "/content/img/kasu_cashew.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "keke_bicycle": {
+    "displayText": "kẹ̀kẹ́",
+    "syllables": [
+      "kẹ̀",
+      "kẹ́"
+    ],
+    "definition": "bicycle, cart, carriage",
+    "hint": "bicycle",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/652f8f1b-fbc1-4948-986f-9aaed19b3660.mp3",
+    "imageUrl": "/content/img/keke_bicycle.webp",
+    "syllableAudio": [
+      "/content/audio/7f26785b-b00f-4eee-b1e3-692f867e65c6.mp3",
+      "/content/audio/b3d78306-38fc-4144-a39b-307e9c1435b1.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "kekere_small": {
+    "displayText": "kékeré",
+    "syllables": [
+      "ké",
+      "ke",
+      "ré"
+    ],
+    "definition": "small, little, young",
+    "hint": "small",
+    "category": "state",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/51a47839-cc99-42cf-bbc9-c6c27d01d7a7.mp3",
+    "imageUrl": "/content/img/kekere_small.webp",
+    "syllableAudio": [
+      "/content/audio/d6f9ade5-e118-4bdb-890e-fe750d0f5c6e.mp3",
+      "/content/audio/5e952cf0-3fbd-4b2e-bca9-40c4232d73b9.mp3",
+      "/content/audio/b279f625-3477-40bf-b23b-8f7f4938d730.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "kelekele_gently": {
+    "displayText": "kẹ́lẹ́kẹ́lẹ́",
+    "syllables": [
+      "kẹ́",
+      "lẹ́",
+      "kẹ́",
+      "lẹ́"
+    ],
+    "definition": "Quietly, softly, gently",
+    "hint": "gently",
+    "category": "manner",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/bb3860a5-0a22-4898-af4d-4763f3383d39.mp3",
+    "imageUrl": "/content/img/kelekele_gently.webp",
+    "syllableAudio": [
+      "/content/audio/d088ee33-1f42-437f-a5a0-17b0052eaf68.mp3",
+      "/content/audio/3a0d8f36-7b1f-4cca-81bc-2be7749da11f.mp3",
+      "/content/audio/a423840f-3c77-4c04-9df3-fff7b316c652.mp3",
+      "/content/audio/4724b8b3-0751-4740-b5d5-5ab6ee5d2c79.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ketekete_abila_zebra": {
+    "displayText": "kẹ́tẹ́kẹ́tẹ́ abìlà",
+    "syllables": [
+      "kẹ́",
+      "tẹ́",
+      "kẹ́",
+      "tẹ́",
+      "a",
+      "bì",
+      "là"
+    ],
+    "definition": "zebra",
+    "hint": "zebra",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/96a4e7d7-0ec5-479a-92f9-fd2b71c16940.mp3",
+    "imageUrl": "/content/img/ketekete_abila_zebra.webp",
+    "syllableAudio": [
+      "/content/audio/b20a145d-8ca5-4d75-a8f2-8799a6e6664a.mp3",
+      "/content/audio/5bfc4555-61c3-4dac-913f-2de35756fe62.mp3",
+      "/content/audio/a35a29df-95d7-42cd-842b-35d457ed469a.mp3",
+      "/content/audio/d413613e-80bd-48c5-8e65-4f5b00a682c1.mp3",
+      "/content/audio/8d6b5c34-d9cd-4b87-ad3d-fd4ecf83f9e0.mp3",
+      "/content/audio/42c45a64-701c-4bcb-8863-7972d872c9f8.mp3",
+      "/content/audio/baeb98be-5f76-4d08-b3ed-6003d8dbb16a.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ketekete_donkey": {
+    "displayText": "kẹ́tẹ́kẹ́tẹ́",
+    "syllables": [
+      "kẹ́",
+      "tẹ́",
+      "kẹ́",
+      "tẹ́"
+    ],
+    "definition": "ass, donkey",
+    "hint": "donkey",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/b1d66fdf-f257-4b2d-9178-49e894125a95.mp3",
+    "imageUrl": "/content/img/ketekete_donkey.webp",
+    "syllableAudio": [
+      "/content/audio/6d32da54-7111-4ef6-84b4-02c648d820c8.mp3",
+      "/content/audio/31e18331-c05f-4393-871b-2523244beb3a.mp3",
+      "/content/audio/1afd75d2-0bf2-4217-b58a-38a58ac15af6.mp3",
+      "/content/audio/f5362ee2-4c3a-4c5c-abd1-4e83a23d0785.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "kiniun_lion": {
+    "displayText": "kìnìún",
+    "syllables": [
+      "kì",
+      "nì",
+      "ún"
+    ],
+    "definition": "lion",
+    "hint": "lion",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/9c529734-4ba1-4935-8e42-de606cadab8e.mp3",
+    "imageUrl": "/content/img/kiniun_lion.webp",
+    "syllableAudio": [
+      "/content/audio/35f82c33-c15a-4504-9f6f-9a483c0d82b1.mp3",
+      "/content/audio/0a20b434-5079-42cf-81ce-eeb8706952b0.mp3",
+      "/content/audio/eb5eff97-ea7f-4cc6-aad0-81cc78862db5.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "kun_growl": {
+    "displayText": "kùn",
+    "syllables": [
+      "kùn"
+    ],
+    "definition": "to growl, grumble",
+    "hint": "growl",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/95fb7f21-76b5-4974-ab1f-24d9230b103f.mp3",
+    "imageUrl": "/content/img/kun_growl.webp",
+    "syllableAudio": [
+      "/content/audio/91f2d546-c5fe-4ebb-8738-873099d6c6a9.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "lo_go": {
     "displayText": "lọ",
@@ -647,9 +1988,104 @@
       "lọ"
     ],
     "definition": "to go",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "go",
+    "category": "action",
+    "speaker": "speaker2",
+    "voice": "Tolani",
+    "audioUrl": "/content/audio/a50a12d6-00ef-49dd-bf90-ba5f49c2f43f.mp3",
+    "imageUrl": "/content/img/lo_go.webp",
+    "syllableAudio": [
+      "/content/audio/1dc95e9b-437d-4844-8090-bce2519901b8.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "luwe_swim": {
+    "displayText": "lùwẹ̀",
+    "syllables": [
+      "lù",
+      "wẹ̀"
+    ],
+    "definition": "swim",
+    "hint": "swim",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/14b1fdd9-eb70-4018-9de8-98591f841fa6.mp3",
+    "imageUrl": "/content/img/luwe_swim.webp",
+    "syllableAudio": [
+      "/content/audio/0c55c316-7382-4d3a-b59c-cb7aef95a4d5.mp3",
+      "/content/audio/8cd7fb7d-09d2-4067-bee7-ab79b72e1703.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ma_fowo_kan_an_no_touch": {
+    "displayText": "má fọwọ́ kàn án",
+    "syllables": [
+      "má",
+      "fọ",
+      "wọ́",
+      "kàn",
+      "án"
+    ],
+    "definition": "Do not touch it",
+    "hint": "no touch",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/f997f288-9d46-40e1-9672-0bd71121f0f4.mp3",
+    "imageUrl": "/content/img/ma_fowo_kan_an_no_touch.webp",
+    "syllableAudio": [
+      "/content/audio/e0c2ac8d-703e-4957-8d54-e71f2d547cef.mp3",
+      "/content/audio/62b9faa5-e80f-4f12-bece-abf229eb3774.mp3",
+      "/content/audio/d891a035-652d-4e2b-a205-0468d388688e.mp3",
+      "/content/audio/963c81eb-2f99-4d24-a766-5287044a9003.mp3",
+      "/content/audio/efa26adf-45f7-46c2-b9d7-f69a3c352da1.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ma_se_bee_stop_that": {
+    "displayText": "má ṣe bẹ́ẹ̀",
+    "syllables": [
+      "má",
+      "ṣe",
+      "bẹ́",
+      "ẹ̀"
+    ],
+    "definition": "Stop that",
+    "hint": "stop that",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/eb4e5841-ee57-4d4a-91ac-38feb9ee930e.mp3",
+    "imageUrl": "/content/img/ma_se_bee_stop_that.webp",
+    "syllableAudio": [
+      "/content/audio/b95a06cf-49e9-4400-93bd-8054c2f9c7b0.mp3",
+      "/content/audio/633a3da0-c0e2-41bb-839d-67283b98c522.mp3",
+      "/content/audio/99dec795-764e-4131-95af-bb058d77f455.mp3",
+      "/content/audio/2f87500b-1fb9-4b20-ba0d-478f80fc556e.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ma_sunkun_not_cry": {
+    "displayText": "má sunkún",
+    "syllables": [
+      "má",
+      "sun",
+      "kún"
+    ],
+    "definition": "Don't cry",
+    "hint": "not cry",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/b1b588b3-e0e8-42c6-8d14-34584a8adeea.mp3",
+    "imageUrl": "/content/img/ma_sunkun_not_cry.webp",
+    "syllableAudio": [
+      "/content/audio/fe518e27-acd2-48cf-adc7-2839fcff384e.mp3",
+      "/content/audio/da3ffbe8-90c8-44fa-8512-ee9a1a692b0c.mp3",
+      "/content/audio/7b313acf-90e1-4abb-9fc4-85f442206eb7.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "maluu_cow": {
     "displayText": "màlúù",
@@ -659,9 +2095,37 @@
       "ù"
     ],
     "definition": "cow, ox, cattle; (in particular) zebu cow",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "cow",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/0ed5046f-c97c-425e-89a4-5dc27844caab.mp3",
+    "imageUrl": "/content/img/maluu_cow.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "mama_mother": {
+    "displayText": "màmá",
+    "syllables": [
+      "mà",
+      "má"
+    ],
+    "definition": "mother",
+    "hint": "mother",
+    "category": "people",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/1d7b0953-8b28-4d3a-a282-c15bc3203b5a.mp3",
+    "imageUrl": "/content/img/mama_mother.webp",
+    "syllableAudio": [
+      "/content/audio/6b080545-85d8-47cf-ae7d-f3ef1c95079f.mp3",
+      "/content/audio/00b0fb7a-16cb-4595-8b75-d200f9e18b41.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "moto_automobile": {
     "displayText": "mọ́tò",
@@ -670,20 +2134,228 @@
       "tò"
     ],
     "definition": "car",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "automobile",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/3661f1fc-1b14-434d-8f22-6ce702ffb640.mp3",
+    "imageUrl": "/content/img/moto_automobile.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "mu_omi_drink_water": {
+    "displayText": "mu omi",
+    "syllables": [
+      "mu",
+      "o",
+      "mi"
+    ],
+    "definition": "Drink water",
+    "hint": "drink water",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/34227f7e-f356-4c91-b729-79fbaff0c766.mp3",
+    "imageUrl": "/content/img/mu_omi_drink_water.webp",
+    "syllableAudio": [
+      "/content/audio/e1b40024-a2c9-4095-8875-3bb4d56bf52a.mp3",
+      "/content/audio/8fa860e7-7c41-4288-a45c-e5a30350c1d1.mp3",
+      "/content/audio/ab54d43e-791f-4d11-8313-a2fde7b6ea54.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "mu_take": {
+    "displayText": "mú",
+    "syllables": [
+      "mú"
+    ],
+    "definition": "to take, catch, or hold",
+    "hint": "take",
+    "category": "transfer",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/184f1328-812f-4468-94ee-11b991d1040a.mp3",
+    "imageUrl": "/content/img/mu_take.webp",
+    "syllableAudio": [
+      "/content/audio/f86c36cd-822d-459f-a66f-fbcff50ad72b.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "mu_to_drink": {
+    "displayText": "mu",
+    "syllables": [
+      "mu"
+    ],
+    "definition": "to drink",
+    "hint": "to drink",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/77d928ab-f654-40fd-aadc-8ded2c5bb278.mp3",
+    "imageUrl": "/content/img/mu_to_drink.webp",
+    "syllableAudio": [
+      "/content/audio/d1908365-25f1-4951-82cc-a1f149ade1c9.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "nle_at_home": {
+    "displayText": "ńlé",
+    "syllables": [
+      "ń",
+      "lé"
+    ],
+    "definition": "at home",
+    "hint": "at home",
+    "category": "spatial",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0175d4ee-e172-44dd-b06f-09a57c1a7e77.mp3",
+    "imageUrl": "/content/img/nle_at_home.webp",
+    "syllableAudio": [
+      "/content/audio/6778f380-4877-4df5-bc5e-2358bed1c754.mp3",
+      "/content/audio/ca5d18ff-d2dc-4942-8723-3abbe6a70e4d.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "nu_clean": {
+    "displayText": "nù",
+    "syllables": [
+      "nù"
+    ],
+    "definition": "to wipe, clean",
+    "hint": "clean",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/24b5b926-4ef7-445c-b628-335a556d1fc3.mp3",
+    "imageUrl": "/content/img/nu_clean.webp",
+    "syllableAudio": [
+      "/content/audio/24a837a4-f2bd-4317-9f57-64c704823b74.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "nu_u_cleanit": {
+    "displayText": "nù ú",
+    "syllables": [
+      "nù",
+      "ú"
+    ],
+    "definition": "Clean it",
+    "hint": "cleanit",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/77067149-d752-42c1-a851-ee11bab7a857.mp3",
+    "imageUrl": "/content/img/nu_u_cleanit.webp",
+    "syllableAudio": [
+      "/content/audio/5cc607da-5ecc-4816-8aee-5707fecc4552.mp3",
+      "/content/audio/96c38316-036e-48d7-9270-071cb6cc5de7.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "o_doti_dirty": {
+    "displayText": "ó dọ̀tí",
+    "syllables": [
+      "ó",
+      "dọ̀",
+      "tí"
+    ],
+    "definition": "It's dirty",
+    "hint": "dirty",
+    "category": "social",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/5972a8c1-ed3b-4077-a1b1-0ef86a482cbd.mp3",
+    "imageUrl": "/content/img/o_doti_dirty.webp",
+    "syllableAudio": [
+      "/content/audio/df7ddf31-de69-4d0a-972b-668643bd3494.mp3",
+      "/content/audio/e8d1bc84-e10f-4822-92de-81ce9761a2fd.mp3",
+      "/content/audio/fba24def-a6e9-4ac3-a791-8f2bc8de3c3b.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "o_gbona_hot": {
+    "displayText": "ó gbóná",
+    "syllables": [
+      "ó",
+      "gbó",
+      "ná"
+    ],
+    "definition": "It's hot",
+    "hint": "hot",
+    "category": "social",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/e58f8404-6842-4bd9-849d-7d25b2273209.mp3",
+    "imageUrl": "/content/img/o_gbona_hot.webp",
+    "syllableAudio": [
+      "/content/audio/0c0803db-9695-4fdc-9760-d0a884d03e3b.mp3",
+      "/content/audio/4bd06aae-2fd0-48e7-8a33-5c301a9de2cf.mp3",
+      "/content/audio/98262b5d-eb85-4280-b726-6afccb212684.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "o_se_thank_you": {
+    "displayText": "o ṣé",
+    "syllables": [
+      "o",
+      "ṣé"
+    ],
+    "definition": "thank you (non-honorific, to a singular person)",
+    "hint": "thank you",
+    "category": "social",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/2cf48c99-fca3-4c86-8bfb-5a0afa4dc425.mp3",
+    "imageUrl": "/content/img/o_se_thank_you.webp",
+    "syllableAudio": [
+      "/content/audio/6aa75a02-4c30-4546-8949-0b40aa07f7c5.mp3",
+      "/content/audio/644331ae-4f84-46e1-a2a4-8727f5e9152b.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "o_ti_to_enough": {
+    "displayText": "ó ti tó",
+    "syllables": [
+      "ó",
+      "ti",
+      "tó"
+    ],
+    "definition": "It is enough; it is okay.",
+    "hint": "enough",
+    "category": "social",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/86914645-8033-4b49-ab0d-66a6d376927b.mp3",
+    "imageUrl": "/content/img/o_ti_to_enough.webp",
+    "syllableAudio": [
+      "/content/audio/328eb419-4bb6-4cd5-ba10-0c5e462bf8e4.mp3",
+      "/content/audio/f066edda-6f06-48de-816e-c23f999ee391.mp3",
+      "/content/audio/29aa2dd9-367b-4c3d-b9dd-b9f44c812fb7.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "oba_king": {
-    "displayText": "ọba",
+    "displayText": "ọba",
     "syllables": [
-      "ọ",
+      "ọ",
       "ba"
     ],
     "definition": "king, queen, monarch",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "king",
+    "category": "people",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/e5fb0d10-45c1-4632-9b8a-e503d8a86784.mp3",
+    "imageUrl": "/content/img/oba_king.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "obe_knife": {
     "displayText": "ọ̀bẹ",
@@ -692,18 +2364,67 @@
       "bẹ"
     ],
     "definition": "knife, blade",
-    "imageStyles": []
-  },
-  "oduduwa_oduduwa": {
-    "displayText": "odùduwà",
-    "syllables": [
-      "o",
-      "dù",
-      "du",
-      "wà"
+    "hint": "knife",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/e48e8ae2-fa3a-4781-ae06-6914a451e35f.mp3",
+    "imageUrl": "/content/img/obe_knife.webp",
+    "syllableAudio": [
+      null,
+      null
     ],
-    "definition": "The legendary ruler (Ọọ̀ni) of Ifẹ̀, he waged a war with Ọbàtálá and gained control of Ifẹ̀, where he became Ọọ̀ni. Because of this and his many descendants who founded modern Yoruba settlements, he is regarded as the father of the Yorùbá people",
-    "imageStyles": []
+    "syllableSource": "derived from spelling"
+  },
+  "odo_agutan_lamb": {
+    "displayText": "ọ̀dọ́ àgùtàn",
+    "syllables": [
+      "ọ̀",
+      "dọ́",
+      "à",
+      "gù",
+      "tàn"
+    ],
+    "definition": "lamb",
+    "hint": "lamb",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/69d35e98-1c0b-4765-a801-e22e2ebe3f7d.mp3",
+    "imageUrl": "/content/img/odo_agutan_lamb.webp",
+    "syllableAudio": [
+      "/content/audio/e7c94a0d-6bc9-409e-88b6-206cb37fc1d1.mp3",
+      "/content/audio/75812bb5-9bf7-4456-a1d8-50fcb92046f5.mp3",
+      "/content/audio/ef6bdef2-a3c3-4cf7-a3de-2a928100d274.mp3",
+      "/content/audio/86929549-105c-45e3-abb3-a55bbf5d86bb.mp3",
+      "/content/audio/ddb63b47-bd27-4c89-b8be-2fc438a623d5.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ofuurufu_sky": {
+    "displayText": "òfuurufú",
+    "syllables": [
+      "ò",
+      "fu",
+      "u",
+      "ru",
+      "fú"
+    ],
+    "definition": "sky, atmosphere",
+    "hint": "sky",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/1692ab49-24cd-48f4-b0fd-2a8ac0ae472a.mp3",
+    "imageUrl": "/content/img/ofuurufu_sky.webp",
+    "syllableAudio": [
+      "/content/audio/d6353a42-8972-4dc6-88dc-63a0615f7050.mp3",
+      "/content/audio/1d76058d-df5d-430e-a8b0-a35c317334e4.mp3",
+      "/content/audio/ba39a83b-bd76-4e58-bdde-0be904a5a09a.mp3",
+      "/content/audio/96ff3f09-ee27-4116-84bc-b59b41eaca60.mp3",
+      "/content/audio/896a7f11-4b07-4071-903a-a5a386662907.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ogbon_wisdom": {
     "displayText": "ọgbọ́n",
@@ -712,7 +2433,44 @@
       "gbọ́n"
     ],
     "definition": "wisdom; sense",
-    "imageStyles": []
+    "hint": "wisdom",
+    "category": "abstract",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/d8f413a5-3717-40f9-af9e-2ad22b0933cb.mp3",
+    "imageUrl": "/content/img/ogbon_wisdom.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "ogede_agbagba_plantain": {
+    "displayText": "ọ̀gẹ̀dẹ̀ àgbagbà",
+    "syllables": [
+      "ọ̀",
+      "gẹ̀",
+      "dẹ̀",
+      "à",
+      "gba",
+      "gbà"
+    ],
+    "definition": "plantain banana",
+    "hint": "plantain",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/836d6e23-a3d8-42c7-b515-2817bab3d231.mp3",
+    "imageUrl": "/content/img/ogede_agbagba_plantain.webp",
+    "syllableAudio": [
+      "/content/audio/f81ef2a8-f80f-493b-a0ce-1912aec8289c.mp3",
+      "/content/audio/3b4f3c99-7cd3-4597-b4df-d61589df8088.mp3",
+      "/content/audio/f1dc11d9-c5a3-48b4-b65d-b80620f65765.mp3",
+      "/content/audio/1f589248-6aef-4c13-9828-b44b4a35057b.mp3",
+      "/content/audio/ec9bb40b-d10b-4ca9-9db8-3b5506a86498.mp3",
+      "/content/audio/7d47334b-e179-4fee-b5cb-10d190cce911.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ogede_banana": {
     "displayText": "ọ̀gẹ̀dè",
@@ -722,20 +2480,18 @@
       "dè"
     ],
     "definition": "banana, plantain",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "ogun_august": {
-    "displayText": "Ògún",
-    "syllables": [
-      "ò",
-      "gún"
+    "hint": "banana",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/30fafed1-f4c9-4b2c-ae43-1224f98a5878.mp3",
+    "imageUrl": "/content/img/ogede_banana.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": "August, the third month of the traditional Yoruba calendar, the Kọ́jọ́dá; named in honor of Ògún. Many Ògún festivals are held during this month.",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
   },
   "ogun_twenty": {
     "displayText": "ogún",
@@ -744,16 +2500,36 @@
       "gún"
     ],
     "definition": "twenty",
-    "imageStyles": []
-  },
-  "oja_market": {
-    "displayText": "ọjà",
-    "syllables": [
-      "ọ",
-      "jà"
+    "hint": "twenty",
+    "category": "number",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/98ce73e4-9b36-400b-8761-c0ef4ba32c8c.mp3",
+    "imageUrl": "/content/img/ogun_twenty.webp",
+    "syllableAudio": [
+      null,
+      null
     ],
-    "definition": "market",
-    "imageStyles": []
+    "syllableSource": "derived from spelling"
+  },
+  "ohun_voice": {
+    "displayText": "ohùn",
+    "syllables": [
+      "o",
+      "hùn"
+    ],
+    "definition": "voice, sound",
+    "hint": "voice",
+    "category": "abstract",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c803e7ab-b536-4ea6-9f38-eefd35076753.mp3",
+    "imageUrl": "/content/img/ohun_voice.webp",
+    "syllableAudio": [
+      "/content/audio/318007d3-7186-46b5-963c-e9ed89db2c69.mp3",
+      "/content/audio/2d3fa025-0dc9-4c02-9652-b515ec8830a8.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ojo_day": {
     "displayText": "ọjọ́",
@@ -762,9 +2538,17 @@
       "jọ́"
     ],
     "definition": "day",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "day",
+    "category": "time",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/f178023b-420c-4530-b9f0-89ceb28618b3.mp3",
+    "imageUrl": "/content/img/ojo_day.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "oju_eye": {
     "displayText": "ojú",
@@ -773,21 +2557,84 @@
       "jú"
     ],
     "definition": "eye",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "okudu_june": {
-    "displayText": "Okúdù",
-    "syllables": [
-      "o",
-      "kú",
-      "dù"
+    "hint": "eye",
+    "category": "body",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/a78c5d1d-04f9-40f0-ae11-401e98515da7.mp3",
+    "imageUrl": "/content/img/oju_eye.webp",
+    "syllableAudio": [
+      null,
+      null
     ],
-    "definition": "June, the first month of the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
+  },
+  "oka_grain": {
+    "displayText": "ọkà",
+    "syllables": [
+      "ọ",
+      "kà"
+    ],
+    "definition": "Grains (typically millet, sorghum, corn or maize)",
+    "hint": "grain",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/03727587-c882-4a77-85a3-d434caba3aa2.mp3",
+    "imageUrl": "/content/img/oka_grain.webp",
+    "syllableAudio": [
+      "/content/audio/5538fa27-0bb8-48a6-86ea-2145b06b566d.mp3",
+      "/content/audio/2e69c233-618e-472c-9ab8-2158d1f95002.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "okere_squirrel": {
+    "displayText": "ọ̀kẹ́rẹ́",
+    "syllables": [
+      "ọ̀",
+      "kẹ́",
+      "rẹ́"
+    ],
+    "definition": "A squirrel of any species",
+    "hint": "squirrel",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0f710fac-6e02-41d8-98fb-0d6888473cc9.mp3",
+    "imageUrl": "/content/img/okere_squirrel.webp",
+    "syllableAudio": [
+      "/content/audio/48d70708-b7de-4522-9db5-b0223f4650ac.mp3",
+      "/content/audio/884511b0-12a3-423a-b6e7-946a8aec2d65.mp3",
+      "/content/audio/d38d5a75-fd2d-41e0-965f-63a3a8098f03.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "oko_panapana_firetruck": {
+    "displayText": "ọkọ̀ panápaná",
+    "syllables": [
+      "ọ",
+      "kọ̀",
+      "pa",
+      "ná",
+      "pa",
+      "ná"
+    ],
+    "definition": "Firetruck",
+    "hint": "firetruck",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/b72c4a1a-84c6-4fcc-be8d-0fd2e5d2010c.mp3",
+    "imageUrl": "/content/img/oko_panapana_firetruck.webp",
+    "syllableAudio": [
+      "/content/audio/242aa7ce-d3c4-439d-b80a-5b96b93e722e.mp3",
+      "/content/audio/5db2200e-7452-433b-9e6d-9d57b4c0baed.mp3",
+      "/content/audio/21dde917-ff43-41e6-aa09-057403d3941b.mp3",
+      "/content/audio/63e6b6d7-198d-45df-9565-21114f6e10c6.mp3",
+      "/content/audio/a79a16c8-34b7-4edd-b04e-c79aa26bbea3.mp3",
+      "/content/audio/7f16f2f9-4c2e-4c70-bee4-cf5ab0be7f9e.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "okuta_stone": {
     "displayText": "òkúta",
@@ -797,22 +2644,91 @@
       "ta"
     ],
     "definition": "rock, stone",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "olongbo_cat": {
-    "displayText": "olóńgbò",
-    "syllables": [
-      "o",
-      "ló",
-      "ń",
-      "gbò"
+    "hint": "stone",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/d0d03bd3-c569-42fa-bf6c-81ac68cd3f9f.mp3",
+    "imageUrl": "/content/img/okuta_stone.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": "cat",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
+  },
+  "omo_daadaa_good_child": {
+    "displayText": "ọmọ dáadáa",
+    "syllables": [
+      "ọ",
+      "mọ",
+      "dá",
+      "a",
+      "dá",
+      "a"
+    ],
+    "definition": "Good Boy/Girl",
+    "hint": "good child",
+    "category": "social",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/cc5f5757-89b9-467c-8d03-a0d1a5b04e94.mp3",
+    "imageUrl": "/content/img/omo_daadaa_good_child.webp",
+    "syllableAudio": [
+      "/content/audio/646f9a23-6f03-4de9-9f28-c5e77816277a.mp3",
+      "/content/audio/c6666e01-90ae-40f8-be95-d21543d612ae.mp3",
+      "/content/audio/7db8b063-0e2b-4c8e-bf3b-c80b2fe18e3f.mp3",
+      "/content/audio/8b804527-719d-4be3-bc97-47818f5908fd.mp3",
+      "/content/audio/9a8805c3-0967-4704-8f8e-a9507ecf94c0.mp3",
+      "/content/audio/1485bb0c-8c5c-4b5b-92c1-deb7cbdebe9a.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "omo_ehoro_baby_bunny": {
+    "displayText": "ọmọ ehoro",
+    "syllables": [
+      "ọ",
+      "mọ",
+      "e",
+      "ho",
+      "ro"
+    ],
+    "definition": "baby bunny",
+    "hint": "baby bunny",
+    "category": "animal",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/bb0a9c39-07e7-446e-8708-e7727c3e58f9.mp3",
+    "imageUrl": "/content/img/omo_ehoro_baby_bunny.webp",
+    "syllableAudio": [
+      "/content/audio/05489372-0911-4334-89aa-2796cf82395b.mp3",
+      "/content/audio/eaf1e0cf-95a0-4a07-a034-f88c0c6d1bbd.mp3",
+      "/content/audio/cf31b58a-87cb-4be9-8ee0-7832b0ce3467.mp3",
+      "/content/audio/0099ff37-f070-4bf3-a709-ba536e755431.mp3",
+      "/content/audio/bbfbf19a-0719-437e-a4e0-ddba90fd706c.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "omo_mi_my_baby": {
+    "displayText": "ọmọ mi",
+    "syllables": [
+      "ọ",
+      "mọ",
+      "mi"
+    ],
+    "definition": "My baby",
+    "hint": "my baby",
+    "category": "people",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/be03ce29-bcc7-4af8-b031-a4b6233e61d8.mp3",
+    "imageUrl": "/content/img/omo_mi_my_baby.webp",
+    "syllableAudio": [
+      "/content/audio/ffd79224-e254-46f9-a67c-5eb9e84cfc46.mp3",
+      "/content/audio/26141daa-b32b-4c48-a50a-0b895ba05cde.mp3",
+      "/content/audio/2a4e0099-2119-40da-8a68-3739b7e186e5.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ookan_one": {
     "displayText": "oókan",
@@ -822,42 +2738,39 @@
       "kan"
     ],
     "definition": "one (used when counting)",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "ope_december": {
-    "displayText": "Ọ̀pẹ",
-    "syllables": [
-      "ọ̀",
-      "pẹ"
+    "hint": "one",
+    "category": "number",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/9b12ffd7-db6a-4ded-b7bf-e049985837d7.mp3",
+    "imageUrl": "/content/img/ookan_one.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": "December, the seventh month of the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
   },
-  "ori_head": {
-    "displayText": "orí",
+  "orunkun_knee": {
+    "displayText": "orúnkún",
     "syllables": [
       "o",
-      "rí"
+      "rún",
+      "kún"
     ],
-    "definition": "head",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "orun_neck": {
-    "displayText": "ọrùn",
-    "syllables": [
-      "ọ",
-      "rùn"
+    "definition": "knee",
+    "hint": "knee",
+    "category": "body",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0b42e4af-6ff7-46bc-9d77-a0d365718b4c.mp3",
+    "imageUrl": "/content/img/orunkun_knee.webp",
+    "syllableAudio": [
+      "/content/audio/8607c4d1-7681-49c8-885a-f43e3ada8dea.mp3",
+      "/content/audio/9841aff9-b1dd-452f-9cd7-06618758947a.mp3",
+      "/content/audio/cc8ca916-50d7-457c-818f-c96fda542962.mp3"
     ],
-    "definition": "neck",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "kit"
   },
   "osan_orange": {
     "displayText": "ọsàn",
@@ -866,20 +2779,36 @@
       "sàn"
     ],
     "definition": "orange (fruit)",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "orange",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/c8c5ff7b-21fc-41a1-bb8e-a39a44e0dd67.mp3",
+    "imageUrl": "/content/img/osan_orange.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "ose_soap": {
-    "displayText": "ọṣẹ",
+    "displayText": "ọṣẹ",
     "syllables": [
-      "ọ",
+      "ọ",
       "ṣẹ"
     ],
     "definition": "soap",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "soap",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/902b9708-21f2-4844-9175-651efd88b420.mp3",
+    "imageUrl": "/content/img/ose_soap.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "osupa_moon": {
     "displayText": "òṣùpá",
@@ -889,42 +2818,56 @@
       "pá"
     ],
     "definition": "moon",
-    "imageStyles": []
-  },
-  "owawa_october": {
-    "displayText": "Ọ̀wàwà",
-    "syllables": [
-      "ọ̀",
-      "wà",
-      "wà"
+    "hint": "moon",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/0d7eee1d-3526-4165-a56c-59631bb86eb6.mp3",
+    "imageUrl": "/content/img/osupa_moon.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
     ],
-    "definition": null,
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
   },
-  "owewe_september": {
-    "displayText": "Ọwẹ́wẹ",
+  "ounje_food": {
+    "displayText": "oúnjẹ",
     "syllables": [
-      "ọ",
-      "wẹ́",
-      "wẹ"
+      "o",
+      "ún",
+      "jẹ"
     ],
-    "definition": "September, the third month of the traditional Yoruba calendar, the Kọ́jọ́dá",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "definition": "food",
+    "hint": "food",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/5cc6d501-e84e-4256-bfaf-6387bd9787cc.mp3",
+    "imageUrl": "/content/img/ounje_food.webp",
+    "syllableAudio": [
+      "/content/audio/f76c3a12-af6a-4df3-ada7-88339edb90f5.mp3",
+      "/content/audio/85788817-811d-401c-8eeb-1fed5054ddc4.mp3",
+      "/content/audio/d8d4582c-553a-4773-814f-64db22391852.mp3"
+    ],
+    "syllableSource": "kit"
   },
-  "owo_hand": {
-    "displayText": "ọwọ",
+  "pa_kill": {
+    "displayText": "pa",
     "syllables": [
-      "ọ",
-      "wọ"
+      "pa"
     ],
-    "definition": "hand",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "definition": "to kill",
+    "hint": "kill",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/e814849a-4fe3-46e5-973f-f892168a490c.mp3",
+    "imageUrl": "/content/img/pa_kill.webp",
+    "syllableAudio": [
+      "/content/audio/0c69f1c9-88c4-4576-9300-18cc16575afe.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "pako_timber": {
     "displayText": "pákó",
@@ -933,9 +2876,76 @@
       "kó"
     ],
     "definition": "wood, plank, wooden board",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "timber",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/e8e44167-b646-449f-acb4-d5fc3cb7d3d4.mp3",
+    "imageUrl": "/content/img/pako_timber.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "pana_extinguish_fire": {
+    "displayText": "paná",
+    "syllables": [
+      "pa",
+      "ná"
+    ],
+    "definition": "to extinguish a fire",
+    "hint": "extinguish fire",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/d25aaa6f-8865-4250-8614-cfdbcf5ef249.mp3",
+    "imageUrl": "/content/img/pana_extinguish_fire.webp",
+    "syllableAudio": [
+      "/content/audio/177d4274-c2b5-4bc2-b454-5478e3adafc5.mp3",
+      "/content/audio/10f577ea-ec07-43e9-b022-ca9528efb18f.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "patewo_clap": {
+    "displayText": "pàtẹ́wọ́",
+    "syllables": [
+      "pà",
+      "tẹ́",
+      "wọ́"
+    ],
+    "definition": "to clap, to applaud",
+    "hint": "clap",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/824538e5-3f82-4aee-abc9-ab20df063b17.mp3",
+    "imageUrl": "/content/img/patewo_clap.webp",
+    "syllableAudio": [
+      "/content/audio/ee979aae-4e80-47bf-ac26-8cfb1cd3af5b.mp3",
+      "/content/audio/ddae64cd-f208-4b37-9304-dab3c3369c04.mp3",
+      "/content/audio/1b1c88a1-0617-477b-bcb1-ffa453ed0ee5.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "peja_to_fish": {
+    "displayText": "pẹja",
+    "syllables": [
+      "pẹ",
+      "ja"
+    ],
+    "definition": "to fish",
+    "hint": "to fish",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/510fdc1e-b240-41a8-9b8c-55b84a331778.mp3",
+    "imageUrl": "/content/img/peja_to_fish.webp",
+    "syllableAudio": [
+      "/content/audio/10a21ed8-be22-4a3d-b21e-9ab5b79bf0a8.mp3",
+      "/content/audio/fc7ff272-489b-4f30-b900-d7a2e7f422ff.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "pele_sorry": {
     "displayText": "pẹ̀lẹ́",
@@ -944,9 +2954,17 @@
       "lẹ́"
     ],
     "definition": "sorry (used to apologize or express condolence)",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "sorry",
+    "category": "social",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/f4551fb4-0559-4934-b8bc-9459436f2712.mp3",
+    "imageUrl": "/content/img/pele_sorry.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "pepeye_duck": {
     "displayText": "pẹ́pẹ́yẹ",
@@ -956,9 +2974,35 @@
       "yẹ"
     ],
     "definition": "duck",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "duck",
+    "category": "animal",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/41a94d7f-c3d8-426f-96ae-8b41352875f7.mp3",
+    "imageUrl": "/content/img/pepeye_duck.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "ra_buy": {
+    "displayText": "rà",
+    "syllables": [
+      "rà"
+    ],
+    "definition": "to buy",
+    "hint": "buy",
+    "category": "transfer",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/78948508-5ae9-4017-84b8-665a0771f374.mp3",
+    "imageUrl": "/content/img/ra_buy.webp",
+    "syllableAudio": [
+      "/content/audio/3986b72b-6c87-4d70-89df-16febb7de17e.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ra_crawl": {
     "displayText": "rá",
@@ -966,9 +3010,33 @@
       "rá"
     ],
     "definition": "to crawl",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "crawl",
+    "category": "action",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/e9d6401b-bfd5-46f1-abb6-64ebbb6d397f.mp3",
+    "imageUrl": "/content/img/ra_crawl.webp",
+    "syllableAudio": [
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "ran_send": {
+    "displayText": "rán",
+    "syllables": [
+      "rán"
+    ],
+    "definition": "to send",
+    "hint": "send",
+    "category": "transfer",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/cf6417ad-8cd0-4794-a32a-1dc1bc918440.mp3",
+    "imageUrl": "/content/img/ran_send.webp",
+    "syllableAudio": [
+      "/content/audio/ccd9fa1b-4268-4769-9b86-f01b8e2e3cf4.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "redio_radio": {
     "displayText": "rédíò",
@@ -978,9 +3046,90 @@
       "ò"
     ],
     "definition": null,
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "radio",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/28d55f4e-e556-495c-aa67-6479806a6838.mp3",
+    "imageUrl": "/content/img/redio_radio.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "rerin-in_laugh": {
+    "displayText": "rẹ́rìn-ín",
+    "syllables": [
+      "rẹ́",
+      "rìn",
+      "ín"
+    ],
+    "definition": "to laugh",
+    "hint": "laugh",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/b410e282-1f15-4af7-91bb-c6c482ab674c.mp3",
+    "imageUrl": "/content/img/rerin-in_laugh.webp",
+    "syllableAudio": [
+      "/content/audio/05a18f82-e2ff-428e-a8c7-d9c32db5bf32.mp3",
+      "/content/audio/ceac9111-1213-4f11-b954-5ecf5acaef0d.mp3",
+      "/content/audio/51f6d562-5140-4e59-95cd-48c562283312.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "rin_to_walk": {
+    "displayText": "rìn",
+    "syllables": [
+      "rìn"
+    ],
+    "definition": "to walk",
+    "hint": "to walk",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/8d12466d-111c-4fed-911b-edabc6b46cd8.mp3",
+    "imageUrl": "/content/img/rin_to_walk.webp",
+    "syllableAudio": [
+      "/content/audio/81657ca2-6690-4458-bed4-8839628e0a7d.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ro_think": {
+    "displayText": "rò",
+    "syllables": [
+      "rò"
+    ],
+    "definition": "to think",
+    "hint": "think",
+    "category": "mental",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/88bc50e9-b3b0-4287-a3d5-8abc0f3f0f4d.mp3",
+    "imageUrl": "/content/img/ro_think.webp",
+    "syllableAudio": [
+      "/content/audio/37d129a4-89bb-4f50-a644-b4776489dc67.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ru_carry": {
+    "displayText": "rù",
+    "syllables": [
+      "rù"
+    ],
+    "definition": "To carry a load",
+    "hint": "carry",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/2879e0f3-b32a-4a88-b826-5216e9bc9235.mp3",
+    "imageUrl": "/content/img/ru_carry.webp",
+    "syllableAudio": [
+      "/content/audio/2c6ed87b-9532-430a-a74f-7d747660ebbe.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "sare_run": {
     "displayText": "sáré",
@@ -989,21 +3138,36 @@
       "ré"
     ],
     "definition": "to run",
-    "imageStyles": [
-      "cartoon"
-    ]
-  },
-  "seere_january": {
-    "displayText": "Ṣẹẹrẹ",
-    "syllables": [
-      "ṣẹ",
-      "ẹ",
-      "rẹ"
+    "hint": "run",
+    "category": "action",
+    "speaker": "speaker2",
+    "voice": "speaker2",
+    "audioUrl": "/content/audio/07d034c1-234f-49a4-8695-96bd9f594a93.mp3",
+    "imageUrl": "/content/img/sare_run.webp",
+    "syllableAudio": [
+      null,
+      null
     ],
-    "definition": null,
-    "imageStyles": [
-      "cartoon"
-    ]
+    "syllableSource": "derived from spelling"
+  },
+  "sere_play": {
+    "displayText": "ṣeré",
+    "syllables": [
+      "ṣe",
+      "ré"
+    ],
+    "definition": "to play, to play a game",
+    "hint": "play",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/92d6efd6-0960-47df-9d37-57b945df5362.mp3",
+    "imageUrl": "/content/img/sere_play.webp",
+    "syllableAudio": [
+      "/content/audio/23f70f73-86fe-4965-8dba-a5487b21b4c5.mp3",
+      "/content/audio/c28a64bb-f19f-4e22-a997-16bc400676b1.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "sibi_spoon": {
     "displayText": "ṣíbí",
@@ -1012,9 +3176,146 @@
       "bí"
     ],
     "definition": "spoon",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "spoon",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/c6e99361-5c22-47cb-9ade-05f9a995c5ed.mp3",
+    "imageUrl": "/content/img/sibi_spoon.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "so_o_nu_throw_away": {
+    "displayText": "sọ ọ́ nù",
+    "syllables": [
+      "sọ",
+      "ọ́",
+      "nù"
+    ],
+    "definition": "Throw it away",
+    "hint": "throw away",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/675e1395-d7f3-4020-95a0-fccf72a49935.mp3",
+    "imageUrl": "/content/img/so_o_nu_throw_away.webp",
+    "syllableAudio": [
+      "/content/audio/3600980b-3b13-4cfa-a862-6e68169a8a99.mp3",
+      "/content/audio/65c57b65-db43-4d0e-aada-825a681d6914.mp3",
+      "/content/audio/ecf7bd3d-8942-4f3e-9ae0-75c945f2c818.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "so_throw": {
+    "displayText": "sọ",
+    "syllables": [
+      "sọ"
+    ],
+    "definition": "To throw, cast, or hurl",
+    "hint": "throw",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0ab4d57f-196d-47e4-8540-f60dbc5bf7ff.mp3",
+    "imageUrl": "/content/img/so_throw.webp",
+    "syllableAudio": [
+      "/content/audio/35633003-bc11-4034-be81-d6040cb943b3.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "sokoto_pants": {
+    "displayText": "ṣòkòtò",
+    "syllables": [
+      "ṣò",
+      "kò",
+      "tò"
+    ],
+    "definition": "pants, trousers",
+    "hint": "pants",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/e144afd0-07d5-4ad8-814f-779336c92d88.mp3",
+    "imageUrl": "/content/img/sokoto_pants.webp",
+    "syllableAudio": [
+      "/content/audio/22ff0040-7a2c-4864-91f7-91da7e40c720.mp3",
+      "/content/audio/0b0b7c2d-17de-4a45-a4e1-9bc0bd77048a.mp3",
+      "/content/audio/ad62a048-4fca-45e5-923d-95e1a8a0512c.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "sun_to_cry": {
+    "displayText": "sun",
+    "syllables": [
+      "sun"
+    ],
+    "definition": "to cry",
+    "hint": "to cry",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/20b8c591-d390-4476-9522-3c91ba2b02bf.mp3",
+    "imageUrl": "/content/img/sun_to_cry.webp",
+    "syllableAudio": [
+      "/content/audio/9ffc5c0a-eaf1-4af7-9f83-784f9a619125.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "sun_to_sleep": {
+    "displayText": "sùn",
+    "syllables": [
+      "sùn"
+    ],
+    "definition": "to sleep",
+    "hint": "to sleep",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/549d88ca-3d3c-4e6f-950b-7812f0476e5e.mp3",
+    "imageUrl": "/content/img/sun_to_sleep.webp",
+    "syllableAudio": [
+      "/content/audio/79e8738f-1437-4c1f-b8f2-37d538b34ee3.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "sunkun_weep": {
+    "displayText": "sunkún",
+    "syllables": [
+      "sun",
+      "kún"
+    ],
+    "definition": "to weep, to cry",
+    "hint": "weep",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0db67ff5-492c-42fa-93e5-6d5aed2caa15.mp3",
+    "imageUrl": "/content/img/sunkun_weep.webp",
+    "syllableAudio": [
+      "/content/audio/357fe809-9a95-45d6-bc7c-f9819ee42949.mp3",
+      "/content/audio/0157b9bf-ab00-455d-b443-6bb1952bccf1.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "te_press": {
+    "displayText": "tẹ̀",
+    "syllables": [
+      "tẹ̀"
+    ],
+    "definition": "to press, push, click, type",
+    "hint": "press",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/bfb13317-de85-44d3-a29a-d2cf5b7549e3.mp3",
+    "imageUrl": "/content/img/te_press.webp",
+    "syllableAudio": [
+      "/content/audio/16f94834-f502-416a-9f52-10fbc68f74bc.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "wa_come": {
     "displayText": "wá",
@@ -1022,8 +3323,133 @@
       "wá"
     ],
     "definition": "come",
-    "imageStyles": [
-      "cartoon"
-    ]
+    "hint": "come",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/1d802d4e-4ff9-4cb8-8bcd-29697e2ee2cf.mp3",
+    "imageUrl": "/content/img/wa_come.webp",
+    "syllableAudio": [
+      "/content/audio/d1da1cdb-ac70-446b-8e07-db91b26fd203.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "wara_milk": {
+    "displayText": "wàrà",
+    "syllables": [
+      "wà",
+      "rà"
+    ],
+    "definition": "milk, cheese",
+    "hint": "milk",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/bf2ec189-18d4-408b-8ed2-1466d4ef9220.mp3",
+    "imageUrl": "/content/img/wara_milk.webp",
+    "syllableAudio": [
+      "/content/audio/3a5a7897-d90f-4cc8-9eb7-ba420fba1e7b.mp3",
+      "/content/audio/7c1288e4-0dd1-45a4-8f74-88d56ff2dff1.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "we_to_bathe": {
+    "displayText": "wẹ̀",
+    "syllables": [
+      "wẹ̀"
+    ],
+    "definition": "to bathe, to shower",
+    "hint": "to bathe",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/9d42c32a-4434-4458-98bb-897ce79c1cdd.mp3",
+    "imageUrl": "/content/img/we_to_bathe.webp",
+    "syllableAudio": [
+      "/content/audio/4547fde4-c2a9-402a-841d-f184bdf3cf76.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "wo_o_wear_it": {
+    "displayText": "wọ̀ ọ́",
+    "syllables": [
+      "wọ̀",
+      "ọ́"
+    ],
+    "definition": "Wear it",
+    "hint": "wear it",
+    "category": "command",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/05efe1c3-9211-45ec-b5de-2984996722a4.mp3",
+    "imageUrl": "/content/img/wo_o_wear_it.webp",
+    "syllableAudio": [
+      "/content/audio/661754e5-dded-4c38-8f9b-2452b24abc80.mp3",
+      "/content/audio/24c384a3-af67-4089-a7df-2f13d755d543.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "wo_to_look": {
+    "displayText": "wò",
+    "syllables": [
+      "wò"
+    ],
+    "definition": "to look",
+    "hint": "to look",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/2ef217ce-9324-4165-b9c7-536650615199.mp3",
+    "imageUrl": "/content/img/wo_to_look.webp",
+    "syllableAudio": [
+      "/content/audio/cf336e51-b9ee-4e2b-a316-26b22fa1113a.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "yara_igbalejo_living_room": {
+    "displayText": "yàrá ìgbàlejò",
+    "syllables": [
+      "yà",
+      "rá",
+      "ì",
+      "gbà",
+      "le",
+      "jò"
+    ],
+    "definition": "living room, parlor",
+    "hint": "living room",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/41a449e4-2f4e-4a0f-bf31-0d9d26e62e15.mp3",
+    "imageUrl": "/content/img/yara_igbalejo_living_room.webp",
+    "syllableAudio": [
+      "/content/audio/746cdb57-a238-4ddc-9adf-7c9acae3d8b1.mp3",
+      "/content/audio/fdf6b261-c831-4c87-9b4e-f90676233f40.mp3",
+      "/content/audio/797b7296-fb3a-45b3-bfdd-b85190fa9fe9.mp3",
+      "/content/audio/812b5351-85e7-4c4e-a74a-2c37483e5064.mp3",
+      "/content/audio/05e6fcfb-cb8d-408e-8d29-29824f22bbc1.mp3",
+      "/content/audio/0c726930-8cd0-43fb-b70a-a26339d97665.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "yara_room": {
+    "displayText": "yàrá",
+    "syllables": [
+      "yà",
+      "rá"
+    ],
+    "definition": "room",
+    "hint": "room",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/8ddca4da-b4e7-4c72-8569-0e03f5a9e1f6.mp3",
+    "imageUrl": "/content/img/yara_room.webp",
+    "syllableAudio": [
+      "/content/audio/ac5c2e97-3c9d-4f45-b240-30a7ea9d6950.mp3",
+      "/content/audio/cbe99a54-cd2b-44cb-921d-d82789d86a1c.mp3"
+    ],
+    "syllableSource": "kit"
   }
 }

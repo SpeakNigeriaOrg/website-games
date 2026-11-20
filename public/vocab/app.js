@@ -1,14 +1,13 @@
 // --- GLOBAL CONFIGURATION ---
 // Sibling of the phonics and tone games, and deliberately built from the same
-// parts. Image and audio bytes live in R2; the word data ships same-origin and
-// is read from the phonics game's copies rather than duplicated, because
-// sync_dictionary_data.py keeps one vendored copy fresh for all three games.
+// parts. Recordings and pictures are the Yoruba game suite's checked content
+// kit, served same-origin at /content/; the word data is read from the phonics
+// game's copy (generated from the kit by tools/kit_to_practice.mjs, with every
+// audio and image URL spelled out) rather than duplicated.
 // `../phonics/vocab.json` resolves to /phonics/vocab.json from /vocab/.
-const BASE_URL = "https://gamemedia.speaknigeria.org/";
 const DATA_DIR = "../phonics/";
 
-// speaker1 is excluded for the same reason the tone game excludes it: only 11
-// of its words are playable, which is too thin to build levels from.
+// Speakers keep their old keys, by person: speaker3 = Femi, speaker2 = Tolani.
 const ALLOWED_SPEAKERS = ["speaker2", "speaker3"];
 
 // Which playlists this game offers. sessions.json also defines tone_pattern and
@@ -21,8 +20,6 @@ const OFFERED_CATEGORIES = ["themed", "endless_practice"];
 // distractors are topped up from the same speaker's wider pool when a level
 // cannot fill this on its own.
 const CHOICE_COUNT = 4;
-
-let CURRENT_IMAGE_STYLE = "cartoon";
 // ----------------------------
 
 let gameData = [];
@@ -44,7 +41,11 @@ let requestedShare = null;
 // Every playable word per speaker, for topping up distractors.
 let speakerPool = {};
 
-// The English gloss, taken from the word id - the id is
+// The English gloss. vocab.json carries it as `hint` (the generator takes the
+// English half of the id, now that both halves can contain underscores - see
+// tools/kit_to_practice.mjs); this is the fallback when it does not.
+//
+// Taken from the word id - the id is
 // <romanized yoruba>_<english>, so the gloss is everything after the LAST
 // underscore. Not the first: "e_joo_please" has its extra underscore in the
 // Yoruba half (ẹ jọ̀ọ́ is two words), and splitting on the first would hint
@@ -200,21 +201,18 @@ document.getElementById('start-overlay').addEventListener('click', (event) => {
     }
 });
 
-// A playable word, or null. Needs a real image and a word recording for this
-// speaker; sessions.json's validSpeakers is the only trustworthy evidence of
-// the latter, which is why levels are built from it rather than from vocab.json.
+// A playable word, or null. Needs the kit's picture and the word's recording,
+// and plays only in its own speaker's levels (each kit word has one recording).
 function buildWord(wordId, wordData, speaker) {
-    const imageStyles = wordData?.imageStyles || [];
-    if (!wordData) return null;
-    if (imageStyles.length === 0) {
-        console.error(`[Missing Image] "${wordId}" has no labeled image - excluding it.`);
+    if (!wordData || wordData.speaker !== speaker) return null;
+    if (!wordData.imageUrl || !wordData.audioUrl) {
+        console.error(`[Missing Media] "${wordId}" has no picture or recording - excluding it.`);
         return null;
     }
-    const chosenStyle = imageStyles.includes(CURRENT_IMAGE_STYLE) ? CURRENT_IMAGE_STYLE : imageStyles[0];
     return {
         id: wordId,
         displayText: wordData.displayText.normalize("NFC"),
-        english: englishOf(wordId),
+        english: wordData.hint || englishOf(wordId),
         // Named targetSyllables because analytics/game-events.js reads the
         // syllable count through that field (or bareSyllables) to report it.
         // This game never shows syllables, but "are longer words harder to
@@ -222,16 +220,16 @@ function buildWord(wordId, wordData, speaker) {
         // report 0 for every word instead.
         targetSyllables: wordData.syllables,
         speaker,
-        fullAudioUrl: `${BASE_URL}words/${speaker}/${wordId}.wav`,
-        imageUrl: `${BASE_URL}images/${chosenStyle}/${wordId}.png`
+        fullAudioUrl: wordData.audioUrl,
+        imageUrl: wordData.imageUrl
     };
 }
 
 async function loadGame() {
     try {
         const [wordsResponse, sessionsResponse] = await Promise.all([
-            fetch(DATA_DIR + 'vocab.json'),
-            fetch(DATA_DIR + 'sessions.json')
+            fetch(DATA_DIR + 'vocab.json?v=2'),
+            fetch(DATA_DIR + 'sessions.json?v=2')
         ]);
         const dictionaryWords = await wordsResponse.json();
         const sessions = await sessionsResponse.json();
