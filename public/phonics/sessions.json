@@ -86,7 +86,8 @@
       "okuta_stone",
       "pako_timber",
       "ose_soap",
-      "kalamu_pen"
+      "kalamu_pen",
+      "boolu_ball"
     ]
   },
   {
@@ -96,12 +97,13 @@
       "speaker3"
     ],
     "words": [
-      "boolu_ball",
       "redio_radio",
       "digi_mirror",
       "oko_panapana_firetruck",
       "aga_chair",
-      "alupupu_motorcycle"
+      "fila_hat",
+      "alupupu_motorcycle",
+      "isere_toy"
     ]
   },
   {
@@ -111,8 +113,8 @@
       "speaker3"
     ],
     "words": [
-      "isere_toy",
       "obe_knife",
+      "ileke_beads",
       "moto_automobile",
       "sokoto_pants",
       "sibi_spoon",
@@ -148,6 +150,22 @@
       "ete_lip",
       "eyin_back",
       "aya_chest"
+    ]
+  },
+  {
+    "levelId": "Level 3: Body Parts (Ẹ̀yà Ara) — speaker1",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker1"
+    ],
+    "words": [
+      "orun_neck",
+      "ikun_stomach",
+      "ori_head",
+      "owo_hand",
+      "imu_nose",
+      "enu_mouth",
+      "ejika_shoulder"
     ]
   },
   {
@@ -253,7 +271,8 @@
       "ina_fire",
       "ile-iwe_school",
       "yara_igbalejo_living_room",
-      "ofuurufu_sky"
+      "ofuurufu_sky",
+      "ile_home"
     ]
   },
   {
@@ -263,9 +282,9 @@
       "speaker3"
     ],
     "words": [
-      "ile_home",
       "yara_room",
       "ile_idana_kitchen",
+      "oja_market",
       "igbe_feces",
       "osupa_moon",
       "aye_world"
@@ -291,12 +310,11 @@
     ],
     "words": [
       "buredi_bread",
+      "oka_baba_sorghum",
       "wara_milk",
       "goomu_gum",
       "kasu_cashew",
-      "iresi_rice",
-      "ibepe_papaya",
-      "ogede_banana"
+      "iresi_rice"
     ]
   },
   {
@@ -306,11 +324,25 @@
       "speaker3"
     ],
     "words": [
+      "ibepe_papaya",
+      "ogede_banana",
+      "ewuro_bitterleaf",
       "alubosa_onion",
       "akara_oyinbo_cake",
-      "ogede_agbagba_plantain",
+      "ogede_agbagba_plantain"
+    ]
+  },
+  {
+    "levelId": "Level 6: Everyday Life & Food (Ìgbésí Ayé) 3 — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "amala_amala",
       "ounje_food",
       "osan_orange",
+      "iyan_pounded_yam",
       "oka_grain",
       "isu_yam"
     ]
@@ -341,7 +373,8 @@
       "egbon_older_sibling",
       "o_ti_to_enough",
       "mama_mother",
-      "o_se_thank_you"
+      "o_se_thank_you",
+      "alejo_guest"
     ]
   },
   {
@@ -404,7 +437,7 @@
       "keke_bicycle",
       "buredi_bread",
       "we_to_bathe",
-      "rerin-in_laugh"
+      "oka_baba_sorghum"
     ]
   },
   {
@@ -414,14 +447,14 @@
       "speaker3"
     ],
     "words": [
+      "rerin-in_laugh",
+      "irori_pillow",
       "so_o_nu_throw_away",
       "patewo_clap",
       "rin_to_walk",
       "ogbon_wisdom",
       "ogun_twenty",
-      "wara_milk",
-      "pana_extinguish_fire",
-      "ran_send"
+      "wara_milk"
     ]
   },
   {
@@ -431,14 +464,14 @@
       "speaker3"
     ],
     "words": [
+      "pana_extinguish_fire",
+      "ran_send",
       "ibusun_bed",
       "ile_land",
       "goomu_gum",
       "agba_adult",
       "kasu_cashew",
-      "ro_think",
-      "nu_u_cleanit",
-      "ina_fire"
+      "ro_think"
     ]
   },
   {
@@ -448,14 +481,14 @@
       "speaker3"
     ],
     "words": [
+      "nu_u_cleanit",
+      "ina_fire",
       "kiniun_lion",
       "ma_fowo_kan_an_no_touch",
       "iresi_rice",
       "o_doti_dirty",
       "ohun_voice",
-      "bata_shoe",
-      "dana_cook",
-      "ma_se_bee_stop_that"
+      "kokoro_key"
     ]
   },
   {
@@ -465,14 +498,14 @@
       "speaker3"
     ],
     "words": [
+      "bata_shoe",
+      "dana_cook",
+      "ma_se_bee_stop_that",
       "kun_growl",
       "ero_asoromagbesi_radio",
+      "ooya_comb",
       "fi_sile_leave_it",
-      "atelewo_palm",
-      "gege_pencil",
-      "jokoo_je_sit_still",
-      "ile-iwe_school",
-      "yara_igbalejo_living_room"
+      "atelewo_palm"
     ]
   },
   {
@@ -482,14 +515,14 @@
       "speaker3"
     ],
     "words": [
+      "gege_pencil",
+      "jokoo_je_sit_still",
+      "ile-iwe_school",
+      "yara_igbalejo_living_room",
       "inura_towel",
       "eyin_tooth",
       "ibepe_papaya",
-      "mu_to_drink",
-      "ikoko_pot",
-      "mu_omi_drink_water",
-      "okuta_stone",
-      "orunkun_knee"
+      "mu_to_drink"
     ]
   },
   {
@@ -499,14 +532,14 @@
       "speaker3"
     ],
     "words": [
+      "ikoko_pot",
+      "mu_omi_drink_water",
+      "okuta_stone",
+      "orunkun_knee",
       "so_throw",
       "mu_take",
       "ijapa_inu_omi_aquatic_turtle",
-      "ra_buy",
-      "nu_clean",
-      "ijapa_tortoise",
-      "amotekun_cheetah",
-      "ogede_banana"
+      "ra_buy"
     ]
   },
   {
@@ -516,14 +549,14 @@
       "speaker3"
     ],
     "words": [
+      "nu_clean",
+      "ijapa_tortoise",
+      "amotekun_cheetah",
+      "ogede_banana",
+      "ewuro_bitterleaf",
       "pako_timber",
       "sere_play",
-      "di_bind",
-      "doti_dirty",
-      "alubosa_onion",
-      "kan_touch",
-      "ebi_hunger",
-      "odo_agutan_lamb"
+      "di_bind"
     ]
   },
   {
@@ -533,14 +566,14 @@
       "speaker3"
     ],
     "words": [
+      "doti_dirty",
+      "alubosa_onion",
+      "kan_touch",
+      "ebi_hunger",
+      "odo_agutan_lamb",
       "ose_soap",
       "sun_to_sleep",
-      "kalamu_pen",
-      "ofuurufu_sky",
-      "akara_oyinbo_cake",
-      "boolu_ball",
-      "igbalejo_hospitality",
-      "adiye_chicken"
+      "kalamu_pen"
     ]
   },
   {
@@ -550,14 +583,14 @@
       "speaker3"
     ],
     "words": [
+      "ofuurufu_sky",
+      "akara_oyinbo_cake",
+      "boolu_ball",
+      "igbalejo_hospitality",
+      "adiye_chicken",
       "ese_leg",
       "redio_radio",
-      "digi_mirror",
-      "agunfon_giraffe",
-      "luwe_swim",
-      "omo_ehoro_baby_bunny",
-      "omo_mi_my_baby",
-      "ma_sunkun_not_cry"
+      "digi_mirror"
     ]
   },
   {
@@ -567,14 +600,14 @@
       "speaker3"
     ],
     "words": [
-      "nle_at_home",
+      "agunfon_giraffe",
+      "luwe_swim",
+      "omo_ehoro_baby_bunny",
+      "omo_mi_my_baby",
+      "ma_sunkun_not_cry",
       "o_gbona_hot",
       "oko_panapana_firetruck",
-      "wo_to_look",
-      "ile_home",
-      "ebi_n_pa_e_you_hungry",
-      "pa_kill",
-      "aga_chair"
+      "wo_to_look"
     ]
   },
   {
@@ -584,13 +617,14 @@
       "speaker3"
     ],
     "words": [
+      "ile_home",
+      "ebi_n_pa_e_you_hungry",
+      "pa_kill",
+      "tabili_table",
+      "aga_chair",
       "jeun_eat",
       "ru_carry",
-      "ogede_agbagba_plantain",
-      "wo_o_wear_it",
-      "atete_first",
-      "ketekete_abila_zebra",
-      "egbon_older_sibling"
+      "ogede_agbagba_plantain"
     ]
   },
   {
@@ -600,13 +634,14 @@
       "speaker3"
     ],
     "words": [
+      "fila_hat",
+      "wo_o_wear_it",
+      "atete_first",
+      "ketekete_abila_zebra",
+      "egbon_older_sibling",
       "yara_room",
       "abila_striped",
-      "ile_idana_kitchen",
-      "ehoro_rabbit",
-      "kelekele_gently",
-      "o_ti_to_enough",
-      "mama_mother"
+      "ile_idana_kitchen"
     ]
   },
   {
@@ -616,13 +651,14 @@
       "speaker3"
     ],
     "words": [
+      "ehoro_rabbit",
+      "oja_market",
+      "kelekele_gently",
+      "o_ti_to_enough",
+      "mama_mother",
+      "aago_clock",
       "igbe_feces",
-      "aja_dog",
-      "gbo_to_bark",
-      "idana_cooking",
-      "peja_to_fish",
-      "dii_mu_hold",
-      "ja_to_pluck_off"
+      "aja_dog"
     ]
   },
   {
@@ -632,13 +668,14 @@
       "speaker3"
     ],
     "words": [
+      "gbo_to_bark",
+      "idana_cooking",
+      "amala_amala",
+      "peja_to_fish",
+      "dii_mu_hold",
+      "ja_to_pluck_off",
       "sunkun_weep",
-      "alupupu_motorcycle",
-      "isere_toy",
-      "fun_mi_give_me",
-      "obe_knife",
-      "o_se_thank_you",
-      "maluu_cow"
+      "alupupu_motorcycle"
     ]
   },
   {
@@ -648,13 +685,14 @@
       "speaker3"
     ],
     "words": [
+      "isere_toy",
+      "fun_mi_give_me",
+      "obe_knife",
+      "o_se_thank_you",
+      "maluu_cow",
+      "ileke_beads",
       "ounje_food",
-      "ekun_district",
-      "moto_automobile",
-      "osan_orange",
-      "sun_to_cry",
-      "sokoto_pants",
-      "sibi_spoon"
+      "ekun_district"
     ]
   },
   {
@@ -664,13 +702,14 @@
       "speaker3"
     ],
     "words": [
+      "ferese_window",
+      "moto_automobile",
+      "osan_orange",
+      "sun_to_cry",
+      "sokoto_pants",
+      "sibi_spoon",
       "irun_hair",
-      "kekere_small",
-      "erin_elephant",
-      "dide_stand",
-      "fun_give",
-      "ekun_leopard",
-      "te_press"
+      "kekere_small"
     ]
   },
   {
@@ -680,13 +719,30 @@
       "speaker3"
     ],
     "words": [
-      "oka_grain",
+      "erin_elephant",
+      "dide_stand",
+      "fun_give",
+      "ekun_leopard",
+      "iyan_pounded_yam",
+      "alejo_guest",
+      "te_press",
+      "oka_grain"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 20 — speaker3",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
       "isu_yam",
       "osupa_moon",
       "aso_cloth",
       "aye_world",
       "ketekete_donkey",
-      "jokoo_sit"
+      "jokoo_sit",
+      "ife_cup"
     ]
   },
   {
@@ -749,6 +805,23 @@
       "eye_bird",
       "ewa_beauty",
       "pele_sorry"
+    ]
+  },
+  {
+    "levelId": "Endless Practice 1 — speaker1",
+    "category": "endless_practice",
+    "validSpeakers": [
+      "speaker1"
+    ],
+    "words": [
+      "orun_neck",
+      "ikun_stomach",
+      "awo_plate",
+      "ori_head",
+      "owo_hand",
+      "imu_nose",
+      "enu_mouth",
+      "ejika_shoulder"
     ]
   }
 ]

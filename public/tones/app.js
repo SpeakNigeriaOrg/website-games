@@ -1,6 +1,6 @@
 // Level names keep the speaker key (speaker3, speaker2) as their id, for shared links and analytics; players see
 // the speaker's name.
-const SPEAKER_NAMES = { speaker3: 'Femi', speaker2: 'Tolani' };
+const SPEAKER_NAMES = { speaker3: 'Femi', speaker2: 'Tolani', speaker1: 'Dapo' };
 const levelLabel = (id) => id.replace(/speaker\d+/g, (k) => SPEAKER_NAMES[k] || k);
 // --- GLOBAL CONFIGURATION ---
 // Recordings and pictures are the Yoruba game suite's checked content kit,

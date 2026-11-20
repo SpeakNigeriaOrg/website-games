@@ -112,6 +112,11 @@
       "tone": "mid",
       "source": "canonical"
     },
+    "fe": {
+      "audio": "/content/audio/44a674bb-4d70-4940-8cfe-27a2dfc2374b.mp3",
+      "tone": "mid",
+      "source": "own clip of ife_cup"
+    },
     "fi": {
       "audio": "/content/audio/e71ae3b1-4439-418a-9154-57ca86794a84.mp3",
       "tone": "mid",
@@ -342,6 +347,11 @@
       "tone": "low",
       "source": "canonical"
     },
+    "kọ́": {
+      "audio": "/content/audio/7417274b-81e5-430a-b2a4-a7827ca9b4b9.mp3",
+      "tone": "high",
+      "source": "own clip of kokoro_key"
+    },
     "le": {
       "audio": "/content/audio/23e72d00-bf4b-47ad-9b57-34b6ebbe27f1.mp3",
       "tone": "mid",
@@ -552,6 +562,11 @@
       "tone": "low",
       "source": "canonical"
     },
+    "rí": {
+      "audio": "/content/audio/de9a8d4a-74d5-43dc-92d3-7daf46750328.mp3",
+      "tone": "high",
+      "source": "own clip of irori_pillow"
+    },
     "rò": {
       "audio": "/content/audio/37d129a4-89bb-4f50-a644-b4776489dc67.mp3",
       "tone": "low",
@@ -586,6 +601,11 @@
       "audio": "/content/audio/01e6d418-a956-4731-9794-5aa3a730d5c7.mp3",
       "tone": "low",
       "source": "canonical"
+    },
+    "rọ́": {
+      "audio": "/content/audio/4fb07962-7d46-45b2-b027-86141e7abdf8.mp3",
+      "tone": "high",
+      "source": "own clip of kokoro_key"
     },
     "sun": {
       "audio": "/content/audio/da3ffbe8-90c8-44fa-8512-ee9a1a692b0c.mp3",

@@ -1,4 +1,25 @@
 {
+  "aago_clock": {
+    "displayText": "aago",
+    "syllables": [
+      "a",
+      "a",
+      "go"
+    ],
+    "definition": "clock, watch",
+    "hint": "clock",
+    "category": null,
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/cfd94be1-6e85-42a2-b4e8-7f6201517f55.mp3",
+    "imageUrl": "/content/img/aago_clock.webp",
+    "syllableAudio": [
+      "/content/audio/a9a048d9-a3cf-49c9-921b-0a082359bbe9.mp3",
+      "/content/audio/a6782305-01ae-4a2e-acb3-aa3583913d78.mp3",
+      "/content/audio/be43c485-ba20-4387-851f-9e330c74ab05.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "abila_striped": {
     "displayText": "abìlà",
     "syllables": [
@@ -188,6 +209,27 @@
     ],
     "syllableSource": "derived from spelling"
   },
+  "alejo_guest": {
+    "displayText": "àlejò",
+    "syllables": [
+      "à",
+      "le",
+      "jò"
+    ],
+    "definition": "guest, visitor, stranger",
+    "hint": "guest",
+    "category": "people",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/ee78fb77-7ded-45f2-8b9e-53c1e222252e.mp3",
+    "imageUrl": "/content/img/alejo_guest.webp",
+    "syllableAudio": [
+      "/content/audio/c8142cb9-f7fd-4694-a734-4d08109408b8.mp3",
+      "/content/audio/23e72d00-bf4b-47ad-9b57-34b6ebbe27f1.mp3",
+      "/content/audio/25db3741-fd8b-4404-b6d7-bea98dd9b77c.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "alubosa_onion": {
     "displayText": "àlùbọ́sà",
     "syllables": [
@@ -231,6 +273,27 @@
       "/content/audio/f9b0781c-fd85-46dc-a1b8-1a0d9ccedef9.mp3",
       "/content/audio/18870575-8df2-434c-bbca-7191085f72ad.mp3",
       "/content/audio/ff918692-62fe-4fe8-af8a-b6ad72da96dc.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "amala_amala": {
+    "displayText": "àmàlà",
+    "syllables": [
+      "à",
+      "mà",
+      "là"
+    ],
+    "definition": "amala (thick paste made from yam or cassava flour)",
+    "hint": "amala",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/ebe36030-b638-4659-b141-3fb49e0bb6e0.mp3",
+    "imageUrl": "/content/img/amala_amala.webp",
+    "syllableAudio": [
+      "/content/audio/2384a6e7-6ae7-42b0-8fb5-88c168c1f62d.mp3",
+      "/content/audio/bb673f97-f8d0-41c3-98d8-ac0d891a869e.mp3",
+      "/content/audio/ff78b7ec-395f-4bb4-9379-82a89c1d58f5.mp3"
     ],
     "syllableSource": "kit"
   },
@@ -319,6 +382,25 @@
       "/content/audio/c5e3a526-9041-49d3-842f-24628b2f3120.mp3"
     ],
     "syllableSource": "kit"
+  },
+  "awo_plate": {
+    "displayText": "àwo",
+    "syllables": [
+      "à",
+      "wo"
+    ],
+    "definition": "dish, plate",
+    "hint": "plate",
+    "category": "object",
+    "speaker": "speaker1",
+    "voice": "speaker1",
+    "audioUrl": "/content/audio/83736f3c-04c4-4638-b088-f5c79bc4c6a0.mp3",
+    "imageUrl": "/content/img/awo_plate.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "aya_chest": {
     "displayText": "àyà",
@@ -682,6 +764,27 @@
     ],
     "syllableSource": "kit"
   },
+  "ejika_shoulder": {
+    "displayText": "ejika",
+    "syllables": [
+      "e",
+      "ji",
+      "ka"
+    ],
+    "definition": "shoulder",
+    "hint": "shoulder",
+    "category": "body",
+    "speaker": "speaker1",
+    "voice": "speaker1",
+    "audioUrl": "/content/audio/8fc919d0-c42b-4dfa-ab49-88a3a66adae0.mp3",
+    "imageUrl": "/content/img/ejika_shoulder.webp",
+    "syllableAudio": [
+      null,
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
   "ejo_snake": {
     "displayText": "ejò",
     "syllables": [
@@ -759,6 +862,25 @@
       "/content/audio/58e801f4-e77b-4fae-b91c-187ca6a6fc36.mp3"
     ],
     "syllableSource": "kit"
+  },
+  "enu_mouth": {
+    "displayText": "ẹnu",
+    "syllables": [
+      "ẹ",
+      "nu"
+    ],
+    "definition": "mouth",
+    "hint": "mouth",
+    "category": "body",
+    "speaker": "speaker1",
+    "voice": "speaker1",
+    "audioUrl": "/content/audio/5ebbde5e-c303-4ce6-b42b-bd42fd758b3c.mp3",
+    "imageUrl": "/content/img/enu_mouth.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "ere_game": {
     "displayText": "eré",
@@ -983,6 +1105,27 @@
     ],
     "syllableSource": "derived from spelling"
   },
+  "ewuro_bitterleaf": {
+    "displayText": "ewúro",
+    "syllables": [
+      "e",
+      "wú",
+      "ro"
+    ],
+    "definition": "bitterleaf",
+    "hint": "bitterleaf",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/3e58f6f0-76fa-40a8-af17-c23e0b7ff6ae.mp3",
+    "imageUrl": "/content/img/ewuro_bitterleaf.webp",
+    "syllableAudio": [
+      "/content/audio/247da6f2-e579-464b-8500-f124cf43c02e.mp3",
+      "/content/audio/2e78da2b-3fa0-4a7e-a51e-291f0ef9952e.mp3",
+      "/content/audio/126dcaf1-8699-4ffc-a946-59c88d566e74.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "eye_bird": {
     "displayText": "ẹyẹ",
     "syllables": [
@@ -1040,6 +1183,27 @@
     ],
     "syllableSource": "kit"
   },
+  "ferese_window": {
+    "displayText": "fèrèsé",
+    "syllables": [
+      "fè",
+      "rè",
+      "sé"
+    ],
+    "definition": "window",
+    "hint": "window",
+    "category": null,
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c0292846-b42d-4f2b-93cf-64044e2e5449.mp3",
+    "imageUrl": "/content/img/ferese_window.webp",
+    "syllableAudio": [
+      "/content/audio/819ba54c-63d3-44ff-b080-edc2e2460bfc.mp3",
+      "/content/audio/0a185770-fa52-4252-93fe-fba5168c9825.mp3",
+      "/content/audio/0d5eaea6-c904-4bfa-a756-def9aa678dad.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "fi_sile_leave_it": {
     "displayText": "fi sílẹ̀",
     "syllables": [
@@ -1058,6 +1222,25 @@
       "/content/audio/d63a3530-77cc-45b8-8290-bedb75be1dbb.mp3",
       "/content/audio/7af61081-8540-4207-8659-fca4f0d967cb.mp3",
       "/content/audio/bb9e51a7-580f-45d1-99fd-9b71d7786d83.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "fila_hat": {
+    "displayText": "fìlà",
+    "syllables": [
+      "fì",
+      "là"
+    ],
+    "definition": "hat, cap (in particular) the traditional Yoruba caps worn by males.",
+    "hint": "hat",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c8041709-66ce-4fc5-94bb-3002794078de.mp3",
+    "imageUrl": "/content/img/fila_hat.webp",
+    "syllableAudio": [
+      "/content/audio/2f0e16ca-0433-4717-9157-0a24328870b7.mp3",
+      "/content/audio/989e5609-8c12-4525-8c82-2f45c567ceb0.mp3"
     ],
     "syllableSource": "kit"
   },
@@ -1255,6 +1438,25 @@
     ],
     "syllableSource": "derived from spelling"
   },
+  "ife_cup": {
+    "displayText": "ife",
+    "syllables": [
+      "i",
+      "fe"
+    ],
+    "definition": "cup",
+    "hint": "cup",
+    "category": null,
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/9572c35c-3b08-4295-80f0-1ada6cf17f4e.mp3",
+    "imageUrl": "/content/img/ife_cup.webp",
+    "syllableAudio": [
+      "/content/audio/e0ec1386-e294-4162-9faa-f83d93bc063f.mp3",
+      "/content/audio/44a674bb-4d70-4940-8cfe-27a2dfc2374b.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "ifoyin_toothbrush": {
     "displayText": "ìfọyín",
     "syllables": [
@@ -1408,6 +1610,25 @@
     ],
     "syllableSource": "derived from spelling"
   },
+  "ikun_stomach": {
+    "displayText": "ikùn",
+    "syllables": [
+      "i",
+      "kùn"
+    ],
+    "definition": "abdomen, belly",
+    "hint": "stomach",
+    "category": "body",
+    "speaker": "speaker1",
+    "voice": "speaker1",
+    "audioUrl": "/content/audio/8b923e4d-40b3-4998-95d7-465fdb0a0e4c.mp3",
+    "imageUrl": "/content/img/ikun_stomach.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
   "ile_home": {
     "displayText": "ilé",
     "syllables": [
@@ -1493,6 +1714,46 @@
       "/content/audio/7b842e35-0d43-4659-9de0-9dee35131061.mp3"
     ],
     "syllableSource": "kit"
+  },
+  "ileke_beads": {
+    "displayText": "ìlẹ̀kẹ̀",
+    "syllables": [
+      "ì",
+      "lẹ̀",
+      "kẹ̀"
+    ],
+    "definition": "beads, usually worn as necklaces and bracelets by royalty or traditional priests, ìlẹ̀kẹ̀ often specifically refers to coral beads",
+    "hint": "beads",
+    "category": "object",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/abb596c5-e9e7-4d17-b111-ac566be28bd5.mp3",
+    "imageUrl": "/content/img/ileke_beads.webp",
+    "syllableAudio": [
+      "/content/audio/26d2f8d7-4ba8-4f66-bd90-07518a15a8a1.mp3",
+      "/content/audio/cadba66f-c1b7-4470-acb4-e1c25490b6ad.mp3",
+      "/content/audio/5822e483-3c10-46ca-a6b9-463e8985e208.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "imu_nose": {
+    "displayText": "imú",
+    "syllables": [
+      "i",
+      "mú"
+    ],
+    "definition": "nose",
+    "hint": "nose",
+    "category": "body",
+    "speaker": "speaker1",
+    "voice": "speaker1",
+    "audioUrl": "/content/audio/608c6b5d-487b-4e70-90db-0af6baefed8d.mp3",
+    "imageUrl": "/content/img/imu_nose.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "ina_fire": {
     "displayText": "iná",
@@ -1614,6 +1875,27 @@
     ],
     "syllableSource": "derived from spelling"
   },
+  "irori_pillow": {
+    "displayText": "ìrọ̀rí",
+    "syllables": [
+      "ì",
+      "rọ̀",
+      "rí"
+    ],
+    "definition": "pillow, cushion",
+    "hint": "pillow",
+    "category": null,
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/0c56a58f-c885-476d-8f85-8f20fee936b1.mp3",
+    "imageUrl": "/content/img/irori_pillow.webp",
+    "syllableAudio": [
+      "/content/audio/8a4f34f8-f810-462f-a463-6908178971de.mp3",
+      "/content/audio/2718a75a-c143-4ab8-a998-34b9ea70638a.mp3",
+      "/content/audio/de9a8d4a-74d5-43dc-92d3-7daf46750328.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "irun_hair": {
     "displayText": "irun",
     "syllables": [
@@ -1691,6 +1973,25 @@
       null
     ],
     "syllableSource": "derived from spelling"
+  },
+  "iyan_pounded_yam": {
+    "displayText": "iyán",
+    "syllables": [
+      "i",
+      "yán"
+    ],
+    "definition": "pounded yam",
+    "hint": "pounded yam",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/dd747264-f81c-4250-9038-ed0d32bb08d5.mp3",
+    "imageUrl": "/content/img/iyan_pounded_yam.webp",
+    "syllableAudio": [
+      "/content/audio/668c88b1-63fc-47d2-b735-96b9e1c05555.mp3",
+      "/content/audio/5ca27ceb-8ee6-4284-8e4d-e727ad7f0821.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "ja_to_pluck_off": {
     "displayText": "já",
@@ -1965,6 +2266,27 @@
     ],
     "syllableSource": "kit"
   },
+  "kokoro_key": {
+    "displayText": "kọ́kọ́rọ́",
+    "syllables": [
+      "kọ́",
+      "kọ́",
+      "rọ́"
+    ],
+    "definition": "key",
+    "hint": "key",
+    "category": null,
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/064e73f1-59ed-4e1a-bbbe-ef37d6a91976.mp3",
+    "imageUrl": "/content/img/kokoro_key.webp",
+    "syllableAudio": [
+      "/content/audio/7417274b-81e5-430a-b2a4-a7827ca9b4b9.mp3",
+      "/content/audio/a0b9e308-9bc9-4632-9649-5d312bfea6d3.mp3",
+      "/content/audio/4fb07962-7d46-45b2-b027-86141e7abdf8.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "kun_growl": {
     "displayText": "kùn",
     "syllables": [
@@ -2198,25 +2520,6 @@
     "imageUrl": "/content/img/mu_to_drink.webp",
     "syllableAudio": [
       "/content/audio/d1908365-25f1-4951-82cc-a1f149ade1c9.mp3"
-    ],
-    "syllableSource": "kit"
-  },
-  "nle_at_home": {
-    "displayText": "ńlé",
-    "syllables": [
-      "ń",
-      "lé"
-    ],
-    "definition": "at home",
-    "hint": "at home",
-    "category": "spatial",
-    "speaker": "speaker3",
-    "voice": "femi.o",
-    "audioUrl": "/content/audio/0175d4ee-e172-44dd-b06f-09a57c1a7e77.mp3",
-    "imageUrl": "/content/img/nle_at_home.webp",
-    "syllableAudio": [
-      "/content/audio/6778f380-4877-4df5-bc5e-2358bed1c754.mp3",
-      "/content/audio/ca5d18ff-d2dc-4942-8723-3abbe6a70e4d.mp3"
     ],
     "syllableSource": "kit"
   },
@@ -2531,6 +2834,25 @@
     ],
     "syllableSource": "kit"
   },
+  "oja_market": {
+    "displayText": "ọjà",
+    "syllables": [
+      "ọ",
+      "jà"
+    ],
+    "definition": "market",
+    "hint": "market",
+    "category": "placeNature",
+    "speaker": "speaker3",
+    "voice": "speaker3",
+    "audioUrl": "/content/audio/7d32f3ee-bc77-4de6-9c57-97c5ecf970ee.mp3",
+    "imageUrl": "/content/img/oja_market.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
   "ojo_day": {
     "displayText": "ọjọ́",
     "syllables": [
@@ -2568,6 +2890,29 @@
       null
     ],
     "syllableSource": "derived from spelling"
+  },
+  "oka_baba_sorghum": {
+    "displayText": "ọkà bàbà",
+    "syllables": [
+      "ọ",
+      "kà",
+      "bà",
+      "bà"
+    ],
+    "definition": "Millet or sorghum",
+    "hint": "sorghum",
+    "category": "food",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/9916bfe5-6f04-4f61-97c0-97eab051f952.mp3",
+    "imageUrl": "/content/img/oka_baba_sorghum.webp",
+    "syllableAudio": [
+      "/content/audio/1b59e3a3-b604-44e3-adeb-0163f4ad6b86.mp3",
+      "/content/audio/07b349d3-3b2a-40fd-8c12-ce9e211b531f.mp3",
+      "/content/audio/730dc9f2-bfbf-40d6-a14c-b8fb9435036c.mp3",
+      "/content/audio/b8b05ef8-da32-43b3-9384-6bc9f8672ca3.mp3"
+    ],
+    "syllableSource": "kit"
   },
   "oka_grain": {
     "displayText": "ọkà",
@@ -2751,6 +3096,65 @@
     ],
     "syllableSource": "derived from spelling"
   },
+  "ooya_comb": {
+    "displayText": "òòyà",
+    "syllables": [
+      "ò",
+      "ò",
+      "yà"
+    ],
+    "definition": "comb",
+    "hint": "comb",
+    "category": null,
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/d70c6f0f-a663-4be6-8916-5c86355273d7.mp3",
+    "imageUrl": "/content/img/ooya_comb.webp",
+    "syllableAudio": [
+      "/content/audio/87a8929b-a829-4241-b77c-2ddc098afbe4.mp3",
+      "/content/audio/a25d5eb9-28fc-4f3e-83c5-8a1ce1bc035d.mp3",
+      "/content/audio/e211c9a7-1901-42b8-b832-79ee9d633d98.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "ori_head": {
+    "displayText": "orí",
+    "syllables": [
+      "o",
+      "rí"
+    ],
+    "definition": "head",
+    "hint": "head",
+    "category": "body",
+    "speaker": "speaker1",
+    "voice": "speaker1",
+    "audioUrl": "/content/audio/d457764f-9b99-4911-8caf-1baf2130e5eb.mp3",
+    "imageUrl": "/content/img/ori_head.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
+  "orun_neck": {
+    "displayText": "ọrùn",
+    "syllables": [
+      "ọ",
+      "rùn"
+    ],
+    "definition": "neck",
+    "hint": "neck",
+    "category": "body",
+    "speaker": "speaker1",
+    "voice": "speaker1",
+    "audioUrl": "/content/audio/bc68e760-0fd2-4aa5-94ca-8320242ceafc.mp3",
+    "imageUrl": "/content/img/orun_neck.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
+  },
   "orunkun_knee": {
     "displayText": "orúnkún",
     "syllables": [
@@ -2851,6 +3255,25 @@
       "/content/audio/d8d4582c-553a-4773-814f-64db22391852.mp3"
     ],
     "syllableSource": "kit"
+  },
+  "owo_hand": {
+    "displayText": "ọwọ",
+    "syllables": [
+      "ọ",
+      "wọ"
+    ],
+    "definition": "hand",
+    "hint": "hand",
+    "category": "body",
+    "speaker": "speaker1",
+    "voice": "speaker1",
+    "audioUrl": "/content/audio/1ca2316a-ce9a-4c3e-a87f-e79f81cb522e.mp3",
+    "imageUrl": "/content/img/owo_hand.webp",
+    "syllableAudio": [
+      null,
+      null
+    ],
+    "syllableSource": "derived from spelling"
   },
   "pa_kill": {
     "displayText": "pa",
@@ -3297,6 +3720,27 @@
     "syllableAudio": [
       "/content/audio/357fe809-9a95-45d6-bc7c-f9819ee42949.mp3",
       "/content/audio/0157b9bf-ab00-455d-b443-6bb1952bccf1.mp3"
+    ],
+    "syllableSource": "kit"
+  },
+  "tabili_table": {
+    "displayText": "tábìlì",
+    "syllables": [
+      "tá",
+      "bì",
+      "lì"
+    ],
+    "definition": "table",
+    "hint": "table",
+    "category": null,
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/c5410e76-66a8-4b27-8cd0-b75800b27b34.mp3",
+    "imageUrl": "/content/img/tabili_table.webp",
+    "syllableAudio": [
+      "/content/audio/329d563b-db96-43bc-aaa3-a9814d490d56.mp3",
+      "/content/audio/59ef51a6-550b-4c10-90ff-1fcdd197faa5.mp3",
+      "/content/audio/4a638323-35b2-4489-9165-6c43a7bb2cbe.mp3"
     ],
     "syllableSource": "kit"
   },

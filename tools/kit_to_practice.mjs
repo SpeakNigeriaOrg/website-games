@@ -48,8 +48,10 @@ const OUT = path.resolve(opt('--out') || path.join(ROOT, 'public/phonics'));
 const CHECK_ONLY = args.includes('--check');
 const MEDIA = '/content/';           // where the kit is served on games.speaknigeria.org
 
-const PERSON_SPEAKER = { Femi: 'speaker3', Tolani: 'speaker2' };
-const VOICES_OF = { Femi: ['femi.o', 'speaker3'], Tolani: ['Tolani', 'speaker2'] };
+// Dapo (legacy speaker1) plays only in Vocabulary: Tones has no tone model or hum for him, and Phonics has no
+// canonical syllable clips in his voice.
+const PERSON_SPEAKER = { Femi: 'speaker3', Tolani: 'speaker2', Dapo: 'speaker1' };
+const VOICES_OF = { Femi: ['femi.o', 'speaker3'], Tolani: ['Tolani', 'speaker2'], Dapo: ['speaker1'] };
 const NOT_ALONE = new Set(['prefix', 'pronoun', 'particle']);   // engine.js NOT_ALONE
 
 // Levels. The old themes, re-filled by kit category (the old word lists named
@@ -251,7 +253,7 @@ const games = {
     why: (e) => `no clip for ${e.syllables.filter((s) => !bank[e.speaker]?.[s]?.audio).join(', ')}`
   },
   tones: { speakers: ['speaker2', 'speaker3'], categories: ['themed', 'endless_practice'], min: 1, fits: () => true },
-  vocab: { speakers: ['speaker2', 'speaker3'], categories: ['themed', 'endless_practice'], min: 2, fits: () => true }
+  vocab: { speakers: ['speaker1', 'speaker2', 'speaker3'], categories: ['themed', 'endless_practice'], min: 2, fits: () => true }
 };
 
 const lines = [];
