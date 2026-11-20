@@ -1,3 +1,7 @@
+// Level names keep the speaker key (speaker3, speaker2) as their id, for shared links and analytics; players see
+// the speaker's name.
+const SPEAKER_NAMES = { speaker3: 'Femi', speaker2: 'Tolani' };
+const levelLabel = (id) => id.replace(/speaker\d+/g, (k) => SPEAKER_NAMES[k] || k);
 // --- GLOBAL CONFIGURATION ---
 // Everything this game plays and shows is the Yoruba game suite's checked
 // content kit, served same-origin at /content/ (gated recordings, the kit's own
@@ -419,7 +423,7 @@ function initializeThemeSelector() {
     activeLevels.forEach((level, index) => {
         const option = document.createElement('option');
         option.value = index;
-        option.innerText = level.levelId;
+        option.innerText = levelLabel(level.levelId);
         selector.appendChild(option);
     });
 
@@ -444,7 +448,7 @@ function loadLevel(levelIndex) {
     currentLevel = activeLevels[currentLevelIndex];
     snGame.levelLoaded(currentLevel, CURRENT_SPEAKER);
     document.getElementById('theme-selector').value = currentLevelIndex;
-    document.getElementById('theme-selector').title = currentLevel.levelId;
+    document.getElementById('theme-selector').title = levelLabel(currentLevel.levelId);
 
     renderBank();
     loadWord(0);

@@ -1,3 +1,7 @@
+// Level names keep the speaker key (speaker3, speaker2) as their id, for shared links and analytics; players see
+// the speaker's name.
+const SPEAKER_NAMES = { speaker3: 'Femi', speaker2: 'Tolani' };
+const levelLabel = (id) => id.replace(/speaker\d+/g, (k) => SPEAKER_NAMES[k] || k);
 // --- GLOBAL CONFIGURATION ---
 // Sibling of the phonics and tone games, and deliberately built from the same
 // parts. Recordings and pictures are the Yoruba game suite's checked content
@@ -294,7 +298,7 @@ function initializeThemeSelector() {
     activeLevels.forEach((level, index) => {
         const option = document.createElement('option');
         option.value = index;
-        option.innerText = level.levelId;
+        option.innerText = levelLabel(level.levelId);
         selector.appendChild(option);
     });
     selector.onchange = (event) => loadLevel(parseInt(event.target.value));
@@ -308,7 +312,7 @@ function loadLevel(levelIndex) {
     currentLevelIndex = levelIndex;
     currentLevel = activeLevels[currentLevelIndex];
     document.getElementById('theme-selector').value = currentLevelIndex;
-    document.getElementById('theme-selector').title = currentLevel.levelId;
+    document.getElementById('theme-selector').title = levelLabel(currentLevel.levelId);
     snGame.levelLoaded(currentLevel, currentLevel.speaker);
     loadWord(0);
 }

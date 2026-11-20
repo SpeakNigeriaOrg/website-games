@@ -37,7 +37,6 @@ tools/
   smoke/           - headless-Chrome check of the three games
   kit_to_practice.mjs - builds the three games' data from the suite's kit
 wrangler.toml      - Cloudflare Pages deploy config
-sync_dictionary_data.py - old R2-era data sync; superseded, do not run
 ```
 
 ## Game data (Phonics, Tones, Vocabulary)
@@ -60,9 +59,8 @@ the reason. A word is used only if the suite's audio gate includes it
 (`inclusion.path`), it is standalone by the suite's rule, and it has a picture.
 The header of `tools/kit_to_practice.mjs` explains the rest.
 
-`sync_dictionary_data.py` is the old hand-off from the dictionary repo. Do not
-run it: it would overwrite these files with the old R2-based shape, which the
-games no longer read.
+The old hand-off from the dictionary repo (`sync_dictionary_data.py`, which wrote
+the R2-based shape) has been removed; these files come only from the kit.
 
 Check the games against the kit locally (the kit must be at `/content/`):
 
