@@ -4,7 +4,7 @@
 // the suite does: gated audio, the kit's own picture per word, no R2.
 //
 //   node tools/kit_to_practice.mjs                      # kit at dev/games/content
-//   node tools/kit_to_practice.mjs --kit <dir>          # any other kit folder
+//   node tools/kit_to_practice.mjs --kit <dir>          # any other kit folder (levels from <dir>/../path/path.json, or --path <file>)
 //   node tools/kit_to_practice.mjs --check              # report only, write nothing
 //
 // Rerun it whenever the kit is rebuilt (scripts/buildDevGameKit.mjs in the
@@ -54,23 +54,15 @@ const PERSON_SPEAKER = { Femi: 'speaker3', Tolani: 'speaker2', Dapo: 'speaker1' 
 const VOICES_OF = { Femi: ['femi.o', 'speaker3'], Tolani: ['Tolani', 'speaker2'], Dapo: ['speaker1'] };
 const NOT_ALONE = new Set(['prefix', 'pronoun', 'particle']);   // engine.js NOT_ALONE
 
-// Levels. The old themes, re-filled by kit category (the old word lists named
-// many words the kit does not include). A theme becomes a level per speaker when
-// that speaker has at least MIN_LEVEL_WORDS usable words in it; bigger ones are
-// split into parts of at most MAX_LEVEL_WORDS, which keeps Phonics' bank (one
-// button per distinct syllable) near the 20 the games already aim for.
-const THEMES = [
-  { name: 'Animals (Ẹranko)', categories: ['animal'] },
-  { name: 'The Home & Objects (Nǹkan Ilé)', categories: ['object'] },
-  { name: 'Body Parts (Ẹ̀yà Ara)', categories: ['body'] },
-  { name: 'Action Words (Ọ̀rọ̀ Ìṣe)', categories: ['action', 'transfer'] },
-  { name: 'Nature & Environment (Àyíká)', categories: ['placeNature'] },
-  { name: 'Everyday Life & Food (Ìgbésí Ayé)', categories: ['food'] },
-  { name: 'Time & Months (Àkókò àti Oṣù)', categories: ['time'] },
-  // New: kit categories the old themes had no place for.
-  { name: 'People & Greetings', categories: ['people', 'social'] },
-  { name: 'Commands', categories: ['command'] }
-];
+// Levels follow the learning path's units (path.json beside the kit: ../path/path.json), in path order, so the
+// practice room uses the same groupings as the path a child has played (owner, 2026-11-20). A unit becomes a level
+// per speaker when that speaker has at least MIN_LEVEL_WORDS usable words in it; bigger ones are split into parts of
+// at most MAX_LEVEL_WORDS, which keeps Phonics' bank (one button per distinct syllable) near the 20 the games aim
+// for. Usable words on no unit still play, in the Random rounds.
+const PATH_JSON = path.resolve(opt('--path') || path.join(KIT, '..', 'path', 'path.json'));
+const THEMES = JSON.parse(fs.readFileSync(PATH_JSON, 'utf8')).units.map((u) => ({
+  name: `${u.yo} (${u.en})`, ids: new Set(u.words.map((w) => w.id)),
+}));
 const MIN_LEVEL_WORDS = 3;
 const MAX_LEVEL_WORDS = 8;
 const RANDOM_LEVEL_WORDS = 8;
@@ -215,7 +207,7 @@ const sessions = [];
 const themeSkipped = [];
 let levelNumber = 0;
 for (const theme of THEMES) {
-  const inTheme = usable.filter((u) => theme.categories.includes(u.category));
+  const inTheme = usable.filter((u) => theme.ids.has(u.id));
   const groups = bySpeaker(inTheme).filter(([sp, words]) => {
     if (words.length >= MIN_LEVEL_WORDS) return true;
     themeSkipped.push(`${theme.name} — ${sp}: only ${words.length} word(s) (${words.map((w) => w.id).join(', ')}); left to Random`);

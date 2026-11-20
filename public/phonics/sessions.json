@@ -1,51 +1,118 @@
 [
   {
-    "levelId": "Level 1: Animals (Ẹranko) 1 — speaker3",
+    "levelId": "Level 1: Ọjọ́ Mi (My day) 1 — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "we_to_bathe",
+      "wara_milk",
+      "ibusun_bed",
+      "bata_shoe",
+      "mu_to_drink",
+      "di_bind",
+      "sun_to_sleep"
+    ]
+  },
+  {
+    "levelId": "Level 1: Ọjọ́ Mi (My day) 2 — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "ile_home",
+      "aja_dog",
+      "o_se_thank_you",
+      "ounje_food",
+      "sokoto_pants",
+      "aso_cloth",
+      "jokoo_sit"
+    ]
+  },
+  {
+    "levelId": "Level 2: Ara Mi (My body and what it does) 1 — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "patewo_clap",
+      "rin_to_walk",
+      "ma_fowo_kan_an_no_touch",
+      "eyin_tooth",
+      "so_throw"
+    ]
+  },
+  {
+    "levelId": "Level 2: Ara Mi (My body and what it does) 2 — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "kan_touch",
+      "ese_leg",
+      "wo_to_look",
+      "irun_hair"
+    ]
+  },
+  {
+    "levelId": "Level 2: Ara Mi (My body and what it does) — speaker2",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker2"
+    ],
+    "words": [
+      "oju_eye",
+      "sare_run",
+      "eti_ear"
+    ]
+  },
+  {
+    "levelId": "Level 2: Ara Mi (My body and what it does) — speaker1",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker1"
+    ],
+    "words": [
+      "ori_head",
+      "owo_hand",
+      "imu_nose",
+      "enu_mouth"
+    ]
+  },
+  {
+    "levelId": "Level 3: Ẹranko (Animals at home and on the farm) 1 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
       "esinsin_fly",
-      "okere_squirrel",
       "elede_pig",
-      "kiniun_lion",
-      "ijapa_inu_omi_aquatic_turtle",
-      "ijapa_tortoise"
-    ]
-  },
-  {
-    "levelId": "Level 1: Animals (Ẹranko) 2 — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
-      "amotekun_cheetah",
-      "odo_agutan_lamb",
+      "ijapa_tortoise",
       "adiye_chicken",
-      "agunfon_giraffe",
-      "omo_ehoro_baby_bunny",
-      "ketekete_abila_zebra"
+      "pa_kill"
     ]
   },
   {
-    "levelId": "Level 1: Animals (Ẹranko) 3 — speaker3",
+    "levelId": "Level 3: Ẹranko (Animals at home and on the farm) 2 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
       "ehoro_rabbit",
-      "aja_dog",
+      "gbo_to_bark",
       "maluu_cow",
       "erin_elephant",
-      "ekun_leopard",
       "ketekete_donkey"
     ]
   },
   {
-    "levelId": "Level 1: Animals (Ẹranko) — speaker2",
+    "levelId": "Level 3: Ẹranko (Animals at home and on the farm) — speaker2",
     "category": "themed",
     "validSpeakers": [
       "speaker2"
@@ -59,101 +126,130 @@
     ]
   },
   {
-    "levelId": "Level 2: The Home & Objects (Nǹkan Ilé) 1 — speaker3",
+    "levelId": "Level 4: Oúnjẹ (Mealtime) 1 — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "abo_plate",
+      "buredi_bread",
+      "iresi_rice",
+      "mu_omi_drink_water",
+      "mu_take",
+      "ogede_banana",
+      "ebi_hunger"
+    ]
+  },
+  {
+    "levelId": "Level 4: Oúnjẹ (Mealtime) 2 — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "ebi_n_pa_e_you_hungry",
+      "jeun_eat",
+      "fun_mi_give_me",
+      "osan_orange",
+      "sibi_spoon",
+      "isu_yam"
+    ]
+  },
+  {
+    "levelId": "Level 5: Inú Mi (Feelings) — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "rerin-in_laugh",
+      "ro_think",
+      "ma_sunkun_not_cry",
+      "kelekele_gently",
+      "sunkun_weep",
+      "sun_to_cry"
+    ]
+  },
+  {
+    "levelId": "Level 6: Ọjọ́ Mi (My day, again: school and night) — speaker3",
+    "category": "themed",
+    "validSpeakers": [
+      "speaker3"
+    ],
+    "words": [
+      "irawo_star",
+      "gege_pencil",
+      "ile-iwe_school",
+      "ofuurufu_sky",
+      "osupa_moon",
+      "aye_world"
+    ]
+  },
+  {
+    "levelId": "Level 7: Wẹ̀ (Washing) 1 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
       "ifoyin_toothbrush",
-      "abo_plate",
-      "keke_bicycle",
-      "ibusun_bed",
-      "bata_shoe",
-      "ero_asoromagbesi_radio",
-      "gege_pencil"
+      "so_o_nu_throw_away",
+      "nu_u_cleanit",
+      "o_doti_dirty",
+      "fi_sile_leave_it",
+      "inura_towel"
     ]
   },
   {
-    "levelId": "Level 2: The Home & Objects (Nǹkan Ilé) 2 — speaker3",
+    "levelId": "Level 7: Wẹ̀ (Washing) 2 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
-      "inura_towel",
-      "ikoko_pot",
-      "okuta_stone",
-      "pako_timber",
+      "nu_clean",
+      "doti_dirty",
       "ose_soap",
-      "kalamu_pen",
-      "boolu_ball"
-    ]
-  },
-  {
-    "levelId": "Level 2: The Home & Objects (Nǹkan Ilé) 3 — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
-      "redio_radio",
       "digi_mirror",
-      "oko_panapana_firetruck",
-      "aga_chair",
-      "fila_hat",
-      "alupupu_motorcycle",
-      "isere_toy"
+      "igbe_feces",
+      "dii_mu_hold"
     ]
   },
   {
-    "levelId": "Level 2: The Home & Objects (Nǹkan Ilé) 4 — speaker3",
+    "levelId": "Level 8: Ìdílé (Family and friends) — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
-      "obe_knife",
-      "ileke_beads",
-      "moto_automobile",
-      "sokoto_pants",
-      "sibi_spoon",
-      "aso_cloth"
+      "oba_king",
+      "gba_to_take",
+      "agba_adult",
+      "omo_mi_my_baby",
+      "egbon_older_sibling",
+      "mama_mother",
+      "alejo_guest"
     ]
   },
   {
-    "levelId": "Level 3: Body Parts (Ẹ̀yà Ara) — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
-      "atelewo_palm",
-      "eyin_tooth",
-      "orunkun_knee",
-      "ese_leg",
-      "irun_hair"
-    ]
-  },
-  {
-    "levelId": "Level 3: Body Parts (Ẹ̀yà Ara) — speaker2",
+    "levelId": "Level 9: Ara Mi (My body, again) — speaker2",
     "category": "themed",
     "validSpeakers": [
       "speaker2"
     ],
     "words": [
       "itan_thigh",
-      "oju_eye",
       "idodo_navel",
       "eekanna_nail",
-      "eti_ear",
       "ete_lip",
       "eyin_back",
+      "ra_crawl",
       "aya_chest"
     ]
   },
   {
-    "levelId": "Level 3: Body Parts (Ẹ̀yà Ara) — speaker1",
+    "levelId": "Level 9: Ara Mi (My body, again) — speaker1",
     "category": "themed",
     "validSpeakers": [
       "speaker1"
@@ -161,249 +257,129 @@
     "words": [
       "orun_neck",
       "ikun_stomach",
-      "ori_head",
-      "owo_hand",
-      "imu_nose",
-      "enu_mouth",
       "ejika_shoulder"
     ]
   },
   {
-    "levelId": "Level 4: Action Words (Ọ̀rọ̀ Ìṣe) 1 — speaker3",
+    "levelId": "Level 10: Ilé àti Ilé Ìdáná (At home, and the kitchen) 1 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
-      "wa_come",
-      "gba_to_take",
-      "we_to_bathe",
-      "rerin-in_laugh",
-      "patewo_clap",
-      "rin_to_walk",
-      "pana_extinguish_fire"
-    ]
-  },
-  {
-    "levelId": "Level 4: Action Words (Ọ̀rọ̀ Ìṣe) 2 — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
-      "ran_send",
-      "dana_cook",
-      "kun_growl",
-      "mu_to_drink",
-      "so_throw",
-      "mu_take",
-      "ra_buy"
-    ]
-  },
-  {
-    "levelId": "Level 4: Action Words (Ọ̀rọ̀ Ìṣe) 3 — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
-      "nu_clean",
-      "sere_play",
-      "di_bind",
-      "kan_touch",
-      "sun_to_sleep",
-      "luwe_swim",
-      "wo_to_look"
-    ]
-  },
-  {
-    "levelId": "Level 4: Action Words (Ọ̀rọ̀ Ìṣe) 4 — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
-      "pa_kill",
-      "jeun_eat",
-      "ru_carry",
-      "gbo_to_bark",
-      "peja_to_fish",
-      "ja_to_pluck_off"
-    ]
-  },
-  {
-    "levelId": "Level 4: Action Words (Ọ̀rọ̀ Ìṣe) 5 — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
-      "sunkun_weep",
-      "sun_to_cry",
-      "dide_stand",
-      "fun_give",
-      "te_press",
-      "jokoo_sit"
-    ]
-  },
-  {
-    "levelId": "Level 4: Action Words (Ọ̀rọ̀ Ìṣe) — speaker2",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker2"
-    ],
-    "words": [
-      "irin_walk",
-      "sare_run",
-      "ra_crawl",
-      "lo_go"
-    ]
-  },
-  {
-    "levelId": "Level 5: Nature & Environment (Àyíká) 1 — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
-      "irawo_star",
-      "ile_land",
+      "pana_extinguish_fire",
       "ina_fire",
-      "ile-iwe_school",
+      "dana_cook",
       "yara_igbalejo_living_room",
-      "ofuurufu_sky",
-      "ile_home"
+      "ikoko_pot",
+      "redio_radio"
     ]
   },
   {
-    "levelId": "Level 5: Nature & Environment (Àyíká) 2 — speaker3",
+    "levelId": "Level 10: Ilé àti Ilé Ìdáná (At home, and the kitchen) 2 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
+      "aga_chair",
+      "ru_carry",
       "yara_room",
       "ile_idana_kitchen",
-      "oja_market",
-      "igbe_feces",
-      "osupa_moon",
-      "aye_world"
+      "o_ti_to_enough",
+      "idana_cooking"
     ]
   },
   {
-    "levelId": "Level 5: Nature & Environment (Àyíká) — speaker2",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker2"
-    ],
-    "words": [
-      "ewe_leaf",
-      "igbo_forest",
-      "baluwe_bathroom"
-    ]
-  },
-  {
-    "levelId": "Level 6: Everyday Life & Food (Ìgbésí Ayé) 1 — speaker3",
+    "levelId": "Level 11: Oúnjẹ (Mealtime, again: the market) 1 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
-      "buredi_bread",
       "oka_baba_sorghum",
-      "wara_milk",
       "goomu_gum",
       "kasu_cashew",
-      "iresi_rice"
-    ]
-  },
-  {
-    "levelId": "Level 6: Everyday Life & Food (Ìgbésí Ayé) 2 — speaker3",
-    "category": "themed",
-    "validSpeakers": [
-      "speaker3"
-    ],
-    "words": [
       "ibepe_papaya",
-      "ogede_banana",
+      "ra_buy",
       "ewuro_bitterleaf",
       "alubosa_onion",
-      "akara_oyinbo_cake",
-      "ogede_agbagba_plantain"
+      "akara_oyinbo_cake"
     ]
   },
   {
-    "levelId": "Level 6: Everyday Life & Food (Ìgbésí Ayé) 3 — speaker3",
+    "levelId": "Level 11: Oúnjẹ (Mealtime, again: the market) 2 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
+      "o_gbona_hot",
+      "ogede_agbagba_plantain",
+      "oja_market",
       "amala_amala",
-      "ounje_food",
-      "osan_orange",
+      "obe_knife",
       "iyan_pounded_yam",
-      "oka_grain",
-      "isu_yam"
+      "oka_grain"
     ]
   },
   {
-    "levelId": "Level 7: People & Greetings 1 — speaker3",
+    "levelId": "Level 12: Ìṣeré (Play and outdoors) 1 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
-      "omo_daadaa_good_child",
-      "oba_king",
-      "agba_adult",
-      "o_doti_dirty",
-      "omo_mi_my_baby",
-      "o_gbona_hot"
+      "ere_game",
+      "keke_bicycle",
+      "ile_land",
+      "okuta_stone",
+      "boolu_ball",
+      "luwe_swim"
     ]
   },
   {
-    "levelId": "Level 7: People & Greetings 2 — speaker3",
+    "levelId": "Level 12: Ìṣeré (Play and outdoors) 2 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
-      "ebi_n_pa_e_you_hungry",
-      "egbon_older_sibling",
-      "o_ti_to_enough",
-      "mama_mother",
-      "o_se_thank_you",
-      "alejo_guest"
+      "oko_panapana_firetruck",
+      "fila_hat",
+      "alupupu_motorcycle",
+      "isere_toy",
+      "ileke_beads",
+      "moto_automobile"
     ]
   },
   {
-    "levelId": "Level 8: Commands 1 — speaker3",
+    "levelId": "Level 13: Ẹranko (Animals, again: wild and young) 1 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
-      "so_o_nu_throw_away",
-      "nu_u_cleanit",
-      "ma_fowo_kan_an_no_touch",
-      "ma_se_bee_stop_that",
-      "fi_sile_leave_it",
-      "jokoo_je_sit_still"
+      "okere_squirrel",
+      "kiniun_lion",
+      "ijapa_inu_omi_aquatic_turtle",
+      "amotekun_cheetah",
+      "odo_agutan_lamb",
+      "agunfon_giraffe"
     ]
   },
   {
-    "levelId": "Level 8: Commands 2 — speaker3",
+    "levelId": "Level 13: Ẹranko (Animals, again: wild and young) 2 — speaker3",
     "category": "themed",
     "validSpeakers": [
       "speaker3"
     ],
     "words": [
-      "mu_omi_drink_water",
-      "ma_sunkun_not_cry",
-      "wo_o_wear_it",
-      "dii_mu_hold",
-      "fun_mi_give_me"
+      "omo_ehoro_baby_bunny",
+      "ketekete_abila_zebra",
+      "abila_striped",
+      "peja_to_fish",
+      "ekun_leopard"
     ]
   },
   {
