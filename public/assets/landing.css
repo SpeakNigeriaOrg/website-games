@@ -272,3 +272,6 @@
 
 /* the line under the "Play Nigeria!" headline */
 .lp-subhead { font-family: var(--serif, "Fraunces", Georgia, serif); font-size: clamp(1.4rem, 3.2vw, 2rem); line-height: 1.2; margin: .2em 0 .6em; color: inherit; }
+
+/* four language cards: Yorùbá, Igbo and Hausa in a row, any other language across the full width beneath */
+.lp-ask-wide { grid-column: 1 / -1; }
