@@ -269,3 +269,6 @@
   .lp-help h2 { font-size: var(--step-3); }
   .lp-ribbon-inner { justify-content: flex-start; gap: 0.35rem 1.4rem; }
 }
+
+/* the line under the "Play Nigeria!" headline */
+.lp-subhead { font-family: var(--serif, "Fraunces", Georgia, serif); font-size: clamp(1.4rem, 3.2vw, 2rem); line-height: 1.2; margin: .2em 0 .6em; color: inherit; }
