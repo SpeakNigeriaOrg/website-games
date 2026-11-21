@@ -1,0 +1,94 @@
+/* Shared look for the dev games: warm, bold, no text during play. */
+:root {
+  --ink: #2b2118;
+  --paper: #fff8ec;
+  --accent: #e4572e;
+  --good: #29a36a;
+  --gold: #f2b33d;
+  --sky: #9fd3f0;
+  --shadow: 0 6px 0 rgba(0, 0, 0, 0.18);
+  color-scheme: light;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; overflow: hidden; }
+body.game {
+  font-family: "Nunito", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+img { -webkit-user-drag: none; user-select: none; }
+
+.stage { position: fixed; inset: 0; overflow: hidden; }
+.stage > .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Start overlay: one big play button. */
+.start-overlay {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center;
+  background: rgba(255, 248, 236, 0.75); backdrop-filter: blur(3px);
+}
+.start-btn {
+  width: 34vmin; height: 34vmin; max-width: 220px; max-height: 220px; border-radius: 50%;
+  border: 0; background: var(--accent); color: white; font-size: 14vmin; cursor: pointer;
+  box-shadow: var(--shadow); animation: breathe 1.6s ease-in-out infinite;
+}
+.start-btn span { display: inline-block; transform: translateX(6%); }
+@keyframes breathe { 50% { transform: scale(1.06); } }
+
+/* Replay button and ear, bottom-left. */
+.replay-btn {
+  position: fixed; z-index: 40; left: calc(14px + env(safe-area-inset-left, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  width: 72px; height: 72px; border-radius: 50%; border: 0; background: white; font-size: 34px;
+  box-shadow: var(--shadow); cursor: pointer;
+}
+.replay-btn:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(0,0,0,.18); }
+.ear {
+  position: fixed; z-index: 40; left: calc(96px + env(safe-area-inset-left, 0px)); bottom: calc(26px + env(safe-area-inset-bottom, 0px));
+  font-size: 34px; opacity: 0; transition: opacity .2s;
+}
+.ear.listening { opacity: 1; animation: pulse 0.8s ease-in-out infinite; }
+@keyframes pulse { 50% { transform: scale(1.25); } }
+body.locked .playfield { filter: saturate(.75) brightness(.97); }
+
+/* Progress strip along the top. */
+.progress-strip {
+  position: fixed; z-index: 30; top: calc(10px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,.8); box-shadow: var(--shadow);
+}
+.progress-strip:empty { display: none; }
+.progress-strip .slot {
+  width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,.08); display: grid; place-items: center; font-size: 22px;
+}
+.progress-strip .slot.filled { background: transparent; animation: popin .4s ease-out; }
+.progress-strip .slot img { width: 34px; height: 34px; object-fit: contain; }
+@keyframes popin { 0% { transform: scale(0); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
+
+.confetti { position: fixed; z-index: 60; width: 10px; height: 14px; border-radius: 2px; pointer-events: none; }
+
+.ghost-hand {
+  position: fixed; z-index: 45; font-size: 54px; pointer-events: none; transform: translate(-50%, 0);
+  transition: left .35s ease, top .35s ease; filter: drop-shadow(0 4px 4px rgba(0,0,0,.3)); opacity: .9;
+}
+
+.finale { position: fixed; inset: 0; z-index: 55; display: grid; place-items: center; background: rgba(255,248,236,.6); }
+.finale-card {
+  background: white; border-radius: 28px; padding: 24px 28px; box-shadow: var(--shadow); display: grid; gap: 16px; justify-items: center;
+  animation: popin .5s ease-out; max-width: min(92vw, 520px);
+}
+.finale-btns { display: flex; gap: 20px; justify-content: center; }
+.path-btn { width: 84px; height: 84px; border-radius: 50%; background: var(--accent, #3f7cd9); color: white; font-size: 44px; display: grid; place-items: center; text-decoration: none; box-shadow: var(--shadow); }
+.again-btn { width: 84px; height: 84px; border-radius: 50%; border: 0; background: var(--good); color: white; font-size: 44px; cursor: pointer; box-shadow: var(--shadow); }
+
+/* A picture card used by several games. */
+.card-pic { background: white; border-radius: 22px; box-shadow: var(--shadow); padding: 8px; }
+.card-pic img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 16px; }
+
+.wobble { animation: wobble .5s ease-in-out 2; }
+@keyframes wobble { 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
+.glow { animation: glow 0.9s ease-in-out infinite; }
+@keyframes glow { 50% { filter: drop-shadow(0 0 14px #fff6a8) drop-shadow(0 0 6px #ffd23f); } }
+
+/* keyboard highlight (Left/Right among more than two choices) */
+.key-focus { outline: 6px solid #ffd23f; outline-offset: 4px; border-radius: 18px; }

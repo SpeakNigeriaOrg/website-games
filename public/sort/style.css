@@ -1,0 +1,40 @@
+/* The courtyard covers the screen; app.js places the places and the parcel in screen pixels. */
+.stage { background: #f3dfb4; }
+.places { position: absolute; inset: 0; }
+
+.place { position: absolute; border: 0; padding: 0; background: none; cursor: pointer; transform-origin: 50% 90%; border-radius: 18px; }
+.place > img { width: 100%; height: 100%; display: block; object-fit: contain; pointer-events: none; filter: drop-shadow(0 6px 4px rgba(0,0,0,.18)); }
+.place.over > img { filter: drop-shadow(0 0 10px #fff6a8) drop-shadow(0 0 6px #ffd23f); }
+body.locked .place { cursor: default; }
+/* the wrong place shakes its head, gently */
+.place.nope { animation: nope .5s ease-in-out; }
+@keyframes nope { 20% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } 80% { transform: rotate(-3deg); } }
+
+.spots { position: absolute; display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 0; pointer-events: none; }
+.thing {
+  width: var(--ts, 60px); height: var(--ts, 60px); padding: 0; display: grid; place-items: center; background: white; border-radius: 22%;
+  box-shadow: 0 3px 0 rgba(0,0,0,.18); border: 3px solid white; transition: border-color .3s, box-shadow .3s;
+}
+.spots .thing { margin: calc(var(--ts, 60px) * .04); width: calc(var(--ts, 60px) * .92); height: calc(var(--ts, 60px) * .92); }
+.thing img { width: 88%; height: 88%; object-fit: contain; border-radius: 16%; display: block; pointer-events: none; }
+.thing.speaking { border-color: var(--gold); box-shadow: 0 3px 0 rgba(0,0,0,.18), 0 0 18px 5px rgba(255, 214, 63, .75); }
+.thing.fly, .thing.peek { position: fixed; z-index: 20; margin: 0; pointer-events: none; }
+.thing.peek { z-index: 9; box-shadow: var(--shadow), 0 0 18px 4px rgba(255, 255, 255, .8); }
+
+.parcel { position: absolute; z-index: 10; cursor: grab; touch-action: none; }
+.parcel img { width: 100%; height: 100%; object-fit: contain; display: block; pointer-events: none; filter: drop-shadow(0 8px 6px rgba(0,0,0,.25)); transform-origin: 50% 90%; }
+.parcel.held { cursor: grabbing; z-index: 12; }
+.parcel.held img { transform: scale(1.08) rotate(-4deg); filter: drop-shadow(0 18px 10px rgba(0,0,0,.25)); }
+.parcel.gone { visibility: hidden; }
+body.locked .parcel { cursor: default; }
+/* speaking: the parcel hops and squashes, as if something inside were talking */
+.parcel img.talking { animation: parcel-talk .3s ease-in-out infinite; }
+@keyframes parcel-talk { 50% { transform: scale(1.05, .94) translateY(3%); } }
+/* peeking open: the parcel squats while the thing pops out of it */
+.parcel img.open { transform: scale(1.06, .9); }
+
+.fin-places { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: flex-end; }
+.fin-place { position: relative; height: min(22vh, 150px); max-width: 44vw; }
+.fin-place > img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.fin-spots { position: absolute; display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 2px; }
+.fin-spots img { width: min(32px, 7vh); height: min(32px, 7vh); object-fit: contain; background: white; border-radius: 8px; box-shadow: 0 2px 0 rgba(0,0,0,.18); padding: 2px; }

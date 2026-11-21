@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="yo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puppet Theatre</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap">
+<link rel="stylesheet" href="../engine/engine.css">
+<link rel="stylesheet" href="../combo_scene.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage playfield" id="room">
+  <img class="bg" id="bg" src="../art/theatre_tall.png" alt="">
+  <div class="stage-box" id="stage-box">
+    <div class="scene-holder" id="scene"></div>
+    <img class="curtain left" id="curtain-l" src="../art/curtain.png" alt="">
+    <img class="curtain right" id="curtain-r" src="../art/curtain_r.png" alt="">
+  </div>
+  <div class="row" id="subjects"></div>
+  <div class="row" id="actions"></div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

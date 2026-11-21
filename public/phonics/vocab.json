@@ -3573,6 +3573,23 @@
     ],
     "syllableSource": "derived from spelling"
   },
+  "se_to_do": {
+    "displayText": "ṣe",
+    "syllables": [
+      "ṣe"
+    ],
+    "definition": "to do",
+    "hint": "to do",
+    "category": "action",
+    "speaker": "speaker3",
+    "voice": "femi.o",
+    "audioUrl": "/content/audio/16edee46-ac41-4410-b92a-669e2d57bf57.mp3",
+    "imageUrl": "/content/img/se_to_do.webp",
+    "syllableAudio": [
+      "/content/audio/ee78f6c9-b11f-4c03-8fdd-4b6c61e51912.mp3"
+    ],
+    "syllableSource": "kit"
+  },
   "sere_play": {
     "displayText": "ṣeré",
     "syllables": [

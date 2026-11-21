@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="yo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ọ̀nà Ẹ̀kọ́ (Learning Path)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&family=Noto+Sans:wght@600;800&display=swap">
+<link rel="stylesheet" href="path.css">
+</head>
+<body>
+<header class="top">
+  <a class="home" href="../" aria-label="All games">⌂</a>
+  <div class="stars" aria-label="Stars"><span>⭐</span> <b id="star-count">0</b></div>
+  <button class="grown" id="grown" aria-expanded="false">For grown-ups</button>
+</header>
+<section class="about" id="about" hidden>
+  <h2>How the path works</h2>
+  <p>Each unit is a scene from a child's day: my day, the body, mealtime, washing, family, home, play, animals, the kitchen. The idea of scenes, and their Yorùbá titles, comes from our curriculum draft; the games are not a copy of that course. A row of stones is one short sitting:
+    a stone that introduces up to four words (the answer can be found on screen, or there are only two choices),
+    a practice stone that mixes in words from earlier sittings, and often a stone for hearing the word's syllables.
+    A unit ends with a "true or silly" check. Earlier words come back on a spacing schedule.</p>
+  <p>All audio is from our recordings (Femi; Tolani for words Femi has not recorded or where his take did not pass).
+    The path uses lenient quality rules: a recording stays out only for a clear fault (a tone heard high for low,
+    a cut-off start, clipping, a confirmed repeat, poor sound, an unresolved spelling change, or no release
+    rights). Words the curriculum draft lists are marked ●; ○ marks our other words placed in the scene.</p>
+  <p><button id="reset" class="small">Start over (clear stars)</button></p>
+</section>
+<main id="path" aria-label="Learning path"></main>
+<script type="module" src="path.js"></script>
+</body>
+</html>

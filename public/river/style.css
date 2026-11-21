@@ -1,0 +1,43 @@
+/* The river is a portrait column, centred on wide screens; everything inside is placed in % of it. */
+.column {
+  position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+  height: 100%; aspect-ratio: 832 / 1216; max-width: 100vw; overflow: hidden;
+}
+.column > .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.goal {
+  position: absolute; left: 50%; top: 7.5%; width: 24%; aspect-ratio: 1; transform: translateX(-50%);
+  background: white; border-radius: 22px; box-shadow: var(--shadow); padding: 6px; display: grid; place-items: center;
+}
+.goal img { width: 100%; height: 100%; object-fit: contain; border-radius: 16px; }
+.goal .gift { font-size: 9vmin; }
+.goal.pulse { animation: goalpulse 0.9s ease-in-out infinite; }
+@keyframes goalpulse { 50% { transform: translateX(-50%) scale(1.08); } }
+
+.village { position: absolute; inset: 0; pointer-events: none; }
+.hut { position: absolute; width: 20%; transform: translate(-50%, -85%); filter: drop-shadow(0 4px 2px rgba(0,0,0,.2)); }
+.rows { position: absolute; inset: 0; pointer-events: none; }
+.stone {
+  position: absolute; width: 27%; aspect-ratio: 1.35; transform: translate(-50%, -50%);
+  border: 0; padding: 0; background: none; pointer-events: auto; cursor: pointer;
+  transition: opacity .3s, filter .3s;
+}
+.stone img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.stone.faint { opacity: .35; pointer-events: none; filter: saturate(.3); }
+.stone.speaking { filter: drop-shadow(0 0 12px #fff6a8) drop-shadow(0 0 6px #ffd23f); }
+.stone.lit { filter: drop-shadow(0 0 16px #fff) brightness(1.15); }
+.stone.gone { opacity: 0; pointer-events: none; }
+.stone .label {
+  position: absolute; inset: 0; display: grid; place-items: center; font-weight: 900; font-size: 5vmin; color: var(--ink);
+  pointer-events: none;
+}
+body.locked .stone { cursor: default; }
+
+.frog {
+  position: absolute; width: 17%; transform: translate(-50%, -78%); left: 50%; top: 92%;
+  pointer-events: none; z-index: 5; filter: drop-shadow(0 6px 4px rgba(0,0,0,.25));
+}
+.ripple {
+  position: absolute; width: 30%; aspect-ratio: 2.2; transform: translate(-50%, -50%); border-radius: 50%;
+  border: 4px solid rgba(255,255,255,.85); pointer-events: none; z-index: 4;
+}

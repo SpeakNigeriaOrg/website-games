@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="yo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Who Came to Visit?</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap">
+<link rel="stylesheet" href="../engine/engine.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage">
+  <img class="bg blurred" src="../art/bg_visit_house.png" alt="">
+  <div class="column playfield" id="yard">
+    <div class="sand" id="sand"></div>
+    <div class="art" id="art">
+      <img class="bg" src="../art/bg_visit_house.png" alt="">
+      <div class="window left" id="winL"><div class="inside"></div><i class="bar v"></i><i class="bar h"></i><div class="waving"></div></div>
+      <div class="window right" id="winR"><div class="inside"></div><i class="bar v"></i><i class="bar h"></i><div class="waving"></div></div>
+      <div class="doorway" id="doorway"><div class="door" id="door"></div></div>
+    </div>
+    <div class="guests" id="guests"></div>
+  </div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

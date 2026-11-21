@@ -103,7 +103,9 @@
       "themed",
       "syllable_reinforcement",
       "tone_pattern",
-      "endless_practice"
+      "endless_practice",
+      "path",
+      "free_play"
     ]
   },
   "events": {

@@ -1,0 +1,73 @@
+/* Word Train: a sunny line across green hills; everything is placed in px from app.js (units on .stage). */
+.stage { background: #8fd16a; }
+.scenery { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sun {
+  position: absolute; right: 8%; top: 9%; width: 13vmin; height: 13vmin; border-radius: 50%;
+  background: radial-gradient(circle, #fff3a0 0 55%, #ffd23f 56%); box-shadow: 0 0 0 2vmin rgba(255, 230, 120, .35);
+}
+.cloud { position: absolute; width: 22vmin; height: 7vmin; background: #fff; border-radius: 99px; opacity: .9; animation: drift 40s linear infinite; }
+.cloud::before, .cloud::after { content: ""; position: absolute; background: #fff; border-radius: 50%; }
+.cloud::before { width: 9vmin; height: 9vmin; left: 4vmin; top: -4.5vmin; }
+.cloud::after { width: 7vmin; height: 7vmin; left: 11vmin; top: -3vmin; }
+.cloud.c1 { left: 6%; top: 14%; }
+.cloud.c2 { left: 52%; top: 6%; transform: scale(.7); animation-duration: 55s; }
+@keyframes drift { 50% { translate: 6vmin 0; } }
+
+.trees { position: absolute; left: 0; right: 0; height: 0; pointer-events: none; }
+.tree { position: absolute; bottom: 0; width: calc(var(--u) * .6 * var(--s)); height: calc(var(--u) * 1.1 * var(--s)); transform: translateX(-50%); }
+.tree i { position: absolute; left: 42%; bottom: 0; width: 16%; height: 45%; background: #8a5a35; border-radius: 4px; }
+.tree b { position: absolute; left: 0; right: 0; top: 0; height: 72%; background: #4f9d3f; border-radius: 50% 50% 46% 46%; box-shadow: inset -6px -6px 0 rgba(0,0,0,.12); }
+
+.track {
+  position: absolute; left: 0; right: 0; top: calc(var(--trackY) - var(--u) * .04); height: calc(var(--u) * .3);
+  background:
+    linear-gradient(#8b8178, #8b8178) 0 0 / 100% calc(var(--u) * .07) no-repeat,
+    linear-gradient(#6d645c, #6d645c) 0 calc(var(--u) * .13) / 100% calc(var(--u) * .06) no-repeat,
+    repeating-linear-gradient(90deg, #8a5a35 0 calc(var(--u) * .14), transparent calc(var(--u) * .14) calc(var(--u) * .36)) 0 calc(var(--u) * .03) / 100% calc(var(--u) * .22) no-repeat,
+    linear-gradient(rgba(120, 90, 60, .35), rgba(120, 90, 60, .35)) 0 calc(var(--u) * .05) / 100% calc(var(--u) * .2) no-repeat;
+}
+
+.train { position: absolute; width: 0; height: var(--engH); transform-origin: calc(var(--engW) * 1.6) 100%; z-index: 3; }
+.engine { position: absolute; left: 0; top: 0; width: var(--engW); height: var(--engH); filter: drop-shadow(0 4px 0 rgba(0,0,0,.15)); }
+.engine svg, .car svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.wheel { transform-box: fill-box; transform-origin: center; }
+.rolling .wheel { animation: spin .45s linear infinite; }
+@keyframes spin { to { transform: rotate(-360deg); } }
+
+.pic-cloud {
+  position: absolute; width: calc(var(--u) * 1.35); height: calc(var(--u) * 1.15); display: grid; place-items: center;
+  background: #fff; border-radius: 46% 54% 50% 50% / 55% 50% 50% 45%;
+  box-shadow: 0 0 0 calc(var(--u) * .05) #fff, 0 6px 0 rgba(0,0,0,.12);
+}
+.pic-cloud::before, .pic-cloud::after { content: ""; position: absolute; background: #fff; border-radius: 50%; }
+.pic-cloud::before { width: 22%; height: 22%; left: 18%; bottom: -14%; }
+.pic-cloud::after { width: 12%; height: 12%; left: 12%; bottom: -27%; }
+.pic-cloud img { width: 84%; height: 84%; object-fit: contain; position: relative; z-index: 1; }
+.pic-cloud.pulse { animation: cloudpulse .8s ease-in-out infinite; }
+@keyframes cloudpulse { 50% { transform: scale(1.08); } }
+
+.slot-ghost {
+  position: absolute; top: calc(var(--engH) - var(--carH) * .9); width: var(--carW); height: calc(var(--carH) * .8);
+  border: 3px dashed rgba(255,255,255,.85); border-radius: 12px; background: rgba(255,255,255,.18);
+}
+.slot-ghost.tooting { animation: toot .5s ease-in-out infinite; background: rgba(255, 240, 160, .6); }
+@keyframes toot { 50% { transform: scale(1.12, .9); } }
+
+.car {
+  position: absolute; width: var(--carW); height: var(--carH); padding: 0; border: 0; background: none; cursor: pointer;
+  transform: rotate(var(--rot, 0deg)); touch-action: none; z-index: 4;
+  filter: drop-shadow(0 4px 0 rgba(0,0,0,.15));
+}
+.car .body { fill: var(--car); }
+.car .dark { fill: color-mix(in srgb, var(--car) 68%, #2b2118); }
+.car.speaking { filter: drop-shadow(0 0 10px #fff6a8) drop-shadow(0 0 5px #ffd23f); animation: hopc .35s ease-in-out infinite; }
+@keyframes hopc { 50% { translate: 0 calc(var(--u) * -.08); } }
+.car.dragging { z-index: 10; filter: drop-shadow(0 12px 6px rgba(0,0,0,.25)); }
+.car .label { position: absolute; left: 0; right: 0; top: 18%; text-align: center; font-weight: 900; font-size: calc(var(--u) * .3); color: var(--ink); pointer-events: none; }
+body.locked .car { cursor: default; }
+.loose .car { z-index: 5; }
+
+.puff { position: fixed; width: calc(var(--u) * .35); height: calc(var(--u) * .35); border-radius: 50%; background: #fff; pointer-events: none; z-index: 2; }
+
+.finale-train { width: 180px; height: 150px; }
+.finale-train svg { width: 100%; height: 100%; }

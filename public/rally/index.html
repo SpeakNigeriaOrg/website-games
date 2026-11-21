@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="yo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gate Rally</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap">
+<link rel="stylesheet" href="../engine/engine.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage">
+  <div class="column playfield" id="road">
+    <img class="bg" id="bg" src="../art/bg_road.png" alt="">
+    <canvas class="lanes" id="lanes"></canvas>
+    <div class="world" id="world"></div>
+    <div class="kart-wrap" id="kartWrap"><img class="kart" id="kart" src="../art/kart.png" alt=""></div>
+    <div class="speed-lines" id="speedLines"></div>
+  </div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

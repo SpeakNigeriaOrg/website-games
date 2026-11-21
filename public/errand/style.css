@@ -1,0 +1,56 @@
+/* Grandma's room: app.js places the furniture, Grandma, her bag and the things in screen pixels. */
+.stage { background: #f6e3bf; }
+.stage > .bg { object-position: 50% 100%; }
+.furniture { position: absolute; inset: 0; pointer-events: none; }
+.furniture img { position: absolute; display: block; filter: drop-shadow(0 6px 4px rgba(0,0,0,.15)); }
+
+.grandma { position: absolute; z-index: 2; pointer-events: none; transform-origin: 50% 100%; }
+.grandma img { width: 100%; height: 100%; object-fit: contain; display: block; transform-origin: 50% 90%; filter: drop-shadow(0 6px 6px rgba(0,0,0,.18)); }
+.grandma.talking img { animation: talk .3s ease-in-out infinite; }
+@keyframes talk { 50% { transform: scale(1.02, .97) translateY(1.5%); } }
+.grandma.happy img { animation: happy .5s ease-in-out 2; }
+@keyframes happy { 30% { transform: translateY(-5%) rotate(-3deg); } 70% { transform: translateY(-2%) rotate(3deg); } }
+.grandma.nope img { animation: nope .45s ease-in-out; }
+@keyframes nope { 20% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } 80% { transform: rotate(-3deg); } }
+.grandma.reaching img { transform: scale(1.04); filter: drop-shadow(0 0 16px #ffe27a) drop-shadow(0 6px 6px rgba(0,0,0,.18)); transition: transform .2s; }
+
+.bag { position: absolute; z-index: 3; pointer-events: none; transform-origin: 50% 100%; transition: scale .6s cubic-bezier(.3, 1.7, .5, 1); }
+.bag > img { position: relative; width: 100%; height: 100%; object-fit: contain; display: block; filter: drop-shadow(0 5px 4px rgba(0,0,0,.2)); }
+/* what went in the bag sits inside it: in front of the back of the bag, behind its front (the same picture clipped
+   below the rim) */
+.bag-peek { position: absolute; left: 4%; right: 4%; top: -16%; height: 56%; }
+.bag > img.front, .finale-errand .fbag > img.front { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; clip-path: inset(37% 0 0 0); filter: none; }
+.bag-peek img { position: absolute; bottom: 0; width: 46%; aspect-ratio: 1; object-fit: contain; border-radius: 18%; background: white; transform: rotate(var(--r, 0deg)); box-shadow: 0 2px 4px rgba(0,0,0,.2); }
+
+.things { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.thing {
+  position: absolute; border: 0; padding: 0; background: none; cursor: grab; pointer-events: auto; touch-action: none;
+  transform-origin: 50% 100%;
+}
+.thing .card {
+  width: 100%; height: 100%; background: white; border-radius: 22%; padding: 7%; transform: rotate(var(--tilt, 0deg));
+  box-shadow: 0 5px 0 rgba(0,0,0,.16), 0 8px 10px rgba(0,0,0,.12); border: 3px solid white; transition: border-color .3s, box-shadow .3s;
+}
+.thing .card img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 16%; pointer-events: none; }
+.thing.dragging, .thing.flying { z-index: 10; cursor: grabbing; }
+.thing.dragging .card { transform: scale(1.1) rotate(0deg); box-shadow: 0 14px 18px rgba(0,0,0,.25); }
+.thing.speaking .card { border-color: var(--gold); box-shadow: 0 0 22px 6px rgba(255, 214, 63, .75); animation: say .32s ease-in-out infinite; }
+@keyframes say { 50% { transform: scale(1.06) rotate(var(--tilt, 0deg)); } }
+body.locked .thing { cursor: default; }
+
+.ghost-thing { position: fixed; z-index: 44; pointer-events: none; }
+.ghost-thing .card { width: 100%; height: 100%; background: white; border-radius: 22%; padding: 7%; border: 3px dashed #f2b33d; }
+.ghost-thing .card img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.drag-hand { transition: none; margin-top: 10px; }
+
+.heart { position: fixed; z-index: 7; font-size: 44px; pointer-events: none; }
+
+.progress-strip .slot-pics { display: flex; }
+.progress-strip .slot-pics img { width: 24px; height: 24px; object-fit: contain; }
+.progress-strip .slot-pics img:first-child { margin-top: -8px; }
+.progress-strip .slot-pics img + img { margin-left: -10px; margin-top: 8px; }
+
+.finale-errand { position: relative; width: min(64vmin, 300px); aspect-ratio: 1; }
+.finale-errand .fg { position: absolute; right: 0; bottom: 0; height: 100%; animation: happy 1s ease-in-out infinite; transform-origin: 50% 100%; }
+.finale-errand .fbag { position: absolute; left: 0; bottom: 0; width: 52%; aspect-ratio: 1; animation: say .6s ease-in-out infinite; }
+.finale-errand .fbag > img:not(.front) { position: relative; width: 100%; height: 100%; object-fit: contain; }

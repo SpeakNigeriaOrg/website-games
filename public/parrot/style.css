@@ -1,0 +1,63 @@
+/* Portrait: parrot above, two big buttons below. Landscape: parrot left, buttons right. */
+.stage { background: linear-gradient(#bfe6f7, #d9f2c4); }
+.layout {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+  padding: calc(64px + env(safe-area-inset-top, 0px)) 16px calc(104px + env(safe-area-inset-bottom, 0px));
+  gap: 12px;
+}
+.parrot-area { flex: 1; min-height: 0; width: 100%; display: grid; place-items: center; }
+.parrot { position: relative; transform-origin: 50% 100%; }
+.parrot-img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 8px 6px rgba(0,0,0,.25)); }
+
+.sign {
+  position: absolute; transform-origin: 50% 100%;
+}
+.sign img { position: absolute; left: 5%; top: 6%; width: 90%; height: 88%; object-fit: contain; border-radius: 10px; }
+
+.bubble {
+  /* left of the head: the offended tilt leans the parrot right, which would carry it off a narrow screen */
+  position: absolute; left: 2%; top: 36%; font-size: clamp(36px, 9vmin, 64px); opacity: 0; pointer-events: none;
+  transform: scale(0);
+}
+.bubble.show { animation: bubble 1.4s ease-out forwards; }
+@keyframes bubble { 0% { opacity: 0; transform: scale(0); } 15% { opacity: 1; transform: scale(1.2); } 25% { transform: scale(1); } 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(-20px); } }
+
+.parrot.talk { animation: talk .32s ease-in-out infinite; }
+@keyframes talk { 50% { transform: translateY(-1.5%) rotate(-1.5deg); } }
+.parrot.happy { animation: happy .45s ease-in-out infinite; }
+@keyframes happy { 25% { transform: rotate(-4deg) translateY(-3%); } 75% { transform: rotate(4deg) translateY(-3%); } }
+.parrot.shake { animation: shake .12s linear infinite; }
+@keyframes shake { 25% { transform: translateX(-2%); } 75% { transform: translateX(2%); } }
+.parrot.offended { transform: rotate(8deg) scaleX(.96); transition: transform .3s; }
+
+.buttons { display: flex; gap: clamp(24px, 8vw, 64px); justify-content: center; flex: none; }
+.big-btn {
+  width: clamp(120px, 34vw, 180px); aspect-ratio: 1; border-radius: 50%; border: 0; padding: 0;
+  background: white; box-shadow: var(--shadow); cursor: pointer; touch-action: manipulation;
+  display: grid; place-items: center;
+}
+.big-btn svg { width: 80%; height: auto; aspect-ratio: 1; display: block; pointer-events: none; }
+.big-btn:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(0,0,0,.18); }
+.seed-btn { background: #fff4d6; }
+.hammer-btn { background: #e3eeff; }
+body.locked .big-btn { cursor: default; }
+.big-btn.wiggle { animation: btnwiggle .45s ease-in-out 3; }
+@keyframes btnwiggle { 25% { transform: rotate(-12deg) scale(1.08); } 75% { transform: rotate(12deg) scale(1.08); } }
+
+.flying-seed {
+  position: fixed; z-index: 44; width: 22px; height: 32px; border-radius: 50%; pointer-events: none;
+  background: repeating-linear-gradient(90deg, #3a2a14 0 4px, #f4e6c0 4px 7px); border: 3px solid #2a1a08;
+}
+.flying-hammer { position: fixed; z-index: 44; width: 110px; height: 110px; pointer-events: none; transform-origin: 30% 90%; }
+.flying-hammer svg { width: 100%; height: 100%; }
+
+.seed-icon { display: block; width: 15px; height: 24px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: repeating-linear-gradient(90deg, #3a2a14 0 3px, #f4e6c0 3px 5px); border: 2px solid #2a1a08; transform: rotate(20deg); }
+.finale-seeds { display: flex; gap: 10px; justify-content: center; }
+.finale-seeds .seed-icon { width: 22px; height: 34px; }
+
+@media (orientation: landscape) {
+  .layout { flex-direction: row; padding: calc(60px + env(safe-area-inset-top, 0px)) 24px 16px 24px; }
+  .parrot-area { height: 100%; }
+  .buttons { flex-direction: row; align-self: center; margin-bottom: 0; }
+  .big-btn { width: clamp(110px, 20vw, 170px); }
+}

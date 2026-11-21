@@ -1,0 +1,402 @@
+{
+ "about": "The learning path's units: our own grouping of the games' words into scenes from a child's day, the idea (and these Yorùbá titles) borrowed from the curriculum draft, which is a draft for one teacher-led course and not a template for the games. Each scene lists its words by id, in teaching order (verbs early where the scene allows; every compound after its parts, which the builder enforces anyway). suggestedBy names the curriculum units whose items mark a word as the curriculum's (● on the path page); the builder reports curriculum words that are in no scene. A second visit (secondOf) is planned, not a leftover: it comes back to its scene later in the path with that scene's later words. A scene with hold waits (its words are tracked, no stones). held: words kept off the path on purpose, with the reason. Words no game can show yet are listed too, so they are tracked as waiting. apart: never two of a pair in one sitting's new words or in one stone (look-alike pictures, or one meaning). Revised 2026-11-20 after the pre-deploy audit: ten units (Day, Body, Animals early, Meal, Feelings, Washing, Family, Home with the fire words before ìdáná, Play and outdoors, Dressed held until wọ̀ has a picture) and four planned second visits.",
+ "scenes": [
+  {
+   "id": "day",
+   "yo": "Ọjọ́ Mi",
+   "en": "My day",
+   "art": "day",
+   "suggestedBy": [
+    "I1.U1"
+   ],
+   "words": [
+    "sun_to_sleep",
+    "ibusun_bed",
+    "ile_home",
+    "aja_dog",
+    "we_to_bathe",
+    "aso_cloth",
+    "sokoto_pants",
+    "bata_shoe",
+    "jokoo_sit",
+    "mu_to_drink",
+    "wara_milk",
+    "ounje_food",
+    "di_bind",
+    "o_se_thank_you",
+    "dide_stand",
+    "wa_come",
+    "e_joo_please",
+    "jokoo_je_sit_still",
+    "dide_nle_get_up",
+    "ojo_day"
+   ]
+  },
+  {
+   "id": "body",
+   "yo": "Ara Mi",
+   "en": "My body and what it does",
+   "art": "body",
+   "suggestedBy": [
+    "I1.U2"
+   ],
+   "words": [
+    "kan_touch",
+    "ori_head",
+    "wo_to_look",
+    "oju_eye",
+    "patewo_clap",
+    "owo_hand",
+    "rin_to_walk",
+    "ese_leg",
+    "sare_run",
+    "eti_ear",
+    "so_throw",
+    "enu_mouth",
+    "imu_nose",
+    "irun_hair",
+    "eyin_tooth"
+   ]
+  },
+  {
+   "id": "animals",
+   "yo": "Ẹranko",
+   "en": "Animals at home and on the farm",
+   "art": "animals",
+   "suggestedBy": [
+    "I1.U10"
+   ],
+   "why": "Early (the draft has it tenth): Puppet Theatre and Windows need their doers (adìyẹ, màlúù, ehoro) known for the early verbs.",
+   "words": [
+    "adiye_chicken",
+    "maluu_cow",
+    "ehoro_rabbit",
+    "gbo_to_bark",
+    "elede_pig",
+    "pepeye_duck",
+    "esinsin_fly",
+    "pa_kill",
+    "esin_horse",
+    "ketekete_donkey",
+    "ijapa_tortoise",
+    "ejo_snake",
+    "alangba_lizard",
+    "eye_bird",
+    "erin_elephant"
+   ]
+  },
+  {
+   "id": "meal",
+   "yo": "Oúnjẹ",
+   "en": "Mealtime",
+   "art": "meal",
+   "suggestedBy": [
+    "I1.U3"
+   ],
+   "words": [
+    "jeun_eat",
+    "iresi_rice",
+    "mu_take",
+    "osan_orange",
+    "isu_yam",
+    "buredi_bread",
+    "ogede_banana",
+    "ebi_hunger",
+    "ewa_beans",
+    "sibi_spoon",
+    "abo_plate",
+    "mu_omi_drink_water",
+    "fun_mi_give_me",
+    "ebi_n_pa_e_you_hungry",
+    "fun_give",
+    "to_enough"
+   ]
+  },
+  {
+   "id": "feelings",
+   "yo": "Inú Mi",
+   "en": "Feelings",
+   "art": "feelings",
+   "suggestedBy": [
+    "I1.U4"
+   ],
+   "words": [
+    "sun_to_cry",
+    "rerin-in_laugh",
+    "pele_sorry",
+    "ro_think",
+    "sunkun_weep",
+    "kelekele_gently",
+    "ma_sunkun_not_cry",
+    "ma_fowo_kan_an_no_touch"
+   ]
+  },
+  {
+   "id": "day2",
+   "yo": "Ọjọ́ Mi",
+   "en": "My day, again: school and night",
+   "art": "day",
+   "suggestedBy": [],
+   "secondOf": "day",
+   "words": [
+    "lo_go",
+    "ile-iwe_school",
+    "gege_pencil",
+    "osupa_moon",
+    "irawo_star",
+    "ofuurufu_sky",
+    "aye_world",
+    "se_to_do"
+   ]
+  },
+  {
+   "id": "wash",
+   "yo": "Wẹ̀",
+   "en": "Washing",
+   "art": "wash",
+   "suggestedBy": [
+    "I1.U5"
+   ],
+   "words": [
+    "nu_clean",
+    "ose_soap",
+    "doti_dirty",
+    "ifoyin_toothbrush",
+    "inura_towel",
+    "digi_mirror",
+    "baluwe_bathroom",
+    "igbe_feces",
+    "o_doti_dirty",
+    "nu_u_cleanit",
+    "so_o_nu_throw_away",
+    "dii_mu_hold",
+    "fi_sile_leave_it",
+    "to_urinate"
+   ]
+  },
+  {
+   "id": "family",
+   "yo": "Ìdílé",
+   "en": "Family and friends",
+   "art": "family",
+   "suggestedBy": [
+    "I1.U6"
+   ],
+   "words": [
+    "gba_to_take",
+    "mama_mother",
+    "egbon_older_sibling",
+    "oba_king",
+    "agba_adult",
+    "omo_mi_my_baby",
+    "alejo_guest",
+    "ran_send",
+    "omo_daadaa_good_child",
+    "kekere_small"
+   ]
+  },
+  {
+   "id": "body2",
+   "yo": "Ara Mi",
+   "en": "My body, again",
+   "art": "body",
+   "suggestedBy": [],
+   "secondOf": "body",
+   "words": [
+    "ra_crawl",
+    "orun_neck",
+    "ikun_stomach",
+    "ejika_shoulder",
+    "atelewo_palm",
+    "orunkun_knee",
+    "eyin_back",
+    "ete_lip",
+    "aya_chest",
+    "eekanna_nail",
+    "itan_thigh",
+    "idodo_navel"
+   ]
+  },
+  {
+   "id": "home",
+   "yo": "Ilé àti Ilé Ìdáná",
+   "en": "At home, and the kitchen",
+   "art": "home",
+   "suggestedBy": [
+    "I1.U7",
+    "I2.U4"
+   ],
+   "words": [
+    "ru_carry",
+    "aga_chair",
+    "yara_room",
+    "ina_fire",
+    "redio_radio",
+    "ikoko_pot",
+    "dana_cook",
+    "pana_extinguish_fire",
+    "o_ti_to_enough",
+    "idana_cooking",
+    "ile_idana_kitchen",
+    "yara_igbalejo_living_room",
+    "tabili_table",
+    "irori_pillow",
+    "te_press",
+    "kun_growl",
+    "ni_at",
+    "nle_at_home"
+   ]
+  },
+  {
+   "id": "meal2",
+   "yo": "Oúnjẹ",
+   "en": "Mealtime, again: the market",
+   "art": "meal",
+   "suggestedBy": [],
+   "secondOf": "meal",
+   "words": [
+    "ra_buy",
+    "oja_market",
+    "iyan_pounded_yam",
+    "amala_amala",
+    "awo_plate",
+    "akara_oyinbo_cake",
+    "ibepe_papaya",
+    "alubosa_onion",
+    "obe_knife",
+    "o_gbona_hot",
+    "kasu_cashew",
+    "goomu_gum",
+    "ewuro_bitterleaf",
+    "oka_grain",
+    "oka_baba_sorghum",
+    "ogede_agbagba_plantain"
+   ]
+  },
+  {
+   "id": "play",
+   "yo": "Ìṣeré",
+   "en": "Play and outdoors",
+   "art": "play",
+   "suggestedBy": [
+    "I1.U9"
+   ],
+   "words": [
+    "luwe_swim",
+    "boolu_ball",
+    "ere_game",
+    "isere_toy",
+    "keke_bicycle",
+    "moto_automobile",
+    "alupupu_motorcycle",
+    "oko_panapana_firetruck",
+    "okuta_stone",
+    "ewe_leaf",
+    "igbo_forest",
+    "ile_land",
+    "fila_hat",
+    "ileke_beads",
+    "sere_play",
+    "ja_to_pluck_off",
+    "ewa_beauty"
+   ]
+  },
+  {
+   "id": "animals2",
+   "yo": "Ẹranko",
+   "en": "Animals, again: wild and young",
+   "art": "animals",
+   "suggestedBy": [],
+   "secondOf": "animals",
+   "words": [
+    "okere_squirrel",
+    "kiniun_lion",
+    "agunfon_giraffe",
+    "ekun_leopard",
+    "amotekun_cheetah",
+    "abila_striped",
+    "ketekete_abila_zebra",
+    "odo_agutan_lamb",
+    "ijapa_inu_omi_aquatic_turtle",
+    "omo_ehoro_baby_bunny",
+    "peja_to_fish"
+   ]
+  },
+  {
+   "id": "dress",
+   "yo": "Aṣọ",
+   "en": "Getting dressed",
+   "art": "dress",
+   "suggestedBy": [
+    "I1.U8"
+   ],
+   "hold": "wọ̀ (wear), the scene's verb, has no picture in the kit: the unit waits for it. Its other words are in My day (aṣọ, ṣòkòtò, bàtà, dì) and Play (fìlà, ìlẹ̀kẹ̀).",
+   "words": [
+    "wo_wear",
+    "wo_o_wear_it"
+   ]
+  }
+ ],
+ "held": {
+  "kalamu_pen": "a second word for pen next to gègé, and not a home word for a 4-year-old",
+  "pako_timber": "not a home word for a 4-year-old",
+  "irin_iron": "not a home word for a 4-year-old; it was there for the irin/ìrìn tone pair, which has no tone evidence",
+  "irin_walk": "no picture of its own (verbs.js DUPLICATE: rìn's idea); its tone pair irin/ìrìn has no tone evidence",
+  "ero_asoromagbesi_radio": "a 9-syllable formal second word for radio beside rédíò (Ìpele 3-4 in the draft)",
+  "igbalejo_hospitality": "an abstract noun (Ìpele 3-4 in the draft); yàrá ìgbàlejò is taught whole"
+ },
+ "apart": [
+  [
+   "gege_pencil",
+   "kalamu_pen"
+  ],
+  [
+   "redio_radio",
+   "ero_asoromagbesi_radio"
+  ],
+  [
+   "ogede_banana",
+   "ogede_agbagba_plantain"
+  ],
+  [
+   "moto_automobile",
+   "oko_ayokele_car"
+  ],
+  [
+   "ketekete_donkey",
+   "ketekete_abila_zebra"
+  ],
+  [
+   "olongbo_cat",
+   "omo_ologbo_kitten"
+  ],
+  [
+   "ehoro_rabbit",
+   "omo_ehoro_baby_bunny"
+  ],
+  [
+   "amotekun_cheetah",
+   "ekun_leopard"
+  ],
+  [
+   "mama_mother",
+   "omo_mi_my_baby"
+  ],
+  [
+   "abo_plate",
+   "awo_plate"
+  ],
+  [
+   "sun_to_cry",
+   "sunkun_weep"
+  ],
+  [
+   "ijapa_tortoise",
+   "ijapa_inu_omi_aquatic_turtle"
+  ],
+  [
+   "oka_grain",
+   "oka_baba_sorghum"
+  ]
+ ]
+}

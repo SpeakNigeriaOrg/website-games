@@ -1,0 +1,96 @@
+/* Fishing with Grandma: a portrait riverside column, centred on wide screens. Grandma and her basket stand on the
+   bank at the top; the fish leap out of the water below. Sizes use the column's container units, so the layout
+   holds at phone and landscape sizes alike. */
+body.game { background: #7cc6e4; }
+.column {
+  position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+  height: 100%; aspect-ratio: 832 / 1216; max-width: 100vw; overflow: hidden; container-type: size;
+  --card: min(42cqw, 21cqh);
+}
+.column > .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Grandma on the bank, left; she bobs while she talks. */
+.grandma {
+  position: absolute; z-index: 5; left: 1%; bottom: calc(100% - 39cqh); width: min(46cqw, 25cqh);
+  pointer-events: none; filter: drop-shadow(0 6px 6px rgba(0,0,0,.25)); transform-origin: 50% 100%;
+}
+.grandma.talk { animation: talk .45s ease-in-out infinite alternate; }
+@keyframes talk { to { transform: translateY(-3%) rotate(-2deg); } }
+
+/* Her basket, right: the picture of what she wants stands up in it; its places fill as she gets them. */
+.basket {
+  position: absolute; z-index: 6; left: 70%; bottom: calc(100% - 40cqh); width: calc(var(--card) * 1.35); transform: translateX(-50%);
+  pointer-events: none;
+}
+.card {
+  position: relative; z-index: 1; left: 50%; width: var(--card); aspect-ratio: 1; transform: translateX(-50%);
+  background: white; border-radius: 22px; box-shadow: var(--shadow); padding: 6%; visibility: hidden;
+}
+.card.show { visibility: visible; }
+.card img { width: 100%; height: 100%; object-fit: contain; border-radius: 14px; display: block; }
+.card.pulse { animation: cardpulse .8s ease-in-out infinite; }
+@keyframes cardpulse { 50% { box-shadow: 0 0 0 8px #ffd23f, var(--shadow); } }
+.weave { position: relative; z-index: 2; display: block; width: 100%; margin-top: calc(var(--card) * -0.16); filter: drop-shadow(0 6px 4px rgba(0,0,0,.25)); transform-origin: 50% 100%; }
+.weave.bounce { animation: bounce .45s ease-out; }
+@keyframes bounce { 40% { transform: scale(1.06, .92); } 70% { transform: scale(.98, 1.04); } }
+.slots {
+  position: absolute; z-index: 3; left: 50%; bottom: 18%; transform: translateX(-50%);
+  display: flex; gap: 4px; justify-content: center;
+}
+.slot {
+  width: min(calc(var(--card) * 0.36), calc(var(--card) * 1.2 / var(--n, 3))); aspect-ratio: 1; border-radius: 50%;
+  background: rgba(255,248,230,.55); border: 3px dashed rgba(110,60,15,.55); display: grid; place-items: center; overflow: hidden;
+}
+.slot.filled { background: white; border: 3px solid #8a4b12; animation: popin .4s ease-out; }
+.slot img { width: 86%; height: 86%; object-fit: contain; }
+
+/* A fish: anchored at its centre at the top of its leap. */
+.fishes { position: absolute; inset: 0; }
+.fish {
+  position: absolute; z-index: 4; width: min(32cqw, 17cqh); transform: translate(-50%, -50%); border: 0; padding: 0;
+  background: none; cursor: pointer; touch-action: manipulation;
+}
+.fish .body { display: block; }
+.fish.left .body { transform: scaleX(-1); }
+.fish img { width: 100%; display: block; pointer-events: none; filter: drop-shadow(0 6px 4px rgba(0,0,0,.25)); }
+.fish.calling img { animation: call .26s ease-in-out infinite alternate; }
+@keyframes call { to { transform: scale(1.07, .93) rotate(-5deg); } }
+/* while it calls, rings go out from it: this is the fish that is talking */
+.fish.calling::before, .fish.calling::after {
+  content: ''; position: absolute; left: 50%; top: 50%; width: 100%; aspect-ratio: 1.4; border-radius: 50%;
+  border: 4px solid rgba(255,255,255,.9); transform: translate(-50%,-50%) scale(.6); opacity: 0; pointer-events: none;
+  animation: ring 0.9s ease-out infinite;
+}
+.fish.calling::after { animation-delay: .45s; }
+@keyframes ring { 0% { transform: translate(-50%,-50%) scale(.6); opacity: .9; } 100% { transform: translate(-50%,-50%) scale(1.25); opacity: 0; } }
+.fish.shake img { animation: shake .3s ease-in-out 3; }
+@keyframes shake { 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
+body.locked .fish { cursor: default; }
+
+/* Grandma's net and the caught thing. */
+.net { position: absolute; z-index: 9; width: min(30cqw, 17cqh); display: none; pointer-events: none; filter: drop-shadow(0 6px 4px rgba(0,0,0,.25)); }
+.net.show { display: block; }
+.thing {
+  position: absolute; z-index: 10; width: calc(var(--card) * 0.8); aspect-ratio: 1; transform: translate(-50%, -50%);
+  background: white; border-radius: 18px; box-shadow: var(--shadow); padding: 5%; pointer-events: none;
+}
+.thing img { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; display: block; }
+
+.ripple {
+  position: absolute; width: 26%; aspect-ratio: 2.4; transform: translate(-50%, -50%); border-radius: 50%;
+  border: 4px solid rgba(255,255,255,.85); pointer-events: none; z-index: 2;
+}
+.drop { position: absolute; width: 2.4%; aspect-ratio: 1; border-radius: 50%; background: #e8f8ff; z-index: 5; pointer-events: none; }
+
+/* the teaching turn's "no": a wagging finger */
+.ghost-hand.no { transform: translate(-50%, -50%); transition: none; font-size: 58px; }
+.ear.nudge { opacity: 1; animation: pulse 0.6s ease-in-out 4; }
+
+/* the finale: the full basket */
+.haul { position: relative; width: min(64vw, 300px, 52vh); }
+.haul-things { display: flex; justify-content: center; gap: 6px; margin-bottom: -26%; position: relative; z-index: 2; }
+.haul-things img { width: 30%; aspect-ratio: 1; object-fit: contain; background: white; border-radius: 14px; box-shadow: var(--shadow); padding: 4px; }
+.haul-basket { position: relative; z-index: 1; width: 100%; display: block; }
+
+/* grass on the bank in front of Grandma, where her picture ends */
+.reeds { position: absolute; z-index: 5; left: -4%; bottom: calc(100% - 41cqh); width: min(56cqw, 30cqh); pointer-events: none; }

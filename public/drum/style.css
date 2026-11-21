@@ -1,0 +1,58 @@
+.square { position: absolute; inset: 0; overflow: hidden; }
+.square > .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; }
+
+/* The word's picture, held up like a sign at the party. */
+.pic {
+  position: absolute; left: 50%; top: 4%; width: min(38vw, 22vh); aspect-ratio: 1; transform: translateX(-50%);
+  background: white; border-radius: 24px; box-shadow: var(--shadow); padding: 7px; z-index: 3;
+}
+.pic img { width: 100%; height: 100%; object-fit: contain; border-radius: 18px; display: block; }
+.pic.pulse { animation: picpulse 1s ease-in-out infinite; }
+@keyframes picpulse { 50% { transform: translateX(-50%) scale(1.06); } }
+.pic.hang { animation: hang 1.4s ease-in-out; }
+@keyframes hang { 30% { transform: translateX(-50%) rotate(-5deg); } 60% { transform: translateX(-50%) rotate(4deg); } }
+
+/* The drum: big, front and centre. */
+.drum {
+  position: absolute; left: 50%; bottom: 3%; height: 37vh; max-width: 62vw; transform: translateX(-50%); transform-origin: 50% 100%;
+  border: 0; padding: 0; background: none; cursor: pointer; z-index: 6; touch-action: none;
+  filter: drop-shadow(0 10px 6px rgba(0,0,0,.3));
+}
+.drum img { height: 100%; width: auto; max-width: 100%; object-fit: contain; display: block; pointer-events: none; }
+body.locked .drum { cursor: default; }
+
+.beat-ring {
+  position: fixed; z-index: 7; width: 34vmin; aspect-ratio: 2.4; border-radius: 50%; pointer-events: none;
+  border: 6px solid rgba(255, 236, 160, .95); box-shadow: 0 0 18px rgba(255, 210, 63, .8);
+}
+
+/* The next dancer waits beside the drum. */
+.waiter {
+  position: absolute; right: 1%; bottom: 3%; height: 21vh; z-index: 5; transform-origin: 50% 100%; --flip: 1;
+  transform: scaleX(var(--flip)); animation: sway 1.8s ease-in-out infinite; pointer-events: none;
+  filter: drop-shadow(0 6px 4px rgba(0,0,0,.25));
+}
+@keyframes sway { 50% { transform: scaleX(var(--flip)) rotate(3deg); } }
+.waiter.waiting { animation: waiting 0.7s ease-in-out 2; }
+@keyframes waiting { 0%, 100% { transform: scaleX(var(--flip)) rotate(0); } 40% { transform: scaleX(var(--flip)) rotate(-9deg) translateY(4px); } 70% { transform: scaleX(var(--flip)) rotate(-9deg); } }
+
+/* The party: dancers who joined, on the open ground behind the drum. */
+.party { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.dancer {
+  position: absolute; transform: scaleX(var(--flip, 1)); transform-origin: 50% 100%;
+  filter: drop-shadow(0 5px 3px rgba(0,0,0,.25)); pointer-events: none; translate: -50% 0;
+}
+.dancer.dancing { animation: dance .55s ease-in-out infinite alternate; }
+@keyframes dance { 0% { transform: scaleX(var(--flip, 1)) rotate(-6deg) translateY(0); } 100% { transform: scaleX(var(--flip, 1)) rotate(6deg) translateY(-12px); } }
+.party.finale-dance .dancer { animation-duration: .3s; }
+
+.finale-dancers { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+.finale-dancers img { height: min(90px, 16vw); animation: dance .4s ease-in-out infinite alternate; }
+
+/* Landscape: picture on the left, drum in the middle, the waiting dancer on the right, party behind. */
+@media (orientation: landscape) {
+  .pic { left: 13%; top: 6%; width: min(22vw, 36vh); }
+  .drum { height: 66vh; bottom: 2%; }
+  .waiter { right: 9%; height: 42vh; }
+  .pic.pulse { animation-name: picpulse; }
+}

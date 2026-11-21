@@ -1,0 +1,49 @@
+.room { position: absolute; inset: 0; overflow: hidden; }
+.room > .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.things { position: absolute; inset: 0; }
+
+.thing {
+  position: absolute; transform: translate(-50%, -50%); border: 0; padding: 0; background: none; cursor: pointer;
+}
+.thing .card {
+  width: 100%; height: 100%; background: white; border-radius: 24%; padding: 7%; box-shadow: var(--shadow);
+  border: 4px solid white; transition: filter .6s ease, transform .5s ease, border-color .4s;
+}
+.thing .card img { width: 100%; height: 100%; object-fit: contain; border-radius: 18%; display: block; pointer-events: none; }
+
+/* Asleep: grey, a little slumped, breathing slowly, with a Zzz floating up. */
+.thing.asleep .card {
+  filter: grayscale(1) brightness(.92) contrast(.85); transform: rotate(var(--tilt, -4deg)) scale(.94);
+  animation: breathe-sleep 3.2s ease-in-out infinite;
+}
+@keyframes breathe-sleep { 50% { transform: rotate(var(--tilt, -4deg)) scale(.97, .91); } }
+.zzz { position: absolute; right: -16%; top: -34%; width: 44%; height: 50%; pointer-events: none; }
+.zzz span {
+  position: absolute; font-weight: 900; color: #5a6b8c; text-shadow: 0 2px 0 white, 0 0 6px white; opacity: 0;
+  animation: zfloat 3s ease-in infinite;
+}
+.zzz span:nth-child(1) { left: 0; bottom: 0; font-size: 1.1em; animation-delay: 0s; }
+.zzz span:nth-child(2) { left: 30%; bottom: 25%; font-size: 1.5em; animation-delay: .9s; }
+.zzz span:nth-child(3) { left: 60%; bottom: 50%; font-size: 2em; animation-delay: 1.8s; }
+@keyframes zfloat { 0% { opacity: 0; transform: translate(0, 10px) rotate(-10deg); } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(14px, -26px) rotate(12deg); } }
+.thing { font-size: clamp(16px, 3.4vmin, 26px); }
+.thing.awake .zzz { display: none; }
+
+/* Snoring: the card swells and the Zzz grow quicker. */
+.thing.snoring .card { animation: snore 1s ease-in-out 2; }
+@keyframes snore { 50% { transform: rotate(var(--tilt, -4deg)) scale(1.06, .96); } }
+.thing.snoring .zzz span { animation-duration: 1.2s; }
+
+/* Awake: full colour, upright, gold rim while speaking. */
+.thing.awake .card { filter: none; transform: none; }
+.thing.waking .card { border-color: var(--gold); }
+.thing.speaking .card { border-color: var(--gold); box-shadow: var(--shadow), 0 0 24px 6px rgba(255, 214, 63, .7); }
+
+/* All awake: the room dances. */
+.room.dancing .thing .card { animation: dance .6s ease-in-out infinite alternate; animation-delay: var(--delay, 0s); }
+@keyframes dance { 0% { transform: rotate(-8deg) translateY(0); } 100% { transform: rotate(8deg) translateY(-14px); } }
+.room.dancing > .bg { animation: roomglow 1.2s ease-in-out infinite alternate; }
+@keyframes roomglow { to { filter: brightness(1.08) saturate(1.2); } }
+
+.finale-pics { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.finale-pics img { width: 72px; height: 72px; border-radius: 16px; object-fit: contain; box-shadow: var(--shadow); background: white; }

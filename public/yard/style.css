@@ -1,0 +1,43 @@
+/* The yard picture spans the width; sky above and red earth below fill a tall screen. */
+.stage { background: #d86642; }
+.scene { position: absolute; overflow: hidden; }
+.scene-bg { position: absolute; top: 0; display: block; max-width: none; }
+.animals, .bushes { position: absolute; inset: 0; }
+.animals { pointer-events: none; }
+.bushes { pointer-events: none; }
+.animal { z-index: 1; }
+.animal.up { z-index: 3; }
+
+.bush {
+  position: absolute; z-index: 2; border: 0; padding: 0; background: none; cursor: pointer; pointer-events: auto;
+  transform-origin: 50% 95%;
+}
+.bush img { width: 100%; height: 100%; display: block; pointer-events: none; }
+.bush.rustle { animation: rustle .5s ease-in-out; }
+@keyframes rustle { 20% { transform: rotate(-3deg) scale(1.02); } 50% { transform: rotate(3deg); } 80% { transform: rotate(-1.5deg); } }
+.bush.shake { animation: shake .65s ease-in-out; }
+@keyframes shake { 15% { transform: rotate(-5deg) scale(1.05, .96); } 35% { transform: rotate(5deg) scale(.97, 1.04); } 55% { transform: rotate(-4deg); } 75% { transform: rotate(3deg); } }
+body.locked .bush { cursor: default; }
+
+.animal {
+  position: absolute; aspect-ratio: 1; border-radius: 50%; background: white;
+  box-shadow: 0 0 0 4px #fff, 0 7px 0 4px rgba(0,0,0,.18); will-change: transform, left, top;
+}
+.animal img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+.animal.jig img { animation: jig .25s ease-in-out 2; }
+@keyframes jig { 50% { transform: rotate(-12deg) scale(1.05); } }
+.animal.joy img { animation: joy .5s ease-in-out infinite; }
+@keyframes joy { 0%, 100% { transform: translateY(0) rotate(0); } 30% { transform: translateY(-18%) rotate(-10deg); } 60% { transform: translateY(-6%) rotate(10deg); } }
+.animal.shy img { animation: shy .4s ease-in-out infinite; }
+@keyframes shy { 50% { transform: rotate(8deg); } }
+
+.leaf { position: fixed; z-index: 8; width: 12px; height: 8px; border-radius: 0 70% 0 70%; background: #3f9a3a; pointer-events: none; }
+.finale-row { display: flex; gap: 10px; }
+.finale-row img { width: min(24vmin, 120px); aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 5px solid white; box-shadow: var(--shadow); animation: joy .6s ease-in-out infinite; }
+.finale-row img:nth-child(2) { animation-delay: .15s; }
+.finale-row img:nth-child(3) { animation-delay: .3s; }
+/* on tall screens the bushes stand on open earth: give them a shadow to stand on */
+body[data-mode="grid"] .bush::before {
+  content: ""; position: absolute; left: 8%; right: 8%; bottom: -7%; height: 18%; border-radius: 50%;
+  background: rgba(90, 30, 10, .25); z-index: -1;
+}

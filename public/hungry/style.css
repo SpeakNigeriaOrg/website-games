@@ -1,0 +1,42 @@
+/* The kitchen covers the screen; app.js places the goat, table front and plates in screen pixels. */
+.stage { background: #f7db9c; }
+.scene { position: absolute; }
+.scene-bg { width: 100%; height: 100%; display: block; }
+.table { position: absolute; z-index: 2; pointer-events: none; }
+
+.goat { position: absolute; z-index: 1; transform-origin: 50% 90%; pointer-events: none; transition: scale .8s cubic-bezier(.3, 1.7, .5, 1); }
+/* smaller than normal: droopy, slowly swaying, a little pale (overridden while it talks, munches or sniffs) */
+.goat.hungry img { animation: hungry 2.6s ease-in-out infinite; transform-origin: 50% 85%; filter: saturate(.75) drop-shadow(0 6px 6px rgba(0,0,0,.18)); }
+@keyframes hungry { 0%, 100% { transform: rotate(-2deg) scaleY(.97) translateY(2%); } 50% { transform: rotate(2deg) scaleY(.95) translateY(3%); } }
+.goat.rumble img { animation: rumble .1s linear 8; transform-origin: 50% 85%; }
+@keyframes rumble { 50% { transform: translateX(-2%) scaleY(.96); } }
+.goat img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 6px rgba(0,0,0,.18)); }
+.goat.talking img { animation: talk .28s ease-in-out infinite; transform-origin: 50% 85%; }
+@keyframes talk { 50% { transform: scale(1.03, .96) translateY(2%); } }
+.goat.munching img { animation: chomp .21s ease-in-out infinite; transform-origin: 50% 85%; }
+@keyframes chomp { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.08, .88) translateY(4%); } 70% { transform: scale(.96, 1.06) translateY(-2%); } }
+.goat.sniffing img { animation: sniff .17s ease-in-out infinite; transform-origin: 50% 85%; }
+@keyframes sniff { 50% { transform: translateY(3%) rotate(-2deg) scale(1.02); } }
+.goat.nope img { animation: nope .45s ease-in-out; transform-origin: 50% 85%; }
+@keyframes nope { 20% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } 80% { transform: rotate(-4deg); } }
+.goat.full img { animation: full 1s ease-in-out infinite; transform-origin: 50% 85%; }
+@keyframes full { 50% { transform: scale(1.06) rotate(3deg); } }
+
+.plates { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.plate {
+  position: absolute; border: 0; border-radius: 26%; cursor: pointer; pointer-events: auto;
+  background: radial-gradient(circle at 50% 45%, #fff 60%, #f1ece2 61%, #fff 72%);
+  box-shadow: 0 6px 0 rgba(0,0,0,.2), 0 10px 14px rgba(0,0,0,.15);
+}
+.plate img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 18%; pointer-events: none; }
+.plate.flying { z-index: 6; box-shadow: none; background: transparent; }
+body.locked .plate { cursor: default; }
+
+.crumb { position: fixed; z-index: 7; width: 9px; height: 7px; border-radius: 3px; pointer-events: none; }
+.heart { position: fixed; z-index: 7; font-size: 46px; pointer-events: none; }
+.finale-pic img { width: min(46vmin, 220px); display: block; animation: full 1s ease-in-out infinite; }
+
+.hunger-bubble { position: absolute; right: -22%; top: -10%; width: 46%; opacity: 0; transform: scale(.6); transition: opacity .4s, transform .4s; pointer-events: none; }
+.hunger-bubble svg { width: 100%; display: block; }
+.goat.hungry .hunger-bubble { opacity: 1; transform: scale(1); animation: bubble 1.8s ease-in-out infinite; }
+@keyframes bubble { 50% { transform: scale(1.06) translateY(-4%); } }
