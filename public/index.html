@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/styles.css?v=2" />
   <!-- Landing-page-only styles. styles.css stays a verbatim vendored copy of
        website/assets/styles.css; everything this page adds lives here. -->
-  <link rel="stylesheet" href="assets/landing.css?v=7" />
+  <link rel="stylesheet" href="assets/landing.css?v=8" />
   <link rel="preload" as="image" href="assets/img/hero-720.webp" imagesrcset="assets/img/hero-720.webp 720w, assets/img/hero-1200.webp 1200w" imagesizes="(min-width: 900px) 600px, 100vw" />
 </head>
 <body>
@@ -120,28 +120,58 @@
     <section class="section lp-suite" id="games" aria-labelledby="games-title">
       <div class="wrap">
         <h2 id="games-title">Or pick a game</h2>
-        <ul class="lp-tiles lp-tiles-all">
-          <li><a class="lp-tile" href="/river/"><img src="assets/img/suite/river.webp" width="480" height="360" loading="lazy" alt="" /><div><b>River Crossing</b></div></a></li>
-          <li><a class="lp-tile" href="/rally/"><img src="assets/img/suite/rally.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Gate Rally</b></div></a></li>
-          <li><a class="lp-tile" href="/drum/"><img src="assets/img/suite/drum.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Beat the Drum</b></div></a></li>
-          <li><a class="lp-tile" href="/stretchy/"><img src="assets/img/suite/stretchy.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Stretchy Word</b></div></a></li>
-          <li><a class="lp-tile" href="/train/"><img src="assets/img/suite/train.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Word Train</b></div></a></li>
-          <li><a class="lp-tile" href="/giant/"><img src="assets/img/suite/giant.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Tickle the Giant</b></div></a></li>
-          <li><a class="lp-tile" href="/hungry/"><img src="assets/img/suite/hungry.webp" width="480" height="360" loading="lazy" alt="" /><div><b>You're Hungry!</b></div></a></li>
-          <li><a class="lp-tile" href="/yard/"><img src="assets/img/suite/yard.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Hide and Seek</b></div></a></li>
-          <li><a class="lp-tile" href="/fish/"><img src="assets/img/suite/fish.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Fishing with Grandma</b></div></a></li>
-          <li><a class="lp-tile" href="/parrot/"><img src="assets/img/suite/parrot.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Silly Parrot</b></div></a></li>
-          <li><a class="lp-tile" href="/house/"><img src="assets/img/suite/house.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Wake the House</b></div></a></li>
-          <li><a class="lp-tile" href="/visit/"><img src="assets/img/suite/visit.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Who Came to Visit?</b></div></a></li>
-          <li><a class="lp-tile" href="/together/"><img src="assets/img/suite/together.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Put It Together</b></div></a></li>
-          <li><a class="lp-tile" href="/doit/"><img src="assets/img/suite/doit.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Do It!</b></div></a></li>
-          <li><a class="lp-tile" href="/say/"><img src="assets/img/suite/say.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Say the Right Thing</b></div></a></li>
-          <li><a class="lp-tile" href="/where/"><img src="assets/img/suite/where.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Where It Happens</b></div></a></li>
-          <li><a class="lp-tile" href="/errand/"><img src="assets/img/suite/errand.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Grandma's Errand</b></div></a></li>
-          <li><a class="lp-tile" href="/sort/"><img src="assets/img/suite/sort.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Sort It</b></div></a></li>
-          <li><a class="lp-tile" href="/theatre/"><img src="assets/img/suite/theatre.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Puppet Theatre</b></div></a></li>
-          <li><a class="lp-tile" href="/windows/"><img src="assets/img/suite/windows.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Windows</b></div></a></li>
-        </ul>
+        <div class="lp-groups">
+          <section class="lp-group" style="--cols:5" aria-labelledby="g-sounds">
+            <h3 id="g-sounds">Sounds and syllables</h3>
+            <ul class="lp-tiles">
+              <li><a class="lp-tile" href="/river/"><img src="assets/img/suite/river.webp" width="480" height="360" loading="lazy" alt="" /><div><b>River Crossing</b><span>Hear a word, then hop the frog across the river, one stone per syllable.</span></div></a></li>
+              <li><a class="lp-tile" href="/rally/"><img src="assets/img/suite/rally.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Gate Rally</b><span>Steer your kart through the gate that matches what you heard.</span></div></a></li>
+              <li><a class="lp-tile" href="/drum/"><img src="assets/img/suite/drum.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Beat the Drum</b><span>Drum the word out, one beat per syllable, and the drum says it back.</span></div></a></li>
+              <li><a class="lp-tile" href="/stretchy/"><img src="assets/img/suite/stretchy.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Stretchy Word</b><span>Stretch a word creature and it says itself slowly, a syllable at a time.</span></div></a></li>
+              <li><a class="lp-tile" href="/train/"><img src="assets/img/suite/train.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Word Train</b><span>Couple the carriages in order and the train says the word.</span></div></a></li>
+            </ul>
+          </section>
+
+          <section class="lp-group" style="--cols:5" aria-labelledby="g-words">
+            <h3 id="g-words">Words and meanings</h3>
+            <ul class="lp-tiles">
+              <li><a class="lp-tile" href="/giant/"><img src="assets/img/suite/giant.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Tickle the Giant</b><span>The giant names a body part: tickle him there.</span></div></a></li>
+              <li><a class="lp-tile" href="/hungry/"><img src="assets/img/suite/hungry.webp" width="480" height="360" loading="lazy" alt="" /><div><b>You're Hungry!</b><span>A hungry goat asks for a food. Feed it the right one.</span></div></a></li>
+              <li><a class="lp-tile" href="/yard/"><img src="assets/img/suite/yard.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Hide and Seek</b><span>A voice calls an animal: find the one hiding in the yard.</span></div></a></li>
+              <li><a class="lp-tile" href="/fish/"><img src="assets/img/suite/fish.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Fishing with Grandma</b><span>Grandma asks for something: catch the fish that calls its name.</span></div></a></li>
+              <li><a class="lp-tile" href="/parrot/"><img src="assets/img/suite/parrot.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Silly Parrot</b><span>The parrot names a picture. Is it right, or silly?</span></div></a></li>
+              <li><a class="lp-tile" href="/house/"><img src="assets/img/suite/house.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Wake the House</b><span>Wake each sleepy thing in the house and hear its name. No wrong answers.</span></div></a></li>
+              <li><a class="lp-tile" href="/visit/"><img src="assets/img/suite/visit.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Who Came to Visit?</b><span>Guests wait at the door: let in the one whose name you hear.</span></div></a></li>
+              <li><a class="lp-tile" href="/together/"><img src="assets/img/suite/together.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Put It Together</b><span>Two words you know go into the pot. Which picture comes out?</span></div></a></li>
+            </ul>
+          </section>
+
+          <section class="lp-group" style="--cols:3" aria-labelledby="g-do">
+            <h3 id="g-do">Do what the words say</h3>
+            <ul class="lp-tiles">
+              <li><a class="lp-tile" href="/doit/"><img src="assets/img/suite/doit.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Do It!</b><span>Hold it, wipe it, throw it away - or don't touch it!</span></div></a></li>
+              <li><a class="lp-tile" href="/say/"><img src="assets/img/suite/say.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Say the Right Thing</b><span>Someone trips, Grandma brings a gift: pick what fits the moment.</span></div></a></li>
+              <li><a class="lp-tile" href="/where/"><img src="assets/img/suite/where.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Where It Happens</b><span>Hear a doing word, then take the boy to where it happens.</span></div></a></li>
+            </ul>
+          </section>
+
+          <section class="lp-group" style="--cols:2" aria-labelledby="g-show">
+            <h3 id="g-show">Show you understand</h3>
+            <ul class="lp-tiles">
+              <li><a class="lp-tile" href="/errand/"><img src="assets/img/suite/errand.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Grandma's Errand</b><span>Find what Grandma asks for in a busy room and bring it to her.</span></div></a></li>
+              <li><a class="lp-tile" href="/sort/"><img src="assets/img/suite/sort.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Sort It</b><span>A sealed parcel says its word: put it where it belongs.</span></div></a></li>
+            </ul>
+          </section>
+
+          <section class="lp-group" style="--cols:2" aria-labelledby="g-who">
+            <h3 id="g-who">Who does what</h3>
+            <ul class="lp-tiles">
+              <li><a class="lp-tile" href="/theatre/"><img src="assets/img/suite/theatre.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Puppet Theatre</b><span>Hear an animal and an action, set them up, and the curtain opens.</span></div></a></li>
+              <li><a class="lp-tile" href="/windows/"><img src="assets/img/suite/windows.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Windows</b><span>Hear an animal and an action: tap the window where it's happening.</span></div></a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
       </div>
     </section>
 
@@ -165,6 +195,13 @@
           <p class="lp-band-line">Tell us what worked and what didn't. It shapes the full app.</p>
         </div>
         <a class="btn btn-primary" href="mailto:hello@speaknigeria.org?subject=Feedback%20%E2%80%94%20Yor%C3%B9b%C3%A1%20games">Send feedback</a>
+      </div>
+      <div class="wrap">
+        <ol class="lp-road" aria-label="Where this is going">
+          <li class="is-now"><span class="lp-road-step">Now</span><b>Experimental <span lang="yo">Yorùbá</span> games</b></li>
+          <li><span class="lp-road-step">Next</span><b>The same games in Igbo and Hausa</b></li>
+          <li><span class="lp-road-step">Then</span><b>An open-source app for all platforms, in many Nigerian languages</b></li>
+        </ol>
       </div>
     </section>
 
