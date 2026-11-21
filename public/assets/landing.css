@@ -275,3 +275,26 @@
 
 /* four language cards: Yorùbá, Igbo and Hausa in a row, any other language across the full width beneath */
 .lp-ask-wide { grid-column: 1 / -1; }
+
+/* Leaner page (owner, 2026-11-20): one heading, one line, one action per section. */
+.lp-hero h1 { margin-bottom: 0; }
+.lp-hero .lp-lede { margin: 0.8rem 0 1.4rem; }
+.lp-path { display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: center; }
+.lp-path .lp-phone { max-width: 220px; }
+.lp-tiles-all { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1rem; margin-top: 1.4rem; padding: 0; list-style: none; }
+.lp-tiles-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.4rem; padding: 0; list-style: none; max-width: 760px; }
+.lp-tiles-all .lp-tile > div, .lp-tiles-three .lp-tile > div { padding: 0.6rem 0.8rem; }
+.lp-band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+.lp-band h2 { margin: 0; }
+.lp-band-line { margin: 0.4rem 0 0; color: var(--text-secondary); }
+.lp-lang-links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.4rem; }
+@media (max-width: 700px) {
+  .lp-path { grid-template-columns: 1fr; gap: 1.2rem; }
+  .lp-path .lp-phone { max-width: 180px; }
+  .lp-tiles-all { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+  .lp-tiles-three { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+}
+
+/* the trial-run heading uses the same ink as every other heading; the chicken stays clear of the heading on phones */
+#feedback h2 { color: var(--brand-indigo); }
+@media (max-width: 700px) { .lp-help .lp-sticker-chicken { display: none; } }

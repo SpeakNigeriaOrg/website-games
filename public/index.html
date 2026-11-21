@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/styles.css?v=2" />
   <!-- Landing-page-only styles. styles.css stays a verbatim vendored copy of
        website/assets/styles.css; everything this page adds lives here. -->
-  <link rel="stylesheet" href="assets/landing.css?v=4" />
+  <link rel="stylesheet" href="assets/landing.css?v=6" />
   <link rel="preload" as="image" href="assets/img/hero-720.webp" imagesrcset="assets/img/hero-720.webp 720w, assets/img/hero-1200.webp 1200w" imagesizes="(min-width: 900px) 600px, 100vw" />
 </head>
 <body>
@@ -73,20 +73,16 @@
   </header>
 
   <main id="main">
-    <!-- HERO. The picture is the Yorùbá suite's own landing art
-         (dev/games/art/hero_landing.png), re-encoded as webp in assets/img/. -->
+    <!-- One message per section: a heading, at most one line, one action (owner, 2026-11-20: too many competing
+         lines). The picture is the suite's own landing art (dev/games/art/hero_landing.png). -->
     <section class="lp-hero">
       <div class="wrap lp-hero-grid">
         <div class="lp-hero-text">
-          <p class="eyebrow lp-eyebrow">Free · experimental · a trial run</p>
           <h1>Play Nigeria!</h1>
-          <p class="lp-subhead">Learn <span lang="yo">Yorùbá</span> through play.</p>
-          <p class="lp-lede">Listening games for young learners, with every word spoken by <span lang="yo">Yorùbá</span> speakers. This is our first step towards a bigger, open-source app in many Nigerian languages, and what you tell us will shape it.</p>
+          <p class="lp-lede">Free listening games for young <span lang="yo">Yorùbá</span> learners.</p>
           <div class="lp-actions">
-            <a class="btn btn-dark lp-btn-big" href="/path/"><span>Start the <span lang="yo">Yorùbá</span> path</span></a>
-            <a class="btn lp-btn-outline" href="#feedback">Tell us what you think</a>
+            <a class="btn btn-dark lp-btn-big" href="/path/">Start playing</a>
           </div>
-          <p class="lp-small">No sign-up. Nothing to install. Free.</p>
         </div>
         <div class="lp-hero-art">
           <img class="lp-hero-img"
@@ -100,236 +96,86 @@
       </div>
     </section>
 
-    <!-- LANGUAGE STATUS RIBBON - doubles as the first volunteer ask. -->
-    <div class="lp-ribbon" role="note" aria-label="Languages">
-      <div class="wrap lp-ribbon-inner">
-        <span class="lp-ribbon-item"><span class="lp-dot now" aria-hidden="true"></span><strong lang="yo">Yorùbá</strong> playable now</span>
-        <span class="lp-ribbon-item"><span class="lp-dot next" aria-hidden="true"></span><strong>Igbo</strong> and <strong>Hausa</strong> next, with volunteers</span>
-        <a class="lp-ribbon-item lp-ribbon-link" href="#help"><span class="lp-dot you" aria-hidden="true"></span>Your language? Tell us</a>
-      </div>
-    </div>
-
-    <!-- THE PATH - the main entry point. /path/ and every /<game>/ below are
-         counted as game_opened by page-events.js; a new game must be added
-         to its regex. -->
+    <!-- THE PATH. /path/ and every /<game>/ below are counted as game_opened by page-events.js; a new game must be
+         added to its regex (in the yorubadict repo, then copied here). -->
     <section class="section" id="path" aria-labelledby="path-title">
-      <div class="wrap">
-        <p class="eyebrow" style="color:var(--accent-games);">Start here</p>
-        <h2 id="path-title"><span lang="yo" class="yo">Ọ̀nà Ẹ̀kọ́</span>, the <span lang="yo">Yorùbá</span> path</h2>
-        <div class="lp-path">
-          <a class="lp-phone" href="/path/" tabindex="-1" aria-hidden="true">
-            <img src="assets/img/path-phone.webp" width="390" height="800" loading="lazy" alt="" />
-          </a>
-          <div class="lp-path-text">
-            <p class="lp-path-lede">Our games strung into a course. Each unit is a scene from a child's day: my day, my body, mealtime, washing, family and friends, home, play, animals, the kitchen. A row of stepping stones is one short sitting, a few new words at a time, with earlier words coming back.</p>
-            <ul class="lp-points">
-              <li><strong>Listening first, no reading needed.</strong> Made for children who can't read yet: nothing during play depends on reading, and there's no English on screen.</li>
-              <li><strong>Gentle when it's wrong.</strong> A wrong answer is never a bare "no": the right word plays, and it comes back a little later.</li>
-              <li><strong>Guessing doesn't win.</strong> Only first-try answers count towards progress.</li>
-              <li><strong>Real voices.</strong> Every <span lang="yo">Yorùbá</span> word is a recording of a <span lang="yo">Yorùbá</span> speaker.</li>
-            </ul>
-            <p class="lp-path-cta"><a class="btn btn-dark lp-btn-big" href="/path/"><span>Start the <span lang="yo">Yorùbá</span> path</span> <span aria-hidden="true">→</span></a></p>
-          </div>
+      <div class="wrap lp-path">
+        <a class="lp-phone" href="/path/" tabindex="-1" aria-hidden="true">
+          <img src="assets/img/path-phone.webp" width="390" height="800" loading="lazy" alt="" />
+        </a>
+        <div class="lp-path-text">
+          <h2 id="path-title">A path through the day</h2>
+          <p class="lp-path-lede">Short sessions of a few new words, with no reading needed.</p>
+          <p class="lp-path-cta"><a class="btn btn-dark lp-btn-big" href="/path/">Start the path</a></p>
         </div>
       </div>
     </section>
 
-    <!-- EVERY GAME ON THE PATH, playable on its own. Pictures are the games'
-         own tile art (dev/games/art/game_*.png). Groups follow the suite's
-         own index page. -->
+    <!-- EVERY GAME ON THE PATH, playable on its own. Pictures are the games' own tile art. -->
     <section class="section lp-suite" id="games" aria-labelledby="games-title">
       <div class="wrap">
-        <p class="eyebrow" style="color:var(--brand-accent-deep);">Or pick a game</p>
-        <h2 id="games-title">Twenty games, each with one simple thing to do.</h2>
-        <p class="intro">Hear a word and choose, catch it, act it out, drum its syllables, or just explore with no wrong answer. Every game on the path can also be played on its own.</p>
-
-        <div class="lp-groups">
-          <section class="lp-group" style="--cols:5" aria-labelledby="g-sounds">
-            <h3 id="g-sounds">Sounds and syllables</h3>
-            <ul class="lp-tiles">
-              <li><a class="lp-tile" href="/river/"><img src="assets/img/suite/river.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Listening</span><b>River Crossing</b><span>Hear a word, then hop the frog across the river, one stone per syllable.</span></div></a></li>
-              <li><a class="lp-tile" href="/rally/"><img src="assets/img/suite/rally.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Listening · Meaning</span><b>Gate Rally</b><span>Steer your kart through the gate that matches what you heard.</span></div></a></li>
-              <li><a class="lp-tile" href="/drum/"><img src="assets/img/suite/drum.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Listening</span><b>Beat the Drum</b><span>Drum the word out, one beat per syllable, and the drum says it back.</span></div></a></li>
-              <li><a class="lp-tile" href="/stretchy/"><img src="assets/img/suite/stretchy.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Explore</span><b>Stretchy Word</b><span>Stretch a word creature and it says itself slowly, a syllable at a time.</span></div></a></li>
-              <li><a class="lp-tile" href="/train/"><img src="assets/img/suite/train.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Listening</span><b>Word Train</b><span>Couple the carriages in order and the train says the word.</span></div></a></li>
-            </ul>
-          </section>
-
-          <section class="lp-group" style="--cols:5" aria-labelledby="g-words">
-            <h3 id="g-words">Words and meanings</h3>
-            <ul class="lp-tiles">
-              <li><a class="lp-tile" href="/giant/"><img src="assets/img/suite/giant.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Tickle the Giant</b><span>The giant names a body part: tickle him there.</span></div></a></li>
-              <li><a class="lp-tile" href="/hungry/"><img src="assets/img/suite/hungry.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>You're Hungry!</b><span>A hungry goat asks for a food. Feed it the right one.</span></div></a></li>
-              <li><a class="lp-tile" href="/yard/"><img src="assets/img/suite/yard.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Hide and Seek</b><span>A voice calls an animal: find the one hiding in the yard.</span></div></a></li>
-              <li><a class="lp-tile" href="/fish/"><img src="assets/img/suite/fish.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Listening · Meaning</span><b>Fishing with Grandma</b><span>Grandma asks for something: catch the fish that calls its name.</span></div></a></li>
-              <li><a class="lp-tile" href="/parrot/"><img src="assets/img/suite/parrot.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Silly Parrot</b><span>The parrot names a picture. Is it right, or silly?</span></div></a></li>
-              <li><a class="lp-tile" href="/house/"><img src="assets/img/suite/house.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Explore</span><b>Wake the House</b><span>Wake each sleepy thing in the house and hear its name. No wrong answers.</span></div></a></li>
-              <li><a class="lp-tile" href="/visit/"><img src="assets/img/suite/visit.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Who Came to Visit?</b><span>Guests wait at the door: let in the one whose name you hear.</span></div></a></li>
-              <li><a class="lp-tile" href="/together/"><img src="assets/img/suite/together.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Put It Together</b><span>Two words you know go into the pot. Which picture comes out?</span></div></a></li>
-            </ul>
-          </section>
-
-          <section class="lp-group" style="--cols:3" aria-labelledby="g-do">
-            <h3 id="g-do">Do what the words say</h3>
-            <ul class="lp-tiles">
-              <li><a class="lp-tile" href="/doit/"><img src="assets/img/suite/doit.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Do It!</b><span>Hold it, wipe it, throw it away - or don't touch it!</span></div></a></li>
-              <li><a class="lp-tile" href="/say/"><img src="assets/img/suite/say.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Say the Right Thing</b><span>Someone trips, Grandma brings a gift: pick what fits the moment.</span></div></a></li>
-              <li><a class="lp-tile" href="/where/"><img src="assets/img/suite/where.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Where It Happens</b><span>Hear a doing word, then take the boy to where it happens.</span></div></a></li>
-            </ul>
-          </section>
-
-          <section class="lp-group" style="--cols:2" aria-labelledby="g-show">
-            <h3 id="g-show">Show you understand</h3>
-            <ul class="lp-tiles">
-              <li><a class="lp-tile" href="/errand/"><img src="assets/img/suite/errand.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Grandma's Errand</b><span>Find what Grandma asks for in a busy room and bring it to her.</span></div></a></li>
-              <li><a class="lp-tile" href="/sort/"><img src="assets/img/suite/sort.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Sort It</b><span>A sealed parcel says its word: put it where it belongs.</span></div></a></li>
-            </ul>
-          </section>
-
-          <section class="lp-group" style="--cols:2" aria-labelledby="g-who">
-            <h3 id="g-who">Who does what</h3>
-            <ul class="lp-tiles">
-              <li><a class="lp-tile" href="/theatre/"><img src="assets/img/suite/theatre.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Puppet Theatre</b><span>Hear an animal and an action, set them up, and the curtain opens.</span></div></a></li>
-              <li><a class="lp-tile" href="/windows/"><img src="assets/img/suite/windows.webp" width="480" height="360" loading="lazy" alt="" /><div><span class="lp-kind">Meaning</span><b>Windows</b><span>Hear an animal and an action: tap the window where it's happening.</span></div></a></li>
-            </ul>
-          </section>
-        </div>
+        <h2 id="games-title">Or pick a game</h2>
+        <ul class="lp-tiles lp-tiles-all">
+          <li><a class="lp-tile" href="/river/"><img src="assets/img/suite/river.webp" width="480" height="360" loading="lazy" alt="" /><div><b>River Crossing</b></div></a></li>
+          <li><a class="lp-tile" href="/rally/"><img src="assets/img/suite/rally.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Gate Rally</b></div></a></li>
+          <li><a class="lp-tile" href="/drum/"><img src="assets/img/suite/drum.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Beat the Drum</b></div></a></li>
+          <li><a class="lp-tile" href="/stretchy/"><img src="assets/img/suite/stretchy.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Stretchy Word</b></div></a></li>
+          <li><a class="lp-tile" href="/train/"><img src="assets/img/suite/train.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Word Train</b></div></a></li>
+          <li><a class="lp-tile" href="/giant/"><img src="assets/img/suite/giant.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Tickle the Giant</b></div></a></li>
+          <li><a class="lp-tile" href="/hungry/"><img src="assets/img/suite/hungry.webp" width="480" height="360" loading="lazy" alt="" /><div><b>You're Hungry!</b></div></a></li>
+          <li><a class="lp-tile" href="/yard/"><img src="assets/img/suite/yard.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Hide and Seek</b></div></a></li>
+          <li><a class="lp-tile" href="/fish/"><img src="assets/img/suite/fish.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Fishing with Grandma</b></div></a></li>
+          <li><a class="lp-tile" href="/parrot/"><img src="assets/img/suite/parrot.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Silly Parrot</b></div></a></li>
+          <li><a class="lp-tile" href="/house/"><img src="assets/img/suite/house.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Wake the House</b></div></a></li>
+          <li><a class="lp-tile" href="/visit/"><img src="assets/img/suite/visit.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Who Came to Visit?</b></div></a></li>
+          <li><a class="lp-tile" href="/together/"><img src="assets/img/suite/together.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Put It Together</b></div></a></li>
+          <li><a class="lp-tile" href="/doit/"><img src="assets/img/suite/doit.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Do It!</b></div></a></li>
+          <li><a class="lp-tile" href="/say/"><img src="assets/img/suite/say.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Say the Right Thing</b></div></a></li>
+          <li><a class="lp-tile" href="/where/"><img src="assets/img/suite/where.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Where It Happens</b></div></a></li>
+          <li><a class="lp-tile" href="/errand/"><img src="assets/img/suite/errand.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Grandma's Errand</b></div></a></li>
+          <li><a class="lp-tile" href="/sort/"><img src="assets/img/suite/sort.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Sort It</b></div></a></li>
+          <li><a class="lp-tile" href="/theatre/"><img src="assets/img/suite/theatre.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Puppet Theatre</b></div></a></li>
+          <li><a class="lp-tile" href="/windows/"><img src="assets/img/suite/windows.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Windows</b></div></a></li>
+        </ul>
       </div>
     </section>
 
-    <!-- PRACTICE ROOM - the three original games, for readers.
-         Every card names its language on the chip: prose is read, chips are
-         scanned, and once a second language ships the chip tells them apart. -->
+    <!-- PRACTICE ROOM: the three original games, for learners who read. -->
     <section class="section" id="practice" aria-labelledby="practice-title">
       <div class="wrap">
-        <p class="eyebrow" style="color:var(--accent-courses);">Practice room</p>
-        <h2 id="practice-title">For learners who read.</h2>
-        <p class="intro">The path is listening-first and needs no reading. The practice room is for learners who can read <span lang="yo">Yorùbá</span> and want to work on spelling and tone.</p>
-        <div class="lp-play">
-          <article class="lp-game">
-            <a class="lp-game-shot" href="/phonics/" tabindex="-1" aria-hidden="true"><img src="assets/img/play-phonics.webp" width="480" height="360" loading="lazy" alt="" /></a>
-            <div class="lp-game-body">
-              <span class="tag courses">Yorùbá · Phonics</span>
-              <h3>Build the word from its syllables</h3>
-              <p>The reading game. Hear a word, then build it from written syllables, sorted by tone, and see the shape of each tone.</p>
-              <a class="lp-play-link" href="/phonics/">Play Phonics <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-          <article class="lp-game">
-            <a class="lp-game-shot" href="/tones/" tabindex="-1" aria-hidden="true"><img src="assets/img/play-tones.webp" width="480" height="360" loading="lazy" alt="" /></a>
-            <div class="lp-game-body">
-              <span class="tag courses">Yorùbá · Tones</span>
-              <h3>High, mid or low?</h3>
-              <p>Tone practice. Hear a word, then pick high, mid or low for each syllable. The buttons play pitches measured from our speakers' recordings.</p>
-              <a class="lp-play-link" href="/tones/">Play Tones <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-          <article class="lp-game">
-            <a class="lp-game-shot" href="/vocab/" tabindex="-1" aria-hidden="true"><img src="assets/img/play-vocab.webp" width="480" height="360" loading="lazy" alt="" /></a>
-            <div class="lp-game-body">
-              <span class="tag courses">Yorùbá · Vocabulary</span>
-              <h3>See the picture, pick the word</h3>
-              <p>The picture-and-word reading game. Read a few <span lang="yo">Yorùbá</span> words, pick the one that matches the picture, and hear it once you're right.</p>
-              <a class="lp-play-link" href="/vocab/">Play Vocabulary <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-        </div>
+        <h2 id="practice-title">For readers</h2>
+        <ul class="lp-tiles lp-tiles-three">
+          <li><a class="lp-tile" href="/phonics/"><img src="assets/img/play-phonics.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Phonics</b></div></a></li>
+          <li><a class="lp-tile" href="/tones/"><img src="assets/img/play-tones.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Tones</b></div></a></li>
+          <li><a class="lp-tile" href="/vocab/"><img src="assets/img/play-vocab.webp" width="480" height="360" loading="lazy" alt="" /><div><b>Vocabulary</b></div></a></li>
+        </ul>
       </div>
     </section>
 
-    <!-- TRIAL RUN + FEEDBACK. Feedback goes to the existing hello@ address;
-         no form. -->
+    <!-- FEEDBACK. The existing hello@ address; no form. -->
     <section class="section lp-trial-wrap" id="feedback" aria-labelledby="feedback-title">
-      <div class="wrap">
-        <div class="lp-trial">
-          <div class="lp-trial-text">
-            <p class="eyebrow" style="color:var(--brand-accent-deep);">This is a trial run</p>
-            <h2 id="feedback-title">Tell us what you think.</h2>
-            <p class="lp-trial-body">These games are the experimental version. We're going to build a more comprehensive, varied, open-source app for all platforms, across many Nigerian languages, and this suite is the first step towards it.</p>
-            <p class="lp-trial-body">What players tell us is crucial to the final product: what your child loved, what confused them, a word that sounds wrong, a picture that doesn't fit, a game that didn't work on your device.</p>
-            <p class="lp-actions" style="margin-top:1.4rem;">
-              <a class="btn btn-primary" href="mailto:hello@speaknigeria.org?subject=Feedback%20%E2%80%94%20Yor%C3%B9b%C3%A1%20games">Send us feedback</a>
-            </p>
-            <p class="lp-small">Opens an email to hello@speaknigeria.org.</p>
-          </div>
-          <ol class="lp-road" aria-label="Where this is going">
-            <li class="is-now"><span class="lp-road-step">Now</span><b>The experimental <span lang="yo">Yorùbá</span> games</b><span>You are here. Play, and tell us how it went.</span></li>
-            <li><span class="lp-road-step">Next</span><b>The same games in Igbo and Hausa</b><span>Carried into new languages by volunteers.</span></li>
-            <li><span class="lp-road-step">Then</span><b>A comprehensive open-source app</b><span>For all platforms, in many Nigerian languages.</span></li>
-          </ol>
+      <div class="wrap lp-band">
+        <div>
+          <h2 id="feedback-title">This is a trial run</h2>
+          <p class="lp-band-line">Tell us what worked and what didn't. It shapes the full app.</p>
         </div>
+        <a class="btn btn-primary" href="mailto:hello@speaknigeria.org?subject=Feedback%20%E2%80%94%20Yor%C3%B9b%C3%A1%20games">Send feedback</a>
       </div>
     </section>
 
-    <!-- VOLUNTEER CTA. Uses the main site's own routes: its get-involved page
-         and hello@speaknigeria.org with subject lines in the style of
-         website/get-involved.html. No new address or form. -->
+    <!-- VOLUNTEERS. The main site's own routes: its get-involved page and hello@speaknigeria.org, one subject per
+         language. No new address or form. -->
     <section class="section lp-help-wrap" id="help" aria-labelledby="help-title">
       <div class="wrap">
         <div class="lp-help adire">
           <img class="lp-sticker lp-sticker-chicken" src="assets/img/chicken.webp" width="240" height="345" alt="" />
-          <p class="eyebrow lp-help-eyebrow">Volunteers wanted</p>
-          <h2 id="help-title">Help carry these games into every Nigerian language.</h2>
-          <p class="lp-help-lede">Volunteers will take these experimental games into more languages, Igbo and Hausa first, and from there into the full app. You don't need to be a teacher or a programmer. Here's who we need:</p>
-
-          <ul class="lp-roles">
-            <li class="lp-role">
-              <svg class="lp-role-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8.5 21h7"/></svg>
-              <h3>Voices</h3>
-              <p>Many voices in every language: record words and short sentences on your phone, so learners hear many speakers, not just one.</p>
-              <a class="lp-ask-link" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20recording%20voices&amp;body=Hi%2C%20I'd%20like%20to%20help.%20The%20Nigerian%20language(s)%20I%20speak%3A%20">Record your voice <span aria-hidden="true">→</span></a>
-            </li>
-            <li class="lp-role">
-              <svg class="lp-role-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h10M8 3v2M5 5c1 4 4 7 7 8M11 5c-1 4-4 7-7 8M13 21l4-10 4 10M14.5 17h5"/></svg>
-              <h3>Translators</h3>
-              <p>Put the words and phrases the games use into your language, so a new language can start from what already works.</p>
-              <a class="lp-ask-link" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20translation&amp;body=Hi%2C%20I'd%20like%20to%20help.%20The%20Nigerian%20language(s)%20I%20speak%3A%20">Help translate <span aria-hidden="true">→</span></a>
-            </li>
-            <li class="lp-role">
-              <svg class="lp-role-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>
-              <h3>Validators</h3>
-              <p>Fluent speakers who check our spellings, tones, recordings and pictures, so what children learn is right.</p>
-              <a class="lp-ask-link" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20checking%20and%20validation&amp;body=Hi%2C%20I'd%20like%20to%20help.%20The%20Nigerian%20language(s)%20I%20speak%3A%20">Check our work <span aria-hidden="true">→</span></a>
-            </li>
-            <li class="lp-role">
-              <svg class="lp-role-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h4v2a2 2 0 1 0 4 0V4h4v4h-2a2 2 0 1 0 0 4h2v8h-4v-2a2 2 0 1 0-4 0v2H8v-4H6a2 2 0 1 1 0-4h2z"/></svg>
-              <h3>Game builders</h3>
-              <p>Build new games and improve the ones here: code, design, art, testing. The app we build next will be open source.</p>
-              <a class="lp-ask-link" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20building%20games">Build with us <span aria-hidden="true">→</span></a>
-            </li>
-          </ul>
-
-          <h3 class="lp-langs-title">Which language do you speak?</h3>
-          <div class="lp-asks">
-            <article class="lp-ask">
-              <span class="lp-ask-tag" lang="yo">Yorùbá</span>
-              <h3>Make the <span lang="yo">Yorùbá</span> games better</h3>
-              <p>More voices, more words and sentences, and careful checking of every recording and picture we already have.</p>
-              <a class="lp-ask-link" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20Yor%C3%B9b%C3%A1%20games">Volunteer for <span lang="yo">Yorùbá</span> <span aria-hidden="true">→</span></a>
-            </article>
-            <article class="lp-ask">
-              <span class="lp-ask-tag" lang="ig">Igbo</span>
-              <h3>Bring the games to Igbo</h3>
-              <p>Igbo speakers who record, translate and check now will shape how these games sound in Igbo, from its tones to its everyday words.</p>
-              <a class="lp-ask-link" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20Igbo">Volunteer for Igbo <span aria-hidden="true">→</span></a>
-            </article>
-            <article class="lp-ask">
-              <span class="lp-ask-tag" lang="ha">Hausa</span>
-              <h3>Bring the games to Hausa</h3>
-              <p>Hausa speakers who record, translate and check now will shape how these games sound in Hausa, from its tones to its everyday words.</p>
-              <a class="lp-ask-link" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20Hausa">Volunteer for Hausa <span aria-hidden="true">→</span></a>
-            </article>
-            <article class="lp-ask lp-ask-wide">
-              <span class="lp-ask-tag">Any Nigerian language</span>
-              <h3>Speak another language? Reach out.</h3>
-              <p>Edo, Efik, Ijaw, Tiv, Urhobo, Ibibio, Nupe, Kanuri or any other: please get in touch. A single dedicated volunteer can kickstart an entire language.</p>
-              <a class="lp-ask-link" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20translate%20%26%20record&amp;body=Hi%2C%20I'd%20like%20to%20help.%20The%20Nigerian%20language(s)%20I%20speak%3A%20">Tell us your language <span aria-hidden="true">→</span></a>
-            </article>
-          </div>
-
-          <div class="lp-actions lp-help-actions">
-            <a class="btn btn-primary" href="https://speaknigeria.org/get-involved.html">See all the ways to help</a>
-            <a class="btn btn-ghost" href="mailto:hello@speaknigeria.org?subject=I'd%20like%20to%20help">Email hello@speaknigeria.org</a>
+          <h2 id="help-title">Bring these games to your language</h2>
+          <p class="lp-help-lede">We need voices, translators and fluent speakers to check our work. One dedicated volunteer can start a whole language.</p>
+          <div class="lp-lang-links">
+            <a class="btn btn-primary" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20Yor%C3%B9b%C3%A1"><span lang="yo">Yorùbá</span></a>
+            <a class="btn btn-primary" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20Igbo">Igbo</a>
+            <a class="btn btn-primary" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20Hausa">Hausa</a>
+            <a class="btn btn-ghost" href="mailto:hello@speaknigeria.org?subject=Volunteer%20%E2%80%94%20another%20language&amp;body=The%20Nigerian%20language(s)%20I%20speak%3A%20">Another language</a>
           </div>
         </div>
       </div>
