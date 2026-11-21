@@ -141,6 +141,11 @@
                 durationMs: Date.now() - levelStartedAt,
                 totalWrong: levelWrongCount
             });
+            // Nothing is in progress any more, so the pagehide handler below
+            // must not call this one abandoned. Without this, every finished
+            // level also reported level_abandoned when the tab closed.
+            // levelLoaded() sets it again for the next level.
+            currentLevelId = null;
         },
 
         wordShown: function (word, level) {

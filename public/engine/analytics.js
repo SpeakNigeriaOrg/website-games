@@ -22,7 +22,7 @@ function load(src) {
 /** Loads consent, tracking and game events in order (each needs the one before) and starts the session. */
 function init() {
   if (!enabled) return Promise.resolve(false);
-  ready ??= load('/analytics/consent.js?v=1').then(() => load('/analytics/track.js?v=2')).then(() => load('/analytics/game-events.js?v=2'))
+  ready ??= load('/analytics/consent.js?v=1').then(() => load('/analytics/track.js?v=3')).then(() => load('/analytics/game-events.js?v=3'))
     .then(() => {
       // ?analytics=debug also prints every event (for tests: tools/devcheck/check.mjs shows page console lines)
       if (new URLSearchParams(location.search).get('analytics') === 'debug' && window.snTrack) {
