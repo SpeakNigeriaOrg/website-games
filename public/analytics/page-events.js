@@ -93,7 +93,7 @@
                 }
 
                 if (opts.trackGameLinks && url.origin === location.origin) {
-                    var game = /^\/(phonics|tones|vocab|path|river|rally|drum|stretchy|train|giant|hungry|yard|fish|parrot|house|visit|together|doit|say|errand|sort|where|theatre|windows)\//.exec(url.pathname);
+                    var game = /^\/(phonics|tones|vocab|path|river|rally|drum|stretchy|train|giant|hungry|yard|fish|parrot|house|visit|together|doit|helper|say|errand|sort|where|theatre|windows)\//.exec(url.pathname);
                     if (game) {
                         window.snTrack('game_opened', { game: game[1] });
                         return;
