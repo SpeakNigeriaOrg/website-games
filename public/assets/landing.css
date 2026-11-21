@@ -298,3 +298,8 @@
 /* the trial-run heading uses the same ink as every other heading; the chicken stays clear of the heading on phones */
 #feedback h2 { color: var(--brand-indigo); }
 @media (max-width: 700px) { .lp-help .lp-sticker-chicken { display: none; } }
+
+/* middle ground (owner, 2026-11-20): short points and roles, one line each */
+.lp-points-short { margin: 1rem 0 0; padding-left: 1.2rem; display: grid; gap: .35rem; color: var(--text-secondary); }
+.lp-roles-short { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .6rem 1.4rem; color: var(--text-tertiary); }
+.lp-roles-short b { color: var(--brand-accent); font-weight: 600; margin-right: .3rem; }
