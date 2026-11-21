@@ -15,7 +15,8 @@ const SRC = path.join(fromArg > 0 ? process.argv[fromArg + 1] : REPO, 'dev', 'ga
 const DST = path.join(REPO, 'public');
 
 const SKIP = new Set(['index.html', 'README.md', 'pond', 'art_candidates', 'numbers', 'videos', 'eq-listen']);
-const SKIP_FILE = (name) => name.endsWith('.md');
+// dev notes, test play scripts and the path builder are not part of the site
+const SKIP_FILE = (name) => name.endsWith('.md') || name.endsWith('.mjs') || name === 'test';
 // folders this script owns in public/ (removed and copied fresh each run, so deleted files don't linger)
 const PUBLIC_OWN = new Set(['phonics', 'tones', 'vocab', 'analytics', 'assets']);
 
