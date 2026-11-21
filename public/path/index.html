@@ -28,5 +28,17 @@
 </section>
 <main id="path" aria-label="Learning path"></main>
 <script type="module" src="path.js"></script>
+<!-- Analytics on the deployed site only (the dev server has no /analytics/): a pageview, and the Google tag, so an ad
+     click landing here keeps its click id for the conversions played after it. No game-link tracking: a stone is not
+     a game_opened conversion. -->
+<script>
+  if (/(^|\.)speaknigeria\.org$/.test(location.hostname) || new URLSearchParams(location.search).has('analytics')) {
+    const load = (src) => new Promise((resolve, reject) => {
+      const s = document.createElement('script'); s.src = src; s.onload = resolve; s.onerror = reject; document.head.appendChild(s);
+    });
+    load('/analytics/consent.js?v=1').then(() => load('/analytics/track.js?v=3')).then(() => load('/analytics/page-events.js?v=2'))
+      .then(() => window.snPage.start('games')).catch(() => {});
+  }
+</script>
 </body>
 </html>
