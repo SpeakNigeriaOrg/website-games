@@ -2,12 +2,13 @@
 // sides in landscape) two rows of choices: the animals (portraits) and the actions (the kit's verb pictures).
 // Free play first (a short warm-up, not on the path): tap an animal (its word plays) and an action (its word
 // plays); the curtain opens and that animal does that action (its clip, or its still moving gently) while both
-// words play again, animal first. Then the game: the narrator says two words, animal then action ("ajá ... sùn");
+// words play again, animal first. Then the game: the narrator says animal ń action ("ajá ń sùn");
 // the child sets that pair up (an animal and an action, in either order; it goes as soon as both are chosen, and
 // in the game a choice makes no word, so the words can't be matched by ear). Right: the scene plays, a star.
 // Wrong: the scene plays what was chosen (the mistake is seen), the asked pair plays again and the turn retries;
 // the pair returns two turns later. Only first tries fill the strip. The first asked pair is shown by the ghost
-// hand. The audio is two single words, never a spliced sentence. Demand: composition (subject + action).
+// hand. The narrator says the sentence "<animal> ń <action>", stitched from single-word recordings (combo.js say;
+// two bare words where a combination has none). Demand: composition (subject + action).
 import { loadContent, createShell, audio, sfx, onTap, Queue, progressStrip, animate, confetti, ghost, finale, shuffle, sleep, el, centre, path } from '../engine/engine.js';
 import { fit } from './fit.js';
 import { SUBJECTS, ACTIONS, GRID_BY_LEVEL, combo, portrait, apartOk, isSubject, isAction } from '../combo.js';
@@ -97,7 +98,7 @@ function buildRound() {
   layout();
   audio.preload([...subjects, ...actions].map((w) => w.audio));
   // warm the stills (and clips) of every pair in the round
-  for (const s of subjects) for (const a of actions) { const c = combo(s.id, a.id); new Image().src = artUrl(c.still); }
+  for (const s of subjects) for (const a of actions) { const c = combo(s.id, a.id); new Image().src = artUrl(c.still); if (c.say) audio.preload([artUrl(c.say.audio)]); }
 }
 
 function makePick(w, kind, img, row) {
@@ -149,8 +150,18 @@ async function speak(w) {
   await audio.play(w.audio);
   p?.el.classList.remove('speaking');
 }
-/** The two words, animal then action, with a short pause between (two words, never a sentence). */
-async function sayPair(s, a) { await speak(s); await sleep(380); await speak(a); }
+/** The sentence "<animal> ń <action>" (combo.js say), lighting the animal's pick and then, as the action is said,
+ * the action's (as speak() lights each word); the two bare words where the combination has no sentence. */
+async function sayPair(s, a) {
+  const say = combo(s.id, a.id).say;
+  if (!say) { await speak(s); await sleep(380); await speak(a); return; }
+  const ps = pickOf(s), pa = pickOf(a);
+  ps?.el.classList.add('speaking');
+  const next = setTimeout(() => { ps?.el.classList.remove('speaking'); pa?.el.classList.add('speaking'); }, say.actionAt * 1000);
+  await audio.play(artUrl(say.audio));
+  clearTimeout(next);
+  ps?.el.classList.remove('speaking'); pa?.el.classList.remove('speaking');
+}
 
 // ---------------------------------------------------------------- the show
 

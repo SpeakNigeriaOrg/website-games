@@ -1,12 +1,13 @@
 // Windows: who does what, from two words. A house with windows (2 at level 1, 3, then 4); in each window an
 // animal is doing something (its clip, or its still moving gently). The narrator says two words, animal then
-// action ("ajá ... sùn"); the child taps the window showing that pair. Every other window shares one of the two
+// action, as a sentence ("ajá ń sùn"); the child taps the window showing that pair. Every other window shares one of the two
 // words with the asked pair (the same animal doing something else, or another animal doing the same thing), so
 // both words matter; at level 1 there is one other window, differing in the animal only. Right: that window's
 // animal cheers (it bounces, the two words again), a star. Wrong: the tapped window says its own two words, the
 // right window glows, the asked pair plays again and the child taps it; the pair returns two turns later. Only
-// first tries fill the strip. The first pair of a session is shown by the ghost hand. The audio is two single words,
-// never a spliced sentence. Demand: composition (subject + action), heard and recognised.
+// first tries fill the strip. The first pair of a session is shown by the ghost hand. The narrator says the sentence
+// "<animal> ń <action>", stitched from single-word recordings (combo.js say). Demand: composition (subject + action),
+// heard and recognised.
 import { loadContent, createShell, audio, sfx, onTap, Queue, progressStrip, animate, confetti, ghost, finale, shuffle, sleep, el, centre, path } from '../engine/engine.js';
 import { fit } from './fit.js';
 import { SUBJECTS, ACTIONS, ACTION_APART, GRID_BY_LEVEL, combo, portrait, apartOk, isSubject, isAction } from '../combo.js';
@@ -78,7 +79,11 @@ function buildRound() {
     if (forced.length < 2) { const keep = forced[0] ?? actions[0]; actions = [keep, aPool.find((w) => w !== keep && apartOk([keep, w]))]; }
   }
   audio.preload([...subjects, ...actions].map((w) => w.audio));
-  for (const s of subjects) for (const a of actions) new Image().src = artUrl(combo(s.id, a.id).still);
+  for (const s of subjects) for (const a of actions) {
+    const c = combo(s.id, a.id);
+    new Image().src = artUrl(c.still);
+    if (c.say) audio.preload([artUrl(c.say.audio)]);
+  }
 }
 
 /** The pairs asked: every pair of the grid once (the step's words first), then a mix; never the same twice running. */
@@ -128,11 +133,12 @@ function makeWindows(pairs) {
   for (const w of wins) w.scene.play();
 }
 
+/** The sentence "<animal> ń <action>" (combo.js say); the two bare words where the combination has none. */
 async function sayPair(s, a, win) {
+  const say = combo(s.id, a.id).say;
   win?.el.classList.add('speaking');
-  await audio.play(s.audio);
-  await sleep(380);
-  await audio.play(a.audio);
+  if (say) await audio.play(artUrl(say.audio));
+  else { await audio.play(s.audio); await sleep(380); await audio.play(a.audio); }
   win?.el.classList.remove('speaking');
 }
 

@@ -10,6 +10,11 @@ import { analytics } from './analytics.js';
 
 const BASE = new URL('..', import.meta.url).href; // dev/games/
 
+// A long press is a game action (Do It!'s "hold it", dragging in Errand and Sort), never the phone's own menu: Android
+// Chrome opens "open image in new tab / preview image" on a held picture unless contextmenu is cancelled (iOS's
+// callout is stopped by -webkit-touch-callout in engine.css).
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
 // ---------------------------------------------------------------- content
 
 /** voices: 'single' for games that compare pitch or join clips across words (one person per round: Femi,

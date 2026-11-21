@@ -1,9 +1,12 @@
 // Who does what: the grid of subjects x actions shared by Puppet Theatre (theatre/) and Windows (windows/).
-// The audio is always two single words from the kit, subject then action ("ajá" ... "sùn"), never a spliced
-// sentence: we have single-word recordings, not one for every combination. The pictures are ours: one still per
+// The audio is the sentence "<animal> ń <action>" ("ajá ń sùn", the dog is sleeping), stitched from the kit's single-word
+// recordings and Femi's recorded ń (tools/artgen/stitch_combo.mjs -> combo_say.js; the owner chose this over two bare
+// words, 2026-11-21); a combination without a stitched sentence falls back to its two words. The pictures are ours: one still per
 // combination (art/combo/<animal>_<action>.png), each animal drawn from one fixed description so it keeps one look
 // (tools/artgen/gen_combo.mjs), and a short clip per combination where a good one exists (art/combo/<name>.mp4,
 // generated from the still as its first frame: tools/artgen/combo_video.py). Pure module: Node imports it too.
+import { SAY } from './combo_say.js';
+
 export const SUBJECTS = [
   { id: 'aja_dog', key: 'dog' },
   { id: 'adiye_chicken', key: 'chicken' },
@@ -38,10 +41,12 @@ export const isAction = (w) => usable(w) && actionIds.has(w.id);
 export const subjectOf = (id) => SUBJECTS.find((s) => s.id === id);
 export const actionOf = (id) => ACTIONS.find((a) => a.id === id);
 
-/** One combination: its name (dog_sleep), still, clip (or null) and the still's fallback motion. */
+/** One combination: its name (dog_sleep), still, clip (or null), the still's fallback motion, and its sentence
+ * (say: { audio, actionAt } with audio relative to art/, or null). */
 export function combo(subjectId, actionId) {
   const s = subjectOf(subjectId), a = actionOf(actionId), name = `${s.key}_${a.key}`;
-  return { name, subject: subjectId, action: actionId, still: `combo/${name}.png`, video: VIDEOS.has(name) ? `combo/${name}.mp4` : null, motion: a.motion };
+  return { name, subject: subjectId, action: actionId, still: `combo/${name}.png`, video: VIDEOS.has(name) ? `combo/${name}.mp4` : null, motion: a.motion,
+    say: SAY[name] ? { audio: SAY[name].audio, actionAt: SAY[name].actionAt } : null };
 }
 export const portrait = (subjectId) => `combo/${subjectOf(subjectId).key}.png`;
 
