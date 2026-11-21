@@ -67,3 +67,14 @@ const GREETINGS = [
     btn.setAttribute("aria-expanded", String(open));
   });
 })();
+
+/* Expressions of interest that page-events.js can't see: the volunteer and
+   feedback email links. Each is marked data-track-form="volunteer|info" and
+   reported with outbound_form_click, which is also a Google Ads conversion -
+   the same handler as the main site's main.js. */
+document.addEventListener("click", (e) => {
+  const link = e.target.closest && e.target.closest("[data-track-form]");
+  if (!link || typeof window.snTrack !== "function") return;
+  if (/docs\.google\.com|forms\.gle/.test(link.getAttribute("href") || "")) return;
+  window.snTrack("outbound_form_click", { form: link.dataset.trackForm });
+});
