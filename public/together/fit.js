@@ -29,11 +29,16 @@ export const FOILS = {
 
 const get = (kit, id) => (kit instanceof Map ? kit.get(id) : kit?.[id]);
 
-/** The compound's parts as kit words, or null when any part is missing from the kit or lacks a picture or a clean take. */
+/** The compound's parts, or null when any word part is missing from the kit or lacks a picture or a clean take.
+ *  A bound piece (the ì- of ìgbálẹ̀) has no picture and is never said alone: it comes as a text part
+ *  { id, display, text: true } from the kit's boundParts, floating in as a written bubble (owner, 2026-11-22).
+ *  At least one part must be a word with a picture. */
 export function partsOf(w, kit) {
   if (!w?.components?.length || w.components.length < 2 || !kit) return null;
-  const parts = w.components.map((id) => get(kit, id));
-  return parts.every(clean) ? parts : null;
+  const bound = new Map((w.boundParts ?? []).map((b) => [b.id, b]));
+  const parts = w.components.map((id) => (bound.has(id) ? { ...bound.get(id), text: true } : get(kit, id)));
+  const words = parts.filter((p) => p && !p.text);
+  return words.length && parts.every(Boolean) && words.every(clean) ? parts : null;
 }
 
 export const fit = {

@@ -56,9 +56,15 @@ export const MOTION = {
   luwe_swim: 'sway',              // a child swimming
   pa_kill: 'settle',              // a fly swatter over a dead fly (the root verb "kill"; never shown with paná)
   se_to_do: 'nod',                // one boy with four arms: stirring, hammering, painting, sweeping (owner-supplied)
+  // added 2026-11-22 (owner-accepted pictures, each looked at):
+  ya_comb: 'scrub',              // a boy at a mirror combing his own hair
+  gba_sweep: 'wipe',              // a woman sweeping dust with a straw broom
+  so_say: 'nod',                  // a man speaking, one speech bubble
+  soro_talk: 'nod',               // two women talking at a market stall, two speech bubbles
 };
 export const VERBS = Object.keys(MOTION);
 /** Verbs never shown together (their pictures or meanings are too close). gbà and mú are both "take" (a cup
- * handed over, an orange picked up); lọ's boy walks away up a path, rìn's legs walk in a park. */
+ * handed over, an orange picked up); lọ's boy walks away up a path, rìn's legs walk in a park; sọ and sọ̀rọ̀ are both
+ * speaking. */
 export const VERB_APART = [['sare_run', 'rin_to_walk'], ['jeun_eat', 'dana_cook'], ['we_to_bathe', 'wo_wear'], ['pa_kill', 'pana_extinguish_fire'],
-  ['gba_to_take', 'mu_take'], ['lo_go', 'rin_to_walk']];
+  ['gba_to_take', 'mu_take'], ['lo_go', 'rin_to_walk'], ['so_say', 'soro_talk']];

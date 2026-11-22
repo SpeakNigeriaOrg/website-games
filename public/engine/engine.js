@@ -21,6 +21,34 @@ document.addEventListener('contextmenu', (e) => e.preventDefault());
  * who recorded the most); 'any' (default) for meaning games, which may use Tolani where Femi has no usable take. */
 export const NOT_ALONE = new Set(['prefix', 'pronoun', 'particle']);
 
+/** Words a child cannot tell apart from their pictures: the same thing by two names (two words for TV, broom, radio),
+ * pictures that look alike (banana and plantain, pencil and pen), or nearly the same act (sọ say, sọ̀rọ̀ talk). Two of a
+ * group in one round would make a right answer look wrong (2026-11-21: keep each pair out of the same round). Grandma's
+ * Errand keeps its own wider APART list as well.
+ * A thing and the act done with it are not grouped once their pictures differ (2026-11-22): òyìyà is a comb, yà a
+ * boy combing his hair; ìgbálẹ̀ is the broom alone, gbá a woman sweeping. They are a compound and its building block
+ * (òyìyà from yà, ìgbálẹ̀ from gbá + ilẹ̀), which Put It Together must show side by side. Likewise the official TV
+ * word ẹ̀rọ amóhùnmáwòrán (a TV) and amóhùnmáwòrán (a glass box holding pictures and sound), its building block;
+ * and the official radio word ẹ̀rọ asọ̀rọ̀mágbèsì (a radio) and asọ̀rọ̀mágbèsì (a glass box of sound).
+ * ọwọ̀, the dialect word for broom, is out of the kit (owner, 2026-11-22), so it needs no group. */
+export const SAME_MEANING = [
+  ['redio_radio', 'ero_asoromagbesi_radio'], ['so_say', 'soro_talk'],
+  ['ogede_banana', 'ogede_agbagba_plantain'], ['gege_pencil', 'kalamu_pen'], ['e_you', 'e_you_underdot_high'],
+];
+
+/** One word of each SAME_MEANING group per session: the one the path step teaches or reviews, else one at random, so
+ * free play still meets every name across sessions. */
+export function oneOfEachSameMeaning(words, wanted = [...path.focus, ...path.review]) {
+  const drop = new Set();
+  for (const group of SAME_MEANING) {
+    const present = group.filter((id) => words.some((w) => w.id === id));
+    if (present.length < 2) continue;
+    const keep = present.find((id) => wanted.includes(id)) ?? pick(present);
+    for (const id of present) if (id !== keep) drop.add(id);
+  }
+  return words.filter((w) => !drop.has(w.id));
+}
+
 export async function loadContent({ voices = 'any' } = {}) {
   const res = await fetch(BASE + 'content/content.json');
   const content = await res.json();
@@ -46,6 +74,7 @@ export async function loadContent({ voices = 'any' } = {}) {
   // Words that are not standalone (bound pieces, pronoun pieces, particles, proper names; the kit's `standalone`)
   // are not prompts, foils or fillers in these games: teaching them needs a game built for them.
   content.words = content.words.filter((w) => w.standalone ?? !NOT_ALONE.has(w.category));
+  content.words = oneOfEachSameMeaning(content.words);
   content.byId = Object.fromEntries(content.words.map((w) => [w.id, w]));
   return content;
 }

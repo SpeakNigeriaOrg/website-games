@@ -159,11 +159,14 @@
    ],
    "words": [
     "nu_clean",
+    "gba_sweep",
     "ose_soap",
     "doti_dirty",
     "ifoyin_toothbrush",
     "inura_towel",
     "digi_mirror",
+    "ya_comb",
+    "oyiya_comb",
     "baluwe_bathroom",
     "igbe_feces",
     "o_doti_dirty",
@@ -244,7 +247,9 @@
     "te_press",
     "kun_growl",
     "ni_at",
-    "nle_at_home"
+    "nle_at_home",
+    "ile_land",
+    "igbale_broom"
    ]
   },
   {
@@ -257,6 +262,7 @@
    "words": [
     "ra_buy",
     "oja_market",
+    "owo_money",
     "iyan_pounded_yam",
     "amala_amala",
     "awo_plate",
@@ -293,7 +299,6 @@
     "okuta_stone",
     "ewe_leaf",
     "igbo_forest",
-    "ile_land",
     "fila_hat",
     "ileke_beads",
     "sere_play",
@@ -335,6 +340,21 @@
     "wo_wear",
     "wo_o_wear_it"
    ]
+  },
+  {
+   "id": "talk",
+   "yo": "Ọ̀rọ̀ àti àwòrán",
+   "en": "Talk and pictures",
+   "art": null,
+   "suggestedBy": [],
+   "words": [
+    "so_say",
+    "soro_talk",
+    "aworan_picture",
+    "ero_machine",
+    "ero_amohunmaworan_television",
+    "ero_asoromagbesi_radio"
+   ]
   }
  ],
  "held": {
@@ -342,7 +362,6 @@
   "pako_timber": "not a home word for a 4-year-old",
   "irin_iron": "not a home word for a 4-year-old; it was there for the irin/ìrìn tone pair, which has no tone evidence",
   "irin_walk": "no picture of its own (verbs.js DUPLICATE: rìn's idea); its tone pair irin/ìrìn has no tone evidence",
-  "ero_asoromagbesi_radio": "a 9-syllable formal second word for radio beside rédíò (Ìpele 3-4 in the draft)",
   "igbalejo_hospitality": "an abstract noun (Ìpele 3-4 in the draft); yàrá ìgbàlejò is taught whole"
  },
  "apart": [

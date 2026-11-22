@@ -77,7 +77,8 @@ function buildRows() {
 }
 
 function setGoal() {
-  goal.innerHTML = word.image ? `<img src="${word.image}" alt="">` : `<span class="gift">🎁</span>`;
+  // no picture: an empty card, not a stand-in object (a 🎁 here read as the word meaning "gift"; owner, 2026-11-21)
+  goal.innerHTML = word.image ? `<img src="${word.image}" alt="">` : '';
 }
 
 async function speakRow(row) {
@@ -171,7 +172,7 @@ async function reachBank() {
   if (clean) {
     const r = goal.getBoundingClientRect();
     confetti(r.left + r.width / 2, r.top + r.height / 2);
-    strip.add(word.image ? `<img src="${word.image}" alt="">` : '🏠');
+    word.image ? strip.add(`<img src="${word.image}" alt="">`) : strip.add();
   }
   await sleep(700);
   isTeaching = false;

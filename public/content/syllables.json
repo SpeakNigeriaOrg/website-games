@@ -1,5 +1,5 @@
 {
- "builtAt": "2026-11-20T23:37:39.750Z",
+ "builtAt": "2026-11-22T19:39:41.207Z",
  "dataThrough": "2026-11-16",
  "selection": "not a sibling outlier > careful pitch measurable > tone model places it clearly in its written tone > medoid (smallest median XLS-R distance to same-speaker toneless siblings)",
  "caveats": [

@@ -1,5 +1,5 @@
 {
- "builtAt": "2026-11-20T23:37:46.581Z",
+ "builtAt": "2026-11-22T19:39:47.908Z",
  "voice": "Femi (femi.o + legacy speaker3); Tolani (Tolani + legacy speaker2) or Dapo (legacy speaker1) where Femi lacks a usable take",
  "processor": "v5 (local export, not yet applied to the database)",
  "words": [
@@ -1092,9 +1092,7 @@
    },
    "image": "img/kele_quietly.webp",
    "imageSource": "judge-pick",
-   "imageCheck": [
-    "a learner would likely guess \"peeking\""
-   ],
+   "imageCheck": null,
    "components": [],
    "gates": {
     "entry": "pass",
@@ -2670,6 +2668,12 @@
     "atele-_underside",
     "ese_leg"
    ],
+   "boundParts": [
+    {
+     "id": "atele-_underside",
+     "display": "àtẹ́lẹ̀-"
+    }
+   ],
    "gates": {
     "entry": "pass",
     "capture": {
@@ -3240,6 +3244,12 @@
     "oni-_owner",
     "de_soft"
    ],
+   "boundParts": [
+    {
+     "id": "oni-_owner",
+     "display": "oní-"
+    }
+   ],
    "gates": {
     "entry": "pass",
     "capture": "pass",
@@ -3605,6 +3615,12 @@
     "abi-_prefix",
     "ila_mark"
    ],
+   "boundParts": [
+    {
+     "id": "abi-_prefix",
+     "display": "abi-"
+    }
+   ],
    "gates": {
     "entry": "pass",
     "capture": "pass",
@@ -3702,11 +3718,9 @@
      "highLowSwaps": 0
     }
    },
-   "image": "img/oni-_owner.webp",
-   "imageSource": "judge-pick",
-   "imageCheck": [
-    "text match ranks it #6"
-   ],
+   "image": null,
+   "imageSource": null,
+   "imageCheck": null,
    "components": [],
    "gates": {
     "entry": "pass",
@@ -10936,7 +10950,8 @@
    "imageSource": "judge-pick",
    "imageCheck": [
     "a learner would likely guess \"people\"",
-    "text match ranks it #5"
+    "chosen from 5 meanings: none of these / you (second-person plural or honorific personal pronoun)",
+    "text match ranks it #19"
    ],
    "components": [],
    "gates": {
@@ -18104,8 +18119,8 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/nle_at_home.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [],
    "gates": {
@@ -20768,6 +20783,12 @@
     "atele-_underside",
     "owo_hand"
    ],
+   "boundParts": [
+    {
+     "id": "atele-_underside",
+     "display": "àtẹ́lẹ̀-"
+    }
+   ],
    "gates": {
     "entry": "pass",
     "capture": "pass",
@@ -22246,6 +22267,12 @@
     "e-_dot_nominalizing_prefix",
     "kun_growl"
    ],
+   "boundParts": [
+    {
+     "id": "e-_dot_nominalizing_prefix",
+     "display": "ẹ-"
+    }
+   ],
    "gates": {
     "entry": "pass",
     "capture": "pass",
@@ -22476,6 +22503,12 @@
     "mo_know",
     "to_enough",
     "ekun_leopard"
+   ],
+   "boundParts": [
+    {
+     "id": "a-_nominalizing_prefix",
+     "display": "à-"
+    }
    ],
    "gates": {
     "entry": "pass",
@@ -23437,6 +23470,12 @@
    "components": [
     "i-_abstract_or_instrument",
     "dana_cook"
+   ],
+   "boundParts": [
+    {
+     "id": "i-_abstract_or_instrument",
+     "display": "ì-"
+    }
    ],
    "gates": {
     "entry": "pass",
@@ -24523,6 +24562,12 @@
     "gba_to_take",
     "alejo_guest"
    ],
+   "boundParts": [
+    {
+     "id": "i-_abstract_or_instrument",
+     "display": "ì-"
+    }
+   ],
    "gates": {
     "entry": "pass",
     "capture": "pass",
@@ -25076,7 +25121,7 @@
    "id": "aworan_picture",
    "display": "àwòrán",
    "gloss": "picture, image, drawing",
-   "category": null,
+   "category": "object",
    "standalone": true,
    "audio": "audio/52a8b336-7673-4424-b3f2-206291caf125.mp3",
    "durationS": 0.99,
@@ -25176,13 +25221,19 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/aworan_picture.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [
     "a-_nominalizing_prefix",
     "wo_to_look",
     "ranti_remember"
+   ],
+   "boundParts": [
+    {
+     "id": "a-_nominalizing_prefix",
+     "display": "à-"
+    }
    ],
    "gates": {
     "entry": "pass",
@@ -25208,220 +25259,10 @@
   {
    "voice": "femi.o",
    "person": "Femi",
-   "id": "amohunmaworan_television",
-   "display": "amóhùnmáwòrán",
-   "gloss": "Television, TV; literally a thing that catches sound and picture",
-   "category": null,
-   "standalone": true,
-   "audio": "audio/77be7c6c-6b1f-4f6d-b862-930979d7ca92.mp3",
-   "durationS": 1.198,
-   "flags": [
-    "start_transient_set_aside",
-    "gain_limited_by_peak",
-    "digital_silence_before_soft_onset"
-   ],
-   "repair": "dereverb+denoise",
-   "syllables": [
-    {
-     "text": "a",
-     "audio": "audio/63ab8e14-68f0-4424-af91-ecce1799191f.mp3",
-     "durationS": 0.465,
-     "flags": []
-    },
-    {
-     "text": "mó",
-     "audio": "audio/6f366cd3-589c-4886-8537-9e7264902467.mp3",
-     "durationS": 0.67,
-     "flags": [
-      "repair_moved_cut"
-     ]
-    },
-    {
-     "text": "hùn",
-     "audio": "audio/742ad7fa-828b-4bf3-aa1a-80b643feb318.mp3",
-     "durationS": 0.399,
-     "flags": []
-    },
-    {
-     "text": "má",
-     "audio": "audio/3313ada9-dd54-440e-92f5-8313d76d04c0.mp3",
-     "durationS": 0.645,
-     "flags": []
-    },
-    {
-     "text": "wò",
-     "audio": "audio/e034225e-bdb6-4145-a420-2e0cb61bf919.mp3",
-     "durationS": 0.517,
-     "flags": []
-    },
-    {
-     "text": "rán",
-     "audio": "audio/cc226f4d-e97f-4982-9be1-4b4877309e9d.mp3",
-     "durationS": 0.575,
-     "flags": [
-      "gain_limited_low_level_source"
-     ]
-    }
-   ],
-   "naturalSyllables": [
-    {
-     "text": "a",
-     "startS": 0.018,
-     "endS": 0.228,
-     "vowelStartS": 0.073,
-     "vowelEndS": 0.223,
-     "confidence": 0.9802
-    },
-    {
-     "text": "mó",
-     "startS": 0.228,
-     "endS": 0.518,
-     "vowelStartS": 0.223,
-     "vowelEndS": 0.503,
-     "confidence": 0.5417
-    },
-    {
-     "text": "hùn",
-     "startS": 0.518,
-     "endS": 0.678,
-     "vowelStartS": 0.553,
-     "vowelEndS": 0.673,
-     "confidence": 0.0329
-    },
-    {
-     "text": "má",
-     "startS": 0.678,
-     "endS": 0.898,
-     "vowelStartS": 0.733,
-     "vowelEndS": 0.893,
-     "confidence": 0.5338
-    },
-    {
-     "text": "wò",
-     "startS": 0.898,
-     "endS": 1.058,
-     "vowelStartS": 0.923,
-     "vowelEndS": 1.053,
-     "confidence": 0.1288
-    },
-    {
-     "text": "rán",
-     "startS": 1.058,
-     "endS": 1.098,
-     "vowelStartS": 1.053,
-     "vowelEndS": 1.063,
-     "confidence": 0.5274
-    }
-   ],
-   "alignStatus": "ok",
-   "tone": {
-    "pSequence": 0.7065,
-    "perSyllable": [
-     {
-      "text": "a",
-      "written": "mid",
-      "pWritten": 0.999
-     },
-     {
-      "text": "mó",
-      "written": "high",
-      "pWritten": 0.9948
-     },
-     {
-      "text": "hùn",
-      "written": "low",
-      "pWritten": 1
-     },
-     {
-      "text": "má",
-      "written": "high",
-      "pWritten": 0.9996
-     },
-     {
-      "text": "wò",
-      "written": "low",
-      "pWritten": 1
-     },
-     {
-      "text": "rán",
-      "written": "high",
-      "pWritten": 0.7112
-     }
-    ],
-    "alternative": {
-     "sequence": [
-      "mid",
-      "high",
-      "low",
-      "high",
-      "low",
-      "mid"
-     ],
-     "p": 0.1632
-    },
-    "learner": {
-     "matchesWritten": false,
-     "pWrittenSequence": 0.7065,
-     "heard": [
-      "mid",
-      "high",
-      "low",
-      "high",
-      "low",
-      "high"
-     ],
-     "disagreements": [],
-     "highLowSwaps": 0
-    }
-   },
-   "image": null,
-   "imageSource": null,
-   "imageCheck": null,
-   "components": [
-    "a-_agent_prefix",
-    "mu_take",
-    "ohun_voice",
-    "mo_against",
-    "aworan_picture"
-   ],
-   "gates": {
-    "entry": "pass",
-    "capture": "pass",
-    "content": "pass",
-    "tone": {
-     "outcome": "unknown",
-     "reasons": [
-      "pitch not measurable on every syllable"
-     ]
-    },
-    "quality": {
-     "outcome": "unknown",
-     "reasons": [
-      "quality not measured"
-     ]
-    },
-    "processing": "pass",
-    "toneStrict": {
-     "outcome": "unknown",
-     "reasons": [
-      "pitch not measurable on every syllable"
-     ]
-    }
-   },
-   "inclusion": {
-    "words": "pending",
-    "tone": "pending",
-    "path": "included",
-    "pathTone": "included"
-   }
-  },
-  {
-   "voice": "femi.o",
-   "person": "Femi",
    "id": "ero_machine",
    "display": "ẹ̀rọ",
    "gloss": "machine, technology, device",
-   "category": null,
+   "category": "object",
    "standalone": true,
    "audio": "audio/da45dc1e-e257-4447-929d-f9794fb08bb2.mp3",
    "durationS": 0.94,
@@ -25504,8 +25345,8 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/ero_machine.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [],
    "gates": {
@@ -25540,7 +25381,7 @@
    "id": "ero_amohunmaworan_television",
    "display": "ẹ̀rọ amóhùnmáwòrán",
    "gloss": "television, TV",
-   "category": null,
+   "category": "object",
    "standalone": true,
    "audio": "audio/17fadb46-992d-401e-91a9-68f5569a56c9.mp3",
    "durationS": 1.628,
@@ -25687,8 +25528,8 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/ero_amohunmaworan_television.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [
     "ero_machine",
@@ -25784,8 +25625,8 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/so_say.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [],
    "gates": {
@@ -25929,7 +25770,7 @@
    "id": "soro_talk",
    "display": "sọ̀rọ̀",
    "gloss": "to talk",
-   "category": null,
+   "category": "action",
    "standalone": true,
    "audio": "audio/a11d746f-6cf9-4e2a-abcf-bff94cb2da1a.mp3",
    "durationS": 1.041,
@@ -26005,8 +25846,8 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/soro_talk.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [
     "so_say",
@@ -26149,206 +25990,6 @@
    "inclusion": {
     "words": "excluded",
     "tone": "excluded",
-    "path": "included",
-    "pathTone": "included"
-   }
-  },
-  {
-   "voice": "femi.o",
-   "person": "Femi",
-   "id": "asoromagbesi_radio",
-   "display": "asọ̀rọ̀mágbèsì",
-   "gloss": "radio",
-   "category": null,
-   "standalone": true,
-   "audio": "audio/f67fcb78-565c-4b2d-8876-eccd5cea679e.mp3",
-   "durationS": 1.461,
-   "flags": [
-    "start_transient_set_aside",
-    "level_dip_within_speech",
-    "digital_silence_before_soft_onset"
-   ],
-   "repair": "dereverb+denoise",
-   "syllables": [
-    {
-     "text": "a",
-     "audio": "audio/beeb3873-5ec2-4117-a233-c7f0c910609a.mp3",
-     "durationS": 0.46,
-     "flags": [
-      "repair_moved_cut"
-     ]
-    },
-    {
-     "text": "sọ̀",
-     "audio": "audio/570e3c82-4d61-469f-ac45-9935261f2f2c.mp3",
-     "durationS": 0.612,
-     "flags": [
-      "gain_limited_low_level_source"
-     ]
-    },
-    {
-     "text": "rọ̀",
-     "audio": "audio/01e6d418-a956-4731-9794-5aa3a730d5c7.mp3",
-     "durationS": 0.548,
-     "flags": []
-    },
-    {
-     "text": "má",
-     "audio": "audio/03228e2d-c958-407b-8dbf-a6d581878de5.mp3",
-     "durationS": 0.634,
-     "flags": []
-    },
-    {
-     "text": "gbè",
-     "audio": "audio/da351e08-ee0a-4c68-88dd-2afaef208e80.mp3",
-     "durationS": 0.555,
-     "flags": []
-    },
-    {
-     "text": "sì",
-     "audio": "audio/47a6fe56-ef15-4b60-ae60-e2c0c49f24fe.mp3",
-     "durationS": 0.597,
-     "flags": []
-    }
-   ],
-   "naturalSyllables": [
-    {
-     "text": "a",
-     "startS": 0.031,
-     "endS": 0.341,
-     "vowelStartS": 0.086,
-     "vowelEndS": 0.336,
-     "confidence": 0.8244
-    },
-    {
-     "text": "sọ̀",
-     "startS": 0.341,
-     "endS": 0.561,
-     "vowelStartS": 0.406,
-     "vowelEndS": 0.556,
-     "confidence": 0.6874
-    },
-    {
-     "text": "rọ̀",
-     "startS": 0.561,
-     "endS": 0.701,
-     "vowelStartS": 0.556,
-     "vowelEndS": 0.696,
-     "confidence": 0.1176
-    },
-    {
-     "text": "má",
-     "startS": 0.701,
-     "endS": 0.841,
-     "vowelStartS": 0.696,
-     "vowelEndS": 0.836,
-     "confidence": 0.69
-    },
-    {
-     "text": "gbè",
-     "startS": 0.841,
-     "endS": 1.211,
-     "vowelStartS": 0.836,
-     "vowelEndS": 1.206,
-     "confidence": 0.3958
-    },
-    {
-     "text": "sì",
-     "startS": 1.211,
-     "endS": 1.371,
-     "vowelStartS": 1.206,
-     "vowelEndS": 1.366,
-     "confidence": 0.8596
-    }
-   ],
-   "alignStatus": "ok",
-   "tone": {
-    "pSequence": 0.9546,
-    "perSyllable": [
-     {
-      "text": "a",
-      "written": "mid",
-      "pWritten": 0.9552
-     },
-     {
-      "text": "sọ̀",
-      "written": "low",
-      "pWritten": 1
-     },
-     {
-      "text": "rọ̀",
-      "written": "low",
-      "pWritten": 0.9993
-     },
-     {
-      "text": "má",
-      "written": "high",
-      "pWritten": 1
-     },
-     {
-      "text": "gbè",
-      "written": "low",
-      "pWritten": 1
-     },
-     {
-      "text": "sì",
-      "written": "low",
-      "pWritten": 1
-     }
-    ],
-    "alternative": {
-     "sequence": [
-      "low",
-      "low",
-      "low",
-      "high",
-      "low",
-      "low"
-     ],
-     "p": 0.0447
-    },
-    "learner": {
-     "matchesWritten": true,
-     "pWrittenSequence": 0.9546,
-     "heard": [
-      "mid",
-      "low",
-      "low",
-      "high",
-      "low",
-      "low"
-     ],
-     "disagreements": [],
-     "highLowSwaps": 0
-    }
-   },
-   "image": null,
-   "imageSource": null,
-   "imageCheck": null,
-   "components": [
-    "a-_agent_prefix",
-    "soro_talk",
-    "ma_not",
-    "gba_to_take",
-    "esi_answer"
-   ],
-   "gates": {
-    "entry": "pass",
-    "capture": "pass",
-    "content": "pass",
-    "tone": "pass",
-    "quality": {
-     "outcome": "unknown",
-     "reasons": [
-      "quality not measured"
-     ]
-    },
-    "processing": "pass",
-    "toneStrict": "pass"
-   },
-   "inclusion": {
-    "words": "pending",
-    "tone": "pending",
     "path": "included",
     "pathTone": "included"
    }
@@ -26629,138 +26270,17 @@
   {
    "voice": "femi.o",
    "person": "Femi",
-   "id": "owo_broom",
-   "display": "ọwọ̀",
-   "gloss": "broom",
-   "category": null,
-   "standalone": true,
-   "audio": "audio/5d2c8666-97de-4b4f-a93e-6b4faa1eb14e.mp3",
-   "durationS": 0.619,
-   "flags": [
-    "start_transient_set_aside",
-    "gain_limited_by_peak"
-   ],
-   "repair": "dereverb+denoise",
-   "syllables": [
-    {
-     "text": "ọ",
-     "audio": "audio/1ca57461-5659-4efd-b259-c884268d45a9.mp3",
-     "durationS": 0.411,
-     "flags": [
-      "gain_limited_by_peak"
-     ]
-    },
-    {
-     "text": "wọ̀",
-     "audio": "audio/7a51efb6-a79a-4eab-8079-e88ef34f84ea.mp3",
-     "durationS": 0.495,
-     "flags": []
-    }
-   ],
-   "naturalSyllables": [
-    {
-     "text": "ọ",
-     "startS": 0,
-     "endS": 0.319,
-     "vowelStartS": 0.074,
-     "vowelEndS": 0.314,
-     "confidence": 0.7885
-    },
-    {
-     "text": "wọ̀",
-     "startS": 0.319,
-     "endS": 0.469,
-     "vowelStartS": 0.314,
-     "vowelEndS": 0.464,
-     "confidence": 0.1351
-    }
-   ],
-   "alignStatus": "ok",
-   "tone": {
-    "pSequence": 0.0309,
-    "perSyllable": [
-     {
-      "text": "ọ",
-      "written": "mid",
-      "pWritten": 0.0309
-     },
-     {
-      "text": "wọ̀",
-      "written": "low",
-      "pWritten": 0.9998
-     }
-    ],
-    "alternative": {
-     "sequence": [
-      "low",
-      "low"
-     ],
-     "p": 0.9689
-    },
-    "learner": {
-     "matchesWritten": false,
-     "pWrittenSequence": 0.0309,
-     "heard": [
-      "low",
-      "low"
-     ],
-     "disagreements": [
-      {
-       "position": 0,
-       "written": "mid",
-       "heard": "low",
-       "severity": "mid"
-      }
-     ],
-     "highLowSwaps": 0
-    }
-   },
-   "image": null,
-   "imageSource": null,
-   "imageCheck": null,
-   "components": [],
-   "gates": {
-    "entry": "pass",
-    "capture": "pass",
-    "content": "pass",
-    "tone": "pass",
-    "quality": {
-     "outcome": "unknown",
-     "reasons": [
-      "quality not measured"
-     ]
-    },
-    "processing": "pass",
-    "toneStrict": {
-     "outcome": "fail",
-     "reasons": [
-      "the audio points to other tones than written"
-     ]
-    }
-   },
-   "inclusion": {
-    "words": "excluded",
-    "tone": "excluded",
-    "path": "included",
-    "pathTone": "included"
-   }
-  },
-  {
-   "voice": "femi.o",
-   "person": "Femi",
    "id": "gba_sweep",
    "display": "gbá",
    "gloss": "to sweep; hit, kick, slap, to play",
-   "category": null,
+   "category": "action",
    "standalone": true,
    "audio": "audio/7c9ccd04-f79b-4ef6-bd25-f98878bade9c.mp3",
    "durationS": 1.69,
    "flags": [
     "start_transient_set_aside",
     "gain_limited_by_peak",
-    "repair_moved_cut",
-    "clipping",
-    "extra_sound"
+    "repair_moved_cut"
    ],
    "repair": "dereverb+denoise",
    "syllables": [
@@ -26809,18 +26329,13 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/gba_sweep.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [],
    "gates": {
     "entry": "pass",
-    "capture": {
-     "outcome": "fail",
-     "reasons": [
-      "clipping"
-     ]
-    },
+    "capture": "pass",
     "content": "pass",
     "tone": "pass",
     "quality": {
@@ -26833,130 +26348,10 @@
     "toneStrict": "pass"
    },
    "inclusion": {
-    "words": "excluded",
-    "tone": "excluded",
-    "path": "excluded",
-    "pathTone": "excluded"
-   }
-  },
-  {
-   "voice": "femi.o",
-   "person": "Femi",
-   "id": "igbale_broom",
-   "display": "ìgbálẹ̀",
-   "gloss": "broom",
-   "category": null,
-   "standalone": true,
-   "audio": "audio/54cd50dc-8c54-478a-ac15-98c20e7d84fe.mp3",
-   "durationS": 2.9,
-   "flags": [
-    "start_transient_set_aside",
-    "repair_moved_cut",
-    "more_than_one_utterance"
-   ],
-   "repair": "dereverb+denoise",
-   "syllables": [
-    {
-     "text": "ì",
-     "audio": "audio/0f6557f1-f53d-4a31-adb8-ad7d4366d4ac.mp3",
-     "durationS": 0.472,
-     "flags": [
-      "repair_moved_cut"
-     ]
-    },
-    {
-     "text": "gbá",
-     "audio": "audio/a5357b77-e569-4d3c-bf0d-de1990bd88ac.mp3",
-     "durationS": 0.736,
-     "flags": [
-      "gain_limited_by_peak"
-     ]
-    },
-    {
-     "text": "lẹ̀",
-     "audio": "audio/b856a7ff-3632-408a-93f7-b4da07f24f4a.mp3",
-     "durationS": 0.511,
-     "flags": []
-    }
-   ],
-   "naturalSyllables": null,
-   "alignStatus": "possible_repeat",
-   "tone": {
-    "pSequence": 0.988,
-    "perSyllable": [
-     {
-      "text": "ì",
-      "written": "low",
-      "pWritten": 0.988
-     },
-     {
-      "text": "gbá",
-      "written": "high",
-      "pWritten": 1
-     },
-     {
-      "text": "lẹ̀",
-      "written": "low",
-      "pWritten": 1
-     }
-    ],
-    "alternative": {
-     "sequence": [
-      "mid",
-      "high",
-      "low"
-     ],
-     "p": 0.012
-    },
-    "learner": {
-     "matchesWritten": true,
-     "pWrittenSequence": 0.988,
-     "heard": [
-      "low",
-      "high",
-      "low"
-     ],
-     "disagreements": [],
-     "highLowSwaps": 0
-    }
-   },
-   "image": null,
-   "imageSource": null,
-   "imageCheck": null,
-   "components": [
-    "i-_abstract_or_instrument",
-    "gba_sweep",
-    "ile_land"
-   ],
-   "gates": {
-    "entry": "pass",
-    "capture": {
-     "outcome": "fail",
-     "reasons": [
-      "more_than_one_utterance"
-     ]
-    },
-    "content": {
-     "outcome": "fail",
-     "reasons": [
-      "the word may be said more than once (and the clip is 3.0x the usual length)"
-     ]
-    },
-    "tone": "pass",
-    "quality": {
-     "outcome": "unknown",
-     "reasons": [
-      "quality not measured"
-     ]
-    },
-    "processing": "pass",
-    "toneStrict": "pass"
-   },
-   "inclusion": {
-    "words": "excluded",
-    "tone": "excluded",
-    "path": "excluded",
-    "pathTone": "excluded"
+    "words": "pending",
+    "tone": "pending",
+    "path": "included",
+    "pathTone": "included"
    }
   },
   {
@@ -27218,7 +26613,7 @@
    "id": "ya_comb",
    "display": "yà",
    "gloss": "to comb",
-   "category": null,
+   "category": "action",
    "standalone": true,
    "audio": "audio/467d28a3-2252-4b50-8b62-ca241ba87474.mp3",
    "durationS": 0.851,
@@ -27272,8 +26667,8 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/ya_comb.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [],
    "gates": {
@@ -27303,7 +26698,7 @@
    "id": "oyiya_comb",
    "display": "òyìyà",
    "gloss": "comb",
-   "category": null,
+   "category": "object",
    "standalone": true,
    "audio": "audio/94063f96-ec3d-4190-8562-37845397f9e1.mp3",
    "durationS": 1.239,
@@ -27401,13 +26796,19 @@
      "highLowSwaps": 0
     }
    },
-   "image": null,
-   "imageSource": null,
+   "image": "img/oyiya_comb.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [
     "o-_low_nominalizing_prefix",
     "ya_comb",
     "ya_comb"
+   ],
+   "boundParts": [
+    {
+     "id": "o-_low_nominalizing_prefix",
+     "display": "ò-"
+    }
    ],
    "gates": {
     "entry": "pass",
@@ -27757,8 +27158,8 @@
    "naturalSyllables": null,
    "alignStatus": null,
    "tone": null,
-   "image": null,
-   "imageSource": null,
+   "image": "img/oogun_medicine.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [],
    "gates": {
@@ -27808,7 +27209,7 @@
    "id": "owo_money",
    "display": "owó",
    "gloss": "money, cash",
-   "category": null,
+   "category": "object",
    "standalone": true,
    "audio": "audio/14828a88-5c8e-4cc7-8f94-f29d2f07d628.mp3",
    "durationS": 0.579,
@@ -27836,8 +27237,8 @@
    "naturalSyllables": null,
    "alignStatus": null,
    "tone": null,
-   "image": null,
-   "imageSource": null,
+   "image": "img/owo_money.webp",
+   "imageSource": "approved",
    "imageCheck": null,
    "components": [],
    "gates": {
@@ -27987,6 +27388,12 @@
     "i-_abstract_or_instrument",
     "ro_soft",
     "ori_head"
+   ],
+   "boundParts": [
+    {
+     "id": "i-_abstract_or_instrument",
+     "display": "ì-"
+    }
    ],
    "gates": {
     "entry": "pass",

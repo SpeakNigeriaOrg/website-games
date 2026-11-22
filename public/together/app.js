@@ -31,7 +31,9 @@ function layout() {
     const p = s * 1.3;
     const partY = top + s / 2, choiceY = H - bottom - s / 2;
     geo = { s, p, pot: { x: W / 2, y: (partY + choiceY) / 2 + s * 0.04 },
-      parts: [{ x: W * 0.27, y: partY }, { x: W * 0.73, y: partY }],
+      // the parts share the top row: two at the quarter marks, three or more spread evenly
+      parts: (n) => (n === 2 ? [0.27, 0.73] : Array.from({ length: n }, (_, i) => (i + 0.5) / n)).map((f) => ({ x: W * f, y: partY })),
+      partSize: (n) => Math.min(s * 0.92, W / n - 14),
       choices: [{ x: W * 0.27, y: choiceY }, { x: W * 0.73, y: choiceY }] };
   } else {
     const s = Math.min(H * 0.37, W * 0.2, 220);
@@ -39,7 +41,10 @@ function layout() {
     const ys = [H * 0.28, H * 0.71];
     const left = Math.max(W * 0.19, 140 + s / 2); // clear of the replay button and the ear
     geo = { s, p, pot: { x: W / 2, y: H * 0.56 },
-      parts: ys.map((y) => ({ x: left, y })), choices: ys.map((y) => ({ x: W - left + 40, y })) };
+      // the parts share the left column: two at the choices' heights, three or more spread evenly
+      parts: (n) => (n === 2 ? ys : Array.from({ length: n }, (_, i) => H * (0.16 + (0.68 * (i + 0.5)) / n))).map((y) => ({ x: left, y })),
+      partSize: (n) => Math.min(s * 0.92, (H * 0.68) / n - 12),
+      choices: ys.map((y) => ({ x: W - left + 40, y })) };
   }
   Object.assign(potEl.style, { width: geo.p + 'px', height: geo.p + 'px', left: geo.pot.x - geo.p / 2 + 'px', top: geo.pot.y - geo.p / 2 + 'px' });
   if (turn) place();
@@ -50,22 +55,26 @@ function put(node, { x, y }, s) {
   Object.assign(node.style, { width: s + 'px', height: s + 'px', left: x - s / 2 + 'px', top: y - s / 2 + 'px' });
 }
 function place() {
-  turn.parts.forEach((c, i) => put(c.el, geo.parts[i], geo.s * 0.92));
+  const n = turn.parts.length, spots = geo.parts(n);
+  turn.parts.forEach((c, i) => put(c.el, spots[i], geo.partSize(n)));
   turn.choices.forEach((c, i) => (c === turn.centred ? put(c.el, geo.pot, geo.s * 1.2) : put(c.el, geo.choices[i], geo.s)));
 }
 
 // ---------------------------------------------------------------- pieces
 
+/** A picture card, or for a bound piece (ì-) a written bubble: it has no picture and is never said alone. */
+const face = (w) => (w.text ? `<span class="written">${w.display}</span>` : `<img src="${w.image}" alt="">`);
 function card(w, cls) {
-  const b = el('button', 'card ' + cls, `<img src="${w.image}" alt="">`);
-  b.setAttribute('aria-label', 'picture');
+  const b = el('button', 'card ' + cls + (w.text ? ' text' : ''), face(w));
+  b.setAttribute('aria-label', w.text ? w.display : 'picture');
   cardsEl.appendChild(b);
   return { word: w, el: b };
 }
 
 async function say(c, url = c.word.audio) {
   c.el.classList.add('talking');
-  await audio.play(url);
+  // a written piece has no sound of its own: it bounces for a moment instead
+  await (url ? audio.play(url) : sleep(650));
   c.el.classList.remove('talking');
 }
 
@@ -84,7 +93,7 @@ function bubbleSound() { [0, 120, 230, 330].forEach((t, i) => setTimeout(() => s
 /** A copy of a part's picture flies into the pot's mouth (the part itself stays where it is). */
 async function pour(c) {
   const r = c.el.getBoundingClientRect(), m = potEl.getBoundingClientRect();
-  const copy = document.body.appendChild(el('div', 'card part pouring', `<img src="${c.word.image}" alt="">`));
+  const copy = document.body.appendChild(el('div', 'card part pouring' + (c.word.text ? ' text' : ''), face(c.word)));
   Object.assign(copy.style, { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px' });
   const dx = m.left + m.width / 2 - (r.left + r.width / 2), dy = m.top + m.height * 0.28 - (r.top + r.height / 2);
   sfx.whoosh();
@@ -126,7 +135,7 @@ async function buildTurn(target) {
   const parts = partsOf(target, content.byId);
   const foil = foilFor(target);
   turn = { target, open: false, missed: false, busy: false, parts: [], choices: [] };
-  audio.preload([target.audio, foil?.audio, ...parts.map((p) => p.audio)]);
+  audio.preload([target.audio, foil?.audio, ...parts.map((p) => p.audio)].filter(Boolean));
   await shell.prompt(async () => {
     // the parts arrive one at a time, each saying its word
     for (const p of parts) {
@@ -135,7 +144,9 @@ async function buildTurn(target) {
       onTap(c.el, () => hearPart(c));
       place();
       sfx.pop();
-      await animate(c.el, [{ transform: 'scale(.2)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 380, easing: 'cubic-bezier(.3,1.5,.6,1)', fill: 'backwards' });
+      // a written piece floats in from above; a picture pops up
+      await animate(c.el, p.text ? [{ transform: 'translateY(-60px) scale(.6)', opacity: 0 }, { transform: 'none', opacity: 1 }]
+        : [{ transform: 'scale(.2)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: p.text ? 700 : 380, easing: p.text ? 'ease-out' : 'cubic-bezier(.3,1.5,.6,1)', fill: 'backwards' });
       await say(c);
       await sleep(350);
     }
@@ -262,7 +273,9 @@ async function nextTurn() {
 
 /** The finale's record of one compound built: its parts, small, then the whole (part + part = whole). */
 function madeHtml(w) {
-  const parts = partsOf(w, content.byId).map((p) => `<img class="bit" src="${p.image}" alt="">`).join('<b>+</b>');
+  // a written piece's --len (its letters, not its tone marks) shrinks long pieces such as àtẹ́lẹ̀- to fit
+  const letters = (t) => t.normalize('NFD').replace(/[^\p{L}]/gu, '').length;
+  const parts = partsOf(w, content.byId).map((p) => (p.text ? `<span class="bit written" style="--len:${letters(p.display)}">${p.display}</span>` : `<img class="bit" src="${p.image}" alt="">`)).join('<b>+</b>');
   return `<div class="made">${parts}<b>=</b><img class="whole" src="${w.image}" alt=""></div>`;
 }
 

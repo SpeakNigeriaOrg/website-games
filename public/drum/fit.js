@@ -17,7 +17,8 @@ export function countIsClear(w) {
     return true;
   });
 }
-export const usable = (w) => !!w && !!w.audio && w.syllables.length > 0 && w.syllables.every((s) => s.audio) && countIsClear(w)
+// a picture is required: the drum shows it, and a word without one must not be played (owner, 2026-11-21)
+export const usable = (w) => !!w && !!w.audio && !!w.image && !w.imageCheck && w.syllables.length > 0 && w.syllables.every((s) => s.audio) && countIsClear(w)
   && !w.flags.some((f) => /clip|no_speech|more_than_one|repair_rejected/.test(f));
 
 export const fit = {
