@@ -1,0 +1,10 @@
+[
+ {"name": "track_savanna", "width": 832, "height": 1216, "variants": 4,
+  "prompt": "A cheerful straight country road seen from behind and above, wide red-earth road running from the bottom edge straight up to the middle of the picture into the distance, dry golden savanna grass on both sides, a big baobab tree and flat-topped acacia trees beside the road, low orange hills and a blue sky, the road itself empty"},
+ {"name": "track_village", "width": 832, "height": 1216, "variants": 4,
+  "prompt": "A cheerful straight village road seen from behind and above, wide red-earth road running from the bottom edge straight up to the middle of the picture into the distance, round mud huts with thatched roofs and small houses with tin roofs set back on grass on both sides, a few banana plants, green hills and a blue sky, the road itself empty, no people"},
+ {"name": "track_river", "width": 832, "height": 1216, "variants": 4,
+  "prompt": "A cheerful straight country road seen from behind and above, wide red-earth road running from the bottom edge straight up to the middle of the picture into the distance, a blue river with reeds and lily pads running alongside the road on both sides beyond the grass verges, palm trees, green hills and a blue sky, the road itself empty"},
+ {"name": "track_hills", "width": 832, "height": 1216, "variants": 4,
+  "prompt": "A cheerful straight country road seen from behind and above, wide red-earth road running from the bottom edge straight up to the middle of the picture into the distance, big round grey granite rock hills and green forest trees on both sides, grass verges, a blue sky with white clouds, the road itself empty"}
+]

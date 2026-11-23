@@ -1,0 +1,112 @@
+/* Gate Rally: a portrait road column, centred on wide screens; the road and gates are drawn in px of the column. */
+body.game { background: #8fd65a; }
+.column {
+  position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+  height: 100%; aspect-ratio: 832 / 1216; max-width: 100vw; overflow: hidden; touch-action: none;
+}
+.column > .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lanes { position: absolute; inset: 0; width: 100%; height: 100%; }
+.world { position: absolute; inset: 0; pointer-events: none; }
+
+/* A gate: an arch with a sign panel. Both gates of a pair are identical apart from what the panel holds. */
+.gate { position: absolute; transform: translate(-50%, -100%); will-change: left, top, width; }
+.gate svg { width: 100%; height: auto; display: block; overflow: visible; }
+.gate .panel {
+  position: absolute; left: 50%; top: 30%; width: 62%; aspect-ratio: 1; transform: translate(-50%, -50%);
+  background: white; border-radius: 18%; border: 0.25em solid #2b2118; display: grid; place-items: center; overflow: hidden;
+}
+.gate .panel img { width: 92%; height: 92%; object-fit: contain; }
+.gate .panel .wave { width: 70%; height: 70%; }
+.gate .label { font-weight: 900; color: var(--ink); }
+.gate.speaking { filter: drop-shadow(0 0 14px #fff6a8) drop-shadow(0 0 8px #ffd23f); }
+.gate.speaking .panel { animation: speak .45s ease-in-out infinite; }
+@keyframes speak { 50% { transform: translate(-50%, -50%) scale(1.1); } }
+.gate.wrong { filter: saturate(.3) brightness(.9); }
+
+.kart-wrap {
+  position: absolute; top: 80%; left: 50%; width: 30%; transform: translate(-50%, -100%); z-index: 20; pointer-events: none;
+  transition: left .32s cubic-bezier(.3,.8,.4,1);
+}
+.kart { width: 100%; display: block; filter: drop-shadow(0 8px 4px rgba(0,0,0,.28)); animation: bob .32s ease-in-out infinite alternate; transform-origin: 50% 90%; }
+.kart-wrap.idle .kart { animation-duration: .7s; }
+@keyframes bob { from { transform: translateY(0); } to { transform: translateY(-2.5%); } }
+.kart-wrap.skid .kart { animation: skid .7s ease-in-out; }
+@keyframes skid { 20% { transform: rotate(-16deg) translateX(-6%); } 45% { transform: rotate(13deg) translateX(5%); } 70% { transform: rotate(-6deg); } 100% { transform: none; } }
+.kart-wrap.lean-l .kart { transform: rotate(-8deg); animation: none; }
+.kart-wrap.lean-r .kart { transform: rotate(8deg); animation: none; }
+
+.coin {
+  position: absolute; z-index: 30; width: 13%; aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 35% 30%, #fff3b0 0 18%, #ffd23f 19% 62%, #e0a019 63%);
+  border: 3px solid #a86d00; display: grid; place-items: center; color: #a86d00; font-size: 6vmin; pointer-events: none;
+  box-shadow: 0 0 18px #fff6a8;
+}
+.dust { position: absolute; z-index: 19; width: 7%; aspect-ratio: 1; border-radius: 50%; background: rgba(255, 236, 210, .85); pointer-events: none; }
+.speed-lines { position: absolute; inset: 0; pointer-events: none; z-index: 18; }
+.speed-lines i { position: absolute; width: 3px; background: rgba(255,255,255,.75); border-radius: 2px; }
+
+/* Mode picker: two big pictures, no text. */
+.mode-picker { position: fixed; inset: 0; z-index: 48; display: grid; place-items: center; background: rgba(255,248,236,.55); }
+.mode-row { display: flex; gap: 6vmin; }
+.mode-btn {
+  width: 36vmin; height: 36vmin; max-width: 210px; max-height: 210px; border-radius: 28px; border: 0; background: white;
+  box-shadow: var(--shadow); cursor: pointer; padding: 6%; display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center;
+  animation: breathe 1.8s ease-in-out infinite;
+}
+.mode-btn:nth-child(2) { animation-delay: .9s; }
+.mode-btn .mini { aspect-ratio: 1; border-radius: 16%; border: 3px solid #2b2118; background: #fff8ec; display: grid; place-items: center; overflow: hidden; }
+.mode-btn .mini img { width: 90%; height: 90%; object-fit: contain; }
+.mode-btn .mini svg { width: 72%; height: 72%; }
+.mode-btn:active { transform: translateY(3px); }
+
+/* Eight slots must fit the column on short (landscape) screens. */
+@media (max-height: 560px) {
+  .progress-strip { gap: 4px; padding: 4px 8px; }
+  .progress-strip .slot, .progress-strip .slot img { width: 28px; height: 28px; font-size: 18px; }
+}
+
+/* Gates catch the pointer (so the keyboard can find them as choices); a tap on one still bubbles to the road. */
+.gate { pointer-events: auto; }
+
+/* Sequence mode: the word's picture on a banner over the road, and a line of stones that light as its syllables are
+ * built (no text). On a wide screen the banner hangs beside the road column. */
+.seq-box {
+  position: fixed; z-index: 29; top: calc(62px + env(safe-area-inset-top, 0px)); left: 50%; transform: translate(-50%, 0);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none;
+}
+.seq-box[hidden] { display: none; }
+.seq-box .banner {
+  position: relative; width: clamp(84px, 13vh, 150px); aspect-ratio: 1; background: #fff; border: 4px solid #2b2118; border-radius: 18%;
+  display: grid; place-items: center; box-shadow: 0 6px 0 rgba(0,0,0,.18); overflow: visible;
+}
+.seq-box .banner::before, .seq-box .banner::after { /* the banner's ropes */
+  content: ''; position: absolute; top: -40px; width: 4px; height: 40px; background: #2b2118; border-radius: 2px;
+}
+.seq-box .banner::before { left: 18%; } .seq-box .banner::after { right: 18%; }
+.seq-box .banner img { width: 88%; height: 88%; object-fit: contain; border-radius: 12%; }
+.seq-box .banner .wave { width: 64%; height: 64%; }
+.seq-box .banner.sing { animation: speak-banner .5s ease-in-out infinite; filter: drop-shadow(0 0 12px #fff6a8); }
+@keyframes speak-banner { 50% { transform: scale(1.08) rotate(-2deg); } }
+.seq-box .stones { display: flex; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,.8); box-shadow: var(--shadow); }
+.seq-box .stone {
+  width: clamp(22px, 3.4vh, 32px); aspect-ratio: 1; border-radius: 50%; background: #c9c2b5; border: 3px solid #2b2118;
+  transition: background .3s, box-shadow .3s;
+}
+.seq-box .stone.lit { background: radial-gradient(circle at 35% 30%, #fff3b0 0 20%, #ffd23f 21% 64%, #e0a019 65%); box-shadow: 0 0 12px #ffd23f; animation: popin .4s ease-out; }
+.seq-box .stone.sing { animation: stone-sing .4s ease-in-out infinite; box-shadow: 0 0 20px 4px #fff6a8; }
+@keyframes stone-sing { 50% { transform: scale(1.7); } }
+@media (orientation: landscape) and (min-aspect-ratio: 4/3) {
+  .seq-box { top: 50%; left: calc(25vw - 17.1vh); transform: translate(-50%, -50%); }
+  .seq-box .banner { width: clamp(84px, 30vh, 170px); }
+  .seq-box .banner::before, .seq-box .banner::after { display: none; } /* nothing to hang from beside the road */
+}
+
+/* Three modes in the picker: smaller buttons; the sequence button holds one wide icon. */
+.mode-row { flex-wrap: wrap; justify-content: center; gap: 4vmin; }
+.mode-btn { width: 28vmin; height: 28vmin; }
+.mode-btn:nth-child(3) { animation-delay: 1.8s; }
+.mode-btn.seq { grid-template-columns: 1fr; }
+.mode-btn.seq .seq-icon { width: 100%; height: auto; }
+
+/* The next track grows out from the horizon over the current one. */
+.column > .bg-next { z-index: 0; }

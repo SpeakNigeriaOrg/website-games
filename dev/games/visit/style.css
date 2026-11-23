@@ -1,0 +1,71 @@
+/* Who Came to Visit? The house picture keeps its proportions (placed by app.js); door and windows are overlays
+   positioned in % of it. Guests stand in the yard below. */
+.stage { background: #eeb878; }
+.stage > .bg.blurred { filter: blur(14px) saturate(.9); transform: scale(1.1); }
+.column { position: absolute; inset: 0; }
+.sand { position: absolute; bottom: 0; background: #eeb878; }
+.art { position: absolute; }
+.art > .bg { position: absolute; inset: 0; width: 100%; height: 100%;
+  -webkit-mask-image: linear-gradient(#000 92%, transparent); mask-image: linear-gradient(#000 92%, transparent); }
+
+/* The doorway (warm room light) with the door panel cut from the picture itself, which swings open. */
+.doorway {
+  position: absolute; left: 41.2%; top: 37.1%; width: 18.1%; height: 23.6%; perspective: 600px;
+  background: radial-gradient(ellipse at 50% 40%, #fff3c4 0, #ffd77a 45%, #c98a3c 100%);
+  box-shadow: inset 0 0 12px rgba(80, 40, 10, .6);
+}
+.door {
+  position: absolute; inset: 0; transform-origin: 0 50%; transition: transform .38s ease-in-out;
+  background: url(../art/bg_visit_house.png) 50.3% 48.7% / 552.5% 423.7% no-repeat;
+  box-shadow: 2px 0 6px rgba(0,0,0,.25);
+}
+.door.open { transform: rotateY(-78deg); }
+.doorway.calling { animation: calling .6s ease-in-out infinite; }
+@keyframes calling { 50% { filter: drop-shadow(0 0 10px #fff6a8); } }
+
+/* Windows: a lit room behind the glass. Guests who came in wave in front of the bars, a little wider than the
+   window (two overlap, the newest in front), still clear of the door. */
+.window { position: absolute; top: 38.1%; width: 15.9%; height: 10.8%; }
+.window.left { left: 13.8%; }
+.window.right { left: 70.7%; }
+.window .inside {
+  position: absolute; inset: 0; overflow: hidden; border-radius: 2px;
+  background: linear-gradient(#ffe9ad, #f6c56d 70%, #c98a3c 70%);
+}
+.window .bar { position: absolute; background: #8a5a35; }
+.window .bar.v { left: 47%; width: 6%; top: 0; bottom: 0; }
+.window .bar.h { top: 46%; height: 8%; left: 0; right: 0; }
+.window .waving { position: absolute; left: -20%; right: -20%; top: 0; bottom: 4%; display: flex; align-items: flex-end; justify-content: center; }
+.peek { width: 68%; aspect-ratio: 1; object-fit: cover; border-radius: 50% 50% 10px 10px; background: #fff; flex: none;
+  box-shadow: 0 0 0 3px #fff, 0 3px 6px rgba(60, 30, 10, .45); transform-origin: 50% 100%; animation: wave 1.6s ease-in-out infinite; }
+.peek:not(:only-child) { width: 55%; } /* two to a window: each still shows its face */
+.peek + .peek { margin-left: -10%; animation-delay: -.8s; }
+.peek:first-child { z-index: 1; } /* the newer of two, in front */
+.peek.new { animation: peekin .5s ease-out, wave 1.6s ease-in-out .5s infinite; }
+.peek.speaking { z-index: 1; filter: drop-shadow(0 0 6px #fff) brightness(1.1); animation: talk .3s ease-in-out infinite; }
+@keyframes wave { 25% { transform: rotate(-7deg); } 75% { transform: rotate(7deg) translateY(-3%); } }
+@keyframes peekin { from { transform: translateY(30%) scale(.2); opacity: 0; } }
+@keyframes talk { 50% { transform: scale(1.1); } }
+
+/* Guests */
+.guests { position: absolute; inset: 0; pointer-events: none; }
+.guest {
+  position: absolute; width: var(--card); height: var(--card); padding: 0; border: 0; background: none; cursor: pointer; pointer-events: auto;
+}
+.guest img {
+  width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 24%; background: #fff;
+  box-shadow: 0 0 0 calc(var(--card) * .04) #fff, 0 calc(var(--card) * .07) 0 rgba(90, 50, 20, .25);
+  animation: idle 2.2s ease-in-out infinite; animation-delay: var(--delay, 0s); transform-origin: 50% 100%;
+}
+.guest::after { /* shadow on the sand */
+  content: ""; position: absolute; left: 12%; right: 12%; bottom: -12%; height: 10%; border-radius: 50%; background: rgba(120, 70, 20, .25); z-index: -1;
+}
+@keyframes idle { 50% { transform: scale(1.03, .97); } }
+.guest.walking img { animation: none; }
+.guest.speaking img { filter: drop-shadow(0 0 10px #fff6a8) drop-shadow(0 0 5px #ffd23f); animation: talk .3s ease-in-out infinite; }
+.guest.oops img { filter: saturate(.6); animation: talk .3s ease-in-out infinite; }
+.guest .label { position: absolute; left: 0; right: 0; bottom: -26%; text-align: center; font-weight: 900; font-size: calc(var(--card) * .17); color: var(--ink); }
+body.locked .guest { cursor: default; }
+
+.finale-guests { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.finale-guests img { width: 76px; height: 76px; object-fit: cover; border-radius: 22%; box-shadow: var(--shadow); }

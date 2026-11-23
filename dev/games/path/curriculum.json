@@ -1,0 +1,2937 @@
+[
+ {
+  "unit": "I1.U1",
+  "title": "Ọjọ́ Mi — My Day",
+  "items": [
+   {
+    "yo": "Orúkọ mi ni",
+    "en": "my name is … — the whole frame, said with your own name",
+    "wordIds": []
+   },
+   {
+    "yo": "Ó dàbọ̀",
+    "en": "goodbye — the whole word",
+    "wordIds": [
+     "o_dabo_goodbye"
+    ]
+   },
+   {
+    "yo": "àárọ̀",
+    "en": "morning",
+    "wordIds": [
+     "aaro_morning"
+    ]
+   },
+   {
+    "yo": "alẹ́",
+    "en": "evening, night",
+    "wordIds": [
+     "ale_evening"
+    ]
+   },
+   {
+    "yo": "jí",
+    "en": "to wake up",
+    "wordIds": []
+   },
+   {
+    "yo": "sùn",
+    "en": "to sleep",
+    "wordIds": [
+     "sun_to_sleep"
+    ]
+   },
+   {
+    "yo": "kú",
+    "en": "the greeting word",
+    "wordIds": [
+     "ku_greetings"
+    ]
+   },
+   {
+    "yo": "káàárọ̀",
+    "en": "good morning",
+    "wordIds": []
+   },
+   {
+    "yo": "káalẹ́",
+    "en": "good evening",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ",
+    "en": "you — to a grown-up, or to everyone",
+    "wordIds": []
+   },
+   {
+    "yo": "olùkọ́",
+    "en": "teacher",
+    "wordIds": []
+   },
+   {
+    "yo": "ìyá",
+    "en": "mother",
+    "wordIds": [
+     "iya_mother"
+    ]
+   },
+   {
+    "yo": "bàbá",
+    "en": "father",
+    "wordIds": [
+     "baba_father"
+    ]
+   },
+   {
+    "yo": "ajá",
+    "en": "dog",
+    "wordIds": [
+     "aja_dog"
+    ]
+   },
+   {
+    "yo": "ń",
+    "en": "is …-ing — happening now",
+    "wordIds": [
+     "n_is"
+    ]
+   },
+   {
+    "yo": "di",
+    "en": "to become, to turn into",
+    "wordIds": [
+     "di_become"
+    ]
+   },
+   {
+    "yo": "ọ̀sán",
+    "en": "afternoon",
+    "wordIds": [
+     "osan_midday"
+    ]
+   },
+   {
+    "yo": "káàsán",
+    "en": "good afternoon",
+    "wordIds": []
+   },
+   {
+    "yo": "ni",
+    "en": "it is — the word that ends a naming",
+    "wordIds": []
+   },
+   {
+    "yo": "ó",
+    "en": "he, she, it",
+    "wordIds": [
+     "o_himherit"
+    ]
+   },
+   {
+    "yo": "bẹ́ẹ̀ni",
+    "en": "yes",
+    "wordIds": [
+     "beeni_yes"
+    ]
+   },
+   {
+    "yo": "rárá",
+    "en": "no",
+    "wordIds": [
+     "rara_no"
+    ]
+   },
+   {
+    "yo": "dìde",
+    "en": "to get up, to stand up",
+    "wordIds": [
+     "dide_stand"
+    ]
+   },
+   {
+    "yo": "ilé",
+    "en": "home, house",
+    "wordIds": [
+     "ile_home"
+    ]
+   },
+   {
+    "yo": "ibùsùn",
+    "en": "bed",
+    "wordIds": [
+     "ibusun_bed"
+    ]
+   },
+   {
+    "yo": "ọmọ",
+    "en": "child",
+    "wordIds": [
+     "omo_child"
+    ]
+   },
+   {
+    "yo": "dàárọ̀",
+    "en": "good night (in `Ó dàárọ̀`: until morning)",
+    "wordIds": []
+   },
+   {
+    "yo": "ojú",
+    "en": "eye, face",
+    "wordIds": [
+     "oju_eye"
+    ]
+   },
+   {
+    "yo": "ṣí",
+    "en": "to open",
+    "wordIds": [
+     "si_open"
+    ]
+   },
+   {
+    "yo": "dijú",
+    "en": "to close your eyes",
+    "wordIds": []
+   },
+   {
+    "yo": "ọwọ́",
+    "en": "hand",
+    "wordIds": []
+   },
+   {
+    "yo": "fọ",
+    "en": "to wash",
+    "wordIds": []
+   },
+   {
+    "yo": "wẹ̀",
+    "en": "to bathe",
+    "wordIds": [
+     "we_to_bathe"
+    ]
+   },
+   {
+    "yo": "rẹ",
+    "en": "your",
+    "wordIds": []
+   },
+   {
+    "yo": "mi",
+    "en": "my",
+    "wordIds": [
+     "mi_my"
+    ]
+   },
+   {
+    "yo": "wọ̀",
+    "en": "to put on — `wọ` before what you put on",
+    "wordIds": [
+     "wo_wear"
+    ]
+   },
+   {
+    "yo": "aṣọ",
+    "en": "clothes, a shirt",
+    "wordIds": [
+     "aso_cloth"
+    ]
+   },
+   {
+    "yo": "ṣòkòtò",
+    "en": "trousers",
+    "wordIds": [
+     "sokoto_pants"
+    ]
+   },
+   {
+    "yo": "bàtà",
+    "en": "shoes",
+    "wordIds": [
+     "bata_shoe"
+    ]
+   },
+   {
+    "yo": "jẹ",
+    "en": "to eat",
+    "wordIds": [
+     "je_eat"
+    ]
+   },
+   {
+    "yo": "mu",
+    "en": "to drink",
+    "wordIds": [
+     "mu_to_drink"
+    ]
+   },
+   {
+    "yo": "omi",
+    "en": "water",
+    "wordIds": [
+     "omi_water"
+    ]
+   },
+   {
+    "yo": "oúnjẹ",
+    "en": "food",
+    "wordIds": [
+     "ounje_food"
+    ]
+   },
+   {
+    "yo": "oúnjẹ àárọ̀",
+    "en": "breakfast",
+    "wordIds": [
+     "ounje_aaro_breakfast"
+    ]
+   },
+   {
+    "yo": "oúnjẹ ọ̀sán",
+    "en": "lunch",
+    "wordIds": [
+     "ounje_osan_lunch"
+    ]
+   },
+   {
+    "yo": "ìbọ̀sẹ̀",
+    "en": "socks",
+    "wordIds": []
+   },
+   {
+    "yo": "yọ",
+    "en": "to take off",
+    "wordIds": []
+   },
+   {
+    "yo": "lọ",
+    "en": "to go",
+    "wordIds": [
+     "lo_go"
+    ]
+   },
+   {
+    "yo": "Ó yá!",
+    "en": "let's go — it's time; the whole word",
+    "wordIds": []
+   },
+   {
+    "yo": "wá",
+    "en": "to come",
+    "wordIds": [
+     "wa_come"
+    ]
+   },
+   {
+    "yo": "ìwé",
+    "en": "book",
+    "wordIds": [
+     "iwe_book"
+    ]
+   },
+   {
+    "yo": "akẹ́kọ̀ọ́",
+    "en": "student",
+    "wordIds": []
+   },
+   {
+    "yo": "ǹlẹ́",
+    "en": "hi — at any time of day",
+    "wordIds": [
+     "nle_hi"
+    ]
+   },
+   {
+    "yo": "ilé ìwé",
+    "en": "school (the house of books)",
+    "wordIds": [
+     "ile-iwe_school"
+    ]
+   },
+   {
+    "yo": "orúkọ",
+    "en": "name",
+    "wordIds": [
+     "oruko_name"
+    ]
+   },
+   {
+    "yo": "Kí ni orúkọ rẹ?",
+    "en": "what is your name? — the whole question; only `kí`, what, is new inside it",
+    "wordIds": []
+   },
+   {
+    "yo": "kọ́",
+    "en": "to learn, to teach",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ ǹlẹ́",
+    "en": "hi (to a grown-up)",
+    "wordIds": [
+     "e_nle_hello"
+    ]
+   },
+   {
+    "yo": "dé",
+    "en": "to arrive, to get home",
+    "wordIds": []
+   },
+   {
+    "yo": "bọ̀",
+    "en": "to come back",
+    "wordIds": [
+     "bo_return"
+    ]
+   },
+   {
+    "yo": "àbọ̀",
+    "en": "the coming back",
+    "wordIds": [
+     "abo_arrival"
+    ]
+   },
+   {
+    "yo": "káàbọ̀",
+    "en": "welcome",
+    "wordIds": [
+     "kaabo_welcome"
+    ]
+   },
+   {
+    "yo": "dàbọ̀",
+    "en": "goodbye (in `Ó dàbọ̀`)",
+    "wordIds": [
+     "dabo_until_return"
+    ]
+   },
+   {
+    "yo": "Ẹ ṣé",
+    "en": "thank you — to a grown-up; the whole word",
+    "wordIds": [
+     "e_se_thank_you"
+    ]
+   },
+   {
+    "yo": "o ṣé",
+    "en": "thank you — to a friend",
+    "wordIds": [
+     "o_se_thank_you"
+    ]
+   },
+   {
+    "yo": "ẹ jọ̀ọ́",
+    "en": "please — to a grown-up",
+    "wordIds": [
+     "e_joo_please"
+    ]
+   },
+   {
+    "yo": "jọ̀wọ́",
+    "en": "please — to a friend",
+    "wordIds": [
+     "jowo_please"
+    ]
+   },
+   {
+    "yo": "oúnjẹ alẹ́",
+    "en": "dinner",
+    "wordIds": [
+     "ounje_ale_dinner"
+    ]
+   },
+   {
+    "yo": "jókòó",
+    "en": "to sit down",
+    "wordIds": [
+     "jokoo_sit"
+    ]
+   },
+   {
+    "yo": "dùbúlẹ̀",
+    "en": "to lie down",
+    "wordIds": []
+   },
+   {
+    "yo": "aṣọ ìbora",
+    "en": "blanket — the whole word",
+    "wordIds": []
+   },
+   {
+    "yo": "wàrà",
+    "en": "milk",
+    "wordIds": [
+     "wara_milk"
+    ]
+   }
+  ]
+ },
+ {
+  "unit": "I1.U2",
+  "title": "Ara Mi — My Body and What It Does",
+  "items": [
+   {
+    "yo": "wò",
+    "en": "to look — `wo` before what you look at",
+    "wordIds": [
+     "wo_to_look"
+    ]
+   },
+   {
+    "yo": "etí",
+    "en": "ear",
+    "wordIds": [
+     "eti_ear"
+    ]
+   },
+   {
+    "yo": "gbọ́",
+    "en": "to hear, to listen",
+    "wordIds": []
+   },
+   {
+    "yo": "pè",
+    "en": "to call — `pe` before who or what you call",
+    "wordIds": []
+   },
+   {
+    "yo": "gbé",
+    "en": "to lift, to carry",
+    "wordIds": [
+     "gbe_put"
+    ]
+   },
+   {
+    "yo": "pàtẹ́wọ́",
+    "en": "to clap",
+    "wordIds": [
+     "patewo_clap"
+    ]
+   },
+   {
+    "yo": "nà",
+    "en": "to stretch out, to reach — `na` before what you stretch",
+    "wordIds": []
+   },
+   {
+    "yo": "ọmọ ọwọ́",
+    "en": "baby (child of the hand)",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹsẹ̀",
+    "en": "foot, leg",
+    "wordIds": [
+     "ese_leg"
+    ]
+   },
+   {
+    "yo": "rìn",
+    "en": "to walk",
+    "wordIds": [
+     "rin_to_walk"
+    ]
+   },
+   {
+    "yo": "sáré",
+    "en": "to run",
+    "wordIds": [
+     "sare_run"
+    ]
+   },
+   {
+    "yo": "dúró",
+    "en": "to stand still, to stop, to wait",
+    "wordIds": [
+     "duro_stop"
+    ]
+   },
+   {
+    "yo": "ọmọ ajá",
+    "en": "puppy",
+    "wordIds": [
+     "omo_aja_puppy"
+    ]
+   },
+   {
+    "yo": "orí",
+    "en": "head",
+    "wordIds": [
+     "ori_head"
+    ]
+   },
+   {
+    "yo": "ara",
+    "en": "body",
+    "wordIds": [
+     "ara_body"
+    ]
+   },
+   {
+    "yo": "fi",
+    "en": "to put",
+    "wordIds": [
+     "fi_to_use_something_to_do_something_else"
+    ]
+   },
+   {
+    "yo": "sí",
+    "en": "onto, to",
+    "wordIds": [
+     "si_toward"
+    ]
+   },
+   {
+    "yo": "fọwọ́",
+    "en": "put a hand (on)",
+    "wordIds": [
+     "fowo_with_hand"
+    ]
+   },
+   {
+    "yo": "sórí",
+    "en": "onto the head",
+    "wordIds": [
+     "sori_atop"
+    ]
+   },
+   {
+    "yo": "ṣubú",
+    "en": "to fall down",
+    "wordIds": [
+     "subu_to_fall"
+    ]
+   },
+   {
+    "yo": "pẹ̀lẹ́",
+    "en": "sorry — to someone hurt or having a hard time",
+    "wordIds": [
+     "pele_sorry"
+    ]
+   },
+   {
+    "yo": "ti",
+    "en": "has — it's done",
+    "wordIds": [
+     "ti_have"
+    ]
+   },
+   {
+    "yo": "kúnlẹ̀",
+    "en": "to kneel",
+    "wordIds": [
+     "kunle_kneel"
+    ]
+   },
+   {
+    "yo": "kàn",
+    "en": "to touch",
+    "wordIds": [
+     "kan_touch"
+    ]
+   },
+   {
+    "yo": "má",
+    "en": "don't",
+    "wordIds": [
+     "ma_not"
+    ]
+   },
+   {
+    "yo": "Má fọwọ́ kàn án",
+    "en": "don't touch it — the whole warning; only `án`, it, is new inside it",
+    "wordIds": [
+     "ma_fowo_kan_an_no_touch"
+    ]
+   },
+   {
+    "yo": "Ràn mí lọ́wọ́",
+    "en": "help me — the whole request",
+    "wordIds": []
+   },
+   {
+    "yo": "imú",
+    "en": "nose",
+    "wordIds": [
+     "imu_nose"
+    ]
+   },
+   {
+    "yo": "ẹnu",
+    "en": "mouth",
+    "wordIds": [
+     "enu_mouth"
+    ]
+   },
+   {
+    "yo": "ìka",
+    "en": "finger, toe",
+    "wordIds": [
+     "ika_finger"
+    ]
+   },
+   {
+    "yo": "eyín",
+    "en": "tooth",
+    "wordIds": [
+     "eyin_tooth"
+    ]
+   },
+   {
+    "yo": "ìka ọwọ́",
+    "en": "finger",
+    "wordIds": []
+   },
+   {
+    "yo": "ìka ẹsẹ̀",
+    "en": "toe",
+    "wordIds": [
+     "ika_ese_toe"
+    ]
+   },
+   {
+    "yo": "ihò",
+    "en": "hole",
+    "wordIds": [
+     "iho_hole"
+    ]
+   },
+   {
+    "yo": "ẹyẹ",
+    "en": "bird",
+    "wordIds": [
+     "eye_bird"
+    ]
+   },
+   {
+    "yo": "fò",
+    "en": "to jump, to fly",
+    "wordIds": [
+     "fo_jump"
+    ]
+   },
+   {
+    "yo": "ihò imú",
+    "en": "nostril",
+    "wordIds": [
+     "iho_imu_nostril"
+    ]
+   },
+   {
+    "yo": "ihò etí",
+    "en": "ear hole",
+    "wordIds": [
+     "iho_eti_ear_canal"
+    ]
+   },
+   {
+    "yo": "irun",
+    "en": "hair",
+    "wordIds": [
+     "irun_hair"
+    ]
+   },
+   {
+    "yo": "ọrùn",
+    "en": "neck",
+    "wordIds": [
+     "orun_neck"
+    ]
+   },
+   {
+    "yo": "irun imú",
+    "en": "nose hair",
+    "wordIds": []
+   },
+   {
+    "yo": "ọrùn ọwọ́",
+    "en": "wrist (neck of the hand)",
+    "wordIds": []
+   },
+   {
+    "yo": "erin",
+    "en": "elephant",
+    "wordIds": [
+     "erin_elephant"
+    ]
+   },
+   {
+    "yo": "erinmi",
+    "en": "hippo (water elephant)",
+    "wordIds": []
+   },
+   {
+    "yo": "eyín erin",
+    "en": "tusk (elephant's tooth)",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I1.U3",
+  "title": "Oúnjẹ — Mealtime",
+  "items": [
+   {
+    "yo": "fẹ́",
+    "en": "to want",
+    "wordIds": [
+     "fe_want"
+    ]
+   },
+   {
+    "yo": "mo",
+    "en": "I",
+    "wordIds": [
+     "mo_i"
+    ]
+   },
+   {
+    "yo": "ò",
+    "en": "not",
+    "wordIds": []
+   },
+   {
+    "yo": "ì-",
+    "en": "a front piece that makes a word into a thing",
+    "wordIds": [
+     "i-_abstract_or_instrument"
+    ]
+   },
+   {
+    "yo": "ìjókòó",
+    "en": "a seat (the sitting thing)",
+    "wordIds": []
+   },
+   {
+    "yo": "jẹun",
+    "en": "to eat a meal",
+    "wordIds": [
+     "jeun_eat"
+    ]
+   },
+   {
+    "yo": "Ebi ń pa mí",
+    "en": "I'm hungry — the whole sentence",
+    "wordIds": []
+   },
+   {
+    "yo": "iṣu",
+    "en": "yam",
+    "wordIds": [
+     "isu_yam"
+    ]
+   },
+   {
+    "yo": "ọ̀gẹ̀dẹ̀",
+    "en": "banana",
+    "wordIds": []
+   },
+   {
+    "yo": "gé",
+    "en": "to cut",
+    "wordIds": [
+     "ge_cut"
+    ]
+   },
+   {
+    "yo": "gbóná",
+    "en": "to be hot",
+    "wordIds": [
+     "gbona_hot"
+    ]
+   },
+   {
+    "yo": "tutù",
+    "en": "to be cold",
+    "wordIds": []
+   },
+   {
+    "yo": "dùn",
+    "en": "to taste nice, to be sweet",
+    "wordIds": []
+   },
+   {
+    "yo": "díẹ̀",
+    "en": "a little",
+    "wordIds": []
+   },
+   {
+    "yo": "púpọ̀",
+    "en": "a lot",
+    "wordIds": []
+   },
+   {
+    "yo": "tán",
+    "en": "to be all gone, to finish",
+    "wordIds": []
+   },
+   {
+    "yo": "fún",
+    "en": "to give",
+    "wordIds": [
+     "fun_give"
+    ]
+   }
+  ]
+ },
+ {
+  "unit": "I1.U4",
+  "title": "Inú Mi — Feelings, in the Body",
+  "items": [
+   {
+    "yo": "Báwo ni?",
+    "en": "how are you? — the whole question",
+    "wordIds": [
+     "bawo_ni_how_are_you"
+    ]
+   },
+   {
+    "yo": "dáadáa",
+    "en": "well, fine",
+    "wordIds": [
+     "daadaa_good"
+    ]
+   },
+   {
+    "yo": "Ó rẹ̀ mí",
+    "en": "I'm tired — the whole sentence",
+    "wordIds": []
+   },
+   {
+    "yo": "inú",
+    "en": "the inside, the tummy",
+    "wordIds": [
+     "inu_inside"
+    ]
+   },
+   {
+    "yo": "Inú mi dùn",
+    "en": "I'm happy (my inside is sweet)",
+    "wordIds": []
+   },
+   {
+    "yo": "Inú mi ò dùn",
+    "en": "I'm not happy, I'm sad",
+    "wordIds": []
+   },
+   {
+    "yo": "sunkún",
+    "en": "to cry",
+    "wordIds": [
+     "sunkun_weep"
+    ]
+   },
+   {
+    "yo": "mí",
+    "en": "me — after a low or mid doing word: `dùn mí`, `pa mí`",
+    "wordIds": []
+   },
+   {
+    "yo": "omijé",
+    "en": "tears",
+    "wordIds": []
+   },
+   {
+    "yo": "Má sunkún",
+    "en": "don't cry",
+    "wordIds": [
+     "ma_sunkun_not_cry"
+    ]
+   },
+   {
+    "yo": "bínú",
+    "en": "to be cross, angry",
+    "wordIds": []
+   },
+   {
+    "yo": "Ẹ̀rù ń bà mí",
+    "en": "I'm scared — the whole sentence",
+    "wordIds": []
+   },
+   {
+    "yo": "Má bínú",
+    "en": "sorry (don't be cross)",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I1.U5",
+  "title": "Wẹ̀ — Washing",
+  "items": [
+   {
+    "yo": "ọṣẹ",
+    "en": "soap",
+    "wordIds": [
+     "ose_soap"
+    ]
+   },
+   {
+    "yo": "mọ́",
+    "en": "to be clean",
+    "wordIds": [
+     "mo_clean"
+    ]
+   },
+   {
+    "yo": "dọ̀tí",
+    "en": "to be dirty",
+    "wordIds": [
+     "doti_dirty"
+    ]
+   },
+   {
+    "yo": "tọ̀",
+    "en": "to wee",
+    "wordIds": [
+     "to_urinate"
+    ]
+   },
+   {
+    "yo": "Sọ ọ́ nù",
+    "en": "throw it away — the whole command",
+    "wordIds": [
+     "so_o_nu_throw_away"
+    ]
+   },
+   {
+    "yo": "ìwẹ̀",
+    "en": "a bath",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I1.U6",
+  "title": "Ìdílé àti Ọ̀rẹ́ — Family and Friends",
+  "items": [
+   {
+    "yo": "ẹ̀gbọ́n",
+    "en": "older brother or sister",
+    "wordIds": [
+     "egbon_older_sibling"
+    ]
+   },
+   {
+    "yo": "àbúrò",
+    "en": "younger brother or sister",
+    "wordIds": [
+     "aburo_younger_sibling"
+    ]
+   },
+   {
+    "yo": "àgbà",
+    "en": "an elder, an old person",
+    "wordIds": [
+     "agba_adult"
+    ]
+   },
+   {
+    "yo": "ìyá àgbà",
+    "en": "grandmother",
+    "wordIds": []
+   },
+   {
+    "yo": "bàbá àgbà",
+    "en": "grandfather",
+    "wordIds": []
+   },
+   {
+    "yo": "ọ̀rẹ́",
+    "en": "friend",
+    "wordIds": []
+   },
+   {
+    "yo": "ta ni",
+    "en": "who is it?",
+    "wordIds": []
+   },
+   {
+    "yo": "olórí",
+    "en": "leader, the head one",
+    "wordIds": []
+   },
+   {
+    "yo": "ọmọ dáadáa",
+    "en": "a good child",
+    "wordIds": [
+     "omo_daadaa_good_child"
+    ]
+   },
+   {
+    "yo": "e",
+    "en": "it — after `gbé`",
+    "wordIds": []
+   },
+   {
+    "yo": "gbé e wá",
+    "en": "bring it (carry it here)",
+    "wordIds": []
+   },
+   {
+    "yo": "gbé e lọ",
+    "en": "take it away (carry it away)",
+    "wordIds": []
+   },
+   {
+    "yo": "iṣẹ́",
+    "en": "work",
+    "wordIds": []
+   },
+   {
+    "yo": "ṣe",
+    "en": "to do, to make",
+    "wordIds": [
+     "se_to_do"
+    ]
+   },
+   {
+    "yo": "kí ni",
+    "en": "what? — first used freely here; Lesson 1.13 had it only inside `Kí ni orúkọ rẹ?`",
+    "wordIds": []
+   },
+   {
+    "yo": "ṣiṣẹ́",
+    "en": "to work",
+    "wordIds": []
+   },
+   {
+    "yo": "Ẹ kú iṣẹ́",
+    "en": "well done (greeting to someone at work)",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I1.U7",
+  "title": "Ilé — At Home",
+  "items": [
+   {
+    "yo": "dà",
+    "en": "where is …?",
+    "wordIds": []
+   },
+   {
+    "yo": "wà",
+    "en": "to be — somewhere",
+    "wordIds": []
+   },
+   {
+    "yo": "ní",
+    "en": "at, in",
+    "wordIds": []
+   },
+   {
+    "yo": "nílé",
+    "en": "at home",
+    "wordIds": []
+   },
+   {
+    "yo": "jáde",
+    "en": "to go out",
+    "wordIds": []
+   },
+   {
+    "yo": "kúulé",
+    "en": "greeting to the people of a house (said by a visitor)",
+    "wordIds": [
+     "kuule_greeting_entering_home"
+    ]
+   },
+   {
+    "yo": "àga",
+    "en": "chair",
+    "wordIds": [
+     "aga_chair"
+    ]
+   },
+   {
+    "yo": "tábìlì",
+    "en": "table",
+    "wordIds": [
+     "tabili_table"
+    ]
+   },
+   {
+    "yo": "àpótí",
+    "en": "box",
+    "wordIds": []
+   },
+   {
+    "yo": "nínú",
+    "en": "inside",
+    "wordIds": [
+     "ninu_inside"
+    ]
+   },
+   {
+    "yo": "lórí",
+    "en": "on top",
+    "wordIds": [
+     "lori_atop"
+    ]
+   },
+   {
+    "yo": "abẹ́",
+    "en": "the underneath",
+    "wordIds": [
+     "abe_under"
+    ]
+   },
+   {
+    "yo": "ìta",
+    "en": "outside",
+    "wordIds": [
+     "ita_outside"
+    ]
+   },
+   {
+    "yo": "lábẹ́",
+    "en": "under",
+    "wordIds": [
+     "labe_under"
+    ]
+   },
+   {
+    "yo": "níta",
+    "en": "outside",
+    "wordIds": [
+     "nita_outside"
+    ]
+   },
+   {
+    "yo": "ibi",
+    "en": "a place, a spot",
+    "wordIds": [
+     "ibi_place"
+    ]
+   },
+   {
+    "yo": "ibi iṣẹ́",
+    "en": "workplace (place of work)",
+    "wordIds": []
+   },
+   {
+    "yo": "ìrọ̀rí",
+    "en": "pillow",
+    "wordIds": [
+     "irori_pillow"
+    ]
+   },
+   {
+    "yo": "bò",
+    "en": "to cover — `bo` before what you cover",
+    "wordIds": []
+   },
+   {
+    "yo": "ilẹ̀kùn",
+    "en": "door",
+    "wordIds": [
+     "ilekun_door"
+    ]
+   },
+   {
+    "yo": "tì",
+    "en": "to push, to push shut — `ti` before a noun",
+    "wordIds": [
+     "ti_push"
+    ]
+   },
+   {
+    "yo": "fà",
+    "en": "to pull — `fa` before a noun",
+    "wordIds": [
+     "fa_to_pull"
+    ]
+   },
+   {
+    "yo": "òkè",
+    "en": "up high, the top",
+    "wordIds": [
+     "oke_mountain"
+    ]
+   },
+   {
+    "yo": "ilẹ̀",
+    "en": "the floor, the ground",
+    "wordIds": [
+     "ile_land"
+    ]
+   },
+   {
+    "yo": "gbá",
+    "en": "to sweep, to hit, to kick",
+    "wordIds": [
+     "gba_sweep"
+    ]
+   },
+   {
+    "yo": "sókè",
+    "en": "up",
+    "wordIds": []
+   },
+   {
+    "yo": "sílẹ̀",
+    "en": "down",
+    "wordIds": [
+     "sile_downward"
+    ]
+   },
+   {
+    "yo": "kó",
+    "en": "to gather, to pack up",
+    "wordIds": [
+     "ko_pack"
+    ]
+   },
+   {
+    "yo": "gbálẹ̀",
+    "en": "to sweep (the floor)",
+    "wordIds": []
+   },
+   {
+    "yo": "ìgbálẹ̀",
+    "en": "broom (the sweeping thing)",
+    "wordIds": [
+     "igbale_broom"
+    ]
+   }
+  ]
+ },
+ {
+  "unit": "I1.U8",
+  "title": "Aṣọ — Getting Dressed",
+  "items": [
+   {
+    "yo": "fìlà",
+    "en": "cap, hat",
+    "wordIds": [
+     "fila_hat"
+    ]
+   },
+   {
+    "yo": "ìbọ̀wọ́",
+    "en": "gloves",
+    "wordIds": []
+   },
+   {
+    "yo": "funfun",
+    "en": "white",
+    "wordIds": []
+   },
+   {
+    "yo": "dúdú",
+    "en": "black",
+    "wordIds": []
+   },
+   {
+    "yo": "pupa",
+    "en": "red",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I1.U9",
+  "title": "Ìṣeré — Play",
+  "items": [
+   {
+    "yo": "bọ́ọ̀lù",
+    "en": "ball",
+    "wordIds": [
+     "boolu_ball"
+    ]
+   },
+   {
+    "yo": "gbà",
+    "en": "to catch, to take — `gba` before what you catch",
+    "wordIds": [
+     "gba_to_take"
+    ]
+   },
+   {
+    "yo": "eré",
+    "en": "a game, play",
+    "wordIds": [
+     "ere_game"
+    ]
+   },
+   {
+    "yo": "jó",
+    "en": "to dance",
+    "wordIds": [
+     "jo_dance"
+    ]
+   },
+   {
+    "yo": "ṣeré",
+    "en": "to play",
+    "wordIds": [
+     "sere_play"
+    ]
+   },
+   {
+    "yo": "lù",
+    "en": "to beat, to hit — `lu` before a noun",
+    "wordIds": []
+   },
+   {
+    "yo": "ìlù",
+    "en": "drum (the beaten thing)",
+    "wordIds": []
+   },
+   {
+    "yo": "orin",
+    "en": "song",
+    "wordIds": [
+     "orin_song"
+    ]
+   },
+   {
+    "yo": "kọrin",
+    "en": "to sing",
+    "wordIds": [
+     "korin_sing"
+    ]
+   },
+   {
+    "yo": "rẹ́rìn-ín",
+    "en": "to laugh",
+    "wordIds": [
+     "rerin-in_laugh"
+    ]
+   },
+   {
+    "yo": "ẹ̀rín",
+    "en": "a laugh, laughter",
+    "wordIds": [
+     "erin_smile"
+    ]
+   },
+   {
+    "yo": "rẹ́rìn-ín músẹ́",
+    "en": "to smile",
+    "wordIds": [
+     "rerin-in_muse_smile"
+    ]
+   },
+   {
+    "yo": "fọ́",
+    "en": "to break, to burst",
+    "wordIds": [
+     "fo_break"
+    ]
+   },
+   {
+    "yo": "bàjẹ́",
+    "en": "to spoil, to stop working",
+    "wordIds": []
+   },
+   {
+    "yo": "jà",
+    "en": "to fight",
+    "wordIds": []
+   },
+   {
+    "yo": "Orí ń fọ́ mi",
+    "en": "I have a headache (my head is breaking)",
+    "wordIds": []
+   },
+   {
+    "yo": "ìjà",
+    "en": "a fight",
+    "wordIds": []
+   },
+   {
+    "yo": "ọ̀kan",
+    "en": "one",
+    "wordIds": []
+   },
+   {
+    "yo": "èjì",
+    "en": "two",
+    "wordIds": [
+     "eji_two"
+    ]
+   },
+   {
+    "yo": "ẹ̀ta",
+    "en": "three",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ̀rin",
+    "en": "four",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I1.U10",
+  "title": "Ẹranko — Animals",
+  "items": [
+   {
+    "yo": "ológbò",
+    "en": "cat",
+    "wordIds": [
+     "olongbo_cat"
+    ]
+   },
+   {
+    "yo": "sá",
+    "en": "to run away, to flee",
+    "wordIds": []
+   },
+   {
+    "yo": "adìyẹ",
+    "en": "chicken",
+    "wordIds": [
+     "adiye_chicken"
+    ]
+   },
+   {
+    "yo": "gbó",
+    "en": "to bark",
+    "wordIds": [
+     "gbo_to_bark"
+    ]
+   },
+   {
+    "yo": "lé",
+    "en": "to chase",
+    "wordIds": []
+   },
+   {
+    "yo": "ọmọ ológbò",
+    "en": "kitten",
+    "wordIds": [
+     "omo_ologbo_kitten"
+    ]
+   },
+   {
+    "yo": "ọmọ adìyẹ",
+    "en": "chick",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹja",
+    "en": "fish",
+    "wordIds": [
+     "eja_fish"
+    ]
+   },
+   {
+    "yo": "rí",
+    "en": "to see",
+    "wordIds": [
+     "ri_see"
+    ]
+   },
+   {
+    "yo": "ẹyẹlé",
+    "en": "pigeon (bird + house)",
+    "wordIds": []
+   },
+   {
+    "yo": "ilé ẹyẹ",
+    "en": "nest (house + bird)",
+    "wordIds": []
+   },
+   {
+    "yo": "ńlá",
+    "en": "big",
+    "wordIds": [
+     "nla_big"
+    ]
+   },
+   {
+    "yo": "kékeré",
+    "en": "small",
+    "wordIds": [
+     "kekere_small"
+    ]
+   },
+   {
+    "yo": "àrún",
+    "en": "five",
+    "wordIds": []
+   },
+   {
+    "yo": "ní",
+    "en": "to have — a different word from `ní`, at",
+    "wordIds": [
+     "-ni-_to_have"
+    ]
+   }
+  ]
+ },
+ {
+  "unit": "I1.U11",
+  "title": "Àtúnyẹ̀wò — Review",
+  "items": []
+ },
+ {
+  "unit": "I2.U1",
+  "title": "Èmi — All About Me",
+  "items": [
+   {
+    "yo": "jẹ́",
+    "en": "to be — what someone is",
+    "wordIds": [
+     "je_to_be"
+    ]
+   },
+   {
+    "yo": "èmi",
+    "en": "me, I — said with weight",
+    "wordIds": [
+     "emi_me"
+    ]
+   },
+   {
+    "yo": "Yorùbá",
+    "en": "Yorùbá",
+    "wordIds": []
+   },
+   {
+    "yo": "èdè",
+    "en": "language",
+    "wordIds": []
+   },
+   {
+    "yo": "mú",
+    "en": "to take, to hold",
+    "wordIds": [
+     "mu_take"
+    ]
+   },
+   {
+    "yo": "mélòó",
+    "en": "how many?",
+    "wordIds": []
+   },
+   {
+    "yo": "méjì",
+    "en": "two (of something)",
+    "wordIds": []
+   },
+   {
+    "yo": "mẹ́ta",
+    "en": "three (of something)",
+    "wordIds": []
+   },
+   {
+    "yo": "mẹ́rin",
+    "en": "four (of something)",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ̀fà",
+    "en": "six",
+    "wordIds": []
+   },
+   {
+    "yo": "èje",
+    "en": "seven",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ̀jọ",
+    "en": "eight",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ̀sán",
+    "en": "nine",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ̀wá",
+    "en": "ten",
+    "wordIds": []
+   },
+   {
+    "yo": "ọdún",
+    "en": "year",
+    "wordIds": [
+     "odun_year"
+    ]
+   },
+   {
+    "yo": "méje",
+    "en": "seven — of something",
+    "wordIds": []
+   },
+   {
+    "yo": "mẹ́jọ",
+    "en": "eight — of something",
+    "wordIds": []
+   },
+   {
+    "yo": "mẹ́sàn-án",
+    "en": "nine — of something",
+    "wordIds": []
+   },
+   {
+    "yo": "márùn-ún",
+    "en": "five (of something)",
+    "wordIds": []
+   },
+   {
+    "yo": "mẹ́fà",
+    "en": "six (of something)",
+    "wordIds": []
+   },
+   {
+    "yo": "ṣé",
+    "en": "a yes-or-no question word",
+    "wordIds": []
+   },
+   {
+    "yo": "o",
+    "en": "you — one friend",
+    "wordIds": []
+   },
+   {
+    "yo": "bẹ́ẹ̀",
+    "en": "like that, so",
+    "wordIds": [
+     "bee_like_that"
+    ]
+   },
+   {
+    "yo": "bẹ́ẹ̀kọ́",
+    "en": "no — it is not so",
+    "wordIds": [
+     "beeko_no"
+    ]
+   },
+   {
+    "yo": "Má ṣe bẹ́ẹ̀",
+    "en": "stop that (don't do like that)",
+    "wordIds": [
+     "ma_se_bee_stop_that"
+    ]
+   },
+   {
+    "yo": "fẹ́ràn",
+    "en": "to like, to love",
+    "wordIds": []
+   },
+   {
+    "yo": "èyí",
+    "en": "this, this one",
+    "wordIds": [
+     "eyi_this_thing_person"
+    ]
+   },
+   {
+    "yo": "yẹn",
+    "en": "that — after a thing",
+    "wordIds": [
+     "yen_that"
+    ]
+   },
+   {
+    "yo": "ìyẹn",
+    "en": "that one",
+    "wordIds": [
+     "iyen_that_thing_person"
+    ]
+   }
+  ]
+ },
+ {
+  "unit": "I2.U2",
+  "title": "Ìdílé Ńlá — The Big Family",
+  "items": [
+   {
+    "yo": "ẹni",
+    "en": "a person, someone",
+    "wordIds": [
+     "eni_person"
+    ]
+   },
+   {
+    "yo": "ọkọ",
+    "en": "husband",
+    "wordIds": [
+     "oko_husband"
+    ]
+   },
+   {
+    "yo": "abo",
+    "en": "female",
+    "wordIds": [
+     "abo_female"
+    ]
+   },
+   {
+    "yo": "ọkùnrin",
+    "en": "man",
+    "wordIds": [
+     "okunrin_man"
+    ]
+   },
+   {
+    "yo": "obìnrin",
+    "en": "woman",
+    "wordIds": [
+     "obinrin_woman"
+    ]
+   },
+   {
+    "yo": "ìdílé",
+    "en": "family",
+    "wordIds": []
+   },
+   {
+    "yo": "gbogbo",
+    "en": "all, every",
+    "wordIds": []
+   },
+   {
+    "yo": "rẹ̀",
+    "en": "his, her",
+    "wordIds": []
+   },
+   {
+    "yo": "ìyá ìyá",
+    "en": "mother's mother",
+    "wordIds": []
+   },
+   {
+    "yo": "bàbá ìyá",
+    "en": "mother's father",
+    "wordIds": []
+   },
+   {
+    "yo": "ọmọ ìyá",
+    "en": "mother's child (sibling)",
+    "wordIds": []
+   },
+   {
+    "yo": "jọ",
+    "en": "to look like",
+    "wordIds": []
+   },
+   {
+    "yo": "mọ̀",
+    "en": "to know — `mọ` before what you know",
+    "wordIds": [
+     "mo_know"
+    ]
+   },
+   {
+    "yo": "Mi ò mọ̀ ọ́n",
+    "en": "I don't know him or her — the whole sentence; only `ọ́n`, him or her, is new inside it",
+    "wordIds": []
+   },
+   {
+    "yo": "dì",
+    "en": "to tie, to hold tight, to pack — `di` before what you tie",
+    "wordIds": [
+     "di_bind"
+    ]
+   },
+   {
+    "yo": "mọ́",
+    "en": "against, close onto — a different word from `mọ́`, clean",
+    "wordIds": [
+     "mo_against"
+    ]
+   },
+   {
+    "yo": "ẹrù",
+    "en": "a load, your things packed together",
+    "wordIds": []
+   },
+   {
+    "yo": "dìmú",
+    "en": "to hold on to",
+    "wordIds": [
+     "dimu_hold"
+    ]
+   },
+   {
+    "yo": "dìmọ́",
+    "en": "to hold close, cling to",
+    "wordIds": [
+     "dimo_hug"
+    ]
+   },
+   {
+    "yo": "dìmọ́ra",
+    "en": "to hug",
+    "wordIds": [
+     "dimora_hug"
+    ]
+   },
+   {
+    "yo": "àgbàlagbà",
+    "en": "a grown-up, elderly person",
+    "wordIds": [
+     "agbalagba_elder"
+    ]
+   },
+   {
+    "yo": "ìyá bàbá",
+    "en": "father's mother",
+    "wordIds": []
+   },
+   {
+    "yo": "bàbá bàbá",
+    "en": "father's father",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I2.U3",
+  "title": "Ọ̀sẹ̀ Mi — My Week",
+  "items": [
+   {
+    "yo": "ọjọ́",
+    "en": "day",
+    "wordIds": [
+     "ojo_day"
+    ]
+   },
+   {
+    "yo": "òní",
+    "en": "today",
+    "wordIds": [
+     "oni_today"
+    ]
+   },
+   {
+    "yo": "ọ̀la",
+    "en": "tomorrow",
+    "wordIds": [
+     "ola_tomorrow"
+    ]
+   },
+   {
+    "yo": "àná",
+    "en": "yesterday",
+    "wordIds": [
+     "ana_yesterday"
+    ]
+   },
+   {
+    "yo": "lónìí",
+    "en": "today (at today)",
+    "wordIds": []
+   },
+   {
+    "yo": "dọ̀la",
+    "en": "see you tomorrow (in `Ó dọ̀la`)",
+    "wordIds": []
+   },
+   {
+    "yo": "ọ̀sẹ̀",
+    "en": "week",
+    "wordIds": []
+   },
+   {
+    "yo": "ọjọ́ Àìkú",
+    "en": "Sunday",
+    "wordIds": []
+   },
+   {
+    "yo": "ọjọ́ Ajé",
+    "en": "Monday",
+    "wordIds": []
+   },
+   {
+    "yo": "ọjọ́ Ìṣẹ́gun",
+    "en": "Tuesday",
+    "wordIds": []
+   },
+   {
+    "yo": "Ọjọ́rú",
+    "en": "Wednesday",
+    "wordIds": []
+   },
+   {
+    "yo": "Ọjọ́bọ̀",
+    "en": "Thursday",
+    "wordIds": []
+   },
+   {
+    "yo": "ọjọ́ Ẹtì",
+    "en": "Friday",
+    "wordIds": []
+   },
+   {
+    "yo": "ọjọ́ Àbámẹ́ta",
+    "en": "Saturday",
+    "wordIds": []
+   },
+   {
+    "yo": "wo",
+    "en": "which? — a different word from `wò`, look",
+    "wordIds": []
+   },
+   {
+    "yo": "láàárọ̀",
+    "en": "in the morning",
+    "wordIds": []
+   },
+   {
+    "yo": "lọ́sàn-án",
+    "en": "in the afternoon",
+    "wordIds": []
+   },
+   {
+    "yo": "lálẹ́",
+    "en": "at night",
+    "wordIds": [
+     "lale_at_night"
+    ]
+   },
+   {
+    "yo": "bí",
+    "en": "to give birth, to be born",
+    "wordIds": []
+   },
+   {
+    "yo": "ìbí",
+    "en": "a birth",
+    "wordIds": []
+   },
+   {
+    "yo": "ọjọ́-ìbí",
+    "en": "birthday",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I2.U4",
+  "title": "Iná àti Ilé Ìdáná — Fire and the Kitchen",
+  "items": [
+   {
+    "yo": "iná",
+    "en": "fire, light",
+    "wordIds": [
+     "ina_fire"
+    ]
+   },
+   {
+    "yo": "dá",
+    "en": "to start, to make — a fire",
+    "wordIds": [
+     "da_create"
+    ]
+   },
+   {
+    "yo": "pa",
+    "en": "to kill, to put out, to switch off",
+    "wordIds": [
+     "pa_kill"
+    ]
+   },
+   {
+    "yo": "dáná",
+    "en": "to light a fire (to cook)",
+    "wordIds": [
+     "dana_cook"
+    ]
+   },
+   {
+    "yo": "paná",
+    "en": "to put out a fire, switch off",
+    "wordIds": [
+     "pana_extinguish_fire"
+    ]
+   },
+   {
+    "yo": "sè",
+    "en": "to cook, to boil — `se` before what you cook",
+    "wordIds": []
+   },
+   {
+    "yo": "ọbẹ̀",
+    "en": "soup, stew",
+    "wordIds": []
+   },
+   {
+    "yo": "ìkòkò",
+    "en": "pot",
+    "wordIds": [
+     "ikoko_pot"
+    ]
+   },
+   {
+    "yo": "ìdáná",
+    "en": "cooking",
+    "wordIds": [
+     "idana_cooking"
+    ]
+   },
+   {
+    "yo": "ilé ìdáná",
+    "en": "kitchen",
+    "wordIds": [
+     "ile_idana_kitchen"
+    ]
+   },
+   {
+    "yo": "gún",
+    "en": "to pound",
+    "wordIds": []
+   },
+   {
+    "yo": "iyán",
+    "en": "pounded yam",
+    "wordIds": [
+     "iyan_pounded_yam"
+    ]
+   },
+   {
+    "yo": "àti",
+    "en": "and",
+    "wordIds": []
+   },
+   {
+    "yo": "mú wá",
+    "en": "bring (take it and come)",
+    "wordIds": [
+     "mu_wa_bring"
+    ]
+   },
+   {
+    "yo": "ẹ̀wà",
+    "en": "beans",
+    "wordIds": []
+   },
+   {
+    "yo": "dín",
+    "en": "to fry",
+    "wordIds": []
+   },
+   {
+    "yo": "àkàrà",
+    "en": "bean fritters",
+    "wordIds": [
+     "akara_fried_beans"
+    ]
+   },
+   {
+    "yo": "dòdò",
+    "en": "fried plantain",
+    "wordIds": []
+   },
+   {
+    "yo": "ohun",
+    "en": "a thing",
+    "wordIds": [
+     "ohun_thing"
+    ]
+   },
+   {
+    "yo": "Ó ti tó",
+    "en": "that's enough — the whole sentence",
+    "wordIds": [
+     "o_ti_to_enough"
+    ]
+   },
+   {
+    "yo": "jíjẹ",
+    "en": "eating",
+    "wordIds": [
+     "jije_eating"
+    ]
+   },
+   {
+    "yo": "mímu",
+    "en": "drinking",
+    "wordIds": []
+   },
+   {
+    "yo": "búrẹ́dì",
+    "en": "bread",
+    "wordIds": [
+     "buredi_bread"
+    ]
+   },
+   {
+    "yo": "ebi",
+    "en": "hunger",
+    "wordIds": [
+     "ebi_hunger"
+    ]
+   },
+   {
+    "yo": "Fún mi ní …",
+    "en": "give me … — the whole frame; the thing given comes after `ní`",
+    "wordIds": []
+   },
+   {
+    "yo": "pẹja",
+    "en": "to fish (kill + fish)",
+    "wordIds": [
+     "peja_to_fish"
+    ]
+   }
+  ]
+ },
+ {
+  "unit": "I2.U5",
+  "title": "Aṣọ àti Irun — Clothes and Hair",
+  "items": [
+   {
+    "yo": "ẹ̀wù",
+    "en": "a shirt, a top",
+    "wordIds": []
+   },
+   {
+    "yo": "tuntun",
+    "en": "new",
+    "wordIds": []
+   },
+   {
+    "yo": "tóbi",
+    "en": "to be big",
+    "wordIds": []
+   },
+   {
+    "yo": "kéré",
+    "en": "to be small",
+    "wordIds": [
+     "kere_to_be_small"
+    ]
+   },
+   {
+    "yo": "jù",
+    "en": "too much — more than it should be",
+    "wordIds": []
+   },
+   {
+    "yo": "gèlè",
+    "en": "a headwrap",
+    "wordIds": []
+   },
+   {
+    "yo": "wé",
+    "en": "to wrap, to tie — a headwrap",
+    "wordIds": []
+   },
+   {
+    "yo": "tú",
+    "en": "to untie, to undo",
+    "wordIds": []
+   },
+   {
+    "yo": "rẹwà",
+    "en": "to be beautiful, to look lovely",
+    "wordIds": []
+   },
+   {
+    "yo": "fá",
+    "en": "to shave",
+    "wordIds": []
+   },
+   {
+    "yo": "àgbọ̀n",
+    "en": "chin — a different word from `àgbọn`, coconut",
+    "wordIds": []
+   },
+   {
+    "yo": "dára",
+    "en": "to be good, to look nice",
+    "wordIds": []
+   },
+   {
+    "yo": "irùngbọ̀n",
+    "en": "beard (hair + chin)",
+    "wordIds": []
+   },
+   {
+    "yo": "dídì",
+    "en": "braids, braiding (tie + tie)",
+    "wordIds": []
+   },
+   {
+    "yo": "pààrọ̀",
+    "en": "to change — one thing for another",
+    "wordIds": []
+   },
+   {
+    "yo": "bora",
+    "en": "to cover yourself up",
+    "wordIds": []
+   },
+   {
+    "yo": "ìyẹ̀wù",
+    "en": "bedroom (where the shirt comes off)",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I2.U6",
+  "title": "Ojú Ọjọ́ — Weather and Sky",
+  "items": [
+   {
+    "yo": "oòrùn",
+    "en": "the sun",
+    "wordIds": []
+   },
+   {
+    "yo": "tàn",
+    "en": "to shine",
+    "wordIds": []
+   },
+   {
+    "yo": "ooru",
+    "en": "heat, hot weather",
+    "wordIds": []
+   },
+   {
+    "yo": "òtútù",
+    "en": "cold, cold weather",
+    "wordIds": []
+   },
+   {
+    "yo": "ojú ọjọ́",
+    "en": "weather (the face of the day)",
+    "wordIds": []
+   },
+   {
+    "yo": "òjò",
+    "en": "rain",
+    "wordIds": []
+   },
+   {
+    "yo": "Òjò ń rọ̀",
+    "en": "it's raining — the whole sentence; its `rọ̀`, to fall, is a different word from the `rọ̀` of `ìrọ̀rí`, soft",
+    "wordIds": []
+   },
+   {
+    "yo": "afẹ́fẹ́",
+    "en": "wind, air",
+    "wordIds": []
+   },
+   {
+    "yo": "Afẹ́fẹ́ ń fẹ́",
+    "en": "the wind is blowing — the whole sentence; its `fẹ́`, to blow, is a different word from `fẹ́`, to want",
+    "wordIds": []
+   },
+   {
+    "yo": "gbẹ",
+    "en": "to be dry, to dry out",
+    "wordIds": []
+   },
+   {
+    "yo": "òṣùpá",
+    "en": "the moon",
+    "wordIds": [
+     "osupa_moon"
+    ]
+   },
+   {
+    "yo": "ìràwọ̀",
+    "en": "a star",
+    "wordIds": [
+     "irawo_star"
+    ]
+   },
+   {
+    "yo": "ọ̀run",
+    "en": "the sky, the heavens — a different word from `ọrùn`, neck",
+    "wordIds": []
+   },
+   {
+    "yo": "kà",
+    "en": "to count, to read — `ka` before what you count",
+    "wordIds": [
+     "ka_read"
+    ]
+   },
+   {
+    "yo": "Ilẹ̀ ti ṣú",
+    "en": "it's got dark — the whole sentence",
+    "wordIds": []
+   },
+   {
+    "yo": "ojú ọ̀run",
+    "en": "the sky you can see",
+    "wordIds": []
+   },
+   {
+    "yo": "gun",
+    "en": "to climb, to ride",
+    "wordIds": []
+   },
+   {
+    "yo": "sọ̀kalẹ̀",
+    "en": "to come down, to get down",
+    "wordIds": []
+   },
+   {
+    "yo": "igi",
+    "en": "a tree",
+    "wordIds": []
+   },
+   {
+    "yo": "gòkè",
+    "en": "to climb up",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I2.U7",
+  "title": "Ilé Ẹ̀kọ́ — School, and the Family of kọ́",
+  "items": [
+   {
+    "yo": "kọ",
+    "en": "to write — a different word from `kọ́`, learn, and from the `kọ` of `kọrin`, sing",
+    "wordIds": [
+     "ko_write"
+    ]
+   },
+   {
+    "yo": "pátákó",
+    "en": "a board, the blackboard",
+    "wordIds": []
+   },
+   {
+    "yo": "kọ̀wé",
+    "en": "to write",
+    "wordIds": []
+   },
+   {
+    "yo": "ìkọ̀wé",
+    "en": "pen (the writing thing)",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ̀kọ́",
+    "en": "a lesson, learning",
+    "wordIds": []
+   },
+   {
+    "yo": "rántí",
+    "en": "to remember",
+    "wordIds": [
+     "ranti_remember"
+    ]
+   },
+   {
+    "yo": "gbàgbé",
+    "en": "to forget",
+    "wordIds": []
+   },
+   {
+    "yo": "kẹ́kọ̀ọ́",
+    "en": "to study (learn + a lesson)",
+    "wordIds": []
+   },
+   {
+    "yo": "ilé ẹ̀kọ́",
+    "en": "school (house of learning)",
+    "wordIds": []
+   },
+   {
+    "yo": "a-",
+    "en": "a front piece that makes the person who does something",
+    "wordIds": [
+     "a_we"
+    ]
+   },
+   {
+    "yo": "olù-",
+    "en": "a front piece: the one who does it",
+    "wordIds": [
+     "olu-_non_productive_agent"
+    ]
+   },
+   {
+    "yo": "agbábọ́ọ̀lù",
+    "en": "footballer (the one who kicks the ball)",
+    "wordIds": []
+   },
+   {
+    "yo": "tọ́ka",
+    "en": "to point",
+    "wordIds": [
+     "toka_point"
+    ]
+   },
+   {
+    "yo": "béèrè",
+    "en": "to ask",
+    "wordIds": []
+   },
+   {
+    "yo": "dáhùn",
+    "en": "to answer",
+    "wordIds": []
+   },
+   {
+    "yo": "atọ́ka",
+    "en": "pointer",
+    "wordIds": [
+     "atoka_carrot"
+    ]
+   },
+   {
+    "yo": "ìbéèrè",
+    "en": "a question",
+    "wordIds": []
+   },
+   {
+    "yo": "bẹ̀rẹ̀",
+    "en": "to begin, to start",
+    "wordIds": []
+   },
+   {
+    "yo": "parí",
+    "en": "to finish (stop + head)",
+    "wordIds": [
+     "pari_finish"
+    ]
+   },
+   {
+    "yo": "ilé ìkàwé",
+    "en": "library (house for reading books)",
+    "wordIds": []
+   },
+   {
+    "yo": "ọmọ ilé ìwé",
+    "en": "pupil (child of the school)",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I2.U8",
+  "title": "Ọjà — Market and Town",
+  "items": [
+   {
+    "yo": "ọjà",
+    "en": "a market",
+    "wordIds": [
+     "oja_market"
+    ]
+   },
+   {
+    "yo": "rà",
+    "en": "to buy — `ra` before what you buy",
+    "wordIds": [
+     "ra_buy"
+    ]
+   },
+   {
+    "yo": "tà",
+    "en": "to sell — `ta` before what you sell",
+    "wordIds": []
+   },
+   {
+    "yo": "owó",
+    "en": "money",
+    "wordIds": [
+     "owo_money"
+    ]
+   },
+   {
+    "yo": "Èló ni?",
+    "en": "how much is it? — the whole question",
+    "wordIds": []
+   },
+   {
+    "yo": "san",
+    "en": "to pay",
+    "wordIds": []
+   },
+   {
+    "yo": "wọ́n",
+    "en": "to be dear, expensive — a different word from `wọ́n`, they",
+    "wordIds": []
+   },
+   {
+    "yo": "pọ̀",
+    "en": "to be a lot, to be many",
+    "wordIds": []
+   },
+   {
+    "yo": "oní-",
+    "en": "a front piece: the one who has it, sells it or does it — it changes its sound to match the word after it",
+    "wordIds": [
+     "oni-_owner"
+    ]
+   },
+   {
+    "yo": "ẹlẹ́ja",
+    "en": "fish seller",
+    "wordIds": []
+   },
+   {
+    "yo": "alákàrà",
+    "en": "bean-fritter seller",
+    "wordIds": []
+   },
+   {
+    "yo": "iwájú",
+    "en": "the front, ahead",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹ̀yìn",
+    "en": "the back, behind",
+    "wordIds": [
+     "eyin_back"
+    ]
+   },
+   {
+    "yo": "ọ̀tún",
+    "en": "right",
+    "wordIds": []
+   },
+   {
+    "yo": "òsì",
+    "en": "left",
+    "wordIds": []
+   },
+   {
+    "yo": "ọwọ́ ọ̀tún",
+    "en": "right hand",
+    "wordIds": []
+   },
+   {
+    "yo": "ọwọ́ òsì",
+    "en": "left hand",
+    "wordIds": []
+   },
+   {
+    "yo": "kí",
+    "en": "to greet — a different word from the `kí` of `kí ni`, what",
+    "wordIds": []
+   },
+   {
+    "yo": "rù",
+    "en": "to carry a load, on your head",
+    "wordIds": [
+     "ru_carry"
+    ]
+   },
+   {
+    "yo": "ọkọ̀",
+    "en": "a vehicle: a car, a bus, a boat — a different word from `ọkọ`, husband",
+    "wordIds": [
+     "oko_vehicle"
+    ]
+   }
+  ]
+ },
+ {
+  "unit": "I2.U9",
+  "title": "Ara Mi Ò Yá — Feeling Ill",
+  "items": [
+   {
+    "yo": "yá",
+    "en": "to be well — the `yá` of `Ó yá`, ready",
+    "wordIds": [
+     "ya_ready"
+    ]
+   },
+   {
+    "yo": "sinmi",
+    "en": "to rest",
+    "wordIds": []
+   },
+   {
+    "yo": "sàn",
+    "en": "to get better, to heal",
+    "wordIds": []
+   },
+   {
+    "yo": "oògùn",
+    "en": "medicine",
+    "wordIds": [
+     "oogun_medicine"
+    ]
+   },
+   {
+    "yo": "dókítà",
+    "en": "a doctor",
+    "wordIds": []
+   },
+   {
+    "yo": "Ara mi ò yá",
+    "en": "I'm not well (my body is not well)",
+    "wordIds": []
+   },
+   {
+    "yo": "ibà",
+    "en": "a fever",
+    "wordIds": []
+   },
+   {
+    "yo": "wú",
+    "en": "to swell",
+    "wordIds": []
+   },
+   {
+    "yo": "ìwòsàn",
+    "en": "healing, treatment",
+    "wordIds": []
+   },
+   {
+    "yo": "fara pa",
+    "en": "to get hurt",
+    "wordIds": []
+   },
+   {
+    "yo": "ilé ìwòsàn",
+    "en": "hospital",
+    "wordIds": []
+   },
+   {
+    "yo": "kún",
+    "en": "to kneel — a different word from `kún`, be full",
+    "wordIds": [
+     "kun_kneel"
+    ]
+   },
+   {
+    "yo": "ẹyin",
+    "en": "an egg",
+    "wordIds": [
+     "eyin_egg"
+    ]
+   },
+   {
+    "yo": "orúnkún",
+    "en": "knee",
+    "wordIds": [
+     "orunkun_knee"
+    ]
+   },
+   {
+    "yo": "ẹyinjú",
+    "en": "eyeball (egg of the eye)",
+    "wordIds": []
+   },
+   {
+    "yo": "Ojú tì mí",
+    "en": "I'm embarrassed — the whole sentence; its `tì` is not the `tì` of push",
+    "wordIds": []
+   },
+   {
+    "yo": "Ẹnu yà mí",
+    "en": "I'm amazed — the whole sentence",
+    "wordIds": []
+   },
+   {
+    "yo": "ẹkún",
+    "en": "crying, a cry",
+    "wordIds": [
+     "ekun_tears"
+    ]
+   },
+   {
+    "yo": "sun",
+    "en": "to shed — a cry; a different word from `sùn`, sleep",
+    "wordIds": [
+     "sun_to_cry"
+    ]
+   },
+   {
+    "yo": "Inú mi bàjẹ́",
+    "en": "I'm upset",
+    "wordIds": []
+   },
+   {
+    "yo": "rán",
+    "en": "to send",
+    "wordIds": [
+     "ran_send"
+    ]
+   },
+   {
+    "yo": "lọ́wọ́",
+    "en": "at the hand (inside `Ràn mí lọ́wọ́`)",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I2.U10",
+  "title": "Ìtàn àti Orin — Stories, Songs and Animals",
+  "items": [
+   {
+    "yo": "sọ",
+    "en": "to say, to tell — a different word from the `sọ` of `Sọ ọ́ nù`, throw",
+    "wordIds": [
+     "so_say"
+    ]
+   },
+   {
+    "yo": "ọ̀rọ̀",
+    "en": "a word, talk",
+    "wordIds": [
+     "oro_word"
+    ]
+   },
+   {
+    "yo": "dákẹ́",
+    "en": "to be quiet",
+    "wordIds": []
+   },
+   {
+    "yo": "pariwo",
+    "en": "to make a noise, to shout",
+    "wordIds": []
+   },
+   {
+    "yo": "Kí ló ṣẹlẹ̀?",
+    "en": "what happened? — the whole question",
+    "wordIds": []
+   },
+   {
+    "yo": "sọ̀rọ̀",
+    "en": "to talk (say + words)",
+    "wordIds": [
+     "soro_talk"
+    ]
+   },
+   {
+    "yo": "ìtàn",
+    "en": "a story",
+    "wordIds": []
+   },
+   {
+    "yo": "ìjàpá",
+    "en": "a tortoise",
+    "wordIds": [
+     "ijapa_tortoise"
+    ]
+   },
+   {
+    "yo": "Ní ọjọ́ kan",
+    "en": "one day — how a story starts",
+    "wordIds": []
+   },
+   {
+    "yo": "kan",
+    "en": "a, a certain — a different word from `kàn`, touch",
+    "wordIds": []
+   },
+   {
+    "yo": "pàdé",
+    "en": "to meet",
+    "wordIds": []
+   },
+   {
+    "yo": "padà",
+    "en": "to go back, to return",
+    "wordIds": []
+   },
+   {
+    "yo": "ọgbọ́n",
+    "en": "cleverness, wisdom",
+    "wordIds": [
+     "ogbon_wisdom"
+    ]
+   },
+   {
+    "yo": "bẹ̀rù",
+    "en": "to be afraid of",
+    "wordIds": []
+   },
+   {
+    "yo": "oko",
+    "en": "a farm",
+    "wordIds": [
+     "oko_farm"
+    ]
+   },
+   {
+    "yo": "ewúrẹ́",
+    "en": "a goat",
+    "wordIds": []
+   },
+   {
+    "yo": "àgùntàn",
+    "en": "a sheep",
+    "wordIds": []
+   },
+   {
+    "yo": "màlúù",
+    "en": "a cow",
+    "wordIds": [
+     "maluu_cow"
+    ]
+   },
+   {
+    "yo": "ọlọ́gbọ́n",
+    "en": "a clever one",
+    "wordIds": []
+   },
+   {
+    "yo": "ọba",
+    "en": "a king, a ruler",
+    "wordIds": [
+     "oba_king"
+    ]
+   },
+   {
+    "yo": "ẹṣin",
+    "en": "a horse",
+    "wordIds": [
+     "esin_horse"
+    ]
+   },
+   {
+    "yo": "oyin",
+    "en": "bees, honey",
+    "wordIds": [
+     "oyin_bee"
+    ]
+   },
+   {
+    "yo": "ilé ọba",
+    "en": "palace (house + king)",
+    "wordIds": []
+   },
+   {
+    "yo": "ọmọba",
+    "en": "prince, princess (child + king)",
+    "wordIds": []
+   },
+   {
+    "yo": "ilé oyin",
+    "en": "beehive (house + bees)",
+    "wordIds": []
+   },
+   {
+    "yo": "ìlú",
+    "en": "a town — a different word from `ìlù`, drum",
+    "wordIds": []
+   },
+   {
+    "yo": "tẹ̀lé",
+    "en": "to follow",
+    "wordIds": []
+   },
+   {
+    "yo": "ìyáàlù",
+    "en": "the mother drum",
+    "wordIds": []
+   },
+   {
+    "yo": "onílù",
+    "en": "drummer (the one with the drum)",
+    "wordIds": []
+   }
+  ]
+ },
+ {
+  "unit": "I2.U11",
+  "title": "Àtúnyẹ̀wò — Review",
+  "items": []
+ }
+]

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yorùbá Games Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap">
+<style>
+  :root { --ink: #2b2118; --paper: #fff8ec; --card: #ffffff; --muted: #6b5d4f; --accent: #e4572e; --shadow: 0 6px 0 rgba(0,0,0,.14); color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Nunito", system-ui, sans-serif; background: var(--paper); color: var(--ink);
+    padding-block: 0 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  header { max-width: 1100px; margin: 0 auto; padding-top: 20px; display: grid; gap: 14px; }
+  .hero { width: 100%; aspect-ratio: 1216 / 832; max-height: 46vh; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow); }
+  h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 900; text-wrap: balance; }
+  header p { margin: 0; color: var(--muted); max-width: 65ch; line-height: 1.5; }
+  main { max-width: 1100px; margin: 24px auto 0; display: grid; gap: 28px; }
+  h2 { margin: 0 0 10px; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 16px; }
+  a.tile { display: grid; grid-template-rows: auto 1fr; background: var(--card); border-radius: 22px; overflow: hidden; color: inherit; text-decoration: none;
+    box-shadow: var(--shadow); transition: transform .15s; min-width: 0; }
+  a.tile:hover, a.tile:focus-visible { transform: translateY(-3px); }
+  a.tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #f1e6d3; display: block; }
+  .tile div { padding: 12px 14px 14px; display: grid; gap: 4px; }
+  .tile b { font-size: 1.15rem; }
+  .tile span { color: var(--muted); font-size: .9rem; line-height: 1.4; }
+  .tile em { font-style: normal; font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+  a.path-card { max-width: 1100px; margin: 24px auto 0; display: grid; grid-template-columns: minmax(0, 220px) 1fr; gap: 16px; align-items: center;
+    background: var(--card); border-radius: 22px; overflow: hidden; color: inherit; text-decoration: none; box-shadow: var(--shadow); }
+  a.path-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  a.path-card div { padding: 14px 16px 14px 0; display: grid; gap: 6px; min-width: 0; }
+  a.path-card b { font-size: 1.3rem; }
+  a.path-card span { color: var(--muted); line-height: 1.45; }
+  @media (max-width: 520px) { a.path-card { grid-template-columns: 1fr; } a.path-card img { aspect-ratio: 1216 / 512; height: auto; } a.path-card div { padding: 0 16px 16px; } }
+  footer { max-width: 1100px; margin: 32px auto 0; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hero" src="art/hero_landing.png" alt="Children playing in a village square with a frog, a parrot, a goat and a drum">
+  <h1>Yorùbá Games Lab</h1>
+  <p>Experimental games for young learners, built on Femi's recordings. Each game is a different core mechanic: hear and choose, catch the word, act it out, drum the syllables, or just explore with no wrong answer.</p>
+</header>
+<a class="path-card" href="path/"><img src="art/unit_day.webp" alt=""><div><b>Ọ̀nà ẹ̀kọ́: the learning path</b><span>The games strung into a course: scenes from a child's day (after the curriculum draft), a few new words at a time, earlier words coming back.</span></div></a>
+<main id="sections"></main>
+<footer>Local development build: not deployed. Audio is the v5 processor's output, exported locally; pictures marked provisional are the judge's picks, not yet reviewed.</footer>
+<script>
+const GAMES = [
+  { section: 'Sounds and syllables', items: [
+    { href: 'river/', img: 'art/game_river.png', name: 'River Crossing', tag: 'hearing', text: 'Hop across the river, one stone per syllable of the word.' },
+    { href: 'rally/', img: 'art/game_rally.png', name: 'Gate Rally', tag: 'hearing · meaning', text: 'Steer through the gate that matches what you heard.' },
+    { href: 'drum/', img: 'art/game_drum.png', name: 'Beat the Drum', tag: 'hearing', text: 'Drum the word out, one beat for each syllable.' },
+    { href: 'stretchy/', img: 'art/game_stretchy.png', name: 'Stretchy Word', tag: 'explore', text: 'Stretch a word creature and it says itself slowly.' },
+    { href: 'train/', img: 'art/game_train.png', name: 'Word Train', tag: 'hearing', text: 'Couple the carriages in order and the train says the word.' },
+  ] },
+  { section: 'Words and meanings', items: [
+    { href: 'giant/', img: 'art/game_giant.png', name: 'Tickle the Giant', tag: 'meaning', text: 'The giant names a body part: tickle him there.' },
+    { href: 'hungry/', img: 'art/game_hungry.png', name: "You're Hungry!", tag: 'meaning', text: 'Feed your friend the food they ask for.' },
+    { href: 'yard/', img: 'art/game_yard.png', name: 'Hide and Seek', tag: 'meaning', text: 'Find the animal that was called.' },
+    { href: 'fish/', img: 'art/game_fish.png', name: 'Fishing with Grandma', tag: 'hearing · meaning', text: 'Grandma asks for something: catch the fish that calls its name.' },
+    { href: 'parrot/', img: 'art/game_parrot.png', name: 'Silly Parrot', tag: 'meaning', text: 'Is the parrot right, or silly?' },
+    { href: 'house/', img: 'art/game_house.png', name: 'Wake the House', tag: 'explore', text: 'Wake each sleepy thing and hear its name.' },
+    { href: 'visit/', img: 'art/game_visit.png', name: 'Who Came to Visit?', tag: 'meaning', text: 'Let in the guest whose name you hear, even a new one.' },
+    { href: 'together/', img: 'art/game_together.png', name: 'Put It Together', tag: 'meaning', text: 'Two words you know go into the pot: which picture comes out?' },
+  ] },
+  { section: 'Do what the words say', items: [
+    { href: 'helper/', img: 'art/game_helper.png', name: 'Help Grandma', tag: 'meaning', text: 'Grandma asks: wipe it, throw it away, hold it, put it down, don’t touch it. Tap what she means.' },
+    { href: 'say/', img: 'art/game_say.png', name: 'Say the Right Thing', tag: 'meaning', text: 'Please, thank you, sorry: pick what fits the moment.' },
+  ] },
+  { section: 'Verbs (trial)', items: [
+  ] },
+  { section: 'Show you understand', items: [
+    { href: 'errand/', img: 'art/game_errand.png', name: "Grandma's Errand", tag: 'meaning', text: 'Grandma asks for something: find it in the busy room and bring it to her.' },
+    { href: 'sort/', img: 'art/game_sort.png', name: 'Sort It', tag: 'meaning', text: 'A closed box says what is inside: put it where it belongs.' },
+  ] },
+  { section: 'Verbs (trial)', items: [
+    { href: 'where/', img: 'art/game_where.png', name: 'Where It Happens', tag: 'meaning', text: 'Hear a doing word, then take the boy to where it happens: bed, plate, cup, basin, chair or gate.' },
+  ] },
+  { section: 'Who does what', items: [
+    { href: 'theatre/', img: 'art/game_theatre.png', name: 'Puppet Theatre', tag: 'meaning', text: 'Hear two words, an animal and an action, then set them up: the curtain opens on the dog asleep.' },
+    { href: 'windows/', img: 'art/game_windows.png', name: 'Windows', tag: 'meaning', text: 'Hear an animal and an action: tap the window where that animal is doing it.' },
+  ] },
+];
+const main = document.getElementById('sections');
+for (const s of GAMES) {
+  const sec = document.createElement('section');
+  sec.innerHTML = `<h2>${s.section}</h2><div class="grid"></div>`;
+  for (const g of s.items) {
+    const a = document.createElement('a');
+    a.className = 'tile'; a.href = g.href;
+    a.innerHTML = `<img alt="" loading="lazy"><div><em></em><b></b><span></span></div>`;
+    a.querySelector('img').src = g.img;
+    a.querySelector('img').onerror = function () { this.src = 'art/hero_landing.png'; };
+    a.querySelector('em').textContent = g.tag; a.querySelector('b').textContent = g.name; a.querySelector('span').textContent = g.text;
+    sec.querySelector('.grid').appendChild(a);
+  }
+  main.appendChild(sec);
+}
+</script>
+</body>
+</html>

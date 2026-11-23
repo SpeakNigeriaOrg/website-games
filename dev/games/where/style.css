@@ -1,0 +1,68 @@
+/* The yard covers the screen; app.js places the places, the boy and his poses in screen pixels. */
+.stage { background: #f3dfb4; }
+.stage > .bg { object-position: 50% 100%; }
+.places { position: absolute; inset: 0; }
+
+.place { position: absolute; border: 0; padding: 0; background: none; cursor: pointer; transform-origin: 50% 100%; border-radius: 18px; }
+.place > img { width: 100%; height: 100%; display: block; object-fit: contain; object-position: 50% 100%; pointer-events: none; filter: drop-shadow(0 6px 4px rgba(0,0,0,.18)); }
+.place.over > img { filter: drop-shadow(0 0 10px #fff6a8) drop-shadow(0 0 6px #ffd23f); }
+.place.used > img { visibility: hidden; }
+body.locked .place { cursor: default; }
+/* the wrong place shakes its head gently, then says its own verb */
+.place.nope { animation: nope .5s ease-in-out; }
+@keyframes nope { 20% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } 80% { transform: rotate(-3deg); } }
+.place.speaking > img { filter: drop-shadow(0 0 12px #fff6a8) drop-shadow(0 0 8px #ffd23f); animation: say .32s ease-in-out infinite; }
+@keyframes say { 50% { transform: scale(1.05, .96); } }
+
+.kid { position: absolute; z-index: 10; cursor: grab; touch-action: none; transform-origin: 50% 100%; }
+.kid img { width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; display: block; pointer-events: none; transform-origin: 50% 100%; filter: drop-shadow(0 6px 4px rgba(0,0,0,.2)); }
+.kid.held { cursor: grabbing; z-index: 12; }
+.kid.held img { transform: scale(1.08) rotate(-4deg); filter: drop-shadow(0 18px 10px rgba(0,0,0,.25)); }
+.kid.walking img { animation: walk .3s ease-in-out infinite; }
+@keyframes walk { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-6%) rotate(2deg); } }
+.kid.listening img { animation: listen .5s ease-in-out infinite; }
+@keyframes listen { 50% { transform: scale(1.03, .97); } }
+.kid.away { visibility: hidden; }
+.kid.puzzled img { animation: puzzled 1.2s ease-in-out infinite; }
+@keyframes puzzled { 0%, 100% { transform: rotate(0); } 30%, 50% { transform: rotate(-7deg); } 70%, 90% { transform: rotate(5deg); } }
+.kid.left img { scale: -1 1; } /* walking left: the walking picture faces right */
+body.locked .kid { cursor: default; }
+
+/* the boy doing it: a pose picture over the place, each with its own small motion */
+.pose { position: fixed; z-index: 11; pointer-events: none; animation: pose-in .3s ease-out; }
+.pose img { width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; display: block; transform-origin: 50% 100%; filter: drop-shadow(0 6px 4px rgba(0,0,0,.18)); }
+@keyframes pose-in { from { opacity: 0; transform: scale(.85); } }
+.pose-bed img { animation: breathe-slow 1.6s ease-in-out infinite; transform-origin: 50% 90%; }
+@keyframes breathe-slow { 50% { transform: scale(1.025, 1.06); } }
+.pose-mat img { animation: munch .34s ease-in-out infinite; }
+@keyframes munch { 50% { transform: translateY(-4%) scale(1.02, .97); } }
+.pose-cup img { animation: tilt 1.4s ease-in-out infinite; transform-origin: 50% 90%; }
+@keyframes tilt { 0%, 100% { transform: rotate(0); } 40%, 70% { transform: rotate(-7deg); } }
+.pose-basin img { animation: splashy .4s ease-in-out infinite; }
+@keyframes splashy { 50% { transform: translateY(-3%) rotate(2deg); } }
+.pose-chair img { animation: settle .7s ease-out; }
+@keyframes settle { 0% { transform: translateY(-14%); } 55% { transform: translateY(3%) scale(1.03, .95); } 100% { transform: none; } }
+
+.zzz { position: fixed; z-index: 13; pointer-events: none; font: 900 46px Nunito, system-ui, sans-serif; color: #3f7cd9; -webkit-text-stroke: 1.5px white; animation: zzz 2.2s ease-out forwards; }
+@keyframes zzz { from { transform: translate(-50%, 0) scale(.5); opacity: 0; } 20% { opacity: 1; } to { transform: translate(calc(-50% + var(--dx)), -110px) scale(1.4); opacity: 0; } }
+.drop { position: fixed; z-index: 13; pointer-events: none; width: 16px; height: 22px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: #5bb8f0; border: 2px solid white; animation: drop .9s ease-out forwards; }
+@keyframes drop { from { transform: translate(-50%, 0); opacity: 1; } 45% { transform: translate(calc(-50% + var(--dx) * .5), -60px); } to { transform: translate(calc(-50% + var(--dx)), 30px); opacity: 0; } }
+
+.bubble {
+  position: fixed; z-index: 14; pointer-events: none; transform: translate(-50%, -100%); min-width: 58px; height: 58px; padding: 0 12px;
+  display: grid; place-items: center; background: white; border-radius: 50%; box-shadow: var(--shadow);
+  font: 900 40px Nunito, system-ui, sans-serif; color: var(--accent);
+}
+.bubble::after { content: ''; position: absolute; left: 22%; bottom: -10px; border: 10px solid transparent; border-top-color: white; border-bottom: 0; }
+
+.ghost-kid { position: fixed; z-index: 44; pointer-events: none; opacity: .6; }
+.ghost-kid img { width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; display: block; }
+.drag-hand { transition: none; margin-top: 10px; }
+
+.fin-where { position: relative; width: min(64vmin, 300px); aspect-ratio: 1.4; }
+.fin-where .fin-bed { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; }
+.fin-where .fin-kid { position: absolute; left: 8%; top: 4%; width: 84%; height: 60%; object-fit: contain; object-position: 50% 100%; animation: breathe-slow 1.6s ease-in-out infinite; transform-origin: 50% 90%; }
+.fin-where .fin-z { position: absolute; right: 12%; top: 10%; font: 900 30px Nunito, system-ui, sans-serif; color: #3f7cd9; opacity: 0; animation: fin-z 2.4s ease-out infinite; }
+.fin-where .fin-z:nth-of-type(2) { animation-delay: .8s; }
+.fin-where .fin-z:nth-of-type(3) { animation-delay: 1.6s; }
+@keyframes fin-z { 0% { transform: translate(0, 0) scale(.6); opacity: 0; } 25% { opacity: 1; } 100% { transform: translate(24px, -70px) scale(1.3); opacity: 0; } }

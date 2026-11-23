@@ -1,0 +1,36 @@
+.meadow { position: absolute; inset: 0; overflow: hidden; }
+.scenery { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cloud { animation: drift 26s linear infinite alternate; }
+.cloud.c2 { animation-duration: 34s; }
+@keyframes drift { to { transform: translateX(70px); } }
+
+/* The creature fills the width; its viewBox leaves room to stretch to the right. */
+.creature {
+  position: absolute; left: 50%; top: 57%; transform: translate(-50%, -50%);
+  width: min(100vw, 122vh); max-width: 1100px; aspect-ratio: 1000 / 620; overflow: visible; touch-action: none;
+}
+.creature .tail-hit, .creature .body-hit { cursor: grab; }
+body.locked .creature * { cursor: default; }
+
+.next-btn {
+  position: fixed; z-index: 40; right: calc(14px + env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  width: 72px; height: 72px; border-radius: 50%; border: 0; background: var(--good); color: white; font-size: 32px;
+  box-shadow: var(--shadow); cursor: pointer;
+}
+.next-btn span { display: inline-block; transform: translateX(3px); }
+.next-btn:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(0,0,0,.18); }
+body.locked .next-btn { opacity: .5; }
+
+.finale-pics { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.finale-pics img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: var(--shadow); }
+.progress-strip .slot img { border-radius: 50%; object-fit: cover; }
+/* A collected creature's picture on its way to the gallery. */
+.fly-pic { position: fixed; z-index: 45; pointer-events: none; border-radius: 50%; background: white; border: 4px solid var(--ink, #2b2118); overflow: hidden; }
+.fly-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* A collected creature's picture on its way to the gallery. */
+.fly-pic { position: fixed; z-index: 45; pointer-events: none; border-radius: 50%; background: white; border: 4px solid #2b2118; overflow: hidden; }
+.fly-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* The goal flag at full stretch: it waves when the tail reaches it. */
+.goal .pennant { transform-box: fill-box; transform-origin: 0 50%; transition: fill .2s; }
+.goal.reached .pennant { fill: #ffd84d; animation: wave .3s ease-in-out infinite alternate; }
+@keyframes wave { from { transform: skewY(-8deg) scaleX(1); } to { transform: skewY(8deg) scaleX(.85); } }

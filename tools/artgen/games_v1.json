@@ -1,0 +1,21 @@
+[
+ {"name": "bg_river", "width": 832, "height": 1216, "prompt": "A wide calm river seen from a high angle, a grassy near riverbank along the bottom edge and a far riverbank with palm trees and a small village of round thatched huts along the top edge, open blue water filling the middle with gentle ripples, nothing in the water"},
+ {"name": "bg_road", "width": 832, "height": 1216, "prompt": "A cheerful straight country road seen from behind and above, wide red-earth road running from the bottom edge up into the distance toward green hills and a blue sky, grass verges and palm trees on both sides, the road itself empty"},
+ {"name": "bg_pond", "width": 832, "height": 1216, "prompt": "A pond seen from directly above, clear blue water with five large round green lily pads spread apart, reeds and flowers around the edges"},
+ {"name": "bg_yard", "width": 1216, "height": 832, "prompt": "A sunny family yard in a West African village, a mud-brick house wall at the back, a mango tree to one side, red earth ground, a row of four round green bushes spaced evenly along the ground in front"},
+ {"name": "bg_kitchen", "width": 1216, "height": 832, "prompt": "A cosy West African kitchen interior seen from the front, a long empty wooden table across the bottom of the picture, shelves with clay pots and calabashes on the wall behind, warm colours"},
+ {"name": "bg_house", "width": 1216, "height": 832, "prompt": "A bright West African family living room interior seen from the front, a window with curtains, a woven mat on the floor, a low wooden table, a chair and a shelf, lots of open floor space, warm colours"},
+ {"name": "bg_stage", "width": 1216, "height": 832, "prompt": "A colourful outdoor village festival square with bunting strung between palm trees, open sandy ground in the middle, evening sky"},
+ {"name": "frog", "sprite": true, "prompt": "A cute friendly green frog sitting, front view, full body, big eyes, smiling"},
+ {"name": "giant_front", "sprite": true, "width": 768, "height": 1024, "prompt": "A big friendly smiling cartoon giant, a Black West African man, standing straight facing forward, arms held slightly out from his sides, legs apart, bare feet, wearing only plain shorts and a sleeveless vest so his arms, elbows, knees, neck and shoulders are clearly visible, full body from head to toe"},
+ {"name": "giant_back", "sprite": true, "width": 768, "height": 1024, "prompt": "A big cartoon giant, a Black West African man, standing straight seen from directly behind, arms held slightly out from his sides, legs apart, bare feet, wearing plain shorts and a sleeveless vest, full body from head to toe, back view"},
+ {"name": "goat", "sprite": true, "prompt": "A cute hungry cartoon goat sitting upright like a person, wearing a bib, mouth open wide, front view, full body"},
+ {"name": "parrot", "sprite": true, "width": 768, "height": 1024, "prompt": "A cheerful cartoon parrot standing on a perch, holding up a large blank white sign board with one wing, front view, full body"},
+ {"name": "drum", "sprite": true, "width": 768, "height": 1024, "prompt": "A large Yoruba talking drum (dundun), hourglass shaped with leather cords, standing upright, front view"},
+ {"name": "dancer", "sprite": true, "variants": 6, "prompt": "A cute cartoon Black West African child dancing happily with arms up, colourful clothes, full body"},
+ {"name": "grandma", "sprite": true, "prompt": "A friendly smiling cartoon Yoruba grandmother wearing a colourful gele head wrap and wrapper, waist up, waving"},
+ {"name": "kart", "sprite": true, "prompt": "A small red go-kart with a cartoon child driver wearing a helmet, seen from directly behind"},
+ {"name": "bush", "sprite": true, "prompt": "A single round fluffy green bush"},
+ {"name": "stone", "sprite": true, "prompt": "A single flat round grey stepping stone seen slightly from above"},
+ {"name": "hero_landing", "width": 1216, "height": 832, "prompt": "Happy Black West African children playing together in a sunny village square, a frog, a parrot, a goat and a talking drum among them, joyful"}
+]

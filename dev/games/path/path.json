@@ -1,0 +1,7385 @@
+{
+ "builtAt": "2026-11-22T19:39:50.511Z",
+ "kitBuiltAt": "2026-11-22T19:39:47.908Z",
+ "games": [
+  {
+   "game": "drum",
+   "job": "sound",
+   "voices": "single"
+  },
+  {
+   "game": "errand",
+   "job": "apply",
+   "voices": "any"
+  },
+  {
+   "game": "fish",
+   "job": "practice",
+   "voices": "any"
+  },
+  {
+   "game": "giant",
+   "job": "practice",
+   "voices": "any"
+  },
+  {
+   "game": "helper",
+   "job": "practice",
+   "voices": "any"
+  },
+  {
+   "game": "house",
+   "job": "teach",
+   "voices": "any"
+  },
+  {
+   "game": "hungry",
+   "job": "practice",
+   "voices": "any"
+  },
+  {
+   "game": "parrot",
+   "job": "check",
+   "voices": "any"
+  },
+  {
+   "game": "rally",
+   "mode": "syllables",
+   "job": "sound",
+   "voices": "single"
+  },
+  {
+   "game": "rally",
+   "mode": "pictures",
+   "job": "practice",
+   "voices": "single"
+  },
+  {
+   "game": "rally",
+   "mode": "sequence",
+   "job": "sound",
+   "voices": "single"
+  },
+  {
+   "game": "river",
+   "job": "sound",
+   "voices": "single"
+  },
+  {
+   "game": "say",
+   "job": "practice",
+   "voices": "any"
+  },
+  {
+   "game": "sort",
+   "job": "apply",
+   "voices": "any"
+  },
+  {
+   "game": "stretchy",
+   "job": "teach",
+   "voices": "single"
+  },
+  {
+   "game": "theatre",
+   "job": "practice",
+   "voices": "any"
+  },
+  {
+   "game": "together",
+   "job": "teach",
+   "voices": "any"
+  },
+  {
+   "game": "train",
+   "job": "sound",
+   "voices": "single"
+  },
+  {
+   "game": "visit",
+   "job": "teach",
+   "voices": "any"
+  },
+  {
+   "game": "where",
+   "job": "practice",
+   "voices": "any"
+  },
+  {
+   "game": "windows",
+   "job": "apply",
+   "voices": "any"
+  },
+  {
+   "game": "yard",
+   "job": "practice",
+   "voices": "any"
+  }
+ ],
+ "report": {
+  "words": 172,
+  "verbs": 42,
+  "verbShare": 0.24,
+  "firstMetAtTeachL1": 172,
+  "newWordInWarmup": 0,
+  "compoundsBeforeParts": 0,
+  "missedReturns": 0,
+  "wordsMissingAReturn": 0,
+  "wordsNeverBack": 3,
+  "sittings": 58,
+  "stones": 311,
+  "stonesPerTeachingSitting": 6,
+  "teachingSittingsWithCheck": "48 of 49",
+  "soundStones": 40,
+  "toneStones": 9,
+  "partThenWhole": 25,
+  "waiting": 20,
+  "femiPathWordsToneClear": "105 of 211",
+  "femiPathWordsTone": {
+   "clear": 105,
+   "heard differently": 41,
+   "unsure": 24,
+   "no evidence": 41
+  }
+ },
+ "tonePairs": [
+  [
+   "mu_to_drink",
+   "mu_take"
+  ],
+  [
+   "gba_to_take",
+   "gba_sweep"
+  ]
+ ],
+ "reRecordForTonePair": [
+  [
+   "sun_to_cry",
+   "sun_to_sleep"
+  ],
+  [
+   "irin_iron",
+   "irin_walk"
+  ]
+ ],
+ "missedReturns": [],
+ "partThenWhole": [
+  [
+   "sun_to_cry",
+   "sunkun_weep",
+   "feelings.m2.1"
+  ],
+  [
+   "kan_touch",
+   "ma_fowo_kan_an_no_touch",
+   "feelings.m2.1"
+  ],
+  [
+   "sunkun_weep",
+   "ma_sunkun_not_cry",
+   "feelings.m3.2"
+  ],
+  [
+   "ile_home",
+   "ile-iwe_school",
+   "day2.m1.1"
+  ],
+  [
+   "doti_dirty",
+   "o_doti_dirty",
+   "wash.m3.3"
+  ],
+  [
+   "nu_clean",
+   "nu_u_cleanit",
+   "wash.m4.1"
+  ],
+  [
+   "so_throw",
+   "so_o_nu_throw_away",
+   "wash.m4.1"
+  ],
+  [
+   "di_bind",
+   "dii_mu_hold",
+   "wash.m4.1"
+  ],
+  [
+   "mu_take",
+   "dii_mu_hold",
+   "wash.m4.1"
+  ],
+  [
+   "yara_room",
+   "yara_igbalejo_living_room",
+   "home.m3.4"
+  ],
+  [
+   "ile_home",
+   "ile_idana_kitchen",
+   "home.m4.1"
+  ],
+  [
+   "ori_head",
+   "irori_pillow",
+   "home.m4.1"
+  ],
+  [
+   "idana_cooking",
+   "ile_idana_kitchen",
+   "home.m4.4"
+  ],
+  [
+   "ogede_banana",
+   "ogede_agbagba_plantain",
+   "meal2.m4.1"
+  ],
+  [
+   "oka_grain",
+   "oka_baba_sorghum",
+   "meal2.m5.1"
+  ],
+  [
+   "ekun_leopard",
+   "amotekun_cheetah",
+   "animals2.m2.1"
+  ],
+  [
+   "ijapa_tortoise",
+   "ijapa_inu_omi_aquatic_turtle",
+   "animals2.m2.1"
+  ],
+  [
+   "ketekete_donkey",
+   "ketekete_abila_zebra",
+   "animals2.m3.1"
+  ],
+  [
+   "ehoro_rabbit",
+   "omo_ehoro_baby_bunny",
+   "animals2.m3.1"
+  ],
+  [
+   "wo_to_look",
+   "aworan_picture",
+   "talk.m1.1"
+  ],
+  [
+   "so_say",
+   "soro_talk",
+   "talk.m2.1"
+  ],
+  [
+   "ero_machine",
+   "ero_amohunmaworan_television",
+   "talk.m2.1"
+  ],
+  [
+   "ero_machine",
+   "ero_asoromagbesi_radio",
+   "talk.m2.1"
+  ],
+  [
+   "ero_machine",
+   "ero_amohunmaworan_television",
+   "talk.m2.2"
+  ],
+  [
+   "ero_machine",
+   "ero_asoromagbesi_radio",
+   "talk.m2.2"
+  ]
+ ],
+ "pulledForward": [
+  {
+   "part": "se_to_do",
+   "for": "o_se_thank_you"
+  }
+ ],
+ "held": {
+  "kalamu_pen": "a second word for pen next to gègé, and not a home word for a 4-year-old",
+  "pako_timber": "not a home word for a 4-year-old",
+  "irin_iron": "not a home word for a 4-year-old; it was there for the irin/ìrìn tone pair, which has no tone evidence",
+  "irin_walk": "no picture of its own (verbs.js DUPLICATE: rìn's idea); its tone pair irin/ìrìn has no tone evidence",
+  "igbalejo_hospitality": "an abstract noun (Ìpele 3-4 in the draft); yàrá ìgbàlejò is taught whole"
+ },
+ "heldUnits": [
+  {
+   "unit": "dress",
+   "why": "wọ̀ (wear), the scene's verb, has no picture in the kit: the unit waits for it. Its other words are in My day (aṣọ, ṣòkòtò, bàtà, dì) and Play (fìlà, ìlẹ̀kẹ̀).",
+   "words": [
+    "wo_wear",
+    "wo_o_wear_it"
+   ]
+  }
+ ],
+ "curriculumUnplaced": [],
+ "sceneWordsNotPlaced": [
+  {
+   "scene": "home",
+   "word": "igbale_broom",
+   "why": "not in the kit"
+  }
+ ],
+ "units": [
+  {
+   "id": "day",
+   "yo": "Ọjọ́ Mi",
+   "en": "My day",
+   "art": "day",
+   "words": [
+    {
+     "id": "sun_to_sleep",
+     "source": "curriculum"
+    },
+    {
+     "id": "ibusun_bed",
+     "source": "curriculum"
+    },
+    {
+     "id": "ile_home",
+     "source": "curriculum"
+    },
+    {
+     "id": "aja_dog",
+     "source": "curriculum"
+    },
+    {
+     "id": "we_to_bathe",
+     "source": "curriculum"
+    },
+    {
+     "id": "aso_cloth",
+     "source": "curriculum"
+    },
+    {
+     "id": "sokoto_pants",
+     "source": "curriculum"
+    },
+    {
+     "id": "bata_shoe",
+     "source": "curriculum"
+    },
+    {
+     "id": "jokoo_sit",
+     "source": "curriculum"
+    },
+    {
+     "id": "mu_to_drink",
+     "source": "curriculum"
+    },
+    {
+     "id": "wara_milk",
+     "source": "curriculum"
+    },
+    {
+     "id": "ounje_food",
+     "source": "curriculum"
+    },
+    {
+     "id": "di_bind",
+     "source": "scene"
+    },
+    {
+     "id": "se_to_do",
+     "source": "scene",
+     "pulledFor": "o_se_thank_you"
+    },
+    {
+     "id": "o_se_thank_you",
+     "source": "curriculum"
+    }
+   ],
+   "waiting": [
+    "dide_stand",
+    "wa_come",
+    "e_joo_please",
+    "jokoo_je_sit_still",
+    "dide_nle_get_up",
+    "ojo_day"
+   ],
+   "meetings": [
+    {
+     "id": "day.m1",
+     "newWords": [
+      "sun_to_sleep",
+      "ibusun_bed",
+      "ile_home",
+      "aja_dog"
+     ],
+     "review": [],
+     "stones": [
+      {
+       "id": "day.m1.1",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "sun_to_sleep",
+        "ibusun_bed",
+        "ile_home",
+        "aja_dog"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m1.2",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "ibusun_bed",
+        "ile_home",
+        "aja_dog"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m1.3",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "sun_to_sleep",
+        "aja_dog"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m1.4",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "sun_to_sleep",
+        "ibusun_bed",
+        "ile_home",
+        "aja_dog"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "day.m2",
+     "newWords": [
+      "we_to_bathe",
+      "aso_cloth",
+      "sokoto_pants",
+      "bata_shoe"
+     ],
+     "review": [
+      "ibusun_bed",
+      "aja_dog",
+      "sun_to_sleep",
+      "ile_home",
+      "we_to_bathe",
+      "sokoto_pants",
+      "bata_shoe"
+     ],
+     "stones": [
+      {
+       "id": "day.m2.1",
+       "game": "house",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ibusun_bed",
+        "aja_dog"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m2.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "sokoto_pants",
+        "bata_shoe"
+       ],
+       "review": [
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "day.m2.3",
+       "game": "where",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "we_to_bathe"
+       ],
+       "review": [
+        "sun_to_sleep"
+       ]
+      },
+      {
+       "id": "day.m2.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "aso_cloth"
+       ],
+       "review": [
+        "ile_home",
+        "sun_to_sleep",
+        "ibusun_bed",
+        "aja_dog",
+        "we_to_bathe",
+        "sokoto_pants",
+        "bata_shoe"
+       ]
+      },
+      {
+       "id": "day.m2.5",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "aso_cloth",
+        "sokoto_pants",
+        "bata_shoe"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m2.6",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "we_to_bathe",
+        "sokoto_pants",
+        "bata_shoe"
+       ],
+       "review": [
+        "sun_to_sleep",
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "day.m2.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "we_to_bathe",
+        "aso_cloth",
+        "sokoto_pants",
+        "bata_shoe"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "day.m3",
+     "newWords": [
+      "jokoo_sit",
+      "mu_to_drink",
+      "wara_milk",
+      "ounje_food"
+     ],
+     "review": [
+      "aso_cloth",
+      "sokoto_pants",
+      "bata_shoe",
+      "ibusun_bed",
+      "aja_dog",
+      "we_to_bathe",
+      "sun_to_sleep",
+      "ile_home"
+     ],
+     "stones": [
+      {
+       "id": "day.m3.1",
+       "game": "house",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "aso_cloth",
+        "sokoto_pants",
+        "bata_shoe",
+        "ibusun_bed",
+        "aja_dog"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m3.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "wara_milk",
+        "ounje_food"
+       ],
+       "review": [
+        "sokoto_pants",
+        "bata_shoe",
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "day.m3.3",
+       "game": "where",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "jokoo_sit",
+        "mu_to_drink"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m3.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "jokoo_sit",
+        "mu_to_drink",
+        "wara_milk",
+        "ounje_food"
+       ],
+       "review": [
+        "we_to_bathe",
+        "sun_to_sleep",
+        "ile_home",
+        "aso_cloth"
+       ]
+      },
+      {
+       "id": "day.m3.5",
+       "game": "rally",
+       "mode": "syllables",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "jokoo_sit",
+        "wara_milk"
+       ],
+       "review": [
+        "sokoto_pants",
+        "bata_shoe",
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "day.m3.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "jokoo_sit",
+        "mu_to_drink",
+        "wara_milk",
+        "ounje_food"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "day.m4",
+     "newWords": [
+      "di_bind",
+      "se_to_do"
+     ],
+     "review": [
+      "aso_cloth",
+      "sokoto_pants",
+      "bata_shoe",
+      "ibusun_bed",
+      "aja_dog",
+      "jokoo_sit",
+      "mu_to_drink",
+      "wara_milk",
+      "ounje_food",
+      "we_to_bathe",
+      "sun_to_sleep",
+      "ile_home"
+     ],
+     "stones": [
+      {
+       "id": "day.m4.1",
+       "game": "house",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "aso_cloth",
+        "sokoto_pants",
+        "bata_shoe",
+        "ibusun_bed",
+        "aja_dog"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m4.2",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "di_bind",
+        "se_to_do"
+       ],
+       "review": [
+        "jokoo_sit",
+        "mu_to_drink",
+        "wara_milk",
+        "ounje_food",
+        "we_to_bathe",
+        "sun_to_sleep"
+       ]
+      },
+      {
+       "id": "day.m4.3",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "di_bind"
+       ],
+       "review": [
+        "mu_to_drink",
+        "wara_milk",
+        "we_to_bathe",
+        "sokoto_pants",
+        "bata_shoe",
+        "sun_to_sleep",
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "day.m4.4",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "di_bind",
+        "se_to_do"
+       ],
+       "review": [
+        "ile_home",
+        "jokoo_sit"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "day.m5",
+     "newWords": [
+      "o_se_thank_you"
+     ],
+     "review": [
+      "wara_milk",
+      "ounje_food",
+      "aso_cloth",
+      "sokoto_pants",
+      "bata_shoe",
+      "aja_dog"
+     ],
+     "stones": [
+      {
+       "id": "day.m5.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "wara_milk",
+        "ounje_food",
+        "aso_cloth"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m5.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "o_se_thank_you"
+       ],
+       "review": [
+        "sokoto_pants",
+        "bata_shoe",
+        "aja_dog",
+        "wara_milk",
+        "ounje_food"
+       ]
+      },
+      {
+       "id": "day.m5.3",
+       "game": "say",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "o_se_thank_you"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.m5.4",
+       "game": "say",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "o_se_thank_you"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "day.understand",
+     "newWords": [],
+     "review": [
+      "di_bind",
+      "se_to_do"
+     ],
+     "stones": [
+      {
+       "id": "day.understand.1",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "di_bind",
+        "se_to_do"
+       ],
+       "review": []
+      },
+      {
+       "id": "day.understand.2",
+       "game": "sort",
+       "job": "apply",
+       "level": 3,
+       "focus": [
+        "aja_dog",
+        "aso_cloth",
+        "sokoto_pants",
+        "bata_shoe"
+       ],
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "body",
+   "yo": "Ara Mi",
+   "en": "My body and what it does",
+   "art": "body",
+   "words": [
+    {
+     "id": "kan_touch",
+     "source": "curriculum"
+    },
+    {
+     "id": "ori_head",
+     "source": "curriculum"
+    },
+    {
+     "id": "wo_to_look",
+     "source": "curriculum"
+    },
+    {
+     "id": "oju_eye",
+     "source": "scene"
+    },
+    {
+     "id": "patewo_clap",
+     "source": "curriculum"
+    },
+    {
+     "id": "owo_hand",
+     "source": "scene"
+    },
+    {
+     "id": "rin_to_walk",
+     "source": "curriculum"
+    },
+    {
+     "id": "ese_leg",
+     "source": "curriculum"
+    },
+    {
+     "id": "sare_run",
+     "source": "curriculum"
+    },
+    {
+     "id": "eti_ear",
+     "source": "curriculum"
+    },
+    {
+     "id": "so_throw",
+     "source": "scene"
+    },
+    {
+     "id": "enu_mouth",
+     "source": "curriculum"
+    },
+    {
+     "id": "imu_nose",
+     "source": "curriculum"
+    },
+    {
+     "id": "irun_hair",
+     "source": "curriculum"
+    },
+    {
+     "id": "eyin_tooth",
+     "source": "curriculum"
+    }
+   ],
+   "waiting": [],
+   "meetings": [
+    {
+     "id": "body.m1",
+     "newWords": [
+      "kan_touch",
+      "ori_head",
+      "wo_to_look",
+      "oju_eye"
+     ],
+     "review": [
+      "o_se_thank_you",
+      "wara_milk",
+      "jokoo_sit",
+      "mu_to_drink",
+      "di_bind",
+      "se_to_do",
+      "we_to_bathe",
+      "ounje_food",
+      "sun_to_sleep",
+      "aja_dog",
+      "sokoto_pants",
+      "bata_shoe"
+     ],
+     "stones": [
+      {
+       "id": "body.m1.1",
+       "game": "say",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "o_se_thank_you"
+       ],
+       "review": []
+      },
+      {
+       "id": "body.m1.2",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ori_head",
+        "oju_eye"
+       ],
+       "review": [
+        "wara_milk"
+       ]
+      },
+      {
+       "id": "body.m1.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "kan_touch",
+        "wo_to_look"
+       ],
+       "review": [
+        "jokoo_sit",
+        "mu_to_drink",
+        "di_bind",
+        "se_to_do",
+        "we_to_bathe",
+        "ounje_food"
+       ]
+      },
+      {
+       "id": "body.m1.4",
+       "game": "giant",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "oju_eye"
+       ],
+       "review": []
+      },
+      {
+       "id": "body.m1.5",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "kan_touch",
+        "wo_to_look"
+       ],
+       "review": [
+        "sun_to_sleep",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe",
+        "mu_to_drink",
+        "di_bind"
+       ]
+      },
+      {
+       "id": "body.m1.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "kan_touch",
+        "ori_head",
+        "wo_to_look",
+        "oju_eye"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "body.m2",
+     "newWords": [
+      "patewo_clap",
+      "owo_hand",
+      "rin_to_walk",
+      "ese_leg"
+     ],
+     "review": [
+      "ibusun_bed",
+      "aso_cloth",
+      "aja_dog",
+      "sokoto_pants",
+      "bata_shoe",
+      "o_se_thank_you",
+      "wara_milk",
+      "ounje_food",
+      "mu_to_drink",
+      "sun_to_sleep",
+      "ori_head",
+      "kan_touch",
+      "wo_to_look",
+      "jokoo_sit",
+      "di_bind",
+      "se_to_do"
+     ],
+     "stones": [
+      {
+       "id": "body.m2.1",
+       "game": "house",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "ibusun_bed",
+        "aso_cloth",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe"
+       ],
+       "review": []
+      },
+      {
+       "id": "body.m2.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "patewo_clap"
+       ],
+       "review": [
+        "o_se_thank_you",
+        "wara_milk",
+        "ounje_food",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe"
+       ]
+      },
+      {
+       "id": "body.m2.3",
+       "game": "theatre",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "rin_to_walk"
+       ],
+       "review": [
+        "mu_to_drink",
+        "sun_to_sleep",
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "body.m2.4",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "owo_hand",
+        "ese_leg"
+       ],
+       "review": [
+        "ori_head"
+       ]
+      },
+      {
+       "id": "body.m2.5",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "patewo_clap",
+        "rin_to_walk",
+        "ese_leg"
+       ],
+       "review": [
+        "kan_touch",
+        "wo_to_look",
+        "jokoo_sit",
+        "di_bind",
+        "se_to_do"
+       ]
+      },
+      {
+       "id": "body.m2.6",
+       "game": "river",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "patewo_clap"
+       ],
+       "review": [
+        "jokoo_sit",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe",
+        "wara_milk"
+       ]
+      },
+      {
+       "id": "body.m2.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "patewo_clap",
+        "owo_hand",
+        "rin_to_walk",
+        "ese_leg"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "body.m3",
+     "newWords": [
+      "sare_run",
+      "eti_ear",
+      "so_throw",
+      "enu_mouth"
+     ],
+     "review": [
+      "oju_eye",
+      "ese_leg",
+      "sun_to_sleep",
+      "aja_dog",
+      "mu_to_drink",
+      "owo_hand",
+      "patewo_clap",
+      "rin_to_walk",
+      "kan_touch",
+      "wo_to_look",
+      "ile_home",
+      "we_to_bathe",
+      "ibusun_bed"
+     ],
+     "stones": [
+      {
+       "id": "body.m3.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "oju_eye",
+        "ese_leg"
+       ],
+       "review": []
+      },
+      {
+       "id": "body.m3.2",
+       "game": "theatre",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "sare_run"
+       ],
+       "review": [
+        "sun_to_sleep",
+        "aja_dog",
+        "mu_to_drink"
+       ]
+      },
+      {
+       "id": "body.m3.3",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "eti_ear",
+        "enu_mouth"
+       ],
+       "review": [
+        "owo_hand"
+       ]
+      },
+      {
+       "id": "body.m3.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "so_throw"
+       ],
+       "review": [
+        "patewo_clap",
+        "rin_to_walk",
+        "kan_touch",
+        "wo_to_look",
+        "ile_home",
+        "we_to_bathe",
+        "ibusun_bed"
+       ]
+      },
+      {
+       "id": "body.m3.5",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "sare_run",
+        "eti_ear",
+        "so_throw",
+        "enu_mouth"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "body.m4",
+     "newWords": [
+      "imu_nose",
+      "irun_hair",
+      "eyin_tooth"
+     ],
+     "review": [
+      "aso_cloth",
+      "sokoto_pants",
+      "bata_shoe",
+      "ibusun_bed",
+      "aja_dog",
+      "patewo_clap",
+      "o_se_thank_you",
+      "wara_milk",
+      "ounje_food",
+      "eti_ear",
+      "enu_mouth",
+      "oju_eye",
+      "ese_leg",
+      "sare_run"
+     ],
+     "stones": [
+      {
+       "id": "body.m4.1",
+       "game": "house",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "aso_cloth",
+        "sokoto_pants",
+        "bata_shoe",
+        "ibusun_bed",
+        "aja_dog"
+       ],
+       "review": []
+      },
+      {
+       "id": "body.m4.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": [
+        "patewo_clap",
+        "o_se_thank_you",
+        "wara_milk",
+        "ounje_food",
+        "sokoto_pants",
+        "bata_shoe"
+       ]
+      },
+      {
+       "id": "body.m4.3",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "imu_nose"
+       ],
+       "review": [
+        "eti_ear",
+        "enu_mouth"
+       ]
+      },
+      {
+       "id": "body.m4.4",
+       "game": "giant",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear"
+       ]
+      },
+      {
+       "id": "body.m4.5",
+       "game": "rally",
+       "mode": "sequence",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "irun_hair"
+       ],
+       "review": [
+        "bata_shoe",
+        "wara_milk"
+       ]
+      },
+      {
+       "id": "body.m4.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "imu_nose",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": [
+        "sare_run"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "body.understand",
+     "newWords": [],
+     "review": [
+      "so_throw",
+      "sun_to_sleep",
+      "mu_to_drink",
+      "aja_dog"
+     ],
+     "stones": [
+      {
+       "id": "body.understand.1",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "so_throw"
+       ],
+       "review": []
+      },
+      {
+       "id": "body.understand.2",
+       "game": "windows",
+       "job": "apply",
+       "level": 2,
+       "focus": [
+        "rin_to_walk"
+       ],
+       "review": [
+        "sun_to_sleep",
+        "mu_to_drink",
+        "aja_dog"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "animals",
+   "yo": "Ẹranko",
+   "en": "Animals at home and on the farm",
+   "art": "animals",
+   "words": [
+    {
+     "id": "adiye_chicken",
+     "source": "curriculum"
+    },
+    {
+     "id": "maluu_cow",
+     "source": "scene"
+    },
+    {
+     "id": "ehoro_rabbit",
+     "source": "scene"
+    },
+    {
+     "id": "gbo_to_bark",
+     "source": "curriculum"
+    },
+    {
+     "id": "elede_pig",
+     "source": "scene"
+    },
+    {
+     "id": "pepeye_duck",
+     "source": "scene"
+    },
+    {
+     "id": "esinsin_fly",
+     "source": "scene"
+    },
+    {
+     "id": "pa_kill",
+     "source": "scene"
+    },
+    {
+     "id": "esin_horse",
+     "source": "scene"
+    },
+    {
+     "id": "ketekete_donkey",
+     "source": "scene"
+    },
+    {
+     "id": "ijapa_tortoise",
+     "source": "scene"
+    },
+    {
+     "id": "ejo_snake",
+     "source": "scene"
+    },
+    {
+     "id": "alangba_lizard",
+     "source": "scene"
+    },
+    {
+     "id": "eye_bird",
+     "source": "scene"
+    },
+    {
+     "id": "erin_elephant",
+     "source": "scene"
+    }
+   ],
+   "waiting": [],
+   "meetings": [
+    {
+     "id": "animals.m1",
+     "newWords": [
+      "adiye_chicken",
+      "maluu_cow",
+      "ehoro_rabbit",
+      "gbo_to_bark"
+     ],
+     "review": [
+      "imu_nose",
+      "irun_hair",
+      "eyin_tooth",
+      "aja_dog",
+      "so_throw",
+      "kan_touch",
+      "wo_to_look",
+      "patewo_clap",
+      "ese_leg",
+      "rin_to_walk",
+      "jokoo_sit",
+      "di_bind",
+      "we_to_bathe",
+      "sokoto_pants",
+      "bata_shoe",
+      "wara_milk",
+      "sun_to_sleep",
+      "mu_to_drink"
+     ],
+     "stones": [
+      {
+       "id": "animals.m1.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "imu_nose",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m1.2",
+       "game": "visit",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "adiye_chicken",
+        "maluu_cow",
+        "ehoro_rabbit"
+       ],
+       "review": [
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "animals.m1.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "gbo_to_bark"
+       ],
+       "review": [
+        "so_throw",
+        "kan_touch",
+        "wo_to_look",
+        "patewo_clap",
+        "ese_leg",
+        "rin_to_walk",
+        "jokoo_sit"
+       ]
+      },
+      {
+       "id": "animals.m1.4",
+       "game": "yard",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "adiye_chicken",
+        "maluu_cow",
+        "ehoro_rabbit"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m1.5",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "gbo_to_bark"
+       ],
+       "review": [
+        "di_bind",
+        "we_to_bathe",
+        "sokoto_pants",
+        "bata_shoe",
+        "wara_milk",
+        "sun_to_sleep",
+        "mu_to_drink"
+       ]
+      },
+      {
+       "id": "animals.m1.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "adiye_chicken",
+        "maluu_cow",
+        "ehoro_rabbit",
+        "gbo_to_bark"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "animals.m2",
+     "newWords": [
+      "elede_pig",
+      "pepeye_duck",
+      "esinsin_fly",
+      "pa_kill"
+     ],
+     "review": [
+      "ori_head",
+      "owo_hand",
+      "adiye_chicken",
+      "ehoro_rabbit",
+      "irun_hair",
+      "eyin_tooth",
+      "ounje_food",
+      "o_se_thank_you",
+      "aja_dog",
+      "sokoto_pants",
+      "maluu_cow",
+      "gbo_to_bark",
+      "so_throw",
+      "se_to_do",
+      "ile_home",
+      "ibusun_bed",
+      "aso_cloth",
+      "sun_to_sleep",
+      "we_to_bathe",
+      "bata_shoe",
+      "mu_to_drink",
+      "wara_milk",
+      "di_bind",
+      "kan_touch",
+      "wo_to_look"
+     ],
+     "stones": [
+      {
+       "id": "animals.m2.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ori_head",
+        "owo_hand",
+        "adiye_chicken"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m2.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "elede_pig"
+       ],
+       "review": [
+        "ehoro_rabbit",
+        "irun_hair",
+        "eyin_tooth",
+        "ounje_food",
+        "o_se_thank_you",
+        "aja_dog",
+        "sokoto_pants"
+       ]
+      },
+      {
+       "id": "animals.m2.3",
+       "game": "visit",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "pepeye_duck",
+        "esinsin_fly"
+       ],
+       "review": [
+        "maluu_cow",
+        "adiye_chicken"
+       ]
+      },
+      {
+       "id": "animals.m2.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "pa_kill"
+       ],
+       "review": [
+        "gbo_to_bark",
+        "so_throw",
+        "se_to_do",
+        "ile_home",
+        "ibusun_bed",
+        "aso_cloth",
+        "sun_to_sleep"
+       ]
+      },
+      {
+       "id": "animals.m2.5",
+       "game": "yard",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "elede_pig",
+        "pepeye_duck",
+        "esinsin_fly"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m2.6",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "pa_kill"
+       ],
+       "review": [
+        "we_to_bathe",
+        "bata_shoe",
+        "mu_to_drink",
+        "wara_milk",
+        "di_bind",
+        "kan_touch",
+        "wo_to_look"
+       ]
+      },
+      {
+       "id": "animals.m2.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "elede_pig",
+        "pepeye_duck",
+        "esinsin_fly",
+        "pa_kill"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "animals.m3",
+     "newWords": [
+      "esin_horse",
+      "ketekete_donkey",
+      "ijapa_tortoise",
+      "ejo_snake"
+     ],
+     "review": [
+      "eti_ear",
+      "oju_eye",
+      "irun_hair",
+      "eyin_tooth",
+      "ese_leg",
+      "jokoo_sit",
+      "patewo_clap",
+      "aja_dog",
+      "sokoto_pants",
+      "bata_shoe"
+     ],
+     "stones": [
+      {
+       "id": "animals.m3.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "eti_ear",
+        "oju_eye",
+        "irun_hair",
+        "eyin_tooth",
+        "ese_leg"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m3.2",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "esin_horse",
+        "ketekete_donkey",
+        "ijapa_tortoise",
+        "ejo_snake"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m3.3",
+       "game": "yard",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "esin_horse",
+        "ketekete_donkey",
+        "ijapa_tortoise"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m3.4",
+       "game": "train",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "ijapa_tortoise"
+       ],
+       "review": [
+        "jokoo_sit",
+        "patewo_clap",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe"
+       ]
+      },
+      {
+       "id": "animals.m3.5",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "esin_horse",
+        "ketekete_donkey",
+        "ijapa_tortoise",
+        "ejo_snake"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "animals.m4",
+     "newWords": [
+      "alangba_lizard",
+      "eye_bird",
+      "erin_elephant"
+     ],
+     "review": [
+      "elede_pig",
+      "pepeye_duck",
+      "esinsin_fly",
+      "enu_mouth",
+      "pa_kill",
+      "ketekete_donkey",
+      "ijapa_tortoise",
+      "ehoro_rabbit",
+      "wara_milk",
+      "ounje_food",
+      "o_se_thank_you",
+      "aja_dog",
+      "esin_horse",
+      "sokoto_pants",
+      "bata_shoe",
+      "jokoo_sit",
+      "patewo_clap",
+      "irun_hair",
+      "sare_run"
+     ],
+     "stones": [
+      {
+       "id": "animals.m4.1",
+       "game": "visit",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "elede_pig",
+        "pepeye_duck",
+        "esinsin_fly"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m4.2",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "enu_mouth"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m4.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "pa_kill"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m4.4",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "erin_elephant"
+       ],
+       "review": [
+        "ketekete_donkey",
+        "ijapa_tortoise",
+        "ehoro_rabbit",
+        "wara_milk",
+        "ounje_food",
+        "o_se_thank_you",
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "animals.m4.5",
+       "game": "yard",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "alangba_lizard",
+        "eye_bird"
+       ],
+       "review": [
+        "esin_horse"
+       ]
+      },
+      {
+       "id": "animals.m4.6",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "alangba_lizard",
+        "eye_bird",
+        "erin_elephant"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals.m4.7",
+       "game": "rally",
+       "mode": "syllables",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "erin_elephant"
+       ],
+       "review": [
+        "sokoto_pants",
+        "bata_shoe",
+        "jokoo_sit",
+        "patewo_clap",
+        "irun_hair",
+        "ijapa_tortoise",
+        "wara_milk"
+       ]
+      },
+      {
+       "id": "animals.m4.8",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "alangba_lizard",
+        "eye_bird",
+        "erin_elephant"
+       ],
+       "review": [
+        "sare_run"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "animals.understand",
+     "newWords": [],
+     "review": [
+      "ejo_snake",
+      "alangba_lizard"
+     ],
+     "stones": [
+      {
+       "id": "animals.understand.1",
+       "game": "sort",
+       "job": "apply",
+       "level": 2,
+       "focus": [
+        "adiye_chicken",
+        "maluu_cow",
+        "ehoro_rabbit",
+        "elede_pig",
+        "pepeye_duck",
+        "esin_horse",
+        "ketekete_donkey",
+        "ijapa_tortoise"
+       ],
+       "review": [
+        "ejo_snake",
+        "alangba_lizard"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "meal",
+   "yo": "Oúnjẹ",
+   "en": "Mealtime",
+   "art": "meal",
+   "words": [
+    {
+     "id": "jeun_eat",
+     "source": "curriculum"
+    },
+    {
+     "id": "iresi_rice",
+     "source": "scene"
+    },
+    {
+     "id": "mu_take",
+     "source": "scene"
+    },
+    {
+     "id": "osan_orange",
+     "source": "scene"
+    },
+    {
+     "id": "isu_yam",
+     "source": "curriculum"
+    },
+    {
+     "id": "buredi_bread",
+     "source": "scene"
+    },
+    {
+     "id": "ogede_banana",
+     "source": "scene"
+    },
+    {
+     "id": "ebi_hunger",
+     "source": "scene"
+    },
+    {
+     "id": "ewa_beans",
+     "source": "scene"
+    },
+    {
+     "id": "sibi_spoon",
+     "source": "scene"
+    },
+    {
+     "id": "abo_plate",
+     "source": "scene"
+    },
+    {
+     "id": "mu_omi_drink_water",
+     "source": "scene"
+    },
+    {
+     "id": "fun_mi_give_me",
+     "source": "scene"
+    },
+    {
+     "id": "ebi_n_pa_e_you_hungry",
+     "source": "scene"
+    }
+   ],
+   "waiting": [
+    "fun_give",
+    "to_enough"
+   ],
+   "meetings": [
+    {
+     "id": "meal.m1",
+     "newWords": [
+      "jeun_eat",
+      "iresi_rice",
+      "mu_take",
+      "osan_orange"
+     ],
+     "review": [
+      "imu_nose",
+      "eye_bird",
+      "erin_elephant",
+      "adiye_chicken",
+      "ibusun_bed",
+      "aso_cloth",
+      "elede_pig",
+      "ketekete_donkey",
+      "ijapa_tortoise",
+      "eyin_tooth",
+      "aja_dog",
+      "sokoto_pants",
+      "bata_shoe",
+      "gbo_to_bark",
+      "esinsin_fly",
+      "pa_kill",
+      "maluu_cow",
+      "rin_to_walk",
+      "sun_to_sleep",
+      "ile_home",
+      "we_to_bathe",
+      "mu_to_drink",
+      "di_bind",
+      "kan_touch",
+      "wo_to_look",
+      "wara_milk",
+      "patewo_clap"
+     ],
+     "stones": [
+      {
+       "id": "meal.m1.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "imu_nose",
+        "eye_bird",
+        "erin_elephant"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal.m1.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "iresi_rice",
+        "osan_orange"
+       ],
+       "review": [
+        "adiye_chicken",
+        "ibusun_bed",
+        "aso_cloth"
+       ]
+      },
+      {
+       "id": "meal.m1.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "jeun_eat"
+       ],
+       "review": [
+        "elede_pig",
+        "ketekete_donkey",
+        "ijapa_tortoise",
+        "eyin_tooth",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe"
+       ]
+      },
+      {
+       "id": "meal.m1.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "mu_take"
+       ],
+       "review": [
+        "gbo_to_bark",
+        "esinsin_fly",
+        "pa_kill",
+        "maluu_cow",
+        "rin_to_walk",
+        "sun_to_sleep",
+        "ile_home"
+       ]
+      },
+      {
+       "id": "meal.m1.5",
+       "game": "hungry",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "iresi_rice",
+        "osan_orange"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal.m1.6",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "mu_take"
+       ],
+       "review": [
+        "we_to_bathe",
+        "mu_to_drink",
+        "di_bind",
+        "kan_touch",
+        "wo_to_look",
+        "wara_milk",
+        "patewo_clap"
+       ]
+      },
+      {
+       "id": "meal.m1.7",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "mu_to_drink",
+        "mu_take"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "mu_to_drink",
+         "mu_take"
+        ]
+       ]
+      },
+      {
+       "id": "meal.m1.8",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "jeun_eat",
+        "iresi_rice",
+        "mu_take",
+        "osan_orange"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "meal.m2",
+     "newWords": [
+      "isu_yam",
+      "buredi_bread",
+      "ogede_banana",
+      "ebi_hunger"
+     ],
+     "review": [
+      "eti_ear",
+      "oju_eye",
+      "ese_leg",
+      "irun_hair",
+      "eyin_tooth",
+      "iresi_rice",
+      "osan_orange",
+      "jeun_eat",
+      "erin_elephant",
+      "ounje_food",
+      "o_se_thank_you",
+      "ehoro_rabbit",
+      "aja_dog",
+      "sokoto_pants",
+      "jokoo_sit",
+      "bata_shoe",
+      "wara_milk",
+      "patewo_clap",
+      "ijapa_tortoise",
+      "mu_take"
+     ],
+     "stones": [
+      {
+       "id": "meal.m2.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "eti_ear",
+        "oju_eye",
+        "ese_leg",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal.m2.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "isu_yam",
+        "buredi_bread",
+        "ogede_banana"
+       ],
+       "review": [
+        "iresi_rice",
+        "osan_orange"
+       ]
+      },
+      {
+       "id": "meal.m2.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ebi_hunger"
+       ],
+       "review": [
+        "jeun_eat",
+        "erin_elephant",
+        "ounje_food",
+        "o_se_thank_you",
+        "ehoro_rabbit",
+        "aja_dog",
+        "sokoto_pants"
+       ]
+      },
+      {
+       "id": "meal.m2.4",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "isu_yam",
+        "buredi_bread",
+        "ogede_banana"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal.m2.5",
+       "game": "river",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "ebi_hunger"
+       ],
+       "review": [
+        "jokoo_sit",
+        "bata_shoe",
+        "wara_milk",
+        "patewo_clap",
+        "ijapa_tortoise"
+       ]
+      },
+      {
+       "id": "meal.m2.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "isu_yam",
+        "buredi_bread",
+        "ogede_banana"
+       ],
+       "review": [
+        "mu_take"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "meal.m3",
+     "newWords": [
+      "ewa_beans",
+      "sibi_spoon",
+      "abo_plate",
+      "mu_omi_drink_water"
+     ],
+     "review": [
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "irun_hair",
+      "eyin_tooth",
+      "isu_yam",
+      "buredi_bread",
+      "ogede_banana",
+      "ebi_hunger",
+      "jeun_eat",
+      "iresi_rice",
+      "erin_elephant",
+      "elede_pig",
+      "ketekete_donkey",
+      "aja_dog",
+      "osan_orange",
+      "sokoto_pants",
+      "bata_shoe",
+      "jokoo_sit",
+      "wara_milk",
+      "patewo_clap",
+      "ejo_snake"
+     ],
+     "stones": [
+      {
+       "id": "meal.m3.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal.m3.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "sibi_spoon",
+        "abo_plate"
+       ],
+       "review": [
+        "isu_yam",
+        "buredi_bread",
+        "ogede_banana"
+       ]
+      },
+      {
+       "id": "meal.m3.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "mu_omi_drink_water"
+       ],
+       "review": [
+        "ebi_hunger",
+        "jeun_eat",
+        "iresi_rice",
+        "erin_elephant",
+        "elede_pig",
+        "ketekete_donkey",
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "meal.m3.4",
+       "game": "hungry",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ewa_beans"
+       ],
+       "review": [
+        "osan_orange",
+        "isu_yam",
+        "buredi_bread"
+       ]
+      },
+      {
+       "id": "meal.m3.5",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "ewa_beans",
+        "sibi_spoon",
+        "abo_plate"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal.m3.6",
+       "game": "train",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "mu_omi_drink_water"
+       ],
+       "review": [
+        "sokoto_pants",
+        "bata_shoe",
+        "jokoo_sit",
+        "wara_milk",
+        "patewo_clap"
+       ]
+      },
+      {
+       "id": "meal.m3.7",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "mu_to_drink",
+        "mu_take"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "mu_to_drink",
+         "mu_take"
+        ]
+       ]
+      },
+      {
+       "id": "meal.m3.8",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ewa_beans",
+        "sibi_spoon",
+        "abo_plate"
+       ],
+       "review": [
+        "ejo_snake"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "meal.m4",
+     "newWords": [
+      "fun_mi_give_me",
+      "ebi_n_pa_e_you_hungry"
+     ],
+     "review": [
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "irun_hair",
+      "eyin_tooth",
+      "abo_plate",
+      "mu_omi_drink_water",
+      "isu_yam",
+      "ebi_hunger",
+      "jeun_eat",
+      "iresi_rice",
+      "ounje_food",
+      "o_se_thank_you"
+     ],
+     "stones": [
+      {
+       "id": "meal.m4.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal.m4.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "fun_mi_give_me"
+       ],
+       "review": [
+        "abo_plate",
+        "mu_omi_drink_water",
+        "isu_yam",
+        "ebi_hunger",
+        "jeun_eat",
+        "iresi_rice",
+        "ounje_food"
+       ]
+      },
+      {
+       "id": "meal.m4.3",
+       "game": "say",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ebi_n_pa_e_you_hungry"
+       ],
+       "review": [
+        "o_se_thank_you"
+       ]
+      },
+      {
+       "id": "meal.m4.4",
+       "game": "say",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ebi_n_pa_e_you_hungry"
+       ],
+       "review": [
+        "o_se_thank_you"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "meal.understand",
+     "newWords": [],
+     "review": [
+      "alangba_lizard",
+      "aso_cloth",
+      "bata_shoe"
+     ],
+     "stones": [
+      {
+       "id": "meal.understand.1",
+       "game": "sort",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "alangba_lizard"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal.understand.2",
+       "game": "errand",
+       "job": "apply",
+       "level": 2,
+       "focus": [
+        "iresi_rice",
+        "osan_orange",
+        "isu_yam",
+        "buredi_bread",
+        "ogede_banana",
+        "ewa_beans",
+        "sibi_spoon"
+       ],
+       "review": [
+        "aso_cloth",
+        "bata_shoe"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "feelings",
+   "yo": "Inú Mi",
+   "en": "Feelings",
+   "art": "feelings",
+   "words": [
+    {
+     "id": "sun_to_cry",
+     "source": "scene"
+    },
+    {
+     "id": "rerin-in_laugh",
+     "source": "scene"
+    },
+    {
+     "id": "pele_sorry",
+     "source": "scene"
+    },
+    {
+     "id": "ro_think",
+     "source": "scene"
+    },
+    {
+     "id": "sunkun_weep",
+     "source": "curriculum"
+    },
+    {
+     "id": "kelekele_gently",
+     "source": "scene"
+    },
+    {
+     "id": "ma_sunkun_not_cry",
+     "source": "curriculum"
+    },
+    {
+     "id": "ma_fowo_kan_an_no_touch",
+     "source": "scene"
+    }
+   ],
+   "waiting": [],
+   "meetings": [
+    {
+     "id": "feelings.m1",
+     "newWords": [
+      "sun_to_cry",
+      "rerin-in_laugh",
+      "pele_sorry",
+      "ro_think"
+     ],
+     "review": [
+      "eye_bird",
+      "ori_head",
+      "owo_hand",
+      "fun_mi_give_me",
+      "abo_plate",
+      "sibi_spoon",
+      "gbo_to_bark",
+      "esinsin_fly",
+      "pa_kill",
+      "ebi_n_pa_e_you_hungry",
+      "o_se_thank_you",
+      "ebi_hunger",
+      "ijapa_tortoise",
+      "aja_dog",
+      "sokoto_pants",
+      "jokoo_sit",
+      "wara_milk",
+      "patewo_clap",
+      "sare_run"
+     ],
+     "stones": [
+      {
+       "id": "feelings.m1.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "eye_bird",
+        "ori_head",
+        "owo_hand"
+       ],
+       "review": []
+      },
+      {
+       "id": "feelings.m1.2",
+       "game": "stretchy",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "fun_mi_give_me"
+       ],
+       "review": []
+      },
+      {
+       "id": "feelings.m1.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "sun_to_cry",
+        "rerin-in_laugh",
+        "ro_think"
+       ],
+       "review": [
+        "abo_plate",
+        "sibi_spoon",
+        "gbo_to_bark",
+        "esinsin_fly",
+        "pa_kill"
+       ]
+      },
+      {
+       "id": "feelings.m1.4",
+       "game": "say",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "pele_sorry"
+       ],
+       "review": [
+        "ebi_n_pa_e_you_hungry",
+        "o_se_thank_you"
+       ]
+      },
+      {
+       "id": "feelings.m1.5",
+       "game": "rally",
+       "mode": "syllables",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "rerin-in_laugh"
+       ],
+       "review": [
+        "ebi_hunger",
+        "ijapa_tortoise",
+        "aja_dog",
+        "sokoto_pants",
+        "jokoo_sit",
+        "wara_milk",
+        "patewo_clap"
+       ]
+      },
+      {
+       "id": "feelings.m1.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "sun_to_cry",
+        "rerin-in_laugh",
+        "ro_think"
+       ],
+       "review": [
+        "sare_run"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "feelings.m2",
+     "newWords": [
+      "sunkun_weep",
+      "kelekele_gently",
+      "ma_fowo_kan_an_no_touch"
+     ],
+     "review": [
+      "sun_to_cry",
+      "kan_touch",
+      "rerin-in_laugh",
+      "ro_think",
+      "mu_omi_drink_water",
+      "fun_mi_give_me",
+      "abo_plate",
+      "ehoro_rabbit",
+      "elede_pig",
+      "ketekete_donkey",
+      "erin_elephant",
+      "irun_hair"
+     ],
+     "stones": [
+      {
+       "id": "feelings.m2.1",
+       "game": "parrot",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "sun_to_cry",
+        "kan_touch",
+        "rerin-in_laugh",
+        "ro_think"
+       ],
+       "review": []
+      },
+      {
+       "id": "feelings.m2.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "sunkun_weep",
+        "kelekele_gently"
+       ],
+       "review": [
+        "mu_omi_drink_water",
+        "fun_mi_give_me",
+        "abo_plate",
+        "ehoro_rabbit",
+        "elede_pig",
+        "ketekete_donkey"
+       ]
+      },
+      {
+       "id": "feelings.m2.3",
+       "game": "helper",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ma_fowo_kan_an_no_touch"
+       ],
+       "review": []
+      },
+      {
+       "id": "feelings.m2.4",
+       "game": "rally",
+       "mode": "sequence",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "sunkun_weep"
+       ],
+       "review": [
+        "erin_elephant",
+        "irun_hair"
+       ]
+      },
+      {
+       "id": "feelings.m2.5",
+       "game": "helper",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ma_fowo_kan_an_no_touch"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "feelings.m3",
+     "newWords": [
+      "ma_sunkun_not_cry"
+     ],
+     "review": [
+      "pele_sorry",
+      "ebi_n_pa_e_you_hungry",
+      "o_se_thank_you",
+      "sunkun_weep",
+      "kelekele_gently",
+      "mu_omi_drink_water",
+      "fun_mi_give_me",
+      "ounje_food",
+      "eyin_tooth",
+      "jeun_eat",
+      "rerin-in_laugh",
+      "bata_shoe",
+      "aja_dog",
+      "sokoto_pants",
+      "jokoo_sit"
+     ],
+     "stones": [
+      {
+       "id": "feelings.m3.1",
+       "game": "say",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "pele_sorry",
+        "ebi_n_pa_e_you_hungry",
+        "o_se_thank_you"
+       ],
+       "review": []
+      },
+      {
+       "id": "feelings.m3.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ma_sunkun_not_cry"
+       ],
+       "review": [
+        "sunkun_weep",
+        "kelekele_gently",
+        "mu_omi_drink_water",
+        "fun_mi_give_me",
+        "ounje_food",
+        "eyin_tooth",
+        "jeun_eat"
+       ]
+      },
+      {
+       "id": "feelings.m3.3",
+       "game": "river",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "ma_sunkun_not_cry"
+       ],
+       "review": [
+        "rerin-in_laugh",
+        "bata_shoe",
+        "aja_dog",
+        "sokoto_pants",
+        "jokoo_sit"
+       ]
+      },
+      {
+       "id": "feelings.m3.4",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "mu_to_drink",
+        "mu_take"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "mu_to_drink",
+         "mu_take"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "day2",
+   "yo": "Ọjọ́ Mi",
+   "en": "My day, again: school and night",
+   "art": "day",
+   "words": [
+    {
+     "id": "lo_go",
+     "source": "scene"
+    },
+    {
+     "id": "ile-iwe_school",
+     "source": "scene"
+    },
+    {
+     "id": "gege_pencil",
+     "source": "scene"
+    },
+    {
+     "id": "osupa_moon",
+     "source": "scene"
+    },
+    {
+     "id": "irawo_star",
+     "source": "scene"
+    },
+    {
+     "id": "ofuurufu_sky",
+     "source": "scene"
+    },
+    {
+     "id": "aye_world",
+     "source": "scene"
+    }
+   ],
+   "waiting": [],
+   "meetings": [
+    {
+     "id": "day2.m1",
+     "newWords": [
+      "lo_go",
+      "ile-iwe_school",
+      "gege_pencil",
+      "osupa_moon"
+     ],
+     "review": [
+      "ile_home",
+      "enu_mouth",
+      "pepeye_duck",
+      "ma_fowo_kan_an_no_touch",
+      "buredi_bread",
+      "ogede_banana",
+      "sibi_spoon",
+      "ibusun_bed",
+      "ma_sunkun_not_cry",
+      "sunkun_weep",
+      "kelekele_gently",
+      "iresi_rice",
+      "isu_yam",
+      "wara_milk",
+      "patewo_clap",
+      "sun_to_sleep",
+      "sun_to_cry",
+      "ro_think",
+      "se_to_do",
+      "so_throw",
+      "rerin-in_laugh",
+      "we_to_bathe",
+      "di_bind",
+      "ebi_hunger",
+      "irun_hair"
+     ],
+     "stones": [
+      {
+       "id": "day2.m1.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "ile_home",
+        "enu_mouth",
+        "pepeye_duck"
+       ],
+       "review": []
+      },
+      {
+       "id": "day2.m1.2",
+       "game": "helper",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ma_fowo_kan_an_no_touch"
+       ],
+       "review": []
+      },
+      {
+       "id": "day2.m1.3",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "gege_pencil"
+       ],
+       "review": [
+        "buredi_bread",
+        "ogede_banana",
+        "sibi_spoon",
+        "ibusun_bed"
+       ]
+      },
+      {
+       "id": "day2.m1.4",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ile-iwe_school"
+       ],
+       "review": [
+        "ma_sunkun_not_cry",
+        "sunkun_weep",
+        "kelekele_gently",
+        "iresi_rice",
+        "isu_yam",
+        "wara_milk",
+        "patewo_clap"
+       ]
+      },
+      {
+       "id": "day2.m1.5",
+       "game": "where",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "lo_go"
+       ],
+       "review": [
+        "sun_to_sleep"
+       ]
+      },
+      {
+       "id": "day2.m1.6",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "osupa_moon"
+       ],
+       "review": [
+        "sun_to_cry",
+        "ro_think",
+        "se_to_do",
+        "so_throw",
+        "rerin-in_laugh",
+        "we_to_bathe",
+        "di_bind"
+       ]
+      },
+      {
+       "id": "day2.m1.7",
+       "game": "rally",
+       "mode": "sequence",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "gege_pencil"
+       ],
+       "review": [
+        "ebi_hunger",
+        "irun_hair"
+       ]
+      },
+      {
+       "id": "day2.m1.8",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "lo_go",
+        "ile-iwe_school",
+        "gege_pencil",
+        "osupa_moon"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "day2.m2",
+     "newWords": [
+      "irawo_star",
+      "ofuurufu_sky",
+      "aye_world"
+     ],
+     "review": [
+      "esin_horse",
+      "ewa_beans",
+      "imu_nose",
+      "ile-iwe_school",
+      "gege_pencil",
+      "ma_sunkun_not_cry",
+      "sunkun_weep",
+      "kelekele_gently",
+      "ijapa_tortoise",
+      "ehoro_rabbit",
+      "osupa_moon",
+      "sun_to_cry",
+      "ro_think",
+      "wo_to_look",
+      "rin_to_walk",
+      "adiye_chicken",
+      "erin_elephant",
+      "aja_dog",
+      "sokoto_pants",
+      "bata_shoe",
+      "jokoo_sit",
+      "lo_go"
+     ],
+     "stones": [
+      {
+       "id": "day2.m2.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "esin_horse",
+        "ewa_beans",
+        "imu_nose"
+       ],
+       "review": []
+      },
+      {
+       "id": "day2.m2.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "aye_world"
+       ],
+       "review": [
+        "ile-iwe_school",
+        "gege_pencil",
+        "ma_sunkun_not_cry",
+        "sunkun_weep",
+        "kelekele_gently",
+        "ijapa_tortoise",
+        "ehoro_rabbit"
+       ]
+      },
+      {
+       "id": "day2.m2.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "irawo_star",
+        "ofuurufu_sky"
+       ],
+       "review": [
+        "osupa_moon",
+        "sun_to_cry",
+        "ro_think",
+        "wo_to_look",
+        "rin_to_walk",
+        "adiye_chicken"
+       ]
+      },
+      {
+       "id": "day2.m2.4",
+       "game": "train",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "aye_world"
+       ],
+       "review": [
+        "erin_elephant",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe",
+        "jokoo_sit"
+       ]
+      },
+      {
+       "id": "day2.m2.5",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "irawo_star",
+        "ofuurufu_sky",
+        "aye_world"
+       ],
+       "review": [
+        "lo_go"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wash",
+   "yo": "Wẹ̀",
+   "en": "Washing",
+   "art": "wash",
+   "words": [
+    {
+     "id": "nu_clean",
+     "source": "scene"
+    },
+    {
+     "id": "gba_sweep",
+     "source": "scene"
+    },
+    {
+     "id": "ose_soap",
+     "source": "curriculum"
+    },
+    {
+     "id": "doti_dirty",
+     "source": "curriculum"
+    },
+    {
+     "id": "ifoyin_toothbrush",
+     "source": "scene"
+    },
+    {
+     "id": "inura_towel",
+     "source": "scene"
+    },
+    {
+     "id": "digi_mirror",
+     "source": "scene"
+    },
+    {
+     "id": "ya_comb",
+     "source": "scene"
+    },
+    {
+     "id": "oyiya_comb",
+     "source": "scene"
+    },
+    {
+     "id": "baluwe_bathroom",
+     "source": "scene"
+    },
+    {
+     "id": "igbe_feces",
+     "source": "scene"
+    },
+    {
+     "id": "o_doti_dirty",
+     "source": "scene"
+    },
+    {
+     "id": "nu_u_cleanit",
+     "source": "scene"
+    },
+    {
+     "id": "so_o_nu_throw_away",
+     "source": "curriculum"
+    },
+    {
+     "id": "dii_mu_hold",
+     "source": "scene"
+    },
+    {
+     "id": "fi_sile_leave_it",
+     "source": "scene"
+    }
+   ],
+   "waiting": [
+    "to_urinate"
+   ],
+   "meetings": [
+    {
+     "id": "wash.m1",
+     "newWords": [
+      "nu_clean",
+      "gba_sweep",
+      "ose_soap",
+      "doti_dirty"
+     ],
+     "review": [
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "eyin_tooth",
+      "irun_hair",
+      "gege_pencil",
+      "aso_cloth",
+      "osan_orange",
+      "abo_plate",
+      "aye_world",
+      "ile-iwe_school",
+      "ma_sunkun_not_cry",
+      "elede_pig",
+      "ketekete_donkey",
+      "ounje_food",
+      "o_se_thank_you",
+      "irawo_star",
+      "ofuurufu_sky",
+      "osupa_moon",
+      "maluu_cow",
+      "gbo_to_bark",
+      "esinsin_fly",
+      "ejo_snake",
+      "alangba_lizard",
+      "pa_kill",
+      "kan_touch",
+      "mu_to_drink",
+      "mu_take",
+      "mu_omi_drink_water",
+      "lo_go"
+     ],
+     "stones": [
+      {
+       "id": "wash.m1.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear",
+        "eyin_tooth",
+        "irun_hair"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.m1.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ose_soap"
+       ],
+       "review": [
+        "gege_pencil",
+        "aso_cloth",
+        "osan_orange",
+        "abo_plate"
+       ]
+      },
+      {
+       "id": "wash.m1.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "doti_dirty"
+       ],
+       "review": [
+        "aye_world",
+        "ile-iwe_school",
+        "ma_sunkun_not_cry",
+        "elede_pig",
+        "ketekete_donkey",
+        "ounje_food",
+        "o_se_thank_you"
+       ]
+      },
+      {
+       "id": "wash.m1.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "nu_clean",
+        "gba_sweep"
+       ],
+       "review": [
+        "irawo_star",
+        "ofuurufu_sky",
+        "osupa_moon",
+        "maluu_cow",
+        "gbo_to_bark",
+        "esinsin_fly"
+       ]
+      },
+      {
+       "id": "wash.m1.5",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "ose_soap"
+       ],
+       "review": [
+        "ejo_snake",
+        "alangba_lizard"
+       ]
+      },
+      {
+       "id": "wash.m1.6",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "nu_clean",
+        "gba_sweep",
+        "doti_dirty"
+       ],
+       "review": [
+        "pa_kill",
+        "kan_touch",
+        "mu_to_drink",
+        "mu_take",
+        "mu_omi_drink_water"
+       ]
+      },
+      {
+       "id": "wash.m1.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "nu_clean",
+        "gba_sweep",
+        "ose_soap"
+       ],
+       "review": [
+        "lo_go"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "wash.m2",
+     "newWords": [
+      "ifoyin_toothbrush",
+      "inura_towel",
+      "digi_mirror",
+      "ya_comb"
+     ],
+     "review": [
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "irun_hair",
+      "eyin_tooth",
+      "ose_soap",
+      "gege_pencil",
+      "nu_clean",
+      "gba_sweep",
+      "irawo_star",
+      "ofuurufu_sky",
+      "aye_world",
+      "ile-iwe_school",
+      "osupa_moon",
+      "doti_dirty",
+      "sun_to_sleep",
+      "we_to_bathe",
+      "wara_milk",
+      "di_bind",
+      "patewo_clap",
+      "ebi_hunger"
+     ],
+     "stones": [
+      {
+       "id": "wash.m2.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.m2.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ifoyin_toothbrush",
+        "inura_towel",
+        "digi_mirror"
+       ],
+       "review": [
+        "ose_soap",
+        "gege_pencil"
+       ]
+      },
+      {
+       "id": "wash.m2.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ya_comb"
+       ],
+       "review": [
+        "nu_clean",
+        "gba_sweep",
+        "irawo_star",
+        "ofuurufu_sky",
+        "aye_world",
+        "ile-iwe_school",
+        "osupa_moon"
+       ]
+      },
+      {
+       "id": "wash.m2.4",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "ifoyin_toothbrush",
+        "inura_towel",
+        "digi_mirror"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.m2.5",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "ya_comb"
+       ],
+       "review": [
+        "doti_dirty",
+        "sun_to_sleep",
+        "we_to_bathe",
+        "wara_milk",
+        "di_bind",
+        "patewo_clap",
+        "ebi_hunger"
+       ]
+      },
+      {
+       "id": "wash.m2.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ifoyin_toothbrush",
+        "inura_towel",
+        "digi_mirror",
+        "ya_comb"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "wash.m3",
+     "newWords": [
+      "oyiya_comb",
+      "baluwe_bathroom",
+      "igbe_feces",
+      "o_doti_dirty"
+     ],
+     "review": [
+      "pele_sorry",
+      "ebi_n_pa_e_you_hungry",
+      "o_se_thank_you",
+      "doti_dirty",
+      "aye_world",
+      "jeun_eat",
+      "fun_mi_give_me",
+      "iresi_rice",
+      "isu_yam",
+      "ifoyin_toothbrush",
+      "inura_towel",
+      "digi_mirror",
+      "ya_comb",
+      "nu_clean",
+      "gba_sweep",
+      "ose_soap",
+      "irawo_star",
+      "rerin-in_laugh",
+      "aja_dog",
+      "sokoto_pants",
+      "bata_shoe",
+      "jokoo_sit",
+      "ijapa_tortoise",
+      "eye_bird"
+     ],
+     "stones": [
+      {
+       "id": "wash.m3.1",
+       "game": "say",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "pele_sorry",
+        "ebi_n_pa_e_you_hungry",
+        "o_se_thank_you"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.m3.2",
+       "game": "together",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "oyiya_comb"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.m3.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "igbe_feces",
+        "o_doti_dirty"
+       ],
+       "review": [
+        "doti_dirty",
+        "aye_world",
+        "jeun_eat",
+        "fun_mi_give_me",
+        "iresi_rice",
+        "isu_yam"
+       ]
+      },
+      {
+       "id": "wash.m3.4",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "baluwe_bathroom"
+       ],
+       "review": [
+        "ifoyin_toothbrush",
+        "inura_towel"
+       ]
+      },
+      {
+       "id": "wash.m3.5",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "oyiya_comb",
+        "igbe_feces"
+       ],
+       "review": [
+        "digi_mirror",
+        "ya_comb",
+        "nu_clean",
+        "gba_sweep",
+        "ose_soap",
+        "irawo_star"
+       ]
+      },
+      {
+       "id": "wash.m3.6",
+       "game": "rally",
+       "mode": "syllables",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "oyiya_comb",
+        "igbe_feces"
+       ],
+       "review": [
+        "rerin-in_laugh",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe",
+        "jokoo_sit",
+        "ijapa_tortoise"
+       ]
+      },
+      {
+       "id": "wash.m3.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "oyiya_comb",
+        "baluwe_bathroom",
+        "igbe_feces"
+       ],
+       "review": [
+        "eye_bird"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "wash.m4",
+     "newWords": [
+      "nu_u_cleanit",
+      "so_o_nu_throw_away",
+      "dii_mu_hold",
+      "fi_sile_leave_it"
+     ],
+     "review": [
+      "nu_clean",
+      "so_throw",
+      "di_bind",
+      "mu_take",
+      "ma_fowo_kan_an_no_touch",
+      "oyiya_comb",
+      "igbe_feces",
+      "doti_dirty",
+      "erin_elephant",
+      "sunkun_weep"
+     ],
+     "stones": [
+      {
+       "id": "wash.m4.1",
+       "game": "parrot",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "nu_clean",
+        "so_throw",
+        "di_bind",
+        "mu_take"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.m4.2",
+       "game": "helper",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ma_fowo_kan_an_no_touch"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.m4.3",
+       "game": "helper",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "nu_u_cleanit",
+        "so_o_nu_throw_away",
+        "dii_mu_hold",
+        "fi_sile_leave_it"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.m4.4",
+       "game": "river",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "dii_mu_hold"
+       ],
+       "review": [
+        "oyiya_comb",
+        "igbe_feces",
+        "doti_dirty",
+        "erin_elephant",
+        "sunkun_weep"
+       ]
+      },
+      {
+       "id": "wash.m4.5",
+       "game": "helper",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "nu_u_cleanit",
+        "so_o_nu_throw_away",
+        "dii_mu_hold",
+        "fi_sile_leave_it"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "wash.understand",
+     "newWords": [],
+     "review": [
+      "baluwe_bathroom",
+      "o_doti_dirty",
+      "ewa_beans",
+      "buredi_bread"
+     ],
+     "stones": [
+      {
+       "id": "wash.understand.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "baluwe_bathroom"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.understand.2",
+       "game": "say",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "o_doti_dirty"
+       ],
+       "review": []
+      },
+      {
+       "id": "wash.understand.3",
+       "game": "errand",
+       "job": "apply",
+       "level": 2,
+       "focus": [
+        "ose_soap",
+        "ifoyin_toothbrush",
+        "inura_towel",
+        "digi_mirror"
+       ],
+       "review": [
+        "ewa_beans",
+        "buredi_bread"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "family",
+   "yo": "Ìdílé",
+   "en": "Family and friends",
+   "art": "family",
+   "words": [
+    {
+     "id": "gba_to_take",
+     "source": "scene"
+    },
+    {
+     "id": "mama_mother",
+     "source": "scene"
+    },
+    {
+     "id": "egbon_older_sibling",
+     "source": "curriculum"
+    },
+    {
+     "id": "oba_king",
+     "source": "scene"
+    },
+    {
+     "id": "agba_adult",
+     "source": "curriculum"
+    },
+    {
+     "id": "omo_mi_my_baby",
+     "source": "scene"
+    },
+    {
+     "id": "alejo_guest",
+     "source": "scene"
+    },
+    {
+     "id": "kekere_small",
+     "source": "scene"
+    }
+   ],
+   "waiting": [
+    "ran_send",
+    "omo_daadaa_good_child"
+   ],
+   "meetings": [
+    {
+     "id": "family.m1",
+     "newWords": [
+      "gba_to_take",
+      "mama_mother",
+      "egbon_older_sibling",
+      "oba_king"
+     ],
+     "review": [
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "irun_hair",
+      "eyin_tooth",
+      "nu_u_cleanit",
+      "so_o_nu_throw_away",
+      "dii_mu_hold",
+      "pepeye_duck",
+      "adiye_chicken",
+      "fi_sile_leave_it",
+      "oyiya_comb",
+      "igbe_feces",
+      "o_doti_dirty",
+      "ehoro_rabbit",
+      "kelekele_gently",
+      "ounje_food",
+      "ya_comb",
+      "ofuurufu_sky",
+      "gba_sweep",
+      "ifoyin_toothbrush",
+      "inura_towel",
+      "digi_mirror",
+      "ibusun_bed",
+      "esin_horse",
+      "wara_milk"
+     ],
+     "stones": [
+      {
+       "id": "family.m1.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": []
+      },
+      {
+       "id": "family.m1.2",
+       "game": "helper",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "nu_u_cleanit",
+        "so_o_nu_throw_away",
+        "dii_mu_hold"
+       ],
+       "review": []
+      },
+      {
+       "id": "family.m1.3",
+       "game": "visit",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "mama_mother",
+        "oba_king"
+       ],
+       "review": [
+        "pepeye_duck",
+        "adiye_chicken"
+       ]
+      },
+      {
+       "id": "family.m1.4",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "egbon_older_sibling"
+       ],
+       "review": [
+        "fi_sile_leave_it",
+        "oyiya_comb",
+        "igbe_feces",
+        "o_doti_dirty",
+        "ehoro_rabbit",
+        "kelekele_gently",
+        "ounje_food"
+       ]
+      },
+      {
+       "id": "family.m1.5",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "gba_to_take"
+       ],
+       "review": [
+        "ya_comb",
+        "ofuurufu_sky",
+        "gba_sweep",
+        "ifoyin_toothbrush",
+        "inura_towel",
+        "digi_mirror",
+        "ibusun_bed"
+       ]
+      },
+      {
+       "id": "family.m1.6",
+       "game": "yard",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "mama_mother",
+        "oba_king"
+       ],
+       "review": [
+        "esin_horse"
+       ]
+      },
+      {
+       "id": "family.m1.7",
+       "game": "rally",
+       "mode": "sequence",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "mama_mother",
+        "egbon_older_sibling"
+       ],
+       "review": [
+        "wara_milk"
+       ]
+      },
+      {
+       "id": "family.m1.8",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "gba_to_take",
+        "gba_sweep"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "gba_to_take",
+         "gba_sweep"
+        ]
+       ]
+      },
+      {
+       "id": "family.m1.9",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "gba_to_take",
+        "mama_mother",
+        "egbon_older_sibling",
+        "oba_king"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "family.m2",
+     "newWords": [
+      "agba_adult",
+      "omo_mi_my_baby",
+      "alejo_guest",
+      "kekere_small"
+     ],
+     "review": [
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "irun_hair",
+      "eyin_tooth",
+      "egbon_older_sibling",
+      "oba_king",
+      "maluu_cow",
+      "mama_mother",
+      "fi_sile_leave_it",
+      "oyiya_comb",
+      "igbe_feces",
+      "o_doti_dirty",
+      "elede_pig",
+      "ketekete_donkey",
+      "esinsin_fly",
+      "gba_to_take",
+      "ya_comb",
+      "ile_home",
+      "se_to_do",
+      "ogede_banana",
+      "sibi_spoon",
+      "wo_to_look",
+      "patewo_clap",
+      "ebi_hunger",
+      "gege_pencil",
+      "aja_dog",
+      "sokoto_pants",
+      "bata_shoe",
+      "jokoo_sit",
+      "baluwe_bathroom",
+      "lo_go",
+      "ori_head"
+     ],
+     "stones": [
+      {
+       "id": "family.m2.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": []
+      },
+      {
+       "id": "family.m2.2",
+       "game": "visit",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "omo_mi_my_baby"
+       ],
+       "review": [
+        "egbon_older_sibling",
+        "oba_king",
+        "maluu_cow"
+       ]
+      },
+      {
+       "id": "family.m2.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "kekere_small"
+       ],
+       "review": [
+        "mama_mother",
+        "fi_sile_leave_it",
+        "oyiya_comb",
+        "igbe_feces",
+        "o_doti_dirty",
+        "elede_pig",
+        "ketekete_donkey"
+       ]
+      },
+      {
+       "id": "family.m2.4",
+       "game": "yard",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "agba_adult",
+        "alejo_guest"
+       ],
+       "review": [
+        "esinsin_fly"
+       ]
+      },
+      {
+       "id": "family.m2.5",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "omo_mi_my_baby"
+       ],
+       "review": [
+        "gba_to_take",
+        "ya_comb",
+        "ile_home",
+        "se_to_do",
+        "ogede_banana",
+        "sibi_spoon",
+        "wo_to_look"
+       ]
+      },
+      {
+       "id": "family.m2.6",
+       "game": "rally",
+       "mode": "syllables",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "kekere_small"
+       ],
+       "review": [
+        "patewo_clap",
+        "ebi_hunger",
+        "gege_pencil",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe",
+        "jokoo_sit"
+       ]
+      },
+      {
+       "id": "family.m2.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "omo_mi_my_baby"
+       ],
+       "review": [
+        "baluwe_bathroom",
+        "lo_go",
+        "ori_head"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "body2",
+   "yo": "Ara Mi",
+   "en": "My body, again",
+   "art": "body",
+   "words": [
+    {
+     "id": "ra_crawl",
+     "source": "scene"
+    },
+    {
+     "id": "orun_neck",
+     "source": "scene"
+    },
+    {
+     "id": "ikun_stomach",
+     "source": "scene"
+    },
+    {
+     "id": "ejika_shoulder",
+     "source": "scene"
+    },
+    {
+     "id": "atelewo_palm",
+     "source": "scene"
+    },
+    {
+     "id": "orunkun_knee",
+     "source": "scene"
+    },
+    {
+     "id": "eyin_back",
+     "source": "scene"
+    },
+    {
+     "id": "ete_lip",
+     "source": "scene"
+    },
+    {
+     "id": "aya_chest",
+     "source": "scene"
+    },
+    {
+     "id": "eekanna_nail",
+     "source": "scene"
+    },
+    {
+     "id": "itan_thigh",
+     "source": "scene"
+    },
+    {
+     "id": "idodo_navel",
+     "source": "scene"
+    }
+   ],
+   "waiting": [],
+   "meetings": [
+    {
+     "id": "body2.m1",
+     "newWords": [
+      "ra_crawl",
+      "orun_neck",
+      "ikun_stomach",
+      "ejika_shoulder"
+     ],
+     "review": [
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "irun_hair",
+      "eyin_tooth",
+      "omo_mi_my_baby",
+      "gba_to_take",
+      "egbon_older_sibling"
+     ],
+     "stones": [
+      {
+       "id": "body2.m1.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear",
+        "irun_hair",
+        "eyin_tooth"
+       ],
+       "review": []
+      },
+      {
+       "id": "body2.m1.2",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "orun_neck",
+        "ikun_stomach",
+        "ejika_shoulder"
+       ],
+       "review": []
+      },
+      {
+       "id": "body2.m1.3",
+       "game": "parrot",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ra_crawl"
+       ],
+       "review": [
+        "omo_mi_my_baby",
+        "gba_to_take",
+        "egbon_older_sibling"
+       ]
+      },
+      {
+       "id": "body2.m1.4",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "mu_to_drink",
+        "mu_take"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "mu_to_drink",
+         "mu_take"
+        ]
+       ]
+      },
+      {
+       "id": "body2.m1.5",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "gba_to_take",
+        "gba_sweep"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "gba_to_take",
+         "gba_sweep"
+        ]
+       ]
+      },
+      {
+       "id": "body2.m1.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ra_crawl",
+        "orun_neck",
+        "ikun_stomach",
+        "ejika_shoulder"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "body2.m2",
+     "newWords": [
+      "atelewo_palm",
+      "orunkun_knee",
+      "eyin_back",
+      "ete_lip"
+     ],
+     "review": [
+      "agba_adult",
+      "alejo_guest",
+      "oba_king",
+      "oyiya_comb",
+      "kekere_small",
+      "mama_mother",
+      "fi_sile_leave_it",
+      "egbon_older_sibling",
+      "abo_plate",
+      "mu_omi_drink_water",
+      "ma_sunkun_not_cry",
+      "orun_neck",
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "irun_hair",
+      "eyin_tooth"
+     ],
+     "stones": [
+      {
+       "id": "body2.m2.1",
+       "game": "yard",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "agba_adult",
+        "alejo_guest",
+        "oba_king"
+       ],
+       "review": []
+      },
+      {
+       "id": "body2.m2.2",
+       "game": "together",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "atelewo_palm"
+       ],
+       "review": [
+        "oyiya_comb"
+       ]
+      },
+      {
+       "id": "body2.m2.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "orunkun_knee"
+       ],
+       "review": [
+        "kekere_small",
+        "mama_mother",
+        "fi_sile_leave_it",
+        "egbon_older_sibling",
+        "abo_plate",
+        "mu_omi_drink_water",
+        "ma_sunkun_not_cry"
+       ]
+      },
+      {
+       "id": "body2.m2.4",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "eyin_back",
+        "ete_lip"
+       ],
+       "review": [
+        "orun_neck"
+       ]
+      },
+      {
+       "id": "body2.m2.5",
+       "game": "giant",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "atelewo_palm",
+        "orunkun_knee"
+       ],
+       "review": [
+        "oju_eye",
+        "ese_leg",
+        "eti_ear",
+        "irun_hair",
+        "eyin_tooth"
+       ]
+      },
+      {
+       "id": "body2.m2.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "atelewo_palm",
+        "orunkun_knee",
+        "eyin_back",
+        "ete_lip"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "body2.m3",
+     "newWords": [
+      "aya_chest",
+      "eekanna_nail",
+      "itan_thigh",
+      "idodo_navel"
+     ],
+     "review": [
+      "ra_crawl",
+      "ikun_stomach",
+      "ejika_shoulder",
+      "atelewo_palm",
+      "orunkun_knee",
+      "oju_eye",
+      "ese_leg"
+     ],
+     "stones": [
+      {
+       "id": "body2.m3.1",
+       "game": "parrot",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ra_crawl",
+        "ikun_stomach",
+        "ejika_shoulder",
+        "atelewo_palm"
+       ],
+       "review": []
+      },
+      {
+       "id": "body2.m3.2",
+       "game": "giant",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "aya_chest",
+        "eekanna_nail",
+        "itan_thigh",
+        "idodo_navel"
+       ],
+       "review": [
+        "orunkun_knee",
+        "oju_eye",
+        "ese_leg"
+       ]
+      },
+      {
+       "id": "body2.m3.3",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "aya_chest",
+        "eekanna_nail",
+        "itan_thigh",
+        "idodo_navel"
+       ],
+       "review": []
+      },
+      {
+       "id": "body2.m3.4",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "aya_chest",
+        "eekanna_nail",
+        "itan_thigh",
+        "idodo_navel"
+       ],
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home",
+   "yo": "Ilé àti Ilé Ìdáná",
+   "en": "At home, and the kitchen",
+   "art": "home",
+   "words": [
+    {
+     "id": "ru_carry",
+     "source": "scene"
+    },
+    {
+     "id": "aga_chair",
+     "source": "curriculum"
+    },
+    {
+     "id": "yara_room",
+     "source": "scene"
+    },
+    {
+     "id": "ina_fire",
+     "source": "curriculum"
+    },
+    {
+     "id": "redio_radio",
+     "source": "scene"
+    },
+    {
+     "id": "ikoko_pot",
+     "source": "curriculum"
+    },
+    {
+     "id": "dana_cook",
+     "source": "curriculum"
+    },
+    {
+     "id": "pana_extinguish_fire",
+     "source": "curriculum"
+    },
+    {
+     "id": "o_ti_to_enough",
+     "source": "curriculum"
+    },
+    {
+     "id": "idana_cooking",
+     "source": "curriculum"
+    },
+    {
+     "id": "ile_idana_kitchen",
+     "source": "curriculum"
+    },
+    {
+     "id": "yara_igbalejo_living_room",
+     "source": "scene"
+    },
+    {
+     "id": "tabili_table",
+     "source": "curriculum"
+    },
+    {
+     "id": "irori_pillow",
+     "source": "curriculum"
+    },
+    {
+     "id": "ile_land",
+     "source": "curriculum"
+    }
+   ],
+   "waiting": [
+    "te_press",
+    "kun_growl",
+    "ni_at",
+    "nle_at_home"
+   ],
+   "meetings": [
+    {
+     "id": "home.m1",
+     "newWords": [
+      "ru_carry",
+      "aga_chair",
+      "yara_room",
+      "ina_fire"
+     ],
+     "review": [
+      "eyin_back",
+      "ete_lip",
+      "aya_chest",
+      "nu_u_cleanit",
+      "so_o_nu_throw_away",
+      "omo_mi_my_baby",
+      "atelewo_palm",
+      "orunkun_knee",
+      "gba_to_take",
+      "dii_mu_hold",
+      "ijapa_tortoise",
+      "rerin-in_laugh",
+      "aye_world",
+      "erin_elephant"
+     ],
+     "stones": [
+      {
+       "id": "home.m1.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "eyin_back",
+        "ete_lip",
+        "aya_chest"
+       ],
+       "review": []
+      },
+      {
+       "id": "home.m1.2",
+       "game": "helper",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "nu_u_cleanit",
+        "so_o_nu_throw_away"
+       ],
+       "review": []
+      },
+      {
+       "id": "home.m1.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ru_carry",
+        "aga_chair",
+        "yara_room",
+        "ina_fire"
+       ],
+       "review": [
+        "omo_mi_my_baby",
+        "atelewo_palm",
+        "orunkun_knee",
+        "gba_to_take"
+       ]
+      },
+      {
+       "id": "home.m1.4",
+       "game": "train",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "yara_room"
+       ],
+       "review": [
+        "dii_mu_hold",
+        "ijapa_tortoise",
+        "rerin-in_laugh",
+        "aye_world",
+        "erin_elephant"
+       ]
+      },
+      {
+       "id": "home.m1.5",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ru_carry",
+        "aga_chair",
+        "yara_room",
+        "ina_fire"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "home.m2",
+     "newWords": [
+      "redio_radio",
+      "ikoko_pot",
+      "dana_cook",
+      "pana_extinguish_fire"
+     ],
+     "review": [
+      "eekanna_nail",
+      "itan_thigh",
+      "idodo_navel",
+      "aya_chest",
+      "atelewo_palm",
+      "orunkun_knee",
+      "eti_ear",
+      "aga_chair",
+      "mama_mother",
+      "aso_cloth",
+      "yara_room",
+      "kekere_small",
+      "omo_mi_my_baby",
+      "ile-iwe_school",
+      "o_se_thank_you",
+      "iresi_rice",
+      "ru_carry",
+      "ina_fire",
+      "oba_king",
+      "rin_to_walk",
+      "dii_mu_hold",
+      "sunkun_weep",
+      "doti_dirty",
+      "wara_milk",
+      "aja_dog"
+     ],
+     "stones": [
+      {
+       "id": "home.m2.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "eekanna_nail",
+        "itan_thigh",
+        "idodo_navel",
+        "aya_chest",
+        "atelewo_palm",
+        "orunkun_knee",
+        "eti_ear"
+       ],
+       "review": []
+      },
+      {
+       "id": "home.m2.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "redio_radio",
+        "ikoko_pot"
+       ],
+       "review": [
+        "aga_chair",
+        "mama_mother",
+        "aso_cloth"
+       ]
+      },
+      {
+       "id": "home.m2.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "dana_cook",
+        "pana_extinguish_fire"
+       ],
+       "review": [
+        "yara_room",
+        "kekere_small",
+        "omo_mi_my_baby",
+        "ile-iwe_school",
+        "o_se_thank_you",
+        "iresi_rice"
+       ]
+      },
+      {
+       "id": "home.m2.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "redio_radio",
+        "ikoko_pot",
+        "dana_cook",
+        "pana_extinguish_fire"
+       ],
+       "review": [
+        "ru_carry",
+        "ina_fire",
+        "oba_king",
+        "rin_to_walk"
+       ]
+      },
+      {
+       "id": "home.m2.5",
+       "game": "river",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "pana_extinguish_fire"
+       ],
+       "review": [
+        "dii_mu_hold",
+        "sunkun_weep",
+        "doti_dirty",
+        "wara_milk",
+        "aja_dog"
+       ]
+      },
+      {
+       "id": "home.m2.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "redio_radio",
+        "ikoko_pot",
+        "dana_cook",
+        "pana_extinguish_fire"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "home.m3",
+     "newWords": [
+      "o_ti_to_enough",
+      "idana_cooking",
+      "yara_igbalejo_living_room",
+      "tabili_table"
+     ],
+     "review": [
+      "pele_sorry",
+      "ebi_n_pa_e_you_hungry",
+      "o_doti_dirty",
+      "o_se_thank_you",
+      "oyiya_comb",
+      "atelewo_palm",
+      "dana_cook",
+      "pana_extinguish_fire",
+      "aga_chair",
+      "yara_room",
+      "kekere_small",
+      "isu_yam",
+      "redio_radio",
+      "ikoko_pot",
+      "ru_carry",
+      "ina_fire",
+      "sun_to_cry",
+      "ro_think",
+      "sokoto_pants",
+      "bata_shoe",
+      "jokoo_sit",
+      "patewo_clap",
+      "ebi_hunger",
+      "orun_neck",
+      "ra_crawl",
+      "ikun_stomach"
+     ],
+     "stones": [
+      {
+       "id": "home.m3.1",
+       "game": "say",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "pele_sorry",
+        "ebi_n_pa_e_you_hungry",
+        "o_doti_dirty",
+        "o_se_thank_you"
+       ],
+       "review": []
+      },
+      {
+       "id": "home.m3.2",
+       "game": "together",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "idana_cooking"
+       ],
+       "review": [
+        "oyiya_comb",
+        "atelewo_palm"
+       ]
+      },
+      {
+       "id": "home.m3.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "o_ti_to_enough",
+        "tabili_table"
+       ],
+       "review": [
+        "dana_cook",
+        "pana_extinguish_fire",
+        "aga_chair",
+        "yara_room",
+        "kekere_small",
+        "isu_yam"
+       ]
+      },
+      {
+       "id": "home.m3.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "yara_igbalejo_living_room"
+       ],
+       "review": [
+        "yara_room",
+        "redio_radio",
+        "ikoko_pot",
+        "ru_carry",
+        "ina_fire",
+        "sun_to_cry",
+        "ro_think"
+       ]
+      },
+      {
+       "id": "home.m3.5",
+       "game": "train",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "idana_cooking"
+       ],
+       "review": [
+        "sokoto_pants",
+        "bata_shoe",
+        "jokoo_sit",
+        "patewo_clap",
+        "ebi_hunger"
+       ]
+      },
+      {
+       "id": "home.m3.6",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "gba_to_take",
+        "gba_sweep"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "gba_to_take",
+         "gba_sweep"
+        ]
+       ]
+      },
+      {
+       "id": "home.m3.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "yara_igbalejo_living_room"
+       ],
+       "review": [
+        "orun_neck",
+        "ra_crawl",
+        "ikun_stomach"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "home.m4",
+     "newWords": [
+      "ile_idana_kitchen",
+      "irori_pillow",
+      "ile_land"
+     ],
+     "review": [
+      "ile_home",
+      "ori_head",
+      "ejika_shoulder",
+      "ma_fowo_kan_an_no_touch",
+      "agba_adult",
+      "alejo_guest",
+      "idana_cooking",
+      "oyiya_comb",
+      "o_ti_to_enough",
+      "tabili_table",
+      "dana_cook",
+      "pana_extinguish_fire",
+      "fun_mi_give_me",
+      "aga_chair",
+      "yara_igbalejo_living_room",
+      "redio_radio",
+      "ikoko_pot",
+      "kan_touch",
+      "gbo_to_bark",
+      "pa_kill",
+      "yara_room",
+      "gege_pencil",
+      "owo_hand",
+      "sare_run"
+     ],
+     "stones": [
+      {
+       "id": "home.m4.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ile_home",
+        "ori_head",
+        "ejika_shoulder"
+       ],
+       "review": []
+      },
+      {
+       "id": "home.m4.2",
+       "game": "helper",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "ma_fowo_kan_an_no_touch"
+       ],
+       "review": []
+      },
+      {
+       "id": "home.m4.3",
+       "game": "yard",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "agba_adult",
+        "alejo_guest"
+       ],
+       "review": []
+      },
+      {
+       "id": "home.m4.4",
+       "game": "together",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ile_idana_kitchen"
+       ],
+       "review": [
+        "idana_cooking",
+        "oyiya_comb"
+       ]
+      },
+      {
+       "id": "home.m4.5",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "irori_pillow",
+        "ile_land"
+       ],
+       "review": [
+        "o_ti_to_enough",
+        "tabili_table",
+        "dana_cook",
+        "pana_extinguish_fire",
+        "fun_mi_give_me",
+        "aga_chair"
+       ]
+      },
+      {
+       "id": "home.m4.6",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "ile_idana_kitchen",
+        "ile_land"
+       ],
+       "review": [
+        "yara_igbalejo_living_room",
+        "redio_radio",
+        "ikoko_pot",
+        "kan_touch",
+        "gbo_to_bark",
+        "pa_kill"
+       ]
+      },
+      {
+       "id": "home.m4.7",
+       "game": "rally",
+       "mode": "sequence",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "ile_land"
+       ],
+       "review": [
+        "yara_room",
+        "gege_pencil"
+       ]
+      },
+      {
+       "id": "home.m4.8",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ile_idana_kitchen",
+        "ile_land"
+       ],
+       "review": [
+        "owo_hand",
+        "sare_run"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "home.understand",
+     "newWords": [],
+     "review": [
+      "osan_orange",
+      "buredi_bread",
+      "ewa_beans",
+      "ose_soap"
+     ],
+     "stones": [
+      {
+       "id": "home.understand.1",
+       "game": "errand",
+       "job": "apply",
+       "level": 3,
+       "focus": [
+        "redio_radio",
+        "ikoko_pot"
+       ],
+       "review": [
+        "osan_orange",
+        "buredi_bread",
+        "ewa_beans",
+        "ose_soap"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "meal2",
+   "yo": "Oúnjẹ",
+   "en": "Mealtime, again: the market",
+   "art": "meal",
+   "words": [
+    {
+     "id": "ra_buy",
+     "source": "scene"
+    },
+    {
+     "id": "oja_market",
+     "source": "scene"
+    },
+    {
+     "id": "owo_money",
+     "source": "scene"
+    },
+    {
+     "id": "iyan_pounded_yam",
+     "source": "scene"
+    },
+    {
+     "id": "amala_amala",
+     "source": "scene"
+    },
+    {
+     "id": "awo_plate",
+     "source": "scene"
+    },
+    {
+     "id": "akara_oyinbo_cake",
+     "source": "scene"
+    },
+    {
+     "id": "ibepe_papaya",
+     "source": "scene"
+    },
+    {
+     "id": "alubosa_onion",
+     "source": "scene"
+    },
+    {
+     "id": "obe_knife",
+     "source": "scene"
+    },
+    {
+     "id": "o_gbona_hot",
+     "source": "scene"
+    },
+    {
+     "id": "kasu_cashew",
+     "source": "scene"
+    },
+    {
+     "id": "goomu_gum",
+     "source": "scene"
+    },
+    {
+     "id": "ewuro_bitterleaf",
+     "source": "scene"
+    },
+    {
+     "id": "oka_grain",
+     "source": "scene"
+    },
+    {
+     "id": "oka_baba_sorghum",
+     "source": "scene"
+    },
+    {
+     "id": "ogede_agbagba_plantain",
+     "source": "scene"
+    }
+   ],
+   "waiting": [],
+   "meetings": [
+    {
+     "id": "meal2.m1",
+     "newWords": [
+      "ra_buy",
+      "oja_market",
+      "owo_money",
+      "iyan_pounded_yam"
+     ],
+     "review": [
+      "eyin_back",
+      "ete_lip",
+      "ile_land",
+      "irori_pillow",
+      "ibusun_bed",
+      "adiye_chicken",
+      "ifoyin_toothbrush",
+      "inura_towel",
+      "ile_idana_kitchen",
+      "yara_igbalejo_living_room",
+      "sun_to_sleep",
+      "we_to_bathe",
+      "osupa_moon",
+      "ogede_banana",
+      "iresi_rice",
+      "isu_yam",
+      "idana_cooking",
+      "ru_carry",
+      "di_bind",
+      "nu_clean",
+      "pana_extinguish_fire",
+      "wo_to_look",
+      "ya_comb"
+     ],
+     "stones": [
+      {
+       "id": "meal2.m1.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "eyin_back",
+        "ete_lip",
+        "ile_land"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.m1.2",
+       "game": "stretchy",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "irori_pillow"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.m1.3",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "iyan_pounded_yam"
+       ],
+       "review": [
+        "ibusun_bed",
+        "adiye_chicken",
+        "ifoyin_toothbrush",
+        "inura_towel"
+       ]
+      },
+      {
+       "id": "meal2.m1.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ra_buy",
+        "oja_market",
+        "owo_money"
+       ],
+       "review": [
+        "ile_idana_kitchen",
+        "yara_igbalejo_living_room",
+        "sun_to_sleep",
+        "we_to_bathe",
+        "osupa_moon"
+       ]
+      },
+      {
+       "id": "meal2.m1.5",
+       "game": "hungry",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "iyan_pounded_yam"
+       ],
+       "review": [
+        "ogede_banana",
+        "iresi_rice",
+        "isu_yam"
+       ]
+      },
+      {
+       "id": "meal2.m1.6",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "ra_buy"
+       ],
+       "review": [
+        "idana_cooking",
+        "ru_carry",
+        "di_bind",
+        "nu_clean",
+        "pana_extinguish_fire",
+        "wo_to_look",
+        "ya_comb"
+       ]
+      },
+      {
+       "id": "meal2.m1.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ra_buy",
+        "oja_market",
+        "owo_money",
+        "iyan_pounded_yam"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "meal2.m2",
+     "newWords": [
+      "amala_amala",
+      "awo_plate",
+      "akara_oyinbo_cake",
+      "ibepe_papaya"
+     ],
+     "review": [
+      "eekanna_nail",
+      "itan_thigh",
+      "idodo_navel",
+      "aya_chest",
+      "irun_hair",
+      "eyin_tooth",
+      "oju_eye",
+      "baluwe_bathroom",
+      "iyan_pounded_yam",
+      "digi_mirror",
+      "sibi_spoon",
+      "aja_dog",
+      "aso_cloth",
+      "ra_buy",
+      "oja_market",
+      "owo_money",
+      "ile_idana_kitchen",
+      "ile_land"
+     ],
+     "stones": [
+      {
+       "id": "meal2.m2.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "eekanna_nail",
+        "itan_thigh",
+        "idodo_navel",
+        "aya_chest",
+        "irun_hair",
+        "eyin_tooth",
+        "oju_eye"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.m2.2",
+       "game": "fish",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "baluwe_bathroom"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.m2.3",
+       "game": "hungry",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "amala_amala",
+        "akara_oyinbo_cake",
+        "ibepe_papaya"
+       ],
+       "review": [
+        "iyan_pounded_yam"
+       ]
+      },
+      {
+       "id": "meal2.m2.4",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "awo_plate"
+       ],
+       "review": [
+        "digi_mirror",
+        "sibi_spoon",
+        "aja_dog",
+        "aso_cloth"
+       ]
+      },
+      {
+       "id": "meal2.m2.5",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "amala_amala",
+        "akara_oyinbo_cake",
+        "ibepe_papaya"
+       ],
+       "review": [
+        "ra_buy",
+        "oja_market",
+        "owo_money",
+        "ile_idana_kitchen",
+        "ile_land"
+       ]
+      },
+      {
+       "id": "meal2.m2.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "amala_amala",
+        "awo_plate",
+        "akara_oyinbo_cake",
+        "ibepe_papaya"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "meal2.m3",
+     "newWords": [
+      "alubosa_onion",
+      "obe_knife",
+      "o_gbona_hot",
+      "kasu_cashew"
+     ],
+     "review": [
+      "eekanna_nail",
+      "itan_thigh",
+      "idodo_navel",
+      "ese_leg",
+      "eti_ear",
+      "orunkun_knee",
+      "atelewo_palm",
+      "o_ti_to_enough",
+      "tabili_table",
+      "amala_amala",
+      "irori_pillow",
+      "owo_money",
+      "iyan_pounded_yam",
+      "jeun_eat",
+      "awo_plate",
+      "mama_mother",
+      "sokoto_pants",
+      "bata_shoe",
+      "akara_oyinbo_cake",
+      "ibepe_papaya",
+      "o_se_thank_you",
+      "ebi_n_pa_e_you_hungry",
+      "pele_sorry",
+      "o_doti_dirty",
+      "enu_mouth",
+      "imu_nose"
+     ],
+     "stones": [
+      {
+       "id": "meal2.m3.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "eekanna_nail",
+        "itan_thigh",
+        "idodo_navel",
+        "ese_leg",
+        "eti_ear",
+        "orunkun_knee",
+        "atelewo_palm"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.m3.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "o_gbona_hot"
+       ],
+       "review": [
+        "o_ti_to_enough",
+        "tabili_table",
+        "amala_amala",
+        "irori_pillow",
+        "owo_money",
+        "iyan_pounded_yam",
+        "jeun_eat"
+       ]
+      },
+      {
+       "id": "meal2.m3.3",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "obe_knife"
+       ],
+       "review": [
+        "awo_plate",
+        "mama_mother",
+        "sokoto_pants",
+        "bata_shoe"
+       ]
+      },
+      {
+       "id": "meal2.m3.4",
+       "game": "hungry",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "alubosa_onion",
+        "kasu_cashew"
+       ],
+       "review": [
+        "akara_oyinbo_cake",
+        "ibepe_papaya"
+       ]
+      },
+      {
+       "id": "meal2.m3.5",
+       "game": "say",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "o_gbona_hot"
+       ],
+       "review": [
+        "o_se_thank_you",
+        "ebi_n_pa_e_you_hungry",
+        "pele_sorry",
+        "o_doti_dirty",
+        "o_ti_to_enough"
+       ]
+      },
+      {
+       "id": "meal2.m3.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "alubosa_onion",
+        "obe_knife"
+       ],
+       "review": [
+        "enu_mouth",
+        "imu_nose"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "meal2.m4",
+     "newWords": [
+      "goomu_gum",
+      "ewuro_bitterleaf",
+      "oka_grain",
+      "ogede_agbagba_plantain"
+     ],
+     "review": [
+      "ogede_banana",
+      "alubosa_onion",
+      "obe_knife",
+      "ra_buy",
+      "oja_market",
+      "irawo_star",
+      "ina_fire",
+      "idana_cooking",
+      "igbe_feces",
+      "ile_land",
+      "egbon_older_sibling",
+      "ijapa_tortoise",
+      "erin_elephant",
+      "rerin-in_laugh"
+     ],
+     "stones": [
+      {
+       "id": "meal2.m4.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ogede_banana",
+        "alubosa_onion",
+        "obe_knife"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.m4.2",
+       "game": "hungry",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "goomu_gum",
+        "ewuro_bitterleaf",
+        "oka_grain",
+        "ogede_agbagba_plantain"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.m4.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "goomu_gum",
+        "ewuro_bitterleaf",
+        "oka_grain",
+        "ogede_agbagba_plantain"
+       ],
+       "review": [
+        "ra_buy",
+        "oja_market",
+        "irawo_star",
+        "ina_fire"
+       ]
+      },
+      {
+       "id": "meal2.m4.4",
+       "game": "rally",
+       "mode": "syllables",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "oka_grain"
+       ],
+       "review": [
+        "idana_cooking",
+        "igbe_feces",
+        "ile_land",
+        "egbon_older_sibling",
+        "ijapa_tortoise",
+        "erin_elephant",
+        "rerin-in_laugh"
+       ]
+      },
+      {
+       "id": "meal2.m4.5",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "goomu_gum",
+        "ewuro_bitterleaf",
+        "oka_grain",
+        "ogede_agbagba_plantain"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "meal2.m5",
+     "newWords": [
+      "oka_baba_sorghum"
+     ],
+     "review": [
+      "oka_grain",
+      "kasu_cashew",
+      "goomu_gum",
+      "ewuro_bitterleaf",
+      "o_gbona_hot",
+      "amala_amala",
+      "dana_cook",
+      "ounje_food",
+      "ehoro_rabbit",
+      "kelekele_gently",
+      "elede_pig",
+      "ogede_agbagba_plantain",
+      "akara_oyinbo_cake",
+      "ibepe_papaya",
+      "so_throw",
+      "alubosa_onion",
+      "obe_knife",
+      "ofuurufu_sky",
+      "mu_to_drink",
+      "mu_take",
+      "mu_omi_drink_water",
+      "ma_sunkun_not_cry",
+      "ra_buy",
+      "aye_world",
+      "wara_milk",
+      "ejo_snake",
+      "alangba_lizard",
+      "eye_bird"
+     ],
+     "stones": [
+      {
+       "id": "meal2.m5.1",
+       "game": "hungry",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "oka_grain",
+        "kasu_cashew",
+        "goomu_gum",
+        "ewuro_bitterleaf"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.m5.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "oka_baba_sorghum"
+       ],
+       "review": [
+        "o_gbona_hot",
+        "amala_amala",
+        "dana_cook",
+        "ounje_food",
+        "ehoro_rabbit",
+        "kelekele_gently",
+        "elede_pig"
+       ]
+      },
+      {
+       "id": "meal2.m5.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "oka_baba_sorghum"
+       ],
+       "review": [
+        "ogede_agbagba_plantain",
+        "akara_oyinbo_cake",
+        "ibepe_papaya",
+        "so_throw",
+        "alubosa_onion",
+        "obe_knife",
+        "ofuurufu_sky"
+       ]
+      },
+      {
+       "id": "meal2.m5.4",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "oka_baba_sorghum"
+       ],
+       "review": [
+        "mu_to_drink",
+        "mu_take",
+        "mu_omi_drink_water",
+        "ma_sunkun_not_cry",
+        "ra_buy",
+        "aye_world",
+        "wara_milk"
+       ]
+      },
+      {
+       "id": "meal2.m5.5",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "oka_baba_sorghum"
+       ],
+       "review": [
+        "ejo_snake",
+        "alangba_lizard",
+        "eye_bird"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "meal2.understand",
+     "newWords": [],
+     "review": [
+      "nu_u_cleanit",
+      "so_o_nu_throw_away",
+      "pepeye_duck",
+      "esin_horse"
+     ],
+     "stones": [
+      {
+       "id": "meal2.understand.1",
+       "game": "helper",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "nu_u_cleanit",
+        "so_o_nu_throw_away"
+       ],
+       "review": []
+      },
+      {
+       "id": "meal2.understand.2",
+       "game": "sort",
+       "job": "apply",
+       "level": 2,
+       "focus": [
+        "iyan_pounded_yam",
+        "akara_oyinbo_cake",
+        "ibepe_papaya",
+        "alubosa_onion",
+        "kasu_cashew",
+        "goomu_gum",
+        "ewuro_bitterleaf",
+        "ogede_agbagba_plantain"
+       ],
+       "review": [
+        "pepeye_duck",
+        "esin_horse"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "play",
+   "yo": "Ìṣeré",
+   "en": "Play and outdoors",
+   "art": "play",
+   "words": [
+    {
+     "id": "luwe_swim",
+     "source": "scene"
+    },
+    {
+     "id": "boolu_ball",
+     "source": "curriculum"
+    },
+    {
+     "id": "ere_game",
+     "source": "curriculum"
+    },
+    {
+     "id": "isere_toy",
+     "source": "scene"
+    },
+    {
+     "id": "keke_bicycle",
+     "source": "scene"
+    },
+    {
+     "id": "moto_automobile",
+     "source": "scene"
+    },
+    {
+     "id": "alupupu_motorcycle",
+     "source": "scene"
+    },
+    {
+     "id": "oko_panapana_firetruck",
+     "source": "scene"
+    },
+    {
+     "id": "okuta_stone",
+     "source": "scene"
+    },
+    {
+     "id": "ewe_leaf",
+     "source": "scene"
+    },
+    {
+     "id": "igbo_forest",
+     "source": "scene"
+    },
+    {
+     "id": "fila_hat",
+     "source": "scene"
+    },
+    {
+     "id": "ileke_beads",
+     "source": "scene"
+    }
+   ],
+   "waiting": [
+    "sere_play",
+    "ja_to_pluck_off",
+    "ewa_beauty"
+   ],
+   "meetings": [
+    {
+     "id": "play.m1",
+     "newWords": [
+      "luwe_swim",
+      "boolu_ball",
+      "ere_game",
+      "isere_toy"
+     ],
+     "review": [
+      "oka_baba_sorghum",
+      "amala_amala",
+      "kasu_cashew",
+      "goomu_gum",
+      "awo_plate",
+      "obe_knife",
+      "gege_pencil",
+      "aga_chair",
+      "o_gbona_hot",
+      "oka_grain",
+      "ketekete_donkey",
+      "o_ti_to_enough",
+      "tabili_table",
+      "irori_pillow",
+      "yara_igbalejo_living_room",
+      "se_to_do",
+      "maluu_cow",
+      "esinsin_fly",
+      "ile_idana_kitchen",
+      "owo_money",
+      "abo_plate",
+      "orun_neck",
+      "sunkun_weep",
+      "doti_dirty",
+      "dii_mu_hold",
+      "jokoo_sit",
+      "ra_crawl"
+     ],
+     "stones": [
+      {
+       "id": "play.m1.1",
+       "game": "hungry",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "oka_baba_sorghum",
+        "amala_amala",
+        "kasu_cashew",
+        "goomu_gum"
+       ],
+       "review": []
+      },
+      {
+       "id": "play.m1.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "isere_toy"
+       ],
+       "review": [
+        "awo_plate",
+        "obe_knife",
+        "gege_pencil",
+        "aga_chair"
+       ]
+      },
+      {
+       "id": "play.m1.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "luwe_swim",
+        "ere_game"
+       ],
+       "review": [
+        "o_gbona_hot",
+        "oka_grain",
+        "ketekete_donkey",
+        "o_ti_to_enough",
+        "tabili_table",
+        "irori_pillow"
+       ]
+      },
+      {
+       "id": "play.m1.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "boolu_ball"
+       ],
+       "review": [
+        "yara_igbalejo_living_room",
+        "se_to_do",
+        "maluu_cow",
+        "esinsin_fly",
+        "ile_idana_kitchen",
+        "owo_money",
+        "abo_plate"
+       ]
+      },
+      {
+       "id": "play.m1.5",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "boolu_ball",
+        "isere_toy"
+       ],
+       "review": [
+        "orun_neck"
+       ]
+      },
+      {
+       "id": "play.m1.6",
+       "game": "river",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "luwe_swim",
+        "ere_game"
+       ],
+       "review": [
+        "sunkun_weep",
+        "doti_dirty",
+        "dii_mu_hold",
+        "jokoo_sit"
+       ]
+      },
+      {
+       "id": "play.m1.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "luwe_swim",
+        "boolu_ball",
+        "isere_toy"
+       ],
+       "review": [
+        "ra_crawl"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "play.m2",
+     "newWords": [
+      "keke_bicycle",
+      "moto_automobile",
+      "alupupu_motorcycle",
+      "oko_panapana_firetruck"
+     ],
+     "review": [
+      "ikun_stomach",
+      "ejika_shoulder",
+      "boolu_ball",
+      "isere_toy",
+      "luwe_swim",
+      "oka_baba_sorghum",
+      "oja_market",
+      "ewuro_bitterleaf",
+      "ere_game",
+      "oka_grain"
+     ],
+     "stones": [
+      {
+       "id": "play.m2.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ikun_stomach",
+        "ejika_shoulder",
+        "boolu_ball"
+       ],
+       "review": []
+      },
+      {
+       "id": "play.m2.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "keke_bicycle",
+        "moto_automobile",
+        "alupupu_motorcycle",
+        "oko_panapana_firetruck"
+       ],
+       "review": [
+        "isere_toy"
+       ]
+      },
+      {
+       "id": "play.m2.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "keke_bicycle",
+        "moto_automobile",
+        "alupupu_motorcycle",
+        "oko_panapana_firetruck"
+       ],
+       "review": [
+        "luwe_swim",
+        "oka_baba_sorghum",
+        "oja_market",
+        "ewuro_bitterleaf"
+       ]
+      },
+      {
+       "id": "play.m2.4",
+       "game": "rally",
+       "mode": "sequence",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "keke_bicycle"
+       ],
+       "review": [
+        "ere_game",
+        "oka_grain"
+       ]
+      },
+      {
+       "id": "play.m2.5",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "gba_to_take",
+        "gba_sweep"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "gba_to_take",
+         "gba_sweep"
+        ]
+       ]
+      },
+      {
+       "id": "play.m2.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "keke_bicycle",
+        "moto_automobile",
+        "alupupu_motorcycle",
+        "oko_panapana_firetruck"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "play.m3",
+     "newWords": [
+      "okuta_stone",
+      "ewe_leaf",
+      "igbo_forest",
+      "fila_hat"
+     ],
+     "review": [
+      "agba_adult",
+      "alejo_guest",
+      "oba_king",
+      "keke_bicycle",
+      "moto_automobile",
+      "alupupu_motorcycle",
+      "eyin_back",
+      "oko_panapana_firetruck",
+      "luwe_swim",
+      "boolu_ball",
+      "isere_toy",
+      "ogede_agbagba_plantain",
+      "rin_to_walk",
+      "ere_game",
+      "patewo_clap",
+      "ebi_hunger",
+      "oyiya_comb",
+      "yara_room"
+     ],
+     "stones": [
+      {
+       "id": "play.m3.1",
+       "game": "yard",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "agba_adult",
+        "alejo_guest",
+        "oba_king"
+       ],
+       "review": []
+      },
+      {
+       "id": "play.m3.2",
+       "game": "house",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "okuta_stone",
+        "ewe_leaf",
+        "fila_hat"
+       ],
+       "review": [
+        "keke_bicycle",
+        "moto_automobile"
+       ]
+      },
+      {
+       "id": "play.m3.3",
+       "game": "fish",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "igbo_forest"
+       ],
+       "review": [
+        "alupupu_motorcycle",
+        "eyin_back"
+       ]
+      },
+      {
+       "id": "play.m3.4",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "okuta_stone",
+        "fila_hat"
+       ],
+       "review": [
+        "oko_panapana_firetruck",
+        "luwe_swim",
+        "boolu_ball",
+        "isere_toy",
+        "ogede_agbagba_plantain",
+        "rin_to_walk"
+       ]
+      },
+      {
+       "id": "play.m3.5",
+       "game": "train",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "fila_hat"
+       ],
+       "review": [
+        "ere_game",
+        "patewo_clap",
+        "ebi_hunger",
+        "oyiya_comb",
+        "yara_room"
+       ]
+      },
+      {
+       "id": "play.m3.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "okuta_stone",
+        "ewe_leaf",
+        "igbo_forest",
+        "fila_hat"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "play.m4",
+     "newWords": [
+      "ileke_beads"
+     ],
+     "review": [
+      "oju_eye",
+      "irun_hair",
+      "eyin_tooth",
+      "aya_chest",
+      "ese_leg",
+      "eti_ear",
+      "atelewo_palm",
+      "fila_hat",
+      "fi_sile_leave_it",
+      "keke_bicycle",
+      "alupupu_motorcycle",
+      "ile-iwe_school",
+      "omo_mi_my_baby",
+      "o_gbona_hot",
+      "okuta_stone",
+      "moto_automobile",
+      "oko_panapana_firetruck",
+      "sun_to_cry",
+      "ro_think",
+      "oka_baba_sorghum",
+      "ile_home",
+      "kekere_small",
+      "luwe_swim",
+      "ere_game",
+      "pana_extinguish_fire",
+      "aja_dog",
+      "sokoto_pants",
+      "bata_shoe",
+      "ete_lip",
+      "ewe_leaf",
+      "igbo_forest"
+     ],
+     "stones": [
+      {
+       "id": "play.m4.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "oju_eye",
+        "irun_hair",
+        "eyin_tooth",
+        "aya_chest",
+        "ese_leg",
+        "eti_ear",
+        "atelewo_palm"
+       ],
+       "review": []
+      },
+      {
+       "id": "play.m4.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ileke_beads"
+       ],
+       "review": [
+        "fila_hat",
+        "fi_sile_leave_it",
+        "keke_bicycle",
+        "alupupu_motorcycle",
+        "ile-iwe_school",
+        "omo_mi_my_baby",
+        "o_gbona_hot"
+       ]
+      },
+      {
+       "id": "play.m4.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "ileke_beads"
+       ],
+       "review": [
+        "okuta_stone",
+        "moto_automobile",
+        "oko_panapana_firetruck",
+        "sun_to_cry",
+        "ro_think",
+        "oka_baba_sorghum",
+        "ile_home"
+       ]
+      },
+      {
+       "id": "play.m4.4",
+       "game": "rally",
+       "mode": "syllables",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "ileke_beads"
+       ],
+       "review": [
+        "kekere_small",
+        "luwe_swim",
+        "ere_game",
+        "pana_extinguish_fire",
+        "aja_dog",
+        "sokoto_pants",
+        "bata_shoe"
+       ]
+      },
+      {
+       "id": "play.m4.5",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ileke_beads"
+       ],
+       "review": [
+        "ete_lip",
+        "ewe_leaf",
+        "igbo_forest"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "play.understand",
+     "newWords": [],
+     "review": [
+      "osan_orange",
+      "buredi_bread"
+     ],
+     "stones": [
+      {
+       "id": "play.understand.1",
+       "game": "sort",
+       "job": "apply",
+       "level": 2,
+       "focus": [
+        "keke_bicycle",
+        "moto_automobile",
+        "alupupu_motorcycle",
+        "oko_panapana_firetruck",
+        "fila_hat",
+        "ileke_beads"
+       ],
+       "review": [
+        "osan_orange",
+        "buredi_bread"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "animals2",
+   "yo": "Ẹranko",
+   "en": "Animals, again: wild and young",
+   "art": "animals",
+   "words": [
+    {
+     "id": "okere_squirrel",
+     "source": "scene"
+    },
+    {
+     "id": "kiniun_lion",
+     "source": "scene"
+    },
+    {
+     "id": "agunfon_giraffe",
+     "source": "scene"
+    },
+    {
+     "id": "ekun_leopard",
+     "source": "scene"
+    },
+    {
+     "id": "amotekun_cheetah",
+     "source": "scene"
+    },
+    {
+     "id": "abila_striped",
+     "source": "scene"
+    },
+    {
+     "id": "ketekete_abila_zebra",
+     "source": "scene"
+    },
+    {
+     "id": "odo_agutan_lamb",
+     "source": "scene"
+    },
+    {
+     "id": "ijapa_inu_omi_aquatic_turtle",
+     "source": "scene"
+    },
+    {
+     "id": "omo_ehoro_baby_bunny",
+     "source": "scene"
+    },
+    {
+     "id": "peja_to_fish",
+     "source": "scene"
+    }
+   ],
+   "waiting": [],
+   "meetings": [
+    {
+     "id": "animals2.m1",
+     "newWords": [
+      "okere_squirrel",
+      "kiniun_lion",
+      "agunfon_giraffe",
+      "ekun_leopard"
+     ],
+     "review": [
+      "orunkun_knee",
+      "eekanna_nail",
+      "itan_thigh",
+      "idodo_navel",
+      "oju_eye",
+      "ese_leg",
+      "eti_ear",
+      "lo_go",
+      "ekun_leopard",
+      "ileke_beads",
+      "fun_mi_give_me",
+      "isere_toy",
+      "iresi_rice",
+      "isu_yam",
+      "fila_hat",
+      "o_se_thank_you",
+      "mama_mother",
+      "ijapa_tortoise",
+      "erin_elephant",
+      "rerin-in_laugh"
+     ],
+     "stones": [
+      {
+       "id": "animals2.m1.1",
+       "game": "giant",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "orunkun_knee",
+        "eekanna_nail",
+        "itan_thigh",
+        "idodo_navel",
+        "oju_eye",
+        "ese_leg",
+        "eti_ear"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals2.m1.2",
+       "game": "where",
+       "job": "warmup",
+       "level": 3,
+       "focus": [
+        "lo_go"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals2.m1.3",
+       "game": "visit",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "okere_squirrel",
+        "kiniun_lion",
+        "agunfon_giraffe"
+       ],
+       "review": [
+        "ekun_leopard"
+       ]
+      },
+      {
+       "id": "animals2.m1.4",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ekun_leopard"
+       ],
+       "review": [
+        "ileke_beads",
+        "fun_mi_give_me",
+        "isere_toy",
+        "iresi_rice",
+        "isu_yam",
+        "fila_hat",
+        "o_se_thank_you"
+       ]
+      },
+      {
+       "id": "animals2.m1.5",
+       "game": "yard",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "okere_squirrel",
+        "kiniun_lion",
+        "agunfon_giraffe"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals2.m1.6",
+       "game": "river",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "okere_squirrel",
+        "ekun_leopard"
+       ],
+       "review": [
+        "mama_mother",
+        "ijapa_tortoise",
+        "erin_elephant",
+        "rerin-in_laugh"
+       ]
+      },
+      {
+       "id": "animals2.m1.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "okere_squirrel",
+        "kiniun_lion",
+        "agunfon_giraffe",
+        "ekun_leopard"
+       ],
+       "review": []
+      }
+     ]
+    },
+    {
+     "id": "animals2.m2",
+     "newWords": [
+      "amotekun_cheetah",
+      "abila_striped",
+      "odo_agutan_lamb",
+      "ijapa_inu_omi_aquatic_turtle"
+     ],
+     "review": [
+      "ekun_leopard",
+      "ijapa_tortoise",
+      "okere_squirrel",
+      "kiniun_lion",
+      "ileke_beads",
+      "jeun_eat",
+      "o_doti_dirty",
+      "igbe_feces",
+      "egbon_older_sibling",
+      "idana_cooking",
+      "ile_land",
+      "kan_touch",
+      "gbo_to_bark",
+      "pa_kill",
+      "sun_to_sleep",
+      "we_to_bathe",
+      "agunfon_giraffe"
+     ],
+     "stones": [
+      {
+       "id": "animals2.m2.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ekun_leopard",
+        "ijapa_tortoise",
+        "okere_squirrel"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals2.m2.2",
+       "game": "visit",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "amotekun_cheetah",
+        "odo_agutan_lamb",
+        "ijapa_inu_omi_aquatic_turtle"
+       ],
+       "review": [
+        "kiniun_lion"
+       ]
+      },
+      {
+       "id": "animals2.m2.3",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "abila_striped"
+       ],
+       "review": [
+        "ileke_beads",
+        "jeun_eat",
+        "o_doti_dirty",
+        "igbe_feces",
+        "egbon_older_sibling",
+        "idana_cooking",
+        "ile_land"
+       ]
+      },
+      {
+       "id": "animals2.m2.4",
+       "game": "yard",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "amotekun_cheetah",
+        "odo_agutan_lamb",
+        "ijapa_inu_omi_aquatic_turtle"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals2.m2.5",
+       "game": "drum",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "amotekun_cheetah",
+        "abila_striped",
+        "odo_agutan_lamb"
+       ],
+       "review": [
+        "kan_touch",
+        "gbo_to_bark",
+        "pa_kill",
+        "sun_to_sleep",
+        "we_to_bathe"
+       ]
+      },
+      {
+       "id": "animals2.m2.6",
+       "game": "parrot",
+       "job": "tone",
+       "level": 1,
+       "focus": [
+        "mu_to_drink",
+        "mu_take"
+       ],
+       "review": [],
+       "pairs": [
+        [
+         "mu_to_drink",
+         "mu_take"
+        ]
+       ]
+      },
+      {
+       "id": "animals2.m2.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "amotekun_cheetah",
+        "odo_agutan_lamb",
+        "ijapa_inu_omi_aquatic_turtle"
+       ],
+       "review": [
+        "agunfon_giraffe"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "animals2.m3",
+     "newWords": [
+      "ketekete_abila_zebra",
+      "omo_ehoro_baby_bunny",
+      "peja_to_fish"
+     ],
+     "review": [
+      "ketekete_donkey",
+      "ehoro_rabbit",
+      "okuta_stone",
+      "ekun_leopard",
+      "ile_idana_kitchen",
+      "amotekun_cheetah",
+      "odo_agutan_lamb",
+      "ijapa_inu_omi_aquatic_turtle",
+      "abila_striped",
+      "okere_squirrel",
+      "kiniun_lion",
+      "wara_milk",
+      "ounje_food",
+      "elede_pig",
+      "mu_omi_drink_water",
+      "agunfon_giraffe",
+      "aye_world",
+      "sunkun_weep",
+      "ewe_leaf"
+     ],
+     "stones": [
+      {
+       "id": "animals2.m3.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "ketekete_donkey",
+        "ehoro_rabbit",
+        "okuta_stone"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals2.m3.2",
+       "game": "together",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "ketekete_abila_zebra"
+       ],
+       "review": [
+        "ekun_leopard",
+        "ile_idana_kitchen"
+       ]
+      },
+      {
+       "id": "animals2.m3.3",
+       "game": "visit",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "omo_ehoro_baby_bunny"
+       ],
+       "review": [
+        "amotekun_cheetah",
+        "odo_agutan_lamb",
+        "ijapa_inu_omi_aquatic_turtle"
+       ]
+      },
+      {
+       "id": "animals2.m3.4",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "peja_to_fish"
+       ],
+       "review": [
+        "abila_striped",
+        "okere_squirrel",
+        "kiniun_lion",
+        "wara_milk",
+        "ounje_food",
+        "elede_pig",
+        "mu_omi_drink_water"
+       ]
+      },
+      {
+       "id": "animals2.m3.5",
+       "game": "yard",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "ketekete_abila_zebra",
+        "omo_ehoro_baby_bunny"
+       ],
+       "review": [
+        "agunfon_giraffe"
+       ]
+      },
+      {
+       "id": "animals2.m3.6",
+       "game": "rally",
+       "mode": "sequence",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "peja_to_fish"
+       ],
+       "review": [
+        "aye_world",
+        "sunkun_weep"
+       ]
+      },
+      {
+       "id": "animals2.m3.7",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "ketekete_abila_zebra",
+        "omo_ehoro_baby_bunny",
+        "peja_to_fish"
+       ],
+       "review": [
+        "ewe_leaf"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "animals2.understand",
+     "newWords": [],
+     "review": [
+      "igbo_forest",
+      "ewa_beans",
+      "ose_soap"
+     ],
+     "stones": [
+      {
+       "id": "animals2.understand.1",
+       "game": "fish",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "igbo_forest"
+       ],
+       "review": []
+      },
+      {
+       "id": "animals2.understand.2",
+       "game": "sort",
+       "job": "apply",
+       "level": 2,
+       "focus": [
+        "okere_squirrel",
+        "kiniun_lion",
+        "agunfon_giraffe",
+        "ekun_leopard",
+        "ketekete_abila_zebra",
+        "odo_agutan_lamb",
+        "ijapa_inu_omi_aquatic_turtle",
+        "omo_ehoro_baby_bunny"
+       ],
+       "review": [
+        "ewa_beans",
+        "ose_soap"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talk",
+   "yo": "Ọ̀rọ̀ àti àwòrán",
+   "en": "Talk and pictures",
+   "art": null,
+   "words": [
+    {
+     "id": "so_say",
+     "source": "scene"
+    },
+    {
+     "id": "soro_talk",
+     "source": "scene"
+    },
+    {
+     "id": "aworan_picture",
+     "source": "scene"
+    },
+    {
+     "id": "ero_machine",
+     "source": "scene"
+    },
+    {
+     "id": "ero_amohunmaworan_television",
+     "source": "scene"
+    },
+    {
+     "id": "ero_asoromagbesi_radio",
+     "source": "scene"
+    }
+   ],
+   "waiting": [],
+   "meetings": [
+    {
+     "id": "talk.m1",
+     "newWords": [
+      "so_say",
+      "aworan_picture",
+      "ero_machine"
+     ],
+     "review": [
+      "wo_to_look",
+      "peja_to_fish",
+      "awo_plate",
+      "ori_head",
+      "amotekun_cheetah",
+      "abila_striped",
+      "kelekele_gently",
+      "ma_sunkun_not_cry",
+      "dana_cook",
+      "iyan_pounded_yam",
+      "boolu_ball",
+      "redio_radio",
+      "ikoko_pot",
+      "ketekete_abila_zebra",
+      "omo_ehoro_baby_bunny",
+      "ibusun_bed",
+      "di_bind",
+      "owo_hand",
+      "jokoo_sit",
+      "dii_mu_hold",
+      "oka_grain",
+      "patewo_clap",
+      "ebi_hunger",
+      "sare_run"
+     ],
+     "stones": [
+      {
+       "id": "talk.m1.1",
+       "game": "parrot",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "wo_to_look",
+        "peja_to_fish",
+        "awo_plate",
+        "ori_head"
+       ],
+       "review": []
+      },
+      {
+       "id": "talk.m1.2",
+       "game": "stretchy",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "aworan_picture",
+        "ero_machine"
+       ],
+       "review": [
+        "amotekun_cheetah",
+        "abila_striped",
+        "kelekele_gently",
+        "ma_sunkun_not_cry",
+        "dana_cook",
+        "iyan_pounded_yam"
+       ]
+      },
+      {
+       "id": "talk.m1.3",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "so_say"
+       ],
+       "review": [
+        "boolu_ball",
+        "redio_radio",
+        "ikoko_pot",
+        "ketekete_abila_zebra",
+        "omo_ehoro_baby_bunny",
+        "ibusun_bed",
+        "di_bind"
+       ]
+      },
+      {
+       "id": "talk.m1.4",
+       "game": "fish",
+       "job": "practice",
+       "level": 2,
+       "focus": [
+        "aworan_picture",
+        "ero_machine"
+       ],
+       "review": [
+        "owo_hand"
+       ]
+      },
+      {
+       "id": "talk.m1.5",
+       "game": "train",
+       "job": "sound",
+       "level": 1,
+       "focus": [
+        "aworan_picture"
+       ],
+       "review": [
+        "jokoo_sit",
+        "dii_mu_hold",
+        "oka_grain",
+        "patewo_clap",
+        "ebi_hunger"
+       ]
+      },
+      {
+       "id": "talk.m1.6",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "so_say",
+        "aworan_picture",
+        "ero_machine"
+       ],
+       "review": [
+        "sare_run"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "talk.m2",
+     "newWords": [
+      "soro_talk",
+      "ero_amohunmaworan_television",
+      "ero_asoromagbesi_radio"
+     ],
+     "review": [
+      "so_say",
+      "ero_machine",
+      "aworan_picture",
+      "adiye_chicken",
+      "osupa_moon",
+      "nu_clean",
+      "ifoyin_toothbrush",
+      "inura_towel",
+      "ya_comb"
+     ],
+     "stones": [
+      {
+       "id": "talk.m2.1",
+       "game": "parrot",
+       "job": "warmup",
+       "level": 2,
+       "focus": [
+        "so_say",
+        "ero_machine",
+        "aworan_picture",
+        "adiye_chicken"
+       ],
+       "review": []
+      },
+      {
+       "id": "talk.m2.2",
+       "game": "rally",
+       "mode": "pictures",
+       "job": "teach",
+       "level": 1,
+       "focus": [
+        "soro_talk",
+        "ero_amohunmaworan_television",
+        "ero_asoromagbesi_radio"
+       ],
+       "review": [
+        "ero_machine",
+        "osupa_moon",
+        "nu_clean",
+        "ifoyin_toothbrush",
+        "inura_towel"
+       ]
+      },
+      {
+       "id": "talk.m2.3",
+       "game": "parrot",
+       "job": "check",
+       "level": 1,
+       "focus": [
+        "soro_talk",
+        "ero_amohunmaworan_television",
+        "ero_asoromagbesi_radio"
+       ],
+       "review": [
+        "ya_comb"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "offPath": [
+  "ookan_one",
+  "ogbon_wisdom",
+  "ogun_twenty",
+  "ma_se_bee_stop_that",
+  "nu_away",
+  "atete_first",
+  "mo_against",
+  "mo_know",
+  "ekun_district",
+  "ohun_voice",
+  "ranti_remember",
+  "esi_answer",
+  "ferese_window",
+  "aago_clock",
+  "agogo_bell",
+  "ooya_comb",
+  "ife_cup",
+  "kokoro_key",
+  "ro_soft"
+ ]
+}

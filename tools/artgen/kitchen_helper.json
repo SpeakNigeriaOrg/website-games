@@ -1,0 +1,98 @@
+[
+  {
+    "name": "helper_wipe",
+    "width": 832,
+    "height": 1024,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "A cheerful little Yoruba boy about five years old, short black hair, round face, big smile, bright yellow t-shirt and blue shorts, bare feet, full body, side view, standing at a small low wooden table and wiping its top clean with a folded yellow cloth held flat under one hand, the cloth touching the table top"
+  },
+  {
+    "name": "helper_bin",
+    "width": 832,
+    "height": 1024,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "A cheerful little Yoruba boy about five years old, short black hair, round face, big smile, bright yellow t-shirt and blue shorts, bare feet, full body, side view, standing beside a small round plastic waste bin and dropping a yellow banana peel into it, his hand open above the bin and the peel falling into the bin"
+  },
+  {
+    "name": "helper_hold_baby",
+    "width": 832,
+    "height": 1024,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "A cheerful little Yoruba boy about five years old, short black hair, round face, big smile, bright yellow t-shirt and blue shorts, bare feet, full body, standing facing the viewer and carefully holding his happy baby sister in both arms against his chest, the baby has a little puff of black hair and a pink dress, both smiling"
+  },
+  {
+    "name": "helper_put_down",
+    "width": 1024,
+    "height": 832,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "A cheerful little Yoruba boy about five years old, short black hair, round face, big smile, bright yellow t-shirt and blue shorts, bare feet, full body, side view, bending his knees and setting a white enamel bowl with a red flower pattern down onto a small woven straw mat on the floor with both hands, the bowl just touching the mat"
+  },
+  {
+    "name": "helper_reach",
+    "width": 832,
+    "height": 1024,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "A curious little Yoruba boy about five years old, short black hair, round face, bright yellow t-shirt and blue shorts, bare feet, full body, side view, walking forward and stretching one arm out in front of him with fingers open, reaching toward something, curious face"
+  },
+  {
+    "name": "helper_stop",
+    "width": 832,
+    "height": 1024,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "A little Yoruba boy about five years old, short black hair, round face, bright yellow t-shirt and blue shorts, bare feet, full body, side view, standing still and pulling both hands back behind his back, leaning back a little, careful serious face, not touching anything"
+  },
+  {
+    "name": "baby_reach",
+    "width": 768,
+    "height": 768,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "A cute Nigerian baby girl about one year old with a little puff of black hair, wearing a pink dress, sitting on the floor and stretching both arms up high wanting to be picked up, happy face"
+  },
+  {
+    "name": "hot_pot",
+    "width": 768,
+    "height": 768,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "A big black cooking pot with a lid, white steam rising from it, sitting on a small round kerosene stove with a ring of blue and orange flames under the pot"
+  },
+  {
+    "name": "bowl",
+    "width": 768,
+    "height": 640,
+    "sprite": true,
+    "variants": 3,
+    "prompt": "One white enamel bowl with a red flower pattern and a dark blue rim, seen from the side and a little above, empty"
+  },
+  {
+    "name": "peel_gen",
+    "width": 768,
+    "height": 640,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "One yellow banana peel lying on the floor, the empty skin of an eaten banana with its three long floppy strips spread open around the stem end, a brown tip on each strip, nothing inside"
+  },
+  {
+    "name": "helper_bin_paper",
+    "width": 832,
+    "height": 1024,
+    "sprite": true,
+    "variants": 6,
+    "prompt": "A cheerful little Yoruba boy about five years old, short black hair, round face, big smile, bright yellow t-shirt and blue shorts, bare feet, full body, side view, standing beside a blue plastic bucket used as a waste bin and dropping a crumpled ball of white paper into it, his hand open above the bucket and the paper ball falling into the bucket"
+  },
+  {
+    "name": "paper_ball",
+    "width": 640,
+    "height": 640,
+    "sprite": true,
+    "variants": 4,
+    "prompt": "One crumpled ball of white paper, scrunched up with many creases, rubbish to throw away"
+  }
+]

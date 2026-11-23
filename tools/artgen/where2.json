@@ -1,0 +1,4 @@
+[
+ {"name": "gate_open", "width": 896, "height": 896, "sprite": true, "variants": 4, "prompt": "A short piece of low cream painted compound wall with a wide open gateway in the middle, two wooden gate doors swung wide open to the sides, a sandy path going out through the opening, front view, nothing else"},
+ {"name": "chair_solid", "width": 640, "height": 896, "sprite": true, "variants": 3, "prompt": "One simple wooden chair with a solid wooden back panel and a solid seat, four legs, seen from the front slightly turned, empty, nothing on it"}
+]

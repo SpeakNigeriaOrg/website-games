@@ -1,0 +1,224 @@
+# What to record next
+
+Generated 2026-11-15. Ranked by what a recording unlocks in the games, for Femi's voice (games that compare pitch need one speaker). The curriculum draft is used only as a guide to what is worth teaching (its tiers: 1 = used every day at home). "Recorded" means a natural take by Femi; a take kept out by the gates counts as not usable.
+
+## 1. Tone pairs (each unlocks a tone stone: same syllables, different tones, different meaning)
+
+- **kún (to kneel)** pairs with kùn — named by the curriculum — no picture yet
+- **kún (To be full)** pairs with kùn — named by the curriculum — no picture yet
+- **ni (to be)** pairs with ní — named by the curriculum — no picture yet
+- **ẹkún (tears, cry, weeping)** pairs with ẹkùn, ẹkùn — named by the curriculum — no picture yet
+- **ohun (thing)** pairs with ohùn — named by the curriculum — re-record (current take kept out) — no picture yet
+- **wà (to drive)** pairs with wá — named by the curriculum — no picture yet
+- **ọ̀sán (midday, afternoon)** pairs with ọsàn — named by the curriculum — no picture yet
+- **tì (to push)** pairs with ti — named by the curriculum — no picture yet
+- **di (to become)** pairs with dì — named by the curriculum — no picture yet
+- **àbọ̀ (Arrival, returning, or coming back.)** pairs with abọ́ — named by the curriculum — no picture yet
+- **rá (to crawl)** pairs with rà
+- **mọ (to mold, to shape)** pairs with mọ́, mọ̀ — re-record (current take kept out)
+- **tẹ́ (to spread out or unfold)** pairs with tẹ̀ — no picture yet
+- **tọ́ (to be straight)** pairs with tọ̀ — no picture yet
+- **ìná (expenditure of money, the act of spending)** pairs with iná — no picture yet
+- **rín (to smile)** pairs with rìn — no picture yet
+- **nu (to hand-feed)** pairs with nù, nù — no picture yet
+- **tí (if, when)** pairs with ti — no picture yet
+- **yára (to hurry)** pairs with yàrá — no picture yet
+- **ràn (to shine)** pairs with rán — no picture yet
+
+The curriculum's own tone sets, for reference: ẹyin / eyín / ẹ̀yìn (egg, tooth, back), gbá / gbà (kick, catch), jà / jó, ẹ̀rin / ẹ̀rín (four, a laugh), ìlú / ìlù (town, drum).
+
+## 2. Building blocks (each completes a compound and all its parts, so Put It Together can teach it)
+
+- **àgbàlagbà (elder)** is the compound; its parts are already on the path: àgbàlagbà = àgbà + àgbà — no picture yet
+- **dá (to create, to make, to initiate, to establish)** completes dáná = dá + iná — no picture yet
+- **dìmọ́ (to embrace, to hug)** is the compound; its parts are already on the path: dìmọ́ = dì + mọ́ — no picture yet
+- **dìmú (to hold)** is the compound; its parts are already on the path: dìmú = dì + mú — no picture yet
+- **ọwọ (hand)** completes fọwọ́ = fi + ọwọ
+- **jẹ́ (to be)** completes jókòó jẹ́ = jókòó + jẹ́ — re-record (current take kept out) — no picture yet
+- **omi (water)** completes mu omi = mu + omi — re-record (current take kept out)
+- **mú wá (To bring)** is the compound; its parts are already on the path: mú wá = mú + wá — no picture yet
+- **àgbagbà (plantain)** completes ọ̀gẹ̀dẹ̀ àgbagbà = ọ̀gẹ̀dè + àgbagbà — no picture yet
+- **bàbà (dark red color)** completes ọkà bàbà = ọkà + bàbà — no picture yet
+- **ọmọ (child)** completes ọmọ ehoro = ọmọ + ehoro — re-record (current take kept out) — no picture yet
+- **ọmọ (child)** completes ọmọ mi = ọmọ + mi — re-record (current take kept out) — no picture yet
+- **panápaná (firefighter)** is the compound; its parts are already on the path: panápaná = paná + paná — no picture yet
+- **ẹja (fish)** completes pẹja = pa + ẹja — no picture yet
+- **ẹkún (tears, cry, weeping)** completes sunkún = sun + ẹkún — no picture yet
+
+## 3. Everyday verbs (Yorùbá children's early words are largely verbs; a game needs a picture or an action to show one)
+
+- **ṣí (to open)** (tier 1) — no picture yet
+- **jẹ (to eat, to consume)** (tier 1) — no picture yet
+- **lọ (to go)** (tier 1)
+- **bọ̀ (to return, to come here, to arrive)** (tier 1) — no picture yet
+- **gbé (to carry)** (tier 1) — no picture yet
+- **sáré (to run)** (tier 1)
+- **dúró (to wait, stay, stop)** (tier 1) — no picture yet
+- **ṣubú (to fall, to fall down)** (tier 1) — no picture yet
+- **fò (to jump, or leap in an upwards direction)** (tier 1) — no picture yet
+- **fẹ́ (to want, to desire, to love)** (tier 1) — no picture yet
+- **gé (to cut something)** (tier 1) — no picture yet
+- **gbóná (to be hot or heated)** (tier 1) — re-record (current take kept out)
+- **mọ́ (to be clean)** (tier 1) — no picture yet
+- **tì (to push)** (tier 1) — no picture yet
+- **fà (to pull)** (tier 1) — no picture yet
+- **gbá (to sweep)** (tier 1) — no picture yet
+- **kó (to pack)** (tier 1) — no picture yet
+- **gbà (to take, accept)** (tier 1) — re-record (current take kept out)
+- **jó (to dance)** (tier 1) — no picture yet
+- **kọrin (to sing)** (tier 1) — no picture yet
+- **fọ́ ()** (tier 1) — no picture yet
+- **rí (to see, to find)** (tier 1) — no picture yet
+- **jẹ́ (to be)** (tier 1) — re-record (current take kept out) — no picture yet
+- **kéré (to be small)** (tier 1) — no picture yet
+- **kà (to count)** (tier 1) — no picture yet
+- **kọ (to write)** (tier 1) — no picture yet
+- **rántí (to remember)** (tier 1) — re-record (current take kept out) — no picture yet
+- **tọ́ka (to point)** (tier 1) — no picture yet
+- **sọ (to say, to speak)** (tier 1) — re-record (current take kept out) — no picture yet
+- **di (to become)** (tier 2) — no picture yet
+- **kúnlẹ̀ (to kneel to the ground, kneel deeply)** (tier 2) — no picture yet
+- **-ní- (to have)** (tier 2) — no picture yet
+- **dá (to create, to make, to initiate, to establish)** (tier 2) — no picture yet
+- **yá (to be fast)** (tier 2) — no picture yet
+- **kún (to kneel)** (tier 2) — no picture yet
+- jí (to wake up, tier 1) — needs a dictionary entry first
+- dijú (to close your eyes, tier 1) — needs a dictionary entry first
+- fọ (to wash, tier 1) — needs a dictionary entry first
+- yọ (to take off, tier 1) — needs a dictionary entry first
+- dé (to arrive, to get home, tier 1) — needs a dictionary entry first
+- dùbúlẹ̀ (to lie down, tier 1) — needs a dictionary entry first
+- gbọ́ (to hear, to listen, tier 1) — needs a dictionary entry first
+- pè (to call — `pe` before who or what you call, tier 1) — needs a dictionary entry first
+- nà (to stretch out, to reach — `na` before what you st, tier 1) — needs a dictionary entry first
+- tutù (to be cold, tier 1) — needs a dictionary entry first
+- dùn (to taste nice, to be sweet, tier 1) — needs a dictionary entry first
+- tán (to be all gone, to finish, tier 1) — needs a dictionary entry first
+- bínú (to be cross, angry, tier 1) — needs a dictionary entry first
+- wà (to be — somewhere, tier 1) — needs a dictionary entry first
+- jáde (to go out, tier 1) — needs a dictionary entry first
+- bò (to cover — `bo` before what you cover, tier 1) — needs a dictionary entry first
+- lù (to beat, to hit — `lu` before a noun, tier 1) — needs a dictionary entry first
+- bàjẹ́ (to spoil, to stop working, tier 1) — needs a dictionary entry first
+- jà (to fight, tier 1) — needs a dictionary entry first
+- sá (to run away, to flee, tier 1) — needs a dictionary entry first
+- lé (to chase, tier 1) — needs a dictionary entry first
+- fẹ́ràn (to like, to love, tier 1) — needs a dictionary entry first
+- jọ (to look like, tier 1) — needs a dictionary entry first
+- sè (to cook, to boil — `se` before what you cook, tier 1) — needs a dictionary entry first
+- tóbi (to be big, tier 1) — needs a dictionary entry first
+- wé (to wrap, to tie — a headwrap, tier 1) — needs a dictionary entry first
+- tú (to untie, to undo, tier 1) — needs a dictionary entry first
+- rẹwà (to be beautiful, to look lovely, tier 1) — needs a dictionary entry first
+- fá (to shave, tier 1) — needs a dictionary entry first
+- dára (to be good, to look nice, tier 1) — needs a dictionary entry first
+- pààrọ̀ (to change — one thing for another, tier 1) — needs a dictionary entry first
+- tàn (to shine, tier 1) — needs a dictionary entry first
+- gbẹ (to be dry, to dry out, tier 1) — needs a dictionary entry first
+- gun (to climb, to ride, tier 1) — needs a dictionary entry first
+- sọ̀kalẹ̀ (to come down, to get down, tier 1) — needs a dictionary entry first
+- gbàgbé (to forget, tier 1) — needs a dictionary entry first
+- béèrè (to ask, tier 1) — needs a dictionary entry first
+- dáhùn (to answer, tier 1) — needs a dictionary entry first
+- bẹ̀rẹ̀ (to begin, to start, tier 1) — needs a dictionary entry first
+- tà (to sell — `ta` before what you sell, tier 1) — needs a dictionary entry first
+- san (to pay, tier 1) — needs a dictionary entry first
+- pọ̀ (to be a lot, to be many, tier 1) — needs a dictionary entry first
+- kí (to greet — a different word from the `kí` of `kí n, tier 1) — needs a dictionary entry first
+- sinmi (to rest, tier 1) — needs a dictionary entry first
+- sàn (to get better, to heal, tier 1) — needs a dictionary entry first
+- wú (to swell, tier 1) — needs a dictionary entry first
+- dákẹ́ (to be quiet, tier 1) — needs a dictionary entry first
+- pariwo (to make a noise, to shout, tier 1) — needs a dictionary entry first
+- pàdé (to meet, tier 1) — needs a dictionary entry first
+- padà (to go back, to return, tier 1) — needs a dictionary entry first
+- bẹ̀rù (to be afraid of, tier 1) — needs a dictionary entry first
+- tẹ̀lé (to follow, tier 1) — needs a dictionary entry first
+- kọ́ (to learn, to teach, tier 2) — needs a dictionary entry first
+- bí (to give birth, to be born, tier 2) — needs a dictionary entry first
+- gún (to pound, tier 2) — needs a dictionary entry first
+- dín (to fry, tier 2) — needs a dictionary entry first
+- wọ́n (to be dear, expensive — a different word from `wọ́, tier 2) — needs a dictionary entry first
+
+## 4. A child's day (tier-1 words of the morning-to-night scene)
+
+- Orúkọ mi ni (my name is … — the whole frame, said with your own) — not in the dictionary yet
+- Ó dàbọ̀ (goodbye — the whole word)
+- àárọ̀ (morning)
+- alẹ́ (evening, night)
+- jí (to wake up) — not in the dictionary yet
+- ẹ (you — to a grown-up, or to everyone) — not in the dictionary yet
+- olùkọ́ (teacher) — not in the dictionary yet
+- ìyá (mother)
+- bàbá (father) — re-record
+- ọ̀sán (afternoon)
+- ni (it is — the word that ends a naming) — not in the dictionary yet
+- bẹ́ẹ̀ni (yes)
+- rárá (no)
+- ọmọ (child) — re-record
+- ojú (eye, face) — re-record
+- ṣí (to open)
+- dijú (to close your eyes) — not in the dictionary yet
+- ọwọ́ (hand) — not in the dictionary yet
+- fọ (to wash) — not in the dictionary yet
+- rẹ (your) — not in the dictionary yet
+- jẹ (to eat)
+- omi (water) — re-record
+- ìbọ̀sẹ̀ (socks) — not in the dictionary yet
+- yọ (to take off) — not in the dictionary yet
+- lọ (to go)
+- Ó yá! (let's go — it's time) — not in the dictionary yet
+- ìwé (book)
+- akẹ́kọ̀ọ́ (student) — not in the dictionary yet
+- ǹlẹ́ (hi — at any time of day)
+- orúkọ (name)
+- Kí ni orúkọ rẹ? (what is your name? — the whole question) — not in the dictionary yet
+- dé (to arrive, to get home) — not in the dictionary yet
+- bọ̀ (to come back)
+- Ẹ ṣé (thank you — to a grown-up)
+- ẹ jọ̀ọ́ (please — to a grown-up)
+- jọ̀wọ́ (please — to a friend)
+- dùbúlẹ̀ (to lie down) — not in the dictionary yet
+- aṣọ ìbora (blanket — the whole word) — not in the dictionary yet
+
+## 5. Re-record (Femi's takes kept out by a clear fault)
+
+- ọkọ̀ ayọ́kẹ́lẹ́: more_than_one_utterance
+- ò-: quality
+- ụ̀-: quality
+- ọmọ ológbò: more_than_one_utterance; the word may be said more than once (and the clip is 12.8x the usual length)
+- ẹyin: speech_starts_from_silence
+- dáadáa: more_than_one_utterance; the word may be said more than once (and the clip is 9.3x the usual length)
+- dìde nlẹ̀: a high tone heard as low (or the reverse)
+- gúáfà: speech_starts_from_silence
+- akẹrù: recorded as "akẹ́rù", the entry is now "akẹrù"
+- bọ́ọ̀lù: a high tone heard as low (or the reverse)
+- bàbá: more_than_one_utterance
+- ìka ọwọ: recorded as "ìka ọwọ́", the entry is now "ìka ọwọ"
+- o: clipping
+- kẹrù: recorded as "kẹ́rù", the entry is now "kẹrù"
+- elégédé: clipping
+- ata: speech_starts_from_silence
+- gbà: a high tone heard as low (or the reverse); quality
+- wòó: clipping; the word may be said more than once (and the clip is 1.7x the usual length)
+- àwo: the word may be said more than once (and the clip is 2.0x the usual length)
+- ibi: clipping
+- lú: recorded as "lù", the entry is now "lú"
+- mọ: clipping
+- jẹ́: speech_starts_from_silence
+- ológbò: recorded as "olóńgbò", the entry is now "ológbò"
+- ọmọ: clipping
+- ojú: the word may be said more than once (and the clip is 2.0x the usual length)
+- aṣọ: clipping; the word may be said more than once (and the clip is 2.1x the usual length)
+- póò: clipping
+- gbóná: speech_starts_from_silence
+- àtẹ́lẹsẹ̀: more_than_one_utterance; the word may be said more than once (and the clip is 5.4x the usual length)
+- omi: the word may be said more than once (and the clip is 1.9x the usual length)
+- ògi: recorded as "ògì", the entry is now "ògi"
+- má ṣe bẹ́ẹ̀: a high tone heard as low (or the reverse)
+- pẹ̀lẹ́: the word may be said more than once (and the clip is 2.2x the usual length)
+- a: clipping
+- nlẹ̀: recorded as "ńlẹ̀", the entry is now "nlẹ̀"; a high tone heard as low (or the reverse)
+- ohun: clipping
+
+For reference, `COVERAGE.md` maps every item of the curriculum draft's Ìpele 1 and 2 to our recordings; it is a draft for one course, not a target for the games.

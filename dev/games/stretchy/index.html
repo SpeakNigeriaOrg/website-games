@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="yo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stretchy Word</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap">
+<link rel="stylesheet" href="../engine/engine.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage">
+  <div class="meadow playfield" id="meadow">
+    <!-- the scenery: sky, sun, clouds and soft hills, drawn here so the creature stands out -->
+    <svg class="scenery" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8fd3f4"/><stop offset=".6" stop-color="#d4f1fb"/><stop offset="1" stop-color="#fff6dc"/>
+        </linearGradient>
+        <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9edc7a"/><stop offset="1" stop-color="#7cc45a"/></linearGradient>
+        <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe98f"/><stop offset="1" stop-color="#9bd66f"/></linearGradient>
+      </defs>
+      <rect width="1000" height="1000" fill="url(#sky)"/>
+      <g class="sun"><circle cx="650" cy="330" r="100" fill="#ffd84d" opacity=".25"/><circle cx="650" cy="330" r="62" fill="#ffd84d"/></g>
+      <g class="cloud c1" fill="#fff"><ellipse cx="330" cy="330" rx="70" ry="28"/><ellipse cx="372" cy="312" rx="50" ry="34"/><ellipse cx="296" cy="318" rx="38" ry="26"/></g>
+      <g class="cloud c2" fill="#fff"><ellipse cx="520" cy="440" rx="56" ry="22"/><ellipse cx="552" cy="426" rx="40" ry="26"/></g>
+      <path d="M0 560 Q180 470 380 540 T760 520 T1000 540 V1000 H0Z" fill="url(#hill2)"/>
+      <path d="M0 640 Q250 580 520 630 T1000 610 V1000 H0Z" fill="url(#hill1)"/>
+      <g fill="#ff8fb1"><circle cx="90" cy="760" r="9"/><circle cx="880" cy="820" r="9"/><circle cx="300" cy="900" r="8"/><circle cx="700" cy="930" r="9"/></g>
+      <g fill="#fff3a0"><circle cx="160" cy="850" r="8"/><circle cx="620" cy="790" r="8"/><circle cx="930" cy="700" r="7"/><circle cx="420" cy="960" r="8"/></g>
+    </svg>
+    <svg class="creature" id="creature" viewBox="0 0 1000 620" aria-label="word creature" role="img">
+      <defs>
+        <clipPath id="bodyClip"><rect id="clipBody"/></clipPath>
+        <clipPath id="badgeClip"><circle id="clipBadge"/></clipPath>
+        <radialGradient id="shine" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      </defs>
+      <g id="mover"></g>
+    </svg>
+  </div>
+  <button class="next-btn" id="next" aria-label="Next word"><span aria-hidden="true">▶</span></button>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+[
+ {
+  "id": "sunkun_weep",
+  "display": "sunkún",
+  "image": "../content/img/sunkun_weep.webp",
+  "files": {
+   "current": "audio/sunkun_weep_current.mp3",
+   "gentle": "audio/sunkun_weep_gentle.mp3",
+   "strong": "audio/sunkun_weep_strong.mp3"
+  }
+ },
+ {
+  "id": "peja_to_fish",
+  "display": "pẹja",
+  "image": "../content/img/peja_to_fish.webp",
+  "files": {
+   "current": "audio/peja_to_fish_current.mp3",
+   "gentle": "audio/peja_to_fish_gentle.mp3",
+   "strong": "audio/peja_to_fish_strong.mp3"
+  }
+ },
+ {
+  "id": "ika_owo_finger",
+  "display": "ìka ọwọ",
+  "image": "../content/img/ika_owo_finger.webp",
+  "files": {
+   "current": "audio/ika_owo_finger_current.mp3",
+   "gentle": "audio/ika_owo_finger_gentle.mp3",
+   "strong": "audio/ika_owo_finger_strong.mp3"
+  }
+ },
+ {
+  "id": "ketekete_donkey",
+  "display": "kẹ́tẹ́kẹ́tẹ́",
+  "image": "../content/img/ketekete_donkey.webp",
+  "files": {
+   "current": "audio/ketekete_donkey_current.mp3",
+   "gentle": "audio/ketekete_donkey_gentle.mp3",
+   "strong": "audio/ketekete_donkey_strong.mp3"
+  }
+ },
+ {
+  "id": "sile_downward",
+  "display": "sílẹ̀",
+  "image": "../content/img/sile_downward.webp",
+  "files": {
+   "current": "audio/sile_downward_current.mp3",
+   "gentle": "audio/sile_downward_gentle.mp3",
+   "strong": "audio/sile_downward_strong.mp3"
+  }
+ },
+ {
+  "id": "egbon_older_sibling",
+  "display": "ẹ̀gbọ́n",
+  "image": "../content/img/egbon_older_sibling.webp",
+  "files": {
+   "current": "audio/egbon_older_sibling_current.mp3",
+   "gentle": "audio/egbon_older_sibling_gentle.mp3",
+   "strong": "audio/egbon_older_sibling_strong.mp3"
+  }
+ },
+ {
+  "id": "aga_chair",
+  "display": "àga",
+  "image": "../content/img/aga_chair.webp",
+  "files": {
+   "current": "audio/aga_chair_current.mp3",
+   "gentle": "audio/aga_chair_gentle.mp3",
+   "strong": "audio/aga_chair_strong.mp3"
+  }
+ },
+ {
+  "id": "igbe_feces",
+  "display": "ìgbẹ́",
+  "image": "../content/img/igbe_feces.webp",
+  "files": {
+   "current": "audio/igbe_feces_current.mp3",
+   "gentle": "audio/igbe_feces_gentle.mp3",
+   "strong": "audio/igbe_feces_strong.mp3"
+  }
+ },
+ {
+  "id": "abo_plate",
+  "display": "abọ́",
+  "image": "../content/img/abo_plate.webp",
+  "files": {
+   "current": "audio/abo_plate_current.mp3",
+   "gentle": "audio/abo_plate_gentle.mp3",
+   "strong": "audio/abo_plate_strong.mp3"
+  }
+ },
+ {
+  "id": "isu_yam",
+  "display": "iṣu",
+  "image": "../content/img/isu_yam.webp",
+  "files": {
+   "current": "audio/isu_yam_current.mp3",
+   "gentle": "audio/isu_yam_gentle.mp3",
+   "strong": "audio/isu_yam_strong.mp3"
+  }
+ },
+ {
+  "id": "eyin_tooth",
+  "display": "eyín",
+  "image": "../content/img/eyin_tooth.webp",
+  "files": {
+   "current": "audio/eyin_tooth_current.mp3",
+   "gentle": "audio/eyin_tooth_gentle.mp3",
+   "strong": "audio/eyin_tooth_strong.mp3"
+  }
+ },
+ {
+  "id": "ekun_leopard",
+  "display": "ẹkùn",
+  "image": "../content/img/ekun_leopard.webp",
+  "files": {
+   "current": "audio/ekun_leopard_current.mp3",
+   "gentle": "audio/ekun_leopard_gentle.mp3",
+   "strong": "audio/ekun_leopard_strong.mp3"
+  }
+ }
+]

@@ -1,0 +1,36 @@
+/* The room fills the screen; app.js places the stage and the two rows of choices in screen pixels. */
+.stage { background: linear-gradient(#eea060 0 50%, #d77f47 50%); }
+/* placed by app.js so that its stage opening is the stage box; the floor runs on below it */
+.stage > .bg { inset: auto; object-fit: fill; -webkit-mask-image: linear-gradient(#000 93%, transparent); mask-image: linear-gradient(#000 93%, transparent); }
+
+/* the little stage: a wooden frame, the scene inside, two curtains that gather to the sides when it opens */
+.stage-box { position: absolute; border-radius: 6px; background: #1d2a52; overflow: hidden; }
+body.wide .stage-box .scene > img, body.wide .stage-box .scene > video { object-position: 50% 72%; }
+.scene-holder { position: absolute; inset: 0; }
+.curtain { position: absolute; top: 0; height: 100%; width: 54%; object-fit: fill; z-index: 2; pointer-events: none; transition: transform .6s cubic-bezier(.5,0,.3,1); }
+.curtain.left { left: 0; transform-origin: 0 50%; }
+.curtain.right { right: 0; transform-origin: 100% 50%; }
+.stage-box.open .curtain.left { transform: scaleX(.16); }
+.stage-box.open .curtain.right { transform: scaleX(.16); }
+.stage-box.bravo { animation: bravo .5s ease-in-out 2; }
+@keyframes bravo { 50% { transform: scale(1.03); } }
+
+/* the choices: animals in one row, actions in the other (columns at the sides in landscape) */
+.row { position: absolute; display: flex; justify-content: center; align-items: center; gap: 10px; }
+.row.vertical { flex-direction: column; }
+.pick { width: var(--pick); height: var(--pick); flex: none; border: 0; padding: calc(var(--pick) * .07); border-radius: 22%; background: white; box-shadow: var(--shadow); cursor: pointer; transition: transform .15s, box-shadow .15s, background .15s; }
+.pick > img { width: 100%; height: 100%; object-fit: contain; display: block; pointer-events: none; }
+.pick.action { padding: calc(var(--pick) * .05); overflow: hidden; }
+.pick.action > img { object-fit: cover; border-radius: 16%; }
+.pick.subject { border-radius: 50%; }
+.pick.selected { background: #fff2b8; box-shadow: 0 0 0 5px #f2b33d, var(--shadow); transform: translateY(-4px); }
+.pick.over { box-shadow: 0 0 0 5px #fff6a8, 0 0 18px 6px #ffd23f; }
+.pick.speaking { animation: say .32s ease-in-out infinite; }
+@keyframes say { 50% { transform: scale(1.07, .95); } }
+body.locked .pick { cursor: default; }
+.pick.nope { animation: nope .5s ease-in-out; }
+@keyframes nope { 20% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } 80% { transform: rotate(-4deg); } }
+
+.fin-cast { display: flex; gap: 8px; align-items: flex-end; justify-content: center; }
+.fin-cast img { width: min(17vmin, 84px); height: min(17vmin, 84px); object-fit: contain; animation: bow 1.2s ease-in-out infinite; transform-origin: 50% 100%; }
+@keyframes bow { 0%, 60%, 100% { transform: none; } 30% { transform: rotate(-8deg) translateY(4px); } }

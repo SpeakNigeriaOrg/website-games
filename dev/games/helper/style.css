@@ -1,0 +1,40 @@
+/* Help Grandma: the kitchen behind, Grandma who asks, the helper boy, and a card for each thing in the kitchen.
+   Upright screens: Grandma and the boy above, the cards in two columns below. Wide screens: Grandma and the boy on the
+   left, the cards in a row on the right. */
+.kitchen { background: #f3dfb8; }
+.kitchen > .bg { object-position: 50% 100%; opacity: .55; }
+
+.grandma { position: absolute; left: 4%; top: 9%; height: 25vh; max-width: 40vw; object-fit: contain; z-index: 2; transform-origin: 50% 100%; }
+.grandma.speaking { animation: nod .5s ease-in-out infinite alternate; }
+@keyframes nod { to { transform: rotate(-3deg) translateY(-4px); } }
+.boy { position: absolute; right: 8%; top: 8%; height: 27vh; max-width: 34vw; object-fit: contain; z-index: 2; }
+
+.things {
+  position: absolute; left: 0; right: 0; top: 38vh; bottom: 13vh; z-index: 3;
+  display: flex; flex-wrap: wrap; gap: 3vmin; padding: 0 5vw; align-content: center; justify-content: center;
+}
+.thing {
+  width: min(40vw, 22vh); flex: none; aspect-ratio: 1; background: #fffaf0; border: 0; border-radius: 22px; padding: 7%;
+  box-shadow: var(--shadow); cursor: pointer; touch-action: manipulation; position: relative;
+  transition: transform .2s ease, opacity .3s ease, box-shadow .3s;
+}
+.thing img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.thing.glow { box-shadow: 0 0 0 6px #ffd63f, 0 0 34px 10px rgba(255, 214, 63, .85); }
+.thing.done { opacity: .25; transform: scale(.92); }
+.thing.jiggle { animation: jiggle .45s ease; }
+@keyframes jiggle { 20% { transform: rotate(-7deg); } 40% { transform: rotate(6deg); } 60% { transform: rotate(-4deg); } 80% { transform: rotate(2deg); } }
+
+/* the boy doing it, on a card over the kitchen */
+.act { position: absolute; inset: 0; z-index: 8; display: grid; place-items: center; pointer-events: none; opacity: 0; transition: opacity .25s; background: rgba(60, 40, 20, .25); }
+.act.on { opacity: 1; }
+.act-card { background: #fffaf0; border-radius: 28px; box-shadow: var(--shadow); padding: 3vmin; width: min(78vw, 58vh); aspect-ratio: 1; display: grid; place-items: center; transform: scale(.7); transition: transform .3s cubic-bezier(.3, 1.5, .5, 1); }
+.act.on .act-card { transform: scale(1); }
+.act-card img { width: 100%; height: 100%; object-fit: contain; }
+
+@media (orientation: landscape) {
+  /* Grandma clear of the replay button (bottom-left) */
+  .grandma { left: 9%; top: 12vh; bottom: auto; height: 46vh; max-width: 24vw; }
+  .boy { right: auto; left: 27%; top: auto; bottom: 10vh; height: 56vh; max-width: 20vw; }
+  .things { left: 45%; right: 3%; top: 12vh; bottom: 12vh; padding: 0; }
+  .thing { width: min(17vw, 34vh); }
+}

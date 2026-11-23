@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EQ Listening Check</title>
+<link rel="icon" href="data:,">
+<style>
+  :root { --ink: #2b2118; --paper: #fff8ec; --card: #fff; --muted: #6b5d4f; --accent: #e4572e; --rule: #eadcc6; --chosen: #2b2118; color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--paper); color: var(--ink);
+    padding-block: 24px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  main { max-width: 760px; margin: 0 auto; display: grid; gap: 16px; }
+  h1 { margin: 0; font-size: 1.6rem; text-wrap: balance; }
+  p { margin: 0; color: var(--muted); max-width: 65ch; }
+  .card { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 14px; display: grid; gap: 10px; grid-template-columns: 72px 1fr; align-items: center; }
+  .card img { width: 72px; height: 72px; object-fit: contain; border-radius: 10px; background: #f6efe3; }
+  .word { font-weight: 800; font-size: 1.3rem; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
+  .play { font: inherit; font-weight: 800; padding: 8px 16px; border-radius: 10px; border: 2px solid var(--rule); background: #f6efe3; cursor: pointer; }
+  .play.playing { border-color: var(--accent); }
+  .pick { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--rule); background: #fff; cursor: pointer; }
+  .pick[aria-pressed="true"] { background: var(--chosen); color: #fff; border-color: var(--chosen); }
+  .done { position: sticky; bottom: 0; background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 12px; display: grid; gap: 8px; }
+  .done button { justify-self: start; font: inherit; font-weight: 800; padding: 8px 16px; border: 0; border-radius: 8px; background: var(--chosen); color: #fff; cursor: pointer; }
+  textarea { width: 100%; font: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Which version sounds clearest?</h1>
+  <p>Each word has three versions, A, B and C, in a different random order for each word. One is the clip the games play now; the others have a gentle or a stronger tone-colour change (less boom, more clarity in the consonant range). All three are at the same loudness. Pick the one that sounds clearest and most natural, or "can't tell".</p>
+  <div id="list"></div>
+  <section class="done"><span id="progress"></span><button id="copy" type="button">Copy my answers</button><textarea id="out" rows="4" hidden readonly></textarea></section>
+</main>
+<script>
+const KEY = 'eq-listen-v1';
+let state = {}; try { state = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { state = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {} progress(); };
+let current = null;
+function play(src, btn) {
+  if (current) { current.pause(); document.querySelectorAll('.play').forEach((b) => b.classList.remove('playing')); }
+  current = new Audio(src); btn.classList.add('playing');
+  current.onended = () => btn.classList.remove('playing'); current.play();
+}
+fetch('items.json').then((r) => r.json()).then((items) => {
+  window.ITEMS = items;
+  const list = document.getElementById('list');
+  for (const it of items) {
+    const s = (state[it.id] ||= {});
+    if (!s.order) s.order = ['current', 'gentle', 'strong'].sort(() => Math.random() - 0.5);
+    const card = document.createElement('article'); card.className = 'card';
+    card.innerHTML = `${it.image ? `<img alt="" src="${it.image}">` : '<span></span>'}<span class="word"></span><div class="row plays"></div><div class="row picks"></div>`;
+    card.querySelector('.word').textContent = it.display;
+    s.order.forEach((k, i) => {
+      const label = 'ABC'[i];
+      const b = document.createElement('button'); b.className = 'play'; b.type = 'button'; b.textContent = '▶ ' + label;
+      b.onclick = () => play(it.files[k], b); card.querySelector('.plays').appendChild(b);
+    });
+    for (const choice of ['A', 'B', 'C', "can't tell"]) {
+      const b = document.createElement('button'); b.className = 'pick'; b.type = 'button'; b.textContent = choice;
+      b.setAttribute('aria-pressed', String(s.pick === choice));
+      b.onclick = () => { s.pick = s.pick === choice ? undefined : choice; card.querySelectorAll('.pick').forEach((x) => x.setAttribute('aria-pressed', String(x.textContent === s.pick))); save(); };
+      card.querySelector('.picks').appendChild(b);
+    }
+    list.appendChild(card);
+  }
+  save();
+});
+function progress() {
+  const n = (window.ITEMS || []).filter((it) => state[it.id]?.pick).length;
+  document.getElementById('progress').textContent = `${n} of ${(window.ITEMS || []).length} answered`;
+}
+document.getElementById('copy').onclick = async () => {
+  const text = window.ITEMS.map((it) => { const s = state[it.id] || {}; const k = s.pick && s.pick.length === 1 ? s.order['ABC'.indexOf(s.pick)] : s.pick || '(no answer)';
+    return `${it.id}: ${s.pick || '-'} = ${k}`; }).join('\n');
+  const out = document.getElementById('out'); out.value = text; out.hidden = false;
+  try { await navigator.clipboard.writeText(text); document.getElementById('copy').textContent = 'Copied'; } catch { out.select(); }
+};
+</script>
+</body>
+</html>

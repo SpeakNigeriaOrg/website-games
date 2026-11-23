@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="yo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Word Train</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap">
+<link rel="stylesheet" href="../engine/engine.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage playfield" id="stage">
+  <svg class="scenery" id="scenery" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc8f0"/><stop offset="1" stop-color="#d8f1fb"/></linearGradient>
+      <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd16a"/><stop offset="1" stop-color="#5fae4a"/></linearGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="url(#sky)"/>
+    <path id="hillFar" fill="#a9dc8a" d=""/>
+    <path id="hillNear" fill="#86c96a" d=""/>
+    <rect id="ground" x="0" width="1000" height="1000" fill="url(#grass)"/>
+  </svg>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="cloud c1" aria-hidden="true"></div>
+  <div class="cloud c2" aria-hidden="true"></div>
+  <div class="trees" id="trees" aria-hidden="true"></div>
+  <div class="track" id="track" aria-hidden="true"></div>
+  <div class="train" id="train"></div>
+  <div class="loose" id="loose"></div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

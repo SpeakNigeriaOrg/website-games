@@ -1,0 +1,6 @@
+[
+ {"name": "bg_fish", "width": 832, "height": 1216, "variants": 4, "prompt": "A sunny West African riverside seen from the side: the top third is a flat grassy riverbank with a palm tree at the far right edge, bushes, open flat grass in front, a narrow strip of blue sky and distant green hills at the very top; the bottom two thirds is calm open blue river water with gentle ripples and a few lily leaves at the edges, the middle of the water empty, no people, no animals"},
+ {"name": "fish", "sprite": true, "variants": 4, "prompt": "A cute friendly cartoon fish leaping, side view facing right, body gently curved, big round eye, smiling, orange body with yellow fins, full body"},
+ {"name": "net", "sprite": true, "width": 768, "height": 1024, "variants": 3, "prompt": "A single fishing hand net: a long straight wooden handle and a round wooden hoop at the top with a white mesh net bag hanging from it, side view"},
+ {"name": "basket", "sprite": true, "width": 1024, "height": 768, "variants": 4, "prompt": "A single large empty woven straw basket, wide and shallow, round, golden brown weave, seen from the front and slightly above so the inside is visible"}
+]

@@ -1,0 +1,162 @@
+[
+ {
+  "name": "dog_sleep",
+  "still": "dev/games/art/combo/dog_sleep.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A small friendly tan puppy with a white chest and muzzle, floppy dark brown ears and a bright red collar on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The puppy stays lying curled up fast asleep in the same spot for the whole clip, eyes closed; its body rises and falls slowly with each breath and one ear twitches once. Nothing else moves. The camera does not move. The puppy keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single puppy, no other animals.\noverall_soundscape: Soft slow breathing, a quiet sunny farmyard\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "chicken_sleep",
+  "still": "dev/games/art/combo/chicken_sleep.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A plump white hen with a big bright red comb and wattle, a yellow beak and thin yellow legs on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The hen stays lying curled up fast asleep in the same spot for the whole clip, eyes closed; its body rises and falls slowly with each breath and one ear twitches once. Nothing else moves. The camera does not move. The hen keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single hen, no other animals.\noverall_soundscape: Soft slow breathing, a quiet sunny farmyard\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "dog_eat",
+  "still": "dev/games/art/combo/dog_eat.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A small friendly tan puppy with a white chest and muzzle, floppy dark brown ears and a bright red collar on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The puppy keeps eating from the red bowl: its head dips into the bowl and comes up chewing, again and again, its tail wagging. It stays in the same spot. The camera does not move. The puppy keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single puppy, no other animals.\noverall_soundscape: Soft munching and crunching\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "chicken_eat",
+  "still": "dev/games/art/combo/chicken_eat.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A plump white hen with a big bright red comb and wattle, a yellow beak and thin yellow legs on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The hen keeps pecking at the corn grains on the ground: its head bobs down to the grains and up again, again and again, swallowing grains. It stays in the same spot. The camera does not move. The hen keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single hen, no other animals.\noverall_soundscape: Soft munching and crunching\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "dog_run",
+  "still": "dev/games/art/combo/dog_run.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A small friendly tan puppy with a white chest and muzzle, floppy dark brown ears and a bright red collar on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The puppy runs very fast in the direction it is facing, its legs moving quickly in a steady galloping running cycle, ears flapping; the camera tracks alongside so the puppy stays in the middle of the picture while the fence and the grass stream past quickly behind it. The puppy keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single puppy, no other animals.\noverall_soundscape: Quick light footsteps on grass\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "dog_walk",
+  "still": "dev/games/art/combo/dog_walk.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A small friendly tan puppy with a white chest and muzzle, floppy dark brown ears and a bright red collar on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The puppy walks slowly and calmly in the direction it is facing, one step at a time, its legs moving in a slow relaxed walking cycle, head gently bobbing; the camera tracks alongside slowly so the puppy stays in the middle of the picture while the fence slides slowly past behind it. The puppy keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single puppy, no other animals.\noverall_soundscape: Slow soft footsteps on grass\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "dog_drink",
+  "still": "dev/games/art/combo/dog_drink.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A small friendly tan puppy with a white chest and muzzle, floppy dark brown ears and a bright red collar on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The puppy keeps drinking from the blue bowl of water, its pink tongue lapping the water quickly again and again, small ripples spreading in the bowl. It stays in the same spot. The camera does not move. The puppy keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single puppy, no other animals.\noverall_soundscape: Soft lapping of water\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "chicken_run",
+  "still": "dev/games/art/combo/chicken_run.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A plump white hen with a big bright red comb and wattle, a yellow beak and thin yellow legs on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The hen runs very fast in the direction it is facing, its legs moving quickly in a steady galloping running cycle, wings flapping; the camera tracks alongside so the hen stays in the middle of the picture while the fence and the grass stream past quickly behind it. The hen keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single hen, no other animals.\noverall_soundscape: Quick light footsteps on grass\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "chicken_walk",
+  "still": "dev/games/art/combo/chicken_walk.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A plump white hen with a big bright red comb and wattle, a yellow beak and thin yellow legs on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The hen walks slowly and calmly in the direction it is facing, one step at a time, its legs moving in a slow relaxed walking cycle, head gently bobbing; the camera tracks alongside slowly so the hen stays in the middle of the picture while the fence slides slowly past behind it. The hen keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single hen, no other animals.\noverall_soundscape: Slow soft footsteps on grass\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "chicken_drink",
+  "still": "dev/games/art/combo/chicken_drink.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A plump white hen with a big bright red comb and wattle, a yellow beak and thin yellow legs on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The hen keeps drinking: it dips its beak into the blue dish of water, then lifts its head up to swallow, again and again, ripples spreading in the water. It stays in the same spot. The camera does not move. The hen keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single hen, no other animals.\noverall_soundscape: Soft lapping of water\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "cow_sleep",
+  "still": "dev/games/art/combo/cow_sleep.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A friendly white cow with large black patches, a big pink nose, short cream horns and a golden bell on a red strap on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The cow stays lying curled up fast asleep in the same spot for the whole clip, eyes closed; its body rises and falls slowly with each breath and one ear twitches once. Nothing else moves. The camera does not move. The cow keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single cow, no other animals.\noverall_soundscape: Soft slow breathing, a quiet sunny farmyard\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "cow_eat",
+  "still": "dev/games/art/combo/cow_eat.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A friendly white cow with large black patches, a big pink nose, short cream horns and a golden bell on a red strap on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The cow keeps eating the grass: it lowers its head, pulls up a mouthful of grass and chews it, its jaw moving side to side, again and again. It stays in the same spot. The camera does not move. The cow keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single cow, no other animals.\noverall_soundscape: Soft munching and crunching\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "cow_run",
+  "still": "dev/games/art/combo/cow_run.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A friendly white cow with large black patches, a big pink nose, short cream horns and a golden bell on a red strap on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The cow runs very fast in the direction it is facing, its legs moving quickly in a steady galloping running cycle, ears flapping; the camera tracks alongside so the cow stays in the middle of the picture while the fence and the grass stream past quickly behind it. The cow keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single cow, no other animals.\noverall_soundscape: Quick light footsteps on grass\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "cow_walk",
+  "still": "dev/games/art/combo/cow_walk.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A friendly white cow with large black patches, a big pink nose, short cream horns and a golden bell on a red strap on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The cow walks slowly and calmly in the direction it is facing, one step at a time, its legs moving in a slow relaxed walking cycle, head gently bobbing; the camera tracks alongside slowly so the cow stays in the middle of the picture while the fence slides slowly past behind it. The cow keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single cow, no other animals.\noverall_soundscape: Slow soft footsteps on grass\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "cow_drink",
+  "still": "dev/games/art/combo/cow_drink.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A friendly white cow with large black patches, a big pink nose, short cream horns and a golden bell on a red strap on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The cow keeps drinking from the wooden trough, its muzzle in the water, slurping, ripples spreading across the water. It stays in the same spot. The camera does not move. The cow keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single cow, no other animals.\noverall_soundscape: Soft lapping of water\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "rabbit_sleep",
+  "still": "dev/games/art/combo/rabbit_sleep.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A fluffy light grey rabbit with long upright ears with pink insides, a white belly and a pink nose on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The rabbit stays lying curled up fast asleep in the same spot for the whole clip, eyes closed; its body rises and falls slowly with each breath and one ear twitches once. Nothing else moves. The camera does not move. The rabbit keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single rabbit, no other animals.\noverall_soundscape: Soft slow breathing, a quiet sunny farmyard\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "rabbit_eat",
+  "still": "dev/games/art/combo/rabbit_eat.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A fluffy light grey rabbit with long upright ears with pink insides, a white belly and a pink nose on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The rabbit keeps nibbling the orange carrot held in its front paws, its mouth and nose moving quickly, little bites disappearing from the tip of the carrot. It stays in the same spot. The camera does not move. The rabbit keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single rabbit, no other animals.\noverall_soundscape: Soft munching and crunching\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "rabbit_run",
+  "still": "dev/games/art/combo/rabbit_run.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A fluffy light grey rabbit with long upright ears with pink insides, a white belly and a pink nose on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The rabbit runs very fast in the direction it is facing, its legs moving quickly in a steady galloping running cycle, ears flapping; the camera tracks alongside so the rabbit stays in the middle of the picture while the fence and the grass stream past quickly behind it. The rabbit keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single rabbit, no other animals.\noverall_soundscape: Quick light footsteps on grass\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "rabbit_walk",
+  "still": "dev/games/art/combo/rabbit_walk.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A fluffy light grey rabbit with long upright ears with pink insides, a white belly and a pink nose on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The rabbit walks slowly and calmly in the direction it is facing, one step at a time, its legs moving in a slow relaxed walking cycle, head gently bobbing; the camera tracks alongside slowly so the rabbit stays in the middle of the picture while the fence slides slowly past behind it. The rabbit keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single rabbit, no other animals.\noverall_soundscape: Slow soft footsteps on grass\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ },
+ {
+  "name": "rabbit_drink",
+  "still": "dev/games/art/combo/rabbit_drink.png",
+  "prompt": "integrated_multimodal_description: [Shot 1] Flat vector clip-art cartoon for a young children's picture book, simple flat shapes, bright solid colours, bold clean dark outlines. A fluffy light grey rabbit with long upright ears with pink insides, a white belly and a pink nose on short green grass in a sunny farmyard, a low wooden fence behind, pale blue sky. The rabbit keeps drinking from the blue dish of water, its head down, mouth lapping the water, small ripples spreading in the dish. It stays in the same spot. The camera does not move. The rabbit keeps exactly the same look, colours and flat cartoon style as in the first frame the whole time; one single rabbit, no other animals.\noverall_soundscape: Soft lapping of water\nnon_diegetic_music: N/A",
+  "seeds": [
+   0
+  ]
+ }
+]

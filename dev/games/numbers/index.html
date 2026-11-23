@@ -1,0 +1,33 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yoruba number pictures</title>
+<style>
+  body { font: 15px system-ui, sans-serif; margin: 16px; color: #3b2a1a; background: #fffaf0; }
+  p { max-width: 60em; }
+  #grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  figure { margin: 0; width: 150px; text-align: center; background: #fff; border: 1px solid #ead9bb; border-radius: 8px; padding: 6px; }
+  figcaption b { font-size: 18px; }
+  label { display: block; margin: 12px 0; }
+</style>
+<h1>Yoruba number pictures</h1>
+<p>Each picture is drawn from how the Yoruba word is formed. Every number is drawn on the same ring, which holds four groups of five: a full ring is one score (20). 1 to 9 fill it group by group,
+  10 fills two groups, two rings linked like a chain are 30 (ọgbọ̀n, a word of its own), and a heap is 200 (igba).
+  Glowing cowries are added (11 oókànlá, "one on ten"): in the next group of a ring with room, or on a new ring after a full one (23 = a full ring and a new ring of three). Empty places in a loop are taken away
+  (15 ẹ̀ẹ́dógún, "five from twenty"). Loops side by side are twenties (40 ogójì, 20 × 2).</p>
+<label>Show 1 to <input id="upto" type="number" value="60" min="1" max="400"></label>
+<div id="grid"></div>
+<script type="module">
+  import { svg, formula } from '../numbers.js';
+  const grid = document.getElementById('grid'), upto = document.getElementById('upto');
+  function draw() {
+    grid.textContent = '';
+    for (let n = 1; n <= Math.min(400, +upto.value || 60); n++) {
+      const f = document.createElement('figure');
+      f.innerHTML = svg(n, { size: 136 }) + `<figcaption><b>${n}</b><br>${formula(n)}</figcaption>`;
+      grid.appendChild(f);
+    }
+  }
+  upto.addEventListener('change', draw);
+  draw();
+</script>

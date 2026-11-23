@@ -1,0 +1,5 @@
+[
+ {"name": "omi_water", "width": 768, "height": 768, "variants": 4, "prompt": "a clear glass of clean drinking water on a table, simple, centered, storybook-style educational illustration, flat shapes, bright colors"},
+ {"name": "mu_omi_drink_water", "width": 768, "height": 768, "variants": 4, "prompt": "a happy Black West African child drinking water from a cup, tilting the cup to their lips, simple, centered, storybook-style educational illustration, flat shapes, bright colors"},
+ {"name": "abila_striped", "width": 768, "height": 768, "variants": 4, "prompt": "a folded piece of cloth with bold black and white stripes, only the striped pattern, no animal, simple, centered, storybook-style educational illustration, flat shapes"}
+]

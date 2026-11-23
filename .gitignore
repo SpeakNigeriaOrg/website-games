@@ -21,3 +21,9 @@ dev/story-media/story-1/
 
 # tone-compare renders ~4 MB of WAVs plus a page; regenerate with render.mjs
 tools/tone-compare/build/
+
+# Dev games: picture candidates (regenerate with tools/artgen; chosen ones are copied to dev/games/art)
+# and the dev check screenshots
+dev/games/art_candidates/
+tools/devcheck/out/
+__pycache__/

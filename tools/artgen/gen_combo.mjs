@@ -1,0 +1,46 @@
+// Writes tools/artgen/combo.json: the Who-does-what art (Puppet Theatre, Windows). One fixed description per animal,
+// repeated word for word in every prompt, so each animal keeps one look across its actions; one fixed setting.
+import { writeFileSync } from 'node:fs';
+const CHAR = {
+  dog: 'one small friendly puppy dog with short light tan fur, a white chest and white muzzle, floppy dark brown ears, a dark brown patch around one eye, a short tail and a bright red collar',
+  chicken: 'one plump white hen with a big bright red comb and a red wattle, a short yellow beak, round black eyes and thin yellow legs',
+  cow: 'one friendly white cow with large black patches, a big pink nose, two short cream horns and a small golden bell on a red strap around its neck',
+  rabbit: 'one fluffy light grey rabbit with very long upright ears with pink insides, a white belly, a white fluffy round tail and a pink nose',
+};
+const ACT = {
+  sleep: { all: 'lying down curled up fast asleep on the grass, eyes closed, peaceful' },
+  eat: {
+    dog: 'eating dog food from a round red food bowl on the grass, head down in the bowl, munching',
+    chicken: 'pecking at yellow corn grains scattered on the grass, beak down touching the grains, eating',
+    cow: 'eating a big pile of fresh green grass and hay on the ground, head down, mouth full, chewing',
+    rabbit: 'sitting and eating a big orange carrot held in its front paws, nibbling the carrot',
+  },
+  run: {
+    all: 'running very fast across the grass in side view, legs stretched out in a big galloping stride, ears flying back, a small dust cloud behind',
+    chicken: 'running very fast across the grass in side view, wings flapping out, legs in a big running stride, a small dust cloud behind',
+  },
+  walk: {
+    all: 'walking slowly and calmly across the grass in side view, one front leg lifted mid-step, head up, relaxed',
+    chicken: 'walking slowly and calmly across the grass in side view, one foot lifted mid-step, head up, relaxed',
+  },
+  drink: {
+    dog: 'drinking water from a round blue bowl full of water on the grass, head down, tongue lapping the water',
+    chicken: 'drinking water from a small round blue dish full of water on the grass, beak dipped in the water',
+    cow: 'drinking water from a wooden water trough full of water, muzzle dipped in the water',
+    rabbit: 'drinking water from a small round blue dish full of water on the grass, head down, mouth in the water',
+  },
+};
+const SETTING = 'on short green grass in a sunny farmyard, plain pale blue sky, a low simple wooden fence far behind, the animal big in the middle of the picture, the whole animal visible';
+const spec = [];
+for (const [a, c] of Object.entries(CHAR)) spec.push({ name: `${a}_portrait`, sprite: true, width: 768, height: 768, variants: 4, prompt: `${c}, standing facing the viewer in three-quarter view, full body, happy smile` });
+for (const [a, c] of Object.entries(CHAR)) for (const [v, d] of Object.entries(ACT)) spec.push({ name: `${a}_${v}`, width: 768, height: 768, variants: 4, prompt: `${c}, ${d[a] || d.all}, ${SETTING}` });
+spec.push(
+  { name: 'theatre_tall', width: 832, height: 1216, variants: 3, prompt: 'A cosy children\'s toy puppet theatre room seen straight from the front, warm wooden floor, soft orange wall, a big empty dark blue rectangular stage opening framed by carved red and gold wood in the upper half of the picture, short red velvet curtains tied back at its sides, bunting along the top, no people, no puppets, lots of plain floor below' },
+  { name: 'theatre_wide', width: 1216, height: 832, variants: 3, prompt: 'A cosy children\'s toy puppet theatre room seen straight from the front, warm wooden floor, soft orange wall, a big empty dark blue rectangular stage opening framed by carved red and gold wood in the middle of the picture, short red velvet curtains tied back at its sides, bunting along the top, no people, no puppets' },
+  { name: 'curtain', sprite: true, width: 640, height: 1216, variants: 4, prompt: 'One single tall straight hanging red velvet theatre curtain panel with deep vertical folds and a gold fringe along the bottom edge, flat front view, filling the picture from top to bottom' },
+  { name: 'house_wall_tall', width: 832, height: 1216, variants: 3, prompt: 'The front of a big friendly West African family house seen straight from the front, filling the picture, warm cream painted wall, a red tin roof at the top, a wooden front door at the bottom middle, potted plants, plain flat wall with lots of empty space and no windows, blue sky at the very top' },
+  { name: 'house_wall_wide', width: 1216, height: 832, variants: 3, prompt: 'The front of a big friendly West African family house seen straight from the front, filling the picture, warm cream painted wall, a red tin roof at the top, a wooden front door at the bottom middle, potted plants, plain flat wall with lots of empty space and no windows, blue sky at the very top' },
+  { name: 'window_frame', sprite: true, width: 768, height: 768, variants: 4, prompt: 'One empty square wooden window frame with a thick bright blue painted border, a small wooden sill at the bottom with a little flower pot, two blue wooden shutters opened out flat to the left and right, the middle of the window is plain pure white and empty, front view' },
+);
+writeFileSync(new URL('./combo.json', import.meta.url), JSON.stringify(spec, null, 1));
+console.log(spec.length, 'assets');
