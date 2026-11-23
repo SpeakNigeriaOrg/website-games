@@ -69,6 +69,11 @@ bg.addEventListener('load', sampleRoadColour);
 
 // ---------------------------------------------------------------- motion
 const motion = { s: 0, v: 0, target: 2.2, stopS: Infinity, creepS: Infinity, paused: false, last: 0 };
+// How densely the road is marked: kerb bands, centre dashes and roadside posts pass FLOW times as often per road unit.
+// The gates approach at the speed their prompt and choosing time set (approach(), below), often about 1 unit/s; with
+// sparse markings that looked like a crawl (owner, 2026-11-23: "the rally games feel slow"). Denser markings make the
+// same speed look faster without changing when anything arrives.
+const FLOW = 3;
 let cruise = 2.2;
 
 function drawRoad() {
@@ -82,17 +87,19 @@ function drawRoad() {
   // kerbs and centre dashes, row by row in perspective
   for (let py = Math.ceil(HY * H) + 1; py < H; py += 2) {
     const y = py / H, z = (KY - HY) / (y - HY), wpos = s + z, hw = hwOf(y) * W;
-    const band = Math.floor(wpos * 2.2) % 2 === 0;
-    g.fillStyle = band ? '#f4f1e8' : '#d8342a';
+    // far away, where a band would be thinner than ~3 rows, it would shimmer: draw the kerb its average colour instead
+    const bandRows = (KY - HY) * H / (z * z) / (2.2 * FLOW);
+    const band = Math.floor(wpos * 2.2 * FLOW) % 2 === 0;
+    g.fillStyle = bandRows < 3 ? '#e6958c' : band ? '#f4f1e8' : '#d8342a';
     const kw = Math.max(1, hw * 0.07);
     g.fillRect(VPX * W - hw - kw * 0.4, py, kw, 2);
     g.fillRect(VPX * W + hw - kw * 0.6, py, kw, 2);
-    if (Math.floor(wpos * 1.4) % 2 === 0) { g.fillStyle = 'rgba(255,255,255,.92)'; const dw = Math.max(1, hw * 0.035); g.fillRect(VPX * W - dw / 2, py, dw, 2); }
+    if (bandRows >= 3 && Math.floor(wpos * 1.4 * FLOW) % 2 === 0) { g.fillStyle = 'rgba(255,255,255,.92)'; const dw = Math.max(1, hw * 0.035); g.fillRect(VPX * W - dw / 2, py, dw, 2); }
   }
-  // roadside posts every 1.5 units, far to near
-  const first = Math.floor((s + 0.6) / 1.5) + 1;
-  for (let k = first + 8; k >= first; k--) {
-    const z = k * 1.5 - s; if (z < 0.6 || z > 12) continue;
+  // roadside posts every 1.5 / FLOW units, far to near
+  const gap = 1.5 / FLOW, first = Math.floor((s + 0.6) / gap) + 1;
+  for (let k = first + Math.ceil(12 / gap); k >= first; k--) {
+    const z = k * gap - s; if (z < 0.6 || z > 12) continue;
     const y = yOf(z), hw = hwOf(y), size = (0.05 / z) * W;
     for (const side of [-1, 1]) {
       const x = (VPX + side * hw * 1.18) * W;
@@ -100,11 +107,11 @@ function drawRoad() {
       g.fillStyle = '#d8342a'; g.fillRect(x - size * 0.18, y * H - size * 1.6, size * 0.36, size * 0.4);
     }
   }
-  // speed streaks when on a streak
-  if (streak >= 2 && motion.v > 0.5) {
-    g.strokeStyle = 'rgba(255,255,255,.55)'; g.lineWidth = 3; g.lineCap = 'round';
+  // speed streaks whenever the kart moves: faint at first, stronger on a streak
+  if (motion.v > 0.3) {
+    g.strokeStyle = `rgba(255,255,255,${Math.min(0.55, 0.22 + 0.11 * streak)})`; g.lineWidth = 3; g.lineCap = 'round';
     for (let i = 0; i < 6; i++) {
-      const ph = ((s * 0.9 + i * 0.37) % 1), side = i % 2 ? 1 : -1;
+      const ph = ((s * 0.9 * FLOW + i * 0.37) % 1), side = i % 2 ? 1 : -1;
       const x = (0.5 + side * (0.38 + (i % 3) * 0.04)) * W, y = (0.45 + ph * 0.55) * H;
       g.beginPath(); g.moveTo(x, y); g.lineTo(x + side * 6, y + 26 + streak * 6); g.stroke();
     }
@@ -208,6 +215,7 @@ function buildOptions(word) {
 
 // ---------------------------------------------------------------- the game
 let mode = null, queue, strip, word, phase = 'idle', streak = 0, talking = 0, promptGen = 0, timed = false;
+let coinFlight = Promise.resolve(); // the last right gate's coin, still flying while the kart drives on
 let laps = 0; // laps finished this session: the first lap approaches more slowly
 /** Time to choose after the prompt ends (s): longer on the first lap, a little shorter on a streak. */
 const choiceTime = () => (timed ? Math.max(1.8, 2.6 - 0.12 * Math.min(streak, 6)) : 3.2);
@@ -325,8 +333,9 @@ async function passRight(gate) {
   const clean = queue.done();
   memory.seen(word.id, clean);
   const slot = strip && clean ? shell.progressEl.children[strip.count] : null;
-  await flyCoin(gate.el.querySelector('.panel'), slot, '★');
-  if (clean) { strip.add(mode === 'pictures' ? `<img src="${word.image}" alt="">` : '⭐'); sfx.cheer(); }
+  // the coin flies while the kart drives on: the next pair need not wait for it (endLap does)
+  const img = word.image;
+  coinFlight = flyCoin(gate.el.querySelector('.panel'), slot, '★').then(() => { if (clean) { strip.add(mode === 'pictures' ? `<img src="${img}" alt="">` : '⭐'); sfx.cheer(); } });
   streak++;
   cruise = 2.2 * (1 + 0.08 * Math.min(streak, 6));
   motion.target = cruise;
@@ -437,8 +446,7 @@ async function nextSyllable() {
 async function passRightSyllable(gate) {
   audio.play(gate.opt.audio);
   const stone = seq.stones[seq.i];
-  await flyCoin(gate.el.querySelector('.panel'), stone, '★');
-  stone.classList.add('lit');
+  coinFlight = flyCoin(gate.el.querySelector('.panel'), stone, '★').then(() => stone.classList.add('lit'));
   seq.i++;
   streak++;
   cruise = 2.2 * (1 + 0.08 * Math.min(streak, 6));
@@ -451,6 +459,7 @@ async function passRightSyllable(gate) {
 async function completeWord() {
   phase = 'celebrate';
   shell.lock();
+  await coinFlight; // the last stone lights before the word is sung
   const clean = queue.done();
   memory.seen(word.id, clean);
   talking++;
@@ -511,8 +520,9 @@ async function transformTrack(n) {
   layer.remove();
 }
 
-function endLap() {
+async function endLap() {
   phase = 'done';
+  await coinFlight; // the last coin lands in the strip before the finale
   pair = null; world.innerHTML = '';
   motion.target = 0;
   laps++;
