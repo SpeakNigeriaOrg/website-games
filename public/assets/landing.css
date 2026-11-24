@@ -306,3 +306,39 @@
 
 /* roadmap under the trial-run band: one row of three steps */
 #feedback .lp-road { margin-top: 1.6rem; }
+
+/* volunteer languages + notify form (owner, 2026-11-24): every language named, as small chips; then one quiet form */
+.lp-lang-title { color: var(--surface); font-size: var(--step-1); margin: 2rem 0 0; position: relative; }
+.lp-help .lp-lang-links { gap: 0.5rem; margin-top: 0.9rem; position: relative; }
+.lp-lang {
+  display: inline-block; padding: 0.45rem 0.95rem; border-radius: 999px; text-decoration: none;
+  font-weight: 600; font-size: var(--step-0); color: var(--brand-indigo-deep); background: var(--brand-accent);
+  border: 1px solid var(--brand-accent);
+}
+.lp-lang:hover { background: var(--brand-accent-hover); border-color: var(--brand-accent-hover); }
+.lp-lang-other { background: transparent; color: var(--background-primary); border-color: rgba(239,231,214,.4); }
+.lp-lang-other:hover { background: transparent; border-color: var(--background-primary); }
+.lp-lang:focus-visible, .lp-notify :focus-visible { outline: 3px solid var(--surface); outline-offset: 2px; }
+
+.lp-notify { position: relative; margin-top: 2.2rem; padding-top: 1.6rem; border-top: 1px solid rgba(239,231,214,.22); }
+.lp-notify .lp-lang-title { margin-top: 0; }
+.lp-notify-line { margin: 0.4rem 0 0; color: var(--text-tertiary); max-width: 60ch; }
+.lp-notify-fields { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.8rem; margin-top: 1rem; }
+.lp-notify-field { display: flex; flex-direction: column; gap: 0.3rem; font-size: var(--step--1); color: var(--text-tertiary); }
+.lp-notify-name { flex: 1 1 11rem; max-width: 16rem; }
+.lp-notify-email { flex: 1 1 14rem; max-width: 20rem; }
+.lp-notify select, .lp-notify input {
+  font: inherit; font-size: var(--step-0); color: var(--text-primary); background: var(--surface);
+  border: 1px solid rgba(239,231,214,.4); border-radius: 10px; padding: 0 0.8rem; height: 3rem; box-sizing: border-box; width: 100%;
+}
+.lp-notify select { min-width: 11rem; }
+.lp-notify .btn { height: 3rem; justify-content: center; }
+.lp-notify .btn:disabled { opacity: .6; cursor: progress; }
+.lp-notify-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.lp-notify-status { margin: 0.8rem 0 0; color: var(--surface); min-height: 1.5em; }
+.lp-notify-status a { color: var(--brand-accent); }
+.lp-notify [hidden] { display: none !important; }
+@media (max-width: 640px) {
+  .lp-notify-field, .lp-notify-name, .lp-notify-email { flex: 1 1 100%; max-width: none; }
+  .lp-notify .btn { width: 100%; }
+}

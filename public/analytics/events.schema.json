@@ -89,6 +89,7 @@
     "formName": [
       "enrollment",
       "info",
+      "notify",
       "volunteer"
     ],
     "audioScope": [
@@ -366,15 +367,21 @@
     },
     "outbound_form_click": {
       "sites": [
-        "speaknigeria"
+        "speaknigeria",
+        "games"
       ],
-      "hook": "page-events.js delegated click; the three Google Form links in speaknigeria.org/courses.html",
-      "note": "A click, not a submission. Google Forms cannot redirect to a confirmation URL.",
+      "hook": "page-events.js delegated click on the three Google Form links in speaknigeria.org/courses.html; main.js [data-track-form] clicks on volunteer and feedback mailto links (both sites); the games landing page's notify form on a successful submit",
+      "note": "An expression of interest, and a Google Ads conversion. A click, not a submission, except form=notify, which fires only once the Apps Script (website repo, apps-script/) has stored the signup.",
       "properties": {
         "form": {
           "type": "string",
           "required": true,
           "enum": "formName"
+        },
+        "language": {
+          "type": "string",
+          "required": false,
+          "note": "Which language the volunteer or notify request is for (e.g. igbo, tiv, other), when the link or form names one."
         }
       }
     },
